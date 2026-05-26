@@ -108,8 +108,16 @@ async function realignOnly(chapterFile) {
   }
   const aligned = result.aligned.filter((p) => p.alignment).length;
   const chunkCount = result.aligned.reduce((a, p) => a + (p.alignment?.length || 0), 0);
-  const meanChunks = chunkCount > 0 ? (chunkCount / aligned).toFixed(1) : "0";
+  const meanChunks = aligned > 0 ? (chunkCount / aligned).toFixed(1) : "0";
   console.log(green(`   ✓ aligned ${aligned}/${result.aligned.length} pairs · ${chunkCount} chunks (${meanChunks}/pair) · ${fmt(result.totalTokens)} tokens`));
+
+  // Safety: if NOTHING got aligned, refuse to overwrite — the existing
+  // alignment (even if coarse) is more useful than no alignment.
+  if (aligned === 0) {
+    console.error(red("\n❌ Zero pairs were successfully aligned. Refusing to overwrite the chapter file."));
+    console.error(red("   The original chapter.json is unchanged."));
+    process.exit(1);
+  }
 
   // Merge back into chapter.json.
   chapter.pairs = result.aligned.map((p) => {

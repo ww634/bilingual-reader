@@ -98,7 +98,11 @@ const ALIGN_RESPONSE_SCHEMA = {
 const CATEGORY_ENUM = new Set(["noun", "verb", "adjective", "adverb", "grammar", "idiom", "proper_noun"]);
 const FREQ_ENUM = new Set(["very_common", "common", "uncommon", "rare"]);
 
-const DEFAULT_BATCH_SIZE = 15;
+// Fine-grained alignment produces ~5-7 chunks per pair, each chunk ~80 JSON
+// chars. At batch=15 we routinely exceeded gpt-4o's response token budget.
+// 6 pairs ≈ 35-50 chunks ≈ 3-4k output tokens, well within limits.
+const DEFAULT_BATCH_SIZE = 6;
+const MAX_RESPONSE_TOKENS = 8000;
 
 /**
  * Align a batch of pairs in one OpenAI call.
@@ -137,7 +141,17 @@ async function alignBatch(client, pairs, opts = {}) {
       },
     },
     temperature: 0.1,
+    max_tokens: MAX_RESPONSE_TOKENS,
   });
+
+  // Guard against truncation: if the model hit max_tokens, the JSON will be
+  // invalid and downstream parse will fail. Surface a clearer error.
+  if (response.choices[0].finish_reason === "length") {
+    throw new Error(
+      `OpenAI response truncated by max_tokens (${MAX_RESPONSE_TOKENS}). ` +
+      `Reduce batch size below ${pairs.length} pairs.`
+    );
+  }
 
   const parsed = JSON.parse(response.choices[0].message.content);
   return { alignments: parsed.alignments, usage: response.usage };
