@@ -683,16 +683,17 @@ body {
   font-size: var(--reader-font);
 }
 
-/* Color palette for chunks. Subtle underline (border-bottom) ties pinyin and
-   English together visually without compromising readability on dark theme.
+/* Color palette for chunks. The pinyin and its English equivalent both take
+   the chunk's color so they're visually bound by hue regardless of where
+   they land on screen — important when word order differs between languages.
    Cycled per pair by chunk index (data-color="0"..."6"). */
-.chunk[data-color="0"] { border-bottom: 2px solid rgba(125, 211, 252, 0.65); }  /* sky    */
-.chunk[data-color="1"] { border-bottom: 2px solid rgba(253, 186, 116, 0.65); }  /* orange */
-.chunk[data-color="2"] { border-bottom: 2px solid rgba(134, 239, 172, 0.65); }  /* green  */
-.chunk[data-color="3"] { border-bottom: 2px solid rgba(196, 181, 253, 0.65); }  /* purple */
-.chunk[data-color="4"] { border-bottom: 2px solid rgba(249, 168, 212, 0.65); }  /* pink   */
-.chunk[data-color="5"] { border-bottom: 2px solid rgba(253, 224, 71, 0.65); }   /* yellow */
-.chunk[data-color="6"] { border-bottom: 2px solid rgba(103, 232, 249, 0.65); }  /* cyan   */
+.chunk[data-color="0"] .target, .chunk[data-color="0"] .english { color: #7dd3fc; }  /* sky    */
+.chunk[data-color="1"] .target, .chunk[data-color="1"] .english { color: #fdba74; }  /* orange */
+.chunk[data-color="2"] .target, .chunk[data-color="2"] .english { color: #86efac; }  /* green  */
+.chunk[data-color="3"] .target, .chunk[data-color="3"] .english { color: #c4b5fd; }  /* purple */
+.chunk[data-color="4"] .target, .chunk[data-color="4"] .english { color: #f9a8d4; }  /* pink   */
+.chunk[data-color="5"] .target, .chunk[data-color="5"] .english { color: #fde68a; }  /* yellow */
+.chunk[data-color="6"] .target, .chunk[data-color="6"] .english { color: #67e8f9; }  /* cyan   */
 #reader-footer {
   position: absolute;
   bottom: 0;
