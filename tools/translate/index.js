@@ -24,6 +24,7 @@ import {
   estimateCost,
 } from "./lib/translate.js";
 import { analyzeContent, sliceByMarkers } from "./lib/analyze.js";
+import { alignAll, estimateAlignmentCost } from "./lib/align.js";
 import { renderCover } from "./lib/cover.js";
 import { readLibrary, upsertBook, writeLibrary } from "./lib/library.js";
 
@@ -70,6 +71,7 @@ program
   .option("--dry-run", "Analyze + show plan, but no translation API calls and no writes")
   .option("--yes", "Skip all confirmation prompts")
   .option("--no-cover", "Skip generating an auto cover")
+  .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
   .parse(process.argv);
 
 const opts = program.opts();
@@ -172,8 +174,16 @@ async function main() {
   // Cost estimate
   const inputChars = toProcess.reduce((a, s) => a + s.text.length + s._clauses.join("\n").length, 0) + 1500;
   const outputCharsExpected = toProcess.reduce((a, s) => a + s._clauses.reduce((b, c) => b + c.length * 1.1 + 4, 0), 0);
-  const est = estimateCost({ inputChars, expectedOutputChars: outputCharsExpected }, opts.model);
-  console.log(`\n   ${bold("Cost estimate")}: ~$${est.cost.toFixed(3)}  ${dim(`(${fmt(est.inputTokens)} in / ${fmt(est.outputTokens)} out tokens, ${opts.model})`)}`);
+  const transEst = estimateCost({ inputChars, expectedOutputChars: outputCharsExpected }, opts.model);
+  let alignEst = { cost: 0, inputTokens: 0, outputTokens: 0 };
+  if (opts.alignment !== false) {
+    // We don't have target text yet (translation hasn't run), so estimate
+    // alignment based on the English clauses doubled (rough proxy for english+pinyin).
+    const fakePairs = toProcess.flatMap((s) => s._clauses.map((c) => ({ english: c, target: c })));
+    alignEst = estimateAlignmentCost(fakePairs, opts.model);
+  }
+  const totalCost = transEst.cost + alignEst.cost;
+  console.log(`\n   ${bold("Cost estimate")}: ~$${totalCost.toFixed(3)}  ${dim(`(translation ~$${transEst.cost.toFixed(3)}, alignment ~$${alignEst.cost.toFixed(3)}, ${opts.model})`)}`);
 
   if (opts.dryRun) {
     console.log(yellow("\nDry run complete. No translation calls made, no files written."));
@@ -228,6 +238,30 @@ async function main() {
       console.log(green(`     ✓ ${bodyResult.pairs.length} pairs, validation clean`));
     }
 
+    // Alignment pass (optional, on by default).
+    let finalPairs = bodyResult.pairs.map((p) => ({ english: p.english, target: p.target }));
+    if (opts.alignment !== false) {
+      console.log(dim(`     aligning words…`));
+      try {
+        const alignResult = await alignAll(client, finalPairs, {
+          model: opts.model,
+          englishTitle: s.english_title || "",
+          onProgress: (b, total) => {
+            if (total > 1) process.stdout.write(dim(`       batch ${b}/${total}\r`));
+          },
+        });
+        if (alignResult.problems.length > 0) {
+          console.error(yellow(`     ⚠ Alignment had ${alignResult.problems.length} problem${alignResult.problems.length === 1 ? "" : "s"}`));
+          alignResult.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
+        }
+        const chunkCount = alignResult.aligned.reduce((a, p) => a + (p.alignment?.length || 0), 0);
+        console.log(green(`     ✓ aligned ${alignResult.aligned.filter((p) => p.alignment).length}/${alignResult.aligned.length} pairs, ${chunkCount} chunks (${fmt(alignResult.totalTokens)} tokens)`));
+        finalPairs = alignResult.aligned;
+      } catch (err) {
+        console.error(yellow(`     ⚠ Alignment failed: ${err.message}. Continuing without alignment.`));
+      }
+    }
+
     const chapterId = s.id_suggestion || `ch-${i}`;
     const chapterJson = {
       id: chapterId,
@@ -235,12 +269,17 @@ async function main() {
       language: "zh",
       version: 1,
       title: { target: titleResult.target, english: titleResult.english },
-      pairs: bodyResult.pairs.map((p) => ({ target: p.target, english: p.english })),
+      pairs: finalPairs.map((p) => {
+        const pair = { target: p.target, english: p.english };
+        if (Array.isArray(p.alignment)) pair.alignment = p.alignment;
+        return pair;
+      }),
       meta: {
         source: path.basename(opts.in),
         createdAt: new Date().toISOString().slice(0, 10),
         model: opts.model,
         synopsis: s.synopsis || null,
+        has_alignment: opts.alignment !== false,
       },
     };
 

@@ -113,12 +113,16 @@ The chapter JSON matches the schema the PWA expects:
 
 ## Cost expectations (gpt-4o, late 2025 pricing)
 
-| Chapter length | Approx. cost |
-|---|---|
-| 500 words | $0.03 |
-| 1,500 words | $0.10 |
-| 3,000 words | $0.18 |
-| 5,000 words | $0.30 |
+By default the tool runs **translation + word-level alignment**. Alignment powers the reader's color-coded mapping, tap-to-learn popovers, and the intensity toggles. It's ~5× the translation cost on its own but enables most of the learning UX.
+
+| Chapter length | Translation | + Alignment | Total |
+|---|---|---|---|
+| 500 words | $0.03 | $0.15 | $0.18 |
+| 1,500 words | $0.10 | $0.45 | $0.55 |
+| 3,000 words | $0.18 | $0.90 | $1.08 |
+| 5,000 words | $0.30 | $1.50 | $1.80 |
+
+Pass `--no-alignment` to skip the alignment pass — translation-only, ~5× cheaper, but the new reader features fall back to the plain pinyin/English view for that chapter.
 
 `gpt-4o-mini` is ~30× cheaper at slightly lower phrasing quality.
 

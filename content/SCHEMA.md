@@ -80,18 +80,40 @@ content/
     "english": "Chapter 1: The Old Sea-Dog at the Admiral Benbow"
   },
   "pairs": [
-    { "target": "...", "english": "..." }
+    {
+      "english": "The battle between Sid and Felise",
+      "target": "Xī dé hé Fēi lì sī zhī jiān de zhàn dòu",
+      "alignment": [
+        { "english": "The battle", "target": "zhàndòu", "category": "noun", "frequency_band": "common", "is_idiom": false },
+        { "english": "between", "target": "zhī jiān de", "category": "grammar", "frequency_band": "very_common", "is_idiom": false },
+        { "english": "Sid", "target": "Xī dé", "category": "proper_noun", "frequency_band": null, "is_idiom": false },
+        { "english": "and", "target": "hé", "category": "grammar", "frequency_band": "very_common", "is_idiom": false },
+        { "english": "Felise", "target": "Fēi lì sī", "category": "proper_noun", "frequency_band": null, "is_idiom": false }
+      ]
+    }
   ],
   "meta": {
     "source": "treasure-island.docx",
     "createdAt": "2026-05-26",
     "model": "gpt-4o",
-    "synopsis": "Squire Trelawney narrates how Billy Bones arrives at the Admiral Benbow inn..."
+    "synopsis": "Squire Trelawney narrates how Billy Bones arrives at the Admiral Benbow inn...",
+    "has_alignment": true
   }
 }
 ```
 
-`book_id` lets the PWA route chapter IDs cleanly without parsing the URL. `meta.synopsis` is a per-chapter teaser (different from the book-level synopsis).
+### Per-pair fields
+
+- `english` / `target` — clause-level translation (clause = 3–12 words, broken on punctuation).
+- `alignment` — optional. Array of chunks aligning sub-spans of both languages. **The PWA must handle pairs without this field** (older chapters, or runs with `--no-alignment`). Each chunk has:
+  - `english` / `target` — non-empty sub-spans.
+  - `category` — one of `noun`, `verb`, `adjective`, `adverb`, `grammar`, `idiom`, `proper_noun`.
+  - `frequency_band` — `very_common` (HSK 1–2), `common` (HSK 3–4), `uncommon` (HSK 5–6), `rare` (beyond), or `null` for proper nouns and idioms.
+  - `is_idiom` — `true` only for genuine fixed expressions (chengyu / set phrases).
+
+Chunks are ordered by the TARGET (pinyin) language, left to right. Pinyin chunk boundaries respect orthographic word boundaries (`zhàndòu` is one chunk, not two).
+
+`book_id` lets the PWA route chapter IDs cleanly without parsing the URL. `meta.synopsis` is a per-chapter teaser (different from the book-level synopsis). `meta.has_alignment` is a quick flag for the PWA to know whether to enable alignment-dependent UI.
 
 ## Migration from v1
 
