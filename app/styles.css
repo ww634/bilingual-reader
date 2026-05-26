@@ -628,72 +628,45 @@ body {
   color: var(--text-dim);
   font-style: italic;
 }
-/* Pair = a horizontal row of chunks. Each chunk is one tap target + one
-   color-codable visual unit, with pinyin stacked above its English
-   counterpart. Chunks flow inline and wrap together so a Chinese word
-   is never broken across lines. */
+/* Pair = two flowing text lines (pinyin then English). Content-word chunks
+   within each line are wrapped in <span class="chunk"> with a data-color
+   attribute. Articles like "the" and grammar words stay default-colored. */
 .pair {
   margin-bottom: var(--pair-gap);
-  line-height: 1.25;
-  word-spacing: 0;
+  line-height: var(--reader-line);
 }
 .pair:last-child { margin-bottom: 0; }
-
-.chunk {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0 6px 8px 0;
-  padding: 1px 2px 2px;
-  border-radius: 4px;
-  position: relative;
-  cursor: pointer;
-  transition: background-color 100ms ease;
-}
-.chunk:active { background-color: rgba(255,255,255,0.06); }
-.chunk .target {
-  display: block;
+.pair .target {
   font-weight: 700;
   font-size: var(--reader-font);
   letter-spacing: -0.005em;
-  white-space: nowrap;
-  margin-bottom: 1px;
+  margin: 0 0 var(--within-pair-gap);
 }
-.chunk .english {
-  display: block;
+.pair .english {
   font-weight: 400;
-  font-size: calc(var(--reader-font) * 0.85);
-  color: var(--text-dim);
-  white-space: nowrap;
-}
-
-/* Fallback for pairs without alignment data: render as one big chunk that
-   wraps normally (like the old reader layout). */
-.pair-plain .chunk-plain {
-  display: block;
-  margin-right: 0;
-  cursor: default;
-  border-bottom: none;
-}
-.pair-plain .chunk-plain:active { background-color: transparent; }
-.pair-plain .chunk-plain .target,
-.pair-plain .chunk-plain .english {
-  white-space: normal;
-}
-.pair-plain .chunk-plain .english {
   font-size: var(--reader-font);
+  color: var(--text-dim);
+  margin: 0;
 }
 
-/* Color palette for chunks. The pinyin and its English equivalent both take
-   the chunk's color so they're visually bound by hue regardless of where
-   they land on screen — important when word order differs between languages.
-   Cycled per pair by chunk index (data-color="0"..."6"). */
-.chunk[data-color="0"] .target, .chunk[data-color="0"] .english { color: #7dd3fc; }  /* sky    */
-.chunk[data-color="1"] .target, .chunk[data-color="1"] .english { color: #fdba74; }  /* orange */
-.chunk[data-color="2"] .target, .chunk[data-color="2"] .english { color: #86efac; }  /* green  */
-.chunk[data-color="3"] .target, .chunk[data-color="3"] .english { color: #c4b5fd; }  /* purple */
-.chunk[data-color="4"] .target, .chunk[data-color="4"] .english { color: #f9a8d4; }  /* pink   */
-.chunk[data-color="5"] .target, .chunk[data-color="5"] .english { color: #fde68a; }  /* yellow */
-.chunk[data-color="6"] .target, .chunk[data-color="6"] .english { color: #67e8f9; }  /* cyan   */
+/* Chunk = a colored content-word span. Tappable for Feature 4. */
+.chunk {
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 1px;
+  transition: background-color 100ms ease;
+}
+.chunk:active { background-color: rgba(255, 255, 255, 0.08); }
+
+/* Color palette: pinyin and English in the same chunk share a hue, so a
+   chunk's mapping is visible regardless of word order. */
+.chunk[data-color="0"] { color: #7dd3fc; }  /* sky    */
+.chunk[data-color="1"] { color: #fdba74; }  /* orange */
+.chunk[data-color="2"] { color: #86efac; }  /* green  */
+.chunk[data-color="3"] { color: #c4b5fd; }  /* purple */
+.chunk[data-color="4"] { color: #f9a8d4; }  /* pink   */
+.chunk[data-color="5"] { color: #fde68a; }  /* yellow */
+.chunk[data-color="6"] { color: #67e8f9; }  /* cyan   */
 #reader-footer {
   position: absolute;
   bottom: 0;

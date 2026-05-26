@@ -12,10 +12,14 @@ let _state = {
   saveTimer: null,
 };
 
-// Color palette for chunk color-coding. Soft pastels that sit well on a dark
-// background. Cycled per pair (resets every clause so colors stay distinct
-// within the immediate reading window).
+// 7 distinct pastel hues. Cycled by content-chunk index per pair (grammar
+// chunks don't count toward the cycle so colors are reserved for content).
 const CHUNK_COLORS = 7;
+
+// English words that should NEVER be colored, even when they appear inside
+// a content-word chunk's span. Articles, generic prepositions, conjunctions.
+// (The chunk still tap-binds to the surrounding content words.)
+const NEUTRAL_LEADING = new Set(["the", "a", "an"]);
 
 function escape(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({
@@ -32,44 +36,132 @@ function chunkPairs(pairs, perPage) {
 }
 
 /**
- * Render a single pair as a row of interlinear chunks.
+ * Build a coverage map: for each character position in `text`, record the
+ * chunk *content* index (skipping grammar chunks) that claims it, or null.
  *
- * Each chunk is an inline-block with pinyin on top and English directly under.
- * Wrapping happens between chunks (not inside a Chinese word) so pinyin/English
- * coupling is always preserved.
+ * Articles like "the" / "a" / "an" at the START of an english span are left
+ * uncovered (no color), so "the Admiral Benbow" colors only "Admiral Benbow".
  *
- * For pairs without alignment data, the whole clause is rendered as one big
- * chunk (no color, no per-word tap).
+ * @param {string} text The source text (pair.target or pair.english).
+ * @param {Array} alignment The alignment chunks.
+ * @param {'target'|'english'} key Which language field to find in `text`.
+ * @returns {{coverage: Array<number|null>, colorMap: Map<number, number>, dataMap: Map<number, object>}}
+ */
+function buildCoverage(text, alignment, key) {
+  const coverage = new Array(text.length).fill(null);
+  const colorMap = new Map(); // chunk index -> color index (0..6)
+  const dataMap = new Map();  // chunk index -> chunk object (for tap data)
+  let colorCounter = 0;
+  let scanFrom = 0;
+
+  for (let ci = 0; ci < alignment.length; ci++) {
+    const chunk = alignment[ci];
+    const span = (chunk[key] || "").trim();
+    if (!span) continue;
+
+    // Find this span left-to-right starting after the previous match.
+    let idx = text.indexOf(span, scanFrom);
+    if (idx === -1) idx = text.indexOf(span); // fallback: search whole text
+    if (idx === -1) continue;
+
+    // Grammar chunks don't get colored but still advance the scan cursor.
+    if (chunk.category === "grammar") {
+      scanFrom = idx + span.length;
+      continue;
+    }
+
+    // Assign a fresh color to this content chunk (cycling through palette).
+    const colorIdx = colorCounter % CHUNK_COLORS;
+    colorMap.set(ci, colorIdx);
+    dataMap.set(ci, chunk);
+
+    // For english, strip leading articles ("the Admiral Benbow" → color only
+    // "Admiral Benbow"; "the" stays default-colored).
+    let startOffset = 0;
+    if (key === "english") {
+      const words = span.split(/\s+/);
+      let consumed = 0;
+      for (const w of words) {
+        if (NEUTRAL_LEADING.has(w.toLowerCase())) {
+          consumed += w.length + 1; // +1 for the space
+        } else {
+          break;
+        }
+      }
+      startOffset = Math.min(consumed, span.length);
+    }
+
+    const start = idx + startOffset;
+    const end = idx + span.length;
+    for (let p = start; p < end; p++) {
+      if (coverage[p] === null) coverage[p] = ci;
+    }
+    scanFrom = idx + span.length;
+    colorCounter++;
+  }
+
+  return { coverage, colorMap, dataMap };
+}
+
+/**
+ * Walk `text` with the coverage map and emit HTML, wrapping covered runs in
+ * <span class="chunk" data-color data-cat data-freq ...> elements.
+ */
+function emitColored(text, { coverage, colorMap, dataMap }) {
+  let html = "";
+  let p = 0;
+  while (p < text.length) {
+    const claim = coverage[p];
+    if (claim === null) {
+      let end = p;
+      while (end < text.length && coverage[end] === null) end++;
+      html += escape(text.slice(p, end));
+      p = end;
+    } else {
+      let end = p;
+      while (end < text.length && coverage[end] === claim) end++;
+      const color = colorMap.get(claim) ?? 0;
+      const chunk = dataMap.get(claim) || {};
+      const attrs = [
+        `data-color="${color}"`,
+        chunk.category ? `data-cat="${escape(chunk.category)}"` : "",
+        chunk.frequency_band ? `data-freq="${escape(chunk.frequency_band)}"` : "",
+        chunk.is_idiom ? `data-idiom="true"` : "",
+        `data-chunk-index="${claim}"`,
+      ].filter(Boolean).join(" ");
+      html += `<span class="chunk" ${attrs}>${escape(text.slice(p, end))}</span>`;
+      p = end;
+    }
+  }
+  return html;
+}
+
+/**
+ * Render one pair as two flowing text lines (pinyin row, english row) with
+ * content-word chunks wrapped in colored spans. Punctuation flows naturally
+ * because we use pair.target / pair.english as the source of truth.
  */
 function renderPair(pair) {
   const hasAlignment = Array.isArray(pair.alignment) && pair.alignment.length > 0;
 
   if (!hasAlignment) {
-    // Fallback: single chunk, normal wrapping.
     return `
-      <div class="pair pair-plain">
-        <span class="chunk chunk-plain">
-          <span class="target">${escape(pair.target)}</span>
-          <span class="english">${escape(pair.english)}</span>
-        </span>
+      <div class="pair">
+        <p class="target">${escape(pair.target)}</p>
+        <p class="english">${escape(pair.english)}</p>
       </div>
     `;
   }
 
-  const chunksHtml = pair.alignment.map((c, i) => {
-    const colorIdx = i % CHUNK_COLORS;
-    const cat = c.category ? ` data-cat="${escape(c.category)}"` : "";
-    const freq = c.frequency_band ? ` data-freq="${escape(c.frequency_band)}"` : "";
-    const idiom = c.is_idiom ? " data-idiom=\"true\"" : "";
-    return `
-      <span class="chunk" data-color="${colorIdx}"${cat}${freq}${idiom}>
-        <span class="target">${escape(c.target)}</span>
-        <span class="english">${escape(c.english)}</span>
-      </span>
-    `;
-  }).join("");
+  const targetCov = buildCoverage(pair.target, pair.alignment, "target");
+  const englishCov = buildCoverage(pair.english, pair.alignment, "english");
 
-  return `<div class="pair">${chunksHtml}</div>`;
+  return `
+    <div class="pair">
+      <p class="target">${emitColored(pair.target, targetCov)}</p>
+      <p class="english">${emitColored(pair.english, englishCov)}</p>
+    </div>
+  `;
 }
 
 function renderChapter(chapter, perPage) {
