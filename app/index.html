@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0f1115" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Reader" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Bilingual Reader</title>
+</head>
+<body data-view="home">
+  <div id="app">
+    <header id="topbar">
+      <button id="back-btn" class="iconbtn" aria-label="Back" hidden>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <h1 id="title">Reader</h1>
+      <button id="settings-btn" class="iconbtn" aria-label="Settings">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+    </header>
+
+    <!-- HOME -->
+    <main id="view-home" class="view">
+      <div class="hero">
+        <h2 class="hero-title">Bilingual Reader</h2>
+        <p class="hero-sub">Personal language-learning library</p>
+      </div>
+      <nav class="home-tiles">
+        <button class="home-tile" data-nav="library">
+          <div class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v16H4zM14 4h6v16h-6z"/></svg>
+          </div>
+          <div class="tile-text">
+            <span class="tile-title">Library</span>
+            <span class="tile-sub" id="tile-library-count">Your downloaded books</span>
+          </div>
+          <span class="tile-chev">›</span>
+        </button>
+        <button class="home-tile" data-nav="browse">
+          <div class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </div>
+          <div class="tile-text">
+            <span class="tile-title">Browse</span>
+            <span class="tile-sub" id="tile-browse-count">Add new books to your library</span>
+          </div>
+          <span class="tile-chev">›</span>
+        </button>
+        <button class="home-tile" data-nav="quizzes">
+          <div class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+          </div>
+          <div class="tile-text">
+            <span class="tile-title">Quizzes</span>
+            <span class="tile-sub">Coming soon</span>
+          </div>
+          <span class="tile-chev">›</span>
+        </button>
+      </nav>
+    </main>
+
+    <!-- LIBRARY (downloaded books only, grid of covers) -->
+    <main id="view-library" class="view" hidden>
+      <div id="library-empty" class="empty-state" hidden>
+        <p class="empty-title">No books yet</p>
+        <p class="empty-sub">Browse to add books to your library.</p>
+        <button class="btn-primary" data-nav="browse">Browse books</button>
+      </div>
+      <div id="library-grid" class="book-grid"></div>
+    </main>
+
+    <!-- BROWSE (catalog from library.json, add to library) -->
+    <main id="view-browse" class="view" hidden>
+      <div id="browse-status" class="status"></div>
+      <ul id="browse-list" class="book-list"></ul>
+    </main>
+
+    <!-- QUIZZES (placeholder) -->
+    <main id="view-quizzes" class="view" hidden>
+      <div class="empty-state">
+        <p class="empty-title">Quizzes</p>
+        <p class="empty-sub">AI-generated quizzes per chapter will live here. Coming in a later version.</p>
+      </div>
+    </main>
+
+    <!-- READER -->
+    <main id="view-reader" class="view" hidden>
+      <div id="reader-pages" class="reader-pages"></div>
+      <footer id="reader-footer">
+        <span id="page-indicator">1 / 1</span>
+      </footer>
+    </main>
+
+    <!-- SETTINGS -->
+    <main id="view-settings" class="view" hidden>
+      <div class="settings-group">
+        <label for="lib-url">Library URL</label>
+        <input type="url" id="lib-url" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" />
+        <p class="hint">URL to <code>library.json</code> on your public GitHub repo (or any HTTPS host).</p>
+      </div>
+      <div class="settings-group">
+        <label for="font-size">Font size</label>
+        <select id="font-size">
+          <option value="small">Small</option>
+          <option value="medium" selected>Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+      <div class="settings-group">
+        <label for="pairs-per-page">Pairs per page</label>
+        <select id="pairs-per-page">
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7" selected>7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="settings-group">
+        <button id="clear-cache" class="danger">Clear cache</button>
+        <p class="hint">Deletes all downloaded books, progress, and settings.</p>
+      </div>
+      <div class="settings-group muted">
+        <p>Bilingual Reader · personal-use PWA</p>
+        <p id="online-status"></p>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
