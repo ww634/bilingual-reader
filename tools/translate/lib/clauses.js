@@ -64,18 +64,31 @@ function hardCap(clause, cap) {
 }
 
 /**
- * Merge clauses that are too short (< MIN_WORDS) into their neighbor.
+ * Merge short clauses (< MIN_WORDS) into their neighbor.
+ * Prefers merging FORWARD (into the next clause) per the brief's spec.
+ * Falls back to merging backward only when the short clause is the last one.
  */
 function mergeShort(clauses) {
-  const out = [];
+  // First pass: merge forward.
+  const fwd = [];
+  let carry = null;
   for (const c of clauses) {
-    if (out.length > 0 && wordCount(out[out.length - 1]) < MIN_WORDS) {
-      out[out.length - 1] = out[out.length - 1] + " " + c;
+    if (carry !== null) {
+      fwd.push(carry + " " + c);
+      carry = null;
+    } else if (wordCount(c) < MIN_WORDS) {
+      carry = c;
     } else {
-      out.push(c);
+      fwd.push(c);
     }
   }
-  return out;
+  // If a short fragment was left dangling at the end, fold it into the
+  // previous output (the only safe direction left).
+  if (carry !== null) {
+    if (fwd.length > 0) fwd[fwd.length - 1] = fwd[fwd.length - 1] + " " + carry;
+    else fwd.push(carry);
+  }
+  return fwd;
 }
 
 /**
@@ -96,11 +109,14 @@ export function splitClauses(text, length = "medium") {
     let parts = splitOnPunct(collapsed);
     // Apply hard cap to each part
     parts = parts.flatMap((p) => hardCap(p, target.cap));
-    // Merge runaway-short fragments
+    // Merge runaway-short fragments within this paragraph
     parts = mergeShort(parts);
     all.push(...parts);
   }
-  return all;
+  // Final pass across paragraph boundaries to catch single-word paragraphs
+  // (e.g. front-matter "To" / "DEDICATED" / chapter-number-only lines) that
+  // mergeShort couldn't fold within their own paragraph.
+  return mergeShort(all);
 }
 
 /**

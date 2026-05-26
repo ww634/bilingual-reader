@@ -1,6 +1,11 @@
 #!/usr/bin/env node
-// Bilingual Reader translation CLI.
-// Usage: node tools/translate --in chapter.docx --id ch-2002 --title "Chapter 2002: Title"
+// Bilingual Reader translation CLI (v2 — book-aware).
+//
+// Usage:
+//   node tools/translate --in books_for_processing/treasure-island.docx
+//
+// The tool now auto-detects the book/chapters and generates ids, titles,
+// and synopses via an LLM pre-pass. Most flags are optional.
 
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -18,30 +23,32 @@ import {
   validatePairs,
   estimateCost,
 } from "./lib/translate.js";
+import { analyzeContent, sliceByMarkers } from "./lib/analyze.js";
 import { renderCover } from "./lib/cover.js";
-import { readLibrary, upsert, writeLibrary } from "./lib/library.js";
+import { readLibrary, upsertBook, writeLibrary } from "./lib/library.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Auto-load a tool-scoped .env so OPENAI_API_KEY doesn't have to live in
-// your shell. The file lives in tools/translate/.env and is gitignored.
-// A shell-exported OPENAI_API_KEY still wins if both are set.
+// Auto-load tool-scoped .env so OPENAI_API_KEY doesn't have to live in shell.
 try {
   process.loadEnvFile(path.join(__dirname, ".env"));
 } catch (err) {
-  // No .env file is fine — we fall back to process.env from the shell.
-  if (err.code !== "ENOENT") {
-    console.warn(`Warning: could not load .env: ${err.message}`);
-  }
+  if (err.code !== "ENOENT") console.warn(`Warning: could not load .env: ${err.message}`);
 }
+
 const REPO_ROOT = path.resolve(__dirname, "..", "..");
 const CONTENT_DIR = path.join(REPO_ROOT, "content");
-const CHAPTERS_DIR = path.join(CONTENT_DIR, "chapters");
-const COVERS_DIR = path.join(CONTENT_DIR, "covers");
+const BOOKS_DIR = path.join(CONTENT_DIR, "books");
 const LIBRARY_PATH = path.join(CONTENT_DIR, "library.json");
 
 function fmt(n) { return n.toLocaleString("en-US"); }
+function dim(s) { return `\x1b[2m${s}\x1b[0m`; }
+function bold(s) { return `\x1b[1m${s}\x1b[0m`; }
+function cyan(s) { return `\x1b[36m${s}\x1b[0m`; }
+function green(s) { return `\x1b[32m${s}\x1b[0m`; }
+function yellow(s) { return `\x1b[33m${s}\x1b[0m`; }
+function red(s) { return `\x1b[31m${s}\x1b[0m`; }
 
 async function prompt(question) {
   const rl = readline.createInterface({ input, output });
@@ -53,13 +60,14 @@ async function prompt(question) {
 const program = new Command();
 program
   .name("translate")
-  .description("Convert an English .docx/.txt chapter into a bilingual chapter.json + cover + library entry.")
+  .description("Convert an English book/chapter .docx into bilingual pinyin/English chapters in the reader library.")
   .requiredOption("--in <file>", "Input file (.docx, .txt, or .md)")
-  .requiredOption("--id <id>", "Chapter id, kebab-case (e.g. ch-2002)")
-  .requiredOption("--title <title>", "English chapter title")
+  .option("--book-id <id>", "Override the auto-detected book id (kebab-case)")
+  .option("--include-front-matter", "Translate sections the analyzer flagged as skip (title pages, dedications, etc)")
   .option("--length <preset>", "Clause length: short | medium | long", "medium")
-  .option("--model <name>", "OpenAI model", "gpt-4o")
-  .option("--dry-run", "Run preprocessing + clause split, print stats, then stop. No API calls, no writes.")
+  .option("--model <name>", "OpenAI model for translation", "gpt-4o")
+  .option("--analyzer-model <name>", "OpenAI model for the pre-pass analysis (cheap)", "gpt-4o-mini")
+  .option("--dry-run", "Analyze + show plan, but no translation API calls and no writes")
   .option("--yes", "Skip all confirmation prompts")
   .option("--no-cover", "Skip generating an auto cover")
   .parse(process.argv);
@@ -67,148 +75,227 @@ program
 const opts = program.opts();
 
 async function main() {
-  console.log(`\n📖 Translating ${opts.in} -> ${opts.id}`);
-  console.log(`   Title: ${opts.title}`);
-  console.log(`   Model: ${opts.model}    Clause length: ${opts.length}\n`);
+  console.log(`\n${bold("📖 Bilingual Reader — translate")}`);
+  console.log(`   In:           ${opts.in}`);
+  console.log(`   Model:        ${opts.model}  ${dim("(analysis: " + opts.analyzerModel + ")")}`);
+  console.log(`   Clause length: ${opts.length}\n`);
 
-  // 1. Read + clean
-  console.log("1/5  Reading and cleaning input…");
-  const { cleaned, stats } = await readAndClean(opts.in);
-  console.log(`     Cleaned text: ${fmt(cleaned.length)} chars`);
-  if (stats.pageNumbers || stats.repeatedHeaders || stats.blankRuns) {
-    console.log(`     Removed: ${stats.pageNumbers} page numbers, ${stats.repeatedHeaders} repeated headers, ${stats.blankRuns} extra blank lines`);
+  // ────────────────────────────────────────────────────────────
+  // Step 1. Read + clean
+  // ────────────────────────────────────────────────────────────
+  console.log(bold("1.") + " Reading and cleaning input…");
+  const { cleaned, stats: cleanStats } = await readAndClean(opts.in);
+  console.log(`   ${fmt(cleaned.length)} chars after cleaning`);
+  if (cleanStats.pageNumbers || cleanStats.repeatedHeaders || cleanStats.blankRuns) {
+    console.log(dim(`   removed: ${cleanStats.pageNumbers} page numbers, ${cleanStats.repeatedHeaders} repeated headers, ${cleanStats.blankRuns} extra blank lines`));
   }
-  console.log("");
-  console.log("     ┌─ Preview (first 400 chars) ─────────────────────");
-  console.log(cleaned.slice(0, 400).split("\n").map((l) => "     │ " + l).join("\n"));
-  console.log("     └─");
-  console.log("");
+  if (!opts.yes && !opts.dryRun) {
+    // Show preview only on real runs, not dry-runs (where we want the analyzer output to be the focus)
+  }
 
-  if (!opts.yes) {
-    const ok = await prompt("     Cleaned text look right? [y/N]: ");
-    if (ok !== "y" && ok !== "yes") {
-      console.log("     Aborted.");
+  // ────────────────────────────────────────────────────────────
+  // Step 2. Analyze structure (LLM pre-pass)
+  // ────────────────────────────────────────────────────────────
+  console.log("\n" + bold("2.") + " Analyzing structure (LLM pre-pass)…");
+  const client = buildClient(process.env.OPENAI_API_KEY);
+
+  let analysis, analyzerUsage;
+  try {
+    const r = await analyzeContent(client, cleaned, { model: opts.analyzerModel });
+    analysis = r.analysis;
+    analyzerUsage = r.usage;
+  } catch (err) {
+    console.error(red(`   ❌ Analyzer call failed: ${err.message}`));
+    if (err.status === 401) console.error(red("   Your OPENAI_API_KEY appears invalid. Check tools/translate/.env"));
+    process.exit(1);
+  }
+
+  console.log(dim(`   analyzer tokens: ${fmt(analyzerUsage.total_tokens)}`));
+
+  const sections = sliceByMarkers(cleaned, analysis);
+
+  // ────────────────────────────────────────────────────────────
+  // Step 3. Show plan
+  // ────────────────────────────────────────────────────────────
+  const bookId = opts.bookId || analysis.book.book_id_suggestion;
+  const bookTitle = analysis.book.english_title || "(unknown title)";
+  const bookAuthor = analysis.book.author || "(unknown author)";
+
+  console.log("\n" + bold("📚 Detected: ") + bold(cyan(bookTitle)) + dim(`  ${bookAuthor}`));
+  if (analysis.book.book_synopsis) console.log(dim(`   ${analysis.book.book_synopsis}`));
+  console.log(dim(`   Content type: ${analysis.book.looks_like}    Book id: ${bookId}`));
+  console.log("\n   Sections found:");
+
+  let chapterIndex = 0;
+  for (const s of sections) {
+    const status = s.markerFound ? "" : red("  [marker not found in input]");
+    const skip = (opts.includeFrontMatter ? false : s.skip);
+    const icon = skip ? "✗" : "✓";
+    const colorFn = skip ? dim : (x) => x;
+    if (!skip) chapterIndex++;
+    const idLabel = !skip && s.kind === "chapter" ? cyan(` → ${bookId}/${s.id_suggestion}`) : "";
+    console.log(`   ${colorFn(icon)} ${colorFn(s.kind.padEnd(20))} ${colorFn(s.english_title || "")}${idLabel}${status}`);
+    if (s.synopsis && !skip) {
+      console.log(dim(`     ${s.synopsis.replace(/\n/g, " ")}`));
+    }
+  }
+
+  const toProcess = sections.filter((s) => (opts.includeFrontMatter ? true : !s.skip) && s.markerFound && s.text.length > 50);
+  console.log(`\n   Will translate ${bold(toProcess.length)} section${toProcess.length === 1 ? "" : "s"}.`);
+
+  if (toProcess.length === 0) {
+    console.log(red("\n   Nothing to translate. Either everything is flagged as skippable front matter, or the analyzer couldn't find marker matches. Try --include-front-matter or inspect the input."));
+    process.exit(opts.dryRun ? 0 : 1);
+  }
+
+  if (!opts.yes && !opts.dryRun) {
+    const ok = await prompt("\n   Proceed? [Y/n]: ");
+    if (ok && ok !== "y" && ok !== "yes") {
+      console.log("   Aborted.");
       process.exit(0);
     }
   }
 
-  // 2. Split into clauses
-  console.log("\n2/5  Splitting into clauses…");
-  const clauses = splitClauses(cleaned, opts.length);
-  const cstats = clauseStats(clauses);
-  console.log(`     ${cstats.n} clauses · words per clause: min ${cstats.min}, max ${cstats.max}, mean ${cstats.mean}`);
+  // ────────────────────────────────────────────────────────────
+  // Step 4. Split each section into clauses + estimate cost
+  // ────────────────────────────────────────────────────────────
+  console.log("\n" + bold("3.") + " Splitting each section into clauses…");
+  let totalClauses = 0;
+  for (const s of toProcess) {
+    s._clauses = splitClauses(s.text, opts.length);
+    const cs = clauseStats(s._clauses);
+    totalClauses += cs.n;
+    console.log(dim(`   ${s.english_title || s.kind}: ${cs.n} clauses (${cs.min}-${cs.max} words, mean ${cs.mean})`));
+  }
+  console.log(`   Total: ${bold(totalClauses)} clauses across ${toProcess.length} section${toProcess.length === 1 ? "" : "s"}`);
+
+  // Cost estimate
+  const inputChars = toProcess.reduce((a, s) => a + s.text.length + s._clauses.join("\n").length, 0) + 1500;
+  const outputCharsExpected = toProcess.reduce((a, s) => a + s._clauses.reduce((b, c) => b + c.length * 1.1 + 4, 0), 0);
+  const est = estimateCost({ inputChars, expectedOutputChars: outputCharsExpected }, opts.model);
+  console.log(`\n   ${bold("Cost estimate")}: ~$${est.cost.toFixed(3)}  ${dim(`(${fmt(est.inputTokens)} in / ${fmt(est.outputTokens)} out tokens, ${opts.model})`)}`);
 
   if (opts.dryRun) {
-    console.log("\n--- DRY RUN: first 12 clauses ---");
-    clauses.slice(0, 12).forEach((c, i) => console.log(`[${(i + 1).toString().padStart(3)}] ${c}`));
-    console.log(`\n(${clauses.length - 12} more not shown)`);
-    console.log("\nDry run complete. No API calls made, no files written.");
+    console.log(yellow("\nDry run complete. No translation calls made, no files written."));
     process.exit(0);
   }
 
-  // 3. Cost estimate + confirm
-  const inputChars = cleaned.length + clauses.join("\n").length + 800; // + system prompt overhead
-  const expectedOutputChars = clauses.reduce((a, c) => a + c.length * 1.1 + 4, 0);
-  const est = estimateCost({ inputChars, expectedOutputChars }, opts.model);
-  console.log(`\n     Cost estimate: ~$${est.cost.toFixed(3)}  (${fmt(est.inputTokens)} in / ${fmt(est.outputTokens)} out tokens, ${opts.model})`);
   if (!opts.yes) {
-    const ok = await prompt("     Proceed with API call? [y/N]: ");
+    const ok = await prompt("   Proceed with translation API calls? [y/N]: ");
     if (ok !== "y" && ok !== "yes") {
-      console.log("     Aborted.");
+      console.log("   Aborted.");
       process.exit(0);
     }
   }
 
-  // 4. Call OpenAI
-  console.log("\n3/5  Calling OpenAI (this can take 30-90s for a long chapter)…");
-  const client = buildClient(process.env.OPENAI_API_KEY);
+  // ────────────────────────────────────────────────────────────
+  // Step 5. Translate each section
+  // ────────────────────────────────────────────────────────────
+  console.log("\n" + bold("4.") + " Translating sections…");
+  const bookDir = path.join(BOOKS_DIR, bookId);
+  await fs.mkdir(bookDir, { recursive: true });
 
-  const [titleResult, bodyResult] = await Promise.all([
-    translateTitle(client, opts.title, { model: opts.model }),
-    translateClauses(client, clauses, {
-      model: opts.model,
-      fullText: cleaned,
-      englishTitle: opts.title,
-    }),
-  ]);
+  // Translate the book title once (used for cover + library)
+  const bookTitleResult = await translateTitle(client, bookTitle, { model: opts.model });
 
-  console.log(`     Returned ${bodyResult.pairs.length} pairs. Tokens used: ${fmt(bodyResult.usage.total_tokens)}`);
+  const chapterEntries = [];
+  let i = 0;
+  for (const s of toProcess) {
+    i++;
+    console.log(`\n   [${i}/${toProcess.length}] ${cyan(s.english_title || s.kind)}…`);
 
-  // 5. Validate
-  console.log("\n4/5  Validating output…");
-  const v = validatePairs(clauses, bodyResult.pairs);
-  if (!v.ok) {
-    console.error("     ⚠️  Validation problems:");
-    v.problems.slice(0, 10).forEach((p) => console.error(`       - ${p}`));
-    if (v.problems.length > 10) console.error(`       ... and ${v.problems.length - 10} more`);
-    if (!opts.yes) {
-      const ok = await prompt("     Write outputs anyway? [y/N]: ");
-      if (ok !== "y" && ok !== "yes") {
-        console.log("     Aborted.");
-        process.exit(1);
-      }
+    let titleResult, bodyResult;
+    try {
+      [titleResult, bodyResult] = await Promise.all([
+        translateTitle(client, s.english_title || "Untitled", { model: opts.model }),
+        translateClauses(client, s._clauses, {
+          model: opts.model,
+          fullText: s.text,
+          englishTitle: s.english_title || "",
+        }),
+      ]);
+    } catch (err) {
+      console.error(red(`     ❌ Translation failed: ${err.message}`));
+      console.error(red(`     Skipping this section. You can re-run the tool to retry.`));
+      continue;
     }
-  } else {
-    console.log("     All checks pass: count matches, tone marks present, no Han characters.");
+
+    const v = validatePairs(s._clauses, bodyResult.pairs);
+    if (!v.ok) {
+      console.error(yellow(`     ⚠ Validation: ${v.problems.length} problem${v.problems.length === 1 ? "" : "s"}`));
+      v.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
+    } else {
+      console.log(green(`     ✓ ${bodyResult.pairs.length} pairs, validation clean`));
+    }
+
+    const chapterId = s.id_suggestion || `ch-${i}`;
+    const chapterJson = {
+      id: chapterId,
+      book_id: bookId,
+      language: "zh",
+      version: 1,
+      title: { target: titleResult.target, english: titleResult.english },
+      pairs: bodyResult.pairs.map((p) => ({ target: p.target, english: p.english })),
+      meta: {
+        source: path.basename(opts.in),
+        createdAt: new Date().toISOString().slice(0, 10),
+        model: opts.model,
+        synopsis: s.synopsis || null,
+      },
+    };
+
+    const chapterPath = path.join(bookDir, `${chapterId}.json`);
+    await fs.writeFile(chapterPath, JSON.stringify(chapterJson, null, 2) + "\n", "utf8");
+    console.log(dim(`     written: ${path.relative(REPO_ROOT, chapterPath)}`));
+
+    chapterEntries.push({
+      id: chapterId,
+      title: { target: titleResult.target, english: titleResult.english },
+      url: `books/${bookId}/${chapterId}.json`,
+    });
   }
 
-  // 6. Build chapter.json
-  console.log("\n5/5  Writing outputs…");
-  const chapterJson = {
-    id: opts.id,
-    language: "zh",
-    version: 1,
-    title: { target: titleResult.target, english: titleResult.english },
-    pairs: bodyResult.pairs.map((p) => ({ target: p.target, english: p.english })),
-    meta: {
-      source: path.basename(opts.in),
-      createdAt: new Date().toISOString().slice(0, 10),
-      model: opts.model,
-    },
-  };
+  // ────────────────────────────────────────────────────────────
+  // Step 6. Cover + library upsert
+  // ────────────────────────────────────────────────────────────
+  console.log("\n" + bold("5.") + " Writing book metadata…");
 
-  await fs.mkdir(CHAPTERS_DIR, { recursive: true });
-  const chapterPath = path.join(CHAPTERS_DIR, `${opts.id}.json`);
-  await fs.writeFile(chapterPath, JSON.stringify(chapterJson, null, 2) + "\n", "utf8");
-  console.log(`     ✓ ${path.relative(REPO_ROOT, chapterPath)}`);
-
-  // 7. Cover
-  let coverRelPath = null;
+  let coverRel = null;
   if (opts.cover !== false) {
-    await fs.mkdir(COVERS_DIR, { recursive: true });
-    const coverPath = path.join(COVERS_DIR, `${opts.id}.svg`);
-    const svg = renderCover({ englishTitle: opts.title, targetTitle: titleResult.target });
+    const coverPath = path.join(bookDir, "cover.svg");
+    const svg = renderCover({
+      englishTitle: bookTitle,
+      targetTitle: bookTitleResult.target,
+    });
     await fs.writeFile(coverPath, svg, "utf8");
-    coverRelPath = `covers/${opts.id}.svg`;
-    console.log(`     ✓ ${path.relative(REPO_ROOT, coverPath)}`);
+    coverRel = `books/${bookId}/cover.svg`;
+    console.log(dim(`   written: ${path.relative(REPO_ROOT, coverPath)}`));
   }
 
-  // 8. library.json upsert
   const library = await readLibrary(LIBRARY_PATH);
-  const entry = {
-    id: opts.id,
+  const bookEntry = {
+    id: bookId,
     language: "zh",
-    title: { target: titleResult.target, english: titleResult.english },
-    url: `chapters/${opts.id}.json`,
+    title: { target: bookTitleResult.target, english: bookTitle },
+    author: bookAuthor === "(unknown author)" ? "" : bookAuthor,
+    synopsis: analysis.book.book_synopsis || "",
+    chapters: chapterEntries,
   };
-  if (coverRelPath) entry.cover = coverRelPath;
-  const upsertResult = upsert(library, entry);
-  // Sync the chapter.json version to match the library entry's version
-  chapterJson.version = upsertResult.version;
-  await fs.writeFile(chapterPath, JSON.stringify(chapterJson, null, 2) + "\n", "utf8");
-  await writeLibrary(LIBRARY_PATH, library);
-  console.log(`     ✓ content/library.json (${upsertResult.action}, version ${upsertResult.version})`);
+  if (coverRel) bookEntry.cover = coverRel;
 
-  console.log("\n✨ Done.");
-  console.log("\nNext steps:");
-  console.log(`   git add content/`);
-  console.log(`   git commit -m "Add ${opts.id}"`);
-  console.log(`   git push`);
-  console.log("\nThen open the app: Browse → ${opts.id} → Add. (Or use 'Update' if it was already in your library.)");
+  const upsertResult = upsertBook(library, bookEntry);
+  await writeLibrary(LIBRARY_PATH, library);
+  console.log(dim(`   library.json: ${upsertResult.action}, +${upsertResult.chaptersAdded} chapter(s), ~${upsertResult.chaptersUpdated} updated`));
+
+  console.log("\n" + green(bold("✨ Done.")));
+  console.log("\nReview, then publish:");
+  console.log(dim(`   git add content/`));
+  console.log(dim(`   git commit -m "Add ${bookId}"`));
+  console.log(dim(`   git push`));
 }
 
 main().catch((err) => {
-  console.error("\n❌ Failed:", err.message);
+  console.error("\n" + red("❌ Failed:") + " " + err.message);
   if (process.env.DEBUG) console.error(err.stack);
   process.exit(1);
 });

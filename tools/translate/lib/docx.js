@@ -54,17 +54,31 @@ export function clean(raw) {
     return true;
   });
 
-  // Detect repeated short headers/footers: short non-empty lines (<= 60 chars)
-  // that appear more than 3 times in the doc.
-  const lineCounts = new Map();
-  for (const line of lines) {
-    const t = line.trim();
+  // Detect repeated short headers/footers. Two pickup criteria:
+  //   (a) a line appears 3+ times anywhere
+  //   (b) a line appears 2+ times AND at least one of those copies is in the
+  //       first or last 10% of the document (where title-page repeats and
+  //       running headers cluster)
+  const lineCounts = new Map();      // line -> count
+  const linePositions = new Map();   // line -> [indices]
+  for (let i = 0; i < lines.length; i++) {
+    const t = lines[i].trim();
     if (!t || t.length > 60) continue;
     lineCounts.set(t, (lineCounts.get(t) || 0) + 1);
+    if (!linePositions.has(t)) linePositions.set(t, []);
+    linePositions.get(t).push(i);
   }
+  const edgeStart = Math.floor(lines.length * 0.1);
+  const edgeEnd = Math.ceil(lines.length * 0.9);
   const headerCandidates = new Set();
   for (const [line, count] of lineCounts) {
-    if (count >= 3) headerCandidates.add(line);
+    if (count >= 3) { headerCandidates.add(line); continue; }
+    if (count >= 2) {
+      const positions = linePositions.get(line);
+      if (positions.some((p) => p < edgeStart || p >= edgeEnd)) {
+        headerCandidates.add(line);
+      }
+    }
   }
   if (headerCandidates.size > 0) {
     lines = lines.filter((line) => {
