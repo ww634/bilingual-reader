@@ -222,6 +222,10 @@ body {
   color: var(--text);
   text-align: left;
   transition: transform 100ms ease;
+  /* Allow the card to shrink to the grid track width even when text content
+     (especially nowrap subtitle) has a wider intrinsic min-content. */
+  min-width: 0;
+  width: 100%;
 }
 .book-card:active { transform: scale(0.96); }
 .book-cover {
@@ -257,6 +261,8 @@ body {
 }
 .book-meta {
   padding: 0 1px;
+  min-width: 0;
+  width: 100%;
 }
 .book-title {
   font-size: 12px;
@@ -267,6 +273,10 @@ body {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  /* Break long unbreakable strings (e.g. very long pinyin compounds) so they
+     don't push the card wider than its grid track. */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .book-sub {
   font-size: 11px;
@@ -275,6 +285,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* ---------- Browse (list view with Add buttons) ---------- */
