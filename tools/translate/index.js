@@ -62,7 +62,7 @@ const program = new Command();
 program
   .name("translate")
   .description("Convert an English book/chapter .docx into bilingual pinyin/English chapters in the reader library.")
-  .requiredOption("--in <file>", "Input file (.docx, .txt, or .md)")
+  .option("--in <file>", "Input file (.docx, .txt, or .md). Required unless --realign-only is used.")
   .option("--book-id <id>", "Override the auto-detected book id (kebab-case)")
   .option("--include-front-matter", "Translate sections the analyzer flagged as skip (title pages, dedications, etc)")
   .option("--length <preset>", "Clause length: short | medium | long", "medium")
@@ -72,11 +72,74 @@ program
   .option("--yes", "Skip all confirmation prompts")
   .option("--no-cover", "Skip generating an auto cover")
   .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
+  .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
   .parse(process.argv);
 
 const opts = program.opts();
 
+async function realignOnly(chapterFile) {
+  console.log(`\n${bold("🔁 Realign-only: " + chapterFile)}`);
+  const absPath = path.resolve(chapterFile);
+  const raw = await fs.readFile(absPath, "utf8");
+  const chapter = JSON.parse(raw);
+  if (!Array.isArray(chapter.pairs) || chapter.pairs.length === 0) {
+    throw new Error("Chapter file has no pairs to align.");
+  }
+  const client = buildClient(process.env.OPENAI_API_KEY);
+  // Strip any existing alignment so we get a clean re-run.
+  const inputPairs = chapter.pairs.map((p) => ({ english: p.english, target: p.target }));
+  const est = estimateAlignmentCost(inputPairs, opts.model);
+  console.log(`   ${inputPairs.length} pairs · cost estimate: ~$${est.cost.toFixed(3)}  ${dim("(" + fmt(est.inputTokens) + " in / " + fmt(est.outputTokens) + " out)")}`);
+  if (!opts.yes) {
+    const ok = await prompt("   Proceed? [y/N]: ");
+    if (ok !== "y" && ok !== "yes") { console.log("   Aborted."); process.exit(0); }
+  }
+
+  const result = await alignAll(client, inputPairs, {
+    model: opts.model,
+    englishTitle: chapter.title?.english || "",
+    onProgress: (b, total) => { if (total > 1) process.stdout.write(dim(`   batch ${b}/${total}\r`)); },
+  });
+  console.log("");
+  if (result.problems.length > 0) {
+    console.error(yellow(`   ⚠ ${result.problems.length} problem${result.problems.length === 1 ? "" : "s"}:`));
+    result.problems.slice(0, 8).forEach((p) => console.error(yellow(`     - ${p}`)));
+    if (result.problems.length > 8) console.error(yellow(`     ... and ${result.problems.length - 8} more`));
+  }
+  const aligned = result.aligned.filter((p) => p.alignment).length;
+  const chunkCount = result.aligned.reduce((a, p) => a + (p.alignment?.length || 0), 0);
+  const meanChunks = chunkCount > 0 ? (chunkCount / aligned).toFixed(1) : "0";
+  console.log(green(`   ✓ aligned ${aligned}/${result.aligned.length} pairs · ${chunkCount} chunks (${meanChunks}/pair) · ${fmt(result.totalTokens)} tokens`));
+
+  // Merge back into chapter.json.
+  chapter.pairs = result.aligned.map((p) => {
+    const out = { target: p.target, english: p.english };
+    if (Array.isArray(p.alignment)) out.alignment = p.alignment;
+    return out;
+  });
+  chapter.version = (chapter.version || 1) + 1;
+  if (!chapter.meta) chapter.meta = {};
+  chapter.meta.has_alignment = true;
+  chapter.meta.realignedAt = new Date().toISOString().slice(0, 10);
+
+  await fs.writeFile(absPath, JSON.stringify(chapter, null, 2) + "\n", "utf8");
+  console.log(green(bold("\n✨ Wrote ") + path.relative(REPO_ROOT, absPath)));
+  console.log("\nReview, then publish:");
+  console.log(dim("   git add " + path.relative(REPO_ROOT, absPath)));
+  console.log(dim('   git commit -m "Realign ' + path.basename(absPath, ".json") + '"'));
+  console.log(dim("   git push"));
+  console.log(dim("\nThe chapter version was bumped — the PWA will show an 'Update available' badge so you can re-download."));
+}
+
 async function main() {
+  if (opts.realignOnly) {
+    await realignOnly(opts.realignOnly);
+    return;
+  }
+  if (!opts.in) {
+    console.error(red("\n❌ --in <file> is required (unless using --realign-only)\n"));
+    process.exit(1);
+  }
   console.log(`\n${bold("📖 Bilingual Reader — translate")}`);
   console.log(`   In:           ${opts.in}`);
   console.log(`   Model:        ${opts.model}  ${dim("(analysis: " + opts.analyzerModel + ")")}`);
@@ -205,8 +268,12 @@ async function main() {
   const bookDir = path.join(BOOKS_DIR, bookId);
   await fs.mkdir(bookDir, { recursive: true });
 
-  // Translate the book title once (used for cover + library)
+  // Translate the book title once (used for cover + library + as a canonical
+  // name passed into every chapter's body translation for consistency).
   const bookTitleResult = await translateTitle(client, bookTitle, { model: opts.model });
+  const canonicalNames = bookTitle && bookTitleResult.target
+    ? [{ english: bookTitle, target: bookTitleResult.target }]
+    : [];
 
   const chapterEntries = [];
   let i = 0;
@@ -222,6 +289,7 @@ async function main() {
           model: opts.model,
           fullText: s.text,
           englishTitle: s.english_title || "",
+          canonicalNames,
         }),
       ]);
     } catch (err) {

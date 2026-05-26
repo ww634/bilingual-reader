@@ -9,25 +9,47 @@
 // We batch pairs (~15 at a time) so a single chapter doesn't depend on one
 // huge response, but a failed batch is easy to retry.
 
-const ALIGN_SYSTEM_PROMPT = `You are a bilingual annotator producing word-level alignment between English clauses and their Mandarin Chinese pinyin translations.
+const ALIGN_SYSTEM_PROMPT = `You are a bilingual annotator producing FINE-GRAINED word-level alignment between English clauses and their Mandarin Chinese pinyin translations. A learner will tap individual pinyin words to look them up and see color-coded mappings to English.
 
-For each (english, target) pair, you return a list of CHUNKS. A chunk is a small contiguous span of both languages that map to each other.
+For each (english, target) pair, you return a list of CHUNKS. Each chunk maps one small unit of pinyin to its English counterpart.
+
+GRANULARITY — read carefully, this is the most common failure mode:
+A chunk's TARGET should usually be 1 pinyin word, occasionally 2, never more than 3 except for genuine multi-word idioms or proper-noun phrases.
+Do NOT lump multiple content words into one chunk. Each noun, verb, adjective, adverb gets its OWN chunk. Each measure word, particle, or conjunction gets its own chunk (you may group adjacent function words into one "grammar" chunk if they form a single grammatical unit like "zhī jiān de").
+
+GOOD example (fine-grained):
+  english: "the time when my father kept the Admiral Benbow Inn"
+  target:  "wǒ fùqīn kāi Zhǎngguān Bēnbǎo lǚguǎn de shíhòu"
+  chunks:
+    { english: "my",                  target: "wǒ",                 category: "grammar" }
+    { english: "father",              target: "fùqīn",              category: "noun" }
+    { english: "kept",                target: "kāi",                category: "verb" }
+    { english: "the Admiral Benbow",  target: "Zhǎngguān Bēnbǎo",   category: "proper_noun" }
+    { english: "Inn",                 target: "lǚguǎn",             category: "noun" }
+    { english: "the time when",       target: "de shíhòu",          category: "grammar" }
+
+BAD example (too coarse — DO NOT do this):
+  chunks:
+    { english: "the time when my father kept the Admiral Benbow Inn",
+      target: "wǒ fùqīn kāi Zhǎngguān Bēnbǎo lǚguǎn de shíhòu",
+      category: "noun" }
+^ a single 10-word chunk is useless for tap-to-learn. Always break content words apart.
 
 Hard rules:
 1. Each chunk has both an "english" span and a "target" pinyin span — neither empty.
 2. Chunks appear in the order of the TARGET (pinyin) clause, left to right.
-3. The English spans, concatenated in chunk order, should reconstruct the original English clause (allowing for natural word reordering between the two languages — sometimes chunks may pull from non-adjacent English words; that's expected).
-4. Pinyin chunks must respect standard pinyin word boundaries: syllables of a single Chinese word run together (e.g. "zhàndòu", "péngyǒu"), multiple words separate. Do NOT split a single pinyin word across two chunks.
-5. Every chunk gets a "category": one of "noun", "verb", "adjective", "adverb", "grammar" (particles, conjunctions, prepositions, articles, pronouns, auxiliaries), "idiom" (4-character chengyu or other multi-word fixed expression), "proper_noun" (transliterated names of people/places).
-6. Every chunk gets a "frequency_band": one of "very_common" (HSK 1-2 level), "common" (HSK 3-4), "uncommon" (HSK 5-6), "rare" (beyond HSK 6 / literary), or null for proper nouns and idioms.
-7. "is_idiom": true ONLY for genuine fixed expressions (chengyu, set phrases). For ordinary multi-word translations (e.g. "in the corner" -> "zài jiǎoluò lǐ"), set is_idiom=false even if the chunk spans multiple words.
+3. Pinyin chunks respect standard pinyin word boundaries: syllables of one Chinese word run together (e.g. "zhàndòu", "péngyǒu"), separate words are space-separated. Do NOT split a single pinyin word across two chunks.
+4. PREFER 1 pinyin word per chunk. 2 is acceptable when they form an inseparable unit (e.g. "shíhòu" = "time/when"). 3+ pinyin words in one chunk requires a strong reason (genuine fixed expression, transliterated proper noun phrase, or grammatical wrapper like "chúle...wài" that wraps around content).
+5. Every chunk gets a "category": one of "noun", "verb", "adjective", "adverb", "grammar" (particles, conjunctions, prepositions, articles, pronouns, auxiliaries, measure words), "idiom" (4-character chengyu or fixed set phrase), "proper_noun" (transliterated names of people/places — multi-syllable proper nouns like "Zhǎngguān Bēnbǎo" stay together as one chunk).
+6. Every chunk gets a "frequency_band": one of "very_common" (HSK 1-2 level), "common" (HSK 3-4), "uncommon" (HSK 5-6), "rare" (beyond HSK 6 / literary). Use null for proper nouns and idioms.
+7. "is_idiom": true ONLY for genuine 4-character chengyu or other set phrases. False for ordinary multi-word translations.
 
 Edge cases:
-- An English filler word like "the" with no Chinese counterpart: attach it to the adjacent content word's chunk rather than creating a target-empty chunk.
-- A Chinese particle like 了 / 的 / 吗 (pinyin "le" / "de" / "ma") that has no English counterpart: attach it to the adjacent verb or noun chunk on the English side rather than leaving english empty. Tag as "grammar".
-- If a single pinyin word translates to multiple English words ("zhàndòu" -> "the battle"), put all those English words in the chunk's english field.
+- An English filler word like "the" with no specific Chinese counterpart: attach it to the adjacent content word's English span. Example: "the cat" → target "māo" with english "the cat".
+- A Chinese particle (le / de / ma / ne) with no specific English counterpart: it gets its own "grammar" chunk with english being the closest English equivalent or the word it modifies. Never leave english empty.
+- Multi-syllable proper nouns ("Zhǎngguān Bēnbǎo lǚguǎn" = "Admiral Benbow Inn") may be one chunk for the name portion, but the generic noun ("lǚguǎn" = "Inn") should be its OWN chunk so the user can learn "inn" separately.
 
-The output schema is a flat array of chunks per pair, in target order.`;
+Output: a flat array of chunks per pair, in target order.`;
 
 const ALIGN_RESPONSE_SCHEMA = {
   type: "object",
@@ -123,6 +145,9 @@ async function alignBatch(client, pairs, opts = {}) {
 
 /**
  * Validate a single alignment entry. Returns array of problem strings (empty if OK).
+ *
+ * Includes a granularity check: warn if alignment is too coarse (single-chunk
+ * pairs with 4+ pinyin words usually indicate the LLM lumped content words).
  */
 function validateAlignment(alignment, originalPair) {
   const problems = [];
@@ -137,6 +162,11 @@ function validateAlignment(alignment, originalPair) {
       problems.push(`chunk ${i}: invalid frequency_band "${c.frequency_band}"`);
     }
     if (typeof c.is_idiom !== "boolean") problems.push(`chunk ${i}: is_idiom not boolean`);
+    // Granularity warning — only for non-idiom, non-proper-noun chunks.
+    const targetWords = (c.target || "").trim().split(/\s+/).filter(Boolean).length;
+    if (targetWords >= 4 && c.category !== "idiom" && c.category !== "proper_noun") {
+      problems.push(`chunk ${i}: too coarse (${targetWords} pinyin words for "${c.target}")`);
+    }
   });
   return problems;
 }

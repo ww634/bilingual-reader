@@ -53,18 +53,35 @@ export function buildClient(apiKey) {
 
 /**
  * Translate clauses in one OpenAI call.
+ *
  * @param {OpenAI} client
  * @param {string[]} clauses
- * @param {object} opts { model, fullText, englishTitle, properNouns }
+ * @param {object} opts {
+ *   model,
+ *   fullText,
+ *   englishTitle,
+ *   canonicalNames: [{ english: "Treasure Island", target: "Bǎozàng Dǎo" }, ...]
+ *     — fixed translations that MUST be used verbatim wherever they appear.
+ *     Critical for keeping the book title and recurring proper nouns
+ *     consistent across the chapter.
+ * }
  * @returns {Promise<{pairs: {english: string, target: string}[], usage: object}>}
  */
 export async function translateClauses(client, clauses, opts = {}) {
   const model = opts.model || "gpt-4o";
   const englishTitle = opts.englishTitle || "(untitled)";
   const fullText = opts.fullText || clauses.join(" ");
+  const canonicalNames = Array.isArray(opts.canonicalNames) ? opts.canonicalNames : [];
+
+  const canonicalBlock = canonicalNames.length === 0 ? "" : [
+    "",
+    "Canonical translations — these names/terms MUST be used VERBATIM whenever they appear in any clause. Do not invent variants.",
+    ...canonicalNames.map((n) => `  - "${n.english}" → "${n.target}"`),
+  ].join("\n");
 
   const userPrompt = [
     `Chapter title: ${englishTitle}`,
+    canonicalBlock,
     "",
     "Full chapter prose (for context — do NOT translate this directly):",
     "```",
