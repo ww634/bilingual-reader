@@ -17,3 +17,11 @@ yarn-error.log*
 
 # Local-only Claude Code config
 .claude/settings.local.json
+
+# Secrets — never commit any .env file from any subdirectory
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local

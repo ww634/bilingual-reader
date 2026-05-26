@@ -23,6 +23,18 @@ import { readLibrary, upsert, writeLibrary } from "./lib/library.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Auto-load a tool-scoped .env so OPENAI_API_KEY doesn't have to live in
+// your shell. The file lives in tools/translate/.env and is gitignored.
+// A shell-exported OPENAI_API_KEY still wins if both are set.
+try {
+  process.loadEnvFile(path.join(__dirname, ".env"));
+} catch (err) {
+  // No .env file is fine — we fall back to process.env from the shell.
+  if (err.code !== "ENOENT") {
+    console.warn(`Warning: could not load .env: ${err.message}`);
+  }
+}
 const REPO_ROOT = path.resolve(__dirname, "..", "..");
 const CONTENT_DIR = path.join(REPO_ROOT, "content");
 const CHAPTERS_DIR = path.join(CONTENT_DIR, "chapters");

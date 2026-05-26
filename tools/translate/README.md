@@ -15,13 +15,20 @@ cd "tools/translate"
 npm install
 ```
 
-Set your OpenAI API key (and ideally add this to your `~/.zshrc` so it persists across terminals):
+**Set your OpenAI API key.** The key lives in a `.env` file inside this directory — scoped to just this tool, never touches your global shell, never gets committed to git.
 
 ```bash
-export OPENAI_API_KEY="sk-..."
+# from tools/translate/
+cp .env.example .env
+# then open .env in any editor and paste your real key:
+# OPENAI_API_KEY=sk-...
 ```
 
-You can get a key at <https://platform.openai.com/api-keys>. Top up at least a few dollars of credit at <https://platform.openai.com/settings/organization/billing>.
+Get a key at <https://platform.openai.com/api-keys>. Top up a few dollars of credit at <https://platform.openai.com/settings/organization/billing>.
+
+The tool auto-loads this `.env` on startup (via Node's built-in `process.loadEnvFile`). If you'd rather export the key in your shell (e.g. you keep all keys in `~/.zshrc`), that still works — a shell-exported `OPENAI_API_KEY` overrides the `.env` value.
+
+**Security note:** `.env` is gitignored at both the repo root and inside `tools/translate/`. You'd have to actively force-add it to leak the key. The `.env.example` template *is* committed so the setup is reproducible.
 
 ## Basic usage
 
@@ -133,7 +140,7 @@ GitHub Pages redeploys in ~30s. On your phone:
 
 ## Troubleshooting
 
-**`Missing OPENAI_API_KEY`** — `export OPENAI_API_KEY=sk-...` in your terminal. Verify with `echo $OPENAI_API_KEY`.
+**`Missing OPENAI_API_KEY`** — most likely your `.env` file isn't where the tool expects it. It must be at `tools/translate/.env` with a line like `OPENAI_API_KEY=sk-...`. Verify with `cat tools/translate/.env`. If you'd rather use a shell env var, `export OPENAI_API_KEY=sk-...` also works.
 
 **Validation warns "no tone marks detected"** — the model occasionally returns ASCII pinyin for a clause. Re-run the tool — it's usually a one-off. If it persists, the source clause is unusual (e.g. it's already a pinyin name) and you can ignore the warning.
 
