@@ -18,6 +18,10 @@ yarn-error.log*
 # Local-only Claude Code config
 .claude/settings.local.json
 
+# Staging area — source files awaiting translation are NOT published.
+# Only the translated output under content/ gets committed.
+books_for_processing/
+
 # Secrets — never commit any .env file from any subdirectory
 .env
 .env.local
