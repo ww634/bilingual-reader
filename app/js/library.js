@@ -2,20 +2,21 @@ import {
   getSettings,
   getLibrary,
   putLibrary,
-  getAllChapters,
+  getAllBooks,
+  putBook,
+  deleteBook,
   putChapter,
+  deleteChapter,
+  getChapter,
+  chapterKey,
 } from "./db.js";
 
-const browseStatusEl = () => document.getElementById("browse-status");
-const browseListEl = () => document.getElementById("browse-list");
-const libraryGridEl = () => document.getElementById("library-grid");
-const libraryEmptyEl = () => document.getElementById("library-empty");
-const tileLibraryCount = () => document.getElementById("tile-library-count");
-const tileBrowseCount = () => document.getElementById("tile-browse-count");
+const $ = (id) => document.getElementById(id);
 
 const state = {
-  library: null,           // { version, chapters: [...] } — the catalog
-  downloaded: new Map(),   // id -> chapter
+  catalog: null,           // { version, books: [...] } — the fetched library.json
+  downloadedBooks: new Map(),  // id -> book record (with coverBlob)
+  selectedBookId: null,    // currently shown in book detail view
   online: navigator.onLine,
 };
 
@@ -24,59 +25,57 @@ function resolveUrl(libraryUrl, relativeOrAbsolute) {
   return new URL(relativeOrAbsolute, absLibrary).toString();
 }
 
-async function fetchLibrary(url) {
+async function fetchJson(url) {
   const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Library fetch failed: ${res.status}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status} on ${url}`);
   return res.json();
 }
 
-async function loadDownloadedIndex() {
-  const all = await getAllChapters();
-  const map = new Map();
-  for (const c of all) map.set(c.id, c);
-  return map;
+async function fetchBlob(url) {
+  try {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.blob();
+  } catch (err) {
+    console.warn("Blob fetch failed:", url, err);
+    return null;
+  }
 }
 
 function escape(s) {
-  return String(s).replace(/[&<>"']/g, (c) => ({
+  return String(s ?? "").replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   }[c]));
 }
 
-function rowState(entry, local) {
-  if (!local) return { label: "Not in library", cls: "" };
-  if (local.version !== entry.version) return { label: "Update available", cls: "update" };
-  return { label: "In library", cls: "ok" };
-}
-
-function coverElement({ coverUrl, fallbackTitle, cls = "" }) {
-  if (coverUrl) {
-    return `<img class="${cls}" src="${escape(coverUrl)}" alt="" loading="lazy" />`;
-  }
-  return `<div class="${cls} placeholder">${escape(fallbackTitle)}</div>`;
+async function loadDownloadedIndex() {
+  const all = await getAllBooks();
+  const map = new Map();
+  for (const b of all) map.set(b.id, b);
+  return map;
 }
 
 function renderHomeCounts() {
-  const downloadedCount = state.downloaded.size;
-  const catalogCount = (state.library?.chapters || []).filter(c => c.language === "zh").length;
-  tileLibraryCount().textContent = downloadedCount === 0
+  const downloaded = state.downloadedBooks.size;
+  const catalog = (state.catalog?.books || []).filter((b) => b.language === "zh").length;
+  $("tile-library-count").textContent = downloaded === 0
     ? "Your downloaded books"
-    : `${downloadedCount} book${downloadedCount === 1 ? "" : "s"}`;
-  tileBrowseCount().textContent = catalogCount === 0
+    : `${downloaded} book${downloaded === 1 ? "" : "s"}`;
+  $("tile-browse-count").textContent = catalog === 0
     ? "Add new books to your library"
-    : `${catalogCount} available`;
+    : `${catalog} available`;
 }
 
 /* ============ LIBRARY VIEW (downloaded books grid) ============ */
 
 export function renderLibrary() {
-  const grid = libraryGridEl();
-  const empty = libraryEmptyEl();
+  const grid = $("library-grid");
+  const empty = $("library-empty");
   grid.innerHTML = "";
 
-  const downloaded = Array.from(state.downloaded.values()).filter(c => c.language === "zh");
+  const books = Array.from(state.downloadedBooks.values()).filter((b) => b.language === "zh");
 
-  if (downloaded.length === 0) {
+  if (books.length === 0) {
     grid.hidden = true;
     empty.hidden = false;
     return;
@@ -84,29 +83,25 @@ export function renderLibrary() {
   empty.hidden = true;
   grid.hidden = false;
 
-  for (const chapter of downloaded) {
+  for (const book of books) {
     const card = document.createElement("button");
     card.className = "book-card";
-    card.setAttribute("data-id", chapter.id);
+    card.setAttribute("data-book-id", book.id);
 
-    const coverObjUrl = chapter._coverBlob ? URL.createObjectURL(chapter._coverBlob) : null;
+    const coverObjUrl = book.coverBlob ? URL.createObjectURL(book.coverBlob) : null;
     const hasCover = !!coverObjUrl;
-    const coverHtml = coverElement({
-      coverUrl: coverObjUrl,
-      fallbackTitle: chapter.title.english,
-      cls: "",
-    });
+    const coverInner = hasCover
+      ? `<img src="${escape(coverObjUrl)}" alt="" loading="lazy" />`
+      : `<div class="placeholder">${escape(book.title?.english || book.id)}</div>`;
 
     card.innerHTML = `
-      <div class="book-cover ${hasCover ? "" : "placeholder"}">
-        ${coverHtml}
-      </div>
+      <div class="book-cover ${hasCover ? "" : "placeholder"}">${coverInner}</div>
       <div class="book-meta">
-        <div class="book-title">${escape(chapter.title.english)}</div>
-        <div class="book-sub">${escape(chapter.title.target)}</div>
+        <div class="book-title">${escape(book.title?.english || book.id)}</div>
+        <div class="book-sub">${escape(book.author || book.title?.target || "")}</div>
       </div>
     `;
-    card.addEventListener("click", () => openReader(chapter.id));
+    card.addEventListener("click", () => openBookDetail(book.id));
     grid.appendChild(card);
   }
 }
@@ -114,38 +109,44 @@ export function renderLibrary() {
 /* ============ BROWSE VIEW (catalog list) ============ */
 
 export function renderBrowse() {
-  const list = browseListEl();
+  const list = $("browse-list");
   list.innerHTML = "";
 
-  const chapters = (state.library?.chapters || []).filter(c => c.language === "zh");
+  const books = (state.catalog?.books || []).filter((b) => b.language === "zh");
 
-  if (chapters.length === 0) {
-    browseStatusEl().textContent = state.online
+  if (books.length === 0) {
+    $("browse-status").textContent = state.online
       ? "No books found in the catalog."
       : "Offline — no cached catalog yet. Connect to fetch it.";
     return;
   }
 
-  for (const entry of chapters) {
-    const local = state.downloaded.get(entry.id);
-    const st = rowState(entry, local);
-
+  for (const entry of books) {
+    const local = state.downloadedBooks.get(entry.id);
     const li = document.createElement("li");
     li.className = "book-list-row";
 
     const coverUrl = entry._coverResolved;
-    const coverHtml = coverElement({
-      coverUrl,
-      fallbackTitle: entry.title.english,
-      cls: "",
-    });
+    const coverInner = coverUrl
+      ? `<img src="${escape(coverUrl)}" alt="" loading="lazy" />`
+      : `<div class="placeholder">${escape(entry.title?.english || entry.id)}</div>`;
+
+    const chapterCount = entry.chapters?.length || 0;
+    const subline = entry.author
+      ? `${escape(entry.author)}  ·  ${chapterCount} ch.`
+      : `${chapterCount} chapter${chapterCount === 1 ? "" : "s"}`;
+
+    let stateLabel, stateCls;
+    if (!local) { stateLabel = "Not in library"; stateCls = ""; }
+    else if (local.version !== entry.version) { stateLabel = "Update available"; stateCls = "update"; }
+    else { stateLabel = "In library"; stateCls = "ok"; }
 
     li.innerHTML = `
-      <div class="row-cover ${coverUrl ? "" : "placeholder"}">${coverHtml}</div>
+      <div class="row-cover ${coverUrl ? "" : "placeholder"}">${coverInner}</div>
       <div class="row-text">
-        <div class="row-target">${escape(entry.title.english)}</div>
-        <div class="row-english">${escape(entry.title.target)}</div>
-        <div class="row-state ${st.cls}">${st.label}</div>
+        <div class="row-target">${escape(entry.title?.english || entry.id)}</div>
+        <div class="row-english">${subline}</div>
+        <div class="row-state ${stateCls}">${stateLabel}</div>
       </div>
       <div class="row-actions"></div>
     `;
@@ -156,19 +157,19 @@ export function renderBrowse() {
       btn.className = "primary";
       btn.textContent = state.online ? "Add" : "Offline";
       btn.disabled = !state.online;
-      if (state.online) btn.addEventListener("click", () => downloadOne(entry, btn));
+      if (state.online) btn.addEventListener("click", () => downloadBook(entry, btn));
       actions.appendChild(btn);
     } else if (local.version !== entry.version) {
       const btn = document.createElement("button");
       btn.className = "primary";
       btn.textContent = state.online ? "Update" : "Offline";
       btn.disabled = !state.online;
-      if (state.online) btn.addEventListener("click", () => downloadOne(entry, btn));
+      if (state.online) btn.addEventListener("click", () => downloadBook(entry, btn));
       actions.appendChild(btn);
     } else {
       const btn = document.createElement("button");
-      btn.textContent = "Read";
-      btn.addEventListener("click", () => openReader(entry.id));
+      btn.textContent = "Open";
+      btn.addEventListener("click", () => openBookDetail(entry.id));
       actions.appendChild(btn);
     }
 
@@ -176,41 +177,53 @@ export function renderBrowse() {
   }
 }
 
-async function fetchCoverBlob(coverUrl) {
-  try {
-    const res = await fetch(coverUrl, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.blob();
-  } catch (err) {
-    console.warn("Cover fetch failed:", coverUrl, err);
-    return null;
-  }
-}
-
-async function downloadOne(entry, btn) {
+async function downloadBook(catalogEntry, btn) {
   const settings = await getSettings();
-  const url = resolveUrl(settings.libraryUrl, entry.url);
   btn.disabled = true;
   btn.textContent = "Adding…";
+  $("browse-status").classList.remove("error");
+  $("browse-status").textContent = `Adding "${catalogEntry.title?.english || catalogEntry.id}"…`;
+
   try {
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const chapter = await res.json();
-    if (!chapter.id || !Array.isArray(chapter.pairs)) {
-      throw new Error("Invalid chapter format");
+    // 1. Download cover blob
+    let coverBlob = null;
+    if (catalogEntry.cover) {
+      const coverUrl = resolveUrl(settings.libraryUrl, catalogEntry.cover);
+      coverBlob = await fetchBlob(coverUrl);
     }
-    // Cover: prefer the URL on the catalog entry (library.json), since it's
-    // resolved relative to library.json. The chapter's own `cover` field is
-    // resolved relative to the chapter file.
-    let coverUrl = null;
-    if (entry.cover) coverUrl = resolveUrl(settings.libraryUrl, entry.cover);
-    else if (chapter.cover) coverUrl = new URL(chapter.cover, url).toString();
-    if (coverUrl) {
-      const blob = await fetchCoverBlob(coverUrl);
-      if (blob) chapter._coverBlob = blob;
+
+    // 2. Download every chapter
+    const total = catalogEntry.chapters?.length || 0;
+    for (let i = 0; i < total; i++) {
+      const ch = catalogEntry.chapters[i];
+      $("browse-status").textContent = `Downloading chapter ${i + 1}/${total}…`;
+      const chUrl = resolveUrl(settings.libraryUrl, ch.url);
+      const chJson = await fetchJson(chUrl);
+      if (!Array.isArray(chJson.pairs)) throw new Error(`Chapter ${ch.id}: invalid format`);
+      await putChapter(catalogEntry.id, ch.id, chJson);
     }
-    await putChapter(chapter);
-    state.downloaded.set(chapter.id, chapter);
+
+    // 3. Store book metadata
+    const bookRecord = {
+      id: catalogEntry.id,
+      language: catalogEntry.language,
+      version: catalogEntry.version,
+      title: catalogEntry.title,
+      author: catalogEntry.author || "",
+      synopsis: catalogEntry.synopsis || "",
+      chapters: catalogEntry.chapters.map((c) => ({
+        id: c.id,
+        version: c.version,
+        title: c.title,
+        url: c.url,
+      })),
+      coverBlob,
+      addedAt: new Date().toISOString(),
+    };
+    await putBook(bookRecord);
+    state.downloadedBooks.set(catalogEntry.id, bookRecord);
+
+    $("browse-status").textContent = "";
     renderBrowse();
     renderLibrary();
     renderHomeCounts();
@@ -218,48 +231,123 @@ async function downloadOne(entry, btn) {
     console.error(err);
     btn.disabled = false;
     btn.textContent = "Retry";
-    browseStatusEl().textContent = `Could not add: ${err.message}`;
-    browseStatusEl().classList.add("error");
+    $("browse-status").textContent = `Could not add: ${err.message}`;
+    $("browse-status").classList.add("error");
   }
 }
 
-function openReader(id) {
-  window.dispatchEvent(new CustomEvent("nav:reader", { detail: { id } }));
+/* ============ BOOK DETAIL (chapter picker) ============ */
+
+export function openBookDetail(bookId) {
+  state.selectedBookId = bookId;
+  renderBookDetail();
+  window.dispatchEvent(new CustomEvent("nav:bookDetail", { detail: { id: bookId } }));
 }
+
+export function renderBookDetail() {
+  const book = state.downloadedBooks.get(state.selectedBookId)
+    || (state.catalog?.books || []).find((b) => b.id === state.selectedBookId);
+  if (!book) return;
+
+  const isDownloaded = state.downloadedBooks.has(book.id);
+
+  // Cover
+  const coverContainer = $("book-detail-cover");
+  coverContainer.innerHTML = "";
+  if (isDownloaded && book.coverBlob) {
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(book.coverBlob);
+    coverContainer.appendChild(img);
+    coverContainer.classList.remove("placeholder");
+  } else if (book._coverResolved || book.cover) {
+    const img = document.createElement("img");
+    img.src = book._coverResolved || resolveUrlFromCachedSettings(book.cover);
+    coverContainer.appendChild(img);
+    coverContainer.classList.remove("placeholder");
+  } else {
+    coverContainer.innerHTML = `<div class="placeholder">${escape(book.title?.english || book.id)}</div>`;
+    coverContainer.classList.add("placeholder");
+  }
+
+  // Header text
+  $("book-detail-title").textContent = book.title?.english || book.id;
+  $("book-detail-target").textContent = book.title?.target || "";
+  $("book-detail-author").textContent = book.author || "";
+  $("book-detail-synopsis").textContent = book.synopsis || "";
+
+  // Chapter list
+  const list = $("book-detail-chapters");
+  list.innerHTML = "";
+  const chapters = book.chapters || [];
+  for (const ch of chapters) {
+    const li = document.createElement("li");
+    li.className = "chapter-row";
+    li.innerHTML = `
+      <div class="chapter-info">
+        <div class="chapter-title">${escape(ch.title?.english || ch.id)}</div>
+        <div class="chapter-target">${escape(ch.title?.target || "")}</div>
+      </div>
+      <span class="chapter-chev">›</span>
+    `;
+    if (isDownloaded) {
+      li.addEventListener("click", () => {
+        window.dispatchEvent(new CustomEvent("nav:reader", { detail: { bookId: book.id, chapterId: ch.id } }));
+      });
+    } else {
+      li.classList.add("locked");
+    }
+    list.appendChild(li);
+  }
+}
+
+// Settings cache for cover URL resolution (used when rendering catalog entries
+// in the detail view).
+let _cachedSettings = null;
+async function ensureCachedSettings() {
+  if (!_cachedSettings) _cachedSettings = await getSettings();
+  return _cachedSettings;
+}
+function resolveUrlFromCachedSettings(relPath) {
+  if (!_cachedSettings) return relPath;
+  return resolveUrl(_cachedSettings.libraryUrl, relPath);
+}
+
+/* ============ Catalog refresh ============ */
 
 export async function refreshCatalog() {
   const settings = await getSettings();
-  browseStatusEl().classList.remove("error");
-  state.downloaded = await loadDownloadedIndex();
+  _cachedSettings = settings;
+  $("browse-status").classList.remove("error");
+  state.downloadedBooks = await loadDownloadedIndex();
 
   if (state.online) {
-    browseStatusEl().textContent = "Loading catalog…";
+    $("browse-status").textContent = "Loading catalog…";
     try {
-      const lib = await fetchLibrary(settings.libraryUrl);
-      // Pre-resolve cover URLs in the catalog so we can render them.
-      if (lib?.chapters) {
-        for (const entry of lib.chapters) {
-          if (entry.cover) {
-            entry._coverResolved = resolveUrl(settings.libraryUrl, entry.cover);
-          }
+      const lib = await fetchJson(settings.libraryUrl);
+      if (lib?.version && lib.version !== 2) {
+        throw new Error(`Library schema v${lib.version} not supported (need v2)`);
+      }
+      if (lib?.books) {
+        for (const book of lib.books) {
+          if (book.cover) book._coverResolved = resolveUrl(settings.libraryUrl, book.cover);
         }
       }
-      state.library = lib;
+      state.catalog = lib;
       await putLibrary(lib);
-      browseStatusEl().textContent = "";
+      $("browse-status").textContent = "";
     } catch (err) {
       console.warn("Catalog fetch failed:", err);
       const cached = await getLibrary();
-      state.library = cached || { chapters: [] };
-      browseStatusEl().textContent = cached
+      state.catalog = cached || { books: [] };
+      $("browse-status").textContent = cached
         ? `Showing cached catalog (refresh failed: ${err.message}).`
         : `Could not load catalog: ${err.message}`;
-      if (!cached) browseStatusEl().classList.add("error");
+      if (!cached) $("browse-status").classList.add("error");
     }
   } else {
     const cached = await getLibrary();
-    state.library = cached || { chapters: [] };
-    browseStatusEl().textContent = "Offline — showing cached catalog.";
+    state.catalog = cached || { books: [] };
+    $("browse-status").textContent = "Offline — showing cached catalog.";
   }
 
   renderBrowse();
@@ -271,4 +359,10 @@ export function initCatalog() {
   window.addEventListener("online", () => { state.online = true; refreshCatalog(); });
   window.addEventListener("offline", () => { state.online = false; refreshCatalog(); });
   return refreshCatalog();
+}
+
+/* ============ External: ask the catalog for a chapter's content ============ */
+
+export async function loadChapter(bookId, chapterId) {
+  return getChapter(bookId, chapterId);
 }

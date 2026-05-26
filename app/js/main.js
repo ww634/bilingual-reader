@@ -1,14 +1,15 @@
-import { initCatalog, refreshCatalog } from "./library.js";
+import { initCatalog, refreshCatalog, openBookDetail, renderBookDetail } from "./library.js";
 import { openReader, closeReader } from "./reader.js";
 import { initSettings, loadSettingsIntoUI } from "./settings.js";
 
-const VIEWS = ["home", "library", "browse", "quizzes", "reader", "settings"];
+const VIEWS = ["home", "library", "browse", "book-detail", "quizzes", "reader", "settings"];
 const TITLES = {
   home: "Reader",
   library: "Library",
   browse: "Browse",
+  "book-detail": "",   // set per-book
   quizzes: "Quizzes",
-  reader: "",
+  reader: "",          // set per-chapter
   settings: "Settings",
 };
 
@@ -16,13 +17,15 @@ const titleEl = document.getElementById("title");
 const backBtn = document.getElementById("back-btn");
 const settingsBtn = document.getElementById("settings-btn");
 
+const navStack = [];     // history of view names for back navigation
 let currentView = "home";
 
-function setView(name) {
+function setView(name, { push = true } = {}) {
   for (const v of VIEWS) {
     const el = document.getElementById(`view-${v}`);
     if (el) el.hidden = v !== name;
   }
+  if (push && currentView !== name) navStack.push(currentView);
   currentView = name;
   document.body.setAttribute("data-view", name);
 
@@ -32,7 +35,16 @@ function setView(name) {
   settingsBtn.hidden = name !== "home";
 }
 
-// Wire home-tile clicks.
+function goBack() {
+  if (currentView === "reader") {
+    closeReader();
+  }
+  const prev = navStack.pop() || "home";
+  setView(prev, { push: false });
+  if (prev === "library" || prev === "browse") refreshCatalog();
+  if (prev === "book-detail") renderBookDetail();
+}
+
 document.querySelectorAll("[data-nav]").forEach((el) => {
   el.addEventListener("click", () => {
     const target = el.getAttribute("data-nav");
@@ -40,37 +52,35 @@ document.querySelectorAll("[data-nav]").forEach((el) => {
   });
 });
 
-backBtn.addEventListener("click", () => {
-  if (currentView === "reader") {
-    closeReader();
-    setView("library");
-    refreshCatalog();
-    return;
-  }
-  setView("home");
-});
+backBtn.addEventListener("click", goBack);
 
 settingsBtn.addEventListener("click", () => {
   loadSettingsIntoUI();
   setView("settings");
 });
 
+window.addEventListener("nav:bookDetail", (e) => {
+  // Title is set inside renderBookDetail; here we just transition views.
+  setView("book-detail");
+  // Set the topbar title to the book title.
+  const title = document.getElementById("book-detail-title")?.textContent || "";
+  titleEl.textContent = title;
+});
+
 window.addEventListener("nav:reader", async (e) => {
-  const ok = await openReader(e.detail.id);
+  const { bookId, chapterId } = e.detail;
+  const ok = await openReader(bookId, chapterId);
   if (ok) setView("reader");
-  // reader.js sets the topbar title to the chapter's English title.
 });
 
 window.addEventListener("settings:libraryUrl", () => refreshCatalog());
 window.addEventListener("settings:cleared", () => {
-  if (currentView === "reader") {
-    closeReader();
-  }
-  setView("home");
+  if (currentView === "reader") closeReader();
+  navStack.length = 0;
+  setView("home", { push: false });
   refreshCatalog();
 });
 
-// Register service worker (skip on file://).
 if ("serviceWorker" in navigator && location.protocol !== "file:") {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./sw.js").catch((err) => {
@@ -79,9 +89,8 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   });
 }
 
-// Boot.
 (async function boot() {
   await initSettings();
   await initCatalog();
-  setView("home");
+  setView("home", { push: false });
 })();

@@ -1,7 +1,7 @@
 // Service worker — caches the app shell only.
 // Chapter content is stored in IndexedDB by the app, not here.
 
-const SHELL_CACHE = "reader-shell-v2";
+const SHELL_CACHE = "reader-shell-v3";
 const SHELL_FILES = [
   "./",
   "./index.html",
@@ -44,10 +44,10 @@ self.addEventListener("fetch", (event) => {
 
   const url = new URL(req.url);
 
-  // Network-first for library.json and chapter JSONs so updates show up online.
-  // The app itself handles offline fallback via IndexedDB — SW just lets the
-  // network call fail and the app catches it.
-  if (url.pathname.endsWith("library.json") || url.pathname.includes("/chapters/")) {
+  // Network-first for library.json and per-book content so updates show up
+  // online. The app itself handles offline fallback via IndexedDB — SW just
+  // lets the network call fail and the app catches it.
+  if (url.pathname.endsWith("library.json") || url.pathname.includes("/books/")) {
     return; // default fetch
   }
 

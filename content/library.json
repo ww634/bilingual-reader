@@ -1,16 +1,28 @@
 {
-  "version": 1,
-  "chapters": [
+  "version": 2,
+  "books": [
     {
-      "id": "ch-2001",
+      "id": "winding-paths",
       "language": "zh",
       "version": 1,
       "title": {
-        "target": "Dì èr líng líng yī zhāng: Qū zhé de dào lù",
-        "english": "Chapter 2001: Winding Paths"
+        "target": "Qū zhé de dào lù",
+        "english": "Winding Paths"
       },
-      "cover": "covers/ch-2001.svg",
-      "url": "chapters/ch-2001.json"
+      "author": "",
+      "synopsis": "Sample chapter used to seed the reader during development. The story follows Sid and Felise as their personal duel takes place inside the terror of a much vaster cataclysm.",
+      "cover": "books/winding-paths/cover.svg",
+      "chapters": [
+        {
+          "id": "ch-1",
+          "version": 1,
+          "title": {
+            "target": "Dì èr líng líng yī zhāng: Qū zhé de dào lù",
+            "english": "Chapter 2001: Winding Paths"
+          },
+          "url": "books/winding-paths/ch-1.json"
+        }
+      ]
     }
   ]
 }

@@ -4,6 +4,8 @@ const pagesEl = () => document.getElementById("reader-pages");
 const indicatorEl = () => document.getElementById("page-indicator");
 
 let _state = {
+  bookId: null,
+  chapterId: null,
   chapter: null,
   pagesCount: 0,
   currentPage: 0,
@@ -75,32 +77,37 @@ function handleScroll() {
   if (page === _state.currentPage) return;
   _state.currentPage = page;
   updateIndicator();
-  // Debounce progress save.
   clearTimeout(_state.saveTimer);
   _state.saveTimer = setTimeout(() => {
-    if (_state.chapter) putProgress(_state.chapter.id, _state.currentPage);
+    if (_state.bookId && _state.chapterId) {
+      putProgress(_state.bookId, _state.chapterId, _state.currentPage);
+    }
   }, 300);
 }
 
-export async function openReader(chapterId) {
-  const chapter = await getChapter(chapterId);
+/**
+ * Open a chapter by composite (bookId, chapterId).
+ * Returns true on success, false if the chapter isn't downloaded.
+ */
+export async function openReader(bookId, chapterId) {
+  const chapter = await getChapter(bookId, chapterId);
   if (!chapter) {
-    console.error("Chapter not downloaded:", chapterId);
+    console.error("Chapter not downloaded:", bookId, chapterId);
     return false;
   }
   const settings = await getSettings();
-  const progress = await getProgress(chapterId);
+  const progress = await getProgress(bookId, chapterId);
 
+  _state.bookId = bookId;
+  _state.chapterId = chapterId;
   _state.chapter = chapter;
   _state.currentPage = 0;
 
   renderChapter(chapter, settings.pairsPerPage);
 
-  // Set title in topbar.
   document.getElementById("title").textContent = chapter.title.english;
 
   const container = pagesEl();
-  // Wait a frame so layout is ready before scrolling.
   requestAnimationFrame(() => {
     const startPage = Math.min(Math.max(progress?.lastPage ?? 0, 0), _state.pagesCount - 1);
     _state.currentPage = startPage;
@@ -118,10 +125,11 @@ export function closeReader() {
   const container = pagesEl();
   container.removeEventListener("scroll", handleScroll);
   clearTimeout(_state.saveTimer);
-  if (_state.chapter) {
-    // Final flush.
-    putProgress(_state.chapter.id, _state.currentPage);
+  if (_state.bookId && _state.chapterId) {
+    putProgress(_state.bookId, _state.chapterId, _state.currentPage);
   }
+  _state.bookId = null;
+  _state.chapterId = null;
   _state.chapter = null;
   _state.pagesCount = 0;
   _state.currentPage = 0;
