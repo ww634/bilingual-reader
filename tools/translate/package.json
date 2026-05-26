@@ -1,0 +1,18 @@
+{
+  "name": "bilingual-reader-translate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "CLI: convert an English .docx/.txt into a bilingual chapter.json (pinyin + English) and add it to the reader library.",
+  "bin": {
+    "translate": "./index.js"
+  },
+  "scripts": {
+    "translate": "node index.js"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "mammoth": "^1.8.0",
+    "openai": "^4.68.0"
+  }
+}
