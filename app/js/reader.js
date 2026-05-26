@@ -12,13 +12,7 @@ let _state = {
   saveTimer: null,
 };
 
-// 7 distinct pastel hues. Cycled by content-chunk index per pair (grammar
-// chunks don't count toward the cycle so colors are reserved for content).
 const CHUNK_COLORS = 7;
-
-// English words that should NEVER be colored, even when they appear inside
-// a content-word chunk's span. Articles, generic prepositions, conjunctions.
-// (The chunk still tap-binds to the surrounding content words.)
 const NEUTRAL_LEADING = new Set(["the", "a", "an"]);
 
 function escape(s) {
@@ -36,22 +30,29 @@ function chunkPairs(pairs, perPage) {
 }
 
 /**
- * Build a coverage map: for each character position in `text`, record the
- * chunk *content* index (skipping grammar chunks) that claims it, or null.
- *
- * Articles like "the" / "a" / "an" at the START of an english span are left
- * uncovered (no color), so "the Admiral Benbow" colors only "Admiral Benbow".
- *
- * @param {string} text The source text (pair.target or pair.english).
- * @param {Array} alignment The alignment chunks.
- * @param {'target'|'english'} key Which language field to find in `text`.
- * @returns {{coverage: Array<number|null>, colorMap: Map<number, number>, dataMap: Map<number, object>}}
+ * For a given pair's alignment, map each content-chunk index to a stable
+ * color index. Grammar chunks get no color. `colorOffset` continues the
+ * cycle from previous pairs in the same page so colors flow continuously
+ * across a page.
  */
-function buildCoverage(text, alignment, key) {
+function buildChunkColors(alignment, colorOffset) {
+  const colors = new Map();
+  let counter = 0;
+  for (let i = 0; i < alignment.length; i++) {
+    if (alignment[i].category === "grammar") continue;
+    colors.set(i, (colorOffset + counter) % CHUNK_COLORS);
+    counter++;
+  }
+  return { colors, count: counter };
+}
+
+/**
+ * Walk `text` for one pair, marking each character with the chunk index
+ * that claims it (or null). Articles like "the" at the START of an English
+ * span are left uncovered so they don't get colored.
+ */
+function buildCoverage(text, alignment, key, chunkColors) {
   const coverage = new Array(text.length).fill(null);
-  const colorMap = new Map(); // chunk index -> color index (0..6)
-  const dataMap = new Map();  // chunk index -> chunk object (for tap data)
-  let colorCounter = 0;
   let scanFrom = 0;
 
   for (let ci = 0; ci < alignment.length; ci++) {
@@ -59,34 +60,24 @@ function buildCoverage(text, alignment, key) {
     const span = (chunk[key] || "").trim();
     if (!span) continue;
 
-    // Find this span left-to-right starting after the previous match.
     let idx = text.indexOf(span, scanFrom);
-    if (idx === -1) idx = text.indexOf(span); // fallback: search whole text
+    if (idx === -1) idx = text.indexOf(span);
     if (idx === -1) continue;
 
-    // Grammar chunks don't get colored but still advance the scan cursor.
-    if (chunk.category === "grammar") {
+    if (!chunkColors.has(ci)) {
+      // Grammar chunk — advance cursor, don't color.
       scanFrom = idx + span.length;
       continue;
     }
 
-    // Assign a fresh color to this content chunk (cycling through palette).
-    const colorIdx = colorCounter % CHUNK_COLORS;
-    colorMap.set(ci, colorIdx);
-    dataMap.set(ci, chunk);
-
-    // For english, strip leading articles ("the Admiral Benbow" → color only
-    // "Admiral Benbow"; "the" stays default-colored).
     let startOffset = 0;
     if (key === "english") {
       const words = span.split(/\s+/);
       let consumed = 0;
       for (const w of words) {
         if (NEUTRAL_LEADING.has(w.toLowerCase())) {
-          consumed += w.length + 1; // +1 for the space
-        } else {
-          break;
-        }
+          consumed += w.length + 1;
+        } else break;
       }
       startOffset = Math.min(consumed, span.length);
     }
@@ -97,17 +88,15 @@ function buildCoverage(text, alignment, key) {
       if (coverage[p] === null) coverage[p] = ci;
     }
     scanFrom = idx + span.length;
-    colorCounter++;
   }
 
-  return { coverage, colorMap, dataMap };
+  return coverage;
 }
 
 /**
- * Walk `text` with the coverage map and emit HTML, wrapping covered runs in
- * <span class="chunk" data-color data-cat data-freq ...> elements.
+ * Build colored HTML for one pair's target or english line.
  */
-function emitColored(text, { coverage, colorMap, dataMap }) {
+function emitColored(text, coverage, alignment, chunkColors) {
   let html = "";
   let p = 0;
   while (p < text.length) {
@@ -120,14 +109,13 @@ function emitColored(text, { coverage, colorMap, dataMap }) {
     } else {
       let end = p;
       while (end < text.length && coverage[end] === claim) end++;
-      const color = colorMap.get(claim) ?? 0;
-      const chunk = dataMap.get(claim) || {};
+      const color = chunkColors.get(claim);
+      const chunk = alignment[claim];
       const attrs = [
         `data-color="${color}"`,
         chunk.category ? `data-cat="${escape(chunk.category)}"` : "",
         chunk.frequency_band ? `data-freq="${escape(chunk.frequency_band)}"` : "",
         chunk.is_idiom ? `data-idiom="true"` : "",
-        `data-chunk-index="${claim}"`,
       ].filter(Boolean).join(" ");
       html += `<span class="chunk" ${attrs}>${escape(text.slice(p, end))}</span>`;
       p = end;
@@ -137,30 +125,41 @@ function emitColored(text, { coverage, colorMap, dataMap }) {
 }
 
 /**
- * Render one pair as two flowing text lines (pinyin row, english row) with
- * content-word chunks wrapped in colored spans. Punctuation flows naturally
- * because we use pair.target / pair.english as the source of truth.
+ * Render one page as TWO flowing paragraphs:
+ *   - pinyin paragraph: all clauses of the page concatenated
+ *   - english paragraph: all clauses concatenated underneath
+ *
+ * Color codes bind chunks across both languages. Clause boundaries are
+ * still visible because pair.target / pair.english already include their
+ * punctuation. This reads like a normal bilingual book paragraph rather
+ * than a stack of choppy two-line rows.
  */
-function renderPair(pair) {
-  const hasAlignment = Array.isArray(pair.alignment) && pair.alignment.length > 0;
+function renderPage(pairs) {
+  let colorOffset = 0;
+  const targetParts = [];
+  const englishParts = [];
 
-  if (!hasAlignment) {
-    return `
-      <div class="pair">
-        <p class="target">${escape(pair.target)}</p>
-        <p class="english">${escape(pair.english)}</p>
-      </div>
-    `;
+  for (const pair of pairs) {
+    if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
+      targetParts.push(escape(pair.target));
+      englishParts.push(escape(pair.english));
+      continue;
+    }
+    const { colors, count } = buildChunkColors(pair.alignment, colorOffset);
+    const tCov = buildCoverage(pair.target, pair.alignment, "target", colors);
+    const eCov = buildCoverage(pair.english, pair.alignment, "english", colors);
+    targetParts.push(emitColored(pair.target, tCov, pair.alignment, colors));
+    englishParts.push(emitColored(pair.english, eCov, pair.alignment, colors));
+    colorOffset += count;
   }
 
-  const targetCov = buildCoverage(pair.target, pair.alignment, "target");
-  const englishCov = buildCoverage(pair.english, pair.alignment, "english");
-
+  // Join clauses with a single space; punctuation already inside the clauses
+  // creates the natural breaks. Browser collapses whitespace appropriately.
   return `
-    <div class="pair">
-      <p class="target">${emitColored(pair.target, targetCov)}</p>
-      <p class="english">${emitColored(pair.english, englishCov)}</p>
-    </div>
+    <section class="reader-page">
+      <p class="target">${targetParts.join(" ")}</p>
+      <p class="english">${englishParts.join(" ")}</p>
+    </section>
   `;
 }
 
@@ -179,11 +178,10 @@ function renderChapter(chapter, perPage) {
 
   // Content pages.
   const chunks = chunkPairs(chapter.pairs, perPage);
-  for (const chunk of chunks) {
-    const page = document.createElement("section");
-    page.className = "reader-page";
-    page.innerHTML = chunk.map(renderPair).join("");
-    container.appendChild(page);
+  for (const pageChunk of chunks) {
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = renderPage(pageChunk);
+    container.appendChild(wrapper.firstElementChild);
   }
 
   _state.pagesCount = 1 + chunks.length;
