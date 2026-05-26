@@ -31,6 +31,7 @@ content/
       },
       "author": "Robert Louis Stevenson",
       "synopsis": "A boy's coming-of-age adventure aboard a ship hunting buried gold. Narrated by young Jim Hawkins, who finds a treasure map among a dead pirate's belongings.",
+      "genres": ["adventure", "classic", "coming of age", "young adult"],
       "cover": "books/treasure-island/cover.svg",
       "chapters": [
         {

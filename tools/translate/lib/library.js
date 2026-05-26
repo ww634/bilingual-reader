@@ -53,6 +53,7 @@ export function upsertBook(library, bookEntry) {
   if (bookEntry.synopsis !== undefined) existing.synopsis = bookEntry.synopsis;
   if (bookEntry.cover) existing.cover = bookEntry.cover;
   if (bookEntry.language) existing.language = bookEntry.language;
+  if (Array.isArray(bookEntry.genres)) existing.genres = bookEntry.genres;
 
   // Merge chapters
   let chaptersAdded = 0, chaptersUpdated = 0;

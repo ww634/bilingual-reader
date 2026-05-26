@@ -279,6 +279,7 @@ async function main() {
     title: { target: bookTitleResult.target, english: bookTitle },
     author: bookAuthor === "(unknown author)" ? "" : bookAuthor,
     synopsis: analysis.book.book_synopsis || "",
+    genres: Array.isArray(analysis.book.genres) ? analysis.book.genres : [],
     chapters: chapterEntries,
   };
   if (coverRel) bookEntry.cover = coverRel;

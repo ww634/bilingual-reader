@@ -82,7 +82,7 @@
       <ul id="browse-list" class="book-list"></ul>
     </main>
 
-    <!-- BOOK DETAIL (cover, synopsis, chapter list) -->
+    <!-- BOOK DETAIL (cover, synopsis, progress, chapter list) -->
     <main id="view-book-detail" class="view" hidden>
       <div class="book-detail-hero">
         <div id="book-detail-cover" class="book-detail-cover"></div>
@@ -90,8 +90,24 @@
           <h2 id="book-detail-title" class="book-detail-title"></h2>
           <p id="book-detail-target" class="book-detail-target"></p>
           <p id="book-detail-author" class="book-detail-author"></p>
+          <div id="book-detail-genres" class="book-detail-genres"></div>
         </div>
       </div>
+
+      <div id="book-detail-progress" class="book-progress" hidden>
+        <div class="book-progress-bar">
+          <div id="book-detail-progress-fill" class="book-progress-fill"></div>
+        </div>
+        <div class="book-progress-meta">
+          <span id="book-detail-progress-summary"></span>
+          <span id="book-detail-progress-pct"></span>
+        </div>
+      </div>
+
+      <div class="book-detail-cta">
+        <button id="book-detail-continue" class="btn-primary btn-block"></button>
+      </div>
+
       <p id="book-detail-synopsis" class="book-detail-synopsis"></p>
       <div class="book-detail-section-label">Chapters</div>
       <ul id="book-detail-chapters" class="chapter-list"></ul>

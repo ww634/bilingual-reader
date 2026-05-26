@@ -29,6 +29,7 @@ Your job:
 5. For each chapter, give: chapter_number (1-based across the whole book if you can tell, otherwise sequential), english_title, and a 1-2 sentence synopsis in English. Suggest a kebab-case "id_suggestion" like "ch-1" or "ch-3" — DO NOT prefix with the book id, that gets added later.
 6. Suggest a "book_id_suggestion" — kebab-case slug of the book title (e.g. "treasure-island", "the-hobbit", "winding-paths"). No author prefix.
 7. Provide a "book_synopsis" — 1-3 sentences in English summarising the whole book if you can identify it. If you can't, return null.
+8. Provide "genres" — 3-6 short, lowercase, friendly tags describing the book (e.g. "adventure", "classic", "coming of age", "fantasy", "historical", "romance", "literary fiction", "sci-fi", "thriller", "young adult", "memoir"). Words separated by spaces. Avoid hyphens. If you can't infer the genre, return an empty array.
 
 Quality rules:
 - start_marker MUST be present verbatim in the input. Copy it character-for-character from a contiguous span at the section's opening.
@@ -48,13 +49,18 @@ const RESPONSE_SCHEMA = {
         author: { type: "string", description: "Author display name. Empty string if unknown." },
         book_id_suggestion: { type: "string", description: "Kebab-case slug for the book id." },
         book_synopsis: { type: ["string", "null"], description: "1-3 sentence summary, English. null if you can't infer it." },
+        genres: {
+          type: "array",
+          items: { type: "string" },
+          description: "3-6 short lowercase genre tags (e.g. ['adventure', 'classic']). Empty array if unknown.",
+        },
         looks_like: {
           type: "string",
           enum: ["front_matter_only", "single_chapter", "partial_book", "complete_book"],
           description: "What this file appears to contain.",
         },
       },
-      required: ["english_title", "author", "book_id_suggestion", "book_synopsis", "looks_like"],
+      required: ["english_title", "author", "book_id_suggestion", "book_synopsis", "genres", "looks_like"],
     },
     sections: {
       type: "array",

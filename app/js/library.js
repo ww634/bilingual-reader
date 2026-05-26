@@ -8,6 +8,7 @@ import {
   putChapter,
   deleteChapter,
   getChapter,
+  getProgress,
   chapterKey,
 } from "./db.js";
 
@@ -211,6 +212,7 @@ async function downloadBook(catalogEntry, btn) {
       title: catalogEntry.title,
       author: catalogEntry.author || "",
       synopsis: catalogEntry.synopsis || "",
+      genres: Array.isArray(catalogEntry.genres) ? catalogEntry.genres : [],
       chapters: catalogEntry.chapters.map((c) => ({
         id: c.id,
         version: c.version,
@@ -236,15 +238,94 @@ async function downloadBook(catalogEntry, btn) {
   }
 }
 
+/* ============ BOOK DETAIL helpers ============ */
+
+/**
+ * For a downloaded book, compute reading progress aggregated across chapters.
+ * Returns:
+ *   {
+ *     totalPages, currentPosition, pct,
+ *     totalChapters, currentChapterIndex,
+ *     lastReadChapterId, lastReadPage, lastReadTime,
+ *     chapterProgress: Map<chapterId, { lastPage, totalPages, updatedAt }>
+ *   }
+ *
+ * Returns null if the book isn't downloaded.
+ */
+async function computeBookProgress(book) {
+  if (!book || !book.chapters) return null;
+  const settings = await getSettings();
+  const perPage = settings.pairsPerPage || 7;
+  let totalPages = 0;
+  let lastReadChapterId = null;
+  let lastReadPage = 0;
+  let lastReadTime = "";
+  const chapterProgress = new Map();
+  const chapterPagesById = new Map();
+
+  for (const chMeta of book.chapters) {
+    const chapter = await getChapter(book.id, chMeta.id);
+    if (!chapter) { chapterPagesById.set(chMeta.id, 0); continue; }
+    // Pages = 1 (title page) + ceil(pairs / perPage)
+    const chPages = 1 + Math.max(1, Math.ceil(chapter.pairs.length / perPage));
+    chapterPagesById.set(chMeta.id, chPages);
+    totalPages += chPages;
+
+    const prog = await getProgress(book.id, chMeta.id);
+    if (prog) {
+      chapterProgress.set(chMeta.id, {
+        lastPage: prog.lastPage,
+        totalPages: chPages,
+        updatedAt: prog.updatedAt,
+      });
+      if (!lastReadTime || prog.updatedAt > lastReadTime) {
+        lastReadTime = prog.updatedAt;
+        lastReadChapterId = chMeta.id;
+        lastReadPage = prog.lastPage;
+      }
+    }
+  }
+
+  // Find the position in the book at the user's furthest-read chapter.
+  // We compute "currentPosition" as pages-before-active-chapter + lastReadPage + 1.
+  let currentPosition = 1;
+  let currentChapterIndex = 0;
+  if (lastReadChapterId) {
+    for (let i = 0; i < book.chapters.length; i++) {
+      const ch = book.chapters[i];
+      if (ch.id === lastReadChapterId) {
+        currentChapterIndex = i;
+        currentPosition += lastReadPage;
+        break;
+      }
+      currentPosition += chapterPagesById.get(ch.id) || 0;
+    }
+  }
+
+  const pct = totalPages > 0 ? Math.min(100, Math.round((currentPosition / totalPages) * 100)) : 0;
+
+  return {
+    totalPages,
+    currentPosition,
+    pct,
+    totalChapters: book.chapters.length,
+    currentChapterIndex,
+    lastReadChapterId,
+    lastReadPage,
+    lastReadTime,
+    chapterProgress,
+  };
+}
+
 /* ============ BOOK DETAIL (chapter picker) ============ */
 
-export function openBookDetail(bookId) {
+export async function openBookDetail(bookId) {
   state.selectedBookId = bookId;
-  renderBookDetail();
+  await renderBookDetail();
   window.dispatchEvent(new CustomEvent("nav:bookDetail", { detail: { id: bookId } }));
 }
 
-export function renderBookDetail() {
+export async function renderBookDetail() {
   const book = state.downloadedBooks.get(state.selectedBookId)
     || (state.catalog?.books || []).find((b) => b.id === state.selectedBookId);
   if (!book) return;
@@ -270,22 +351,98 @@ export function renderBookDetail() {
   }
 
   // Header text
-  $("book-detail-title").textContent = book.title?.english || book.id;
+  const englishTitle = book.title?.english || book.id;
+  $("book-detail-title").textContent = englishTitle;
   $("book-detail-target").textContent = book.title?.target || "";
   $("book-detail-author").textContent = book.author || "";
   $("book-detail-synopsis").textContent = book.synopsis || "";
+  // Topbar reflects the book name while on this screen.
+  const topTitle = document.getElementById("title");
+  if (topTitle && document.body.dataset.view !== "reader") topTitle.textContent = englishTitle;
 
-  // Chapter list
+  // Genre pills
+  const genresEl = $("book-detail-genres");
+  genresEl.innerHTML = "";
+  const genres = Array.isArray(book.genres) ? book.genres : [];
+  for (const g of genres) {
+    const pill = document.createElement("span");
+    pill.className = "genre-pill";
+    pill.textContent = g;
+    genresEl.appendChild(pill);
+  }
+
+  // Progress + Continue button. Only meaningful if the book is downloaded.
+  const progressEl = $("book-detail-progress");
+  const progressFill = $("book-detail-progress-fill");
+  const progressSummary = $("book-detail-progress-summary");
+  const progressPct = $("book-detail-progress-pct");
+  const continueBtn = $("book-detail-continue");
+
+  let firstChapterId = book.chapters?.[0]?.id || null;
+  let resumeChapterId = firstChapterId;
+
+  if (isDownloaded) {
+    const p = await computeBookProgress(book);
+    const hasStarted = !!p?.lastReadChapterId;
+    if (hasStarted && p.totalPages > 0) {
+      progressEl.hidden = false;
+      progressFill.style.width = `${p.pct}%`;
+      const chLabel = `Chapter ${p.currentChapterIndex + 1} of ${p.totalChapters}`;
+      const pgLabel = `· Page ${p.currentPosition} of ${p.totalPages}`;
+      progressSummary.textContent = `${chLabel} ${pgLabel}`;
+      progressPct.textContent = `${p.pct}%`;
+      resumeChapterId = p.lastReadChapterId;
+    } else {
+      progressEl.hidden = true;
+    }
+
+    if (continueBtn) {
+      continueBtn.textContent = hasStarted ? "Continue reading" : "Start reading";
+      continueBtn.disabled = !resumeChapterId;
+      continueBtn.onclick = () => {
+        if (!resumeChapterId) return;
+        window.dispatchEvent(new CustomEvent("nav:reader", {
+          detail: { bookId: book.id, chapterId: resumeChapterId },
+        }));
+      };
+      continueBtn.parentElement.hidden = false;
+    }
+  } else {
+    progressEl.hidden = true;
+    if (continueBtn) continueBtn.parentElement.hidden = true;
+  }
+
+  // Chapter list with per-chapter status indicators
   const list = $("book-detail-chapters");
   list.innerHTML = "";
   const chapters = book.chapters || [];
+
+  let perChapterProgress = null;
+  if (isDownloaded) {
+    const p = await computeBookProgress(book);
+    perChapterProgress = p?.chapterProgress || new Map();
+  }
+
   for (const ch of chapters) {
     const li = document.createElement("li");
     li.className = "chapter-row";
+
+    // Per-chapter status badge: read (last page) / in-progress / unread
+    let statusHtml = "";
+    if (perChapterProgress && perChapterProgress.has(ch.id)) {
+      const cp = perChapterProgress.get(ch.id);
+      if (cp.lastPage + 1 >= cp.totalPages) {
+        statusHtml = `<span class="chapter-status done">finished</span>`;
+      } else {
+        statusHtml = `<span class="chapter-status reading">page ${cp.lastPage + 1} / ${cp.totalPages}</span>`;
+      }
+    }
+
     li.innerHTML = `
       <div class="chapter-info">
         <div class="chapter-title">${escape(ch.title?.english || ch.id)}</div>
         <div class="chapter-target">${escape(ch.title?.target || "")}</div>
+        ${statusHtml}
       </div>
       <span class="chapter-chev">›</span>
     `;
