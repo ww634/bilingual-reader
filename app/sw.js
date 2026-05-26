@@ -1,7 +1,7 @@
 // Service worker — caches the app shell only.
 // Chapter content is stored in IndexedDB by the app, not here.
 
-const SHELL_CACHE = "reader-shell-v4";
+const SHELL_CACHE = "reader-shell-v5";
 const SHELL_FILES = [
   "./",
   "./index.html",

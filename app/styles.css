@@ -628,22 +628,71 @@ body {
   color: var(--text-dim);
   font-style: italic;
 }
-.pair { margin-bottom: var(--pair-gap); }
+/* Pair = a horizontal row of chunks. Each chunk is one tap target + one
+   color-codable visual unit, with pinyin stacked above its English
+   counterpart. Chunks flow inline and wrap together so a Chinese word
+   is never broken across lines. */
+.pair {
+  margin-bottom: var(--pair-gap);
+  line-height: 1.25;
+  word-spacing: 0;
+}
 .pair:last-child { margin-bottom: 0; }
-.pair .target {
+
+.chunk {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 6px 8px 0;
+  padding: 1px 2px 2px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 100ms ease;
+}
+.chunk:active { background-color: rgba(255,255,255,0.06); }
+.chunk .target {
+  display: block;
   font-weight: 700;
   font-size: var(--reader-font);
-  line-height: var(--reader-line);
-  margin: 0 0 var(--within-pair-gap);
   letter-spacing: -0.005em;
+  white-space: nowrap;
+  margin-bottom: 1px;
 }
-.pair .english {
+.chunk .english {
+  display: block;
   font-weight: 400;
-  font-size: var(--reader-font);
-  line-height: var(--reader-line);
+  font-size: calc(var(--reader-font) * 0.85);
   color: var(--text-dim);
-  margin: 0;
+  white-space: nowrap;
 }
+
+/* Fallback for pairs without alignment data: render as one big chunk that
+   wraps normally (like the old reader layout). */
+.pair-plain .chunk-plain {
+  display: block;
+  margin-right: 0;
+  cursor: default;
+  border-bottom: none;
+}
+.pair-plain .chunk-plain:active { background-color: transparent; }
+.pair-plain .chunk-plain .target,
+.pair-plain .chunk-plain .english {
+  white-space: normal;
+}
+.pair-plain .chunk-plain .english {
+  font-size: var(--reader-font);
+}
+
+/* Color palette for chunks. Subtle underline (border-bottom) ties pinyin and
+   English together visually without compromising readability on dark theme.
+   Cycled per pair by chunk index (data-color="0"..."6"). */
+.chunk[data-color="0"] { border-bottom: 2px solid rgba(125, 211, 252, 0.65); }  /* sky    */
+.chunk[data-color="1"] { border-bottom: 2px solid rgba(253, 186, 116, 0.65); }  /* orange */
+.chunk[data-color="2"] { border-bottom: 2px solid rgba(134, 239, 172, 0.65); }  /* green  */
+.chunk[data-color="3"] { border-bottom: 2px solid rgba(196, 181, 253, 0.65); }  /* purple */
+.chunk[data-color="4"] { border-bottom: 2px solid rgba(249, 168, 212, 0.65); }  /* pink   */
+.chunk[data-color="5"] { border-bottom: 2px solid rgba(253, 224, 71, 0.65); }   /* yellow */
+.chunk[data-color="6"] { border-bottom: 2px solid rgba(103, 232, 249, 0.65); }  /* cyan   */
 #reader-footer {
   position: absolute;
   bottom: 0;

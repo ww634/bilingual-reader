@@ -12,6 +12,11 @@ let _state = {
   saveTimer: null,
 };
 
+// Color palette for chunk color-coding. Soft pastels that sit well on a dark
+// background. Cycled per pair (resets every clause so colors stay distinct
+// within the immediate reading window).
+const CHUNK_COLORS = 7;
+
 function escape(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -24,6 +29,47 @@ function chunkPairs(pairs, perPage) {
     out.push(pairs.slice(i, i + perPage));
   }
   return out;
+}
+
+/**
+ * Render a single pair as a row of interlinear chunks.
+ *
+ * Each chunk is an inline-block with pinyin on top and English directly under.
+ * Wrapping happens between chunks (not inside a Chinese word) so pinyin/English
+ * coupling is always preserved.
+ *
+ * For pairs without alignment data, the whole clause is rendered as one big
+ * chunk (no color, no per-word tap).
+ */
+function renderPair(pair) {
+  const hasAlignment = Array.isArray(pair.alignment) && pair.alignment.length > 0;
+
+  if (!hasAlignment) {
+    // Fallback: single chunk, normal wrapping.
+    return `
+      <div class="pair pair-plain">
+        <span class="chunk chunk-plain">
+          <span class="target">${escape(pair.target)}</span>
+          <span class="english">${escape(pair.english)}</span>
+        </span>
+      </div>
+    `;
+  }
+
+  const chunksHtml = pair.alignment.map((c, i) => {
+    const colorIdx = i % CHUNK_COLORS;
+    const cat = c.category ? ` data-cat="${escape(c.category)}"` : "";
+    const freq = c.frequency_band ? ` data-freq="${escape(c.frequency_band)}"` : "";
+    const idiom = c.is_idiom ? " data-idiom=\"true\"" : "";
+    return `
+      <span class="chunk" data-color="${colorIdx}"${cat}${freq}${idiom}>
+        <span class="target">${escape(c.target)}</span>
+        <span class="english">${escape(c.english)}</span>
+      </span>
+    `;
+  }).join("");
+
+  return `<div class="pair">${chunksHtml}</div>`;
 }
 
 function renderChapter(chapter, perPage) {
@@ -44,12 +90,7 @@ function renderChapter(chapter, perPage) {
   for (const chunk of chunks) {
     const page = document.createElement("section");
     page.className = "reader-page";
-    page.innerHTML = chunk.map((p) => `
-      <div class="pair">
-        <p class="target">${escape(p.target)}</p>
-        <p class="english">${escape(p.english)}</p>
-      </div>
-    `).join("");
+    page.innerHTML = chunk.map(renderPair).join("");
     container.appendChild(page);
   }
 
@@ -85,10 +126,6 @@ function handleScroll() {
   }, 300);
 }
 
-/**
- * Open a chapter by composite (bookId, chapterId).
- * Returns true on success, false if the chapter isn't downloaded.
- */
 export async function openReader(bookId, chapterId) {
   const chapter = await getChapter(bookId, chapterId);
   if (!chapter) {
