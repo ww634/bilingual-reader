@@ -49,10 +49,21 @@ export function initSettings() {
   });
 
   els.clearBtn().addEventListener("click", async () => {
-    if (!confirm("Delete all downloaded chapters, progress, and settings?")) return;
+    if (!confirm("Delete all downloaded chapters, progress, settings, AND force-refresh the app code?")) return;
+    // 1) Wipe IndexedDB
     await clearAll();
-    window.dispatchEvent(new CustomEvent("settings:cleared"));
-    await loadSettingsIntoUI();
+    // 2) Wipe service worker caches (so updated CSS/JS gets pulled next launch)
+    if (window.caches) {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((k) => caches.delete(k)));
+    }
+    // 3) Unregister the service worker so a fresh one installs
+    if (navigator.serviceWorker) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map((r) => r.unregister()));
+    }
+    // 4) Hard reload — bypass any in-flight cached responses.
+    location.reload();
   });
 
   window.addEventListener("online", updateOnlineStatus);
