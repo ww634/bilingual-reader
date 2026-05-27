@@ -32,31 +32,55 @@ function chunkPairs(pairs, perPage) {
 
 /**
  * For each chunk in pair.alignment, find its target span [start, end) and
- * its english span [start, end) inside pair.target / pair.english using a
- * left-to-right cursor (chunks are in target order).
+ * its english span [start, end) inside pair.target / pair.english.
  *
- * Failed lookups: targetStart === -1 means the chunk's target couldn't be
- * located after the cursor; english similarly. Such chunks contribute no
- * coloring but do not block rendering.
+ * Locates each chunk INDEPENDENTLY (not with a left-to-right scanner) so
+ * the function works whether the LLM gave chunks in target order or in
+ * english reading order. The buildPinyinHtml caller is responsible for
+ * sorting by target position before emission.
+ *
+ * Duplicate-target handling: when a chunk's target string appears multiple
+ * times in pair.target, we greedily assign each chunk to the earliest
+ * unclaimed occurrence (processing chunks in alignment array order).
  */
 function findChunkPositions(pair) {
-  let scanT = 0, scanE = 0;
+  // Track which character positions are already claimed for target and english.
+  const claimedTarget = new Set();
+  const claimedEnglish = new Set();
+
+  const findFirstUnclaimed = (text, needle, claimed) => {
+    if (!needle) return -1;
+    let from = 0;
+    while (from <= text.length - needle.length) {
+      const idx = text.indexOf(needle, from);
+      if (idx === -1) return -1;
+      // Check if any position in [idx, idx+len) is already claimed.
+      let collision = false;
+      for (let p = idx; p < idx + needle.length; p++) {
+        if (claimed.has(p)) { collision = true; break; }
+      }
+      if (!collision) return idx;
+      from = idx + 1;
+    }
+    return -1;
+  };
+
   return pair.alignment.map((chunk) => {
     let tStart = -1, tEnd = -1, eStart = -1, eEnd = -1;
     if (chunk.target) {
-      const idx = pair.target.indexOf(chunk.target, scanT);
+      const idx = findFirstUnclaimed(pair.target, chunk.target, claimedTarget);
       if (idx !== -1) {
         tStart = idx;
         tEnd = idx + chunk.target.length;
-        scanT = tEnd;
+        for (let p = tStart; p < tEnd; p++) claimedTarget.add(p);
       }
     }
     if (chunk.english) {
-      const idx = pair.english.indexOf(chunk.english, scanE);
+      const idx = findFirstUnclaimed(pair.english, chunk.english, claimedEnglish);
       if (idx !== -1) {
         eStart = idx;
         eEnd = idx + chunk.english.length;
-        scanE = eEnd;
+        for (let p = eStart; p < eEnd; p++) claimedEnglish.add(p);
       }
     }
     return { tStart, tEnd, eStart, eEnd };
@@ -186,11 +210,18 @@ function buildPinyinHtml(pairs) {
     }
 
     const positions = findChunkPositions(pair);
-    let cursor = 0;
 
-    for (let chunkIdx = 0; chunkIdx < pair.alignment.length; chunkIdx++) {
-      const pos = positions[chunkIdx];
-      if (pos.tStart === -1) continue;
+    // Build a list of [original chunkIdx, position] and sort by target start.
+    // The LLM is supposed to give chunks in target order but sometimes gives
+    // english order instead; we sort defensively so emission works regardless.
+    const ordered = positions
+      .map((pos, idx) => ({ idx, pos }))
+      .filter((x) => x.pos.tStart !== -1)
+      .sort((a, b) => a.pos.tStart - b.pos.tStart);
+
+    let cursor = 0;
+    for (const { idx: chunkIdx, pos } of ordered) {
+      if (pos.tStart < cursor) continue; // overlap — skip (shouldn't happen with claim-based finder)
 
       if (pos.tStart > cursor) {
         pushUncoveredText(parts, pair.target.slice(cursor, pos.tStart));
