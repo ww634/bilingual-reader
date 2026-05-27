@@ -666,15 +666,16 @@ body {
 }
 .chunk:active { background-color: rgba(255, 255, 255, 0.08); }
 
-/* Color palette: pinyin and English in the same chunk share a hue, so a
-   chunk's mapping is visible regardless of word order. */
-.chunk[data-color="0"] { color: #7dd3fc; }  /* sky    */
-.chunk[data-color="1"] { color: #fdba74; }  /* orange */
-.chunk[data-color="2"] { color: #86efac; }  /* green  */
-.chunk[data-color="3"] { color: #c4b5fd; }  /* purple */
-.chunk[data-color="4"] { color: #f9a8d4; }  /* pink   */
-.chunk[data-color="5"] { color: #fde68a; }  /* yellow */
-.chunk[data-color="6"] { color: #67e8f9; }  /* cyan   */
+/* Color palette by PART OF SPEECH. Each category gets a consistent hue so
+   the reader builds intuition: blue = noun, red = verb, etc. Pinyin and
+   English in the same chunk share the category color via data-cat. */
+.chunk[data-cat="noun"]        { color: #7dd3fc; }  /* sky blue   — things   */
+.chunk[data-cat="verb"]        { color: #fca5a5; }  /* coral      — actions  */
+.chunk[data-cat="adjective"]   { color: #86efac; }  /* green      — modifies */
+.chunk[data-cat="adverb"]      { color: #fde68a; }  /* yellow     — modifies */
+.chunk[data-cat="idiom"]       { color: #c4b5fd; }  /* purple     — fixed    */
+.chunk[data-cat="proper_noun"] { color: #fdba74; }  /* orange     — names    */
+/* Grammar (the/a/of/at/particles) inherits the default text/dim colors. */
 #reader-footer {
   position: absolute;
   bottom: 0;

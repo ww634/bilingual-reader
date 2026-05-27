@@ -12,7 +12,6 @@ let _state = {
   saveTimer: null,
 };
 
-const CHUNK_COLORS = 7;
 const NEUTRAL_LEADING = new Set(["the", "a", "an"]);
 
 // Pinyin character budget per visual line. Used to decide block breaks.
@@ -34,18 +33,7 @@ function chunkPairs(pairs, perPage) {
   return out;
 }
 
-function buildChunkColors(alignment, colorOffset) {
-  const colors = new Map();
-  let counter = 0;
-  for (let i = 0; i < alignment.length; i++) {
-    if (alignment[i].category === "grammar") continue;
-    colors.set(i, (colorOffset + counter) % CHUNK_COLORS);
-    counter++;
-  }
-  return { colors, count: counter };
-}
-
-function buildCoverage(text, alignment, key, chunkColors) {
+function buildCoverage(text, alignment, key) {
   const coverage = new Array(text.length).fill(null);
   let scanFrom = 0;
   for (let ci = 0; ci < alignment.length; ci++) {
@@ -55,7 +43,11 @@ function buildCoverage(text, alignment, key, chunkColors) {
     let idx = text.indexOf(span, scanFrom);
     if (idx === -1) idx = text.indexOf(span);
     if (idx === -1) continue;
-    if (!chunkColors.has(ci)) { scanFrom = idx + span.length; continue; }
+    // Grammar chunks don't get colored (CSS will leave them default-colored).
+    if (chunk.category === "grammar") {
+      scanFrom = idx + span.length;
+      continue;
+    }
     let startOffset = 0;
     if (key === "english") {
       const words = span.split(/\s+/);
@@ -74,7 +66,7 @@ function buildCoverage(text, alignment, key, chunkColors) {
   return coverage;
 }
 
-function emitColoredSlice(text, coverage, alignment, chunkColors, start, end) {
+function emitColoredSlice(text, coverage, alignment, start, end) {
   let html = "";
   let p = start;
   while (p < end) {
@@ -87,10 +79,8 @@ function emitColoredSlice(text, coverage, alignment, chunkColors, start, end) {
     } else {
       let stop = p;
       while (stop < end && coverage[stop] === claim) stop++;
-      const color = chunkColors.get(claim);
       const chunk = alignment[claim];
       const attrs = [
-        `data-color="${color}"`,
         chunk.category ? `data-cat="${escape(chunk.category)}"` : "",
         chunk.frequency_band ? `data-freq="${escape(chunk.frequency_band)}"` : "",
         chunk.is_idiom ? `data-idiom="true"` : "",
@@ -116,7 +106,6 @@ function emitColoredSlice(text, coverage, alignment, chunkColors, start, end) {
 function renderPage(pairs) {
   const blocks = [];
   let current = { pinyinSegments: [], englishSegments: [], charCount: 0 };
-  let colorOffset = 0;
 
   function flush() {
     if (current.charCount > 0 || current.englishSegments.length > 0) {
@@ -135,12 +124,10 @@ function renderPage(pairs) {
       targetHtml = escape(pair.target);
       englishHtml = escape(pair.english);
     } else {
-      const { colors, count } = buildChunkColors(pair.alignment, colorOffset);
-      colorOffset += count;
-      const tCov = buildCoverage(pair.target, pair.alignment, "target", colors);
-      const eCov = buildCoverage(pair.english, pair.alignment, "english", colors);
-      targetHtml = emitColoredSlice(pair.target, tCov, pair.alignment, colors, 0, pair.target.length);
-      englishHtml = emitColoredSlice(pair.english, eCov, pair.alignment, colors, 0, pair.english.length);
+      const tCov = buildCoverage(pair.target, pair.alignment, "target");
+      const eCov = buildCoverage(pair.english, pair.alignment, "english");
+      targetHtml = emitColoredSlice(pair.target, tCov, pair.alignment, 0, pair.target.length);
+      englishHtml = emitColoredSlice(pair.english, eCov, pair.alignment, 0, pair.english.length);
     }
 
     const pairLen = pair.target.length;
