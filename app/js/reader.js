@@ -182,11 +182,12 @@ function emitEnglishSlice(pair, coverage, start, end) {
 
 /**
  * Emit uncovered text (text between chunks, or trailing punctuation). Each
- * word becomes its own <span class="seg uncov"> (nowrap), and whitespace
- * between words becomes a plain text node — the ONLY allowable line-break
- * points. This guarantees no word ever splits across lines.
+ * WORD becomes its own <span class="seg uncov" data-pair> (nowrap) — these
+ * are tappable in the reader so users can look up function words / "added"
+ * words that the alignment didn't cover. Whitespace and pure punctuation
+ * stay as plain text nodes (the only line-break points, and not tappable).
  */
-function pushUncoveredText(parts, txt) {
+function pushUncoveredText(parts, txt, pairIdx) {
   if (!txt) return;
   // Split into runs of whitespace and runs of non-whitespace.
   const tokens = txt.split(/(\s+)/);
@@ -194,8 +195,12 @@ function pushUncoveredText(parts, txt) {
     if (!tok) continue;
     if (/^\s+$/.test(tok)) {
       parts.push(escape(tok));
+    } else if (!/[a-zA-ZāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜĀÁǍÀĒÉĚÈĪÍǏÌŌÓǑÒŪÚǓÙǕǗǙǛ]/.test(tok)) {
+      // Pure punctuation/symbols — emit as plain text, not a tap target.
+      parts.push(escape(tok));
     } else {
-      parts.push(`<span class="seg uncov">${escape(tok)}</span>`);
+      const pairAttr = Number.isFinite(pairIdx) ? ` data-pair="${pairIdx}"` : "";
+      parts.push(`<span class="seg uncov"${pairAttr}>${escape(tok)}</span>`);
     }
   }
 }
@@ -219,7 +224,7 @@ function buildPinyinHtml(pairs) {
     const pair = pairs[pairIdx];
 
     if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
-      pushUncoveredText(parts, pair.target);
+      pushUncoveredText(parts, pair.target, pairIdx);
       if (pairIdx < pairs.length - 1) parts.push(" ");
       continue;
     }
@@ -239,7 +244,7 @@ function buildPinyinHtml(pairs) {
       if (pos.tStart < cursor) continue; // overlap — skip (shouldn't happen with claim-based finder)
 
       if (pos.tStart > cursor) {
-        pushUncoveredText(parts, pair.target.slice(cursor, pos.tStart));
+        pushUncoveredText(parts, pair.target.slice(cursor, pos.tStart), pairIdx);
       }
 
       const chunk = pair.alignment[chunkIdx];
@@ -264,7 +269,7 @@ function buildPinyinHtml(pairs) {
     }
 
     if (cursor < pair.target.length) {
-      pushUncoveredText(parts, pair.target.slice(cursor));
+      pushUncoveredText(parts, pair.target.slice(cursor), pairIdx);
     }
 
     if (pairIdx < pairs.length - 1) {
@@ -557,38 +562,59 @@ function handleScroll() {
 }
 
 /**
- * Click handler: when the user taps a colored chunk in the reader, open
- * the tap-to-learn popover. Uses event delegation on the pages container.
+ * Click handler: when the user taps any word in the reader (colored chunk
+ * OR uncovered word), open the tap-to-learn popover. Pure punctuation and
+ * whitespace aren't tappable (they're plain text nodes, not spans).
+ *
+ * For chunks: full data from the alignment (english, category, freq).
+ * For uncov words: just the word itself + pair context — popover gracefully
+ *   hides missing fields. "See explanation" still works (asks AI for help).
  */
 function handleChunkTap(event) {
-  const chunkEl = event.target.closest(".chunk");
-  if (!chunkEl) return;
-  // Only chunks inside .reader-block targets — ignore the title page.
-  if (!chunkEl.closest(".reader-block")) return;
-  // Skip grammar chunks (they're not really "tap to learn" candidates).
-  const cat = chunkEl.dataset.cat;
-  if (cat === "grammar") return;
+  const segEl = event.target.closest(".seg");
+  if (!segEl) return;
+  // Only spans inside .reader-block targets — ignore the title page.
+  if (!segEl.closest(".reader-block")) return;
 
-  const uid = chunkEl.dataset.uid; // "p<pairIdx>c<chunkIdx>"
-  if (!uid) return;
-  const m = uid.match(/^p(\d+)c(\d+)$/);
-  if (!m) return;
-  const pairIdx = parseInt(m[1], 10);
-  const chunkIdx = parseInt(m[2], 10);
+  const isChunk = segEl.classList.contains("chunk");
+  if (isChunk) {
+    const uid = segEl.dataset.uid; // "p<pairIdx>c<chunkIdx>"
+    const m = uid && uid.match(/^p(\d+)c(\d+)$/);
+    if (!m) return;
+    const pairIdx = parseInt(m[1], 10);
+    const chunkIdx = parseInt(m[2], 10);
 
-  const pair = _state.chapter?.pairs?.[pairIdx];
-  const align = pair?.alignment?.[chunkIdx];
-  if (!align) return;
+    const pair = _state.chapter?.pairs?.[pairIdx];
+    const align = pair?.alignment?.[chunkIdx];
+    if (!align) return;
 
+    openPopover(
+      {
+        target: align.target,
+        english: align.english,
+        category: align.category,
+        frequency_band: align.frequency_band,
+        is_idiom: align.is_idiom,
+        pairIdx,
+        chunkIdx,
+      },
+      _state.chapter
+    );
+    return;
+  }
+
+  // Uncov span — tap on an uncovered word (function word, particle, etc).
+  const pairIdx = parseInt(segEl.dataset.pair, 10);
+  if (!Number.isFinite(pairIdx)) return;
   openPopover(
     {
-      target: align.target,
-      english: align.english,
-      category: align.category,
-      frequency_band: align.frequency_band,
-      is_idiom: align.is_idiom,
+      target: segEl.textContent.trim(),
+      english: "",
+      category: null,
+      frequency_band: null,
+      is_idiom: false,
       pairIdx,
-      chunkIdx,
+      chunkIdx: null,
     },
     _state.chapter
   );

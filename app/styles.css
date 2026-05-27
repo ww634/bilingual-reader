@@ -688,14 +688,18 @@ body {
   margin: 0;
 }
 
-/* Chunk = a colored content-word span. Tappable for Feature 4. */
-.chunk {
+/* All .seg spans (chunks AND uncov words) are tappable for tap-to-learn. */
+.chunk,
+.reader-block > p.target .seg.uncov {
   cursor: pointer;
   border-radius: 3px;
   padding: 0 1px;
   transition: background-color 100ms ease;
 }
-.chunk:active { background-color: rgba(255, 255, 255, 0.08); }
+.chunk:active,
+.reader-block > p.target .seg.uncov:active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
 
 /* Color palette by PART OF SPEECH. Each category gets a consistent hue so
    the reader builds intuition: blue = noun, red = verb, etc. Pinyin and

@@ -51,7 +51,14 @@ export function openPopover(chunkData, chapter) {
 
   // Populate pre-baked fields.
   $("popover-target").textContent = chunkData.target;
-  $("popover-english").textContent = chunkData.english || "";
+  const englishEl = $("popover-english");
+  if (chunkData.english) {
+    englishEl.textContent = chunkData.english;
+    englishEl.hidden = false;
+  } else {
+    englishEl.textContent = "(no direct translation — tap “See explanation”)";
+    englishEl.hidden = false;
+  }
 
   // Tags (category, frequency, idiom).
   const tagsEl = $("popover-tags");
