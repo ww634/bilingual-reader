@@ -640,21 +640,52 @@ body {
 .reader-block:last-child {
   margin-bottom: 0;
 }
-.reader-block > p.target,
-.reader-block > p.english {
-  margin: 0;
-  line-height: var(--reader-line);
-}
+
+/* Shared pinyin paragraph styling — used by both the measurement target
+   and the final per-block target. Identical font metrics ensure the
+   measured line breaks match the rendered line breaks. */
+.reader-page p.target,
 .reader-block > p.target {
   font-weight: 700;
   font-size: var(--reader-font);
   letter-spacing: -0.005em;
+  line-height: var(--reader-line);
+  margin: 0;
+}
+.reader-block > p.target {
   margin-bottom: 4px;
+}
+/* Hidden measurement target. Occupies natural layout (full page width) so
+   offsetTop / offsetHeight measurements match what a final target would
+   produce. The replacement to final blocks happens synchronously, so the
+   browser never paints this intermediate state. visibility: hidden is a
+   defensive safety net in case a reflow ever paints mid-render.
+
+   The extra padding-right gives the measurement a SMALLER effective
+   content width than the final block, so anything that fits in the
+   measurement is guaranteed to fit (with margin) in the final block.
+   Eliminates boundary-condition wrap bugs caused by subpixel layout
+   differences between measurement and final render contexts. */
+.measure-target {
+  visibility: hidden;
+  padding-right: 8px;
+}
+
+/* Every word inside a reader target is atomic — chunks (colored content)
+   AND uncovered tokens (punctuation, function words not in an alignment).
+   Only the plain text nodes BETWEEN spans (whitespace) can break. This
+   guarantees no word ever splits across lines and a span's offsetTop
+   reliably identifies its visual line. */
+.reader-page p.target .seg,
+.reader-block > p.target .seg {
+  white-space: nowrap;
 }
 .reader-block > p.english {
   font-weight: 400;
   font-size: var(--reader-font);
   color: var(--text-dim);
+  line-height: var(--reader-line);
+  margin: 0;
 }
 
 /* Chunk = a colored content-word span. Tappable for Feature 4. */

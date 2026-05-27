@@ -69,8 +69,22 @@ window.addEventListener("nav:bookDetail", (e) => {
 
 window.addEventListener("nav:reader", async (e) => {
   const { bookId, chapterId } = e.detail;
+  // Show the reader view FIRST so it has a real layout/width. The reader
+  // measures rendered pinyin to decide visual-line block boundaries; this
+  // measurement requires the view to be visible (display:none gives 0
+  // width). The visible-but-empty reader is fine for the ~10ms it takes
+  // openReader's IndexedDB reads to complete before populating it.
+  setView("reader");
   const ok = await openReader(bookId, chapterId);
-  if (ok) setView("reader");
+  if (!ok) {
+    // Chapter not downloaded — return to wherever we came from.
+    if (navStack.length > 0) {
+      const prev = navStack.pop();
+      setView(prev, { push: false });
+    } else {
+      setView("home", { push: false });
+    }
+  }
 });
 
 window.addEventListener("settings:libraryUrl", () => refreshCatalog());
