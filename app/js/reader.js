@@ -1,4 +1,5 @@
 import { getChapter, getProgress, putProgress, getSettings } from "./db.js";
+import { openPopover } from "./popover.js";
 
 const pagesEl = () => document.getElementById("reader-pages");
 const indicatorEl = () => document.getElementById("page-indicator");
@@ -555,6 +556,44 @@ function handleScroll() {
   }, 300);
 }
 
+/**
+ * Click handler: when the user taps a colored chunk in the reader, open
+ * the tap-to-learn popover. Uses event delegation on the pages container.
+ */
+function handleChunkTap(event) {
+  const chunkEl = event.target.closest(".chunk");
+  if (!chunkEl) return;
+  // Only chunks inside .reader-block targets — ignore the title page.
+  if (!chunkEl.closest(".reader-block")) return;
+  // Skip grammar chunks (they're not really "tap to learn" candidates).
+  const cat = chunkEl.dataset.cat;
+  if (cat === "grammar") return;
+
+  const uid = chunkEl.dataset.uid; // "p<pairIdx>c<chunkIdx>"
+  if (!uid) return;
+  const m = uid.match(/^p(\d+)c(\d+)$/);
+  if (!m) return;
+  const pairIdx = parseInt(m[1], 10);
+  const chunkIdx = parseInt(m[2], 10);
+
+  const pair = _state.chapter?.pairs?.[pairIdx];
+  const align = pair?.alignment?.[chunkIdx];
+  if (!align) return;
+
+  openPopover(
+    {
+      target: align.target,
+      english: align.english,
+      category: align.category,
+      frequency_band: align.frequency_band,
+      is_idiom: align.is_idiom,
+      pairIdx,
+      chunkIdx,
+    },
+    _state.chapter
+  );
+}
+
 export async function openReader(bookId, chapterId) {
   const chapter = await getChapter(bookId, chapterId);
   if (!chapter) {
@@ -583,6 +622,8 @@ export async function openReader(bookId, chapterId) {
 
   container.removeEventListener("scroll", handleScroll);
   container.addEventListener("scroll", handleScroll, { passive: true });
+  container.removeEventListener("click", handleChunkTap);
+  container.addEventListener("click", handleChunkTap);
 
   return true;
 }
@@ -590,6 +631,7 @@ export async function openReader(bookId, chapterId) {
 export function closeReader() {
   const container = pagesEl();
   container.removeEventListener("scroll", handleScroll);
+  container.removeEventListener("click", handleChunkTap);
   clearTimeout(_state.saveTimer);
   if (_state.bookId && _state.chapterId) {
     putProgress(_state.bookId, _state.chapterId, _state.currentPage);

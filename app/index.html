@@ -129,6 +129,24 @@
       </footer>
     </main>
 
+    <!-- TAP-TO-LEARN POPOVER (overlay; outside any view) -->
+    <div id="popover-backdrop" class="popover-backdrop" hidden></div>
+    <div id="popover" class="popover" role="dialog" aria-modal="true" hidden>
+      <button id="popover-close" class="popover-close" aria-label="Close">×</button>
+      <div class="popover-head">
+        <div id="popover-target" class="popover-target"></div>
+        <div id="popover-english" class="popover-english"></div>
+      </div>
+      <div id="popover-tags" class="popover-tags"></div>
+      <div id="popover-context" class="popover-context"></div>
+      <div id="popover-explanation" class="popover-explanation" hidden></div>
+      <div class="popover-actions">
+        <button id="pop-act-explain" class="pop-act primary">See explanation</button>
+        <button id="pop-act-save" class="pop-act">Save to Memory Vault</button>
+        <button id="pop-act-hear" class="pop-act">Hear pronunciation</button>
+      </div>
+    </div>
+
     <!-- SETTINGS -->
     <main id="view-settings" class="view" hidden>
       <div class="settings-group">
@@ -154,6 +172,11 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
+      </div>
+      <div class="settings-group">
+        <label for="openai-key">OpenAI API key (optional)</label>
+        <input type="password" id="openai-key" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-..." />
+        <p class="hint">Used only for the "See explanation" button in the reader's tap-to-learn popover. Stored locally on this device, never uploaded.</p>
       </div>
       <div class="settings-group">
         <button id="clear-cache" class="danger">Clear cache</button>

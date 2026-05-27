@@ -1,6 +1,7 @@
 import { initCatalog, refreshCatalog, openBookDetail, renderBookDetail } from "./library.js";
 import { openReader, closeReader } from "./reader.js";
 import { initSettings, loadSettingsIntoUI } from "./settings.js";
+import { initPopover, closePopover } from "./popover.js";
 
 const VIEWS = ["home", "library", "browse", "book-detail", "quizzes", "reader", "settings"];
 const TITLES = {
@@ -36,6 +37,7 @@ function setView(name, { push = true } = {}) {
 }
 
 function goBack() {
+  closePopover();
   if (currentView === "reader") {
     closeReader();
   }
@@ -105,6 +107,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 
 (async function boot() {
   await initSettings();
+  initPopover();
   await initCatalog();
   setView("home", { push: false });
 })();

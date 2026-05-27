@@ -4,6 +4,7 @@ const els = {
   libUrl: () => document.getElementById("lib-url"),
   fontSize: () => document.getElementById("font-size"),
   pairsPerPage: () => document.getElementById("pairs-per-page"),
+  openaiKey: () => document.getElementById("openai-key"),
   clearBtn: () => document.getElementById("clear-cache"),
   onlineStatus: () => document.getElementById("online-status"),
 };
@@ -17,6 +18,7 @@ export async function loadSettingsIntoUI() {
   els.libUrl().value = s.libraryUrl;
   els.fontSize().value = s.fontSize;
   els.pairsPerPage().value = String(s.pairsPerPage);
+  if (els.openaiKey()) els.openaiKey().value = s.openaiKey || "";
   applyFontSize(s.fontSize);
   updateOnlineStatus();
 }
@@ -47,6 +49,12 @@ export function initSettings() {
     await save({ pairsPerPage: parseInt(e.target.value, 10) });
     window.dispatchEvent(new CustomEvent("settings:pairsPerPage"));
   });
+
+  if (els.openaiKey()) {
+    els.openaiKey().addEventListener("change", async (e) => {
+      await save({ openaiKey: e.target.value.trim() });
+    });
+  }
 
   els.clearBtn().addEventListener("click", async () => {
     if (!confirm("Delete all downloaded chapters, progress, settings, AND force-refresh the app code?")) return;

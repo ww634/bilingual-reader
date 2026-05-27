@@ -135,6 +135,7 @@ const DEFAULT_SETTINGS = {
   libraryUrl: "../content/library.json",
   fontSize: "medium",
   pairsPerPage: 7,
+  openaiKey: "", // user-pasted via Settings; used only for tap-to-learn explanations
 };
 
 export async function getSettings() {
