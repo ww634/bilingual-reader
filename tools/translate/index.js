@@ -278,7 +278,8 @@ async function main() {
 
   // Translate the book title once (used for cover + library + as a canonical
   // name passed into every chapter's body translation for consistency).
-  const bookTitleResult = await translateTitle(client, bookTitle, { model: opts.model });
+  // isBookTitle prevents the model from adding a "Dì N zhāng:" chapter prefix.
+  const bookTitleResult = await translateTitle(client, bookTitle, { model: opts.model, isBookTitle: true });
   const canonicalNames = bookTitle && bookTitleResult.target
     ? [{ english: bookTitle, target: bookTitleResult.target }]
     : [];

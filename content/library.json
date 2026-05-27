@@ -2,7 +2,7 @@
   "version": 2,
   "books": [
     {
-      "version": 1,
+      "version": 2,
       "id": "treasure-island",
       "language": "zh",
       "title": {
@@ -24,7 +24,8 @@
             "target": "Dì yī zhāng: Lǎo hǎi dào",
             "english": "Chapter 1: The Old Buccaneer"
           },
-          "url": "books/treasure-island/ch-1.json"
+          "url": "books/treasure-island/ch-1.json",
+          "version": 2
         }
       ],
       "cover": "books/treasure-island/cover.svg"

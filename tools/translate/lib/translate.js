@@ -117,21 +117,27 @@ export async function translateClauses(client, clauses, opts = {}) {
 }
 
 /**
- * Translate the chapter title separately.
+ * Translate a title (book OR chapter) separately. Pass `isBookTitle: true`
+ * for book titles so the model doesn't add a "Dì N zhāng:" chapter prefix.
  */
 export async function translateTitle(client, englishTitle, opts = {}) {
   const model = opts.model || "gpt-4o";
+  const isBookTitle = !!opts.isBookTitle;
+
+  const titleGuidance = isBookTitle
+    ? "\n\nFor this task you are translating a BOOK TITLE. Translate ONLY the title itself — do NOT add chapter prefixes like 'Dì <number> zhāng:' or any structural framing. Use the standard or most natural Mandarin rendering of the book's name."
+    : "\n\nFor this task you are translating a CHAPTER TITLE. Use standard chapter-title phrasing (e.g. 'Dì <number> zhāng: <title>'). Same pinyin rules.";
+
   const response = await client.chat.completions.create({
     model,
     messages: [
       {
         role: "system",
-        content: SYSTEM_PROMPT +
-          "\n\nFor this task you are translating a CHAPTER TITLE. Use standard chapter-title phrasing (e.g. 'Dì <number> zhāng: <title>'). Same pinyin rules.",
+        content: SYSTEM_PROMPT + titleGuidance,
       },
       {
         role: "user",
-        content: `Translate this chapter title to pinyin with tone marks:\n\n"${englishTitle}"\n\nReturn JSON: { "english": "...", "target": "..." } — english is the original verbatim.`,
+        content: `Translate this ${isBookTitle ? "book" : "chapter"} title to pinyin with tone marks:\n\n"${englishTitle}"\n\nReturn JSON: { "english": "...", "target": "..." } — english is the original verbatim.`,
       },
     ],
     response_format: {
