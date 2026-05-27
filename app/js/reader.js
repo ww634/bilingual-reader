@@ -48,8 +48,9 @@ function findChunkPositions(pair) {
   const claimedTarget = new Set();
   const claimedEnglish = new Set();
 
-  const findFirstUnclaimed = (text, needle, claimed) => {
+  const findFirstUnclaimed = (text, needle, claimed, requireWordBoundary = false) => {
     if (!needle) return -1;
+    const isWordChar = (c) => /[a-zA-Z0-9]/.test(c);
     let from = 0;
     while (from <= text.length - needle.length) {
       const idx = text.indexOf(needle, from);
@@ -59,8 +60,19 @@ function findChunkPositions(pair) {
       for (let p = idx; p < idx + needle.length; p++) {
         if (claimed.has(p)) { collision = true; break; }
       }
-      if (!collision) return idx;
-      from = idx + 1;
+      if (collision) { from = idx + 1; continue; }
+      // For English: require the match to be on word boundaries so a short
+      // function word like "a" doesn't match INSIDE "seaman" (sub-word).
+      if (requireWordBoundary) {
+        const charBefore = idx > 0 ? text[idx - 1] : "";
+        const charAfter = idx + needle.length < text.length ? text[idx + needle.length] : "";
+        const needleFirst = needle[0];
+        const needleLast = needle[needle.length - 1];
+        const leftBoundary = !charBefore || !isWordChar(charBefore) || !isWordChar(needleFirst);
+        const rightBoundary = !charAfter || !isWordChar(charAfter) || !isWordChar(needleLast);
+        if (!leftBoundary || !rightBoundary) { from = idx + 1; continue; }
+      }
+      return idx;
     }
     return -1;
   };
@@ -76,7 +88,9 @@ function findChunkPositions(pair) {
       }
     }
     if (chunk.english) {
-      const idx = findFirstUnclaimed(pair.english, chunk.english, claimedEnglish);
+      // English requires word boundaries so a short word like "a" doesn't
+      // match inside a longer word like "se_a_man".
+      const idx = findFirstUnclaimed(pair.english, chunk.english, claimedEnglish, true);
       if (idx !== -1) {
         eStart = idx;
         eEnd = idx + chunk.english.length;
