@@ -16,7 +16,9 @@ const CHUNK_COLORS = 7;
 const NEUTRAL_LEADING = new Set(["the", "a", "an"]);
 
 // Pinyin character budget per visual line. Used to decide block breaks.
-const PINYIN_LINE_BUDGET = 42;
+// Conservative — accepting some under-packing in exchange for fewer
+// visual wraps of pinyin into a second line.
+const PINYIN_LINE_BUDGET = 36;
 
 function escape(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({
@@ -100,26 +102,16 @@ function emitColoredSlice(text, coverage, alignment, chunkColors, start, end) {
   return html;
 }
 
-/** Find each chunk's target position in pair.target, left-to-right with a cursor. */
-function locateTargetPositions(pair) {
-  let scan = 0;
-  return pair.alignment.map((chunk) => {
-    if (!chunk.target) return { start: -1, end: -1 };
-    let idx = pair.target.indexOf(chunk.target, scan);
-    if (idx === -1) return { start: -1, end: -1 };
-    scan = idx + chunk.target.length;
-    return { start: idx, end: scan };
-  });
-}
-
 /**
- * Render one page as a stack of "blocks", each with one (mostly single-line)
- * pinyin paragraph + its corresponding English paragraph beneath.
+ * Render one page as a stack of "blocks". Each block holds one or more
+ * COMPLETE pairs — pairs are atomic and are never split across blocks.
  *
- * Pinyin is split at chunk boundaries when the cumulative pinyin would
- * overflow PINYIN_LINE_BUDGET. English is NEVER split mid-pair — each
- * pair's English is emitted whole in the block where the pair's first
- * pinyin chunk landed. This avoids fragile mid-pair English splitting.
+ * Adjacent short pairs pack into the same block until adding the next
+ * pair would push the cumulative pinyin over PINYIN_LINE_BUDGET. A long
+ * pair that exceeds the budget on its own gets its own block (and may
+ * wrap visually to two lines, which is acceptable for a single long
+ * clause). This eliminates orphan pinyin-only blocks caused by mid-pair
+ * splitting, at the cost of letting genuinely long single clauses wrap.
  */
 function renderPage(pairs) {
   const blocks = [];
@@ -137,75 +129,32 @@ function renderPage(pairs) {
   }
 
   for (const pair of pairs) {
-    // Unaligned pair: emit as one indivisible unit.
+    let targetHtml, englishHtml;
+
     if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
-      const len = pair.target.length;
-      if (current.charCount > 0 && current.charCount + len + 1 > PINYIN_LINE_BUDGET) flush();
-      current.pinyinSegments.push((current.pinyinSegments.length ? " " : "") + escape(pair.target));
-      current.englishSegments.push(escape(pair.english));
-      current.charCount += len + 1;
-      continue;
+      targetHtml = escape(pair.target);
+      englishHtml = escape(pair.english);
+    } else {
+      const { colors, count } = buildChunkColors(pair.alignment, colorOffset);
+      colorOffset += count;
+      const tCov = buildCoverage(pair.target, pair.alignment, "target", colors);
+      const eCov = buildCoverage(pair.english, pair.alignment, "english", colors);
+      targetHtml = emitColoredSlice(pair.target, tCov, pair.alignment, colors, 0, pair.target.length);
+      englishHtml = emitColoredSlice(pair.english, eCov, pair.alignment, colors, 0, pair.english.length);
     }
 
-    const { colors, count } = buildChunkColors(pair.alignment, colorOffset);
-    colorOffset += count;
-    const tCov = buildCoverage(pair.target, pair.alignment, "target", colors);
-    const eCov = buildCoverage(pair.english, pair.alignment, "english", colors);
-    const positions = locateTargetPositions(pair);
-
-    // Track whether this pair's English has already been attached to a block.
-    // English is attached to the block containing the pair's FIRST chunk.
-    let englishAttached = false;
-    let lastT = 0;
-    const fullEnglishHtml = emitColoredSlice(
-      pair.english, eCov, pair.alignment, colors, 0, pair.english.length
-    );
-
-    // Walk chunks left-to-right.
-    for (let ci = 0; ci < pair.alignment.length; ci++) {
-      const pos = positions[ci];
-      if (pos.end === -1) continue;
-
-      const segLen = pos.end - lastT;
-
-      // Would this chunk overflow the current pinyin line? If yes AND
-      // there's enough remaining content to justify a new block, flush.
-      // If the remaining tail is just a short fragment (punctuation, a
-      // single particle), accept the over-budget rather than orphaning
-      // it as a tiny "xià." block by itself.
-      const remainingLen = pair.target.length - lastT;
-      const wouldOverflow = current.charCount > 0 && current.charCount + segLen > PINYIN_LINE_BUDGET;
-      if (wouldOverflow && remainingLen >= 10) {
-        if (lastT > 0 && !englishAttached) {
-          current.englishSegments.push(fullEnglishHtml);
-          englishAttached = true;
-        }
-        flush();
-      }
-
-      // Append pinyin segment (lastT..chunk.end) with a soft space between
-      // pair starts to keep clauses visually separated.
-      const leadSpace = current.pinyinSegments.length && lastT === 0 ? " " : "";
-      current.pinyinSegments.push(
-        leadSpace +
-        emitColoredSlice(pair.target, tCov, pair.alignment, colors, lastT, pos.end)
-      );
-      current.charCount += segLen + leadSpace.length;
-      lastT = pos.end;
+    const pairLen = pair.target.length;
+    // If adding this whole pair would overflow the current block, flush
+    // first so the pair starts fresh in a new block. The pair itself is
+    // never split.
+    if (current.charCount > 0 && current.charCount + pairLen + 1 > PINYIN_LINE_BUDGET) {
+      flush();
     }
 
-    // Append trailing target text (punctuation after the last chunk).
-    if (lastT < pair.target.length) {
-      current.pinyinSegments.push(
-        emitColoredSlice(pair.target, tCov, pair.alignment, colors, lastT, pair.target.length)
-      );
-      current.charCount += pair.target.length - lastT;
-    }
-
-    // Pair finished without flushing — attach its English to current block.
-    if (!englishAttached) {
-      current.englishSegments.push(fullEnglishHtml);
-    }
+    const leadSpace = current.pinyinSegments.length ? " " : "";
+    current.pinyinSegments.push(leadSpace + targetHtml);
+    current.englishSegments.push(englishHtml);
+    current.charCount += pairLen + leadSpace.length;
   }
 
   flush();
