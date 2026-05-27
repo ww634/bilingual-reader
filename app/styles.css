@@ -628,23 +628,30 @@ body {
   color: var(--text-dim);
   font-style: italic;
 }
-/* A reader page now renders as TWO flowing paragraphs (all clauses of the
-   page concatenated): a pinyin paragraph and an English paragraph beneath
-   it. Punctuation in the source text provides the natural clause breaks,
-   and color-coded chunk spans within each paragraph bind matching words
-   across languages. */
-.reader-page > p.target,
-.reader-page > p.english {
+/* A reader page renders as a stack of "blocks". Each block = one (mostly
+   single-line) pinyin paragraph followed by its corresponding English
+   paragraph. Adjacent short pairs are packed into the same block; long
+   pairs are split at chunk boundaries. This gives the alternating
+   pinyin/English rhythm of a bilingual book while using the line width
+   efficiently. */
+.reader-block {
+  margin-bottom: 22px;
+}
+.reader-block:last-child {
+  margin-bottom: 0;
+}
+.reader-block > p.target,
+.reader-block > p.english {
   margin: 0;
   line-height: var(--reader-line);
 }
-.reader-page > p.target {
+.reader-block > p.target {
   font-weight: 700;
   font-size: var(--reader-font);
   letter-spacing: -0.005em;
-  margin-bottom: 14px;
+  margin-bottom: 4px;
 }
-.reader-page > p.english {
+.reader-block > p.english {
   font-weight: 400;
   font-size: var(--reader-font);
   color: var(--text-dim);
