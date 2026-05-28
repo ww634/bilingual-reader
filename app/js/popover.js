@@ -172,6 +172,21 @@ async function fetchExplanation() {
     (chunk.is_idiom ? `This is a fixed expression / idiom.\n` : "") +
     (contextPinyin ? `\nSentence in the book (pinyin): ${contextPinyin}\nSentence in the book (English): ${contextEnglish}\n` : "");
 
+  const EXPLAIN_MODEL = "gpt-5.4-nano";
+  const isNewFamily = /^gpt-5|^o1|^o3/i.test(EXPLAIN_MODEL);
+
+  // gpt-5 family + o-series: use max_completion_tokens, omit temperature
+  // (only default of 1 is accepted).
+  const body = {
+    model: EXPLAIN_MODEL,
+    messages: [
+      { role: "system", content: systemPrompt },
+      { role: "user", content: userPrompt },
+    ],
+    [isNewFamily ? "max_completion_tokens" : "max_tokens"]: 500,
+  };
+  if (!isNewFamily) body.temperature = 0.3;
+
   try {
     const res = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -179,15 +194,7 @@ async function fetchExplanation() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${settings.openaiKey}`,
       },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: userPrompt },
-        ],
-        temperature: 0.3,
-        max_tokens: 500,
-      }),
+      body: JSON.stringify(body),
     });
     if (!res.ok) {
       const errBody = await res.text().catch(() => "");
