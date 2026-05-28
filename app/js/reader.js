@@ -211,21 +211,25 @@ function pushUncoveredText(parts, txt, pairIdx) {
  * wrapped in an atomic <span> with white-space:nowrap. Spaces between
  * spans are plain text nodes (the only break-points).
  *
- * This guarantees the browser only wraps BETWEEN words, never within one,
- * so each span's offsetTop reliably identifies its visual line.
+ * @param {Array} pairs The pairs for THIS page (a slice of the chapter).
+ * @param {number} pageStartIdx The GLOBAL index of pairs[0] in the chapter,
+ *   so data-uid encodes chapter-global pair indices (not slice-local). The
+ *   tap handler looks up _state.chapter.pairs[pairIdx], which expects the
+ *   global index.
  *
- * Returns { html, chunkMeta }.
+ * Returns { html, chunkMeta }. chunkMeta's pairIdx is also chapter-global.
  */
-function buildPinyinHtml(pairs) {
+function buildPinyinHtml(pairs, pageStartIdx = 0) {
   const chunkMeta = [];
   let parts = [];
 
-  for (let pairIdx = 0; pairIdx < pairs.length; pairIdx++) {
-    const pair = pairs[pairIdx];
+  for (let localIdx = 0; localIdx < pairs.length; localIdx++) {
+    const pairIdx = pageStartIdx + localIdx; // chapter-global pair index
+    const pair = pairs[localIdx];
 
     if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
       pushUncoveredText(parts, pair.target, pairIdx);
-      if (pairIdx < pairs.length - 1) parts.push(" ");
+      if (localIdx < pairs.length - 1) parts.push(" ");
       continue;
     }
 
@@ -272,7 +276,7 @@ function buildPinyinHtml(pairs) {
       pushUncoveredText(parts, pair.target.slice(cursor), pairIdx);
     }
 
-    if (pairIdx < pairs.length - 1) {
+    if (localIdx < pairs.length - 1) {
       parts.push(" ");
     }
   }
@@ -365,9 +369,9 @@ function extractLineHtml(targetEl, lines, lineIdx) {
  *   5. Replace pageEl.innerHTML with the final blocks.
  *   6. Verification: after layout, warn if any final target wrapped.
  */
-function renderPageInto(pageEl, pairs) {
-  // Step 1: build pinyin html + chunk metadata.
-  const { html: pinyinHtml, chunkMeta } = buildPinyinHtml(pairs);
+function renderPageInto(pageEl, pairs, pageStartIdx) {
+  // Step 1: build pinyin html + chunk metadata (uids use chapter-global pair index).
+  const { html: pinyinHtml, chunkMeta } = buildPinyinHtml(pairs, pageStartIdx);
 
   // Step 2: mount measurement-only structure on the page.
   pageEl.innerHTML = `<p class="target measure-target">${pinyinHtml}</p>`;
@@ -397,10 +401,17 @@ function renderPageInto(pageEl, pairs) {
     }
   });
 
-  // Step 4: build blocks.
-  const englishCoverages = pairs.map((p) =>
-    Array.isArray(p.alignment) && p.alignment.length > 0 ? buildEnglishCoverage(p) : null
-  );
+  // Step 4: build blocks. Index helpers by chapter-global pair index so
+  // they line up with the data-pair / data-uid attributes set in step 1.
+  const englishCoverages = new Map(); // global pairIdx -> coverage
+  const pairByGlobal = new Map();     // global pairIdx -> pair object
+  pairs.forEach((p, localIdx) => {
+    const g = pageStartIdx + localIdx;
+    pairByGlobal.set(g, p);
+    if (Array.isArray(p.alignment) && p.alignment.length > 0) {
+      englishCoverages.set(g, buildEnglishCoverage(p));
+    }
+  });
   const englishCursor = new Map(); // pairIdx -> position in pair.english already emitted
   const blocks = [];
 
@@ -419,7 +430,8 @@ function renderPageInto(pageEl, pairs) {
 
     const englishParts = [];
     for (const pairIdx of pairsOnLine) {
-      const pair = pairs[pairIdx];
+      const pair = pairByGlobal.get(pairIdx);
+      if (!pair) continue;
 
       if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
         // No chunks — emit the whole English on the first line we see this pair,
@@ -464,7 +476,7 @@ function renderPageInto(pageEl, pairs) {
 
       if (cut > cursor) {
         englishParts.push(
-          emitEnglishSlice(pair, englishCoverages[pairIdx], cursor, cut)
+          emitEnglishSlice(pair, englishCoverages.get(pairIdx), cursor, cut)
         );
         englishCursor.set(pairIdx, cut);
       }
@@ -522,11 +534,13 @@ function renderChapter(chapter, perPage) {
 
   // Content pages — append first so renderPageInto can measure real width.
   const chunks = chunkPairs(chapter.pairs, perPage);
+  let globalStart = 0;
   for (const pageChunk of chunks) {
     const page = document.createElement("section");
     page.className = "reader-page";
     container.appendChild(page);
-    renderPageInto(page, pageChunk);
+    renderPageInto(page, pageChunk, globalStart);
+    globalStart += pageChunk.length;
   }
 
   _state.pagesCount = 1 + chunks.length;
