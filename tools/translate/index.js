@@ -66,12 +66,13 @@ program
   .option("--book-id <id>", "Override the auto-detected book id (kebab-case)")
   .option("--include-front-matter", "Translate sections the analyzer flagged as skip (title pages, dedications, etc)")
   .option("--length <preset>", "Clause length: short | medium | long", "medium")
-  .option("--model <name>", "OpenAI model for translation", "gpt-4o")
-  .option("--analyzer-model <name>", "OpenAI model for the pre-pass analysis (cheap)", "gpt-4o-mini")
+  .option("--model <name>", "OpenAI model for translation + alignment", "gpt-4.1")
+  .option("--analyzer-model <name>", "OpenAI model for the pre-pass analysis", "gpt-5.4-nano")
   .option("--dry-run", "Analyze + show plan, but no translation API calls and no writes")
   .option("--yes", "Skip all confirmation prompts")
   .option("--no-cover", "Skip generating an auto cover")
   .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
+  .option("--force", "Re-translate chapters that already exist on disk. Default: skip already-done chapters (resumable).")
   .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
   .parse(process.argv);
 
@@ -286,9 +287,34 @@ async function main() {
 
   const chapterEntries = [];
   let i = 0;
+  let skippedCount = 0;
   for (const s of toProcess) {
     i++;
     console.log(`\n   [${i}/${toProcess.length}] ${cyan(s.english_title || s.kind)}…`);
+
+    // Resumability: if this chapter's JSON already exists on disk, skip it
+    // unless --force was passed. Lets a long multi-chapter run be re-invoked
+    // after a partial failure without redoing work.
+    const provisionalChapterId = s.id_suggestion || `ch-${i}`;
+    const existingPath = path.join(bookDir, `${provisionalChapterId}.json`);
+    if (!opts.force) {
+      try {
+        const raw = await fs.readFile(existingPath, "utf8");
+        const existing = JSON.parse(raw);
+        if (existing && Array.isArray(existing.pairs) && existing.pairs.length > 0) {
+          console.log(dim(`     ⟳ skipping — ${path.basename(existingPath)} already exists (--force to retranslate)`));
+          chapterEntries.push({
+            id: existing.id || provisionalChapterId,
+            title: existing.title || { target: "", english: s.english_title || "" },
+            url: `books/${bookId}/${provisionalChapterId}.json`,
+          });
+          skippedCount++;
+          continue;
+        }
+      } catch (err) {
+        // File doesn't exist or isn't valid JSON — fall through and translate.
+      }
+    }
 
     let titleResult, bodyResult;
     try {
@@ -340,6 +366,7 @@ async function main() {
     }
 
     const chapterId = s.id_suggestion || `ch-${i}`;
+    const alignedPairCount = finalPairs.filter((p) => Array.isArray(p.alignment) && p.alignment.length > 0).length;
     const chapterJson = {
       id: chapterId,
       book_id: bookId,
@@ -356,7 +383,8 @@ async function main() {
         createdAt: new Date().toISOString().slice(0, 10),
         model: opts.model,
         synopsis: s.synopsis || null,
-        has_alignment: opts.alignment !== false,
+        // Only true if alignment was requested AND at least one pair was successfully aligned.
+        has_alignment: opts.alignment !== false && alignedPairCount > 0,
       },
     };
 
@@ -405,6 +433,9 @@ async function main() {
   console.log(dim(`   library.json: ${upsertResult.action}, +${upsertResult.chaptersAdded} chapter(s), ~${upsertResult.chaptersUpdated} updated`));
 
   console.log("\n" + green(bold("✨ Done.")));
+  if (skippedCount > 0) {
+    console.log(dim(`   ${skippedCount} chapter${skippedCount === 1 ? "" : "s"} skipped (already existed). Use --force to retranslate.`));
+  }
   console.log("\nReview, then publish:");
   console.log(dim(`   git add content/`));
   console.log(dim(`   git commit -m "Add ${bookId}"`));

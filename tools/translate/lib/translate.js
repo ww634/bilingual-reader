@@ -94,7 +94,9 @@ export async function translateClauses(client, clauses, opts = {}) {
     clauses.map((c, i) => `${i + 1}. ${c}`).join("\n"),
   ].join("\n");
 
-  const response = await client.chat.completions.create({
+  // gpt-5 family + o-series only accept default temperature (1).
+  const isNewFamily = /^gpt-5|^o1|^o3/i.test(model);
+  const request = {
     model,
     messages: [
       { role: "system", content: SYSTEM_PROMPT },
@@ -108,8 +110,9 @@ export async function translateClauses(client, clauses, opts = {}) {
         schema: RESPONSE_SCHEMA,
       },
     },
-    temperature: 0.2,
-  });
+  };
+  if (!isNewFamily) request.temperature = 0.2;
+  const response = await client.chat.completions.create(request);
 
   const content = response.choices[0].message.content;
   const parsed = JSON.parse(content);
@@ -128,7 +131,8 @@ export async function translateTitle(client, englishTitle, opts = {}) {
     ? "\n\nFor this task you are translating a BOOK TITLE. Translate ONLY the title itself — do NOT add chapter prefixes like 'Dì <number> zhāng:' or any structural framing. Use the standard or most natural Mandarin rendering of the book's name."
     : "\n\nFor this task you are translating a CHAPTER TITLE. Use standard chapter-title phrasing (e.g. 'Dì <number> zhāng: <title>'). Same pinyin rules.";
 
-  const response = await client.chat.completions.create({
+  const isNewFamily = /^gpt-5|^o1|^o3/i.test(model);
+  const request = {
     model,
     messages: [
       {
@@ -156,8 +160,9 @@ export async function translateTitle(client, englishTitle, opts = {}) {
         },
       },
     },
-    temperature: 0.2,
-  });
+  };
+  if (!isNewFamily) request.temperature = 0.2;
+  const response = await client.chat.completions.create(request);
   return JSON.parse(response.choices[0].message.content);
 }
 
@@ -195,6 +200,15 @@ export function estimateCost({ inputChars, expectedOutputChars }, model = "gpt-4
     "gpt-4o": { in: 5, out: 20 },
     "gpt-4o-mini": { in: 0.15, out: 0.60 },
     "gpt-4-turbo": { in: 10, out: 30 },
+    "gpt-4.1": { in: 2, out: 8 },
+    "gpt-4.1-mini": { in: 0.40, out: 1.60 },
+    "gpt-4.1-nano": { in: 0.10, out: 0.40 },
+    // gpt-5 family — placeholder rates; update with real values when verified.
+    "gpt-5": { in: 5, out: 20 },
+    "gpt-5-mini": { in: 0.50, out: 2.00 },
+    "gpt-5-nano": { in: 0.05, out: 0.40 },
+    "gpt-5.4-mini": { in: 0.50, out: 2.00 },
+    "gpt-5.4-nano": { in: 0.05, out: 0.40 },
   };
   const r = RATES[model] || RATES["gpt-4o"];
   const cost = (inputTokens * r.in + outputTokens * r.out) / 1_000_000;

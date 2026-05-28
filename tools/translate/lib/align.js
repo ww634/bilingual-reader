@@ -126,7 +126,14 @@ async function alignBatch(client, pairs, opts = {}) {
     ).join("\n\n"),
   ].join("\n");
 
-  const response = await client.chat.completions.create({
+  // gpt-5 family + o-series models have stricter parameter rules:
+  //   - require max_completion_tokens instead of max_tokens
+  //   - only accept the default temperature (1); omit explicit temperature
+  // Branch defensively so older models still work.
+  const isNewFamily = /^gpt-5|^o1|^o3/i.test(model);
+  const tokenParamName = isNewFamily ? "max_completion_tokens" : "max_tokens";
+
+  const request = {
     model,
     messages: [
       { role: "system", content: ALIGN_SYSTEM_PROMPT },
@@ -140,9 +147,11 @@ async function alignBatch(client, pairs, opts = {}) {
         schema: ALIGN_RESPONSE_SCHEMA,
       },
     },
-    temperature: 0.1,
-    max_tokens: MAX_RESPONSE_TOKENS,
-  });
+    [tokenParamName]: MAX_RESPONSE_TOKENS,
+  };
+  if (!isNewFamily) request.temperature = 0.1;
+
+  const response = await client.chat.completions.create(request);
 
   // Guard against truncation: if the model hit max_tokens, the JSON will be
   // invalid and downstream parse will fail. Surface a clearer error.
@@ -252,6 +261,14 @@ export function estimateAlignmentCost(pairs, model = "gpt-4o") {
   const RATES = {
     "gpt-4o": { in: 5, out: 20 },
     "gpt-4o-mini": { in: 0.15, out: 0.60 },
+    "gpt-4.1": { in: 2, out: 8 },
+    "gpt-4.1-mini": { in: 0.40, out: 1.60 },
+    "gpt-4.1-nano": { in: 0.10, out: 0.40 },
+    "gpt-5": { in: 5, out: 20 },
+    "gpt-5-mini": { in: 0.50, out: 2.00 },
+    "gpt-5-nano": { in: 0.05, out: 0.40 },
+    "gpt-5.4-mini": { in: 0.50, out: 2.00 },
+    "gpt-5.4-nano": { in: 0.05, out: 0.40 },
   };
   const r = RATES[model] || RATES["gpt-4o"];
   const cost = (inputTokens * r.in + outputTokens * r.out) / 1_000_000;

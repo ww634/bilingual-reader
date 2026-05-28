@@ -108,22 +108,32 @@ const RESPONSE_SCHEMA = {
  */
 export async function analyzeContent(client, cleanedText, opts = {}) {
   const model = opts.model || "gpt-4o-mini";
-  // We don't need the whole book — the first ~20k chars tell us the structure.
-  // Add a tail sample too, in case the whole book really is short.
-  const maxChars = opts.maxAnalyzeChars || 24000;
+  // Whole-book aware default. gpt-5.4-nano and gpt-4o-mini both support 128k+
+  // context; ~400k chars fits with room to spare for system prompt + output.
+  // A typical novel is 200-400k chars so this fits a whole book in one call.
+  // For larger inputs (>500k), we still truncate with a head+tail sample.
+  const maxChars = opts.maxAnalyzeChars || 400000;
   let textForAnalysis;
+  let truncated = false;
   if (cleanedText.length <= maxChars) {
     textForAnalysis = cleanedText;
   } else {
+    truncated = true;
     const headSize = Math.floor(maxChars * 0.7);
     const tailSize = maxChars - headSize - 200;
     textForAnalysis =
       cleanedText.slice(0, headSize) +
       `\n\n[... ${cleanedText.length - headSize - tailSize} chars elided for brevity ...]\n\n` +
       cleanedText.slice(-tailSize);
+    console.warn(
+      `[analyze] Input is ${cleanedText.length.toLocaleString()} chars; ` +
+      `truncating to ${maxChars.toLocaleString()} for analysis. ` +
+      `Middle chapters may be missed. Consider splitting the source file.`
+    );
   }
 
-  const response = await client.chat.completions.create({
+  const isNewFamily = /^gpt-5|^o1|^o3/i.test(model);
+  const request = {
     model,
     messages: [
       { role: "system", content: SYSTEM_PROMPT },
@@ -143,8 +153,9 @@ export async function analyzeContent(client, cleanedText, opts = {}) {
         schema: RESPONSE_SCHEMA,
       },
     },
-    temperature: 0.1,
-  });
+  };
+  if (!isNewFamily) request.temperature = 0.1;
+  const response = await client.chat.completions.create(request);
 
   const analysis = JSON.parse(response.choices[0].message.content);
   return { analysis, usage: response.usage };
