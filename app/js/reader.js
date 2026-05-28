@@ -1,4 +1,4 @@
-import { getChapter, getProgress, putProgress, getSettings } from "./db.js";
+import { getChapter, getProgress, putProgress, getSettings, getBook } from "./db.js";
 import { openPopover } from "./popover.js";
 
 const pagesEl = () => document.getElementById("reader-pages");
@@ -8,6 +8,9 @@ let _state = {
   bookId: null,
   chapterId: null,
   chapter: null,
+  // Ordered chapter list for the current book, used by the end-of-chapter
+  // "Next chapter" affordance.
+  bookChapters: [],
   pagesCount: 0,
   currentPage: 0,
   saveTimer: null,
@@ -543,7 +546,37 @@ function renderChapter(chapter, perPage) {
     globalStart += pageChunk.length;
   }
 
-  _state.pagesCount = 1 + chunks.length;
+  // End-of-chapter page. Shows the next chapter's title with a "Read" button,
+  // or an "End of book" message if this is the last chapter.
+  const endPage = document.createElement("section");
+  endPage.className = "reader-page end-page";
+  const currentIdx = _state.bookChapters.findIndex((c) => c.id === _state.chapterId);
+  const nextChapter = currentIdx >= 0 && currentIdx < _state.bookChapters.length - 1
+    ? _state.bookChapters[currentIdx + 1]
+    : null;
+
+  if (nextChapter) {
+    endPage.innerHTML = `
+      <div class="end-card">
+        <div class="end-label">You've finished this chapter</div>
+        <div class="end-divider"></div>
+        <div class="end-next-label">Next up</div>
+        <div class="end-target">${escape(nextChapter.title?.target || "")}</div>
+        <h3 class="end-title">${escape(nextChapter.title?.english || nextChapter.id)}</h3>
+        <button class="end-next-btn" data-next-id="${escape(nextChapter.id)}">Read →</button>
+      </div>
+    `;
+  } else {
+    endPage.innerHTML = `
+      <div class="end-card">
+        <div class="end-label">End of book</div>
+        <p class="end-msg">You've finished the last chapter.</p>
+      </div>
+    `;
+  }
+  container.appendChild(endPage);
+
+  _state.pagesCount = 1 + chunks.length + 1;
 }
 
 function updateIndicator() {
@@ -573,6 +606,19 @@ function handleScroll() {
       putProgress(_state.bookId, _state.chapterId, _state.currentPage);
     }
   }, 300);
+}
+
+/**
+ * Click handler for the "Read →" button on the end-of-chapter page.
+ * Loads the next chapter and resets the reader to its first page.
+ */
+function handleNextChapterTap(event) {
+  const btn = event.target.closest(".end-next-btn");
+  if (!btn) return;
+  const nextId = btn.dataset.nextId;
+  if (!nextId || !_state.bookId) return;
+  // Open the next chapter — openReader will replace this reader's content.
+  openReader(_state.bookId, nextId);
 }
 
 /**
@@ -642,10 +688,12 @@ export async function openReader(bookId, chapterId) {
   }
   const settings = await getSettings();
   const progress = await getProgress(bookId, chapterId);
+  const book = await getBook(bookId);
 
   _state.bookId = bookId;
   _state.chapterId = chapterId;
   _state.chapter = chapter;
+  _state.bookChapters = book?.chapters || [];
   _state.currentPage = 0;
 
   renderChapter(chapter, settings.pairsPerPage);
@@ -664,6 +712,8 @@ export async function openReader(bookId, chapterId) {
   container.addEventListener("scroll", handleScroll, { passive: true });
   container.removeEventListener("click", handleChunkTap);
   container.addEventListener("click", handleChunkTap);
+  container.removeEventListener("click", handleNextChapterTap);
+  container.addEventListener("click", handleNextChapterTap);
 
   return true;
 }
@@ -672,6 +722,7 @@ export function closeReader() {
   const container = pagesEl();
   container.removeEventListener("scroll", handleScroll);
   container.removeEventListener("click", handleChunkTap);
+  container.removeEventListener("click", handleNextChapterTap);
   clearTimeout(_state.saveTimer);
   if (_state.bookId && _state.chapterId) {
     putProgress(_state.bookId, _state.chapterId, _state.currentPage);
@@ -679,6 +730,7 @@ export function closeReader() {
   _state.bookId = null;
   _state.chapterId = null;
   _state.chapter = null;
+  _state.bookChapters = [];
   _state.pagesCount = 0;
   _state.currentPage = 0;
   pagesEl().innerHTML = "";

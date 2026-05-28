@@ -8,6 +8,7 @@ import {
   putChapter,
   deleteChapter,
   getChapter,
+  getAllChapterKeys,
   getProgress,
   chapterKey,
 } from "./db.js";
@@ -53,6 +54,25 @@ async function loadDownloadedIndex() {
   const all = await getAllBooks();
   const map = new Map();
   for (const b of all) map.set(b.id, b);
+
+  // Count how many chapters of each book are actually present in IndexedDB.
+  // Used by renderBrowse to detect partial downloads ("Resume X/Y").
+  const chapterKeys = await getAllChapterKeys();
+  const counts = new Map();
+  for (const key of chapterKeys) {
+    const bookId = String(key).split("/")[0];
+    counts.set(bookId, (counts.get(bookId) || 0) + 1);
+  }
+  for (const [bookId, count] of counts) {
+    const book = map.get(bookId);
+    if (book) book.downloadedChapterCount = count;
+  }
+  // Books with a record but zero chapter entries get 0 by default.
+  for (const book of map.values()) {
+    if (typeof book.downloadedChapterCount !== "number") {
+      book.downloadedChapterCount = 0;
+    }
+  }
   return map;
 }
 
@@ -137,10 +157,20 @@ export function renderBrowse() {
       ? `${escape(entry.author)}  ·  ${chapterCount} ch.`
       : `${chapterCount} chapter${chapterCount === 1 ? "" : "s"}`;
 
+    const expectedChapters = entry.chapters?.length || 0;
+    const downloadedChapters = local?.downloadedChapterCount || 0;
+    const isPartial =
+      !!local &&
+      expectedChapters > 0 &&
+      downloadedChapters < expectedChapters;
+
     let stateLabel, stateCls;
     if (!local) { stateLabel = "Not in library"; stateCls = ""; }
     else if (local.version !== entry.version) { stateLabel = "Update available"; stateCls = "update"; }
-    else { stateLabel = "In library"; stateCls = "ok"; }
+    else if (isPartial) {
+      stateLabel = `Partial · ${downloadedChapters}/${expectedChapters} ch.`;
+      stateCls = "update";
+    } else { stateLabel = "In library"; stateCls = "ok"; }
 
     li.innerHTML = `
       <div class="row-cover ${coverUrl ? "" : "placeholder"}">${coverInner}</div>
@@ -167,6 +197,16 @@ export function renderBrowse() {
       btn.disabled = !state.online;
       if (state.online) btn.addEventListener("click", () => downloadBook(entry, btn));
       actions.appendChild(btn);
+    } else if (isPartial) {
+      // Partial download — re-tapping picks up where it left off.
+      const btn = document.createElement("button");
+      btn.className = "primary";
+      btn.textContent = state.online
+        ? `Resume ${downloadedChapters}/${expectedChapters}`
+        : "Offline";
+      btn.disabled = !state.online;
+      if (state.online) btn.addEventListener("click", () => downloadBook(entry, btn));
+      actions.appendChild(btn);
     } else {
       const btn = document.createElement("button");
       btn.textContent = "Open";
@@ -186,25 +226,18 @@ async function downloadBook(catalogEntry, btn) {
   $("browse-status").textContent = `Adding "${catalogEntry.title?.english || catalogEntry.id}"…`;
 
   try {
-    // 1. Download cover blob
-    let coverBlob = null;
-    if (catalogEntry.cover) {
+    // 1. Cover: reuse existing if we have a local record, otherwise fetch.
+    const existingRecord = state.downloadedBooks.get(catalogEntry.id);
+    let coverBlob = existingRecord?.coverBlob || null;
+    if (!coverBlob && catalogEntry.cover) {
       const coverUrl = resolveUrl(settings.libraryUrl, catalogEntry.cover);
       coverBlob = await fetchBlob(coverUrl);
     }
 
-    // 2. Download every chapter
-    const total = catalogEntry.chapters?.length || 0;
-    for (let i = 0; i < total; i++) {
-      const ch = catalogEntry.chapters[i];
-      $("browse-status").textContent = `Downloading chapter ${i + 1}/${total}…`;
-      const chUrl = resolveUrl(settings.libraryUrl, ch.url);
-      const chJson = await fetchJson(chUrl);
-      if (!Array.isArray(chJson.pairs)) throw new Error(`Chapter ${ch.id}: invalid format`);
-      await putChapter(catalogEntry.id, ch.id, chJson);
-    }
-
-    // 3. Store book metadata
+    // 2. Save the book record FIRST (with empty/partial state). This makes
+    //    the book appear in the library immediately and survives partial
+    //    failures — if the network drops mid-download, the partial state
+    //    is persisted so re-tapping Add picks up from where it left off.
     const bookRecord = {
       id: catalogEntry.id,
       language: catalogEntry.language,
@@ -220,12 +253,40 @@ async function downloadBook(catalogEntry, btn) {
         url: c.url,
       })),
       coverBlob,
-      addedAt: new Date().toISOString(),
+      addedAt: existingRecord?.addedAt || new Date().toISOString(),
     };
     await putBook(bookRecord);
     state.downloadedBooks.set(catalogEntry.id, bookRecord);
 
+    // 3. Download chapters that aren't already stored. Skipping ones we
+    //    already have lets a re-run after partial failure resume cleanly.
+    const total = catalogEntry.chapters?.length || 0;
+    let downloadedCount = 0;
+    let skippedCount = 0;
+    for (let i = 0; i < total; i++) {
+      const ch = catalogEntry.chapters[i];
+      // Check if this chapter is already in IndexedDB.
+      const existing = await getChapter(catalogEntry.id, ch.id);
+      if (existing && Array.isArray(existing.pairs) && existing.pairs.length > 0) {
+        skippedCount++;
+        continue;
+      }
+      $("browse-status").textContent = `Downloading chapter ${i + 1}/${total}…`;
+      const chUrl = resolveUrl(settings.libraryUrl, ch.url);
+      const chJson = await fetchJson(chUrl);
+      if (!Array.isArray(chJson.pairs)) throw new Error(`Chapter ${ch.id}: invalid format`);
+      await putChapter(catalogEntry.id, ch.id, chJson);
+      downloadedCount++;
+    }
+
     $("browse-status").textContent = "";
+    if (skippedCount > 0 && downloadedCount === 0) {
+      // Nothing new — must have been called when book was already complete.
+    }
+    // Refresh the downloaded index so partial/complete state reflects what's
+    // now in IndexedDB. Without this the UI would still show the pre-download
+    // chapter count and keep the "Resume" button visible.
+    state.downloadedBooks = await loadDownloadedIndex();
     renderBrowse();
     renderLibrary();
     renderHomeCounts();
