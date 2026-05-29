@@ -166,7 +166,15 @@ async function fetchExplanation() {
   const contextEnglish = pair ? pair.english : "";
 
   const systemPrompt =
-    "You are a concise Mandarin Chinese tutor. Given a word/phrase (pinyin with tone marks) and the sentence it appears in, give a short, learner-friendly explanation under 200 words. Cover: literal meaning, nuance/usage notes, and 1-2 short example sentences (pinyin only — no Chinese characters — followed by English in parentheses). Plain text only, no markdown.";
+    "You are a concise Mandarin Chinese tutor for an English-speaking learner. " +
+    "Write the ENTIRE explanation in ENGLISH. Never write a paragraph in Chinese — " +
+    "Chinese characters MUST NOT appear at all, and Chinese pinyin only appears " +
+    "inside the example-sentence lines described below. " +
+    "Given a word/phrase (pinyin with tone marks) and the sentence it appears in, " +
+    "give a short, learner-friendly explanation under 200 words. Cover: literal " +
+    "meaning (in English), nuance/usage notes (in English), and 1–2 short example " +
+    "sentences. For each example, give the pinyin (no Chinese characters) and then " +
+    "the English translation in parentheses. Plain text only, no markdown.";
 
   const userPrompt =
     `Word/phrase: ${chunk.target}\n` +
