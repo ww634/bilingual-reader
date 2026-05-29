@@ -12,9 +12,12 @@ const CATEGORY_LABELS = {
   verb: "Verb",
   adjective: "Adjective",
   adverb: "Adverb",
-  grammar: "Grammar",
   idiom: "Idiom",
   proper_noun: "Proper noun",
+  measure_word: "Measure word",
+  function_word: "Function word",
+  particle: "Particle",
+  grammar: "Grammar", // legacy alias for pre-realign chapters
 };
 const FREQUENCY_LABELS = {
   very_common: "Very common",

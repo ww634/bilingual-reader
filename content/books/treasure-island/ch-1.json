@@ -2,7 +2,7 @@
   "id": "ch-1",
   "book_id": "treasure-island",
   "language": "zh",
-  "version": 1,
+  "version": 3,
   "title": {
     "target": "Dì yī zhāng: Lǎo hǎidào zài Bēnbǎo zhǔjiàng lǚguǎn",
     "english": "The Old Buccaneer: At the Admiral Benbow"
@@ -15,22 +15,22 @@
         {
           "english": "Part",
           "target": "dìyībù",
-          "category": "grammar",
+          "category": "noun",
           "frequency_band": "uncommon",
           "is_idiom": false
         },
         {
-          "english": "the old",
+          "english": "THE OLD",
           "target": "lǎo",
           "category": "adjective",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "buccaneer",
+          "english": "BUCCANEER",
           "target": "hǎizéi",
           "category": "noun",
-          "frequency_band": "common",
+          "frequency_band": "uncommon",
           "is_idiom": false
         }
       ]
@@ -40,14 +40,14 @@
       "english": "AT THE ADMIRAL BENBOW",
       "alignment": [
         {
-          "english": "at",
+          "english": "AT",
           "target": "zài",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "the Admiral Benbow",
+          "english": "THE ADMIRAL BENBOW",
           "target": "bēnbǎo zhǔjiàng",
           "category": "proper_noun",
           "frequency_band": null,
@@ -67,15 +67,29 @@
       "english": "Squire Trelawney, Doctor Livesey,",
       "alignment": [
         {
-          "english": "Squire Trelawney",
-          "target": "Tèláoní juézhǔ",
+          "english": "Squire",
+          "target": "juézhǔ",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "Trelawney",
+          "target": "Tèláoní",
           "category": "proper_noun",
           "frequency_band": null,
           "is_idiom": false
         },
         {
-          "english": "Doctor Livesey",
-          "target": "Lìfúsài yīshēng",
+          "english": "Doctor",
+          "target": "yīshēng",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Livesey",
+          "target": "Lìfúsài",
           "category": "proper_noun",
           "frequency_band": null,
           "is_idiom": false
@@ -88,15 +102,22 @@
       "alignment": [
         {
           "english": "and",
-          "target": "hái yǒu",
-          "category": "grammar",
+          "target": "hái",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "the rest of these",
+          "english": "the rest of",
           "target": "qítā de",
-          "category": "grammar",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "these",
+          "target": "zhèxiē",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -114,30 +135,51 @@
       "english": "gentlemen having asked me to write down the whole",
       "alignment": [
         {
-          "english": "these gentlemen",
-          "target": "zhèxiē xiānshēng",
+          "english": "gentlemen",
+          "target": "xiānshēng",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "having asked me",
-          "target": "qǐng wǒ",
-          "category": "grammar",
+          "english": "having asked",
+          "target": "qǐng",
+          "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "to write down",
-          "target": "jìlù xiàlái",
-          "category": "verb",
-          "frequency_band": "common",
+          "english": "me",
+          "target": "wǒ",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to",
+          "target": "bǎ",
+          "category": "particle",
+          "frequency_band": "very_common",
           "is_idiom": false
         },
         {
           "english": "the whole",
           "target": "quánbù",
           "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "write down",
+          "target": "jìlù",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "down",
+          "target": "xiàlái",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -148,17 +190,31 @@
       "english": "particulars about Treasure Island,",
       "alignment": [
         {
+          "english": "about",
+          "target": "guānyú",
+          "category": "function_word",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Treasure Island",
+          "target": "bǎodǎo",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "of",
+          "target": "de",
+          "category": "particle",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
           "english": "particulars",
           "target": "xiángxì qíngkuàng",
           "category": "noun",
           "frequency_band": "uncommon",
-          "is_idiom": false
-        },
-        {
-          "english": "about Treasure Island",
-          "target": "guānyú bǎodǎo de",
-          "category": "grammar",
-          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -170,7 +226,7 @@
         {
           "english": "from",
           "target": "cóng",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -178,13 +234,13 @@
           "english": "the beginning",
           "target": "kāishǐ",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
           "english": "to the",
           "target": "dào",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         }
@@ -198,13 +254,13 @@
           "english": "end",
           "target": "jiéshù",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
           "english": "keeping nothing back but",
           "target": "zhǐchú",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "uncommon",
           "is_idiom": false
         },
@@ -218,7 +274,7 @@
         {
           "english": "'s",
           "target": "de",
-          "category": "grammar",
+          "category": "particle",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -232,13 +288,20 @@
         {
           "english": "not",
           "target": "méiyǒu",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "yet written down",
-          "target": "xiě chūlái",
+          "english": "back",
+          "target": "xiě",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "but",
+          "target": "chūlái",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -252,21 +315,21 @@
         {
           "english": "and that only",
           "target": "zhǐshì",
-          "category": "grammar",
-          "frequency_band": "very_common",
+          "category": "function_word",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
           "english": "because",
           "target": "yīnwèi",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
           "english": "there is still",
           "target": "hái yǒu",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -274,13 +337,13 @@
           "english": "treasure",
           "target": "bǎozàng",
           "category": "noun",
-          "frequency_band": "common",
+          "frequency_band": "uncommon",
           "is_idiom": false
         },
         {
           "english": "not yet",
           "target": "méiyǒu",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -300,21 +363,21 @@
         {
           "english": "I",
           "target": "wǒ",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
           "english": "in the year of grace",
           "target": "zài shènghuì",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "rare",
           "is_idiom": false
         },
         {
           "english": "seventeen",
           "target": "shíqī",
-          "category": "noun",
+          "category": "measure_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -328,7 +391,7 @@
         {
           "english": "of",
           "target": "zhī",
-          "category": "grammar",
+          "category": "particle",
           "frequency_band": "rare",
           "is_idiom": false
         },
@@ -343,7 +406,7 @@
           "english": "take up",
           "target": "tíqǐ",
           "category": "verb",
-          "frequency_band": "common",
+          "frequency_band": "uncommon",
           "is_idiom": false
         },
         {
@@ -360,10 +423,10 @@
       "english": ", and go back to the",
       "alignment": [
         {
-          "english": "and then",
+          "english": "and",
           "target": "ránhòu",
-          "category": "grammar",
-          "frequency_band": "very_common",
+          "category": "function_word",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
@@ -376,7 +439,7 @@
         {
           "english": "to the",
           "target": "dào",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         }
@@ -387,16 +450,23 @@
       "english": "time when my father kept the Admiral Benbow Inn, and the",
       "alignment": [
         {
-          "english": "the time when",
-          "target": "de shíhòu",
-          "category": "grammar",
+          "english": "time",
+          "target": "shíhòu",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "when",
+          "target": "de",
+          "category": "particle",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
           "english": "my",
           "target": "wǒ",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -404,7 +474,7 @@
           "english": "father",
           "target": "fùqīn",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
@@ -431,8 +501,8 @@
         {
           "english": "and",
           "target": "érqiě",
-          "category": "grammar",
-          "frequency_band": "very_common",
+          "category": "function_word",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -444,7 +514,7 @@
         {
           "english": "that",
           "target": "nàgè",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -456,8 +526,15 @@
           "is_idiom": false
         },
         {
+          "english": "of",
+          "target": "de",
+          "category": "particle",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
           "english": "old",
-          "target": "de lǎo",
+          "target": "lǎo",
           "category": "adjective",
           "frequency_band": "very_common",
           "is_idiom": false
@@ -485,19 +562,19 @@
         {
           "english": "on",
           "target": "shàng",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "has",
+          "english": "have",
           "target": "yǒu",
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "saber cut scars",
+          "english": "saber cut",
           "target": "dāodāo bāhén",
           "category": "noun",
           "frequency_band": "uncommon",
@@ -513,20 +590,27 @@
           "english": "first",
           "target": "tóu yīcì",
           "category": "adverb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "moved",
+          "target": "bān",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "took up",
-          "target": "bān jìn",
+          "english": "in",
+          "target": "jìn",
           "category": "verb",
-          "frequency_band": "uncommon",
+          "frequency_band": "very_common",
           "is_idiom": false
         },
         {
           "english": "his",
           "target": "tā de",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         }
@@ -553,7 +637,7 @@
         {
           "english": "our",
           "target": "wǒmen",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
@@ -565,9 +649,9 @@
           "is_idiom": false
         },
         {
-          "english": "inside",
+          "english": "in",
           "target": "lǐ",
-          "category": "grammar",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         }
@@ -579,6 +663,7 @@
     "createdAt": "2026-05-28",
     "model": "gpt-4.1",
     "synopsis": "Squire Trelawney and Doctor Livesey ask the narrator to write down the full story of Treasure Island. The narrator begins by looking back to the year of grace 17—, when his father ran the Admiral Benbow Inn and the hard-edged sailor with a saber scar first stayed under their roof.",
-    "has_alignment": true
+    "has_alignment": true,
+    "realignedAt": "2026-05-29"
   }
 }

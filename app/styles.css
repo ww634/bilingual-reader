@@ -704,13 +704,24 @@ body {
 /* Color palette by PART OF SPEECH. Each category gets a consistent hue so
    the reader builds intuition: blue = noun, red = verb, etc. Pinyin and
    English in the same chunk share the category color via data-cat. */
-.chunk[data-cat="noun"]        { color: #7dd3fc; }  /* sky blue   — things   */
-.chunk[data-cat="verb"]        { color: #fca5a5; }  /* coral      — actions  */
-.chunk[data-cat="adjective"]   { color: #86efac; }  /* green      — modifies */
-.chunk[data-cat="adverb"]      { color: #fde68a; }  /* yellow     — modifies */
-.chunk[data-cat="idiom"]       { color: #c4b5fd; }  /* purple     — fixed    */
-.chunk[data-cat="proper_noun"] { color: #fdba74; }  /* orange     — names    */
-/* Grammar (the/a/of/at/particles) inherits the default text/dim colors. */
+.chunk[data-cat="noun"]          { color: #7dd3fc; }  /* sky blue   — things   */
+.chunk[data-cat="verb"]          { color: #fca5a5; }  /* coral      — actions  */
+.chunk[data-cat="adjective"]     { color: #86efac; }  /* green      — modifies */
+.chunk[data-cat="adverb"]        { color: #fde68a; }  /* yellow     — modifies */
+.chunk[data-cat="idiom"]         { color: #c4b5fd; }  /* purple     — fixed    */
+.chunk[data-cat="proper_noun"]   { color: #fdba74; }  /* orange     — names    */
+.chunk[data-cat="measure_word"]  { color: #5eead4; }  /* teal       — classifiers */
+/* Function words, particles and the legacy "grammar" bucket render in a
+   muted neutral so they read as scaffolding rather than vocabulary. */
+.chunk[data-cat="function_word"],
+.chunk[data-cat="particle"],
+.chunk[data-cat="grammar"]       { color: var(--text-dim); }
+/* Subtle italic on particles only — flags them as structural decorations. */
+.reader-block .english .chunk[data-cat="particle"] { font-style: italic; }
+/* "Other" — uncategorised English words that the alignment didn't claim.
+   Same dim treatment as function words; punctuation around them is left as
+   plain text (always visible) so sentence rhythm survives. */
+.reader-block .english .other { color: var(--text-dim); }
 #reader-footer {
   position: absolute;
   bottom: 0;
@@ -895,12 +906,16 @@ body[data-font="large"]  { --reader-font: 20px; }
   color: var(--text-dim);
   border: 1px solid var(--border);
 }
-.pop-tag.cat-noun        { color: #7dd3fc; }
-.pop-tag.cat-verb        { color: #fca5a5; }
-.pop-tag.cat-adjective   { color: #86efac; }
-.pop-tag.cat-adverb      { color: #fde68a; }
-.pop-tag.cat-idiom       { color: #c4b5fd; }
-.pop-tag.cat-proper_noun { color: #fdba74; }
+.pop-tag.cat-noun          { color: #7dd3fc; }
+.pop-tag.cat-verb          { color: #fca5a5; }
+.pop-tag.cat-adjective     { color: #86efac; }
+.pop-tag.cat-adverb        { color: #fde68a; }
+.pop-tag.cat-idiom         { color: #c4b5fd; }
+.pop-tag.cat-proper_noun   { color: #fdba74; }
+.pop-tag.cat-measure_word  { color: #5eead4; }
+.pop-tag.cat-function_word { color: var(--text-dim); }
+.pop-tag.cat-particle      { color: var(--text-dim); }
+.pop-tag.cat-grammar       { color: var(--text-dim); }
 .pop-tag.idiom-flag      { color: #c4b5fd; border-color: rgba(196, 181, 253, 0.4); }
 .pop-tag.freq-very_common { color: #86efac; }
 .pop-tag.freq-common      { color: #fde68a; }
@@ -1160,12 +1175,21 @@ body[data-font="large"]  { --reader-font: 20px; }
   border-radius: 3px;
   flex: 0 0 auto;
 }
-.cat-swatch.cat-noun        { background: #7dd3fc; }
-.cat-swatch.cat-verb        { background: #fca5a5; }
-.cat-swatch.cat-adjective   { background: #86efac; }
-.cat-swatch.cat-adverb      { background: #fde68a; }
-.cat-swatch.cat-idiom       { background: #c4b5fd; }
-.cat-swatch.cat-proper_noun { background: #fdba74; }
+.cat-swatch.cat-noun          { background: #7dd3fc; }
+.cat-swatch.cat-verb          { background: #fca5a5; }
+.cat-swatch.cat-adjective     { background: #86efac; }
+.cat-swatch.cat-adverb        { background: #fde68a; }
+.cat-swatch.cat-idiom         { background: #c4b5fd; }
+.cat-swatch.cat-proper_noun   { background: #fdba74; }
+.cat-swatch.cat-measure_word  { background: #5eead4; }
+/* Function words / particles / other are styled as outlined dim swatches so
+   the page palette stays calm — neutrals look neutral in the toggle row. */
+.cat-swatch.cat-function_word,
+.cat-swatch.cat-particle,
+.cat-swatch.cat-other {
+  background: transparent;
+  border: 1px solid var(--text-muted);
+}
 .cat-toggle .cat-label {
   font-size: 14px;
   color: var(--text);
@@ -1179,9 +1203,17 @@ body[data-font="large"]  { --reader-font: 20px; }
 
    Scoped to .reader-block so the rules don't accidentally apply elsewhere
    (e.g. popover, title page). */
-body.hide-cat-noun        .reader-block .english .chunk[data-cat="noun"]        { visibility: hidden; }
-body.hide-cat-verb        .reader-block .english .chunk[data-cat="verb"]        { visibility: hidden; }
-body.hide-cat-adjective   .reader-block .english .chunk[data-cat="adjective"]   { visibility: hidden; }
-body.hide-cat-adverb      .reader-block .english .chunk[data-cat="adverb"]      { visibility: hidden; }
-body.hide-cat-idiom       .reader-block .english .chunk[data-cat="idiom"]       { visibility: hidden; }
-body.hide-cat-proper_noun .reader-block .english .chunk[data-cat="proper_noun"] { visibility: hidden; }
+body.hide-cat-noun           .reader-block .english .chunk[data-cat="noun"]           { visibility: hidden; }
+body.hide-cat-verb           .reader-block .english .chunk[data-cat="verb"]           { visibility: hidden; }
+body.hide-cat-adjective      .reader-block .english .chunk[data-cat="adjective"]      { visibility: hidden; }
+body.hide-cat-adverb         .reader-block .english .chunk[data-cat="adverb"]         { visibility: hidden; }
+body.hide-cat-idiom          .reader-block .english .chunk[data-cat="idiom"]          { visibility: hidden; }
+body.hide-cat-proper_noun    .reader-block .english .chunk[data-cat="proper_noun"]    { visibility: hidden; }
+body.hide-cat-function_word  .reader-block .english .chunk[data-cat="function_word"]  { visibility: hidden; }
+body.hide-cat-measure_word   .reader-block .english .chunk[data-cat="measure_word"]   { visibility: hidden; }
+/* Particles — the "particle" toggle also hides the legacy "grammar" alias
+   so old chapters that haven't been re-aligned still respect the switch. */
+body.hide-cat-particle       .reader-block .english .chunk[data-cat="particle"]       { visibility: hidden; }
+body.hide-cat-particle       .reader-block .english .chunk[data-cat="grammar"]        { visibility: hidden; }
+/* Other — any uncategorised English word. */
+body.hide-cat-other          .reader-block .english .other                            { visibility: hidden; }

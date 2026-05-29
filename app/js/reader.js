@@ -16,8 +16,6 @@ let _state = {
   saveTimer: null,
 };
 
-const NEUTRAL_LEADING = new Set(["the", "a", "an"]);
-
 function escape(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -52,12 +50,17 @@ function findChunkPositions(pair) {
   const claimedTarget = new Set();
   const claimedEnglish = new Set();
 
-  const findFirstUnclaimed = (text, needle, claimed, requireWordBoundary = false) => {
+  const findFirstUnclaimed = (text, needle, claimed, requireWordBoundary = false, caseInsensitive = false) => {
     if (!needle) return -1;
     const isWordChar = (c) => /[a-zA-Z0-9]/.test(c);
+    // Case-insensitive English matching: needle is usually Title/lowercase
+    // but headers in the .docx may be ALL CAPS. Comparing lowercased copies
+    // lets us find the right span without changing the underlying text.
+    const haystack = caseInsensitive ? text.toLowerCase() : text;
+    const probe = caseInsensitive ? needle.toLowerCase() : needle;
     let from = 0;
-    while (from <= text.length - needle.length) {
-      const idx = text.indexOf(needle, from);
+    while (from <= haystack.length - probe.length) {
+      const idx = haystack.indexOf(probe, from);
       if (idx === -1) return -1;
       // Check if any position in [idx, idx+len) is already claimed.
       let collision = false;
@@ -93,8 +96,9 @@ function findChunkPositions(pair) {
     }
     if (chunk.english) {
       // English requires word boundaries so a short word like "a" doesn't
-      // match inside a longer word like "se_a_man".
-      const idx = findFirstUnclaimed(pair.english, chunk.english, claimedEnglish, true);
+      // match inside a longer word like "se_a_man". Case-insensitive so
+      // all-caps headers in the source .docx still align.
+      const idx = findFirstUnclaimed(pair.english, chunk.english, claimedEnglish, true, true);
       if (idx !== -1) {
         eStart = idx;
         eEnd = idx + chunk.english.length;
@@ -109,39 +113,36 @@ function findChunkPositions(pair) {
 
 /**
  * Build a coverage array for pair.english: for each character, the chunk
- * index that "owns" it (for coloring), or null. Grammar chunks and leading
- * English articles ("the", "a", "an") are left uncovered.
+ * index that "owns" it (for coloring + per-category visibility toggling),
+ * or null.
+ *
+ * Every chunk — including the new function_word, measure_word, particle
+ * categories (and the legacy "grammar" alias) — gets covered, so the
+ * reader-options sheet can hide them on a per-category basis via CSS.
+ * Function words / particles render in a dim neutral colour by default so
+ * the page doesn't feel painted-by-numbers.
  */
 function buildEnglishCoverage(pair) {
   const text = pair.english;
   const coverage = new Array(text.length).fill(null);
   if (!Array.isArray(pair.alignment)) return coverage;
 
+  // Case-insensitive lookup: chunk english is generally in Title/lower case,
+  // but section headers in the source .docx are sometimes ALL CAPS. Without
+  // this, "the old" in the alignment doesn't match "THE OLD" in pair.english
+  // and the whole header falls into the Other bucket.
+  const textLower = text.toLowerCase();
   let scanFrom = 0;
   for (let ci = 0; ci < pair.alignment.length; ci++) {
     const chunk = pair.alignment[ci];
     const span = (chunk.english || "").trim();
     if (!span) continue;
-    let idx = text.indexOf(span, scanFrom);
-    if (idx === -1) idx = text.indexOf(span);
+    const needle = span.toLowerCase();
+    let idx = textLower.indexOf(needle, scanFrom);
+    if (idx === -1) idx = textLower.indexOf(needle);
     if (idx === -1) continue;
 
-    if (chunk.category === "grammar") {
-      scanFrom = idx + span.length;
-      continue;
-    }
-
-    // Strip leading articles from the colored portion.
-    let startOffset = 0;
-    const words = span.split(/\s+/);
-    let consumed = 0;
-    for (const w of words) {
-      if (NEUTRAL_LEADING.has(w.toLowerCase())) consumed += w.length + 1;
-      else break;
-    }
-    startOffset = Math.min(consumed, span.length);
-
-    for (let p = idx + startOffset; p < idx + span.length; p++) {
+    for (let p = idx; p < idx + span.length; p++) {
       if (coverage[p] === null) coverage[p] = ci;
     }
     scanFrom = idx + span.length;
@@ -150,9 +151,36 @@ function buildEnglishCoverage(pair) {
 }
 
 /**
+ * Wrap an uncovered English run so its WORDS go through .other (hideable via
+ * the "Other" toggle) while its punctuation / whitespace stay plain text
+ * (always visible — punctuation helps you parse the sentence even when all
+ * word translations are hidden).
+ *
+ * A "word" here is a run of letters / apostrophes / internal hyphens.
+ */
+function emitOtherRun(text) {
+  let out = "";
+  let i = 0;
+  while (i < text.length) {
+    if (/[A-Za-z]/.test(text[i])) {
+      let j = i + 1;
+      while (j < text.length && /[A-Za-z0-9'’\-]/.test(text[j])) j++;
+      out += `<span class="other">${escape(text.slice(i, j))}</span>`;
+      i = j;
+    } else {
+      let j = i + 1;
+      while (j < text.length && !/[A-Za-z]/.test(text[j])) j++;
+      out += escape(text.slice(i, j));
+      i = j;
+    }
+  }
+  return out;
+}
+
+/**
  * Emit a slice of an English text wrapped in <span class="chunk"> for any
- * colored positions, plain text for uncovered positions. Slice bounds:
- * [start, end).
+ * colored positions, and <span class="other"> for uncovered word runs
+ * (so the "Other" toggle can hide them). Slice bounds: [start, end).
  */
 function emitEnglishSlice(pair, coverage, start, end) {
   let html = "";
@@ -163,7 +191,7 @@ function emitEnglishSlice(pair, coverage, start, end) {
     if (claim === null) {
       let stop = p;
       while (stop < end && coverage[stop] === null) stop++;
-      html += escape(text.slice(p, stop));
+      html += emitOtherRun(text.slice(p, stop));
       p = stop;
     } else {
       let stop = p;
@@ -438,10 +466,11 @@ function renderPageInto(pageEl, pairs, pageStartIdx) {
 
       if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
         // No chunks — emit the whole English on the first line we see this pair,
-        // and nothing on subsequent lines.
+        // and nothing on subsequent lines. Wrap word runs in .other so the
+        // "Other" toggle still applies even to fully un-aligned pairs.
         const cursor = englishCursor.get(pairIdx) || 0;
         if (cursor === 0 && pair.english.length > 0) {
-          englishParts.push(escape(pair.english));
+          englishParts.push(emitOtherRun(pair.english));
           englishCursor.set(pairIdx, pair.english.length);
         }
         continue;

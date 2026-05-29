@@ -9,45 +9,74 @@
 // We batch pairs (~15 at a time) so a single chapter doesn't depend on one
 // huge response, but a failed batch is easy to retry.
 
-const ALIGN_SYSTEM_PROMPT = `You are a bilingual annotator producing FINE-GRAINED word-level alignment between English clauses and their Mandarin Chinese pinyin translations. A learner will tap individual pinyin words to look them up and see color-coded mappings to English.
+const ALIGN_SYSTEM_PROMPT = `You are a bilingual annotator producing FINE-GRAINED word-level alignment between English clauses and their Mandarin Chinese pinyin translations. A learner will tap individual pinyin words to look them up and see color-coded mappings to English. The learner uses category toggles to fade out grammatical scaffolding (function words, particles, measure words) and concentrate on content words — so every word that has a recognisable role MUST get a chunk and a category. The "uncategorised" bucket should be tiny.
 
 For each (english, target) pair, you return a list of CHUNKS. Each chunk maps one small unit of pinyin to its English counterpart.
 
 GRANULARITY — read carefully, this is the most common failure mode:
 A chunk's TARGET should usually be 1 pinyin word, occasionally 2, never more than 3 except for genuine multi-word idioms or proper-noun phrases.
-Do NOT lump multiple content words into one chunk. Each noun, verb, adjective, adverb gets its OWN chunk. Each measure word, particle, or conjunction gets its own chunk (you may group adjacent function words into one "grammar" chunk if they form a single grammatical unit like "zhī jiān de").
+Do NOT lump multiple content words into one chunk. Each noun, verb, adjective, adverb gets its OWN chunk. Each pronoun, preposition, conjunction, auxiliary, measure word, or particle also gets its own chunk.
 
-GOOD example (fine-grained):
-  english: "the time when my father kept the Admiral Benbow Inn"
-  target:  "wǒ fùqīn kāi Zhǎngguān Bēnbǎo lǚguǎn de shíhòu"
+CATEGORIES (use the most specific one that applies):
+- "noun"          — concrete or abstract things. Plain English nouns (book, father, time).
+- "verb"          — actions and state changes. Plain English verbs (eat, kept, became).
+- "adjective"     — describes a noun (old, blue, brown-faced).
+- "adverb"        — describes a verb / adjective (quickly, very, often).
+- "idiom"         — genuine 4-character chengyu or fixed set phrase. is_idiom must be true.
+- "proper_noun"   — transliterated names of people, places, organisations.
+- "function_word" — pronouns (I, you, he, she, we, my, his), articles (a, an, the), prepositions (in, of, with, by, to), conjunctions (and, but, or, while, because, when), auxiliaries / copulas (is, was, were, will, can, have/has as helper). Both sides count: 我/wǒ → "I" is function_word; 在/zài → "at" is function_word; 是/shì → "is" is function_word.
+- "measure_word"  — Chinese classifiers (个/gè, 本/běn, 条/tiáo, 只/zhī, 张/zhāng, 块/kuài, 杯/bēi, etc) paired with their English determiner ("a", "one", "the", a number). Examples: "一本"/yì běn → "a" or "one" (measure_word); "三只" → "three" (measure_word).
+- "particle"      — Mandarin structural / aspect / modal particles with no clean English content word: 了/le, 着/zhe, 过/guò, 的/de (possessive or attributive), 把/bǎ, 被/bèi, 吗/ma, 呢/ne, 吧/ba, 嘛/ma. The English side should be the closest scaffolding word the particle implies (e.g. 了 → "did" or "have", 的 → "'s" or "of", 把 → "took") — NEVER empty.
+- "grammar"       — legacy bucket. AVOID. Only use if you genuinely cannot decide between function_word / particle / measure_word.
+
+GOOD example (fine-grained, fully categorised):
+  english: "my father kept the Admiral Benbow Inn"
+  target:  "wǒ fùqīn kāi Zhǎngguān Bēnbǎo lǚguǎn"
   chunks:
-    { english: "my",                  target: "wǒ",                 category: "grammar" }
+    { english: "my",                  target: "wǒ",                 category: "function_word" }
     { english: "father",              target: "fùqīn",              category: "noun" }
     { english: "kept",                target: "kāi",                category: "verb" }
     { english: "the Admiral Benbow",  target: "Zhǎngguān Bēnbǎo",   category: "proper_noun" }
     { english: "Inn",                 target: "lǚguǎn",             category: "noun" }
-    { english: "the time when",       target: "de shíhòu",          category: "grammar" }
+
+GOOD example with measure word + particle:
+  english: "I have a book"
+  target:  "wǒ yǒu yì běn shū"
+  chunks:
+    { english: "I",     target: "wǒ",     category: "function_word" }
+    { english: "have",  target: "yǒu",    category: "verb" }
+    { english: "a",     target: "yì běn", category: "measure_word" }
+    { english: "book",  target: "shū",    category: "noun" }
+
+  english: "he ate it"
+  target:  "tā chī le"
+  chunks:
+    { english: "he",   target: "tā",   category: "function_word" }
+    { english: "ate",  target: "chī",  category: "verb" }
+    { english: "did",  target: "le",   category: "particle" }   // 了 marks completed action
 
 BAD example (too coarse — DO NOT do this):
-  chunks:
-    { english: "the time when my father kept the Admiral Benbow Inn",
-      target: "wǒ fùqīn kāi Zhǎngguān Bēnbǎo lǚguǎn de shíhòu",
-      category: "noun" }
-^ a single 10-word chunk is useless for tap-to-learn. Always break content words apart.
+  { english: "my father kept the Admiral Benbow Inn",
+    target:  "wǒ fùqīn kāi Zhǎngguān Bēnbǎo lǚguǎn",
+    category: "noun" }
+^ a single 7-word chunk is useless for tap-to-learn. Always break content words apart.
 
 Hard rules:
 1. Each chunk has both an "english" span and a "target" pinyin span — neither empty.
-2. Chunks appear in the order of the TARGET (pinyin) clause, left to right.
-3. Pinyin chunks respect standard pinyin word boundaries: syllables of one Chinese word run together (e.g. "zhàndòu", "péngyǒu"), separate words are space-separated. Do NOT split a single pinyin word across two chunks.
-4. PREFER 1 pinyin word per chunk. 2 is acceptable when they form an inseparable unit (e.g. "shíhòu" = "time/when"). 3+ pinyin words in one chunk requires a strong reason (genuine fixed expression, transliterated proper noun phrase, or grammatical wrapper like "chúle...wài" that wraps around content).
-5. Every chunk gets a "category": one of "noun", "verb", "adjective", "adverb", "grammar" (particles, conjunctions, prepositions, articles, pronouns, auxiliaries, measure words), "idiom" (4-character chengyu or fixed set phrase), "proper_noun" (transliterated names of people/places — multi-syllable proper nouns like "Zhǎngguān Bēnbǎo" stay together as one chunk).
-6. Every chunk gets a "frequency_band": one of "very_common" (HSK 1-2 level), "common" (HSK 3-4), "uncommon" (HSK 5-6), "rare" (beyond HSK 6 / literary). Use null for proper nouns and idioms.
-7. "is_idiom": true ONLY for genuine 4-character chengyu or other set phrases. False for ordinary multi-word translations.
+2. **Pair boundaries are hard.** Each chunk's "english" MUST be a contiguous substring of THAT pair's English clause (case-insensitive). Each chunk's "target" MUST be a contiguous substring of THAT pair's pinyin. Do NOT borrow words from neighbouring pairs in the same batch. If a Chinese word in this pair seems to correspond to an English word that lives in a different pair, leave it as an unmatched fragment or pick the closest in-pair English; do not invent the missing word.
+3. Chunks appear in the order of the TARGET (pinyin) clause, left to right.
+4. Pinyin chunks respect standard pinyin word boundaries: syllables of one Chinese word run together (e.g. "zhàndòu", "péngyǒu"), separate words are space-separated. Do NOT split a single pinyin word across two chunks.
+5. PREFER 1 pinyin word per chunk. 2 is acceptable when they form an inseparable unit (e.g. "shíhòu" = "time/when", or "yì běn" = measure-word + numeral). 3+ pinyin words in one chunk requires a strong reason (genuine fixed expression, transliterated proper noun phrase).
+6. EVERY word in the English clause should belong to some chunk's english span — function words and articles included. Do not silently drop "the", "a", "of", "and", etc. Find the Chinese word they bind to (often a measure word, particle, or content word) and attach them there.
+7. If the English contains genuine translator glue with NO Chinese counterpart (rare — only when an extra word was added purely to make English grammatical), it is OK to leave a one- or two-word run uncovered, but this should be rare. Categorising into function_word / particle / measure_word is almost always possible.
+8. Every chunk gets a "frequency_band": one of "very_common" (HSK 1-2), "common" (HSK 3-4), "uncommon" (HSK 5-6), "rare" (beyond HSK 6 / literary). Use null for proper nouns and idioms.
+9. "is_idiom": true ONLY for genuine 4-character chengyu or other set phrases. False for ordinary multi-word translations.
 
 Edge cases:
-- An English filler word like "the" with no specific Chinese counterpart: attach it to the adjacent content word's English span. Example: "the cat" → target "māo" with english "the cat".
-- A Chinese particle (le / de / ma / ne) with no specific English counterpart: it gets its own "grammar" chunk with english being the closest English equivalent or the word it modifies. Never leave english empty.
+- Pronoun + possessive marker: "my" → wǒ de should be ONE function_word chunk, target "wǒ de", english "my". (Or two chunks: wǒ/I + de/'s. Either is acceptable; prefer the two-chunk form so each piece is learnable.)
 - Multi-syllable proper nouns ("Zhǎngguān Bēnbǎo lǚguǎn" = "Admiral Benbow Inn") may be one chunk for the name portion, but the generic noun ("lǚguǎn" = "Inn") should be its OWN chunk so the user can learn "inn" separately.
+- English determiner attached to a measure word: prefer to put the determiner on the measure_word chunk, not the noun. So "a book" → ["a"/"yì běn" measure_word, "book"/"shū" noun] rather than ["a book"/"yì běn shū"].
+- Auxiliary + verb: "has eaten" → split if possible ("has" → function_word matching context like 已经/yǐjīng or aspect particle; "eaten" → verb). If Chinese collapses them into one verb ("chīle"), keep them together as a verb chunk with english "has eaten".
 
 Output: a flat array of chunks per pair, in target order.`;
 
@@ -76,7 +105,20 @@ const ALIGN_RESPONSE_SCHEMA = {
                 target: { type: "string", description: "Pinyin span (orthographic word boundaries). Cannot be empty." },
                 category: {
                   type: "string",
-                  enum: ["noun", "verb", "adjective", "adverb", "grammar", "idiom", "proper_noun"],
+                  enum: [
+                    "noun",
+                    "verb",
+                    "adjective",
+                    "adverb",
+                    "idiom",
+                    "proper_noun",
+                    "function_word",
+                    "measure_word",
+                    "particle",
+                    // "grammar" kept as a legacy fallback so old prompts /
+                    // re-runs against existing data don't fail validation.
+                    "grammar",
+                  ],
                 },
                 frequency_band: {
                   type: ["string", "null"],
@@ -95,7 +137,18 @@ const ALIGN_RESPONSE_SCHEMA = {
   required: ["alignments"],
 };
 
-const CATEGORY_ENUM = new Set(["noun", "verb", "adjective", "adverb", "grammar", "idiom", "proper_noun"]);
+const CATEGORY_ENUM = new Set([
+  "noun",
+  "verb",
+  "adjective",
+  "adverb",
+  "idiom",
+  "proper_noun",
+  "function_word",
+  "measure_word",
+  "particle",
+  "grammar", // legacy
+]);
 const FREQ_ENUM = new Set(["very_common", "common", "uncommon", "rare"]);
 
 // Fine-grained alignment produces ~5-7 chunks per pair, each chunk ~80 JSON
@@ -178,6 +231,8 @@ function validateAlignment(alignment, originalPair) {
     problems.push("no chunks returned");
     return problems;
   }
+  const pairEnglishLower = (originalPair?.english || "").toLowerCase();
+  const pairTargetLower = (originalPair?.target || "").toLowerCase();
   alignment.chunks.forEach((c, i) => {
     if (!c.english || !c.target) problems.push(`chunk ${i}: empty english or target`);
     if (!CATEGORY_ENUM.has(c.category)) problems.push(`chunk ${i}: invalid category "${c.category}"`);
@@ -189,6 +244,22 @@ function validateAlignment(alignment, originalPair) {
     const targetWords = (c.target || "").trim().split(/\s+/).filter(Boolean).length;
     if (targetWords >= 4 && c.category !== "idiom" && c.category !== "proper_noun") {
       problems.push(`chunk ${i}: too coarse (${targetWords} pinyin words for "${c.target}")`);
+    }
+    // Hallucination check — the chunk's english span must actually appear in
+    // the pair's english. This catches the LLM borrowing words from
+    // neighbouring pairs in the same batch, which leaves real words
+    // uncovered. Same check for target.
+    if (c.english) {
+      const en = c.english.toLowerCase().trim();
+      if (en && !pairEnglishLower.includes(en)) {
+        problems.push(`chunk ${i}: english "${c.english}" not in pair english`);
+      }
+    }
+    if (c.target) {
+      const tg = c.target.toLowerCase().trim();
+      if (tg && !pairTargetLower.includes(tg)) {
+        problems.push(`chunk ${i}: target "${c.target}" not in pair target`);
+      }
     }
   });
   return problems;

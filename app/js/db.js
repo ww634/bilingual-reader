@@ -147,6 +147,10 @@ const DEFAULT_SETTINGS = {
     adverb: true,
     idiom: true,
     proper_noun: true,
+    measure_word: true,
+    function_word: true,
+    particle: true,
+    other: true,
   },
 };
 

@@ -10,6 +10,9 @@
 
 import { getSettings, putSettings } from "./db.js";
 
+// Keep this list in sync with the toggles in index.html and the
+// body.hide-cat-<key> rules in styles.css. Adding a category here = adding
+// a checkbox + a CSS rule = wiring complete.
 const CATEGORIES = [
   { key: "noun" },
   { key: "verb" },
@@ -17,6 +20,10 @@ const CATEGORIES = [
   { key: "adverb" },
   { key: "idiom" },
   { key: "proper_noun" },
+  { key: "measure_word" },
+  { key: "function_word" },
+  { key: "particle" },
+  { key: "other" }, // catch-all for any English word the alignment didn't claim
 ];
 
 const DEFAULT_VISIBILITY = {
@@ -26,6 +33,10 @@ const DEFAULT_VISIBILITY = {
   adverb: true,
   idiom: true,
   proper_noun: true,
+  measure_word: true,
+  function_word: true,
+  particle: true,
+  other: true,
 };
 
 const $ = (id) => document.getElementById(id);
