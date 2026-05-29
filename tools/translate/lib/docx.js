@@ -40,6 +40,13 @@ export function clean(raw) {
   // Stitch soft-hyphenated line breaks: "infor-\nmation" -> "information"
   text = text.replace(/(\w)-\n(\w)/g, "$1$2");
 
+  // Strip pipe characters used as soft visual breaks in some publisher
+  // exports — they survive .docx → text extraction as literal "|" and
+  // confuse downstream prompts (the translator sees them as content). We
+  // treat them as a space so clause boundaries that the pipe was marking
+  // get picked up by the regex splitter on its own.
+  text = text.replace(/\|/g, " ");
+
   // Split into lines for line-level cleanup
   let lines = text.split("\n");
 

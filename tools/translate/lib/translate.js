@@ -14,12 +14,20 @@ Hard rules — non-negotiable:
 1. PINYIN ONLY. Never include Chinese (Han) characters. Never include numbered pinyin (ma1, ma2). Only diacritic tone marks: ā á ǎ à, ē é ě è, ī í ǐ ì, ō ó ǒ ò, ū ú ǔ ù, ǖ ǘ ǚ ǜ.
 2. EVERY syllable carries a tone mark unless it's a neutral-tone particle (then it carries no mark).
 3. Word spacing follows standard pinyin orthography: syllables of a single word run together (e.g. "zhàndòu", "péngyǒu"), separate words are space-separated.
-4. Each English clause translates to ONE pinyin clause — natural Chinese phrasing within that clause's scope, NOT word-for-word.
-5. Proper nouns: transliterate to pinyin by default (e.g. "Sid" -> "Xī dé"). If a name has no obvious Chinese rendering, keep it in Latin script.
-6. Preserve the punctuation feel: trailing comma/period/em-dash on the English clause should be reflected with appropriate Chinese pacing in the pinyin (you may omit terminal punctuation in the pinyin; the app re-wraps).
-7. You will be given the FULL chapter context so your phrasing is internally consistent (consistent name transliterations, consistent register).
+4. Each output pair has ONE English clause + its pinyin translation. Natural Chinese phrasing within the pair's scope, NOT word-for-word.
+5. **MERGING short fragments — narrow, surgical.** The user gives you N English clauses as input HINTS. **Default behaviour: translate each clause as its OWN pair, one-to-one.** ONLY merge two ADJACENT clauses (never three) when ALL THREE conditions hold:
+     (a) the first clause is grammatically incomplete on its own (e.g., ends in a determiner with no noun: "the rest of these"; or a verb with no object: "asked me to");
+     (b) your Chinese translation of the first clause alone would have to borrow a content word from the next clause to be syntactically complete;
+     (c) the merged pair would still be no longer than ~12 English words.
+   When you merge, output ONE pair whose english is the concatenation of those two clauses (preserve internal whitespace/punctuation verbatim). Example to MERGE: "and the rest of these" + "gentlemen having asked me…" → one pair, because Chinese needs 先生们 with 这些. Example to NOT MERGE: "asked me to write down the whole" + "particulars about Treasure Island" → keep as TWO pairs (the first is grammatically complete on its own in Chinese with bǎ-construction). When in doubt, do NOT merge. Aggressive merging defeats the bilingual paired-line display the user is reading.
+   Output pair count must be at least ceil(N × 0.8). If you find yourself wanting to merge more than ~20% of input clauses, you are over-merging — back off.
+6. **No drift.** A pair's pinyin must ONLY translate the content of that pair's English. Do not invent words. Do not pull content from outside the pair's english span.
+7. Proper nouns: transliterate to pinyin by default (e.g. "Sid" -> "Xī dé"). If a name has no obvious Chinese rendering, keep it in Latin script.
+8. Preserve the punctuation feel: trailing comma/period/em-dash on the English clause should be reflected with appropriate Chinese pacing in the pinyin (you may omit terminal punctuation in the pinyin; the app re-wraps).
+9. **English coverage.** The concatenation of all pair.english values (joined by single spaces) must, when whitespace is collapsed, equal the concatenation of the input clauses (likewise whitespace-collapsed). No clause may be dropped, reordered, or paraphrased.
+10. You will be given the FULL chapter context so your phrasing is internally consistent (consistent name transliterations, consistent register).
 
-Output: a JSON object matching the provided schema, with exactly N pairs in the same order as the input clauses.`;
+Output: a JSON object matching the provided schema, with pairs in the same input order. Output count ≤ input count.`;
 
 const RESPONSE_SCHEMA = {
   type: "object",
@@ -88,7 +96,12 @@ export async function translateClauses(client, clauses, opts = {}) {
     fullText,
     "```",
     "",
-    `Translate the following ${clauses.length} English clauses into pinyin. Output exactly ${clauses.length} pairs in the same order.`,
+    `Translate the following ${clauses.length} English clauses into pinyin pairs.`,
+    "These clauses come from a regex split; treat them as HINTS for where to break pairs.",
+    "If two adjacent clauses are grammatically incomplete on their own and merging them",
+    "produces cleaner Chinese, MERGE them into a single pair (see system rule 5).",
+    "Otherwise translate each clause as its own pair. Maintain input order. Pair count may be",
+    "less than or equal to the input clause count — never greater.",
     "",
     "Clauses:",
     clauses.map((c, i) => `${i + 1}. ${c}`).join("\n"),
@@ -168,11 +181,36 @@ export async function translateTitle(client, englishTitle, opts = {}) {
 
 /**
  * Validate a batch of pairs. Returns { ok, problems }.
+ *
+ * The translator may now MERGE adjacent input clauses (pair count ≤ input
+ * clause count), so we no longer require strict count match. Instead we
+ * check that the concatenation of all pair.english (whitespace-collapsed)
+ * matches the concatenation of all input clauses (whitespace-collapsed).
+ * That catches clause-dropping or paraphrasing.
  */
 export function validatePairs(inputClauses, pairs) {
   const problems = [];
-  if (pairs.length !== inputClauses.length) {
-    problems.push(`Pair count mismatch: input ${inputClauses.length}, output ${pairs.length}`);
+  if (pairs.length > inputClauses.length) {
+    problems.push(`Pair count grew: input ${inputClauses.length}, output ${pairs.length} (translator should never increase pair count)`);
+  }
+  // Coverage check: the union of pair.english should reconstruct the input
+  // (modulo whitespace). Strict-equal is too brittle because the translator
+  // may normalise punctuation spacing; we collapse whitespace on both sides.
+  // Normalise for comparison: strip pipe characters (a .docx artefact used
+   // as a soft visual break), collapse whitespace, lowercase.
+  const norm = (s) => s.replace(/\|/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
+  const expected = norm(inputClauses.join(" "));
+  const actual = norm(pairs.map((p) => p.english).join(" "));
+  if (expected !== actual) {
+    // Find the first divergence so the error message is actionable.
+    let i = 0;
+    while (i < expected.length && i < actual.length && expected[i] === actual[i]) i++;
+    const ctx = (s, at) => s.slice(Math.max(0, at - 20), Math.min(s.length, at + 30));
+    problems.push(
+      `English coverage mismatch at char ${i}:\n` +
+      `  expected …${ctx(expected, i)}…\n` +
+      `  got      …${ctx(actual, i)}…`
+    );
   }
   pairs.forEach((p, i) => {
     if (HAN_CHAR_RE.test(p.target)) {

@@ -156,6 +156,11 @@ const FREQ_ENUM = new Set(["very_common", "common", "uncommon", "rare"]);
 // 6 pairs ≈ 35-50 chunks ≈ 3-4k output tokens, well within limits.
 const DEFAULT_BATCH_SIZE = 6;
 const MAX_RESPONSE_TOKENS = 8000;
+// How many extra single-pair passes we attempt for any pair whose batch
+// alignment fails validation. Single-pair retries can't cross-pair-drift —
+// the model only sees one pair — so they fix the most common failure mode.
+// Bumped if we see real-world chapters where some pairs persistently fail.
+const MAX_RETRIES_PER_PAIR = 2;
 
 /**
  * Align a batch of pairs in one OpenAI call.
@@ -168,10 +173,18 @@ async function alignBatch(client, pairs, opts = {}) {
   const model = opts.model || "gpt-4o";
   const englishTitle = opts.englishTitle || "(untitled)";
 
+  // When this batch is a retry of pairs that previously hallucinated, the
+  // caller can inject extra emphasis into the user prompt. Empty for the
+  // first pass; populated by alignAll on retries.
+  const retryNote = opts.retryContext
+    ? "\n\n⚠ STRICT MODE: the previous attempt on this pair produced chunks whose english or target was NOT a substring of the pair. Do not do that again. Every chunk.english MUST be a verbatim substring (case-insensitive) of THIS pair's english; every chunk.target MUST be a verbatim substring of THIS pair's target. If you cannot find a clean alignment, return fewer chunks rather than inventing.\n"
+    : "";
+
   const userPrompt = [
     `Chapter title: ${englishTitle}`,
+    retryNote,
     "",
-    `Align the following ${pairs.length} translated pairs. Return one alignment entry per pair, in the same order, with pair_index 0..${pairs.length - 1}.`,
+    `Align the following ${pairs.length} translated pair${pairs.length === 1 ? "" : "s"}. Return one alignment entry per pair, in the same order, with pair_index 0..${pairs.length - 1}.`,
     "",
     "Pairs:",
     pairs.map((p, i) =>
@@ -280,6 +293,10 @@ export async function alignAll(client, pairs, opts = {}) {
   let totalTokens = 0;
   const problems = [];
 
+  // Track which pairs need retrying — populated during the initial batched
+  // pass when validateAlignment flags hallucinations / cross-pair drift.
+  const failedPairs = []; // [{ globalIdx, problems: [...] }]
+
   for (let start = 0; start < pairs.length; start += batchSize) {
     const slice = pairs.slice(start, start + batchSize);
     const batchIndex = Math.floor(start / batchSize) + 1;
@@ -312,12 +329,60 @@ export async function alignAll(client, pairs, opts = {}) {
       const vProblems = validateAlignment(a, slice[i]);
       if (vProblems.length > 0) {
         problems.push(`batch ${batchIndex}, pair ${i}: ${vProblems.join("; ")}`);
+        failedPairs.push({ globalIdx: start + i, problems: vProblems });
       }
       out[start + i] = { ...slice[i], alignment: a.chunks };
     }
   }
 
-  return { aligned: out, totalTokens, problems };
+  // Retry pass: any pair whose initial alignment failed validation gets
+  // re-aligned alone (batch of 1, so the model can't borrow content from
+  // neighbouring pairs). The retryContext flag injects a stricter system
+  // message. We accept the retry result only if it validates clean —
+  // otherwise we keep the original (imperfect) alignment so the user still
+  // has something to render.
+  let retryCalls = 0;
+  let retryFixes = 0;
+  if (failedPairs.length > 0 && opts.onRetry) {
+    opts.onRetry(failedPairs.length);
+  }
+  for (const { globalIdx } of failedPairs) {
+    const originalPair = pairs[globalIdx];
+    for (let attempt = 1; attempt <= MAX_RETRIES_PER_PAIR; attempt++) {
+      let retryResult;
+      try {
+        retryResult = await alignBatch(client, [originalPair], {
+          ...opts,
+          retryContext: true,
+        });
+        retryCalls++;
+        totalTokens += retryResult.usage?.total_tokens || 0;
+      } catch (err) {
+        problems.push(`retry ${attempt} for pair ${globalIdx}: ${err.message}`);
+        break;
+      }
+      const a = retryResult.alignments.find((x) => x.pair_index === 0);
+      if (!a) continue;
+      const vProblems = validateAlignment(a, originalPair);
+      if (vProblems.length === 0) {
+        out[globalIdx] = { ...originalPair, alignment: a.chunks };
+        retryFixes++;
+        // Remove the corresponding "batch X, pair Y: ..." problem from the
+        // list so the final summary reflects what's actually broken.
+        const tag = `pair ${globalIdx % batchSize}: `;
+        const idx = problems.findIndex((p) => p.includes(tag));
+        if (idx !== -1) problems.splice(idx, 1);
+        break;
+      }
+    }
+  }
+
+  return {
+    aligned: out,
+    totalTokens,
+    problems,
+    retryStats: { calls: retryCalls, fixes: retryFixes, candidates: failedPairs.length },
+  };
 }
 
 /**

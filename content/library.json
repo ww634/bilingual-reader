@@ -2,30 +2,31 @@
   "version": 2,
   "books": [
     {
-      "version": 8,
+      "version": 11,
       "id": "treasure-island",
       "language": "zh",
       "title": {
-        "target": "bǎodǎo",
+        "target": "Bǎozāng dǎo",
         "english": "Treasure Island"
       },
       "author": "Robert Louis Stevenson",
-      "synopsis": "A reclusive narrator recounts how his father’s inn became the setting for a dangerous encounter with a one-legged sailor and other suspicious visitors. As clues about hidden treasure surface, a struggle between trustworthy allies and ruthless pirates unfolds, culminating in a perilous search that tests loyalties and courage.",
+      "synopsis": "Treasure Island follows a young narrator who becomes entangled in a quest for buried pirate treasure. Framed by stories requested by notable gentlemen, the narrative traces how characters at the Admiral Benbow Inn connect to pirates, maps, and deadly rivalry in the search for the island’s hoard.",
       "genres": [
-        "adventure",
         "classic",
+        "adventure",
         "pirate fiction",
-        "coming of age"
+        "coming of age",
+        "literary fiction"
       ],
       "chapters": [
         {
           "id": "ch-1",
           "title": {
-            "target": "Dì yī zhāng: Lǎo hǎidào zài Bēnbǎo zhǔjiàng lǚguǎn",
-            "english": "The Old Buccaneer: At the Admiral Benbow"
+            "target": "Dì yī zhāng: Zài Āi dé mǔ ěr Bēn bǎo",
+            "english": "At the Admiral Benbow"
           },
           "url": "books/treasure-island/ch-1.json",
-          "version": 8
+          "version": 11
         }
       ],
       "cover": "books/treasure-island/cover.svg"

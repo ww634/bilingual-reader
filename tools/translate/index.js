@@ -100,8 +100,12 @@ async function realignOnly(chapterFile) {
     model: opts.model,
     englishTitle: chapter.title?.english || "",
     onProgress: (b, total) => { if (total > 1) process.stdout.write(dim(`   batch ${b}/${total}\r`)); },
+    onRetry: (n) => process.stdout.write(dim(`   retrying ${n} pair${n === 1 ? "" : "s"} solo…\n`)),
   });
   console.log("");
+  if (result.retryStats && result.retryStats.candidates > 0) {
+    console.log(dim(`   retry pass: ${result.retryStats.fixes}/${result.retryStats.candidates} pairs fixed (${result.retryStats.calls} extra call${result.retryStats.calls === 1 ? "" : "s"})`));
+  }
   if (result.problems.length > 0) {
     console.error(yellow(`   ⚠ ${result.problems.length} problem${result.problems.length === 1 ? "" : "s"}:`));
     result.problems.slice(0, 8).forEach((p) => console.error(yellow(`     - ${p}`)));
@@ -352,9 +356,13 @@ async function main() {
           onProgress: (b, total) => {
             if (total > 1) process.stdout.write(dim(`       batch ${b}/${total}\r`));
           },
+          onRetry: (n) => process.stdout.write(dim(`       retrying ${n} pair${n === 1 ? "" : "s"} solo…\n`)),
         });
+        if (alignResult.retryStats && alignResult.retryStats.candidates > 0) {
+          console.log(dim(`       retry pass: ${alignResult.retryStats.fixes}/${alignResult.retryStats.candidates} pairs fixed (${alignResult.retryStats.calls} extra call${alignResult.retryStats.calls === 1 ? "" : "s"})`));
+        }
         if (alignResult.problems.length > 0) {
-          console.error(yellow(`     ⚠ Alignment had ${alignResult.problems.length} problem${alignResult.problems.length === 1 ? "" : "s"}`));
+          console.error(yellow(`     ⚠ Alignment had ${alignResult.problems.length} problem${alignResult.problems.length === 1 ? "" : "s"} after retries`));
           alignResult.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
         }
         const chunkCount = alignResult.aligned.reduce((a, p) => a + (p.alignment?.length || 0), 0);
