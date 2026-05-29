@@ -1039,3 +1039,149 @@ body[data-font="large"]  { --reader-font: 20px; }
   padding: 18px 0 0;
 }
 .settings-group.muted p { margin: 4px 0; }
+
+/* ───────────────────────── reader-options sheet ─────────────────────────
+   Slide-up modal sheet. Triggered from the topbar icon when in the reader.
+   Houses per-category visibility toggles today; will grow to hold font
+   size, theme, search, share etc. */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 90;
+  -webkit-tap-highlight-color: transparent;
+}
+.sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 91;
+  background: var(--surface);
+  color: var(--text);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-top: 1px solid var(--border-strong, rgba(255,255,255,0.08));
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.45);
+  padding: 8px 18px calc(20px + env(safe-area-inset-bottom)) 18px;
+  max-height: 80vh;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  -webkit-overflow-scrolling: touch;
+}
+.sheet.open { transform: translateY(0); }
+.sheet-handle {
+  width: 38px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface-3);
+  margin: 6px auto 10px;
+}
+.sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.sheet-head h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+.sheet-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: none;
+  color: var(--text-dim);
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.sheet-close:active { background: var(--surface-3); }
+.sheet-section {
+  padding: 14px 0;
+  border-top: 1px solid var(--surface-2);
+}
+.sheet-section:first-of-type { border-top: none; }
+.sheet-section.muted { opacity: 0.55; }
+.sheet-section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.sheet-hint {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+/* Category toggles: list of label rows, each with a checkbox, color swatch,
+   and the category name. Tap target is the full row. */
+.cat-toggles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.cat-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.cat-toggle:active { background: var(--surface-3); }
+.cat-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  margin: 0;
+  flex: 0 0 auto;
+}
+.cat-toggle .cat-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex: 0 0 auto;
+}
+.cat-swatch.cat-noun        { background: #7dd3fc; }
+.cat-swatch.cat-verb        { background: #fca5a5; }
+.cat-swatch.cat-adjective   { background: #86efac; }
+.cat-swatch.cat-adverb      { background: #fde68a; }
+.cat-swatch.cat-idiom       { background: #c4b5fd; }
+.cat-swatch.cat-proper_noun { background: #fdba74; }
+.cat-toggle .cat-label {
+  font-size: 14px;
+  color: var(--text);
+}
+.cat-toggle input:not(:checked) ~ .cat-label { color: var(--text-dim); }
+
+/* When a category is toggled off, hide the ENGLISH text for those chunks.
+   visibility:hidden keeps the layout stable (the slot stays the same width
+   so pagination doesn't change). The pinyin keeps its color and stays
+   tappable — users can still look up what's there via the popover.
+
+   Scoped to .reader-block so the rules don't accidentally apply elsewhere
+   (e.g. popover, title page). */
+body.hide-cat-noun        .reader-block .english .chunk[data-cat="noun"]        { visibility: hidden; }
+body.hide-cat-verb        .reader-block .english .chunk[data-cat="verb"]        { visibility: hidden; }
+body.hide-cat-adjective   .reader-block .english .chunk[data-cat="adjective"]   { visibility: hidden; }
+body.hide-cat-adverb      .reader-block .english .chunk[data-cat="adverb"]      { visibility: hidden; }
+body.hide-cat-idiom       .reader-block .english .chunk[data-cat="idiom"]       { visibility: hidden; }
+body.hide-cat-proper_noun .reader-block .english .chunk[data-cat="proper_noun"] { visibility: hidden; }

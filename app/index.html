@@ -24,6 +24,10 @@
       <button id="settings-btn" class="iconbtn" aria-label="Settings">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
       </button>
+      <button id="reader-options-btn" class="iconbtn" aria-label="Reader options" hidden>
+        <!-- "sliders" icon -->
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2" fill="var(--bg)"/><circle cx="15" cy="12" r="2" fill="var(--bg)"/><circle cx="8" cy="18" r="2" fill="var(--bg)"/></svg>
+      </button>
     </header>
 
     <!-- HOME -->
@@ -146,6 +150,34 @@
         <button id="pop-act-hear" class="pop-act">Hear pronunciation</button>
       </div>
     </div>
+
+    <!-- READER OPTIONS SHEET (slide-up; overlay; outside any view) -->
+    <div id="reader-options-backdrop" class="sheet-backdrop" hidden></div>
+    <aside id="reader-options" class="sheet" role="dialog" aria-modal="true" aria-labelledby="reader-options-title" hidden>
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="sheet-head">
+        <h3 id="reader-options-title">Reader options</h3>
+        <button id="reader-options-close" class="sheet-close" aria-label="Close">×</button>
+      </header>
+      <div class="sheet-body">
+        <section class="sheet-section">
+          <div class="sheet-section-label">Highlight categories</div>
+          <p class="sheet-hint">Turn off a category to hide its English translations. The pinyin stays — tap a word to look it up if you're stuck.</p>
+          <ul class="cat-toggles">
+            <li><label class="cat-toggle"><input type="checkbox" data-cat="noun" /><span class="cat-swatch cat-noun" aria-hidden="true"></span><span class="cat-label">Nouns</span></label></li>
+            <li><label class="cat-toggle"><input type="checkbox" data-cat="verb" /><span class="cat-swatch cat-verb" aria-hidden="true"></span><span class="cat-label">Verbs</span></label></li>
+            <li><label class="cat-toggle"><input type="checkbox" data-cat="adjective" /><span class="cat-swatch cat-adjective" aria-hidden="true"></span><span class="cat-label">Adjectives</span></label></li>
+            <li><label class="cat-toggle"><input type="checkbox" data-cat="adverb" /><span class="cat-swatch cat-adverb" aria-hidden="true"></span><span class="cat-label">Adverbs</span></label></li>
+            <li><label class="cat-toggle"><input type="checkbox" data-cat="idiom" /><span class="cat-swatch cat-idiom" aria-hidden="true"></span><span class="cat-label">Idioms</span></label></li>
+            <li><label class="cat-toggle"><input type="checkbox" data-cat="proper_noun" /><span class="cat-swatch cat-proper_noun" aria-hidden="true"></span><span class="cat-label">Proper nouns</span></label></li>
+          </ul>
+        </section>
+        <section class="sheet-section muted">
+          <div class="sheet-section-label">More coming</div>
+          <p class="sheet-hint">Font size, theme, in-book search, and share will live here.</p>
+        </section>
+      </div>
+    </aside>
 
     <!-- SETTINGS -->
     <main id="view-settings" class="view" hidden>

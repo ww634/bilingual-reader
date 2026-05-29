@@ -2,6 +2,7 @@ import { initCatalog, refreshCatalog, openBookDetail, renderBookDetail } from ".
 import { openReader, closeReader } from "./reader.js";
 import { initSettings, loadSettingsIntoUI } from "./settings.js";
 import { initPopover, closePopover } from "./popover.js";
+import { initReaderOptions } from "./reader-options.js";
 
 const VIEWS = ["home", "library", "browse", "book-detail", "quizzes", "reader", "settings"];
 const TITLES = {
@@ -17,6 +18,7 @@ const TITLES = {
 const titleEl = document.getElementById("title");
 const backBtn = document.getElementById("back-btn");
 const settingsBtn = document.getElementById("settings-btn");
+const readerOptionsBtn = document.getElementById("reader-options-btn");
 
 const navStack = [];     // history of view names for back navigation
 let currentView = "home";
@@ -34,6 +36,8 @@ function setView(name, { push = true } = {}) {
 
   backBtn.hidden = name === "home";
   settingsBtn.hidden = name !== "home";
+  // The reader-options icon (sliders) only makes sense inside the reader.
+  if (readerOptionsBtn) readerOptionsBtn.hidden = name !== "reader";
 }
 
 function goBack() {
@@ -108,6 +112,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 (async function boot() {
   await initSettings();
   initPopover();
+  await initReaderOptions();
   await initCatalog();
   setView("home", { push: false });
 })();

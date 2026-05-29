@@ -136,6 +136,18 @@ const DEFAULT_SETTINGS = {
   fontSize: "medium",
   pairsPerPage: 7,
   openaiKey: "", // user-pasted via Settings; used only for tap-to-learn explanations
+  // Per-category visibility for English translations in the reader. Toggled
+  // via the reader-options sheet. When a category is false, the English part
+  // of those chunks is rendered with visibility:hidden so the page layout
+  // doesn't shift — the pinyin stays visible and tappable.
+  categoryVisibility: {
+    noun: true,
+    verb: true,
+    adjective: true,
+    adverb: true,
+    idiom: true,
+    proper_noun: true,
+  },
 };
 
 export async function getSettings() {
