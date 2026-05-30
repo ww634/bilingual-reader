@@ -157,10 +157,12 @@ const FREQ_ENUM = new Set(["very_common", "common", "uncommon", "rare"]);
 const DEFAULT_BATCH_SIZE = 6;
 const MAX_RESPONSE_TOKENS = 8000;
 // How many extra single-pair passes we attempt for any pair whose batch
-// alignment fails validation. Single-pair retries can't cross-pair-drift —
-// the model only sees one pair — so they fix the most common failure mode.
-// Bumped if we see real-world chapters where some pairs persistently fail.
-const MAX_RETRIES_PER_PAIR = 2;
+// alignment fails HARD validation. Default 1: the residual hard failures are
+// genuine cross-pair drift or source-data artifacts (e.g. a heading that
+// literally lacks a word the pinyin has), which rarely resolve on a 2nd
+// attempt — a second try mostly just doubles wasted rate-limited calls.
+// Overridable per-run via opts.maxRetries (CLI --align-retries, 0 disables).
+const DEFAULT_MAX_RETRIES_PER_PAIR = 1;
 
 /**
  * Align a batch of pairs in one OpenAI call.
@@ -232,50 +234,130 @@ async function alignBatch(client, pairs, opts = {}) {
   return { alignments: parsed.alignments, usage: response.usage };
 }
 
+// Content categories: words a learner actually looks up. For these, an
+// english span that isn't in the pair signals real cross-pair drift worth a
+// retry. For the grammatical categories (function_word/particle/measure_word/
+// grammar), the aligner legitimately emits a dictionary-form GLOSS that often
+// isn't a verbatim substring of the sentence (e.g. particle 把 → "took",
+// 的 → "of"). Those degrade gracefully in the reader (the pinyin still colors
+// via the target side; only the english highlight is skipped), so we don't
+// retry on them — chasing them was burning hours of rate-limited retries for
+// no rendering benefit.
+const CONTENT_CATEGORIES = new Set(["noun", "verb", "adjective", "adverb", "idiom", "proper_noun"]);
+
+// A target made only of punctuation/symbols can't be located in the pinyin
+// and doesn't matter (it's not a tappable/colorable word).
+function isPunctuationOnly(s) {
+  return !/[a-zA-Zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ0-9]/i.test(s || "");
+}
+
+// Function words carry no overlap signal — "a"/"the"/"of" appear everywhere,
+// so requiring them to overlap would pass everything. We judge overlap only
+// on meaningful (content) tokens.
+const OVERLAP_STOPWORDS = new Set([
+  "the", "a", "an", "of", "to", "and", "or", "but", "in", "on", "at", "by",
+  "is", "was", "were", "are", "be", "been", "it", "i", "he", "she", "we",
+  "they", "you", "his", "her", "my", "our", "their", "that", "this", "as",
+  "for", "with", "from", "had", "has", "have", "did", "do",
+]);
+
+function tokensOf(s) {
+  return (String(s).toLowerCase().match(/[a-z']+/g) || []);
+}
+
 /**
- * Validate a single alignment entry. Returns array of problem strings (empty if OK).
+ * Does the chunk's english share a MEANINGFUL token with the pair's english?
  *
- * Includes a granularity check: warn if alignment is too coarse (single-chunk
- * pairs with 4+ pinyin words usually indicate the LLM lumped content words).
+ * Used to tell lemmatization ("keep back" vs sentence "keeping...back" — they
+ * share "back" and "keep"~"keeping" by 4-char prefix) apart from true
+ * cross-pair drift ("finished" when that word lives in another pair — zero
+ * shared tokens). Prefix matching absorbs English inflection (-ed/-ing/-s).
+ *
+ * Returns true (= benign / overlaps) when the chunk has only stopwords to
+ * compare with — we can't judge those, and per the Chinese-omits-words point
+ * they're glosses anyway.
+ */
+function hasTokenOverlap(chunkEng, pairEng) {
+  const ctoks = tokensOf(chunkEng).filter((t) => t.length >= 3 && !OVERLAP_STOPWORDS.has(t));
+  if (ctoks.length === 0) return true;
+  const ptoks = tokensOf(pairEng);
+  for (const c of ctoks) {
+    for (const p of ptoks) {
+      if (c === p) return true;
+      const n = Math.min(4, c.length, p.length);
+      if (n >= 3 && c.slice(0, n) === p.slice(0, n)) return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Validate a single alignment entry. Returns { hard, soft } problem lists.
+ *
+ *   hard — issues that justify a (rate-limited, costly) solo retry: the pinyin
+ *          target can't be located (breaks coloring), a content word drifted
+ *          in from another pair, empty chunks, invalid category.
+ *   soft — benign issues we only surface as warnings: grammatical-word english
+ *          glosses that aren't verbatim, punctuation targets, granularity.
+ *
+ * The split is the whole point of the relaxed-validation rework: target
+ * accuracy is what drives the reader, and it's near-perfect, so retries should
+ * be rare.
  */
 function validateAlignment(alignment, originalPair) {
-  const problems = [];
+  const hard = [];
+  const soft = [];
   if (!Array.isArray(alignment.chunks) || alignment.chunks.length === 0) {
-    problems.push("no chunks returned");
-    return problems;
+    hard.push("no chunks returned");
+    return { hard, soft };
   }
   const pairEnglishLower = (originalPair?.english || "").toLowerCase();
   const pairTargetLower = (originalPair?.target || "").toLowerCase();
   alignment.chunks.forEach((c, i) => {
-    if (!c.english || !c.target) problems.push(`chunk ${i}: empty english or target`);
-    if (!CATEGORY_ENUM.has(c.category)) problems.push(`chunk ${i}: invalid category "${c.category}"`);
+    if (!c.english || !c.target) hard.push(`chunk ${i}: empty english or target`);
+    if (!CATEGORY_ENUM.has(c.category)) hard.push(`chunk ${i}: invalid category "${c.category}"`);
     if (c.frequency_band !== null && !FREQ_ENUM.has(c.frequency_band)) {
-      problems.push(`chunk ${i}: invalid frequency_band "${c.frequency_band}"`);
+      soft.push(`chunk ${i}: invalid frequency_band "${c.frequency_band}"`);
     }
-    if (typeof c.is_idiom !== "boolean") problems.push(`chunk ${i}: is_idiom not boolean`);
-    // Granularity warning — only for non-idiom, non-proper-noun chunks.
+    if (typeof c.is_idiom !== "boolean") soft.push(`chunk ${i}: is_idiom not boolean`);
+
+    // Granularity — soft. A too-coarse chunk is still usable.
     const targetWords = (c.target || "").trim().split(/\s+/).filter(Boolean).length;
     if (targetWords >= 4 && c.category !== "idiom" && c.category !== "proper_noun") {
-      problems.push(`chunk ${i}: too coarse (${targetWords} pinyin words for "${c.target}")`);
+      soft.push(`chunk ${i}: too coarse (${targetWords} pinyin words for "${c.target}")`);
     }
-    // Hallucination check — the chunk's english span must actually appear in
-    // the pair's english. This catches the LLM borrowing words from
-    // neighbouring pairs in the same batch, which leaves real words
-    // uncovered. Same check for target.
+
+    // English-substring check. HARD only for content words (where a missing
+    // span means a real vocab item drifted in from another pair). SOFT for
+    // grammatical categories (expected gloss mismatch).
     if (c.english) {
       const en = c.english.toLowerCase().trim();
       if (en && !pairEnglishLower.includes(en)) {
-        problems.push(`chunk ${i}: english "${c.english}" not in pair english`);
+        const msg = `chunk ${i}: english "${c.english}" not in pair english`;
+        // HARD only when a CONTENT word shares ZERO meaningful tokens with the
+        // pair — that's true cross-pair drift. Content words that overlap
+        // (lemmatization) and all grammatical-word glosses are SOFT: they
+        // render fine and retrying won't help.
+        if (CONTENT_CATEGORIES.has(c.category) && !hasTokenOverlap(en, pairEnglishLower)) {
+          hard.push(msg);
+        } else {
+          soft.push(msg);
+        }
       }
     }
+
+    // Target-substring check. HARD (a missing pinyin target can't be colored),
+    // unless it's punctuation-only (benign — not a word).
     if (c.target) {
       const tg = c.target.toLowerCase().trim();
       if (tg && !pairTargetLower.includes(tg)) {
-        problems.push(`chunk ${i}: target "${c.target}" not in pair target`);
+        const msg = `chunk ${i}: target "${c.target}" not in pair target`;
+        if (isPunctuationOnly(c.target)) soft.push(msg);
+        else hard.push(msg);
       }
     }
   });
-  return problems;
+  return { hard, soft };
 }
 
 /**
@@ -298,8 +380,11 @@ export async function alignAll(client, pairs, opts = {}) {
   const problems = [];
 
   // Track which pairs need retrying — populated during the initial batched
-  // pass when validateAlignment flags hallucinations / cross-pair drift.
-  const failedPairs = []; // [{ globalIdx, problems: [...] }]
+  // pass when validateAlignment flags HARD problems (target miss / content-
+  // word drift). Soft problems (grammatical glosses) are counted but not
+  // retried.
+  const failedPairs = []; // [{ globalIdx }]
+  let softProblemCount = 0;
 
   for (let start = 0; start < pairs.length; start += batchSize) {
     const slice = pairs.slice(start, start + batchSize);
@@ -332,11 +417,15 @@ export async function alignAll(client, pairs, opts = {}) {
         out[start + i] = { ...slice[i], alignment: null };
         continue;
       }
-      const vProblems = validateAlignment(a, slice[i]);
-      if (vProblems.length > 0) {
-        problems.push(`batch ${batchIndex}, pair ${i}: ${vProblems.join("; ")}`);
-        failedPairs.push({ globalIdx: start + i, problems: vProblems });
+      const { hard, soft } = validateAlignment(a, slice[i]);
+      // Only HARD problems trigger a (costly, rate-limited) solo retry.
+      if (hard.length > 0) {
+        problems.push(`batch ${batchIndex}, pair ${i}: ${hard.join("; ")}`);
+        failedPairs.push({ globalIdx: start + i });
       }
+      // SOFT problems are surfaced as low-key warnings but never retried —
+      // they're benign (grammatical-word glosses, punctuation, granularity).
+      softProblemCount += soft.length;
       out[start + i] = { ...slice[i], alignment: a.chunks };
     }
   }
@@ -349,12 +438,13 @@ export async function alignAll(client, pairs, opts = {}) {
   // has something to render.
   let retryCalls = 0;
   let retryFixes = 0;
-  if (failedPairs.length > 0 && opts.onRetry) {
+  const maxRetries = Number.isFinite(opts.maxRetries) ? opts.maxRetries : DEFAULT_MAX_RETRIES_PER_PAIR;
+  if (failedPairs.length > 0 && maxRetries > 0 && opts.onRetry) {
     opts.onRetry(failedPairs.length);
   }
-  for (const { globalIdx } of failedPairs) {
+  for (const { globalIdx } of (maxRetries > 0 ? failedPairs : [])) {
     const originalPair = pairs[globalIdx];
-    for (let attempt = 1; attempt <= MAX_RETRIES_PER_PAIR; attempt++) {
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
       let retryResult;
       try {
         retryResult = await alignBatch(client, [originalPair], {
@@ -371,8 +461,8 @@ export async function alignAll(client, pairs, opts = {}) {
       }
       const a = retryResult.alignments.find((x) => x.pair_index === 0);
       if (!a) continue;
-      const vProblems = validateAlignment(a, originalPair);
-      if (vProblems.length === 0) {
+      const { hard } = validateAlignment(a, originalPair);
+      if (hard.length === 0) {
         out[globalIdx] = { ...originalPair, alignment: a.chunks };
         retryFixes++;
         // Remove the corresponding "batch X, pair Y: ..." problem from the
@@ -391,6 +481,7 @@ export async function alignAll(client, pairs, opts = {}) {
     inputTokens: totalIn,
     outputTokens: totalOut,
     problems,
+    softProblemCount,
     retryStats: { calls: retryCalls, fixes: retryFixes, candidates: failedPairs.length },
   };
 }

@@ -73,6 +73,7 @@ program
   .option("--yes", "Skip all confirmation prompts")
   .option("--no-cover", "Skip generating an auto cover")
   .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
+  .option("--align-retries <n>", "Max solo-retry attempts per pair that fails hard alignment validation. Default 1. Set 0 to disable retries entirely (fastest/cheapest — pinyin still colors ~100%, a few english highlights are skipped).", (v) => parseInt(v, 10))
   .option("--force", "Re-translate chapters that already exist on disk. Default: skip already-done chapters (resumable).")
   .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
   // Strict is on by default — silently saving a chapter with half its text
@@ -111,12 +112,16 @@ async function realignOnly(chapterFile) {
   const result = await alignAll(client, inputPairs, {
     model: opts.model,
     englishTitle: chapter.title?.english || "",
+    maxRetries: opts.alignRetries,
     onProgress: (b, total) => { if (total > 1) process.stdout.write(dim(`   batch ${b}/${total}\r`)); },
     onRetry: (n) => process.stdout.write(dim(`   retrying ${n} pair${n === 1 ? "" : "s"} solo…\n`)),
   });
   console.log("");
   if (result.retryStats && result.retryStats.candidates > 0) {
     console.log(dim(`   retry pass: ${result.retryStats.fixes}/${result.retryStats.candidates} pairs fixed (${result.retryStats.calls} extra call${result.retryStats.calls === 1 ? "" : "s"})`));
+  }
+  if (result.softProblemCount > 0) {
+    console.log(dim(`   ${result.softProblemCount} benign warning${result.softProblemCount === 1 ? "" : "s"} (grammatical-word glosses / punctuation) — not retried, render fine`));
   }
   if (result.problems.length > 0) {
     console.error(yellow(`   ⚠ ${result.problems.length} problem${result.problems.length === 1 ? "" : "s"}:`));
@@ -415,6 +420,7 @@ async function main() {
         const alignResult = await alignAll(client, finalPairs, {
           model: opts.model,
           englishTitle: s.english_title || "",
+          maxRetries: opts.alignRetries,
           onProgress: (b, total) => {
             if (total > 1) process.stdout.write(dim(`       batch ${b}/${total}\r`));
           },
@@ -423,8 +429,11 @@ async function main() {
         if (alignResult.retryStats && alignResult.retryStats.candidates > 0) {
           console.log(dim(`       retry pass: ${alignResult.retryStats.fixes}/${alignResult.retryStats.candidates} pairs fixed (${alignResult.retryStats.calls} extra call${alignResult.retryStats.calls === 1 ? "" : "s"})`));
         }
+        if (alignResult.softProblemCount > 0) {
+          console.log(dim(`       ${alignResult.softProblemCount} benign warning${alignResult.softProblemCount === 1 ? "" : "s"} (grammatical-word glosses / punctuation) — render fine`));
+        }
         if (alignResult.problems.length > 0) {
-          console.error(yellow(`     ⚠ Alignment had ${alignResult.problems.length} problem${alignResult.problems.length === 1 ? "" : "s"} after retries`));
+          console.error(yellow(`     ⚠ Alignment had ${alignResult.problems.length} hard problem${alignResult.problems.length === 1 ? "" : "s"} after retries`));
           alignResult.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
         }
         const chunkCount = alignResult.aligned.reduce((a, p) => a + (p.alignment?.length || 0), 0);
