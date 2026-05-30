@@ -291,6 +291,10 @@ export async function alignAll(client, pairs, opts = {}) {
   const batchSize = opts.batchSize || DEFAULT_BATCH_SIZE;
   const out = new Array(pairs.length).fill(null);
   let totalTokens = 0;
+  // Split-tracked so callers can compute accurate cost (input and output
+  // tokens are priced at different rates).
+  let totalIn = 0;
+  let totalOut = 0;
   const problems = [];
 
   // Track which pairs need retrying — populated during the initial batched
@@ -315,6 +319,8 @@ export async function alignAll(client, pairs, opts = {}) {
       continue;
     }
     totalTokens += result.usage?.total_tokens || 0;
+    totalIn  += result.usage?.prompt_tokens || 0;
+    totalOut += result.usage?.completion_tokens || 0;
 
     // Map alignments back by pair_index
     const byIndex = new Map();
@@ -357,6 +363,8 @@ export async function alignAll(client, pairs, opts = {}) {
         });
         retryCalls++;
         totalTokens += retryResult.usage?.total_tokens || 0;
+        totalIn  += retryResult.usage?.prompt_tokens || 0;
+        totalOut += retryResult.usage?.completion_tokens || 0;
       } catch (err) {
         problems.push(`retry ${attempt} for pair ${globalIdx}: ${err.message}`);
         break;
@@ -380,6 +388,8 @@ export async function alignAll(client, pairs, opts = {}) {
   return {
     aligned: out,
     totalTokens,
+    inputTokens: totalIn,
+    outputTokens: totalOut,
     problems,
     retryStats: { calls: retryCalls, fixes: retryFixes, candidates: failedPairs.length },
   };

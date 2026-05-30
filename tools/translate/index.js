@@ -22,6 +22,7 @@ import {
   translateTitle,
   validatePairs,
   estimateCost,
+  tokenCost,
 } from "./lib/translate.js";
 import { analyzeContent, sliceByMarkers } from "./lib/analyze.js";
 import { alignAll, estimateAlignmentCost } from "./lib/align.js";
@@ -74,6 +75,7 @@ program
   .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
   .option("--force", "Re-translate chapters that already exist on disk. Default: skip already-done chapters (resumable).")
   .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
+  .option("--strict", "Abort on translator validation failure (english coverage mismatch, etc) instead of warning and continuing. Use this for whole-book runs where silent quality loss is worse than failing fast.")
   .parse(process.argv);
 
 const opts = program.opts();
@@ -177,6 +179,20 @@ async function main() {
   console.log("\n" + bold("2.") + " Analyzing structure (LLM pre-pass)…");
   const client = buildClient(process.env.OPENAI_API_KEY);
 
+  // Track real token usage across every API call so we can show the user
+  // what the run actually cost (vs the upfront estimate). We split by which
+  // model was used so the rate lookup is correct — analyzer typically runs
+  // on a cheaper model than translation/alignment.
+  const usage = {
+    analyzer: { in: 0, out: 0, model: opts.analyzerModel },
+    main:     { in: 0, out: 0, model: opts.model },
+  };
+  function addUsage(u, bucket = "main") {
+    if (!u) return;
+    usage[bucket].in  += u.prompt_tokens || 0;
+    usage[bucket].out += u.completion_tokens || 0;
+  }
+
   let analysis, analyzerUsage;
   try {
     const r = await analyzeContent(client, cleaned, { model: opts.analyzerModel });
@@ -189,6 +205,7 @@ async function main() {
   }
 
   console.log(dim(`   analyzer tokens: ${fmt(analyzerUsage.total_tokens)}`));
+  addUsage(analyzerUsage, "analyzer");
 
   const sections = sliceByMarkers(cleaned, analysis);
 
@@ -320,6 +337,25 @@ async function main() {
       }
     }
 
+    // Truncation handler — if the translator hits its output-token cap, give
+    // the user one chance to bump up to gpt-4.1's ceiling (32k). With --yes
+    // (unattended runs) we auto-bump once; without it we prompt. If the
+    // ceiling itself is too small, the chapter genuinely needs splitting and
+    // we let the inner Error propagate.
+    const onTruncation = async ({ attempt, currentBudget, ceiling }) => {
+      if (currentBudget >= ceiling) return null;
+      const next = ceiling;
+      console.warn(yellow(`\n     ⚠ Translator output truncated at ${currentBudget} tokens (attempt ${attempt}).`));
+      if (opts.yes) {
+        console.warn(yellow(`     Auto-bumping to ${next} (model ceiling) and retrying…`));
+        return next;
+      }
+      const ans = await prompt(`     Retry with max ${next} tokens? [Y/n]: `);
+      if (ans === "" || ans === "y" || ans === "yes") return next;
+      console.warn(yellow(`     Aborting this section.`));
+      return null;
+    };
+
     let titleResult, bodyResult;
     try {
       [titleResult, bodyResult] = await Promise.all([
@@ -329,6 +365,7 @@ async function main() {
           fullText: s.text,
           englishTitle: s.english_title || "",
           canonicalNames,
+          onTruncation,
         }),
       ]);
     } catch (err) {
@@ -336,11 +373,19 @@ async function main() {
       console.error(red(`     Skipping this section. You can re-run the tool to retry.`));
       continue;
     }
+    addUsage(bodyResult.usage);
+    addUsage(titleResult.usage);
 
     const v = validatePairs(s._clauses, bodyResult.pairs);
     if (!v.ok) {
       console.error(yellow(`     ⚠ Validation: ${v.problems.length} problem${v.problems.length === 1 ? "" : "s"}`));
       v.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
+      if (opts.strict) {
+        console.error(red(`\n❌ --strict: aborting because translator validation failed.`));
+        console.error(red(`   The chapter's English would not reconstruct from the pairs.`));
+        console.error(red(`   Re-run without --strict to save anyway, or inspect the warnings above.`));
+        process.exit(2);
+      }
     } else {
       console.log(green(`     ✓ ${bodyResult.pairs.length} pairs, validation clean`));
     }
@@ -367,6 +412,7 @@ async function main() {
         }
         const chunkCount = alignResult.aligned.reduce((a, p) => a + (p.alignment?.length || 0), 0);
         console.log(green(`     ✓ aligned ${alignResult.aligned.filter((p) => p.alignment).length}/${alignResult.aligned.length} pairs, ${chunkCount} chunks (${fmt(alignResult.totalTokens)} tokens)`));
+        addUsage({ prompt_tokens: alignResult.inputTokens, completion_tokens: alignResult.outputTokens }, "main");
         finalPairs = alignResult.aligned;
       } catch (err) {
         console.error(yellow(`     ⚠ Alignment failed: ${err.message}. Continuing without alignment.`));
@@ -439,6 +485,19 @@ async function main() {
   const upsertResult = upsertBook(library, bookEntry);
   await writeLibrary(LIBRARY_PATH, library);
   console.log(dim(`   library.json: ${upsertResult.action}, +${upsertResult.chaptersAdded} chapter(s), ~${upsertResult.chaptersUpdated} updated`));
+
+  // Actual cost — computed from the real prompt_tokens / completion_tokens
+  // the API charged us, not the upfront character-based estimate.
+  const mainCost = tokenCost(usage.main.in, usage.main.out, usage.main.model);
+  const analyzerCost = tokenCost(usage.analyzer.in, usage.analyzer.out, usage.analyzer.model);
+  const actualCost = mainCost + analyzerCost;
+  const mainTokens = usage.main.in + usage.main.out;
+  const analyzerTokens = usage.analyzer.in + usage.analyzer.out;
+  console.log("\n" + bold("Actual cost: ") + `$${actualCost.toFixed(3)}` + dim(
+    `  (translation+alignment ~$${mainCost.toFixed(3)} on ${usage.main.model}, ${fmt(mainTokens)} tokens; ` +
+    `analyzer ~$${analyzerCost.toFixed(3)} on ${usage.analyzer.model}, ${fmt(analyzerTokens)} tokens)` +
+    (skippedCount > 0 ? "  — only counts API calls actually made this run" : "")
+  ));
 
   console.log("\n" + green(bold("✨ Done.")));
   if (skippedCount > 0) {

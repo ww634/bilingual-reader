@@ -52,6 +52,13 @@ const RESPONSE_SCHEMA = {
 const HAN_CHAR_RE = /[一-鿿㐀-䶿]/;
 const TONE_MARK_RE = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜĀÁǍÀĒÉĚÈĪÍǏÌŌÓǑÒŪÚǓÙǕǗǙǛ]/;
 
+// Translator output budget. Most novel chapters need 3-9k output tokens
+// (~100-300 pairs × ~30 tokens/pair). 16k gives ~500 pairs of headroom.
+// Ceiling is gpt-4.1's max output (32k); past that we can't go up further
+// and the caller must split the chapter.
+const MAX_RESPONSE_TOKENS_DEFAULT = 16000;
+const MAX_RESPONSE_TOKENS_CEILING = 32000;
+
 export function buildClient(apiKey) {
   if (!apiKey) {
     throw new Error("Missing OPENAI_API_KEY. Set it in your env: export OPENAI_API_KEY=sk-...");
@@ -107,29 +114,62 @@ export async function translateClauses(client, clauses, opts = {}) {
     clauses.map((c, i) => `${i + 1}. ${c}`).join("\n"),
   ].join("\n");
 
-  // gpt-5 family + o-series only accept default temperature (1).
+  // gpt-5 family + o-series only accept default temperature (1) and require
+  // max_completion_tokens instead of the legacy max_tokens.
   const isNewFamily = /^gpt-5|^o1|^o3/i.test(model);
-  const request = {
-    model,
-    messages: [
-      { role: "system", content: SYSTEM_PROMPT },
-      { role: "user", content: userPrompt },
-    ],
-    response_format: {
-      type: "json_schema",
-      json_schema: {
-        name: "translation_pairs",
-        strict: true,
-        schema: RESPONSE_SCHEMA,
-      },
-    },
-  };
-  if (!isNewFamily) request.temperature = 0.2;
-  const response = await client.chat.completions.create(request);
+  const tokenParamName = isNewFamily ? "max_completion_tokens" : "max_tokens";
 
-  const content = response.choices[0].message.content;
-  const parsed = JSON.parse(content);
-  return { pairs: parsed.pairs, usage: response.usage };
+  // Output-budget control + truncation recovery.
+  //   - We set a ceiling so the model can't silently run away on cost, and
+  //     so that hitting the ceiling is a CLEAN error rather than a half-
+  //     truncated JSON parse failure.
+  //   - If the model hits the cap (finish_reason === "length"), give the
+  //     caller one chance to bump the limit via opts.onTruncation. That
+  //     callback returns a new (larger) limit, or null/false to abort.
+  let tokenBudget = opts.maxResponseTokens || MAX_RESPONSE_TOKENS_DEFAULT;
+  for (let attempt = 1; ; attempt++) {
+    const request = {
+      model,
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        { role: "user", content: userPrompt },
+      ],
+      response_format: {
+        type: "json_schema",
+        json_schema: {
+          name: "translation_pairs",
+          strict: true,
+          schema: RESPONSE_SCHEMA,
+        },
+      },
+      [tokenParamName]: tokenBudget,
+    };
+    if (!isNewFamily) request.temperature = 0.2;
+    const response = await client.chat.completions.create(request);
+
+    // Truncation guard. When response_format is json_schema, a truncated
+    // response is unparseable — half-JSON. Surface a clear error and let
+    // the caller decide whether to retry with a larger budget.
+    if (response.choices[0].finish_reason === "length") {
+      const newBudget = opts.onTruncation
+        ? await opts.onTruncation({ attempt, currentBudget: tokenBudget, ceiling: MAX_RESPONSE_TOKENS_CEILING })
+        : null;
+      if (newBudget && newBudget > tokenBudget) {
+        tokenBudget = Math.min(newBudget, MAX_RESPONSE_TOKENS_CEILING);
+        continue; // retry with bigger budget
+      }
+      throw new Error(
+        `Translator output truncated at ${tokenBudget} tokens. ` +
+        (tokenBudget >= MAX_RESPONSE_TOKENS_CEILING
+          ? "Already at the model's ceiling — split this chapter into smaller sections."
+          : "Re-run with a larger --max-response-tokens, or split the chapter.")
+      );
+    }
+
+    const content = response.choices[0].message.content;
+    const parsed = JSON.parse(content);
+    return { pairs: parsed.pairs, usage: response.usage };
+  }
 }
 
 /**
@@ -226,29 +266,42 @@ export function validatePairs(inputClauses, pairs) {
   return { ok: problems.length === 0, problems };
 }
 
+// Per-million-token rates ($USD). Used by both estimateCost (uses character
+// proxies) and tokenCost (uses real usage). Keep these in sync as pricing
+// updates from OpenAI.
+export const MODEL_RATES = {
+  "gpt-4o":        { in: 5,    out: 20   },
+  "gpt-4o-mini":   { in: 0.15, out: 0.60 },
+  "gpt-4-turbo":   { in: 10,   out: 30   },
+  "gpt-4.1":       { in: 2,    out: 8    },
+  "gpt-4.1-mini":  { in: 0.40, out: 1.60 },
+  "gpt-4.1-nano":  { in: 0.10, out: 0.40 },
+  // gpt-5 family — placeholder rates; update with real values when verified.
+  "gpt-5":         { in: 5,    out: 20   },
+  "gpt-5-mini":    { in: 0.50, out: 2.00 },
+  "gpt-5-nano":    { in: 0.05, out: 0.40 },
+  "gpt-5.4-mini":  { in: 0.50, out: 2.00 },
+  "gpt-5.4-nano":  { in: 0.05, out: 0.40 },
+};
+
 /**
- * Rough cost estimate for gpt-4o.
- * As of late 2025: $5/1M input, $20/1M output. We use a conservative
- * 1.3 chars/token estimate.
+ * Rough cost estimate from character counts. Used BEFORE making API calls
+ * to show the user an upfront estimate.
  */
 export function estimateCost({ inputChars, expectedOutputChars }, model = "gpt-4o") {
   const inputTokens = inputChars / 1.3;
   const outputTokens = expectedOutputChars / 1.3;
-  const RATES = {
-    "gpt-4o": { in: 5, out: 20 },
-    "gpt-4o-mini": { in: 0.15, out: 0.60 },
-    "gpt-4-turbo": { in: 10, out: 30 },
-    "gpt-4.1": { in: 2, out: 8 },
-    "gpt-4.1-mini": { in: 0.40, out: 1.60 },
-    "gpt-4.1-nano": { in: 0.10, out: 0.40 },
-    // gpt-5 family — placeholder rates; update with real values when verified.
-    "gpt-5": { in: 5, out: 20 },
-    "gpt-5-mini": { in: 0.50, out: 2.00 },
-    "gpt-5-nano": { in: 0.05, out: 0.40 },
-    "gpt-5.4-mini": { in: 0.50, out: 2.00 },
-    "gpt-5.4-nano": { in: 0.05, out: 0.40 },
-  };
-  const r = RATES[model] || RATES["gpt-4o"];
+  const r = MODEL_RATES[model] || MODEL_RATES["gpt-4o"];
   const cost = (inputTokens * r.in + outputTokens * r.out) / 1_000_000;
   return { inputTokens: Math.round(inputTokens), outputTokens: Math.round(outputTokens), cost };
+}
+
+/**
+ * Exact cost from real token usage (from response.usage). Used AFTER all
+ * API calls finish so the user sees what the run actually cost — useful
+ * for catching estimates that were way off (e.g. lots of retries).
+ */
+export function tokenCost(inputTokens, outputTokens, model = "gpt-4o") {
+  const r = MODEL_RATES[model] || MODEL_RATES["gpt-4o"];
+  return (inputTokens * r.in + outputTokens * r.out) / 1_000_000;
 }
