@@ -68,17 +68,27 @@ program
   .option("--include-front-matter", "Translate sections the analyzer flagged as skip (title pages, dedications, etc)")
   .option("--length <preset>", "Clause length: short | medium | long", "medium")
   .option("--model <name>", "OpenAI model for translation + alignment", "gpt-4.1")
-  .option("--analyzer-model <name>", "OpenAI model for the pre-pass analysis", "gpt-5.4-nano")
+  .option("--analyzer-model <name>", "OpenAI model for the pre-pass analysis (defaults to the same model as --model for reliability; pass gpt-5.4-nano to save a few cents on small runs)", undefined)
   .option("--dry-run", "Analyze + show plan, but no translation API calls and no writes")
   .option("--yes", "Skip all confirmation prompts")
   .option("--no-cover", "Skip generating an auto cover")
   .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
   .option("--force", "Re-translate chapters that already exist on disk. Default: skip already-done chapters (resumable).")
   .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
-  .option("--strict", "Abort on translator validation failure (english coverage mismatch, etc) instead of warning and continuing. Use this for whole-book runs where silent quality loss is worse than failing fast.")
+  // Strict is on by default — silently saving a chapter with half its text
+  // missing is a real data-integrity bug. Pass --no-strict to opt out (e.g.
+  // for fast iteration on a small test sample where you'd rather see what
+  // got through than fail on a single warning).
+  .option("--no-strict", "Don't abort on translator validation failure — warn and continue. Default is to abort.")
   .parse(process.argv);
 
 const opts = program.opts();
+
+// Default the analyzer to the main model — gpt-5.4-nano was unreliable for
+// structural decisions like "is this one chapter or two?" Costs a few extra
+// cents per run vs nano; that's nothing compared to the cost of mis-detecting
+// chapters and re-running.
+if (!opts.analyzerModel) opts.analyzerModel = opts.model;
 
 async function realignOnly(chapterFile) {
   console.log(`\n${bold("🔁 Realign-only: " + chapterFile)}`);
@@ -366,6 +376,11 @@ async function main() {
           englishTitle: s.english_title || "",
           canonicalNames,
           onTruncation,
+          onBatch: (i, total, size) => {
+            if (total > 1) {
+              process.stdout.write(dim(`     translating batch ${i}/${total} (${size} clauses)…\n`));
+            }
+          },
         }),
       ]);
     } catch (err) {
@@ -381,9 +396,11 @@ async function main() {
       console.error(yellow(`     ⚠ Validation: ${v.problems.length} problem${v.problems.length === 1 ? "" : "s"}`));
       v.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
       if (opts.strict) {
-        console.error(red(`\n❌ --strict: aborting because translator validation failed.`));
-        console.error(red(`   The chapter's English would not reconstruct from the pairs.`));
-        console.error(red(`   Re-run without --strict to save anyway, or inspect the warnings above.`));
+        console.error(red(`\n❌ Aborting: translator validation failed.`));
+        console.error(red(`   The chapter's English would not reconstruct from the pairs —`));
+        console.error(red(`   probably the translator silently dropped some content.`));
+        console.error(red(`   Re-run with --no-strict to save the partial output anyway,`));
+        console.error(red(`   or split the chapter into smaller sections and retry.`));
         process.exit(2);
       }
     } else {

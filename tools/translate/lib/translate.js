@@ -59,6 +59,12 @@ const TONE_MARK_RE = /[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜĀÁǍÀ�
 const MAX_RESPONSE_TOKENS_DEFAULT = 16000;
 const MAX_RESPONSE_TOKENS_CEILING = 32000;
 
+// Max clauses per single translator API call. Larger numbers degrade quality
+// quickly: at 200+ the LLM tends to over-merge, drift in register, or just
+// truncate the tail of its response. Empirically a real chapter of ~750
+// clauses fails badly as one call; in 100-clause batches it stays stable.
+const MAX_CLAUSES_PER_CALL = 100;
+
 export function buildClient(apiKey) {
   if (!apiKey) {
     throw new Error("Missing OPENAI_API_KEY. Set it in your env: export OPENAI_API_KEY=sk-...");
@@ -67,7 +73,44 @@ export function buildClient(apiKey) {
 }
 
 /**
- * Translate clauses in one OpenAI call.
+ * Public entry point: translate ALL clauses for a chapter, splitting into
+ * MAX_CLAUSES_PER_CALL-sized API calls as needed. Long chapters in a single
+ * call cause quality collapse (over-merging, silent truncation, register
+ * drift) so batching is mandatory above ~100 clauses.
+ *
+ * Per-batch usage is summed; pairs are concatenated in input order.
+ */
+export async function translateClauses(client, clauses, opts = {}) {
+  if (clauses.length <= MAX_CLAUSES_PER_CALL) {
+    return _translateClausesOnce(client, clauses, opts);
+  }
+  // Split into roughly-equal batches so the last one isn't a tiny stub.
+  const numBatches = Math.ceil(clauses.length / MAX_CLAUSES_PER_CALL);
+  const perBatch = Math.ceil(clauses.length / numBatches);
+  const allPairs = [];
+  const totalUsage = { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 };
+  for (let bi = 0; bi < numBatches; bi++) {
+    const start = bi * perBatch;
+    const slice = clauses.slice(start, start + perBatch);
+    if (opts.onBatch) opts.onBatch(bi + 1, numBatches, slice.length);
+    const result = await _translateClausesOnce(client, slice, {
+      ...opts,
+      // Tell the model where in the chapter this batch sits, so it can keep
+      // register/voice consistent across batches without seeing the previous
+      // batch's output.
+      batchPosition: { index: bi + 1, total: numBatches, startClause: start + 1 },
+    });
+    allPairs.push(...result.pairs);
+    totalUsage.prompt_tokens     += result.usage?.prompt_tokens     || 0;
+    totalUsage.completion_tokens += result.usage?.completion_tokens || 0;
+    totalUsage.total_tokens      += result.usage?.total_tokens      || 0;
+  }
+  return { pairs: allPairs, usage: totalUsage };
+}
+
+/**
+ * Translate one batch of clauses in a single OpenAI call. Internal — call
+ * translateClauses() instead so long chapters are batched correctly.
  *
  * @param {OpenAI} client
  * @param {string[]} clauses
@@ -79,10 +122,12 @@ export function buildClient(apiKey) {
  *     — fixed translations that MUST be used verbatim wherever they appear.
  *     Critical for keeping the book title and recurring proper nouns
  *     consistent across the chapter.
+ *   batchPosition: { index, total, startClause } — set by the batching
+ *     wrapper to give the LLM context about where it is in the chapter.
  * }
  * @returns {Promise<{pairs: {english: string, target: string}[], usage: object}>}
  */
-export async function translateClauses(client, clauses, opts = {}) {
+async function _translateClausesOnce(client, clauses, opts = {}) {
   const model = opts.model || "gpt-4o";
   const englishTitle = opts.englishTitle || "(untitled)";
   const fullText = opts.fullText || clauses.join(" ");
@@ -94,6 +139,10 @@ export async function translateClauses(client, clauses, opts = {}) {
     ...canonicalNames.map((n) => `  - "${n.english}" → "${n.target}"`),
   ].join("\n");
 
+  const batchNote = opts.batchPosition
+    ? `\nNote: this is BATCH ${opts.batchPosition.index} of ${opts.batchPosition.total} for this chapter (clauses ${opts.batchPosition.startClause}..${opts.batchPosition.startClause + clauses.length - 1} of the chapter total). Keep voice, register, and name transliterations consistent with the full chapter prose above.\n`
+    : "";
+
   const userPrompt = [
     `Chapter title: ${englishTitle}`,
     canonicalBlock,
@@ -102,7 +151,7 @@ export async function translateClauses(client, clauses, opts = {}) {
     "```",
     fullText,
     "```",
-    "",
+    batchNote,
     `Translate the following ${clauses.length} English clauses into pinyin pairs.`,
     "These clauses come from a regex split; treat them as HINTS for where to break pairs.",
     "If two adjacent clauses are grammatically incomplete on their own and merging them",
@@ -228,10 +277,28 @@ export async function translateTitle(client, englishTitle, opts = {}) {
  * matches the concatenation of all input clauses (whitespace-collapsed).
  * That catches clause-dropping or paraphrasing.
  */
+// Minimum fraction of input clauses that should survive into output pairs.
+// Below this we treat the translator as having over-merged. Empirically the
+// prompt asks for ≥80% retention; 0.7 gives a little headroom for genuine
+// surgical merges without letting the LLM collapse a whole chapter into ~40%
+// of its input.
+const MIN_RETENTION_RATIO = 0.7;
+
 export function validatePairs(inputClauses, pairs) {
   const problems = [];
   if (pairs.length > inputClauses.length) {
     problems.push(`Pair count grew: input ${inputClauses.length}, output ${pairs.length} (translator should never increase pair count)`);
+  }
+  // Hard floor on merging. The prompt asks for ≤20% merging; in practice the
+  // LLM ignores that on long sections, and a chapter with 40% retention means
+  // hundreds of input clauses were silently merged or dropped.
+  const minPairs = Math.ceil(inputClauses.length * MIN_RETENTION_RATIO);
+  if (pairs.length < minPairs) {
+    const pct = ((pairs.length / inputClauses.length) * 100).toFixed(0);
+    problems.push(
+      `Translator over-merged: ${pairs.length} pairs from ${inputClauses.length} input clauses (${pct}% retained, need ≥${(MIN_RETENTION_RATIO * 100).toFixed(0)}%). ` +
+      `The chapter is probably too long for one translator call — split it into smaller sections.`
+    );
   }
   // Coverage check: the union of pair.english should reconstruct the input
   // (modulo whitespace). Strict-equal is too brittle because the translator

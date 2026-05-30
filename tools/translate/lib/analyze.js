@@ -33,7 +33,9 @@ Your job:
 
 Quality rules:
 - start_marker MUST be present verbatim in the input. Copy it character-for-character from a contiguous span at the section's opening.
-- Be conservative with chapter detection. If a "chapter" doesn't have either a number, a title, or a clear structural break, treat the boundaries as uncertain (skip: false but flag with detection_confidence: "low").
+- **Chapter detection — be GENEROUS, not conservative.** If you see two or more heading-like lines in the input (lines that are short, set off by blank lines around them, often all-caps or title-case, and not part of running prose), each one is almost certainly its own chapter. DO NOT collapse multiple chapter headings into a single section. Common failure mode: treating "Chapter 2: Black Dog Appears" as a "subsection" of Chapter 1 — that's wrong; it's its own chapter.
+- **Heading recognisability.** Treat any of these as a chapter heading: lines that are ALL-CAPS (e.g. "THE OLD BUCCANEER"), lines that mix small caps with capitalised proper nouns (e.g. "Black Dog APPEARS AND DISAPPEARS"), lines starting with "Chapter N", lines with a Roman numeral or arabic number alone followed by a title line, or lines that are stylistically distinct from the surrounding prose paragraphs. If unsure, prefer splitting into more chapters.
+- **looks_like = "complete_book" or "partial_book" requires multiple chapter sections.** If you set looks_like to "single_chapter" but you can see what look like multiple chapter headings in the input, you are probably wrong. Re-examine.
 - The same input may contain partial front matter only, a single chapter only, or a whole book.
 - If you cannot determine the book's title or author confidently, leave them as empty string, not invented.`;
 
