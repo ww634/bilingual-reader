@@ -2,7 +2,7 @@
   "version": 2,
   "books": [
     {
-      "version": 11,
+      "version": 14,
       "id": "treasure-island",
       "language": "zh",
       "title": {
@@ -10,23 +10,32 @@
         "english": "Treasure Island"
       },
       "author": "Robert Louis Stevenson",
-      "synopsis": "Treasure Island follows a young narrator who becomes entangled in a quest for buried pirate treasure. Framed by stories requested by notable gentlemen, the narrative traces how characters at the Admiral Benbow Inn connect to pirates, maps, and deadly rivalry in the search for the island’s hoard.",
+      "synopsis": "Treasure Island is a classic adventure novel following young Jim Hawkins as he becomes entangled with pirates and the search for buried treasure. The story is filled with memorable characters, treacherous plots, and the quest for fortune on a mysterious island.",
       "genres": [
-        "classic",
         "adventure",
-        "pirate fiction",
+        "classic",
         "coming of age",
+        "pirates",
         "literary fiction"
       ],
       "chapters": [
         {
           "id": "ch-1",
+          "version": 1,
           "title": {
-            "target": "Dì yī zhāng: Zài Āi dé mǔ ěr Bēn bǎo",
+            "target": "Dì yī zhāng: Zài Ā mǔ mó ěr Bēn bǎo",
             "english": "At the Admiral Benbow"
           },
-          "url": "books/treasure-island/ch-1.json",
-          "version": 11
+          "url": "books/treasure-island/ch-1.json"
+        },
+        {
+          "id": "ch-2",
+          "version": 1,
+          "title": {
+            "target": "dì yī zhāng: hēi gǒu xiànshì yòu xiāoshī",
+            "english": "Black Dog Appears and Disappears"
+          },
+          "url": "books/treasure-island/ch-2.json"
         }
       ],
       "cover": "books/treasure-island/cover.svg"
