@@ -111,41 +111,142 @@ function findChunkPositions(pair) {
 
 /* ───────────────────────── english coverage ───────────────────────── */
 
+// Function words carry no positional signal — they appear everywhere — so we
+// don't let a lone stopword match anchor a fuzzy alignment. Content words do.
+const STOPWORDS = new Set([
+  "the", "a", "an", "of", "to", "and", "or", "but", "in", "on", "at", "by",
+  "is", "was", "were", "are", "be", "been", "it", "i", "he", "she", "we",
+  "they", "you", "his", "her", "my", "our", "their", "that", "this", "as",
+  "for", "with", "from", "had", "has", "have", "did", "do", "not", "so",
+]);
+
+/**
+ * Tokenise text into word tokens, keeping each token's [start,end) char span
+ * in the ORIGINAL string so we can map matches back to highlight positions.
+ */
+function wordTokens(text) {
+  const toks = [];
+  const re = /[A-Za-z0-9'’]+/g;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    toks.push({ lower: m[0].toLowerCase(), start: m.index, end: m.index + m[0].length });
+  }
+  return toks;
+}
+
+/**
+ * Light English stemmer — strips the common inflections so "keeping" and
+ * "keep" compare equal. Not linguistically perfect; just enough to absorb
+ * -ing/-ed/-s/-ly/-'s etc. for highlight matching.
+ */
+function stem(w) {
+  w = w.toLowerCase().replace(/['’]s$/, "");
+  return (
+    w
+      .replace(/(ically|ing|edly|edge|ed|ly|ies|es|s|er|est|en)$/, "")
+      || w
+  );
+}
+
+/** Token equality with stemming + a 4-char prefix fallback for inflection. */
+function tokenMatch(a, b) {
+  if (a === b) return true;
+  const sa = stem(a), sb = stem(b);
+  if (sa === sb) return true;
+  const n = Math.min(4, sa.length, sb.length);
+  return n >= 3 && sa.slice(0, n) === sb.slice(0, n);
+}
+
 /**
  * Build a coverage array for pair.english: for each character, the chunk
  * index that "owns" it (for coloring + per-category visibility toggling),
  * or null.
  *
- * Every chunk — including the new function_word, measure_word, particle
- * categories (and the legacy "grammar" alias) — gets covered, so the
- * reader-options sheet can hide them on a per-category basis via CSS.
- * Function words / particles render in a dim neutral colour by default so
- * the page doesn't feel painted-by-numbers.
+ * Two-stage matching per chunk:
+ *   1. EXACT — chunk.english is a contiguous substring of the sentence
+ *      (case-insensitive). Precise; preferred. Handles ALL-CAPS headers.
+ *   2. FUZZY FALLBACK — when exact fails (the aligner gave a base-form gloss
+ *      like "keep back" for "keeping…back", or a discontinuous span), match
+ *      the chunk's word tokens to sentence tokens with stemming, allowing
+ *      DISCONTINUOUS highlights, advancing monotonically so chunks don't grab
+ *      words out of order. Requires a content-word anchor so a lone stopword
+ *      gloss (把→"of") doesn't paint a random "of".
+ *
+ * Stage 2 is what recovers the lemmatisation / discontinuous cases that used
+ * to fall through as uncoloured. Stage 1 still wins when it can, so precise
+ * matches stay precise. Grammatical chunks whose gloss legitimately isn't in
+ * the sentence simply find no anchor and stay uncoloured — which is correct
+ * (Chinese omits those words; there's nothing to highlight).
  */
 function buildEnglishCoverage(pair) {
   const text = pair.english;
   const coverage = new Array(text.length).fill(null);
   if (!Array.isArray(pair.alignment)) return coverage;
 
-  // Case-insensitive lookup: chunk english is generally in Title/lower case,
-  // but section headers in the source .docx are sometimes ALL CAPS. Without
-  // this, "the old" in the alignment doesn't match "THE OLD" in pair.english
-  // and the whole header falls into the Other bucket.
   const textLower = text.toLowerCase();
-  let scanFrom = 0;
+  const pairToks = wordTokens(text);
+  const tokenClaimed = new Array(pairToks.length).fill(false);
+  let scanFrom = 0;   // char cursor for exact matches
+  let tokCursor = 0;  // token cursor for fuzzy matches (keeps order monotonic)
+
+  // Mark every pair token whose span lies within [start,end) as claimed, and
+  // push the fuzzy token cursor past them.
+  const claimTokensInRange = (start, end) => {
+    for (let ti = 0; ti < pairToks.length; ti++) {
+      if (pairToks[ti].start >= start && pairToks[ti].end <= end) {
+        tokenClaimed[ti] = true;
+        if (ti + 1 > tokCursor) tokCursor = ti + 1;
+      }
+    }
+  };
+
   for (let ci = 0; ci < pair.alignment.length; ci++) {
     const chunk = pair.alignment[ci];
     const span = (chunk.english || "").trim();
     if (!span) continue;
+
+    // ── Stage 1: exact substring ──
     const needle = span.toLowerCase();
     let idx = textLower.indexOf(needle, scanFrom);
     if (idx === -1) idx = textLower.indexOf(needle);
-    if (idx === -1) continue;
-
-    for (let p = idx; p < idx + span.length; p++) {
-      if (coverage[p] === null) coverage[p] = ci;
+    if (idx !== -1) {
+      for (let p = idx; p < idx + span.length; p++) {
+        if (coverage[p] === null) coverage[p] = ci;
+      }
+      scanFrom = idx + span.length;
+      claimTokensInRange(idx, idx + span.length);
+      continue;
     }
-    scanFrom = idx + span.length;
+
+    // ── Stage 2: fuzzy token match (lemmatisation / discontinuous) ──
+    const chunkToks = wordTokens(span).map((t) => t.lower);
+    if (chunkToks.length === 0) continue;
+    const matched = [];
+    let searchFrom = tokCursor;
+    let anchored = false; // at least one matched token is a content word
+    for (const ct of chunkToks) {
+      let found = -1;
+      for (let ti = searchFrom; ti < pairToks.length; ti++) {
+        if (tokenClaimed[ti]) continue;
+        if (tokenMatch(ct, pairToks[ti].lower)) { found = ti; break; }
+      }
+      if (found !== -1) {
+        matched.push(found);
+        searchFrom = found + 1;
+        if (!STOPWORDS.has(pairToks[found].lower) && pairToks[found].lower.length >= 3) {
+          anchored = true;
+        }
+      }
+    }
+    // Only commit the fuzzy match if a real (content) word anchored it.
+    if (!anchored) continue;
+    for (const ti of matched) {
+      tokenClaimed[ti] = true;
+      for (let p = pairToks[ti].start; p < pairToks[ti].end; p++) {
+        if (coverage[p] === null) coverage[p] = ci;
+      }
+      if (ti + 1 > tokCursor) tokCursor = ti + 1;
+    }
   }
   return coverage;
 }
