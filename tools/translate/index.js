@@ -73,7 +73,7 @@ program
   .option("--yes", "Skip all confirmation prompts")
   .option("--no-cover", "Skip generating an auto cover")
   .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
-  .option("--align-retries <n>", "Max solo-retry attempts per pair that fails hard alignment validation. Default 1. Set 0 to disable retries entirely (fastest/cheapest — pinyin still colors ~100%, a few english highlights are skipped).", (v) => parseInt(v, 10))
+  .option("--align-retries <n>", "Max solo-retry attempts per pair that fails hard alignment validation. Default 0 (fastest/cheapest — pinyin still colors ~100%, a few english highlights are skipped). Set 1+ to polish english-highlight coverage on a single chapter at higher token cost.", (v) => parseInt(v, 10))
   .option("--force", "Re-translate chapters that already exist on disk. Default: skip already-done chapters (resumable).")
   .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
   // Strict is on by default — silently saving a chapter with half its text

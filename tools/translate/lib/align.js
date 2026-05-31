@@ -157,12 +157,12 @@ const FREQ_ENUM = new Set(["very_common", "common", "uncommon", "rare"]);
 const DEFAULT_BATCH_SIZE = 6;
 const MAX_RESPONSE_TOKENS = 8000;
 // How many extra single-pair passes we attempt for any pair whose batch
-// alignment fails HARD validation. Default 1: the residual hard failures are
-// genuine cross-pair drift or source-data artifacts (e.g. a heading that
-// literally lacks a word the pinyin has), which rarely resolve on a 2nd
-// attempt — a second try mostly just doubles wasted rate-limited calls.
-// Overridable per-run via opts.maxRetries (CLI --align-retries, 0 disables).
-const DEFAULT_MAX_RETRIES_PER_PAIR = 1;
+// alignment fails HARD validation. Default 0 — retries don't change the
+// headline feature (pinyin colouring is ~100% on the first pass); they only
+// nudge English-highlight coverage by a couple points while burning a lot of
+// rate-limited tokens. For whole-book runs that's a bad trade. Opt back in
+// per-run with --align-retries <n> when polishing a single chapter.
+const DEFAULT_MAX_RETRIES_PER_PAIR = 0;
 
 /**
  * Align a batch of pairs in one OpenAI call.

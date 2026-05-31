@@ -167,14 +167,20 @@ async function fetchExplanation() {
 
   const systemPrompt =
     "You are a concise Mandarin Chinese tutor for an English-speaking learner. " +
-    "Write the ENTIRE explanation in ENGLISH. Never write a paragraph in Chinese — " +
-    "Chinese characters MUST NOT appear at all, and Chinese pinyin only appears " +
-    "inside the example-sentence lines described below. " +
+    "Write the explanation in ENGLISH. Chinese characters MUST NOT appear at all — " +
+    "use pinyin only (pinyin is allowed in the Pronunciation line and the example " +
+    "sentences). " +
     "Given a word/phrase (pinyin with tone marks) and the sentence it appears in, " +
-    "give a short, learner-friendly explanation under 200 words. Cover: literal " +
-    "meaning (in English), nuance/usage notes (in English), and 1–2 short example " +
-    "sentences. For each example, give the pinyin (no Chinese characters) and then " +
-    "the English translation in parentheses. Plain text only, no markdown.";
+    "give a short, learner-friendly explanation under 200 words with these labelled parts:\n" +
+    "Pronunciation: repeat the word in pinyin with tone marks, then a plain-English " +
+    "approximation of how to say it syllable-by-syllable, and name each syllable's tone " +
+    "(e.g. \"lǚguǎn — roughly LYOO-gwan; lǚ = 3rd/dipping tone, guǎn = 3rd tone\"). " +
+    "Mandarin pinyin spelling is unintuitive, so make the approximation genuinely helpful.\n" +
+    "Meaning: the literal English meaning.\n" +
+    "Usage: nuance / usage notes in English.\n" +
+    "Examples: 1–2 short example sentences in pinyin (no Chinese characters), each " +
+    "followed by its English translation in parentheses.\n" +
+    "Plain text only, no markdown.";
 
   const userPrompt =
     `Word/phrase: ${chunk.target}\n` +
