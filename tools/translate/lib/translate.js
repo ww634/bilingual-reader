@@ -5,6 +5,20 @@
 // post-validate (count match, tone-mark presence, no Han characters).
 
 import OpenAI from "openai";
+import { pinyin } from "pinyin-pro";
+
+// gpt-4.1 occasionally slips a Han character into otherwise-clean pinyin on
+// dense literary text (e.g. "mùcái搭建" for "mùcái dājiàn"). Retrying the
+// whole batch is slow and doesn't reliably converge, so we deterministically
+// convert any stray Han run to tone-marked pinyin. Surrounding spaces are
+// added so the converted reading doesn't fuse onto an adjacent pinyin word.
+function hanToPinyin(text) {
+  if (!text) return text;
+  return text.replace(/[㐀-鿿]+/g, (han) => {
+    const py = pinyin(han, { toneType: "symbol", type: "string" }).trim();
+    return ` ${py} `;
+  }).replace(/\s+/g, " ").trim();
+}
 
 const SYSTEM_PROMPT = `You are an expert literary translator producing a bilingual paired-line learning document.
 
@@ -82,7 +96,7 @@ export function buildClient(apiKey) {
  */
 export async function translateClauses(client, clauses, opts = {}) {
   if (clauses.length <= MAX_CLAUSES_PER_CALL) {
-    return _translateClausesOnce(client, clauses, opts);
+    return _translateBatchSafe(client, clauses, opts);
   }
   // Split into roughly-equal batches so the last one isn't a tiny stub.
   const numBatches = Math.ceil(clauses.length / MAX_CLAUSES_PER_CALL);
@@ -93,7 +107,7 @@ export async function translateClauses(client, clauses, opts = {}) {
     const start = bi * perBatch;
     const slice = clauses.slice(start, start + perBatch);
     if (opts.onBatch) opts.onBatch(bi + 1, numBatches, slice.length);
-    const result = await _translateClausesOnce(client, slice, {
+    const result = await _translateBatchSafe(client, slice, {
       ...opts,
       // Tell the model where in the chapter this batch sits, so it can keep
       // register/voice consistent across batches without seeing the previous
@@ -106,6 +120,62 @@ export async function translateClauses(client, clauses, opts = {}) {
     totalUsage.total_tokens      += result.usage?.total_tokens      || 0;
   }
   return { pairs: allPairs, usage: totalUsage };
+}
+
+// Normaliser for the coverage check. We compare LETTER/DIGIT content only —
+// every run of non-alphanumerics (spaces, quotes, dashes, pipes, smart
+// punctuation) collapses to a single space. This is deliberately punctuation-
+// insensitive: the translator legitimately normalises quote spacing and smart
+// quotes (e.g. source `know.""No` → `know." No`), and we must NOT treat that
+// as dropped content. Real word drops still change the letters and are caught.
+function _normCoverage(s) {
+  return String(s).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+/** True when the pairs' english, concatenated, reconstructs the input clauses. */
+function _englishCoverageOk(clauses, pairs) {
+  return _normCoverage(clauses.join(" ")) === _normCoverage(pairs.map((p) => p.english).join(" "));
+}
+
+/**
+ * Per-batch health check for the issues a retry can plausibly fix:
+ *   - dropped/paraphrased english (coverage gap)
+ *   - a stray Han character in the pinyin (the model occasionally emits one
+ *     instead of its pinyin, e.g. "yī句" for "yī jù")
+ * Returns a short reason string when unhealthy, or null when clean.
+ */
+function _batchFault(clauses, pairs) {
+  if (!_englishCoverageOk(clauses, pairs)) return "dropped/altered english";
+  for (const p of pairs) {
+    if (HAN_CHAR_RE.test(p.target)) return "Han characters in pinyin";
+  }
+  return null;
+}
+
+/**
+ * Translate one batch, retrying when the model produces a fixable fault —
+ * dropping input text, or slipping a Han character into the pinyin. LLMs do
+ * this occasionally on long/dense batches; a retry with an explicit
+ * corrective note almost always fixes it. Usage from every attempt is summed
+ * so the cost report stays honest. After MAX_BATCH_TRIES we return the best
+ * effort and let the caller's validatePairs surface it (and abort under strict).
+ */
+async function _translateBatchSafe(client, clauses, opts = {}) {
+  const MAX_BATCH_TRIES = 3;
+  const usage = { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 };
+  let result;
+  for (let attempt = 1; attempt <= MAX_BATCH_TRIES; attempt++) {
+    result = await _translateClausesOnce(client, clauses, { ...opts, coverageRetry: attempt > 1 });
+    usage.prompt_tokens     += result.usage?.prompt_tokens     || 0;
+    usage.completion_tokens += result.usage?.completion_tokens || 0;
+    usage.total_tokens      += result.usage?.total_tokens      || 0;
+    const fault = _batchFault(clauses, result.pairs);
+    if (!fault) break;
+    if (attempt < MAX_BATCH_TRIES && opts.onCoverageRetry) {
+      opts.onCoverageRetry(attempt, MAX_BATCH_TRIES, fault);
+    }
+  }
+  return { pairs: result.pairs, usage };
 }
 
 /**
@@ -143,6 +213,13 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
     ? `\nNote: this is BATCH ${opts.batchPosition.index} of ${opts.batchPosition.total} for this chapter (clauses ${opts.batchPosition.startClause}..${opts.batchPosition.startClause + clauses.length - 1} of the chapter total). Keep voice, register, and name transliterations consistent with the full chapter prose above.\n`
     : "";
 
+  // Injected only on a retry — the previous attempt had a fixable fault.
+  // Demand complete verbatim english coverage AND strictly pinyin-only target
+  // (the two things a retry can fix: dropped text, stray Han characters).
+  const coverageNote = opts.coverageRetry
+    ? "\n⚠ RETRY: your previous attempt had an error. You MUST: (1) reproduce EVERY clause's English verbatim across the pairs, in order, nothing dropped or reworded — the concatenation of all pair.english must equal the input clauses exactly (ignoring whitespace); AND (2) write the target as PINYIN ONLY with tone marks — absolutely no Han/Chinese characters anywhere (e.g. write \"yī jù\", never \"yī句\").\n"
+    : "";
+
   const userPrompt = [
     `Chapter title: ${englishTitle}`,
     canonicalBlock,
@@ -152,6 +229,7 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
     fullText,
     "```",
     batchNote,
+    coverageNote,
     `Translate the following ${clauses.length} English clauses into pinyin pairs.`,
     "These clauses come from a regex split; treat them as HINTS for where to break pairs.",
     "If two adjacent clauses are grammatically incomplete on their own and merging them",
@@ -217,7 +295,12 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
 
     const content = response.choices[0].message.content;
     const parsed = JSON.parse(content);
-    return { pairs: parsed.pairs, usage: response.usage };
+    // Deterministically scrub any stray Han characters out of the pinyin.
+    const pairs = (parsed.pairs || []).map((p) => ({
+      english: p.english,
+      target: hanToPinyin(p.target),
+    }));
+    return { pairs, usage: response.usage };
   }
 }
 
@@ -300,14 +383,12 @@ export function validatePairs(inputClauses, pairs) {
       `The chapter is probably too long for one translator call — split it into smaller sections.`
     );
   }
-  // Coverage check: the union of pair.english should reconstruct the input
-  // (modulo whitespace). Strict-equal is too brittle because the translator
-  // may normalise punctuation spacing; we collapse whitespace on both sides.
-  // Normalise for comparison: strip pipe characters (a .docx artefact used
-   // as a soft visual break), collapse whitespace, lowercase.
-  const norm = (s) => s.replace(/\|/g, " ").replace(/\s+/g, " ").trim().toLowerCase();
-  const expected = norm(inputClauses.join(" "));
-  const actual = norm(pairs.map((p) => p.english).join(" "));
+  // Coverage check: the union of pair.english should reconstruct the input's
+  // LETTER content. We compare via _normCoverage (alphanumerics only) so the
+  // translator's legitimate punctuation/quote/spacing normalisation isn't
+  // mistaken for dropped words. Real word drops still change the letters.
+  const expected = _normCoverage(inputClauses.join(" "));
+  const actual = _normCoverage(pairs.map((p) => p.english).join(" "));
   if (expected !== actual) {
     // Find the first divergence so the error message is actionable.
     let i = 0;

@@ -386,6 +386,9 @@ async function main() {
               process.stdout.write(dim(`     translating batch ${i}/${total} (${size} clauses)…\n`));
             }
           },
+          onCoverageRetry: (attempt, max, fault) => {
+            process.stdout.write(yellow(`       ⟳ batch fault (${fault}) — retrying (${attempt}/${max - 1})…\n`));
+          },
         }),
       ]);
     } catch (err) {
@@ -401,9 +404,8 @@ async function main() {
       console.error(yellow(`     ⚠ Validation: ${v.problems.length} problem${v.problems.length === 1 ? "" : "s"}`));
       v.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
       if (opts.strict) {
-        console.error(red(`\n❌ Aborting: translator validation failed.`));
-        console.error(red(`   The chapter's English would not reconstruct from the pairs —`));
-        console.error(red(`   probably the translator silently dropped some content.`));
+        console.error(red(`\n❌ Aborting: translator validation failed (see problem(s) above).`));
+        console.error(red(`   The output didn't pass the integrity checks (coverage / pinyin-only / merge ratio).`));
         console.error(red(`   Re-run with --no-strict to save the partial output anyway,`));
         console.error(red(`   or split the chapter into smaller sections and retry.`));
         process.exit(2);
