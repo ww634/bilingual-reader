@@ -5,62 +5,38 @@
 // post-validate (count match, tone-mark presence, no Han characters).
 
 import OpenAI from "openai";
-import { pinyin } from "pinyin-pro";
+import { romanize, hasHan } from "./romanize.js";
 
-// gpt-4.1 occasionally slips a Han character into otherwise-clean pinyin on
-// dense literary text (e.g. "mùcái搭建" for "mùcái dājiàn"). Retrying the
-// whole batch is slow and doesn't reliably converge, so we deterministically
-// convert any stray Han run to tone-marked pinyin. Surrounding spaces are
-// added so the converted reading doesn't fuse onto an adjacent pinyin word.
-function hanToPinyin(text) {
-  if (!text) return text;
-  return text.replace(/[㐀-鿿]+/g, (han) => {
-    const py = pinyin(han, { toneType: "symbol", type: "string" }).trim();
-    return ` ${py} `;
-  }).replace(/\s+/g, " ").trim();
-}
+// The translator now emits SIMPLIFIED CHINESE CHARACTERS (Hanzi), one
+// translation per input clause. We pair each with our own input clause (so
+// English can never be dropped) and romanize the Hanzi to pinyin
+// deterministically (so there are no stray Han chars, tone marks are correct,
+// and word spacing is orthographic). See lib/romanize.js.
+const SYSTEM_PROMPT = `You are an expert literary translator for a bilingual Chinese-learning tool.
 
-const SYSTEM_PROMPT = `You are an expert literary translator producing a bilingual paired-line learning document.
-
-You translate English clauses into Mandarin Chinese, rendered as PINYIN WITH TONE MARKS (never Chinese characters). The learner reads pinyin only.
+Translate each English clause into natural Mandarin Chinese written in SIMPLIFIED CHINESE CHARACTERS (Hanzi). The app romanizes your characters to pinyin itself — you do NOT output pinyin.
 
 Hard rules — non-negotiable:
-1. PINYIN ONLY. Never include Chinese (Han) characters. Never include numbered pinyin (ma1, ma2). Only diacritic tone marks: ā á ǎ à, ē é ě è, ī í ǐ ì, ō ó ǒ ò, ū ú ǔ ù, ǖ ǘ ǚ ǜ.
-2. EVERY syllable carries a tone mark unless it's a neutral-tone particle (then it carries no mark).
-3. Word spacing follows standard pinyin orthography: syllables of a single word run together (e.g. "zhàndòu", "péngyǒu"), separate words are space-separated.
-4. Each output pair has ONE English clause + its pinyin translation. Natural Chinese phrasing within the pair's scope, NOT word-for-word.
-5. **MERGING short fragments — narrow, surgical.** The user gives you N English clauses as input HINTS. **Default behaviour: translate each clause as its OWN pair, one-to-one.** ONLY merge two ADJACENT clauses (never three) when ALL THREE conditions hold:
-     (a) the first clause is grammatically incomplete on its own (e.g., ends in a determiner with no noun: "the rest of these"; or a verb with no object: "asked me to");
-     (b) your Chinese translation of the first clause alone would have to borrow a content word from the next clause to be syntactically complete;
-     (c) the merged pair would still be no longer than ~12 English words.
-   When you merge, output ONE pair whose english is the concatenation of those two clauses (preserve internal whitespace/punctuation verbatim). Example to MERGE: "and the rest of these" + "gentlemen having asked me…" → one pair, because Chinese needs 先生们 with 这些. Example to NOT MERGE: "asked me to write down the whole" + "particulars about Treasure Island" → keep as TWO pairs (the first is grammatically complete on its own in Chinese with bǎ-construction). When in doubt, do NOT merge. Aggressive merging defeats the bilingual paired-line display the user is reading.
-   Output pair count must be at least ceil(N × 0.8). If you find yourself wanting to merge more than ~20% of input clauses, you are over-merging — back off.
-6. **No drift.** A pair's pinyin must ONLY translate the content of that pair's English. Do not invent words. Do not pull content from outside the pair's english span.
-7. Proper nouns: transliterate to pinyin by default (e.g. "Sid" -> "Xī dé"). If a name has no obvious Chinese rendering, keep it in Latin script.
-8. Preserve the punctuation feel: trailing comma/period/em-dash on the English clause should be reflected with appropriate Chinese pacing in the pinyin (you may omit terminal punctuation in the pinyin; the app re-wraps).
-9. **English coverage.** The concatenation of all pair.english values (joined by single spaces) must, when whitespace is collapsed, equal the concatenation of the input clauses (likewise whitespace-collapsed). No clause may be dropped, reordered, or paraphrased.
-10. You will be given the FULL chapter context so your phrasing is internally consistent (consistent name transliterations, consistent register).
+1. OUTPUT SIMPLIFIED HANZI ONLY for the translation text. Do NOT output pinyin, bopomofo, or tone-numbered romanization. (Proper names with no sensible Chinese form may stay in Latin script — see rule 5.)
+2. EXACTLY ONE translation per input clause, returned in the SAME ORDER. Never merge, split, drop, reorder, or add clauses. The output array length MUST equal the number of input clauses.
+3. Translate each clause faithfully WITHIN ITS OWN SCOPE. If a clause is a grammatical fragment ("and the rest of these"), translate just that fragment — do NOT borrow words from neighbouring clauses to complete it. Natural phrasing within the clause, not word-for-word.
+4. Render dialogue/quotes naturally; you may omit or include Chinese punctuation as reads best — the app normalizes punctuation.
+5. Proper nouns: transliterate names to Hanzi where there is a natural rendering (e.g. "Sid" → 西德). If a name has no sensible Chinese rendering, keep it verbatim in Latin script inside the Chinese text.
+6. Use the FULL chapter context (provided) so name transliterations and register stay consistent across clauses.
 
-Output: a JSON object matching the provided schema, with pairs in the same input order. Output count ≤ input count.`;
+Output: a JSON object { "translations": [ ... ] } whose array has EXACTLY one Hanzi string per input clause, in input order.`;
 
 const RESPONSE_SCHEMA = {
   type: "object",
   additionalProperties: false,
   properties: {
-    pairs: {
+    translations: {
       type: "array",
-      items: {
-        type: "object",
-        additionalProperties: false,
-        properties: {
-          english: { type: "string", description: "The original English clause, verbatim." },
-          target: { type: "string", description: "Mandarin translation, pinyin with tone marks, no Han characters." },
-        },
-        required: ["english", "target"],
-      },
+      description: "One Simplified-Hanzi translation per input clause, in order. Length MUST equal the input clause count.",
+      items: { type: "string", description: "Simplified Chinese characters translating one clause." },
     },
   },
-  required: ["pairs"],
+  required: ["translations"],
 };
 
 const HAN_CHAR_RE = /[一-鿿㐀-䶿]/;
@@ -122,21 +98,6 @@ export async function translateClauses(client, clauses, opts = {}) {
   return { pairs: allPairs, usage: totalUsage };
 }
 
-// Normaliser for the coverage check. We compare LETTER/DIGIT content only —
-// every run of non-alphanumerics (spaces, quotes, dashes, pipes, smart
-// punctuation) collapses to a single space. This is deliberately punctuation-
-// insensitive: the translator legitimately normalises quote spacing and smart
-// quotes (e.g. source `know.""No` → `know." No`), and we must NOT treat that
-// as dropped content. Real word drops still change the letters and are caught.
-function _normCoverage(s) {
-  return String(s).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-}
-
-/** True when the pairs' english, concatenated, reconstructs the input clauses. */
-function _englishCoverageOk(clauses, pairs) {
-  return _normCoverage(clauses.join(" ")) === _normCoverage(pairs.map((p) => p.english).join(" "));
-}
-
 /**
  * Per-batch health check for the issues a retry can plausibly fix:
  *   - dropped/paraphrased english (coverage gap)
@@ -145,9 +106,15 @@ function _englishCoverageOk(clauses, pairs) {
  * Returns a short reason string when unhealthy, or null when clean.
  */
 function _batchFault(clauses, pairs) {
-  if (!_englishCoverageOk(clauses, pairs)) return "dropped/altered english";
+  // With the Hanzi-1:1 design we OWN the english (it's our input clause), so
+  // english can never drop. The only retry-fixable fault is the model not
+  // returning exactly one translation per clause (merged/dropped/added), or
+  // an empty translation.
+  if (pairs.length !== clauses.length) {
+    return `count mismatch (${pairs.length} translations for ${clauses.length} clauses)`;
+  }
   for (const p of pairs) {
-    if (HAN_CHAR_RE.test(p.target)) return "Han characters in pinyin";
+    if (!p.hanzi || !p.hanzi.trim()) return "empty translation";
   }
   return null;
 }
@@ -213,11 +180,10 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
     ? `\nNote: this is BATCH ${opts.batchPosition.index} of ${opts.batchPosition.total} for this chapter (clauses ${opts.batchPosition.startClause}..${opts.batchPosition.startClause + clauses.length - 1} of the chapter total). Keep voice, register, and name transliterations consistent with the full chapter prose above.\n`
     : "";
 
-  // Injected only on a retry — the previous attempt had a fixable fault.
-  // Demand complete verbatim english coverage AND strictly pinyin-only target
-  // (the two things a retry can fix: dropped text, stray Han characters).
-  const coverageNote = opts.coverageRetry
-    ? "\n⚠ RETRY: your previous attempt had an error. You MUST: (1) reproduce EVERY clause's English verbatim across the pairs, in order, nothing dropped or reworded — the concatenation of all pair.english must equal the input clauses exactly (ignoring whitespace); AND (2) write the target as PINYIN ONLY with tone marks — absolutely no Han/Chinese characters anywhere (e.g. write \"yī jù\", never \"yī句\").\n"
+  // Injected only on a retry — the previous attempt returned the wrong number
+  // of translations. Demand exactly one per clause, in order.
+  const countNote = opts.coverageRetry
+    ? `\n⚠ RETRY: your previous attempt did NOT return exactly ${clauses.length} translations. You MUST return EXACTLY ${clauses.length} Hanzi translations — one per numbered clause, in the same order, none merged, dropped, or added.\n`
     : "";
 
   const userPrompt = [
@@ -229,13 +195,10 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
     fullText,
     "```",
     batchNote,
-    coverageNote,
-    `Translate the following ${clauses.length} English clauses into pinyin pairs.`,
-    "These clauses come from a regex split; treat them as HINTS for where to break pairs.",
-    "If two adjacent clauses are grammatically incomplete on their own and merging them",
-    "produces cleaner Chinese, MERGE them into a single pair (see system rule 5).",
-    "Otherwise translate each clause as its own pair. Maintain input order. Pair count may be",
-    "less than or equal to the input clause count — never greater.",
+    countNote,
+    `Translate the following ${clauses.length} English clauses into Simplified Chinese (Hanzi).`,
+    `Return EXACTLY ${clauses.length} translations in the "translations" array — one per clause, in order.`,
+    "Translate each clause within its own scope; do NOT merge, drop, or borrow words across clauses.",
     "",
     "Clauses:",
     clauses.map((c, i) => `${i + 1}. ${c}`).join("\n"),
@@ -264,7 +227,7 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
       response_format: {
         type: "json_schema",
         json_schema: {
-          name: "translation_pairs",
+          name: "translations",
           strict: true,
           schema: RESPONSE_SCHEMA,
         },
@@ -295,11 +258,15 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
 
     const content = response.choices[0].message.content;
     const parsed = JSON.parse(content);
-    // Deterministically scrub any stray Han characters out of the pinyin.
-    const pairs = (parsed.pairs || []).map((p) => ({
-      english: p.english,
-      target: hanToPinyin(p.target),
-    }));
+    const translations = Array.isArray(parsed.translations) ? parsed.translations : [];
+    // Pair OUR input clause (so english can never drop) with the model's
+    // Hanzi, and romanize the Hanzi to pinyin deterministically.
+    const pairs = [];
+    for (let i = 0; i < Math.max(translations.length, clauses.length); i++) {
+      const english = clauses[i] ?? "";
+      const hanzi = (translations[i] ?? "").trim();
+      pairs.push({ english, hanzi, target: romanize(hanzi) });
+    }
     return { pairs, usage: response.usage };
   }
 }
@@ -313,102 +280,66 @@ export async function translateTitle(client, englishTitle, opts = {}) {
   const isBookTitle = !!opts.isBookTitle;
 
   const titleGuidance = isBookTitle
-    ? "\n\nFor this task you are translating a BOOK TITLE. Translate ONLY the title itself — do NOT add chapter prefixes like 'Dì <number> zhāng:' or any structural framing. Use the standard or most natural Mandarin rendering of the book's name."
-    : "\n\nFor this task you are translating a CHAPTER TITLE. Use standard chapter-title phrasing (e.g. 'Dì <number> zhāng: <title>'). Same pinyin rules.";
+    ? "\n\nTASK: translate a BOOK TITLE into Simplified Hanzi. Translate ONLY the title — no chapter prefixes, no framing. Use the standard/most natural Mandarin rendering of the book's name."
+    : "\n\nTASK: translate a CHAPTER TITLE into Simplified Hanzi. You may use standard chapter-title phrasing (e.g. a 第N章： prefix) if appropriate.";
 
   const isNewFamily = /^gpt-5|^o1|^o3/i.test(model);
   const request = {
     model,
     messages: [
-      {
-        role: "system",
-        content: SYSTEM_PROMPT + titleGuidance,
-      },
+      { role: "system", content: SYSTEM_PROMPT + titleGuidance },
       {
         role: "user",
-        content: `Translate this ${isBookTitle ? "book" : "chapter"} title to pinyin with tone marks:\n\n"${englishTitle}"\n\nReturn JSON: { "english": "...", "target": "..." } — english is the original verbatim.`,
+        content: `Translate this ${isBookTitle ? "book" : "chapter"} title to Simplified Chinese (Hanzi):\n\n"${englishTitle}"\n\nReturn JSON: { "hanzi": "汉字标题" }.`,
       },
     ],
     response_format: {
       type: "json_schema",
       json_schema: {
-        name: "title_pair",
+        name: "title_hanzi",
         strict: true,
         schema: {
           type: "object",
           additionalProperties: false,
-          properties: {
-            english: { type: "string" },
-            target: { type: "string" },
-          },
-          required: ["english", "target"],
+          properties: { hanzi: { type: "string" } },
+          required: ["hanzi"],
         },
       },
     },
   };
   if (!isNewFamily) request.temperature = 0.2;
   const response = await client.chat.completions.create(request);
-  return JSON.parse(response.choices[0].message.content);
+  const parsed = JSON.parse(response.choices[0].message.content);
+  const hanzi = (parsed.hanzi || "").trim();
+  // english is the original verbatim; target is the deterministic romanization.
+  return { english: englishTitle, hanzi, target: romanize(hanzi), usage: response.usage };
 }
 
 /**
  * Validate a batch of pairs. Returns { ok, problems }.
  *
- * The translator may now MERGE adjacent input clauses (pair count ≤ input
- * clause count), so we no longer require strict count match. Instead we
- * check that the concatenation of all pair.english (whitespace-collapsed)
- * matches the concatenation of all input clauses (whitespace-collapsed).
- * That catches clause-dropping or paraphrasing.
+ * With the Hanzi-1:1 design the checks are simple: exactly one pair per input
+ * clause, every pair has Hanzi + a non-empty romanized pinyin, and the
+ * romanizer left no stray Han characters in the pinyin. English is our own
+ * input clause, so coverage can't fail.
  */
-// Minimum fraction of input clauses that should survive into output pairs.
-// Below this we treat the translator as having over-merged. Empirically the
-// prompt asks for ≥80% retention; 0.7 gives a little headroom for genuine
-// surgical merges without letting the LLM collapse a whole chapter into ~40%
-// of its input.
-const MIN_RETENTION_RATIO = 0.7;
-
 export function validatePairs(inputClauses, pairs) {
   const problems = [];
-  if (pairs.length > inputClauses.length) {
-    problems.push(`Pair count grew: input ${inputClauses.length}, output ${pairs.length} (translator should never increase pair count)`);
-  }
-  // Hard floor on merging. The prompt asks for ≤20% merging; in practice the
-  // LLM ignores that on long sections, and a chapter with 40% retention means
-  // hundreds of input clauses were silently merged or dropped.
-  const minPairs = Math.ceil(inputClauses.length * MIN_RETENTION_RATIO);
-  if (pairs.length < minPairs) {
-    const pct = ((pairs.length / inputClauses.length) * 100).toFixed(0);
+  if (pairs.length !== inputClauses.length) {
     problems.push(
-      `Translator over-merged: ${pairs.length} pairs from ${inputClauses.length} input clauses (${pct}% retained, need ≥${(MIN_RETENTION_RATIO * 100).toFixed(0)}%). ` +
-      `The chapter is probably too long for one translator call — split it into smaller sections.`
-    );
-  }
-  // Coverage check: the union of pair.english should reconstruct the input's
-  // LETTER content. We compare via _normCoverage (alphanumerics only) so the
-  // translator's legitimate punctuation/quote/spacing normalisation isn't
-  // mistaken for dropped words. Real word drops still change the letters.
-  const expected = _normCoverage(inputClauses.join(" "));
-  const actual = _normCoverage(pairs.map((p) => p.english).join(" "));
-  if (expected !== actual) {
-    // Find the first divergence so the error message is actionable.
-    let i = 0;
-    while (i < expected.length && i < actual.length && expected[i] === actual[i]) i++;
-    const ctx = (s, at) => s.slice(Math.max(0, at - 20), Math.min(s.length, at + 30));
-    problems.push(
-      `English coverage mismatch at char ${i}:\n` +
-      `  expected …${ctx(expected, i)}…\n` +
-      `  got      …${ctx(actual, i)}…`
+      `Count mismatch: ${pairs.length} translations for ${inputClauses.length} clauses (expected exactly 1:1). ` +
+      `The model merged, dropped, or added a clause.`
     );
   }
   pairs.forEach((p, i) => {
-    if (HAN_CHAR_RE.test(p.target)) {
-      problems.push(`Pair ${i + 1}: contains Han characters: "${p.target}"`);
+    if (!p.hanzi || !p.hanzi.trim()) {
+      problems.push(`Pair ${i + 1}: empty Hanzi translation`);
     }
-    if (!TONE_MARK_RE.test(p.target)) {
-      problems.push(`Pair ${i + 1}: no tone marks detected: "${p.target}"`);
+    if (!p.target || !p.target.trim()) {
+      problems.push(`Pair ${i + 1}: empty pinyin (romanization produced nothing for "${p.hanzi}")`);
     }
-    if (/\d(?![\d])/.test(p.target) && /[a-zA-Z]\d/.test(p.target)) {
-      problems.push(`Pair ${i + 1}: looks like numbered pinyin (ma1/ma2): "${p.target}"`);
+    if (HAN_CHAR_RE.test(p.target || "")) {
+      problems.push(`Pair ${i + 1}: Han characters left in pinyin: "${p.target}"`);
     }
   });
   return { ok: problems.length === 0, problems };

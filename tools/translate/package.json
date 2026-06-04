@@ -11,6 +11,7 @@
     "translate": "node index.js"
   },
   "dependencies": {
+    "@node-rs/jieba": "^2.0.1",
     "commander": "^12.1.0",
     "mammoth": "^1.8.0",
     "openai": "^4.68.0",
