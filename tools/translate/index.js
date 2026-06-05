@@ -52,6 +52,24 @@ function green(s) { return `\x1b[32m${s}\x1b[0m`; }
 function yellow(s) { return `\x1b[33m${s}\x1b[0m`; }
 function red(s) { return `\x1b[31m${s}\x1b[0m`; }
 
+// Derive a STABLE, collision-free chapter id from the section's heading.
+// The LLM analyzer's id_suggestion is non-deterministic and can collide
+// (two sections both getting "ch-1"), which silently drops a chapter via the
+// resumability skip. Since sources use explicit "Chapter N: Title" headings,
+// we read the number straight from the heading (which begins the section's
+// sliced text) and use ch-<N>. This is deterministic and continuous across
+// multiple input files for the same book. Falls back to the analyzer's
+// suggestion, then to a positional id.
+function deriveChapterId(section, fallbackIndex) {
+  const probe = `${section.english_title || ""}\n${(section.text || "").slice(0, 120)}`;
+  const m = probe.match(/\bchapter\s+(\d+)\b/i);
+  if (m) return `ch-${parseInt(m[1], 10)}`;
+  if (/\b(introduction|preface|foreword|prologue)\b/i.test(section.english_title || section.kind || "")) {
+    return "introduction";
+  }
+  return section.id_suggestion || `ch-${fallbackIndex}`;
+}
+
 async function prompt(question) {
   const rl = readline.createInterface({ input, output });
   const answer = await rl.question(question);
@@ -248,7 +266,7 @@ async function main() {
     const icon = skip ? "✗" : "✓";
     const colorFn = skip ? dim : (x) => x;
     if (!skip) chapterIndex++;
-    const idLabel = !skip && s.kind === "chapter" ? cyan(` → ${bookId}/${s.id_suggestion}`) : "";
+    const idLabel = !skip ? cyan(` → ${bookId}/${deriveChapterId(s, chapterIndex)}`) : "";
     console.log(`   ${colorFn(icon)} ${colorFn(s.kind.padEnd(20))} ${colorFn(s.english_title || "")}${idLabel}${status}`);
     if (s.synopsis && !skip) {
       console.log(dim(`     ${s.synopsis.replace(/\n/g, " ")}`));
@@ -336,7 +354,7 @@ async function main() {
     // Resumability: if this chapter's JSON already exists on disk, skip it
     // unless --force was passed. Lets a long multi-chapter run be re-invoked
     // after a partial failure without redoing work.
-    const provisionalChapterId = s.id_suggestion || `ch-${i}`;
+    const provisionalChapterId = deriveChapterId(s, i);
     const existingPath = path.join(bookDir, `${provisionalChapterId}.json`);
     if (!opts.force) {
       try {
@@ -452,7 +470,7 @@ async function main() {
       }
     }
 
-    const chapterId = s.id_suggestion || `ch-${i}`;
+    const chapterId = deriveChapterId(s, i);
     const alignedPairCount = finalPairs.filter((p) => Array.isArray(p.alignment) && p.alignment.length > 0).length;
     const chapterJson = {
       id: chapterId,
