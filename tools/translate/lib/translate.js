@@ -18,13 +18,13 @@ Translate each English clause into natural Mandarin Chinese written in SIMPLIFIE
 
 Hard rules — non-negotiable:
 1. OUTPUT SIMPLIFIED HANZI ONLY for the translation text. Do NOT output pinyin, bopomofo, or tone-numbered romanization. (Proper names with no sensible Chinese form may stay in Latin script — see rule 5.)
-2. EXACTLY ONE translation per input clause, returned in the SAME ORDER. Never merge, split, drop, reorder, or add clauses. The output array length MUST equal the number of input clauses.
+2. EXACTLY ONE translation per input clause. Return each as an object { "index": N, "hanzi": "…" } where N is the clause's number as shown in the input (1-based). Include EVERY clause number exactly once. Never merge, split, drop, or add clauses.
 3. Translate each clause faithfully WITHIN ITS OWN SCOPE. If a clause is a grammatical fragment ("and the rest of these"), translate just that fragment — do NOT borrow words from neighbouring clauses to complete it. Natural phrasing within the clause, not word-for-word.
 4. Render dialogue/quotes naturally; you may omit or include Chinese punctuation as reads best — the app normalizes punctuation.
 5. Proper nouns: transliterate names to Hanzi where there is a natural rendering (e.g. "Sid" → 西德). If a name has no sensible Chinese rendering, keep it verbatim in Latin script inside the Chinese text.
 6. Use the FULL chapter context (provided) so name transliterations and register stay consistent across clauses.
 
-Output: a JSON object { "translations": [ ... ] } whose array has EXACTLY one Hanzi string per input clause, in input order.`;
+Output: a JSON object { "translations": [ { "index": 1, "hanzi": "…" }, … ] } with one entry per input clause; "index" is the clause's 1-based number, "hanzi" its Simplified-Chinese translation. Cover every index exactly once.`;
 
 const RESPONSE_SCHEMA = {
   type: "object",
@@ -32,8 +32,16 @@ const RESPONSE_SCHEMA = {
   properties: {
     translations: {
       type: "array",
-      description: "One Simplified-Hanzi translation per input clause, in order. Length MUST equal the input clause count.",
-      items: { type: "string", description: "Simplified Chinese characters translating one clause." },
+      description: "One {index, hanzi} per input clause. index = the clause's 1-based number; cover every clause.",
+      items: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          index: { type: "integer", description: "1-based clause number from the input." },
+          hanzi: { type: "string", description: "Simplified Chinese characters translating that clause." },
+        },
+        required: ["index", "hanzi"],
+      },
     },
   },
   required: ["translations"],
@@ -53,7 +61,7 @@ const MAX_RESPONSE_TOKENS_CEILING = 32000;
 // quickly: at 200+ the LLM tends to over-merge, drift in register, or just
 // truncate the tail of its response. Empirically a real chapter of ~750
 // clauses fails badly as one call; in 100-clause batches it stays stable.
-const MAX_CLAUSES_PER_CALL = 100;
+const MAX_CLAUSES_PER_CALL = 60;
 
 export function buildClient(apiKey) {
   if (!apiKey) {
@@ -105,44 +113,48 @@ export async function translateClauses(client, clauses, opts = {}) {
  *     instead of its pinyin, e.g. "yī句" for "yī jù")
  * Returns a short reason string when unhealthy, or null when clean.
  */
-function _batchFault(clauses, pairs) {
-  // With the Hanzi-1:1 design we OWN the english (it's our input clause), so
-  // english can never drop. The only retry-fixable fault is the model not
-  // returning exactly one translation per clause (merged/dropped/added), or
-  // an empty translation.
-  if (pairs.length !== clauses.length) {
-    return `count mismatch (${pairs.length} translations for ${clauses.length} clauses)`;
-  }
-  for (const p of pairs) {
-    if (!p.hanzi || !p.hanzi.trim()) return "empty translation";
-  }
-  return null;
-}
-
 /**
- * Translate one batch, retrying when the model produces a fixable fault —
- * dropping input text, or slipping a Han character into the pinyin. LLMs do
- * this occasionally on long/dense batches; a retry with an explicit
- * corrective note almost always fixes it. Usage from every attempt is summed
- * so the cost report stays honest. After MAX_BATCH_TRIES we return the best
- * effort and let the caller's validatePairs surface it (and abort under strict).
+ * Translate one batch with GAP-FILLING. The model returns indexed
+ * translations ({index, hanzi}); we map them back to clauses by index, then
+ * re-translate any clauses that came back missing or empty — passing only
+ * those clauses on each retry. This is robust to the model miscounting a long
+ * array (returning 59 of 60), because we re-ask for exactly the gaps rather
+ * than re-rolling the whole batch and hoping. Usage from every call is summed.
  */
 async function _translateBatchSafe(client, clauses, opts = {}) {
   const MAX_BATCH_TRIES = 3;
   const usage = { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 };
-  let result;
-  for (let attempt = 1; attempt <= MAX_BATCH_TRIES; attempt++) {
-    result = await _translateClausesOnce(client, clauses, { ...opts, coverageRetry: attempt > 1 });
-    usage.prompt_tokens     += result.usage?.prompt_tokens     || 0;
-    usage.completion_tokens += result.usage?.completion_tokens || 0;
-    usage.total_tokens      += result.usage?.total_tokens      || 0;
-    const fault = _batchFault(clauses, result.pairs);
-    if (!fault) break;
-    if (attempt < MAX_BATCH_TRIES && opts.onCoverageRetry) {
-      opts.onCoverageRetry(attempt, MAX_BATCH_TRIES, fault);
+  const hanByIndex = new Array(clauses.length).fill(null); // 0-based slot per clause
+
+  let pending = clauses.map((_, i) => i); // clause indices still needing a translation
+  for (let attempt = 1; attempt <= MAX_BATCH_TRIES && pending.length > 0; attempt++) {
+    // Re-number the pending clauses 1..k for this sub-call.
+    const subset = pending.map((i) => clauses[i]);
+    const r = await _translateClausesOnce(client, subset, { ...opts, coverageRetry: attempt > 1 });
+    usage.prompt_tokens     += r.usage?.prompt_tokens     || 0;
+    usage.completion_tokens += r.usage?.completion_tokens || 0;
+    usage.total_tokens      += r.usage?.total_tokens      || 0;
+
+    // r.items: [{index (1-based within subset), hanzi}]. Map back to clauses.
+    for (const it of r.items) {
+      const sub = (it.index | 0) - 1;
+      if (sub >= 0 && sub < pending.length) {
+        const han = (it.hanzi || "").trim();
+        if (han) hanByIndex[pending[sub]] = han;
+      }
     }
+    const stillMissing = pending.filter((i) => !hanByIndex[i]);
+    if (stillMissing.length && attempt < MAX_BATCH_TRIES && opts.onCoverageRetry) {
+      opts.onCoverageRetry(attempt, MAX_BATCH_TRIES, `${stillMissing.length} clause(s) missing`);
+    }
+    pending = stillMissing;
   }
-  return { pairs: result.pairs, usage };
+
+  const pairs = clauses.map((c, i) => {
+    const hanzi = hanByIndex[i] || "";
+    return { english: c, hanzi, target: romanize(hanzi) };
+  });
+  return { pairs, usage };
 }
 
 /**
@@ -183,7 +195,7 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
   // Injected only on a retry — the previous attempt returned the wrong number
   // of translations. Demand exactly one per clause, in order.
   const countNote = opts.coverageRetry
-    ? `\n⚠ RETRY: your previous attempt did NOT return exactly ${clauses.length} translations. You MUST return EXACTLY ${clauses.length} Hanzi translations — one per numbered clause, in the same order, none merged, dropped, or added.\n`
+    ? `\n⚠ RETRY: these are the clauses still missing a translation. Return a { "index", "hanzi" } entry for EVERY clause below, covering indices 1..${clauses.length}.\n`
     : "";
 
   const userPrompt = [
@@ -197,7 +209,7 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
     batchNote,
     countNote,
     `Translate the following ${clauses.length} English clauses into Simplified Chinese (Hanzi).`,
-    `Return EXACTLY ${clauses.length} translations in the "translations" array — one per clause, in order.`,
+    `Return one { "index", "hanzi" } object per clause, covering indices 1..${clauses.length} exactly once.`,
     "Translate each clause within its own scope; do NOT merge, drop, or borrow words across clauses.",
     "",
     "Clauses:",
@@ -258,16 +270,9 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
 
     const content = response.choices[0].message.content;
     const parsed = JSON.parse(content);
-    const translations = Array.isArray(parsed.translations) ? parsed.translations : [];
-    // Pair OUR input clause (so english can never drop) with the model's
-    // Hanzi, and romanize the Hanzi to pinyin deterministically.
-    const pairs = [];
-    for (let i = 0; i < Math.max(translations.length, clauses.length); i++) {
-      const english = clauses[i] ?? "";
-      const hanzi = (translations[i] ?? "").trim();
-      pairs.push({ english, hanzi, target: romanize(hanzi) });
-    }
-    return { pairs, usage: response.usage };
+    const items = Array.isArray(parsed.translations) ? parsed.translations : [];
+    // Return raw indexed items; the gap-filling caller maps them to clauses.
+    return { items, usage: response.usage };
   }
 }
 
