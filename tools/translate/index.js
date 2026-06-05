@@ -101,7 +101,12 @@ async function realignOnly(chapterFile) {
   }
   const client = buildClient(process.env.OPENAI_API_KEY);
   // Strip any existing alignment so we get a clean re-run.
-  const inputPairs = chapter.pairs.map((p) => ({ english: p.english, target: p.target }));
+  const inputPairs = chapter.pairs.map((p) => ({ english: p.english, target: p.target, hanzi: p.hanzi }));
+  if (inputPairs.some((p) => !p.hanzi)) {
+    console.error(red("\n❌ This chapter has no `hanzi` field — it predates the Hanzi-alignment refactor."));
+    console.error(red("   Re-translate it (drop the file and run --in ...) rather than realigning."));
+    process.exit(1);
+  }
   const est = estimateAlignmentCost(inputPairs, opts.model);
   console.log(`   ${inputPairs.length} pairs · cost estimate: ~$${est.cost.toFixed(3)}  ${dim("(" + fmt(est.inputTokens) + " in / " + fmt(est.outputTokens) + " out)")}`);
   if (!opts.yes) {
@@ -143,7 +148,7 @@ async function realignOnly(chapterFile) {
 
   // Merge back into chapter.json.
   chapter.pairs = result.aligned.map((p) => {
-    const out = { target: p.target, english: p.english };
+    const out = { target: p.target, english: p.english, hanzi: p.hanzi };
     if (Array.isArray(p.alignment)) out.alignment = p.alignment;
     return out;
   });
@@ -415,7 +420,7 @@ async function main() {
     }
 
     // Alignment pass (optional, on by default).
-    let finalPairs = bodyResult.pairs.map((p) => ({ english: p.english, target: p.target }));
+    let finalPairs = bodyResult.pairs.map((p) => ({ english: p.english, target: p.target, hanzi: p.hanzi }));
     if (opts.alignment !== false) {
       console.log(dim(`     aligning words…`));
       try {
@@ -454,9 +459,9 @@ async function main() {
       book_id: bookId,
       language: "zh",
       version: 1,
-      title: { target: titleResult.target, english: titleResult.english },
+      title: { target: titleResult.target, english: titleResult.english, hanzi: titleResult.hanzi },
       pairs: finalPairs.map((p) => {
-        const pair = { target: p.target, english: p.english };
+        const pair = { target: p.target, english: p.english, hanzi: p.hanzi };
         if (Array.isArray(p.alignment)) pair.alignment = p.alignment;
         return pair;
       }),
