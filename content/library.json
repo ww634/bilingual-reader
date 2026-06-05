@@ -39,6 +39,56 @@
         }
       ],
       "cover": "books/treasure-island/cover.svg"
+    },
+    {
+      "version": 3,
+      "id": "the-left-hand-of-darkness",
+      "language": "zh",
+      "title": {
+        "target": "hēiàn de zuǒshǒu",
+        "english": "The Left Hand of Darkness"
+      },
+      "author": "Ursula K. Le Guin",
+      "synopsis": "A human envoy, Genly Ai, is sent to the planet Gethen (Winter) to persuade its nations to join an interstellar collective. On Gethen, the inhabitants are ambisexual, and Ai must navigate complex politics, cultural misunderstandings, and personal relationships as he seeks an alliance. The novel explores themes of gender, identity, loyalty, and the nature of truth.",
+      "genres": [
+        "science fiction",
+        "classic",
+        "literary fiction",
+        "political",
+        "speculative",
+        "adventure"
+      ],
+      "chapters": [
+        {
+          "id": "introduction",
+          "title": {
+            "target": "yǐnyán",
+            "english": "Introduction"
+          },
+          "url": "books/the-left-hand-of-darkness/introduction.json",
+          "version": 2
+        },
+        {
+          "id": "ch-1",
+          "title": {
+            "target": "yǐnyán",
+            "english": "Introduction",
+            "hanzi": "引言"
+          },
+          "url": "books/the-left-hand-of-darkness/ch-1.json",
+          "version": 3
+        },
+        {
+          "id": "ch-2",
+          "title": {
+            "target": "bàofēngxuě zhōng de dìfāng",
+            "english": "The Place Inside the Blizzard"
+          },
+          "url": "books/the-left-hand-of-darkness/ch-2.json",
+          "version": 2
+        }
+      ],
+      "cover": "books/the-left-hand-of-darkness/cover.svg"
     }
   ]
 }
