@@ -18,13 +18,13 @@ Translate each English clause into natural Mandarin Chinese written in SIMPLIFIE
 
 Hard rules — non-negotiable:
 1. OUTPUT SIMPLIFIED HANZI ONLY for the translation text. Do NOT output pinyin, bopomofo, or tone-numbered romanization. (Proper names with no sensible Chinese form may stay in Latin script — see rule 5.)
-2. EXACTLY ONE translation per input clause. Return each as an object { "index": N, "hanzi": "…" } where N is the clause's number as shown in the input (1-based). Include EVERY clause number exactly once. Never merge, split, drop, or add clauses.
+2. EXACTLY ONE translation per input clause. Return each as an object { "english": "<the clause copied verbatim>", "hanzi": "<its translation>" }. Copy the english back EXACTLY as given so it can be matched to the source. Include every clause exactly once; never merge, split, drop, or add clauses.
 3. Translate each clause faithfully WITHIN ITS OWN SCOPE. If a clause is a grammatical fragment ("and the rest of these"), translate just that fragment — do NOT borrow words from neighbouring clauses to complete it. Natural phrasing within the clause, not word-for-word.
 4. Render dialogue/quotes naturally; you may omit or include Chinese punctuation as reads best — the app normalizes punctuation.
 5. Proper nouns: transliterate names to Hanzi where there is a natural rendering (e.g. "Sid" → 西德). If a name has no sensible Chinese rendering, keep it verbatim in Latin script inside the Chinese text.
 6. Use the FULL chapter context (provided) so name transliterations and register stay consistent across clauses.
 
-Output: a JSON object { "translations": [ { "index": 1, "hanzi": "…" }, … ] } with one entry per input clause; "index" is the clause's 1-based number, "hanzi" its Simplified-Chinese translation. Cover every index exactly once.`;
+Output: a JSON object { "translations": [ { "english": "<clause verbatim>", "hanzi": "<translation>" }, … ] } with one entry per input clause, in order.`;
 
 const RESPONSE_SCHEMA = {
   type: "object",
@@ -32,15 +32,15 @@ const RESPONSE_SCHEMA = {
   properties: {
     translations: {
       type: "array",
-      description: "One {index, hanzi} per input clause. index = the clause's 1-based number; cover every clause.",
+      description: "One {english, hanzi} per input clause, in order. english = the clause copied verbatim (for matching); hanzi = its Simplified-Chinese translation.",
       items: {
         type: "object",
         additionalProperties: false,
         properties: {
-          index: { type: "integer", description: "1-based clause number from the input." },
+          english: { type: "string", description: "The source clause, copied back verbatim." },
           hanzi: { type: "string", description: "Simplified Chinese characters translating that clause." },
         },
-        required: ["index", "hanzi"],
+        required: ["english", "hanzi"],
       },
     },
   },
@@ -113,45 +113,84 @@ export async function translateClauses(client, clauses, opts = {}) {
  *     instead of its pinyin, e.g. "yī句" for "yī jù")
  * Returns a short reason string when unhealthy, or null when clean.
  */
+// Normalise english for echo-matching: letters/digits only, lowercased.
+function _normEcho(s) {
+  return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
 /**
- * Translate one batch with GAP-FILLING. The model returns indexed
- * translations ({index, hanzi}); we map them back to clauses by index, then
- * re-translate any clauses that came back missing or empty — passing only
- * those clauses on each retry. This is robust to the model miscounting a long
- * array (returning 59 of 60), because we re-ask for exactly the gaps rather
- * than re-rolling the whole batch and hoping. Usage from every call is summed.
+ * Translate one batch, matching each returned translation to its source clause
+ * by ENGLISH CONTENT (the model echoes the clause), NOT by array position or a
+ * model-supplied index. Index/position-based mapping silently misaligns when
+ * the model drops or renumbers an item mid-batch — which corrupts the whole
+ * bilingual pairing. Content matching is immune to that: a returned item only
+ * ever lands on the clause it actually translated.
+ *
+ * Any clause that ends up unmatched is re-translated (gap-fill) by passing
+ * just those clauses again. We always STORE our own clause text as the
+ * english, so the echo only routes the hanzi — it can't introduce drift.
  */
 async function _translateBatchSafe(client, clauses, opts = {}) {
   const MAX_BATCH_TRIES = 3;
   const usage = { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 };
-  const hanByIndex = new Array(clauses.length).fill(null); // 0-based slot per clause
+  const hanForClause = new Array(clauses.length).fill(null);
+  const normClauses = clauses.map(_normEcho);
 
-  let pending = clauses.map((_, i) => i); // clause indices still needing a translation
+  let pending = clauses.map((_, i) => i);
   for (let attempt = 1; attempt <= MAX_BATCH_TRIES && pending.length > 0; attempt++) {
-    // Re-number the pending clauses 1..k for this sub-call.
     const subset = pending.map((i) => clauses[i]);
     const r = await _translateClausesOnce(client, subset, { ...opts, coverageRetry: attempt > 1 });
     usage.prompt_tokens     += r.usage?.prompt_tokens     || 0;
     usage.completion_tokens += r.usage?.completion_tokens || 0;
     usage.total_tokens      += r.usage?.total_tokens      || 0;
 
-    // r.items: [{index (1-based within subset), hanzi}]. Map back to clauses.
+    // Match each returned item to a still-unfilled clause by english content.
+    // Exact normalized match first; then a token-overlap fallback for clauses
+    // where the model lightly reworded the echo.
     for (const it of r.items) {
-      const sub = (it.index | 0) - 1;
-      if (sub >= 0 && sub < pending.length) {
-        const han = (it.hanzi || "").trim();
-        if (han) hanByIndex[pending[sub]] = han;
+      const han = (it.hanzi || "").trim();
+      if (!han) continue;
+      const echo = _normEcho(it.english);
+      if (!echo) continue;
+      let best = -1;
+      // exact
+      for (const i of pending) {
+        if (hanForClause[i]) continue;
+        if (normClauses[i] === echo) { best = i; break; }
       }
+      // containment either direction (handles trailing punctuation diffs)
+      if (best === -1) {
+        for (const i of pending) {
+          if (hanForClause[i]) continue;
+          if (normClauses[i].includes(echo) || echo.includes(normClauses[i])) { best = i; break; }
+        }
+      }
+      // token-overlap fallback (best Jaccard over unfilled clauses)
+      if (best === -1) {
+        const et = new Set(echo.split(" ").filter((w) => w.length >= 3));
+        let bestScore = 0;
+        for (const i of pending) {
+          if (hanForClause[i]) continue;
+          const ct = normClauses[i].split(" ").filter((w) => w.length >= 3);
+          if (!ct.length) continue;
+          let hit = 0; for (const w of ct) if (et.has(w)) hit++;
+          const score = hit / ct.length;
+          if (score > bestScore) { bestScore = score; best = i; }
+        }
+        if (bestScore < 0.5) best = -1; // too weak — leave for gap-fill
+      }
+      if (best !== -1) hanForClause[best] = han;
     }
-    const stillMissing = pending.filter((i) => !hanByIndex[i]);
+
+    const stillMissing = pending.filter((i) => !hanForClause[i]);
     if (stillMissing.length && attempt < MAX_BATCH_TRIES && opts.onCoverageRetry) {
-      opts.onCoverageRetry(attempt, MAX_BATCH_TRIES, `${stillMissing.length} clause(s) missing`);
+      opts.onCoverageRetry(attempt, MAX_BATCH_TRIES, `${stillMissing.length} clause(s) unmatched`);
     }
     pending = stillMissing;
   }
 
   const pairs = clauses.map((c, i) => {
-    const hanzi = hanByIndex[i] || "";
+    const hanzi = hanForClause[i] || "";
     return { english: c, hanzi, target: romanize(hanzi) };
   });
   return { pairs, usage };
