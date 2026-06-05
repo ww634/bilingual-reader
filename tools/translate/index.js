@@ -70,6 +70,23 @@ function deriveChapterId(section, fallbackIndex) {
   return section.id_suggestion || `ch-${fallbackIndex}`;
 }
 
+// Strip a chapter heading that the source left INLINE at the start of the
+// section body (e.g. "# Chapter 3: The Mad King I slept late…" where the
+// heading and first sentence share a line). Without this the heading markup
+// and title bleed into the first translated pair. Uses the analyzer's title
+// to also remove a leading repeat of the title. A no-op when the heading was
+// on its own line (already excluded from the body).
+function stripLeadingHeading(text, title) {
+  let t = String(text || "").replace(/^﻿/, "").replace(/^\s+/, "");
+  t = t.replace(/^#{1,6}\s*/, "");                       // markdown header marks
+  t = t.replace(/^chapter\s+\d+\s*[:.\-—)]*\s*/i, "");  // "Chapter N:" / "Chapter N."
+  if (title) {
+    const esc = title.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    t = t.replace(new RegExp("^" + esc + "\\s*[:.\\-—]*\\s*", "i"), "");
+  }
+  return t.replace(/^\s+/, "");
+}
+
 async function prompt(question) {
   const rl = readline.createInterface({ input, output });
   const answer = await rl.question(question);
@@ -295,7 +312,7 @@ async function main() {
   console.log("\n" + bold("3.") + " Splitting each section into clauses…");
   let totalClauses = 0;
   for (const s of toProcess) {
-    s._clauses = splitClauses(s.text, opts.length);
+    s._clauses = splitClauses(stripLeadingHeading(s.text, s.english_title), opts.length);
     const cs = clauseStats(s._clauses);
     totalClauses += cs.n;
     console.log(dim(`   ${s.english_title || s.kind}: ${cs.n} clauses (${cs.min}-${cs.max} words, mean ${cs.mean})`));
