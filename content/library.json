@@ -41,7 +41,7 @@
       "cover": "books/treasure-island/cover.svg"
     },
     {
-      "version": 3,
+      "version": 6,
       "id": "the-left-hand-of-darkness",
       "language": "zh",
       "title": {
@@ -49,13 +49,12 @@
         "english": "The Left Hand of Darkness"
       },
       "author": "Ursula K. Le Guin",
-      "synopsis": "A human envoy, Genly Ai, is sent to the planet Gethen (Winter) to persuade its nations to join an interstellar collective. On Gethen, the inhabitants are ambisexual, and Ai must navigate complex politics, cultural misunderstandings, and personal relationships as he seeks an alliance. The novel explores themes of gender, identity, loyalty, and the nature of truth.",
+      "synopsis": "A human envoy, Genly Ai, is sent to the planet Gethen to persuade its nations to join an interplanetary collective. He must navigate the complex politics and unique gender dynamics of Gethen, forging alliances and facing betrayals as he attempts to fulfill his mission.",
       "genres": [
-        "science fiction",
+        "sci fi",
         "classic",
         "literary fiction",
         "political",
-        "speculative",
         "adventure"
       ],
       "chapters": [
@@ -63,20 +62,20 @@
           "id": "introduction",
           "title": {
             "target": "yǐnyán",
-            "english": "Introduction"
+            "english": "Introduction",
+            "hanzi": "引言"
           },
           "url": "books/the-left-hand-of-darkness/introduction.json",
-          "version": 2
+          "version": 3
         },
         {
           "id": "ch-1",
           "title": {
-            "target": "yǐnyán",
-            "english": "Introduction",
-            "hanzi": "引言"
+            "target": "āi hēng lǎng de yóuxíng",
+            "english": "A Parade in Erhenrang"
           },
           "url": "books/the-left-hand-of-darkness/ch-1.json",
-          "version": 3
+          "version": 4
         },
         {
           "id": "ch-2",
@@ -85,7 +84,27 @@
             "english": "The Place Inside the Blizzard"
           },
           "url": "books/the-left-hand-of-darkness/ch-2.json",
-          "version": 2
+          "version": 3
+        },
+        {
+          "version": 2,
+          "id": "ch-3",
+          "title": {
+            "target": "fēng wáng",
+            "english": "The Mad King",
+            "hanzi": "疯王"
+          },
+          "url": "books/the-left-hand-of-darkness/ch-3.json"
+        },
+        {
+          "version": 2,
+          "id": "ch-4",
+          "title": {
+            "target": "dìshíjiǔ tiān",
+            "english": "The Nineteenth Day",
+            "hanzi": "第十九天"
+          },
+          "url": "books/the-left-hand-of-darkness/ch-4.json"
         }
       ],
       "cover": "books/the-left-hand-of-darkness/cover.svg"
