@@ -6,6 +6,7 @@
 
 import OpenAI from "openai";
 import { romanize, hasHan } from "./romanize.js";
+import { acquire, reconcile, estimateRequestTokens } from "./ratelimit.js";
 
 // The translator now emits SIMPLIFIED CHINESE CHARACTERS (Hanzi), one
 // translation per input clause. We pair each with our own input clause (so
@@ -291,7 +292,9 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
       [tokenParamName]: tokenBudget,
     };
     if (!isNewFamily) request.temperature = 0.2;
+    const _rl = await acquire(estimateRequestTokens(request.messages, 2500));
     const response = await client.chat.completions.create(request);
+    reconcile(_rl, response.usage?.total_tokens);
 
     // Truncation guard. When response_format is json_schema, a truncated
     // response is unparseable — half-JSON. Surface a clear error and let
@@ -357,7 +360,9 @@ export async function translateTitle(client, englishTitle, opts = {}) {
     },
   };
   if (!isNewFamily) request.temperature = 0.2;
+  const _rl = await acquire(estimateRequestTokens(request.messages, 300));
   const response = await client.chat.completions.create(request);
+  reconcile(_rl, response.usage?.total_tokens);
   const parsed = JSON.parse(response.choices[0].message.content);
   const hanzi = (parsed.hanzi || "").trim();
   // english is the original verbatim; target is the deterministic romanization.

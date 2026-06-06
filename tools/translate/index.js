@@ -26,6 +26,7 @@ import {
 } from "./lib/translate.js";
 import { analyzeContent, sliceByMarkers } from "./lib/analyze.js";
 import { alignAll, estimateAlignmentCost } from "./lib/align.js";
+import { setTpmLimit } from "./lib/ratelimit.js";
 import { renderCover } from "./lib/cover.js";
 import { readLibrary, upsertBook, writeLibrary } from "./lib/library.js";
 
@@ -109,6 +110,7 @@ program
   .option("--no-cover", "Skip generating an auto cover")
   .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
   .option("--align-retries <n>", "Max solo-retry attempts per pair that fails hard alignment validation. Default 0 (fastest/cheapest — pinyin still colors ~100%, a few english highlights are skipped). Set 1+ to polish english-highlight coverage on a single chapter at higher token cost.", (v) => parseInt(v, 10))
+  .option("--tpm <n>", "Tokens-per-minute ceiling for client-side pacing (avoids 429s on low OpenAI tiers). Default 27000 (headroom under a 30k tier). Raise it if your account has a higher TPM limit.", (v) => parseInt(v, 10))
   .option("--force", "Re-translate chapters that already exist on disk. Default: skip already-done chapters (resumable).")
   .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
   // Strict is on by default — silently saving a chapter with half its text
@@ -119,6 +121,7 @@ program
   .parse(process.argv);
 
 const opts = program.opts();
+if (Number.isFinite(opts.tpm)) setTpmLimit(opts.tpm);
 
 // Default the analyzer to the main model — gpt-5.4-nano was unreliable for
 // structural decisions like "is this one chapter or two?" Costs a few extra

@@ -11,6 +11,7 @@
 // We batch pairs so a single chapter doesn't depend on one huge response.
 
 import { romanizeWithMap, chunkPinyinFromPair } from "./romanize.js";
+import { acquire, reconcile, estimateRequestTokens } from "./ratelimit.js";
 
 const ALIGN_SYSTEM_PROMPT = `You are a bilingual annotator producing FINE-GRAINED word-level alignment between English clauses and their Simplified Chinese (Hanzi) translations. A learner taps individual Chinese words to look them up and sees colour-coded mappings to English, and uses category toggles to fade out grammatical scaffolding. So every word with a recognisable role MUST get its own chunk and category; the "uncategorised" bucket should be tiny.
 
@@ -193,7 +194,9 @@ async function alignBatch(client, pairs, opts = {}) {
   };
   if (!isNewFamily) request.temperature = 0.1;
 
+  const _rl = await acquire(estimateRequestTokens(request.messages, 3000));
   const response = await client.chat.completions.create(request);
+  reconcile(_rl, response.usage?.total_tokens);
 
   // Guard against truncation: if the model hit max_tokens, the JSON will be
   // invalid and downstream parse will fail. Surface a clearer error.
