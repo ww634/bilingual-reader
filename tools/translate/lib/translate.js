@@ -67,7 +67,12 @@ export function buildClient(apiKey) {
   if (!apiKey) {
     throw new Error("Missing OPENAI_API_KEY. Set it in your env: export OPENAI_API_KEY=sk-...");
   }
-  return new OpenAI({ apiKey });
+  // maxRetries 8 (default 2): on low TPM tiers (e.g. 30k tokens/min) large
+  // translation/alignment batches routinely brush the rate limit. The SDK
+  // honours the Retry-After header and backs off exponentially, so a high
+  // retry count lets a run ride through transient 429s instead of dropping a
+  // chapter. Long timeout so a backed-off request isn't abandoned mid-wait.
+  return new OpenAI({ apiKey, maxRetries: 8, timeout: 120000 });
 }
 
 /**
