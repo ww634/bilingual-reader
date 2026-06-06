@@ -352,7 +352,12 @@ function validateAlignment(alignment, originalPair) {
  */
 export async function alignAll(client, pairs, opts = {}) {
   const batchSize = opts.batchSize || DEFAULT_BATCH_SIZE;
-  const out = new Array(pairs.length).fill(null);
+  // Seed `out` from the input pairs, PRESERVING any alignment they already
+  // carry. This is what makes alignment resumable: a re-run passes in pairs
+  // that were partially aligned before an interruption, and we only call the
+  // API for batches that still need it.
+  const out = pairs.map((p) => ({ ...p }));
+  const hasAlignment = (p) => Array.isArray(p && p.alignment) && p.alignment.length > 0;
   let totalTokens = 0;
   // Split-tracked so callers can compute accurate cost (input and output
   // tokens are priced at different rates).
@@ -372,6 +377,9 @@ export async function alignAll(client, pairs, opts = {}) {
     const batchIndex = Math.floor(start / batchSize) + 1;
     const totalBatches = Math.ceil(pairs.length / batchSize);
     if (opts.onProgress) opts.onProgress(batchIndex, totalBatches);
+
+    // Resume: if every pair in this batch is already aligned, skip the API.
+    if (slice.every(hasAlignment)) continue;
 
     let result;
     try {
@@ -409,6 +417,10 @@ export async function alignAll(client, pairs, opts = {}) {
       softProblemCount += soft.length;
       out[start + i] = { ...slice[i], alignment: a.chunks };
     }
+
+    // Checkpoint after each batch so an interruption resumes instead of
+    // losing the whole chapter's alignment work.
+    if (opts.onBatchSaved) await opts.onBatchSaved(out);
   }
 
   // Retry pass: any pair whose initial alignment failed validation gets

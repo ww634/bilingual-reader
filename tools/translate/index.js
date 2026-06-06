@@ -368,94 +368,128 @@ async function main() {
     i++;
     console.log(`\n   [${i}/${toProcess.length}] ${cyan(s.english_title || s.kind)}…`);
 
-    // Resumability: if this chapter's JSON already exists on disk, skip it
-    // unless --force was passed. Lets a long multi-chapter run be re-invoked
-    // after a partial failure without redoing work.
-    const provisionalChapterId = deriveChapterId(s, i);
-    const existingPath = path.join(bookDir, `${provisionalChapterId}.json`);
-    if (!opts.force) {
-      try {
-        const raw = await fs.readFile(existingPath, "utf8");
-        const existing = JSON.parse(raw);
-        if (existing && Array.isArray(existing.pairs) && existing.pairs.length > 0) {
-          console.log(dim(`     ⟳ skipping — ${path.basename(existingPath)} already exists (--force to retranslate)`));
-          chapterEntries.push({
-            id: existing.id || provisionalChapterId,
-            title: existing.title || { target: "", english: s.english_title || "" },
-            url: `books/${bookId}/${provisionalChapterId}.json`,
-          });
-          skippedCount++;
-          continue;
-        }
-      } catch (err) {
-        // File doesn't exist or isn't valid JSON — fall through and translate.
-      }
-    }
+    const chapterId = deriveChapterId(s, i);
+    const chapterPath = path.join(bookDir, `${chapterId}.json`);
 
-    // Truncation handler — if the translator hits its output-token cap, give
-    // the user one chance to bump up to gpt-4.1's ceiling (32k). With --yes
-    // (unattended runs) we auto-bump once; without it we prompt. If the
-    // ceiling itself is too small, the chapter genuinely needs splitting and
-    // we let the inner Error propagate.
-    const onTruncation = async ({ attempt, currentBudget, ceiling }) => {
-      if (currentBudget >= ceiling) return null;
-      const next = ceiling;
-      console.warn(yellow(`\n     ⚠ Translator output truncated at ${currentBudget} tokens (attempt ${attempt}).`));
-      if (opts.yes) {
-        console.warn(yellow(`     Auto-bumping to ${next} (model ceiling) and retrying…`));
-        return next;
-      }
-      const ans = await prompt(`     Retry with max ${next} tokens? [Y/n]: `);
-      if (ans === "" || ans === "y" || ans === "yes") return next;
-      console.warn(yellow(`     Aborting this section.`));
-      return null;
+    // Build + write the chapter JSON. `complete=false` flags alignment as
+    // still in progress so a re-run RESUMES rather than skips. Called after
+    // translation (to persist the translations) and after every alignment
+    // batch (so an interruption loses at most one batch of work).
+    const writeChapter = async (pairs, titleRes, complete) => {
+      const alignedCount = pairs.filter((p) => Array.isArray(p.alignment) && p.alignment.length > 0).length;
+      const json = {
+        id: chapterId,
+        book_id: bookId,
+        language: "zh",
+        version: 1,
+        title: { target: titleRes.target, english: titleRes.english, hanzi: titleRes.hanzi },
+        pairs: pairs.map((p) => {
+          const o = { target: p.target, english: p.english, hanzi: p.hanzi };
+          if (Array.isArray(p.alignment)) o.alignment = p.alignment;
+          return o;
+        }),
+        meta: {
+          source: path.basename(opts.in),
+          createdAt: new Date().toISOString().slice(0, 10),
+          model: opts.model,
+          synopsis: s.synopsis || null,
+          has_alignment: opts.alignment !== false && alignedCount > 0,
+          alignment_complete: complete,
+        },
+      };
+      await fs.writeFile(chapterPath, JSON.stringify(json, null, 2) + "\n", "utf8");
     };
 
-    let titleResult, bodyResult;
-    try {
-      [titleResult, bodyResult] = await Promise.all([
-        translateTitle(client, s.english_title || "Untitled", { model: opts.model }),
-        translateClauses(client, s._clauses, {
-          model: opts.model,
-          fullText: s.text,
-          englishTitle: s.english_title || "",
-          canonicalNames,
-          onTruncation,
-          onBatch: (i, total, size) => {
-            if (total > 1) {
-              process.stdout.write(dim(`     translating batch ${i}/${total} (${size} clauses)…\n`));
-            }
-          },
-          onCoverageRetry: (attempt, max, fault) => {
-            process.stdout.write(yellow(`       ⟳ batch fault (${fault}) — retrying (${attempt}/${max - 1})…\n`));
-          },
-        }),
-      ]);
-    } catch (err) {
-      console.error(red(`     ❌ Translation failed: ${err.message}`));
-      console.error(red(`     Skipping this section. You can re-run the tool to retry.`));
-      continue;
-    }
-    addUsage(bodyResult.usage);
-    addUsage(titleResult.usage);
-
-    const v = validatePairs(s._clauses, bodyResult.pairs);
-    if (!v.ok) {
-      console.error(yellow(`     ⚠ Validation: ${v.problems.length} problem${v.problems.length === 1 ? "" : "s"}`));
-      v.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
-      if (opts.strict) {
-        console.error(red(`\n❌ Aborting: translator validation failed (see problem(s) above).`));
-        console.error(red(`   The output didn't pass the integrity checks (coverage / pinyin-only / merge ratio).`));
-        console.error(red(`   Re-run with --no-strict to save the partial output anyway,`));
-        console.error(red(`   or split the chapter into smaller sections and retry.`));
-        process.exit(2);
+    // Resume / skip: a fully-complete chapter is skipped; a chapter whose
+    // translations are saved but alignment is unfinished is RESUMED (load its
+    // pairs, skip translation, re-align only the not-yet-aligned ones).
+    let finalPairs = null;
+    let titleResult = null;
+    if (!opts.force) {
+      try {
+        const existing = JSON.parse(await fs.readFile(chapterPath, "utf8"));
+        if (existing && Array.isArray(existing.pairs) && existing.pairs.length > 0) {
+          const resumable = opts.alignment !== false && existing.meta && existing.meta.alignment_complete === false;
+          if (!resumable) {
+            console.log(dim(`     ⟳ skipping — already complete (--force to redo)`));
+            chapterEntries.push({
+              id: existing.id || chapterId,
+              title: existing.title || { target: "", english: s.english_title || "" },
+              url: `books/${bookId}/${chapterId}.json`,
+            });
+            skippedCount++;
+            continue;
+          }
+          const done = existing.pairs.filter((p) => Array.isArray(p.alignment) && p.alignment.length).length;
+          console.log(dim(`     ⟳ resuming alignment — ${done}/${existing.pairs.length} pairs already aligned`));
+          finalPairs = existing.pairs.map((p) => ({ english: p.english, target: p.target, hanzi: p.hanzi, alignment: p.alignment }));
+          titleResult = existing.title;
+        }
+      } catch (err) {
+        // No file / invalid — fall through and translate.
       }
-    } else {
-      console.log(green(`     ✓ ${bodyResult.pairs.length} pairs, validation clean`));
     }
 
-    // Alignment pass (optional, on by default).
-    let finalPairs = bodyResult.pairs.map((p) => ({ english: p.english, target: p.target, hanzi: p.hanzi }));
+    // ── Translate (unless we're resuming a partially-aligned chapter) ──
+    if (!finalPairs) {
+      // Truncation handler — bump to the model ceiling once on overflow.
+      const onTruncation = async ({ attempt, currentBudget, ceiling }) => {
+        if (currentBudget >= ceiling) return null;
+        const next = ceiling;
+        console.warn(yellow(`\n     ⚠ Translator output truncated at ${currentBudget} tokens (attempt ${attempt}).`));
+        if (opts.yes) { console.warn(yellow(`     Auto-bumping to ${next} (model ceiling) and retrying…`)); return next; }
+        const ans = await prompt(`     Retry with max ${next} tokens? [Y/n]: `);
+        if (ans === "" || ans === "y" || ans === "yes") return next;
+        console.warn(yellow(`     Aborting this section.`));
+        return null;
+      };
+
+      let bodyResult;
+      try {
+        [titleResult, bodyResult] = await Promise.all([
+          translateTitle(client, s.english_title || "Untitled", { model: opts.model }),
+          translateClauses(client, s._clauses, {
+            model: opts.model,
+            fullText: s.text,
+            englishTitle: s.english_title || "",
+            canonicalNames,
+            onTruncation,
+            onBatch: (bi, total, size) => {
+              if (total > 1) process.stdout.write(dim(`     translating batch ${bi}/${total} (${size} clauses)…\n`));
+            },
+            onCoverageRetry: (attempt, max, fault) => {
+              process.stdout.write(yellow(`       ⟳ batch fault (${fault}) — retrying (${attempt}/${max - 1})…\n`));
+            },
+          }),
+        ]);
+      } catch (err) {
+        console.error(red(`     ❌ Translation failed: ${err.message}`));
+        console.error(red(`     Skipping this section. You can re-run the tool to retry.`));
+        continue;
+      }
+      addUsage(bodyResult.usage);
+      addUsage(titleResult.usage);
+
+      const v = validatePairs(s._clauses, bodyResult.pairs);
+      if (!v.ok) {
+        console.error(yellow(`     ⚠ Validation: ${v.problems.length} problem${v.problems.length === 1 ? "" : "s"}`));
+        v.problems.slice(0, 3).forEach((p) => console.error(yellow(`       - ${p}`)));
+        if (opts.strict) {
+          console.error(red(`\n❌ Aborting: translator validation failed (see problem(s) above).`));
+          console.error(red(`   The output didn't pass the integrity checks (coverage / pinyin-only / merge ratio).`));
+          console.error(red(`   Re-run with --no-strict to save the partial output anyway, or split the chapter.`));
+          process.exit(2);
+        }
+      } else {
+        console.log(green(`     ✓ ${bodyResult.pairs.length} pairs, validation clean`));
+      }
+      finalPairs = bodyResult.pairs.map((p) => ({ english: p.english, target: p.target, hanzi: p.hanzi }));
+
+      // Persist translations BEFORE alignment so alignment is resumable.
+      if (opts.alignment !== false) await writeChapter(finalPairs, titleResult, false);
+    }
+
+    // ── Align (resumable; checkpoints after every batch) ──
     if (opts.alignment !== false) {
       console.log(dim(`     aligning words…`));
       try {
@@ -467,6 +501,7 @@ async function main() {
             if (total > 1) process.stdout.write(dim(`       batch ${b}/${total}\r`));
           },
           onRetry: (n) => process.stdout.write(dim(`       retrying ${n} pair${n === 1 ? "" : "s"} solo…\n`)),
+          onBatchSaved: async (partial) => { await writeChapter(partial, titleResult, false); },
         });
         if (alignResult.retryStats && alignResult.retryStats.candidates > 0) {
           console.log(dim(`       retry pass: ${alignResult.retryStats.fixes}/${alignResult.retryStats.candidates} pairs fixed (${alignResult.retryStats.calls} extra call${alignResult.retryStats.calls === 1 ? "" : "s"})`));
@@ -487,31 +522,8 @@ async function main() {
       }
     }
 
-    const chapterId = deriveChapterId(s, i);
-    const alignedPairCount = finalPairs.filter((p) => Array.isArray(p.alignment) && p.alignment.length > 0).length;
-    const chapterJson = {
-      id: chapterId,
-      book_id: bookId,
-      language: "zh",
-      version: 1,
-      title: { target: titleResult.target, english: titleResult.english, hanzi: titleResult.hanzi },
-      pairs: finalPairs.map((p) => {
-        const pair = { target: p.target, english: p.english, hanzi: p.hanzi };
-        if (Array.isArray(p.alignment)) pair.alignment = p.alignment;
-        return pair;
-      }),
-      meta: {
-        source: path.basename(opts.in),
-        createdAt: new Date().toISOString().slice(0, 10),
-        model: opts.model,
-        synopsis: s.synopsis || null,
-        // Only true if alignment was requested AND at least one pair was successfully aligned.
-        has_alignment: opts.alignment !== false && alignedPairCount > 0,
-      },
-    };
-
-    const chapterPath = path.join(bookDir, `${chapterId}.json`);
-    await fs.writeFile(chapterPath, JSON.stringify(chapterJson, null, 2) + "\n", "utf8");
+    // Final write — marks alignment_complete so re-runs skip this chapter.
+    await writeChapter(finalPairs, titleResult, true);
     console.log(dim(`     written: ${path.relative(REPO_ROOT, chapterPath)}`));
 
     chapterEntries.push({
