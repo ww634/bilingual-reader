@@ -62,7 +62,7 @@ const MAX_RESPONSE_TOKENS_CEILING = 32000;
 // quickly: at 200+ the LLM tends to over-merge, drift in register, or just
 // truncate the tail of its response. Empirically a real chapter of ~750
 // clauses fails badly as one call; in 100-clause batches it stays stable.
-const MAX_CLAUSES_PER_CALL = 60;
+export const MAX_CLAUSES_PER_CALL = 60;
 
 export function buildClient(apiKey) {
   if (!apiKey) {
@@ -120,8 +120,47 @@ export async function translateClauses(client, clauses, opts = {}) {
  * Returns a short reason string when unhealthy, or null when clean.
  */
 // Normalise english for echo-matching: letters/digits only, lowercased.
-function _normEcho(s) {
+export function _normEcho(s) {
   return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+/**
+ * Route returned {english, hanzi} items to their source clauses by english
+ * CONTENT (not position/index — immune to the model dropping/renumbering).
+ * Mutates hanForClause[i] = hanzi for each matched clause index in `pending`.
+ * exact normalized → containment → token-overlap (≥0.5) fallback. SHARED by
+ * the sync gap-filler and the batch orchestrator.
+ */
+export function assignTranslationItems(items, pending, normClauses, hanForClause) {
+  for (const it of items || []) {
+    const han = (it.hanzi || "").trim();
+    if (!han) continue;
+    const echo = _normEcho(it.english);
+    if (!echo) continue;
+    let best = -1;
+    for (const i of pending) { if (hanForClause[i]) continue; if (normClauses[i] === echo) { best = i; break; } }
+    if (best === -1) {
+      for (const i of pending) {
+        if (hanForClause[i]) continue;
+        if (normClauses[i].includes(echo) || echo.includes(normClauses[i])) { best = i; break; }
+      }
+    }
+    if (best === -1) {
+      const et = new Set(echo.split(" ").filter((w) => w.length >= 3));
+      let bestScore = 0;
+      for (const i of pending) {
+        if (hanForClause[i]) continue;
+        const ct = normClauses[i].split(" ").filter((w) => w.length >= 3);
+        if (!ct.length) continue;
+        let hit = 0; for (const w of ct) if (et.has(w)) hit++;
+        const score = hit / ct.length;
+        if (score > bestScore) { bestScore = score; best = i; }
+      }
+      if (bestScore < 0.5) best = -1;
+    }
+    if (best !== -1) hanForClause[best] = han;
+  }
+  return hanForClause;
 }
 
 /**
@@ -150,43 +189,7 @@ async function _translateBatchSafe(client, clauses, opts = {}) {
     usage.completion_tokens += r.usage?.completion_tokens || 0;
     usage.total_tokens      += r.usage?.total_tokens      || 0;
 
-    // Match each returned item to a still-unfilled clause by english content.
-    // Exact normalized match first; then a token-overlap fallback for clauses
-    // where the model lightly reworded the echo.
-    for (const it of r.items) {
-      const han = (it.hanzi || "").trim();
-      if (!han) continue;
-      const echo = _normEcho(it.english);
-      if (!echo) continue;
-      let best = -1;
-      // exact
-      for (const i of pending) {
-        if (hanForClause[i]) continue;
-        if (normClauses[i] === echo) { best = i; break; }
-      }
-      // containment either direction (handles trailing punctuation diffs)
-      if (best === -1) {
-        for (const i of pending) {
-          if (hanForClause[i]) continue;
-          if (normClauses[i].includes(echo) || echo.includes(normClauses[i])) { best = i; break; }
-        }
-      }
-      // token-overlap fallback (best Jaccard over unfilled clauses)
-      if (best === -1) {
-        const et = new Set(echo.split(" ").filter((w) => w.length >= 3));
-        let bestScore = 0;
-        for (const i of pending) {
-          if (hanForClause[i]) continue;
-          const ct = normClauses[i].split(" ").filter((w) => w.length >= 3);
-          if (!ct.length) continue;
-          let hit = 0; for (const w of ct) if (et.has(w)) hit++;
-          const score = hit / ct.length;
-          if (score > bestScore) { bestScore = score; best = i; }
-        }
-        if (bestScore < 0.5) best = -1; // too weak — leave for gap-fill
-      }
-      if (best !== -1) hanForClause[best] = han;
-    }
+    assignTranslationItems(r.items, pending, normClauses, hanForClause);
 
     const stillMissing = pending.filter((i) => !hanForClause[i]);
     if (stillMissing.length && attempt < MAX_BATCH_TRIES && opts.onCoverageRetry) {
@@ -203,25 +206,12 @@ async function _translateBatchSafe(client, clauses, opts = {}) {
 }
 
 /**
- * Translate one batch of clauses in a single OpenAI call. Internal — call
- * translateClauses() instead so long chapters are batched correctly.
- *
- * @param {OpenAI} client
- * @param {string[]} clauses
- * @param {object} opts {
- *   model,
- *   fullText,
- *   englishTitle,
- *   canonicalNames: [{ english: "Treasure Island", target: "Bǎozàng Dǎo" }, ...]
- *     — fixed translations that MUST be used verbatim wherever they appear.
- *     Critical for keeping the book title and recurring proper nouns
- *     consistent across the chapter.
- *   batchPosition: { index, total, startClause } — set by the batching
- *     wrapper to give the LLM context about where it is in the chapter.
- * }
- * @returns {Promise<{pairs: {english: string, target: string}[], usage: object}>}
+ * Build the chat-completions request body for translating a batch of clauses
+ * into Hanzi. SHARED by the sync translator (_translateClausesOnce) and the
+ * batch builder so both use the identical prompt + schema. Pure (no I/O), so
+ * batch mode can serialise it into a JSONL line.
  */
-async function _translateClausesOnce(client, clauses, opts = {}) {
+export function buildTranslateBody(clauses, opts = {}) {
   const model = opts.model || "gpt-4o";
   const englishTitle = opts.englishTitle || "(untitled)";
   const fullText = opts.fullText || clauses.join(" ");
@@ -237,10 +227,8 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
     ? `\nNote: this is BATCH ${opts.batchPosition.index} of ${opts.batchPosition.total} for this chapter (clauses ${opts.batchPosition.startClause}..${opts.batchPosition.startClause + clauses.length - 1} of the chapter total). Keep voice, register, and name transliterations consistent with the full chapter prose above.\n`
     : "";
 
-  // Injected only on a retry — the previous attempt returned the wrong number
-  // of translations. Demand exactly one per clause, in order.
   const countNote = opts.coverageRetry
-    ? `\n⚠ RETRY: these are the clauses still missing a translation. Return a { "index", "hanzi" } entry for EVERY clause below, covering indices 1..${clauses.length}.\n`
+    ? `\n⚠ RETRY: return one { "english", "hanzi" } entry for EVERY clause below — copy each clause's english back verbatim (so it can be matched) and translate it to hanzi. Cover all ${clauses.length} clauses.\n`
     : "";
 
   const userPrompt = [
@@ -254,51 +242,57 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
     batchNote,
     countNote,
     `Translate the following ${clauses.length} English clauses into Simplified Chinese (Hanzi).`,
-    `Return one { "index", "hanzi" } object per clause, covering indices 1..${clauses.length} exactly once.`,
+    `Return one { "english", "hanzi" } object per clause — "english" is the clause copied back verbatim, "hanzi" its translation. Cover every clause exactly once.`,
     "Translate each clause within its own scope; do NOT merge, drop, or borrow words across clauses.",
     "",
     "Clauses:",
     clauses.map((c, i) => `${i + 1}. ${c}`).join("\n"),
   ].join("\n");
 
-  // gpt-5 family + o-series only accept default temperature (1) and require
-  // max_completion_tokens instead of the legacy max_tokens.
   const isNewFamily = /^gpt-5|^o1|^o3/i.test(model);
   const tokenParamName = isNewFamily ? "max_completion_tokens" : "max_tokens";
+  const body = {
+    model,
+    messages: [
+      { role: "system", content: SYSTEM_PROMPT },
+      { role: "user", content: userPrompt },
+    ],
+    response_format: {
+      type: "json_schema",
+      json_schema: { name: "translations", strict: true, schema: RESPONSE_SCHEMA },
+    },
+    [tokenParamName]: opts.maxResponseTokens || MAX_RESPONSE_TOKENS_DEFAULT,
+  };
+  if (!isNewFamily) body.temperature = 0.2;
+  return body;
+}
 
-  // Output-budget control + truncation recovery.
-  //   - We set a ceiling so the model can't silently run away on cost, and
-  //     so that hitting the ceiling is a CLEAN error rather than a half-
-  //     truncated JSON parse failure.
-  //   - If the model hits the cap (finish_reason === "length"), give the
-  //     caller one chance to bump the limit via opts.onTruncation. That
-  //     callback returns a new (larger) limit, or null/false to abort.
+/** Parse a translations response into raw [{english, hanzi}] items. */
+export function parseTranslationItems(content) {
+  try {
+    const p = JSON.parse(content);
+    return Array.isArray(p.translations) ? p.translations : [];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Translate one batch of clauses in a single OpenAI call. Internal — call
+ * translateClauses() instead so long chapters are batched correctly.
+ * Returns { items: [{english, hanzi}], usage }.
+ */
+async function _translateClausesOnce(client, clauses, opts = {}) {
+  // Output-budget control + truncation recovery. We set a ceiling so a
+  // truncated (unparseable) structured-output response is a CLEAN error, and
+  // on overflow give the caller one chance to bump the budget.
   let tokenBudget = opts.maxResponseTokens || MAX_RESPONSE_TOKENS_DEFAULT;
   for (let attempt = 1; ; attempt++) {
-    const request = {
-      model,
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: userPrompt },
-      ],
-      response_format: {
-        type: "json_schema",
-        json_schema: {
-          name: "translations",
-          strict: true,
-          schema: RESPONSE_SCHEMA,
-        },
-      },
-      [tokenParamName]: tokenBudget,
-    };
-    if (!isNewFamily) request.temperature = 0.2;
+    const request = buildTranslateBody(clauses, { ...opts, maxResponseTokens: tokenBudget });
     const _rl = await acquire(estimateRequestTokens(request.messages, 2500));
     const response = await client.chat.completions.create(request);
     reconcile(_rl, response.usage?.total_tokens);
 
-    // Truncation guard. When response_format is json_schema, a truncated
-    // response is unparseable — half-JSON. Surface a clear error and let
-    // the caller decide whether to retry with a larger budget.
     if (response.choices[0].finish_reason === "length") {
       const newBudget = opts.onTruncation
         ? await opts.onTruncation({ attempt, currentBudget: tokenBudget, ceiling: MAX_RESPONSE_TOKENS_CEILING })
@@ -315,11 +309,8 @@ async function _translateClausesOnce(client, clauses, opts = {}) {
       );
     }
 
-    const content = response.choices[0].message.content;
-    const parsed = JSON.parse(content);
-    const items = Array.isArray(parsed.translations) ? parsed.translations : [];
-    // Return raw indexed items; the gap-filling caller maps them to clauses.
-    return { items, usage: response.usage };
+    // Raw [{english, hanzi}] items; the gap-filling caller maps them to clauses.
+    return { items: parseTranslationItems(response.choices[0].message.content), usage: response.usage };
   }
 }
 

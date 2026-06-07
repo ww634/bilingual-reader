@@ -27,6 +27,7 @@ import {
 import { analyzeContent, sliceByMarkers } from "./lib/analyze.js";
 import { alignAll, estimateAlignmentCost } from "./lib/align.js";
 import { setTpmLimit } from "./lib/ratelimit.js";
+import { runBookBatch } from "./lib/run-batch.js";
 import { renderCover } from "./lib/cover.js";
 import { readLibrary, upsertBook, writeLibrary } from "./lib/library.js";
 
@@ -88,6 +89,31 @@ function stripLeadingHeading(text, title) {
   return t.replace(/^\s+/, "");
 }
 
+// Build the chapter JSON object (shared by sync + batch writers).
+function makeChapterJson({ chapterId, bookId, title, pairs, source, model, synopsis, complete }) {
+  const alignedCount = pairs.filter((p) => Array.isArray(p.alignment) && p.alignment.length > 0).length;
+  return {
+    id: chapterId,
+    book_id: bookId,
+    language: "zh",
+    version: 1,
+    title: { target: title.target, english: title.english, hanzi: title.hanzi },
+    pairs: pairs.map((p) => {
+      const o = { target: p.target, english: p.english, hanzi: p.hanzi };
+      if (Array.isArray(p.alignment)) o.alignment = p.alignment;
+      return o;
+    }),
+    meta: {
+      source,
+      createdAt: new Date().toISOString().slice(0, 10),
+      model,
+      synopsis: synopsis || null,
+      has_alignment: alignedCount > 0,
+      alignment_complete: complete,
+    },
+  };
+}
+
 async function prompt(question) {
   const rl = readline.createInterface({ input, output });
   const answer = await rl.question(question);
@@ -111,6 +137,7 @@ program
   .option("--no-alignment", "Skip the word-level alignment pass. Cheaper but disables tap-to-learn / color-coding in the reader.")
   .option("--align-retries <n>", "Max solo-retry attempts per pair that fails hard alignment validation. Default 0 (fastest/cheapest — pinyin still colors ~100%, a few english highlights are skipped). Set 1+ to polish english-highlight coverage on a single chapter at higher token cost.", (v) => parseInt(v, 10))
   .option("--tpm <n>", "Tokens-per-minute ceiling for client-side pacing (avoids 429s on low OpenAI tiers). Default 27000 (headroom under a 30k tier). Raise it if your account has a higher TPM limit.", (v) => parseInt(v, 10))
+  .option("--batch", "Use OpenAI's Batch API (async, ~50% cheaper, no TPM limit, server-side). Best for whole books — submits all requests, polls to completion, then writes. Resumable: re-run to keep polling an in-flight batch. Default is sync.")
   .option("--force", "Re-translate chapters that already exist on disk. Default: skip already-done chapters (resumable).")
   .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
   // Strict is on by default — silently saving a chapter with half its text
@@ -367,6 +394,47 @@ async function main() {
   const chapterEntries = [];
   let i = 0;
   let skippedCount = 0;
+
+  if (opts.batch) {
+    // ── Batch mode: build chapter context (titles sync, bodies via batch) ──
+    const chapters = [];
+    let bi = 0;
+    for (const s of toProcess) {
+      bi++;
+      const chapterId = deriveChapterId(s, bi);
+      const chapterPath = path.join(bookDir, `${chapterId}.json`);
+      if (!opts.force) {
+        try {
+          const ex = JSON.parse(await fs.readFile(chapterPath, "utf8"));
+          const incomplete = opts.alignment !== false && ex.meta && ex.meta.alignment_complete === false;
+          if (ex && Array.isArray(ex.pairs) && ex.pairs.length > 0 && !incomplete) {
+            console.log(dim(`   ⟳ ${chapterId} already complete — skipping`));
+            chapterEntries.push({ id: ex.id || chapterId, title: ex.title || { target: "", english: s.english_title || "" }, url: `books/${bookId}/${chapterId}.json` });
+            skippedCount++;
+            continue;
+          }
+        } catch (err) { /* translate it */ }
+      }
+      const clauses = splitClauses(stripLeadingHeading(s.text, s.english_title), opts.length);
+      const titleResult = await translateTitle(client, s.english_title || "Untitled", { model: opts.model });
+      addUsage(titleResult.usage);
+      chapters.push({ chapterId, englishTitle: s.english_title || "", fullText: s.text, clauses, title: titleResult, synopsis: s.synopsis });
+    }
+
+    if (chapters.length > 0) {
+      await runBookBatch({
+        client, model: opts.model, bookId, bookDir, canonicalNames,
+        chapters, alignment: opts.alignment !== false,
+        addUsage,
+        writeChapter: async (chapterId, pairs, title, complete) => {
+          const ch = chapters.find((c) => c.chapterId === chapterId);
+          const json = makeChapterJson({ chapterId, bookId, title, pairs, source: path.basename(opts.in), model: opts.model, synopsis: ch && ch.synopsis, complete });
+          await fs.writeFile(path.join(bookDir, `${chapterId}.json`), JSON.stringify(json, null, 2) + "\n", "utf8");
+          if (complete) chapterEntries.push({ id: chapterId, title: { target: title.target, english: title.english }, url: `books/${bookId}/${chapterId}.json` });
+        },
+      });
+    }
+  } else {
   for (const s of toProcess) {
     i++;
     console.log(`\n   [${i}/${toProcess.length}] ${cyan(s.english_title || s.kind)}…`);
@@ -535,6 +603,7 @@ async function main() {
       url: `books/${bookId}/${chapterId}.json`,
     });
   }
+  } // end sync branch
 
   // ────────────────────────────────────────────────────────────
   // Step 6. Cover + library upsert

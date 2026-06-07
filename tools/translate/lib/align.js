@@ -129,7 +129,7 @@ const FREQ_ENUM = new Set(["very_common", "common", "uncommon", "rare"]);
 // Fine-grained alignment produces ~5-7 chunks per pair, each chunk ~80 JSON
 // chars. At batch=15 we routinely exceeded gpt-4o's response token budget.
 // 6 pairs ≈ 35-50 chunks ≈ 3-4k output tokens, well within limits.
-const DEFAULT_BATCH_SIZE = 6;
+export const DEFAULT_BATCH_SIZE = 6;
 const MAX_RESPONSE_TOKENS = 8000;
 // How many extra single-pair passes we attempt for any pair whose batch
 // alignment fails HARD validation. Default 0 — retries don't change the
@@ -146,13 +146,14 @@ const DEFAULT_MAX_RETRIES_PER_PAIR = 0;
  * @param {{model?: string, englishTitle?: string}} opts
  * @returns {Promise<{alignments: Array<{pair_index: number, chunks: Array}>, usage: object}>}
  */
-async function alignBatch(client, pairs, opts = {}) {
+/**
+ * Build the chat-completions request body for aligning a batch of pairs.
+ * SHARED by the sync aligner and the batch builder. `opts.retryContext` adds
+ * the strict-mode note. Pure (no I/O) so batch mode can serialise it.
+ */
+export function buildAlignBody(pairs, opts = {}) {
   const model = opts.model || "gpt-4o";
   const englishTitle = opts.englishTitle || "(untitled)";
-
-  // When this batch is a retry of pairs that previously hallucinated, the
-  // caller can inject extra emphasis into the user prompt. Empty for the
-  // first pass; populated by alignAll on retries.
   const retryNote = opts.retryContext
     ? "\n\n⚠ STRICT MODE: the previous attempt produced chunks whose english or Chinese target was NOT a substring of the pair. Every chunk.english MUST be a verbatim substring (case-insensitive) of THIS pair's english; every chunk.target MUST be a verbatim substring of THIS pair's Chinese. If you cannot find a clean alignment, return fewer chunks rather than inventing.\n"
     : "";
@@ -164,19 +165,12 @@ async function alignBatch(client, pairs, opts = {}) {
     `Align the following ${pairs.length} translated pair${pairs.length === 1 ? "" : "s"}. The "target" is Chinese characters. Return one alignment entry per pair, in the same order, with pair_index 0..${pairs.length - 1}.`,
     "",
     "Pairs:",
-    pairs.map((p, i) =>
-      `${i}.\n  english: ${p.english}\n  target:  ${p.hanzi}`
-    ).join("\n\n"),
+    pairs.map((p, i) => `${i}.\n  english: ${p.english}\n  target:  ${p.hanzi}`).join("\n\n"),
   ].join("\n");
 
-  // gpt-5 family + o-series models have stricter parameter rules:
-  //   - require max_completion_tokens instead of max_tokens
-  //   - only accept the default temperature (1); omit explicit temperature
-  // Branch defensively so older models still work.
   const isNewFamily = /^gpt-5|^o1|^o3/i.test(model);
   const tokenParamName = isNewFamily ? "max_completion_tokens" : "max_tokens";
-
-  const request = {
+  const body = {
     model,
     messages: [
       { role: "system", content: ALIGN_SYSTEM_PROMPT },
@@ -184,22 +178,40 @@ async function alignBatch(client, pairs, opts = {}) {
     ],
     response_format: {
       type: "json_schema",
-      json_schema: {
-        name: "alignment_pairs",
-        strict: true,
-        schema: ALIGN_RESPONSE_SCHEMA,
-      },
+      json_schema: { name: "alignment_pairs", strict: true, schema: ALIGN_RESPONSE_SCHEMA },
     },
     [tokenParamName]: MAX_RESPONSE_TOKENS,
   };
-  if (!isNewFamily) request.temperature = 0.1;
+  if (!isNewFamily) body.temperature = 0.1;
+  return body;
+}
 
+/**
+ * Promote each chunk's Chinese `target` to `hanzi`, then derive its pinyin
+ * `target` by SLICING the pair's context-romanized pinyin — so polyphones
+ * (了→le vs liǎo) stay correct and chunk pinyin is always an exact substring
+ * of the pair pinyin. Mutates + returns the alignments array. SHARED by sync
+ * and batch.
+ */
+export function applyAlignmentChunks(alignments, pairs) {
+  for (const a of alignments || []) {
+    const pair = pairs[a.pair_index];
+    const map = pair ? romanizeWithMap(pair.hanzi || "") : null;
+    for (const c of a.chunks || []) {
+      c.hanzi = (c.target || "").trim();
+      c.target = map ? chunkPinyinFromPair(pair.hanzi || "", c.hanzi, map) : "";
+    }
+  }
+  return alignments;
+}
+
+async function alignBatch(client, pairs, opts = {}) {
+  const request = buildAlignBody(pairs, opts);
   const _rl = await acquire(estimateRequestTokens(request.messages, 3000));
   const response = await client.chat.completions.create(request);
   reconcile(_rl, response.usage?.total_tokens);
 
-  // Guard against truncation: if the model hit max_tokens, the JSON will be
-  // invalid and downstream parse will fail. Surface a clearer error.
+  // Truncation guard: a json_schema response cut off by max_tokens is invalid.
   if (response.choices[0].finish_reason === "length") {
     throw new Error(
       `OpenAI response truncated by max_tokens (${MAX_RESPONSE_TOKENS}). ` +
@@ -208,18 +220,7 @@ async function alignBatch(client, pairs, opts = {}) {
   }
 
   const parsed = JSON.parse(response.choices[0].message.content);
-  // The LLM returned each chunk's target as Chinese characters. Promote that
-  // to `hanzi`, and derive `target` (pinyin) by SLICING the pair's
-  // context-romanized pinyin — so polyphones (了→le vs liǎo) stay correct and
-  // chunk pinyin is always an exact substring of the pair pinyin.
-  for (const a of parsed.alignments || []) {
-    const pair = pairs[a.pair_index];
-    const map = pair ? romanizeWithMap(pair.hanzi || "") : null;
-    for (const c of a.chunks || []) {
-      c.hanzi = (c.target || "").trim();
-      c.target = map ? chunkPinyinFromPair(pair.hanzi || "", c.hanzi, map) : "";
-    }
-  }
+  applyAlignmentChunks(parsed.alignments, pairs);
   return { alignments: parsed.alignments, usage: response.usage };
 }
 
