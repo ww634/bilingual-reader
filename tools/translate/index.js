@@ -28,6 +28,7 @@ import { analyzeContent, sliceByMarkers } from "./lib/analyze.js";
 import { alignAll, estimateAlignmentCost } from "./lib/align.js";
 import { setTpmLimit } from "./lib/ratelimit.js";
 import { runBookBatch } from "./lib/run-batch.js";
+import { splitByHeadings, countHeadings } from "./lib/split-headings.js";
 import { renderCover } from "./lib/cover.js";
 import { readLibrary, upsertBook, writeLibrary } from "./lib/library.js";
 
@@ -138,6 +139,9 @@ program
   .option("--align-retries <n>", "Max solo-retry attempts per pair that fails hard alignment validation. Default 0 (fastest/cheapest — pinyin still colors ~100%, a few english highlights are skipped). Set 1+ to polish english-highlight coverage on a single chapter at higher token cost.", (v) => parseInt(v, 10))
   .option("--tpm <n>", "Tokens-per-minute ceiling for client-side pacing (avoids 429s on low OpenAI tiers). Default 27000 (headroom under a 30k tier). Raise it if your account has a higher TPM limit.", (v) => parseInt(v, 10))
   .option("--batch", "Use OpenAI's Batch API (async, ~50% cheaper, no TPM limit, server-side). Best for whole books — submits all requests, polls to completion, then writes. Resumable: re-run to keep polling an in-flight batch. Default is sync.")
+  .option("--by-headings", "Split chapters deterministically on 'Chapter N: Title' headings (each on its own line) instead of the LLM analyzer. No analyzer call, no size limit — put a whole book in one file. Book metadata is read from library.json for --book-id (or pass --book-title/--author for a new book).")
+  .option("--book-title <title>", "Book's English title (only needed with --by-headings for a NOT-yet-in-library book).")
+  .option("--author <name>", "Book author (optional, with --by-headings for a new book).")
   .option("--force", "Re-translate chapters that already exist on disk. Default: skip already-done chapters (resumable).")
   .option("--realign-only <chapterFile>", "Re-run JUST the alignment pass on an existing chapter.json. Skips translation entirely. Useful after improving the alignment prompt.")
   // Strict is on by default — silently saving a chapter with half its text
@@ -261,13 +265,10 @@ async function main() {
   // ────────────────────────────────────────────────────────────
   // Step 2. Analyze structure (LLM pre-pass)
   // ────────────────────────────────────────────────────────────
-  console.log("\n" + bold("2.") + " Analyzing structure (LLM pre-pass)…");
   const client = buildClient(process.env.OPENAI_API_KEY);
 
   // Track real token usage across every API call so we can show the user
-  // what the run actually cost (vs the upfront estimate). We split by which
-  // model was used so the rate lookup is correct — analyzer typically runs
-  // on a cheaper model than translation/alignment.
+  // what the run actually cost (vs the upfront estimate).
   const usage = {
     analyzer: { in: 0, out: 0, model: opts.analyzerModel },
     main:     { in: 0, out: 0, model: opts.model },
@@ -278,21 +279,47 @@ async function main() {
     usage[bucket].out += u.completion_tokens || 0;
   }
 
-  let analysis, analyzerUsage;
-  try {
-    const r = await analyzeContent(client, cleaned, { model: opts.analyzerModel });
-    analysis = r.analysis;
-    analyzerUsage = r.usage;
-  } catch (err) {
-    console.error(red(`   ❌ Analyzer call failed: ${err.message}`));
-    if (err.status === 401) console.error(red("   Your OPENAI_API_KEY appears invalid. Check tools/translate/.env"));
-    process.exit(1);
+  let analysis, sections;
+  let reuseBookTitle = null; // {english, target} when reusing an existing book's title
+
+  if (opts.byHeadings) {
+    // Deterministic split on "Chapter N: Title" headings — no analyzer call.
+    console.log("\n" + bold("2.") + " Splitting on chapter headings (deterministic, no analyzer)…");
+    sections = splitByHeadings(cleaned);
+    if (sections.length === 0) {
+      console.error(red("\n❌ --by-headings: no 'Chapter N: Title' headings found. Check the file, or drop --by-headings to use the analyzer."));
+      process.exit(1);
+    }
+    // Book metadata: reuse an existing library entry, else require --book-title.
+    const existing = opts.bookId ? ((await readLibrary(LIBRARY_PATH))?.books || []).find((b) => b.id === opts.bookId) : null;
+    if (existing) {
+      analysis = { book: { english_title: existing.title?.english || opts.bookId, author: existing.author || "", book_synopsis: existing.synopsis || "", genres: existing.genres || [], looks_like: "book", book_id_suggestion: existing.id } };
+      reuseBookTitle = { english: existing.title?.english || opts.bookId, target: existing.title?.target || "" };
+      console.log(dim(`   reusing book metadata from library: ${existing.title?.english || existing.id}`));
+    } else {
+      if (!opts.bookTitle) {
+        console.error(red("\n❌ --by-headings on a new book needs --book-title \"...\" (and ideally --book-id, --author)."));
+        process.exit(1);
+      }
+      analysis = { book: { english_title: opts.bookTitle, author: opts.author || "", book_synopsis: "", genres: [], looks_like: "book", book_id_suggestion: opts.bookId } };
+    }
+    console.log(dim(`   ${sections.length} chapter heading(s) found`));
+  } else {
+    console.log("\n" + bold("2.") + " Analyzing structure (LLM pre-pass)…");
+    let analyzerUsage;
+    try {
+      const r = await analyzeContent(client, cleaned, { model: opts.analyzerModel });
+      analysis = r.analysis;
+      analyzerUsage = r.usage;
+    } catch (err) {
+      console.error(red(`   ❌ Analyzer call failed: ${err.message}`));
+      if (err.status === 401) console.error(red("   Your OPENAI_API_KEY appears invalid. Check tools/translate/.env"));
+      process.exit(1);
+    }
+    console.log(dim(`   analyzer tokens: ${fmt(analyzerUsage.total_tokens)}`));
+    addUsage(analyzerUsage, "analyzer");
+    sections = sliceByMarkers(cleaned, analysis);
   }
-
-  console.log(dim(`   analyzer tokens: ${fmt(analyzerUsage.total_tokens)}`));
-  addUsage(analyzerUsage, "analyzer");
-
-  const sections = sliceByMarkers(cleaned, analysis);
 
   // ────────────────────────────────────────────────────────────
   // Step 3. Show plan
@@ -385,8 +412,11 @@ async function main() {
 
   // Translate the book title once (used for cover + library + as a canonical
   // name passed into every chapter's body translation for consistency).
-  // isBookTitle prevents the model from adding a "Dì N zhāng:" chapter prefix.
-  const bookTitleResult = await translateTitle(client, bookTitle, { model: opts.model, isBookTitle: true });
+  // Under --by-headings on an existing book, reuse the stored title so we
+  // don't re-translate it (keeps the book title stable across runs).
+  const bookTitleResult = reuseBookTitle && reuseBookTitle.target
+    ? { english: reuseBookTitle.english, target: reuseBookTitle.target, hanzi: "" }
+    : await translateTitle(client, bookTitle, { model: opts.model, isBookTitle: true });
   const canonicalNames = bookTitle && bookTitleResult.target
     ? [{ english: bookTitle, target: bookTitleResult.target }]
     : [];
