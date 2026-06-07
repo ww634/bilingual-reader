@@ -41,7 +41,7 @@
       "cover": "books/treasure-island/cover.svg"
     },
     {
-      "version": 6,
+      "version": 7,
       "id": "the-left-hand-of-darkness",
       "language": "zh",
       "title": {
@@ -49,12 +49,13 @@
         "english": "The Left Hand of Darkness"
       },
       "author": "Ursula K. Le Guin",
-      "synopsis": "A human envoy, Genly Ai, is sent to the planet Gethen to persuade its nations to join an interplanetary collective. He must navigate the complex politics and unique gender dynamics of Gethen, forging alliances and facing betrayals as he attempts to fulfill his mission.",
+      "synopsis": "A human envoy, Genly Ai, is sent to the planet Gethen to persuade its inhabitants to join an interplanetary collective. On Gethen, he encounters a society with unique gender dynamics and political intrigue, forging a complex relationship with Estraven, a disgraced politician. Together, they navigate cultural misunderstandings, exile, and the harsh climate in a story about trust, identity, and the meaning of humanity.",
       "genres": [
         "sci fi",
         "classic",
         "literary fiction",
         "political",
+        "speculative",
         "adventure"
       ],
       "chapters": [
@@ -105,6 +106,26 @@
             "hanzi": "第十九天"
           },
           "url": "books/the-left-hand-of-darkness/ch-4.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-5",
+          "title": {
+            "target": "zhíjué de xùnhuà",
+            "english": "The Domestication of Hunch",
+            "hanzi": "直觉的驯化"
+          },
+          "url": "books/the-left-hand-of-darkness/ch-5.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-6",
+          "title": {
+            "target": "tōngwǎng àogé léiēn zhī lù",
+            "english": "One Way into Orgoreyn",
+            "hanzi": "通往奥格雷恩之路"
+          },
+          "url": "books/the-left-hand-of-darkness/ch-6.json"
         }
       ],
       "cover": "books/the-left-hand-of-darkness/cover.svg"
