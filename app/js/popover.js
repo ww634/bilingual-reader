@@ -92,7 +92,7 @@ export function openPopover(chunkData, chapter) {
     if (pair) {
       contextEl.innerHTML = `
         <strong>In context</strong>
-        <div>${escape(pair.target)}</div>
+        <div>${escape(chunkData.script === "hanzi" ? (pair.hanzi || pair.target) : pair.target)}</div>
         <div style="margin-top:4px; color: var(--text-muted)">${escape(pair.english)}</div>
       `;
     } else {

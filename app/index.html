@@ -160,9 +160,17 @@
         <button id="reader-options-close" class="sheet-close" aria-label="Close">×</button>
       </header>
       <div class="sheet-body">
+        <section class="sheet-section settings-group">
+          <label for="reader-script">Chinese display</label>
+          <select id="reader-script">
+            <option value="pinyin">Pinyin</option>
+            <option value="hanzi">Chinese characters · 汉字</option>
+          </select>
+          <p id="reader-script-hint" class="sheet-hint">Switch anytime. English and word colours stay the same.</p>
+        </section>
         <section class="sheet-section">
           <div class="sheet-section-label">Highlight categories</div>
-          <p class="sheet-hint">Turn off a category to hide its English translations. The pinyin stays — tap a word to look it up if you're stuck.</p>
+          <p class="sheet-hint">Turn off a category to hide its English translations. The Chinese stays — tap a word to look it up if you're stuck.</p>
           <ul class="cat-toggles">
             <li><label class="cat-toggle"><input type="checkbox" data-cat="noun" /><span class="cat-swatch cat-noun" aria-hidden="true"></span><span class="cat-label">Nouns</span></label></li>
             <li><label class="cat-toggle"><input type="checkbox" data-cat="verb" /><span class="cat-swatch cat-verb" aria-hidden="true"></span><span class="cat-label">Verbs</span></label></li>

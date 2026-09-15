@@ -1,7 +1,6 @@
 // Reader-options slide-up sheet: a per-reader settings panel that lives
-// outside the global Settings view. Today it just controls per-category
-// visibility of English translations; future home for font size, theme,
-// search, share, etc.
+// outside the global Settings view. Controls Chinese script display and
+// per-category visibility of English translations.
 //
 // Per-category visibility is implemented as body-level classes
 // (`body.hide-cat-noun`, etc) plus CSS rules in styles.css. Toggling is
@@ -76,6 +75,7 @@ function syncCheckboxes() {
 
 function openSheet() {
   syncCheckboxes();
+  getSettings().then(s => { $("reader-script").value = s.readerScript || "pinyin"; });
   $("reader-options-backdrop").hidden = false;
   const sheet = $("reader-options");
   sheet.hidden = false;
@@ -115,6 +115,13 @@ export async function initReaderOptions() {
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !$("reader-options").hidden) closeSheet();
+  });
+
+  $("reader-script")?.addEventListener("change", async (event) => {
+    const script = event.target.value;
+    window.dispatchEvent(new CustomEvent("reader:script", { detail: script }));
+    const settings = await getSettings();
+    await putSettings({ ...settings, readerScript: script });
   });
 
   for (const { key } of CATEGORIES) {

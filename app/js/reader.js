@@ -14,7 +14,20 @@ let _state = {
   pagesCount: 0,
   currentPage: 0,
   saveTimer: null,
+  script: "pinyin",
 };
+
+function scriptSpan(pinyin, hanzi) {
+  return `<span data-pinyin="${escape(pinyin)}" data-hanzi="${escape(hanzi ?? pinyin)}">${escape(pinyin)}</span>`;
+}
+
+// Keep the original line grouping and English DOM intact when switching.
+function setReaderScript(script) {
+  _state.script = script === "hanzi" ? "hanzi" : "pinyin";
+  for (const el of pagesEl().querySelectorAll("[data-pinyin]")) {
+    el.textContent = el.dataset[_state.script];
+  }
+}
 
 function escape(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({
@@ -360,7 +373,7 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
     const pair = pairs[localIdx];
 
     if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
-      pushUncoveredText(parts, pair.target, pairIdx);
+      parts.push(`<span class="seg uncov" data-pair="${pairIdx}">${scriptSpan(pair.target, pair.hanzi)}</span>`);
       if (localIdx < pairs.length - 1) parts.push(" ");
       continue;
     }
@@ -376,18 +389,25 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
       .sort((a, b) => a.pos.tStart - b.pos.tStart);
 
     let cursor = 0;
+    let hanziCursor = 0;
     for (const { idx: chunkIdx, pos } of ordered) {
       if (pos.tStart < cursor) continue; // overlap — skip (shouldn't happen with claim-based finder)
 
-      if (pos.tStart > cursor) {
+      const chunk = pair.alignment[chunkIdx];
+      const hanziStart = chunk.hanzi && pair.hanzi
+        ? pair.hanzi.indexOf(chunk.hanzi, hanziCursor) : -1;
+      if (hanziStart >= 0) {
+        parts.push(scriptSpan(pair.target.slice(cursor, pos.tStart), pair.hanzi.slice(hanziCursor, hanziStart)));
+      } else if (pos.tStart > cursor) {
         pushUncoveredText(parts, pair.target.slice(cursor, pos.tStart), pairIdx);
       }
 
-      const chunk = pair.alignment[chunkIdx];
       const uid = `p${pairIdx}c${chunkIdx}`;
       const attrs = [
         `class="seg chunk"`,
         `data-uid="${uid}"`,
+        `data-pinyin="${escape(chunk.target)}"`,
+        `data-hanzi="${escape(chunk.hanzi || chunk.target)}"`,
         `data-pair="${pairIdx}"`,
         chunk.category ? `data-cat="${escape(chunk.category)}"` : "",
         chunk.frequency_band ? `data-freq="${escape(chunk.frequency_band)}"` : "",
@@ -402,10 +422,12 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
       });
 
       cursor = pos.tEnd;
+      if (hanziStart >= 0) hanziCursor = hanziStart + chunk.hanzi.length;
     }
 
     if (cursor < pair.target.length) {
-      pushUncoveredText(parts, pair.target.slice(cursor), pairIdx);
+      if (pair.hanzi && hanziCursor) parts.push(scriptSpan(pair.target.slice(cursor), pair.hanzi.slice(hanziCursor)));
+      else pushUncoveredText(parts, pair.target.slice(cursor), pairIdx);
     }
 
     if (localIdx < pairs.length - 1) {
@@ -445,6 +467,7 @@ function groupSegsByLine(targetEl) {
   linesByTop.sort((a, b) => a.top - b.top);
   return linesByTop.map((l) => ({
     top: l.top,
+    segs: l.segs,
     firstSeg: l.segs[0],
     lastSeg: l.segs[l.segs.length - 1],
     chunks: l.segs.filter((s) => s.classList.contains("chunk")),
@@ -521,7 +544,7 @@ function renderPageInto(pageEl, pairs, pageStartIdx) {
   const pairLines = new Map();
 
   lines.forEach((line, lineIdx) => {
-    for (const span of line.chunks) {
+    for (const span of line.segs) {
       const pairIdx = parseInt(span.dataset.pair, 10);
       if (Number.isFinite(pairIdx)) {
         if (!pairLines.has(pairIdx)) pairLines.set(pairIdx, new Set());
@@ -660,7 +683,7 @@ function renderChapter(chapter, perPage) {
   const titlePage = document.createElement("section");
   titlePage.className = "reader-page title-page";
   titlePage.innerHTML = `
-    <div class="target">${escape(chapter.title.target)}</div>
+    <div class="target">${scriptSpan(chapter.title.target, chapter.title.hanzi)}</div>
     <div class="english">${escape(chapter.title.english)}</div>
   `;
   container.appendChild(titlePage);
@@ -691,7 +714,7 @@ function renderChapter(chapter, perPage) {
         <div class="end-label">You've finished this chapter</div>
         <div class="end-divider"></div>
         <div class="end-next-label">Next up</div>
-        <div class="end-target">${escape(nextChapter.title?.target || "")}</div>
+        <div class="end-target">${scriptSpan(nextChapter.title?.target || "", nextChapter.title?.hanzi)}</div>
         <h3 class="end-title">${escape(nextChapter.title?.english || nextChapter.id)}</h3>
         <button class="end-next-btn" data-next-id="${escape(nextChapter.id)}">Read →</button>
       </div>
@@ -780,13 +803,14 @@ function handleChunkTap(event) {
 
     openPopover(
       {
-        target: align.target,
+        target: _state.script === "hanzi" ? (align.hanzi || align.target) : align.target,
         english: align.english,
         category: align.category,
         frequency_band: align.frequency_band,
         is_idiom: align.is_idiom,
         pairIdx,
         chunkIdx,
+        script: _state.script,
       },
       _state.chapter
     );
@@ -826,7 +850,14 @@ export async function openReader(bookId, chapterId) {
   _state.bookChapters = book?.chapters || [];
   _state.currentPage = 0;
 
+  const hasHanzi = chapter.pairs.every(pair => pair.hanzi &&
+    (pair.alignment || []).every(chunk => chunk.hanzi));
+  document.getElementById("reader-script").disabled = !hasHanzi;
+  document.getElementById("reader-script-hint").textContent = hasHanzi
+    ? "Switch anytime. English and word colours stay the same."
+    : "Chinese characters aren't included in this book yet.";
   renderChapter(chapter, settings.pairsPerPage);
+  setReaderScript(settings.readerScript);
 
   document.getElementById("title").textContent = chapter.title.english;
 
@@ -865,3 +896,5 @@ export function closeReader() {
   _state.currentPage = 0;
   pagesEl().innerHTML = "";
 }
+
+window.addEventListener("reader:script", (event) => setReaderScript(event.detail));

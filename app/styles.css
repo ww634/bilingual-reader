@@ -647,7 +647,7 @@ body {
 .reader-page p.target,
 .reader-block > p.target {
   font-weight: 700;
-  font-size: var(--reader-font);
+  font-size: calc(var(--reader-font) * 1.12);
   letter-spacing: -0.005em;
   line-height: var(--reader-line);
   margin: 0;
