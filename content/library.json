@@ -129,6 +129,88 @@
         }
       ],
       "cover": "books/the-left-hand-of-darkness/cover.svg"
+    },
+    {
+      "version": 1,
+      "id": "the-river-repair-shop",
+      "language": "zh",
+      "title": {
+        "target": "hébiān xiūlǐpù",
+        "english": "The River Repair Shop",
+        "hanzi": "河边修理铺"
+      },
+      "author": "AI generated",
+      "synopsis": "In a riverside town, a young woman reopens her late father’s repair shop. Customers bring kettles, lamps and radios; sometimes the things they leave behind are harder to name. A story of skilled hands, awkward neighbours and the sounds that linger in ordinary lives.",
+      "genres": [
+        "mystery",
+        "literary fantasy",
+        "slice of life"
+      ],
+      "cover": "books/the-river-repair-shop/cover.svg",
+      "chapters": [
+        {
+          "id": "ch-1",
+          "version": 1,
+          "title": {
+            "target": "kōng diànchí cāng",
+            "english": "The Empty Battery Compartment",
+            "hanzi": "空电池仓"
+          },
+          "url": "books/the-river-repair-shop/ch-1.json"
+        }
+      ]
+    },
+    {
+      "version": 1,
+      "id": "embers-beneath-the-mountains",
+      "language": "zh",
+      "title": {
+        "target": "qúnshān yú huǒ",
+        "english": "Embers Beneath the Mountains",
+        "hanzi": "群山余火"
+      },
+      "author": "AI generated",
+      "synopsis": "Below the mountain city, Tavi earns his meals sorting what the furnaces leave behind. He has no papers, no family name anyone can verify, and a talent that should have belonged to someone with a very different education. A place at the White Steps could give him a future. First he must learn what it costs to be taught—and find people with whom he can be more than useful.",
+      "genres": [
+        "epic fantasy",
+        "coming of age",
+        "magic school",
+        "friendship",
+        "political fantasy"
+      ],
+      "cover": "books/embers-beneath-the-mountains/cover.svg",
+      "chapters": [
+        {
+          "id": "ch-1",
+          "version": 1,
+          "title": {
+            "target": "bù shōu de nà yìkuāng",
+            "english": "The Rejected Basket",
+            "hanzi": "不收的那一筐"
+          },
+          "url": "books/embers-beneath-the-mountains/ch-1.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-2",
+          "title": {
+            "target": "gōngqián zěnme suàn",
+            "english": "What Counts as Wages",
+            "hanzi": "工钱怎么算"
+          },
+          "url": "books/embers-beneath-the-mountains/ch-2.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-3",
+          "title": {
+            "target": "háishì zhè liǎngpiàn",
+            "english": "The Same Two Pieces",
+            "hanzi": "还是这两片"
+          },
+          "url": "books/embers-beneath-the-mountains/ch-3.json"
+        }
+      ]
     }
   ]
 }
