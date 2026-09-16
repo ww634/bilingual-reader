@@ -59,7 +59,8 @@ function buildSystemPrompt(code) {
 // In-memory per-session state (cleared on reload — fine for a reading session).
 let history = [];              // [{ role, content }] sent to the API
 let pendingContext = [];       // book snippets the user attached for the NEXT message
-let lastSelectionText = "";    // most recent non-empty selection inside the reader
+let lastSelectionText = "";    // target-language text of the current selection (English stripped)
+let lastSelectionRaw = "";     // the literal selection (both languages) — used for Copy
 let busy = false;
 let greeted = false;
 let currentLang = "";          // language code of the currently open book
@@ -235,8 +236,22 @@ function readerSelectionText() {
     (sel.anchorNode && pages.contains(sel.anchorNode)) ||
     (sel.focusNode && pages.contains(sel.focusNode));
   if (!within) return null;
-  const text = sel.toString().trim();
-  return text ? { text, rect: sel.getRangeAt(0).getBoundingClientRect() } : null;
+
+  const range = sel.getRangeAt(0);
+  const raw = sel.toString().replace(/\s+/g, " ").trim();
+
+  // Each block is `<p class="target">` (pinyin/hanzi) + `<p class="english">`.
+  // Clone the selected DOM and drop the English lines, so a drag that grabs
+  // both languages yields just the target-language text to ask about.
+  const holder = document.createElement("div");
+  holder.appendChild(range.cloneContents());
+  holder.querySelectorAll(".english").forEach((el) => el.remove());
+  const targetText = holder.textContent.replace(/\s+/g, " ").trim();
+
+  // Fall back to the raw selection if it was purely English (nothing to strip).
+  const text = targetText || raw;
+  if (!text) return null;
+  return { text, raw, rect: range.getBoundingClientRect() };
 }
 
 function positionToolbar(rect) {
@@ -265,6 +280,7 @@ function onSelectionChange() {
   const found = readerSelectionText();
   if (!found) { hideToolbar(); return; }
   lastSelectionText = found.text;
+  lastSelectionRaw = found.raw;
   positionToolbar(found.rect);
 }
 
@@ -325,13 +341,16 @@ export function initAssistant() {
     if (!btn) return;
     e.preventDefault();
     const act = btn.dataset.act;
-    const text = lastSelectionText;
+    const text = lastSelectionText;      // target-language only (English stripped)
     hideToolbar();
-    if (!text) return;
     if (act === "copy") {
-      navigator.clipboard?.writeText(text).catch(() => {});
+      // Copy is literal — copy exactly what was highlighted.
+      if (lastSelectionRaw) navigator.clipboard?.writeText(lastSelectionRaw).catch(() => {});
       window.getSelection()?.removeAllRanges();
-    } else if (act === "ask") {
+      return;
+    }
+    if (!text) return;
+    if (act === "ask") {
       addContext(text);
       openPanel();
     } else if (act === "explain") {
