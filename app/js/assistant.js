@@ -56,8 +56,12 @@ function buildSystemPrompt(code) {
   );
 }
 
-// In-memory per-session state (cleared on reload — fine for a reading session).
-let history = [];              // [{ role, content }] sent to the API
+// Conversation state. `transcript` is the single source of truth: a list of
+// display records ({ role, text, contexts? }) that is BOTH rendered in the panel
+// and turned into the API messages. It's persisted per book (localStorage) so
+// the conversation survives closing the panel, switching chapters, and even
+// relaunching the app — restored when the same book is reopened.
+let transcript = [];
 let pendingContext = [];       // book snippets the user attached for the NEXT message
 let lastSelectionText = "";    // target-language text of the current selection (English stripped)
 let lastSelectionRaw = "";     // the literal selection (both languages) — used for Copy
@@ -66,10 +70,59 @@ let greeted = false;
 let currentLang = "";          // language code of the currently open book
 let currentBookId = "";        // scopes the conversation to one book
 
+const STORE_PREFIX = "bilingual-reader.assistant.";
+const MAX_STORED = 80;         // cap persisted turns so storage stays small
+
 function escape(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   }[c]));
+}
+
+// ── Persistence (per book) ──
+
+function saveConversation() {
+  if (!currentBookId) return;
+  try {
+    localStorage.setItem(STORE_PREFIX + currentBookId, JSON.stringify(transcript.slice(-MAX_STORED)));
+  } catch { /* storage full / unavailable — non-fatal */ }
+}
+
+function loadConversation(bookId) {
+  transcript = [];
+  try {
+    const raw = localStorage.getItem(STORE_PREFIX + bookId);
+    const parsed = raw ? JSON.parse(raw) : null;
+    if (Array.isArray(parsed)) transcript = parsed;
+  } catch { /* ignore corrupt / unavailable storage */ }
+  greeted = transcript.length > 0;   // don't greet over a restored conversation
+  pendingContext = [];
+  renderTranscript();
+  renderContextChips();
+}
+
+function renderTranscript() {
+  const list = $("assistant-messages");
+  if (!list) return;
+  list.innerHTML = "";
+  for (const m of transcript) renderMessage(m.role, m.text, m.contexts);
+}
+
+// Build the API message list from the transcript (plus the system prompt).
+// A user turn's attached book context is folded into its content here.
+function apiMessages() {
+  const msgs = [{ role: "system", content: buildSystemPrompt(currentLang) }];
+  for (const m of transcript.slice(-16)) {
+    if (m.role === "user") {
+      const content = (m.contexts && m.contexts.length)
+        ? `The reader highlighted this from the book they're reading:\n"""\n${m.contexts.join("\n---\n")}\n"""\n\nQuestion: ${m.text}`
+        : m.text;
+      msgs.push({ role: "user", content });
+    } else {
+      msgs.push({ role: "assistant", content: m.text });
+    }
+  }
+  return msgs;
 }
 
 // ── Panel open/close ──
@@ -81,7 +134,7 @@ function openPanel() {
   panel.hidden = false;
   void panel.offsetHeight; // force layout so the transition fires
   panel.classList.add("open");
-  if (!greeted) {
+  if (!greeted && transcript.length === 0) {
     const name = langMeta(currentLang).name;
     renderMessage("assistant",
       `Hi! I'm your language assistant for ${name}. Ask me anything — a word, a sentence, grammar, pronunciation. Highlight text in the book and tap “Ask Assistant” to bring it in as context.`);
@@ -164,13 +217,11 @@ async function send(text, { auto = false } = {}) {
   pendingContext = [];
   renderContextChips();
 
-  // Compose the API user message (context + question), but show them separately.
-  const apiContent = contexts.length
-    ? `The user highlighted this from the book they're reading:\n"""\n${contexts.join("\n---\n")}\n"""\n\nQuestion: ${question}`
-    : question;
-
   if (!auto) $("assistant-text").value = "";
+  // Record + render the user turn, and persist immediately.
+  transcript.push({ role: "user", text: question, contexts });
   renderMessage("user", question, contexts);
+  saveConversation();
 
   const settings = await getSettings();
   if (!settings.openaiKey) {
@@ -187,12 +238,10 @@ async function send(text, { auto = false } = {}) {
   const bodyEl = renderMessage("assistant", "…");
   bodyEl.parentElement.classList.add("loading");
 
-  history.push({ role: "user", content: apiContent });
-
   const isNewFamily = /^gpt-5|^o1|^o3/i.test(ASSISTANT_MODEL);
   const payload = {
     model: ASSISTANT_MODEL,
-    messages: [{ role: "system", content: buildSystemPrompt(currentLang) }, ...history.slice(-12)],
+    messages: apiMessages(),                 // full transcript → continuity
     [isNewFamily ? "max_completion_tokens" : "max_tokens"]: 900,
   };
   if (!isNewFamily) payload.temperature = 0.4;
@@ -209,11 +258,13 @@ async function send(text, { auto = false } = {}) {
     }
     const data = await res.json();
     const answer = data.choices?.[0]?.message?.content?.trim() || "(no response)";
-    history.push({ role: "assistant", content: answer });
+    transcript.push({ role: "assistant", text: answer });
+    saveConversation();
     bodyEl.textContent = answer;
   } catch (err) {
     bodyEl.textContent = `Couldn't reach the assistant:\n${err.message}`;
-    history.pop(); // drop the unanswered user turn so retries stay clean
+    // Keep the user turn (persisted) so it's still visible and retryable; the
+    // error bubble itself isn't stored, so it won't reappear on reload.
   } finally {
     bodyEl.parentElement.classList.remove("loading");
     busy = false;
@@ -286,25 +337,26 @@ function onSelectionChange() {
 
 // ── Wiring ──
 
-function resetConversation() {
-  history = [];
-  pendingContext = [];
-  greeted = false;
-  const list = $("assistant-messages");
-  if (list) list.innerHTML = "";
-  renderContextChips();
+/**
+ * Open the assistant with some text attached as context (used by the tap-to-
+ * learn popover's "Ask Assistant" handoff). The user then asks a follow-up and
+ * the attached context rides along with it.
+ */
+export function askWithContext(text) {
+  addContext(text);
+  openPanel();
 }
 
 export function initAssistant() {
-  // Follow the language of whichever book is opened; start a fresh conversation
-  // when the book changes (a different book may be a different language).
+  // Follow the language of whichever book is opened, and restore that book's
+  // saved conversation when the book changes.
   window.addEventListener("reader:opened", (e) => {
     const { language, bookId } = e.detail || {};
     currentLang = language || "";
     if (bookId && bookId !== currentBookId) {
       currentBookId = bookId;
-      resetConversation();
-      if (!$("assistant-panel").hidden) closePanel();
+      if (isOpen()) closePanel();
+      loadConversation(bookId);
     }
   });
 

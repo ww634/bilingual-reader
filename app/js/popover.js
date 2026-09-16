@@ -4,6 +4,7 @@
 // user's API key (stored in Settings) for a richer explanation.
 
 import { getSettings } from "./db.js";
+import { askWithContext } from "./assistant.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -230,10 +231,37 @@ async function fetchExplanation() {
   }
 }
 
+/**
+ * Hand this word off to the Language Assistant: attach the word, its in-context
+ * sentence, and (if it's been fetched) the explanation as context, then open the
+ * assistant so the user can ask follow-up questions.
+ */
+function askAssistantFromPopover() {
+  const chunk = _state.chunk;
+  if (!chunk) return;
+  const pair = _state.chapter?.pairs?.[chunk.pairIdx];
+  const lines = [];
+  lines.push(
+    `Word: ${chunk.target}` +
+    (chunk.english ? ` — ${chunk.english}` : "") +
+    (chunk.category ? ` (${chunk.category})` : "")
+  );
+  if (pair) {
+    const sentence = chunk.script === "hanzi" ? (pair.hanzi || pair.target) : pair.target;
+    lines.push(`Sentence: ${sentence} — ${pair.english}`);
+  }
+  const explanation = explanationCache.get(cacheKey(chunk));
+  if (explanation) lines.push(`Explanation already given:\n${explanation}`);
+
+  askWithContext(lines.join("\n"));
+  closePopover();
+}
+
 export function initPopover() {
   $("popover-close").addEventListener("click", closePopover);
   $("popover-backdrop").addEventListener("click", closePopover);
   $("pop-act-explain").addEventListener("click", fetchExplanation);
+  $("pop-act-ask").addEventListener("click", askAssistantFromPopover);
   $("pop-act-save").addEventListener("click", () => {
     // Memory Vault feature is deferred.
     alert("Memory Vault is coming in a later version.");
