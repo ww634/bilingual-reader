@@ -20,6 +20,7 @@ const titleEl = document.getElementById("title");
 const backBtn = document.getElementById("back-btn");
 const settingsBtn = document.getElementById("settings-btn");
 const readerOptionsBtn = document.getElementById("reader-options-btn");
+const assistantBtn = document.getElementById("assistant-btn");
 
 const navStack = [];     // history of view names for back navigation
 let currentView = "home";
@@ -37,8 +38,9 @@ function setView(name, { push = true } = {}) {
 
   backBtn.hidden = name === "home";
   settingsBtn.hidden = name !== "home";
-  // The reader-options icon (sliders) only makes sense inside the reader.
+  // The reader-options (sliders) and assistant icons only make sense in the reader.
   if (readerOptionsBtn) readerOptionsBtn.hidden = name !== "reader";
+  if (assistantBtn) assistantBtn.hidden = name !== "reader";
 }
 
 function goBack() {

@@ -74,7 +74,7 @@ function escape(s) {
 // ── Panel open/close ──
 
 function openPanel() {
-  document.body.classList.add("assistant-open");
+  hideToolbar();
   $("assistant-backdrop").hidden = false;
   const panel = $("assistant-panel");
   panel.hidden = false;
@@ -93,7 +93,6 @@ function openPanel() {
 function closePanel() {
   const panel = $("assistant-panel");
   panel.classList.remove("open");
-  document.body.classList.remove("assistant-open");
   setTimeout(() => {
     panel.hidden = true;
     $("assistant-backdrop").hidden = true;
@@ -247,9 +246,11 @@ function positionToolbar(rect) {
   const bh = bar.offsetHeight || 40;
   let left = rect.left + rect.width / 2 - bw / 2;
   left = Math.max(8, Math.min(left, window.innerWidth - bw - 8));
-  // Prefer above the selection; drop below if there isn't room.
-  let top = rect.top - bh - 8;
-  if (top < 8) top = rect.bottom + 8;
+  // Prefer BELOW the selection — iOS's own callout menu (Copy / Look Up / …)
+  // sits above the selection, so putting ours below keeps them from colliding.
+  // Drop back above only if there isn't room below.
+  let top = rect.bottom + 10;
+  if (top + bh > window.innerHeight - 8) top = rect.top - bh - 10;
   bar.style.left = `${Math.round(left)}px`;
   bar.style.top = `${Math.round(top)}px`;
 }
@@ -291,7 +292,7 @@ export function initAssistant() {
     }
   });
 
-  $("assistant-fab")?.addEventListener("click", openPanel);
+  $("assistant-btn")?.addEventListener("click", openPanel);
   $("assistant-close")?.addEventListener("click", closePanel);
   $("assistant-backdrop")?.addEventListener("click", closePanel);
 

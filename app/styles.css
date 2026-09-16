@@ -55,7 +55,7 @@ body {
 #topbar {
   flex: 0 0 auto;
   display: grid;
-  grid-template-columns: 44px 1fr 44px;
+  grid-template-columns: 44px 1fr auto;
   align-items: center;
   padding: calc(var(--safe-top) + 8px) 8px 8px;
   background: var(--bg);
@@ -88,6 +88,17 @@ body {
 }
 .iconbtn:active { background: var(--surface-2); }
 .iconbtn[hidden] { visibility: hidden; display: inline-flex; }
+
+/* Right-side header button group (reader options, assistant, settings). Hidden
+   buttons here collapse (rather than reserve space) so the group hugs the right
+   edge with no phantom gaps as buttons show/hide per view. */
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}
+.topbar-actions .iconbtn[hidden] { display: none; }
 
 /* ---------- Views ---------- */
 .view {
@@ -1221,29 +1232,6 @@ body.hide-cat-other          .reader-block .english .other                      
 /* ============================================================
    Language Assistant — slide-up chat + selection toolbar
    ============================================================ */
-
-/* Launcher FAB: bottom-right of the reader, always present while reading. */
-.assistant-fab {
-  position: fixed;
-  right: 16px;
-  bottom: calc(var(--safe-bottom) + 16px);
-  z-index: 80;
-  width: 52px;
-  height: 52px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #06101f;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-body[data-view="reader"] .assistant-fab { display: flex; }
-body.assistant-open .assistant-fab { display: none; }
-.assistant-fab:active { transform: scale(0.94); }
 
 /* Non-capturing backdrop: the book stays visible AND interactive above the
    panel (so more text can be highlighted for context). */
