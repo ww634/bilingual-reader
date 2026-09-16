@@ -131,7 +131,38 @@
       <footer id="reader-footer">
         <span id="page-indicator">1 / 1</span>
       </footer>
+      <!-- Language Assistant launcher: bottom-right, always present in the reader -->
+      <button id="assistant-fab" class="assistant-fab" aria-label="Language assistant">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8A8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+      </button>
     </main>
+
+    <!-- SELECTION TOOLBAR (floating; appears when book text is highlighted) -->
+    <div id="sel-toolbar" class="sel-toolbar" hidden>
+      <button data-act="explain">See explanation</button>
+      <button data-act="ask">Ask Assistant</button>
+      <button data-act="copy">Copy</button>
+    </div>
+
+    <!-- LANGUAGE ASSISTANT PANEL (slide-up; book stays visible above it) -->
+    <div id="assistant-backdrop" class="assistant-backdrop" hidden></div>
+    <aside id="assistant-panel" class="assistant-panel" role="dialog" aria-modal="false" aria-labelledby="assistant-title" hidden>
+      <header class="assistant-head">
+        <div class="assistant-head-title">
+          <span class="assistant-dot" aria-hidden="true"></span>
+          <h3 id="assistant-title">Language Assistant</h3>
+        </div>
+        <button id="assistant-close" class="assistant-close" aria-label="Close">×</button>
+      </header>
+      <div id="assistant-messages" class="assistant-messages"></div>
+      <div id="assistant-context" class="assistant-context" hidden></div>
+      <form id="assistant-form" class="assistant-input">
+        <textarea id="assistant-text" rows="1" placeholder="Ask about Chinese…" autocomplete="off" autocapitalize="sentences" spellcheck="false"></textarea>
+        <button id="assistant-send" class="assistant-send" aria-label="Send">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+        </button>
+      </form>
+    </aside>
 
     <!-- TAP-TO-LEARN POPOVER (overlay; outside any view) -->
     <div id="popover-backdrop" class="popover-backdrop" hidden></div>
@@ -220,7 +251,7 @@
       <div class="settings-group">
         <label for="openai-key">OpenAI API key (optional)</label>
         <input type="password" id="openai-key" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-..." />
-        <p class="hint">Used only for the "See explanation" button in the reader's tap-to-learn popover. Stored locally on this device, never uploaded.</p>
+        <p class="hint">Used for the reader's "See explanation" popover and the Language Assistant. Stored locally on this device, never uploaded.</p>
       </div>
       <div class="settings-group">
         <button id="clear-cache" class="danger">Clear cache</button>

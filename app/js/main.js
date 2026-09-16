@@ -3,6 +3,7 @@ import { openReader, closeReader } from "./reader.js";
 import { initSettings, loadSettingsIntoUI } from "./settings.js";
 import { initPopover, closePopover } from "./popover.js";
 import { initReaderOptions } from "./reader-options.js";
+import { initAssistant } from "./assistant.js";
 
 const VIEWS = ["home", "library", "browse", "book-detail", "quizzes", "reader", "settings"];
 const TITLES = {
@@ -113,6 +114,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   await initSettings();
   initPopover();
   await initReaderOptions();
+  initAssistant();
   await initCatalog();
   setView("home", { push: false });
 })();

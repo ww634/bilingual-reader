@@ -1217,3 +1217,208 @@ body.hide-cat-particle       .reader-block .english .chunk[data-cat="particle"] 
 body.hide-cat-particle       .reader-block .english .chunk[data-cat="grammar"]        { visibility: hidden; }
 /* Other — any uncategorised English word. */
 body.hide-cat-other          .reader-block .english .other                            { visibility: hidden; }
+
+/* ============================================================
+   Language Assistant — slide-up chat + selection toolbar
+   ============================================================ */
+
+/* Launcher FAB: bottom-right of the reader, always present while reading. */
+.assistant-fab {
+  position: fixed;
+  right: 16px;
+  bottom: calc(var(--safe-bottom) + 16px);
+  z-index: 80;
+  width: 52px;
+  height: 52px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #06101f;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+body[data-view="reader"] .assistant-fab { display: flex; }
+body.assistant-open .assistant-fab { display: none; }
+.assistant-fab:active { transform: scale(0.94); }
+
+/* Non-capturing backdrop: the book stays visible AND interactive above the
+   panel (so more text can be highlighted for context). */
+.assistant-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 84;
+  background: transparent;
+  pointer-events: none;
+}
+.assistant-backdrop[hidden] { display: none; }
+
+.assistant-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 85;
+  height: 60vh;
+  height: 60dvh;               /* book keeps the top ~2/5 */
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  color: var(--text);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  border-top: 1px solid var(--border-strong);
+  box-shadow: 0 -10px 34px rgba(0, 0, 0, 0.5);
+  transform: translateY(100%);
+  transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.assistant-panel.open { transform: translateY(0); }
+.assistant-panel[hidden] { display: none; }
+
+.assistant-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+.assistant-head-title { display: flex; align-items: center; gap: 8px; }
+.assistant-head-title h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.assistant-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+.assistant-close {
+  border: none; background: none; color: var(--text-dim);
+  font-size: 24px; line-height: 1; cursor: pointer; padding: 0 4px;
+}
+
+.assistant-messages {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 12px 12px 4px;
+  -webkit-overflow-scrolling: touch;
+}
+.assist-msg {
+  max-width: 86%;
+  margin: 8px 0;
+  padding: 9px 12px;
+  border-radius: 14px;
+}
+.assist-user {
+  margin-left: auto;
+  background: var(--accent-dim);
+  border-bottom-right-radius: 4px;
+}
+.assist-assistant {
+  margin-right: auto;
+  background: var(--surface-2);
+  border-bottom-left-radius: 4px;
+}
+.assist-msg-context {
+  font-size: 12px;
+  color: var(--text-dim);
+  border-left: 2px solid var(--accent);
+  padding-left: 8px;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+}
+.assist-msg-body {
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.assist-msg.loading .assist-msg-body { color: var(--text-muted); }
+
+.assistant-context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+.assistant-context[hidden] { display: none; }
+.assist-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 4px 4px 10px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.assist-chip-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.assist-chip-x {
+  border: none; background: none; color: var(--text-muted);
+  font-size: 15px; line-height: 1; cursor: pointer; padding: 0 4px;
+}
+
+.assistant-input {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 8px 10px calc(var(--safe-bottom) + 8px);
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  flex: 0 0 auto;
+}
+.assistant-input textarea {
+  flex: 1 1 auto;
+  resize: none;
+  max-height: 120px;
+  border: 1px solid var(--border-strong);
+  border-radius: 18px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+  padding: 9px 12px;
+}
+.assistant-input textarea:focus { outline: none; border-color: var(--accent); }
+.assistant-send {
+  flex: 0 0 auto;
+  width: 38px; height: 38px;
+  border: none; border-radius: 50%;
+  background: var(--accent);
+  color: #06101f;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.assistant-send:disabled { opacity: 0.5; }
+
+/* Floating toolbar shown when the reader text is highlighted. */
+.sel-toolbar {
+  position: fixed;
+  z-index: 88;
+  display: flex;
+  background: #1b1e27;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.sel-toolbar[hidden] { display: none; }
+.sel-toolbar button {
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  padding: 9px 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.sel-toolbar button:not(:last-child) { border-right: 1px solid var(--border); }
+.sel-toolbar button:active { background: var(--surface-2); }

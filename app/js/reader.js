@@ -850,6 +850,16 @@ export async function openReader(bookId, chapterId) {
   _state.bookChapters = book?.chapters || [];
   _state.currentPage = 0;
 
+  // Tell the Language Assistant which book (and language) is open, so it tutors
+  // in the right language and scopes its conversation to this book.
+  window.dispatchEvent(new CustomEvent("reader:opened", {
+    detail: {
+      bookId,
+      language: chapter.language || book?.language || "",
+      title: chapter.title?.english || book?.title?.english || "",
+    },
+  }));
+
   const hasHanzi = chapter.pairs.every(pair => pair.hanzi &&
     (pair.alignment || []).every(chunk => chunk.hanzi));
   document.getElementById("reader-script").disabled = !hasHanzi;
