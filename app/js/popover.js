@@ -172,12 +172,17 @@ async function fetchExplanation() {
     "use pinyin only (pinyin is allowed in the Pronunciation line and the example " +
     "sentences). " +
     "Given a word/phrase (pinyin with tone marks) and the sentence it appears in, " +
-    "give a short, learner-friendly explanation under 200 words with these labelled parts:\n" +
+    "give a short, learner-friendly explanation under 220 words with these labelled parts:\n" +
     "Pronunciation: repeat the word in pinyin with tone marks, then a plain-English " +
     "approximation of how to say it syllable-by-syllable, and name each syllable's tone " +
     "(e.g. \"lǚguǎn — roughly LYOO-gwan; lǚ = 3rd/dipping tone, guǎn = 3rd tone\"). " +
     "Mandarin pinyin spelling is unintuitive, so make the approximation genuinely helpful.\n" +
     "Meaning: the literal English meaning.\n" +
+    "Word parts: if the word is made up of two or more component characters/morphemes " +
+    "(very common in Chinese), break it down — list each component in pinyin with tone " +
+    "marks and its own meaning, then note how they combine into the whole word. " +
+    "E.g. \"shānkǒu = shān (mountain) + kǒu (mouth → opening/pass)\". " +
+    "Omit this line for a single-morpheme word or a proper name.\n" +
     "Usage: nuance / usage notes in English.\n" +
     "Examples: 1–2 short example sentences in pinyin (no Chinese characters), each " +
     "followed by its English translation in parentheses.\n" +
@@ -201,7 +206,7 @@ async function fetchExplanation() {
       { role: "system", content: systemPrompt },
       { role: "user", content: userPrompt },
     ],
-    [isNewFamily ? "max_completion_tokens" : "max_tokens"]: 500,
+    [isNewFamily ? "max_completion_tokens" : "max_tokens"]: 700,
   };
   if (!isNewFamily) body.temperature = 0.3;
 
