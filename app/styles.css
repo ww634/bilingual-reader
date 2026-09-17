@@ -27,7 +27,19 @@
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html, body { margin: 0; padding: 0; height: 100%; overscroll-behavior: none; }
+/* Lock the page to exactly the visible viewport so it can NEVER scroll — a
+   scrollable page (e.g. from 100vh being taller than the visible area on iOS)
+   shifts every position:fixed overlay's touch region down by ~the toolbar
+   height, which makes taps land below their target and breaks text selection.
+   height:100% + overflow:hidden keeps hit-testing aligned with paint without
+   the side effects a position:fixed root has on fixed descendants. */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 body {
   background: var(--bg);
   color: var(--text);
@@ -41,8 +53,7 @@ body {
 #app {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  height: 100dvh;
+  height: 100%;
   width: 100%;
   max-width: var(--app-max);
   background: var(--bg);
