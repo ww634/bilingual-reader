@@ -1,12 +1,15 @@
 // Service worker — caches the app shell only.
 // Chapter content is stored in IndexedDB by the app, not here.
 
-const SHELL_CACHE = "reader-shell-v33";
+// Keep this version in sync with APP_VERSION in js/version.js — bump both on
+// each deploy so the version shown in Settings matches the cached shell.
+const SHELL_CACHE = "reader-shell-v34";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./styles.css",
   "./manifest.webmanifest",
+  "./js/version.js",
   "./js/main.js",
   "./js/db.js",
   "./js/library.js",

@@ -1,4 +1,5 @@
 import { getSettings, putSettings, clearAll } from "./db.js";
+import { APP_VERSION } from "./version.js";
 
 const els = {
   libUrl: () => document.getElementById("lib-url"),
@@ -21,6 +22,8 @@ export async function loadSettingsIntoUI() {
   if (els.openaiKey()) els.openaiKey().value = s.openaiKey || "";
   applyFontSize(s.fontSize);
   updateOnlineStatus();
+  const ver = document.getElementById("app-version");
+  if (ver) ver.textContent = `Version v${APP_VERSION}`;
 }
 
 function updateOnlineStatus() {
