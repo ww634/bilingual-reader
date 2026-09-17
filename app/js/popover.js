@@ -5,7 +5,7 @@
 
 import { getSettings } from "./db.js";
 import { askWithContext } from "./assistant.js";
-import { speak, canSpeak } from "./speech.js";
+import { speakWord } from "./speech.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -282,21 +282,13 @@ function askAssistantFromPopover() {
  * Hanzi (chunk word if available, else the whole sentence) in the book's
  * language, so tones are correct — never the pinyin.
  */
-function hearPronunciation() {
+async function hearPronunciation() {
   const chunk = _state.chunk;
   if (!chunk) return;
   const text = chunk.hanzi || _state.chapter?.pairs?.[chunk.pairIdx]?.hanzi || "";
   const lang = _state.chapter?.language || "zh";
   const btn = $("pop-act-hear");
 
-  if (!canSpeak()) {
-    const expEl = $("popover-explanation");
-    expEl.hidden = false;
-    expEl.classList.remove("loading");
-    expEl.textContent =
-      "This device's browser doesn't offer built-in speech. On iOS, add a Chinese voice under Settings → Accessibility → Spoken Content → Voices.";
-    return;
-  }
   if (!text) {
     const expEl = $("popover-explanation");
     expEl.hidden = false;
@@ -305,12 +297,20 @@ function hearPronunciation() {
     return;
   }
 
-  const spoke = speak(text, lang);
-  if (spoke) {
-    // Brief affordance so the tap feels acknowledged.
-    const original = btn.textContent;
-    btn.textContent = "▶ Playing…";
-    setTimeout(() => { btn.textContent = original; }, 900);
+  const original = btn.textContent;
+  btn.disabled = true;
+  try {
+    // Uses high-quality OpenAI TTS (cached per word), falling back to the system
+    // voice automatically if that's unavailable.
+    await speakWord(text, lang, {
+      onState: (state) => {
+        if (state === "loading") btn.textContent = "Loading…";
+        else if (state === "playing") btn.textContent = "▶ Playing…";
+        else if (state === "fallback") btn.textContent = "▶ Playing (basic)…";
+      },
+    });
+  } finally {
+    setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 600);
   }
 }
 

@@ -1,7 +1,28 @@
-// Word/sentence pronunciation via the browser's built-in Web Speech API
-// (SpeechSynthesis). Free, offline, no API key — it uses the device's own
-// system voices (e.g. iOS's Mandarin voice). We always speak the ORIGINAL
-// script (Hanzi), never pinyin, so tones come out correctly.
+// Word/sentence pronunciation.
+//
+// Primary: OpenAI's text-to-speech (natural, human-like), using the same API
+// key as the rest of the app. Fetched audio is cached persistently (Cache API)
+// AND in memory, so each unique word is paid for at most once, ever.
+//
+// Fallback: the browser's built-in SpeechSynthesis (free, offline, robotic) —
+// used when there's no key, no network, or the TTS request fails.
+//
+// iOS note: audio playback must be unlocked inside the tap gesture. We use the
+// Web Audio API and resume the AudioContext synchronously at the top of
+// speakWord() (before any await), which keeps playback allowed after the async
+// fetch completes.
+
+import { getSettings } from "./db.js";
+
+// ── Config (tweak here) ──
+// Model options: "gpt-4o-mini-tts" (newest, natural, cheaper), "tts-1-hd"
+// (high quality), "tts-1" (fastest/cheapest). Voices: alloy, echo, fable, onyx,
+// nova, shimmer, coral, sage…
+const TTS_MODEL = "gpt-4o-mini-tts";
+const TTS_VOICE = "nova";
+const TTS_CACHE = "tts-audio-v1";
+
+// ── Built-in SpeechSynthesis (fallback) ──
 
 export function canSpeak() {
   return typeof window !== "undefined"
@@ -9,8 +30,6 @@ export function canSpeak() {
     && typeof window.SpeechSynthesisUtterance !== "undefined";
 }
 
-// Map a content-language code (from the book) to a BCP-47 tag with a sensible
-// default region, so the engine picks the right voice.
 const LANG_TAG = {
   zh: "zh-CN", ja: "ja-JP", ko: "ko-KR", es: "es-ES", fr: "fr-FR",
   de: "de-DE", it: "it-IT", pt: "pt-PT", ru: "ru-RU", ar: "ar-SA", hi: "hi-IN",
@@ -20,8 +39,6 @@ export function langTag(code) {
   return LANG_TAG[c] || c || "zh-CN";
 }
 
-// iOS populates the voice list asynchronously, so cache it and refresh on the
-// voiceschanged event (and lazily before each utterance).
 let _voices = [];
 function refreshVoices() {
   try { _voices = window.speechSynthesis.getVoices() || []; } catch { _voices = []; }
@@ -30,7 +47,6 @@ if (canSpeak()) {
   refreshVoices();
   try { window.speechSynthesis.addEventListener("voiceschanged", refreshVoices); } catch {}
 }
-
 function pickVoice(tag) {
   const base = tag.split("-")[0].toLowerCase();
   return _voices.find((v) => v.lang && v.lang.toLowerCase() === tag.toLowerCase())
@@ -38,22 +54,17 @@ function pickVoice(tag) {
       || null;
 }
 
-/**
- * Speak `text` in the given content-language code (e.g. "zh"). Cancels any
- * in-flight utterance first. Returns false if speech isn't available or there
- * was nothing to say. `rate` defaults to 0.9 — a touch slower, for learners.
- */
+/** System-voice fallback. Returns false if unavailable. */
 export function speak(text, code, { rate = 0.9 } = {}) {
   const t = String(text || "").trim();
   if (!t || !canSpeak()) return false;
   const synth = window.speechSynthesis;
   try {
-    synth.cancel();                 // stop anything already playing
+    synth.cancel();
     if (!_voices.length) refreshVoices();
     const u = new window.SpeechSynthesisUtterance(t);
-    const tag = langTag(code);
-    u.lang = tag;
-    const v = pickVoice(tag);
+    u.lang = langTag(code);
+    const v = pickVoice(u.lang);
     if (v) u.voice = v;
     u.rate = rate;
     synth.speak(u);
@@ -63,4 +74,117 @@ export function speak(text, code, { rate = 0.9 } = {}) {
 
 export function stopSpeaking() {
   try { window.speechSynthesis.cancel(); } catch {}
+  try { if (_currentSource) _currentSource.stop(); } catch {}
+}
+
+// ── OpenAI TTS (primary) via Web Audio ──
+
+let _ctx = null;
+let _currentSource = null;
+const _bufferCache = new Map(); // key -> decoded AudioBuffer (session)
+
+function ensureCtx() {
+  try {
+    if (!_ctx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      _ctx = new AC();
+    }
+    if (_ctx.state === "suspended") _ctx.resume().catch(() => {});
+    return _ctx;
+  } catch { return null; }
+}
+
+function cacheKey(text, code) {
+  // Same-origin relative URL used purely as a Cache API key.
+  return `tts-cache/${TTS_MODEL}/${TTS_VOICE}/${encodeURIComponent(code)}/${encodeURIComponent(text)}`;
+}
+
+async function getCachedBytes(key) {
+  try {
+    const cache = await caches.open(TTS_CACHE);
+    const res = await cache.match(key);
+    if (res) return await res.arrayBuffer();
+  } catch { /* Cache API unavailable */ }
+  return null;
+}
+async function putCachedBytes(key, bytes) {
+  try {
+    const cache = await caches.open(TTS_CACHE);
+    await cache.put(key, new Response(bytes, { headers: { "Content-Type": "audio/mpeg" } }));
+  } catch { /* ignore */ }
+}
+
+function playBuffer(ctx, buffer) {
+  try { if (_currentSource) _currentSource.stop(); } catch {}
+  const src = ctx.createBufferSource();
+  src.buffer = buffer;
+  src.connect(ctx.destination);
+  src.start(0);
+  _currentSource = src;
+}
+
+async function decodeAndPlay(ctx, bytes, key) {
+  // decodeAudioData detaches the ArrayBuffer, so decode a copy and keep the
+  // original bytes for caching.
+  const buffer = await ctx.decodeAudioData(bytes.slice(0));
+  _bufferCache.set(key, buffer);
+  playBuffer(ctx, buffer);
+}
+
+/**
+ * Speak `text` with the best available voice: OpenAI TTS if a key is set and
+ * we're online, otherwise the system voice. `code` is the book's language code.
+ * `onState(state)` receives "loading" | "playing" | "fallback" | "idle".
+ * MUST be called from within a user gesture (a click/tap).
+ */
+export async function speakWord(text, code, { onState } = {}) {
+  const t = String(text || "").trim();
+  if (!t) return;
+  const ctx = ensureCtx(); // resume synchronously inside the gesture
+
+  const key = cacheKey(t, code);
+
+  // 1) In-memory decoded buffer — instant, no cost.
+  if (ctx && _bufferCache.has(key)) { playBuffer(ctx, _bufferCache.get(key)); return; }
+
+  // 2) Persistent cache — no cost.
+  if (ctx) {
+    const cachedBytes = await getCachedBytes(key);
+    if (cachedBytes) {
+      try { await decodeAndPlay(ctx, cachedBytes, key); return; } catch { /* fall through */ }
+    }
+  }
+
+  // 3) Fetch from OpenAI TTS.
+  const settings = await getSettings().catch(() => ({}));
+  if (!ctx || !settings.openaiKey || !navigator.onLine) {
+    if (onState) onState("fallback");
+    speak(t, code);
+    if (onState) onState("idle");
+    return;
+  }
+
+  if (onState) onState("loading");
+  try {
+    const res = await fetch("https://api.openai.com/v1/audio/speech", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${settings.openaiKey}` },
+      body: JSON.stringify({ model: TTS_MODEL, voice: TTS_VOICE, input: t, response_format: "mp3" }),
+    });
+    if (!res.ok) {
+      const msg = await res.text().catch(() => "");
+      throw new Error(`HTTP ${res.status} ${msg.slice(0, 160)}`);
+    }
+    const bytes = await res.arrayBuffer();
+    await putCachedBytes(key, bytes);
+    if (onState) onState("playing");
+    await decodeAndPlay(ctx, bytes, key);
+  } catch (err) {
+    console.warn("TTS failed, using system voice:", err.message);
+    if (onState) onState("fallback");
+    speak(t, code); // graceful fallback
+  } finally {
+    if (onState) onState("idle");
+  }
 }
