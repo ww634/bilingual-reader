@@ -56,6 +56,20 @@ export function openPopover(chunkData, chapter) {
 
   // Populate pre-baked fields.
   $("popover-target").textContent = chunkData.target;
+
+  // Secondary line: the OTHER script — Hanzi under pinyin, or pinyin under
+  // Hanzi. Only for real word chunks (both scripts known); skipped for the
+  // uncovered-token fallback, whose hanzi is the whole sentence.
+  const secondaryEl = $("popover-secondary");
+  const other = chunkData.script === "hanzi" ? chunkData.pinyin : chunkData.hanzi;
+  if (chunkData.pinyin && chunkData.hanzi && other && other !== chunkData.target) {
+    secondaryEl.textContent = other;
+    secondaryEl.hidden = false;
+  } else {
+    secondaryEl.textContent = "";
+    secondaryEl.hidden = true;
+  }
+
   const englishEl = $("popover-english");
   if (chunkData.english) {
     englishEl.textContent = chunkData.english;

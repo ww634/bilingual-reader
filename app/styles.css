@@ -902,6 +902,15 @@ body[data-font="large"]  { --reader-font: 20px; }
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
+/* The "other script" line under the word (Hanzi under pinyin, or vice-versa). */
+.popover-secondary {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 3px;
+  line-height: 1.25;
+}
+.popover-secondary[hidden] { display: none; }
 .popover-english {
   font-size: 16px;
   color: var(--text-dim);

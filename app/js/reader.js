@@ -808,7 +808,8 @@ function handleChunkTap(event) {
         category: align.category,
         frequency_band: align.frequency_band,
         is_idiom: align.is_idiom,
-        hanzi: align.hanzi || null,      // for text-to-speech (speak the characters, not pinyin)
+        hanzi: align.hanzi || null,      // for TTS + the "other script" line
+        pinyin: align.target || null,    // the chunk's pinyin (for the "other script" line)
         pairIdx,
         chunkIdx,
         script: _state.script,
