@@ -63,8 +63,7 @@ function buildSystemPrompt(code) {
 // relaunching the app — restored when the same book is reopened.
 let transcript = [];
 let pendingContext = [];       // book snippets the user attached for the NEXT message
-let lastSelectionText = "";    // target-language text of the current selection (English stripped)
-let lastSelectionRaw = "";     // the literal selection (both languages) — used for Copy
+let lastSelectionRaw = "";     // the literal selection (both languages) — used for Copy + fallback
 let busy = false;
 let greeted = false;
 let currentLang = "";          // language code of the currently open book
@@ -274,35 +273,35 @@ async function send(text, { auto = false } = {}) {
 
 // ── Selection toolbar ──
 
-function readerSelectionText() {
+// Is there a text selection inside the reader right now? Returns the Selection
+// or null. Cheap — safe to call on every selectionchange. Checks the anchor/
+// focus nodes directly (contains() accepts text nodes) since a block-spanning
+// selection's commonAncestorContainer can resolve above #reader-pages.
+function currentReaderSelection() {
   const sel = window.getSelection();
   if (!sel || sel.isCollapsed || sel.rangeCount === 0) return null;
   const pages = $("reader-pages");
   if (!pages) return null;
-  // Selection must touch the reader content. Check the anchor/focus nodes
-  // directly (contains() accepts text nodes) — commonAncestorContainer can
-  // resolve above #reader-pages for a block-spanning selection and give a
-  // false negative.
   const within =
     (sel.anchorNode && pages.contains(sel.anchorNode)) ||
     (sel.focusNode && pages.contains(sel.focusNode));
-  if (!within) return null;
+  return within ? sel : null;
+}
 
-  const range = sel.getRangeAt(0);
-  const raw = sel.toString().replace(/\s+/g, " ").trim();
+const cleanText = (s) => String(s || "").replace(/\s+/g, " ").trim();
 
-  // Each block is `<p class="target">` (pinyin/hanzi) + `<p class="english">`.
-  // Clone the selected DOM and drop the English lines, so a drag that grabs
-  // both languages yields just the target-language text to ask about.
-  const holder = document.createElement("div");
-  holder.appendChild(range.cloneContents());
-  holder.querySelectorAll(".english").forEach((el) => el.remove());
-  const targetText = holder.textContent.replace(/\s+/g, " ").trim();
-
-  // Fall back to the raw selection if it was purely English (nothing to strip).
-  const text = targetText || raw;
-  if (!text) return null;
-  return { text, raw, rect: range.getBoundingClientRect() };
+// Target-language-only text of a selection (English gloss lines stripped).
+// Each block is `<p class="target">` (pinyin/hanzi) + `<p class="english">`, so
+// we clone the selected DOM and drop `.english`. Done LAZILY at action time —
+// never during the drag — so the DOM cloning can't interfere with the native
+// selection gesture on iOS.
+function selectionTargetText(sel) {
+  try {
+    const holder = document.createElement("div");
+    holder.appendChild(sel.getRangeAt(0).cloneContents());
+    holder.querySelectorAll(".english").forEach((el) => el.remove());
+    return cleanText(holder.textContent);
+  } catch { return ""; }
 }
 
 function positionToolbar(rect) {
@@ -328,11 +327,14 @@ function hideToolbar() {
 function onSelectionChange() {
   // Don't fight the panel's own text field selection.
   if (document.activeElement === $("assistant-text")) return;
-  const found = readerSelectionText();
-  if (!found) { hideToolbar(); return; }
-  lastSelectionText = found.text;
-  lastSelectionRaw = found.raw;
-  positionToolbar(found.rect);
+  let sel = null;
+  try { sel = currentReaderSelection(); } catch { sel = null; }
+  if (!sel) { hideToolbar(); return; }
+  const raw = cleanText(sel.toString());
+  if (!raw) { hideToolbar(); return; }
+  lastSelectionRaw = raw;
+  try { positionToolbar(sel.getRangeAt(0).getBoundingClientRect()); }
+  catch { hideToolbar(); }
 }
 
 // ── Wiring ──
@@ -393,21 +395,22 @@ export function initAssistant() {
     if (!btn) return;
     e.preventDefault();
     const act = btn.dataset.act;
-    const text = lastSelectionText;      // target-language only (English stripped)
-    hideToolbar();
     if (act === "copy") {
       // Copy is literal — copy exactly what was highlighted.
       if (lastSelectionRaw) navigator.clipboard?.writeText(lastSelectionRaw).catch(() => {});
       window.getSelection()?.removeAllRanges();
+      hideToolbar();
       return;
     }
+    // Compute the target-only text now (pointerdown's preventDefault keeps the
+    // selection alive), falling back to the raw selection if nothing's left.
+    const sel = currentReaderSelection();
+    const text = (sel && (selectionTargetText(sel) || cleanText(sel.toString()))) || lastSelectionRaw;
+    hideToolbar();
     if (!text) return;
-    if (act === "ask") {
-      addContext(text);
-      openPanel();
-    } else if (act === "explain") {
-      addContext(text);
-      openPanel();
+    addContext(text);
+    openPanel();
+    if (act === "explain") {
       // Give the panel a tick to open, then auto-ask for an explanation.
       setTimeout(() => send("Explain this: pronunciation (pinyin + tones), meaning, and any grammar notes.", { auto: true }), 300);
     }
