@@ -21,6 +21,23 @@ import { getSettings } from "./db.js";
 const TTS_MODEL = "gpt-4o-mini-tts";
 const TTS_VOICE = "nova";
 const TTS_CACHE = "tts-audio-v1";
+// Bump when TTS_INSTRUCTIONS change, so cached audio is regenerated rather than
+// replayed with the old delivery.
+const TTS_REV = "2";
+
+// Voice-steering instructions (supported by gpt-4o* TTS models). Keyed by book
+// language, with a learner-friendly default. Mandarin gets clear, standard
+// delivery at a slightly slower pace.
+const TTS_INSTRUCTIONS = {
+  zh: "Speak standard Putonghua. Pronounce every syllable clearly. Maintain natural Mandarin tone sandhi and neutral tones. Speak at 85% of normal conversational speed. Do not exaggerate tones.",
+};
+const TTS_INSTRUCTIONS_DEFAULT =
+  "Speak clearly and naturally at a slightly slower, learner-friendly pace. Pronounce every syllable distinctly without exaggerating.";
+
+function ttsInstructions(code) {
+  return TTS_INSTRUCTIONS[String(code || "").toLowerCase()] || TTS_INSTRUCTIONS_DEFAULT;
+}
+const modelSupportsInstructions = /^gpt-4o/i.test(TTS_MODEL);
 
 // ── Built-in SpeechSynthesis (fallback) ──
 
@@ -96,8 +113,9 @@ function ensureCtx() {
 }
 
 function cacheKey(text, code) {
-  // Same-origin relative URL used purely as a Cache API key.
-  return `tts-cache/${TTS_MODEL}/${TTS_VOICE}/${encodeURIComponent(code)}/${encodeURIComponent(text)}`;
+  // Same-origin relative URL used purely as a Cache API key. TTS_REV busts the
+  // cache when the delivery instructions change.
+  return `tts-cache/${TTS_REV}/${TTS_MODEL}/${TTS_VOICE}/${encodeURIComponent(code)}/${encodeURIComponent(text)}`;
 }
 
 async function getCachedBytes(key) {
@@ -167,10 +185,12 @@ export async function speakWord(text, code, { onState } = {}) {
 
   if (onState) onState("loading");
   try {
+    const payload = { model: TTS_MODEL, voice: TTS_VOICE, input: t, response_format: "mp3" };
+    if (modelSupportsInstructions) payload.instructions = ttsInstructions(code);
     const res = await fetch("https://api.openai.com/v1/audio/speech", {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${settings.openaiKey}` },
-      body: JSON.stringify({ model: TTS_MODEL, voice: TTS_VOICE, input: t, response_format: "mp3" }),
+      body: JSON.stringify(payload),
     });
     if (!res.ok) {
       const msg = await res.text().catch(() => "");
