@@ -808,6 +808,7 @@ function handleChunkTap(event) {
         category: align.category,
         frequency_band: align.frequency_band,
         is_idiom: align.is_idiom,
+        hanzi: align.hanzi || null,      // for text-to-speech (speak the characters, not pinyin)
         pairIdx,
         chunkIdx,
         script: _state.script,
@@ -827,6 +828,9 @@ function handleChunkTap(event) {
       category: null,
       frequency_band: null,
       is_idiom: false,
+      // No per-word hanzi for an uncovered token; fall back to the whole pair's
+      // characters so "Hear pronunciation" still speaks something sensible.
+      hanzi: _state.chapter?.pairs?.[pairIdx]?.hanzi || null,
       pairIdx,
       chunkIdx: null,
     },

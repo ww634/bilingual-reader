@@ -5,6 +5,7 @@
 
 import { getSettings } from "./db.js";
 import { askWithContext } from "./assistant.js";
+import { speak, canSpeak } from "./speech.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -262,6 +263,43 @@ function askAssistantFromPopover() {
   closePopover();
 }
 
+/**
+ * Speak the current word aloud with the browser's built-in TTS. Speaks the
+ * Hanzi (chunk word if available, else the whole sentence) in the book's
+ * language, so tones are correct — never the pinyin.
+ */
+function hearPronunciation() {
+  const chunk = _state.chunk;
+  if (!chunk) return;
+  const text = chunk.hanzi || _state.chapter?.pairs?.[chunk.pairIdx]?.hanzi || "";
+  const lang = _state.chapter?.language || "zh";
+  const btn = $("pop-act-hear");
+
+  if (!canSpeak()) {
+    const expEl = $("popover-explanation");
+    expEl.hidden = false;
+    expEl.classList.remove("loading");
+    expEl.textContent =
+      "This device's browser doesn't offer built-in speech. On iOS, add a Chinese voice under Settings → Accessibility → Spoken Content → Voices.";
+    return;
+  }
+  if (!text) {
+    const expEl = $("popover-explanation");
+    expEl.hidden = false;
+    expEl.classList.remove("loading");
+    expEl.textContent = "No Chinese characters available for this word to pronounce.";
+    return;
+  }
+
+  const spoke = speak(text, lang);
+  if (spoke) {
+    // Brief affordance so the tap feels acknowledged.
+    const original = btn.textContent;
+    btn.textContent = "▶ Playing…";
+    setTimeout(() => { btn.textContent = original; }, 900);
+  }
+}
+
 export function initPopover() {
   $("popover-close").addEventListener("click", closePopover);
   $("popover-backdrop").addEventListener("click", closePopover);
@@ -271,10 +309,7 @@ export function initPopover() {
     // Memory Vault feature is deferred.
     alert("Memory Vault is coming in a later version.");
   });
-  $("pop-act-hear").addEventListener("click", () => {
-    // Pronunciation feature is deferred.
-    alert("Pronunciation playback is coming in a later version.");
-  });
+  $("pop-act-hear").addEventListener("click", hearPronunciation);
   // Allow Escape to close.
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !$("popover").hidden) closePopover();
