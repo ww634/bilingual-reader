@@ -183,6 +183,14 @@
           </select>
         </section>
         <section class="sheet-section">
+          <div class="sheet-section-label">Chinese</div>
+          <div class="script-toggles">
+            <button class="script-toggle" data-script="pinyin">Pinyin</button>
+            <button class="script-toggle" data-script="hanzi">Characters</button>
+            <button class="script-toggle" data-script="both">Both</button>
+          </div>
+        </section>
+        <section class="sheet-section">
           <div class="sheet-section-label">Include words</div>
           <div class="bucket-toggles">
             <button class="bucket-toggle" data-bucket="new">New</button>
@@ -214,6 +222,7 @@
         </div>
         <div id="review-prompt-label" class="review-prompt-label"></div>
         <div id="review-prompt" class="review-prompt"></div>
+        <div id="review-prompt-sub" class="review-prompt-sub" hidden></div>
         <div id="review-answer-area" class="review-answer-area"></div>
         <div id="review-reveal" class="review-reveal" hidden></div>
         <button id="review-next" class="btn-primary btn-block" hidden>Next</button>

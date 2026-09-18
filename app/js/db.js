@@ -165,6 +165,7 @@ const DEFAULT_SETTINGS = {
   reviewDirection: "mix",            // "t2e" | "e2t" | "mix"
   reviewBuckets: ["new", "learning"], // which mastery groups to quiz
   reviewLength: "20",                // "10" | "20" | "30" | "all" | "endless"
+  reviewScript: "both",              // how Chinese shows in quizzes: "hanzi" | "pinyin" | "both"
   hideMastered: true,                // hide English for mastered words in the reader
   // Per-category visibility for English translations in the reader. Toggled
   // via the reader-options sheet. When a category is false, the English part

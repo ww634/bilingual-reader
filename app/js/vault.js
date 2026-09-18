@@ -191,6 +191,10 @@ async function openQuizSetup() {
   for (const btn of document.querySelectorAll("#quiz-setup .length-toggle")) {
     btn.classList.toggle("on", btn.dataset.len === length);
   }
+  const script = s.reviewScript || "both";
+  for (const btn of document.querySelectorAll("#quiz-setup .script-toggle")) {
+    btn.classList.toggle("on", btn.dataset.script === script);
+  }
   $("quiz-setup-note").textContent = "";
   $("quiz-setup-backdrop").hidden = false;
   const sheet = $("quiz-setup");
@@ -239,7 +243,8 @@ async function beginQuiz() {
 
   quiz = {
     mode, length, queue, total, answered: 0, correct: 0, pool, lastId: null,
-    answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix", current: null,
+    answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix",
+    script: s.reviewScript || "both", current: null,
   };
   closeQuizSetup();
   $("review-card").hidden = false;
@@ -248,7 +253,14 @@ async function beginQuiz() {
   renderCard();
 }
 
-const answerText = (item, dir) => (dir === "t2e" ? item.english : item.hanzi);
+// The Chinese side of a card rendered in the chosen script.
+function chineseStr(item, script) {
+  if (script === "pinyin") return item.pinyin || item.hanzi;
+  if (script === "both") return item.pinyin ? `${item.hanzi} · ${item.pinyin}` : item.hanzi;
+  return item.hanzi;
+}
+// The "answer" text for a card: English (t2e) or Chinese in the chosen script (e2t).
+const answerText = (item, dir, script) => (dir === "t2e" ? item.english : chineseStr(item, script));
 
 function renderCard() {
   let item;
@@ -260,29 +272,41 @@ function renderCard() {
   const dir = quiz.direction === "mix" ? (Math.random() < 0.5 ? "t2e" : "e2t") : quiz.direction;
   let mode = quiz.answerMode === "mix" ? (Math.random() < 0.5 ? "choice" : "type") : quiz.answerMode;
   if (mode === "choice" && quiz.pool.length < 4) mode = "type";   // need distractors
-  quiz.current = { item, dir, mode };
+  const script = quiz.script;
+  quiz.current = { item, dir, mode, script };
 
   $("review-progress-text").textContent = quiz.mode === "endless" ? `${quiz.answered} answered` : `${quiz.answered + 1} / ${quiz.total}`;
   $("review-finish").hidden = quiz.mode !== "endless";
   $("review-prompt-label").textContent = dir === "t2e" ? "What does this mean?" : "How do you say this?";
-  $("review-prompt").textContent = dir === "t2e" ? item.hanzi : item.english;
-  $("review-prompt").className = "review-prompt" + (dir === "t2e" ? " is-hanzi" : "");
+
+  // Prompt: for Chinese→English, show the Chinese in the chosen script (with the
+  // pinyin as a sub-line in "both"). For English→Chinese, show the English.
+  const promptEl = $("review-prompt");
+  const subEl = $("review-prompt-sub");
+  subEl.hidden = true; subEl.textContent = "";
+  if (dir === "t2e") {
+    if (script === "pinyin") { promptEl.textContent = item.pinyin || item.hanzi; promptEl.className = "review-prompt"; }
+    else { promptEl.textContent = item.hanzi; promptEl.className = "review-prompt is-hanzi";
+           if (script === "both" && item.pinyin) { subEl.textContent = item.pinyin; subEl.hidden = false; } }
+  } else {
+    promptEl.textContent = item.english; promptEl.className = "review-prompt";
+  }
 
   const area = $("review-answer-area");
   area.innerHTML = ""; area.hidden = false;
   $("review-reveal").hidden = true; $("review-reveal").innerHTML = "";
   $("review-next").hidden = true;
 
-  if (mode === "choice") renderChoices(item, dir, area);
-  else renderType(item, dir, area);
+  if (mode === "choice") renderChoices(item, dir, area, script);
+  else renderType(item, dir, area, script);
 }
 
-function renderChoices(item, dir, area) {
-  const correct = answerText(item, dir);
+function renderChoices(item, dir, area, script) {
+  const correct = answerText(item, dir, script);
   const others = shuffle(quiz.pool.filter((w) => w.id !== item.id));
   const distractors = [];
   for (const w of others) {
-    const t = answerText(w, dir);
+    const t = answerText(w, dir, script);
     if (t && t !== correct && !distractors.includes(t)) distractors.push(t);
     if (distractors.length === 3) break;
   }
@@ -311,7 +335,7 @@ function gradeType(input, item, dir) {
   return given === han || g === py || (py && (py.includes(g) || g.includes(py)));
 }
 
-function renderType(item, dir, area) {
+function renderType(item, dir, area, script) {
   const form = document.createElement("form");
   form.className = "review-type";
   const input = document.createElement("input");
@@ -321,7 +345,7 @@ function renderType(item, dir, area) {
   const submit = document.createElement("button");
   submit.type = "submit"; submit.className = "btn-primary"; submit.textContent = "Check";
   form.appendChild(input); form.appendChild(submit);
-  form.addEventListener("submit", (e) => { e.preventDefault(); onAnswer(gradeType(input.value, item, dir), answerText(item, dir)); });
+  form.addEventListener("submit", (e) => { e.preventDefault(); onAnswer(gradeType(input.value, item, dir), answerText(item, dir, script)); });
   area.appendChild(form);
   setTimeout(() => input.focus(), 120);
 }
@@ -407,6 +431,13 @@ export async function initVault() {
       document.querySelectorAll("#quiz-setup .length-toggle").forEach((b) => b.classList.remove("on"));
       btn.classList.add("on");
       await putSettings({ ...(await getSettings()), reviewLength: btn.dataset.len });
+    });
+  }
+  for (const btn of document.querySelectorAll("#quiz-setup .script-toggle")) {
+    btn.addEventListener("click", async () => {
+      document.querySelectorAll("#quiz-setup .script-toggle").forEach((b) => b.classList.remove("on"));
+      btn.classList.add("on");
+      await putSettings({ ...(await getSettings()), reviewScript: btn.dataset.script });
     });
   }
 }
