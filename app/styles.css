@@ -1556,3 +1556,6 @@ body.hide-mastered .reader-block .english .chunk.mastered { visibility: hidden; 
 .reveal-context span { display: block; color: var(--text-muted); margin-top: 3px; }
 #reveal-audio { margin-top: 14px; display: inline-block; }
 #review-next { margin-top: 24px; }
+
+/* Popover save button — saved state */
+.pop-act.saved { color: #5eead4; border-color: rgba(94, 234, 212, 0.4); }

@@ -6,7 +6,7 @@
 import { getSettings } from "./db.js";
 import { askWithContext } from "./assistant.js";
 import { speakWord } from "./speech.js";
-import { saveWord } from "./vault.js";
+import { saveWord, removeWord, isWordSaved } from "./vault.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -123,6 +123,9 @@ export function openPopover(chunkData, chapter) {
   const expEl = $("popover-explanation");
   expEl.hidden = true;
   expEl.textContent = "";
+
+  // Reflect whether this word is already in the vault.
+  refreshSaveButton(chunkData);
 
   // Show.
   $("popover-backdrop").hidden = false;
@@ -315,18 +318,51 @@ async function hearPronunciation() {
   }
 }
 
-/** Save the current word to the Memory Vault (for spaced-repetition review). */
-async function saveToVault() {
+// Can this word be saved to the vault? (Only aligned words carry a clean
+// per-word hanzi; uncovered taps fall back to the whole sentence.)
+function isSaveable(chunk) {
+  return !!(chunk && chunk.hanzi && chunk.chunkIdx != null);
+}
+
+function setSaveButton(state) {
+  const btn = $("pop-act-save");
+  if (state === "saved") { btn.textContent = "✓ Saved"; btn.classList.add("saved"); }
+  else if (state === "saving") { btn.textContent = "Saving…"; btn.classList.remove("saved"); }
+  else { btn.textContent = "Save to Memory Vault"; btn.classList.remove("saved"); }
+}
+
+// Reflect the saved/not-saved state whenever the popover opens.
+async function refreshSaveButton(chunk) {
+  const btn = $("pop-act-save");
+  if (!isSaveable(chunk)) { setSaveButton("default"); btn.disabled = false; return; }
+  btn.disabled = false;
+  setSaveButton((await isWordSaved(chunk.hanzi)) ? "saved" : "default");
+}
+
+/** Toggle the current word in the Memory Vault: save if new, or remove (with a
+ *  confirm) if already saved. */
+async function toggleSaveVault() {
   const chunk = _state.chunk;
   if (!chunk) return;
   const btn = $("pop-act-save");
-  const result = await saveWord(chunk, _state.chapter);
-  const original = "Save to Memory Vault";
-  if (result.ok && result.already) btn.textContent = "✓ Already saved";
-  else if (result.ok) btn.textContent = "✓ Saved";
-  else btn.textContent = "Tap a highlighted word to save";
-  btn.disabled = true;
-  setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 1400);
+  if (!isSaveable(chunk)) {
+    setSaveButton("default");
+    btn.textContent = "Tap a highlighted word to save";
+    setTimeout(() => setSaveButton("default"), 1400);
+    return;
+  }
+  const already = await isWordSaved(chunk.hanzi);
+  if (already) {
+    if (!confirm(`Remove “${chunk.hanzi}” from your Memory Vault?`)) return;
+    await removeWord(chunk.hanzi);
+    setSaveButton("default");
+  } else {
+    btn.disabled = true;
+    setSaveButton("saving");
+    await saveWord(chunk, _state.chapter);
+    btn.disabled = false;
+    setSaveButton("saved");
+  }
 }
 
 export function initPopover() {
@@ -334,7 +370,7 @@ export function initPopover() {
   $("popover-backdrop").addEventListener("click", closePopover);
   $("pop-act-explain").addEventListener("click", fetchExplanation);
   $("pop-act-ask").addEventListener("click", askAssistantFromPopover);
-  $("pop-act-save").addEventListener("click", saveToVault);
+  $("pop-act-save").addEventListener("click", toggleSaveVault);
   $("pop-act-hear").addEventListener("click", hearPronunciation);
   // Allow Escape to close.
   document.addEventListener("keydown", (e) => {

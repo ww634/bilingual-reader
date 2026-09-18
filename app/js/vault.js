@@ -19,6 +19,9 @@ const MAX_BOX = BOX_INTERVAL.length - 1;
 const MASTERED_BOX = 4;      // ≈16-day interval — several spaced correct answers
 const SESSION_MAX = 20;      // cards per review session
 
+// Cheap model for fetching a word's true dictionary meaning on save.
+const MEANING_MODEL = "gpt-5.4-nano";
+
 function newSrs() { return { box: 0, due: Date.now(), reps: 0, lapses: 0, last: null }; }
 function schedule(srs, correct) {
   const s = { ...(srs || newSrs()) };
@@ -63,10 +66,13 @@ export async function saveWord(chunk, chapter) {
   const existing = await getVaultItem(id);
   if (existing) return { ok: true, already: true };
   const pair = chapter?.pairs?.[chunk.pairIdx];
+  const storyGloss = (chunk.english || "").trim();
   await putVaultItem({
     id, hanzi,
     pinyin: chunk.pinyin || chunk.target || "",
-    english: (chunk.english || "").trim(),
+    english: storyGloss,        // shown immediately; refined to the dictionary meaning below
+    storyGloss,                 // the in-context translation, kept for reference
+    meaningRefined: false,
     category: chunk.category || null,
     frequency_band: chunk.frequency_band || null,
     lang: chapter?.language || "zh",
@@ -75,12 +81,72 @@ export async function saveWord(chunk, chapter) {
     srs: newSrs(),
   });
   _masteredDirty = true;
+  // Fetch the true dictionary meaning in the background (doesn't block the save).
+  refineMeaning(id);
   return { ok: true };
 }
 
 export async function isWordSaved(hanzi) {
   if (!hanzi) return false;
   return !!(await getVaultItem(hanzi.trim()));
+}
+
+export async function removeWord(hanzi) {
+  if (!hanzi) return;
+  await deleteVaultItem(hanzi.trim());
+  _masteredDirty = true;
+}
+
+// Fetch the word's GENERAL dictionary meaning (not the story's in-context gloss)
+// so the vault teaches the real word — e.g. 吃完 = "to finish eating", not just
+// "finished". Returns "" if unavailable.
+async function fetchMeaning(item, key) {
+  const isNew = /^gpt-5|^o1|^o3/i.test(MEANING_MODEL);
+  const sys =
+    "You are a concise Chinese-English dictionary. Given a Chinese word and the " +
+    "sentence it appeared in, return the word's GENERAL dictionary meaning in " +
+    "English — NOT merely how it was translated in that one sentence. Keep it " +
+    "short: a few words; separate distinct senses with semicolons. For verb-" +
+    'complement compounds or resultatives give the full meaning (e.g. 吃完 → "to ' +
+    'finish eating"; 看完 → "to finish reading/watching"). Output ONLY the meaning ' +
+    "text — no pinyin, no Chinese characters, no examples, no quotes.";
+  const usr =
+    `Word: ${item.hanzi}\nPinyin: ${item.pinyin}\n` +
+    `In-sentence translation used: ${item.storyGloss || item.english}\n` +
+    `Sentence: ${item.context?.hanzi || ""}`;
+  const body = {
+    model: MEANING_MODEL,
+    messages: [{ role: "system", content: sys }, { role: "user", content: usr }],
+    [isNew ? "max_completion_tokens" : "max_tokens"]: 200,
+  };
+  if (!isNew) body.temperature = 0.2;
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json();
+  return (data.choices?.[0]?.message?.content || "").trim().replace(/^["']|["']$/g, "").trim();
+}
+
+// Refine a saved item's meaning in the background (after the fast save), then
+// persist it. No-op offline / without a key — the story gloss remains.
+async function refineMeaning(id) {
+  try {
+    const item = await getVaultItem(id);
+    if (!item || item.meaningRefined) return;
+    const settings = await getSettings();
+    if (!settings.openaiKey || !navigator.onLine) return;
+    const meaning = await fetchMeaning(item, settings.openaiKey);
+    if (meaning) {
+      const fresh = await getVaultItem(id);   // re-read in case it changed
+      if (!fresh) return;
+      fresh.english = meaning;
+      fresh.meaningRefined = true;
+      await putVaultItem(fresh);
+    }
+  } catch { /* keep the story gloss */ }
 }
 
 // ── Vault screen ──

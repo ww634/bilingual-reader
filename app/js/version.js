@@ -5,4 +5,4 @@
 //
 // Keep this in sync with SHELL_CACHE in sw.js — bump both together on each
 // deploy.
-export const APP_VERSION = "36";
+export const APP_VERSION = "37";
