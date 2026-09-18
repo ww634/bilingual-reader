@@ -144,27 +144,11 @@
     <!-- MEMORY VAULT -->
     <main id="view-vault" class="view" hidden>
       <div class="vault-summary">
-        <div class="vault-stat"><span id="vault-due">0</span><label>Due</label></div>
+        <div class="vault-stat"><span id="vault-new">0</span><label>New</label></div>
         <div class="vault-stat"><span id="vault-learning">0</span><label>Learning</label></div>
         <div class="vault-stat"><span id="vault-mastered">0</span><label>Mastered</label></div>
       </div>
-      <div class="vault-controls">
-        <label class="vault-select">Answer
-          <select id="review-answer-mode">
-            <option value="choice">Multiple choice</option>
-            <option value="type">Type answer</option>
-            <option value="mix">Mix</option>
-          </select>
-        </label>
-        <label class="vault-select">Direction
-          <select id="review-direction">
-            <option value="t2e">Chinese → English</option>
-            <option value="e2t">English → Chinese</option>
-            <option value="mix">Mix</option>
-          </select>
-        </label>
-      </div>
-      <button id="vault-start" class="btn-primary btn-block">Start review</button>
+      <button id="vault-start" class="btn-primary btn-block">Start quiz</button>
       <div class="book-detail-section-label">Saved words</div>
       <div id="vault-empty" class="empty-state" hidden>
         <p class="empty-title">No saved words yet</p>
@@ -173,10 +157,61 @@
       <ul id="vault-list" class="vault-list"></ul>
     </main>
 
+    <!-- QUIZ SETUP SHEET (slide-up over the vault) -->
+    <div id="quiz-setup-backdrop" class="sheet-backdrop" hidden></div>
+    <aside id="quiz-setup" class="sheet" role="dialog" aria-modal="true" aria-labelledby="quiz-setup-title" hidden>
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="sheet-head">
+        <h3 id="quiz-setup-title">Quiz setup</h3>
+        <button id="quiz-setup-close" class="sheet-close" aria-label="Close">×</button>
+      </header>
+      <div class="sheet-body">
+        <section class="sheet-section settings-group">
+          <label for="review-answer-mode">Answer</label>
+          <select id="review-answer-mode">
+            <option value="choice">Multiple choice</option>
+            <option value="type">Type answer</option>
+            <option value="mix">Mix</option>
+          </select>
+        </section>
+        <section class="sheet-section settings-group">
+          <label for="review-direction">Direction</label>
+          <select id="review-direction">
+            <option value="t2e">Chinese → English</option>
+            <option value="e2t">English → Chinese</option>
+            <option value="mix">Mix</option>
+          </select>
+        </section>
+        <section class="sheet-section">
+          <div class="sheet-section-label">Include words</div>
+          <div class="bucket-toggles">
+            <button class="bucket-toggle" data-bucket="new">New</button>
+            <button class="bucket-toggle" data-bucket="learning">Learning</button>
+            <button class="bucket-toggle" data-bucket="mastered">Mastered</button>
+          </div>
+        </section>
+        <section class="sheet-section">
+          <div class="sheet-section-label">Length</div>
+          <div class="length-toggles">
+            <button class="length-toggle" data-len="10">10</button>
+            <button class="length-toggle" data-len="20">20</button>
+            <button class="length-toggle" data-len="30">30</button>
+            <button class="length-toggle" data-len="all">All once</button>
+            <button class="length-toggle" data-len="endless">Endless</button>
+          </div>
+        </section>
+        <button id="quiz-begin" class="btn-primary btn-block">Begin quiz</button>
+        <p id="quiz-setup-note" class="sheet-hint"></p>
+      </div>
+    </aside>
+
     <!-- REVIEW SESSION -->
     <main id="view-review" class="view" hidden>
       <div id="review-card" class="review-card">
-        <div class="review-progress"><span id="review-progress-text">0 / 0</span></div>
+        <div class="review-progress">
+          <span id="review-progress-text">0 / 0</span>
+          <button id="review-finish" class="review-finish" hidden>Finish</button>
+        </div>
         <div id="review-prompt-label" class="review-prompt-label"></div>
         <div id="review-prompt" class="review-prompt"></div>
         <div id="review-answer-area" class="review-answer-area"></div>

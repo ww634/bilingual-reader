@@ -1559,3 +1559,39 @@ body.hide-mastered .reader-block .english .chunk.mastered { visibility: hidden; 
 
 /* Popover save button — saved state */
 .pop-act.saved { color: #5eead4; border-color: rgba(94, 234, 212, 0.4); }
+
+/* Quiz setup — bucket + length toggles */
+.bucket-toggles { display: flex; gap: 8px; }
+.bucket-toggle {
+  flex: 1;
+  font: inherit; font-size: 14px; font-weight: 600;
+  padding: 11px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.bucket-toggle.on { background: var(--accent-dim); border-color: var(--accent); color: var(--text); }
+
+.length-toggles { display: flex; flex-wrap: wrap; gap: 8px; }
+.length-toggle {
+  flex: 1 0 auto;
+  min-width: 56px;
+  font: inherit; font-size: 14px; font-weight: 600;
+  padding: 10px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.length-toggle.on { background: var(--accent-dim); border-color: var(--accent); color: var(--text); }
+
+/* Review: progress row + Finish (endless) */
+.review-progress { display: flex; align-items: center; justify-content: center; gap: 10px; position: relative; }
+.review-finish {
+  position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  font: inherit; font-size: 13px; font-weight: 600;
+  color: var(--accent); background: none; border: none; cursor: pointer; padding: 4px 6px;
+}

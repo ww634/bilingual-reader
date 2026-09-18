@@ -1,48 +1,60 @@
-// Memory Vault: save words from the reader and review them with spaced
-// repetition. Correct/wrong is auto-graded (multiple-choice or type-in), so we
-// use a simple Leitner scheme — a right answer promotes the word to a longer
-// interval, a wrong answer sends it back. Once a word reaches the "mastered"
-// box, the reader stops showing its English (see reader.js).
+// Memory Vault: save words from the reader and quiz them.
 //
-// Everything is local (IndexedDB). Review audio reuses the cached TTS.
+// Mastery is a rolling accuracy: each word keeps its last WINDOW (20) attempts,
+// and the score is (correct in that window) / WINDOW — with unseen slots
+// counting as 0, so a new word is 0/20 and one correct answer is 1/20 = 5%.
+// Buckets by score: New 0-25%, Learning 26-90%, Mastered 91-100%. Mastered words
+// have their English faded in the reader (see reader.js).
+//
+// Quizzing: the user picks answer mode, direction, which buckets to include, and
+// a length (10/20/30, all-once, or endless). Words are chosen by a weighted
+// draw that favours low-mastery and recently-wrong words, so it adapts. All
+// local; review audio + meaning lookups reuse the existing helpers.
 
 import { getSettings, putSettings, putVaultItem, getVaultItem, getAllVaultItems, deleteVaultItem } from "./db.js";
 import { speakWord } from "./speech.js";
 
 const $ = (id) => document.getElementById(id);
 const escape = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+function shuffle(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
 
-// ── Spaced-repetition (Leitner) ──
-const DAY = 86400000;
-const BOX_INTERVAL = [0, 1 * DAY, 3 * DAY, 7 * DAY, 16 * DAY, 35 * DAY, 90 * DAY];
-const MAX_BOX = BOX_INTERVAL.length - 1;
-const MASTERED_BOX = 4;      // ≈16-day interval — several spaced correct answers
-const SESSION_MAX = 20;      // cards per review session
-
-// Cheap model for fetching a word's true dictionary meaning on save.
+// ── Mastery model ──
+const WINDOW = 20;                 // rolling window size / fixed denominator
 const MEANING_MODEL = "gpt-5.4-nano";
 
-function newSrs() { return { box: 0, due: Date.now(), reps: 0, lapses: 0, last: null }; }
-function schedule(srs, correct) {
-  const s = { ...(srs || newSrs()) };
-  s.reps += 1;
-  s.last = Date.now();
-  if (correct) s.box = Math.min(MAX_BOX, s.box + 1);
-  else { s.box = 0; s.lapses += 1; }
-  s.due = Date.now() + BOX_INTERVAL[s.box];
-  return s;
-}
-const isMastered = (item) => (item?.srs?.box || 0) >= MASTERED_BOX;
-
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+function attemptsOf(item) {
+  if (Array.isArray(item?.attempts)) return item.attempts;
+  // Migrate words saved under the old Leitner-box model: approximate their
+  // mastery as a number of correct answers out of the 20-slot window, so prior
+  // progress (and the reader's auto-hide) carries over. Persisted on next answer.
+  const box = item?.srs?.box;
+  if (Number.isFinite(box)) {
+    const CORRECT_BY_BOX = [0, 3, 7, 12, 16, 19, 20];
+    return Array(CORRECT_BY_BOX[Math.min(Math.max(box, 0), 6)] || 0).fill(true);
   }
-  return arr;
+  return [];
+}
+function masteryPct(item) {
+  const a = attemptsOf(item);
+  const correct = a.reduce((n, x) => n + (x ? 1 : 0), 0);
+  return Math.round((correct / WINDOW) * 100);
+}
+function bucketOf(item) {
+  const p = masteryPct(item);
+  if (p <= 25) return "new";
+  if (p <= 90) return "learning";
+  return "mastered";
+}
+const isMastered = (item) => bucketOf(item) === "mastered";
+function recordAttempt(item, correct) {
+  const a = attemptsOf(item).slice();
+  a.push(!!correct);
+  while (a.length > WINDOW) a.shift();
+  item.attempts = a;
+  return item;
 }
 
-// ── Mastered-word set (for the reader's auto-hide) ──
+// ── Mastered set for the reader's auto-hide ──
 let _masteredSet = new Set();
 let _masteredDirty = true;
 async function refreshMastered() {
@@ -55,40 +67,30 @@ async function refreshMastered() {
 export function getMasteredHanziSync() { return _masteredSet; }
 export async function ensureMastered() { if (_masteredDirty) await refreshMastered(); return _masteredSet; }
 
-// ── Save a word from the tap-to-learn popover ──
-// Returns { ok, already?, reason? }.
+// ── Save / remove ──
 export async function saveWord(chunk, chapter) {
   const hanzi = (chunk?.hanzi || "").trim();
-  // Only aligned words carry a clean per-word hanzi (uncovered taps fall back to
-  // the whole sentence, which isn't a flashcard).
   if (!hanzi || chunk.chunkIdx == null) return { ok: false, reason: "not-a-word" };
   const id = hanzi;
-  const existing = await getVaultItem(id);
-  if (existing) return { ok: true, already: true };
+  if (await getVaultItem(id)) return { ok: true, already: true };
   const pair = chapter?.pairs?.[chunk.pairIdx];
   const storyGloss = (chunk.english || "").trim();
   await putVaultItem({
     id, hanzi,
     pinyin: chunk.pinyin || chunk.target || "",
-    english: storyGloss,        // shown immediately; refined to the dictionary meaning below
-    storyGloss,                 // the in-context translation, kept for reference
+    english: storyGloss,
+    storyGloss,
     meaningRefined: false,
     category: chunk.category || null,
     frequency_band: chunk.frequency_band || null,
     lang: chapter?.language || "zh",
     context: pair ? { hanzi: pair.hanzi || "", target: pair.target || "", english: pair.english || "" } : null,
     createdAt: Date.now(),
-    srs: newSrs(),
+    attempts: [],
   });
   _masteredDirty = true;
-  // Fetch the true dictionary meaning in the background (doesn't block the save).
-  refineMeaning(id);
+  refineMeaning(id);   // background — fetch the true dictionary meaning
   return { ok: true };
-}
-
-export async function isWordSaved(hanzi) {
-  if (!hanzi) return false;
-  return !!(await getVaultItem(hanzi.trim()));
 }
 
 export async function removeWord(hanzi) {
@@ -97,41 +99,30 @@ export async function removeWord(hanzi) {
   _masteredDirty = true;
 }
 
-// Fetch the word's GENERAL dictionary meaning (not the story's in-context gloss)
-// so the vault teaches the real word — e.g. 吃完 = "to finish eating", not just
-// "finished". Returns "" if unavailable.
+export async function isWordSaved(hanzi) {
+  if (!hanzi) return false;
+  return !!(await getVaultItem(hanzi.trim()));
+}
+
+// ── Dictionary meaning (general, multi-sense) via the API ──
 async function fetchMeaning(item, key) {
   const isNew = /^gpt-5|^o1|^o3/i.test(MEANING_MODEL);
   const sys =
     "You are a concise Chinese-English dictionary. Given a Chinese word and the " +
     "sentence it appeared in, return the word's GENERAL dictionary meaning in " +
-    "English — NOT merely how it was translated in that one sentence. Keep it " +
-    "short: a few words; separate distinct senses with semicolons. For verb-" +
-    'complement compounds or resultatives give the full meaning (e.g. 吃完 → "to ' +
-    'finish eating"; 看完 → "to finish reading/watching"). Output ONLY the meaning ' +
-    "text — no pinyin, no Chinese characters, no examples, no quotes.";
-  const usr =
-    `Word: ${item.hanzi}\nPinyin: ${item.pinyin}\n` +
-    `In-sentence translation used: ${item.storyGloss || item.english}\n` +
-    `Sentence: ${item.context?.hanzi || ""}`;
-  const body = {
-    model: MEANING_MODEL,
-    messages: [{ role: "system", content: sys }, { role: "user", content: usr }],
-    [isNew ? "max_completion_tokens" : "max_tokens"]: 200,
-  };
+    "English — NOT merely how it was translated in that one sentence. Include the " +
+    "common distinct senses, separated by semicolons (e.g. 有 → \"to have; there " +
+    'is/are; to exist"). Keep each sense short. For verb-complement compounds or ' +
+    'resultatives give the full meaning (e.g. 吃完 → "to finish eating"). Output ' +
+    "ONLY the meaning text — no pinyin, no Chinese characters, no examples, no quotes.";
+  const usr = `Word: ${item.hanzi}\nPinyin: ${item.pinyin}\nIn-sentence translation used: ${item.storyGloss || item.english}\nSentence: ${item.context?.hanzi || ""}`;
+  const body = { model: MEANING_MODEL, messages: [{ role: "system", content: sys }, { role: "user", content: usr }], [isNew ? "max_completion_tokens" : "max_tokens"]: 200 };
   if (!isNew) body.temperature = 0.2;
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
-    body: JSON.stringify(body),
-  });
+  const res = await fetch("https://api.openai.com/v1/chat/completions", { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` }, body: JSON.stringify(body) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data = await res.json();
   return (data.choices?.[0]?.message?.content || "").trim().replace(/^["']|["']$/g, "").trim();
 }
-
-// Refine a saved item's meaning in the background (after the fast save), then
-// persist it. No-op offline / without a key — the story gloss remains.
 async function refineMeaning(id) {
   try {
     const item = await getVaultItem(id);
@@ -139,31 +130,26 @@ async function refineMeaning(id) {
     const settings = await getSettings();
     if (!settings.openaiKey || !navigator.onLine) return;
     const meaning = await fetchMeaning(item, settings.openaiKey);
-    if (meaning) {
-      const fresh = await getVaultItem(id);   // re-read in case it changed
-      if (!fresh) return;
-      fresh.english = meaning;
-      fresh.meaningRefined = true;
-      await putVaultItem(fresh);
-    }
+    if (!meaning) return;
+    const fresh = await getVaultItem(id);
+    if (!fresh) return;
+    fresh.english = meaning;
+    fresh.meaningRefined = true;
+    await putVaultItem(fresh);
   } catch { /* keep the story gloss */ }
 }
 
 // ── Vault screen ──
+const BUCKET_LABEL = { new: "New", learning: "Learning", mastered: "Mastered" };
+
 export async function openVault() {
   const items = await getAllVaultItems();
-  const now = Date.now();
-  const mastered = items.filter(isMastered).length;
-  const due = items.filter((i) => (i.srs?.due ?? 0) <= now).length;
-  $("vault-due").textContent = due;
-  $("vault-learning").textContent = items.length - mastered;
-  $("vault-mastered").textContent = mastered;
+  const counts = { new: 0, learning: 0, mastered: 0 };
+  for (const it of items) counts[bucketOf(it)]++;
+  $("vault-new").textContent = counts.new;
+  $("vault-learning").textContent = counts.learning;
+  $("vault-mastered").textContent = counts.mastered;
   $("vault-start").disabled = items.length === 0;
-  $("vault-start").textContent = due > 0 ? `Review ${Math.min(due, SESSION_MAX)} due` : (items.length ? "Review ahead" : "Nothing saved yet");
-
-  const s = await getSettings();
-  $("review-answer-mode").value = s.reviewAnswerMode || "mix";
-  $("review-direction").value = s.reviewDirection || "mix";
 
   const list = $("vault-list");
   const empty = $("vault-empty");
@@ -172,42 +158,90 @@ export async function openVault() {
   empty.hidden = true;
   items.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
   for (const it of items) {
+    const b = bucketOf(it);
     const li = document.createElement("li");
     li.className = "vault-row";
-    const status = isMastered(it) ? "mastered" : (it.srs?.reps ? "learning" : "new");
     li.innerHTML = `
       <div class="vault-word">
         <div class="vault-hanzi">${escape(it.hanzi)}</div>
         <div class="vault-pinyin">${escape(it.pinyin)}</div>
         <div class="vault-english">${escape(it.english)}</div>
       </div>
-      <span class="vault-status vault-status-${status}">${status}</span>
+      <span class="vault-status vault-status-${b}">${BUCKET_LABEL[b]} · ${masteryPct(it)}%</span>
       <button class="vault-del" aria-label="Remove">×</button>`;
     li.querySelector(".vault-del").addEventListener("click", async () => {
-      await deleteVaultItem(it.id);
-      _masteredDirty = true;
+      if (!confirm(`Remove “${it.hanzi}” from your Memory Vault?`)) return;
+      await removeWord(it.id);
       openVault();
     });
     list.appendChild(li);
   }
 }
 
-// ── Review engine ──
-let review = null;
-
-async function startReview() {
-  const all = await getAllVaultItems();
-  if (!all.length) return;
-  const now = Date.now();
-  let due = all.filter((i) => (i.srs?.due ?? 0) <= now);
-  if (!due.length) due = all.slice();          // nothing due → let them review ahead
-  shuffle(due);
-  due = due.slice(0, SESSION_MAX);
+// ── Quiz setup sheet ──
+async function openQuizSetup() {
   const s = await getSettings();
-  review = {
-    queue: due, idx: 0, correct: 0, total: due.length, allWords: all,
+  $("review-answer-mode").value = s.reviewAnswerMode || "mix";
+  $("review-direction").value = s.reviewDirection || "mix";
+  const buckets = s.reviewBuckets || ["new", "learning"];
+  for (const btn of document.querySelectorAll("#quiz-setup .bucket-toggle")) {
+    btn.classList.toggle("on", buckets.includes(btn.dataset.bucket));
+  }
+  const length = s.reviewLength || "20";
+  for (const btn of document.querySelectorAll("#quiz-setup .length-toggle")) {
+    btn.classList.toggle("on", btn.dataset.len === length);
+  }
+  $("quiz-setup-note").textContent = "";
+  $("quiz-setup-backdrop").hidden = false;
+  const sheet = $("quiz-setup");
+  sheet.hidden = false;
+  void sheet.offsetHeight;
+  sheet.classList.add("open");
+}
+function closeQuizSetup() {
+  const sheet = $("quiz-setup");
+  sheet.classList.remove("open");
+  setTimeout(() => { sheet.hidden = true; $("quiz-setup-backdrop").hidden = true; }, 240);
+}
+
+// ── Quiz engine ──
+let quiz = null;
+
+function weightFor(item) {
+  let w = 1 + (100 - masteryPct(item)) / 20;   // lower mastery → heavier
+  const a = attemptsOf(item);
+  if (a.length && a[a.length - 1] === false) w += 3;               // just got it wrong
+  if (a.length >= 2 && a[a.length - 2] === false) w += 1;
+  return w;
+}
+function pickWeighted(pool, excludeId) {
+  let cands = pool;
+  if (pool.length > 1 && excludeId) cands = pool.filter((w) => w.id !== excludeId);
+  const weights = cands.map(weightFor);
+  let r = Math.random() * weights.reduce((a, b) => a + b, 0);
+  for (let i = 0; i < cands.length; i++) { r -= weights[i]; if (r <= 0) return cands[i]; }
+  return cands[cands.length - 1];
+}
+
+async function beginQuiz() {
+  const s = await getSettings();
+  const buckets = s.reviewBuckets || ["new", "learning"];
+  if (!buckets.length) { $("quiz-setup-note").textContent = "Pick at least one group to include."; return; }
+  const all = await getAllVaultItems();
+  const pool = all.filter((it) => buckets.includes(bucketOf(it)));
+  if (!pool.length) { $("quiz-setup-note").textContent = "No saved words in the selected groups yet."; return; }
+
+  const length = s.reviewLength || "20";
+  const mode = length === "endless" ? "endless" : "fixed";
+  let queue = null, total = 0;
+  if (length === "all") { queue = shuffle(pool.slice()); total = queue.length; }
+  else if (mode === "fixed") { total = parseInt(length, 10) || 20; }
+
+  quiz = {
+    mode, length, queue, total, answered: 0, correct: 0, pool, lastId: null,
     answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix", current: null,
   };
+  closeQuizSetup();
   $("review-card").hidden = false;
   $("review-done").hidden = true;
   window.dispatchEvent(new CustomEvent("app:setview", { detail: "review" }));
@@ -217,22 +251,26 @@ async function startReview() {
 const answerText = (item, dir) => (dir === "t2e" ? item.english : item.hanzi);
 
 function renderCard() {
-  const item = review.queue[review.idx];
-  const dir = review.direction === "mix" ? (Math.random() < 0.5 ? "t2e" : "e2t") : review.direction;
-  let mode = review.answerMode === "mix" ? (Math.random() < 0.5 ? "choice" : "type") : review.answerMode;
-  if (mode === "choice" && review.allWords.length < 4) mode = "type"; // need distractors
-  review.current = { item, dir, mode };
+  let item;
+  if (quiz.length === "all") item = quiz.queue[quiz.answered];
+  else item = pickWeighted(quiz.pool, quiz.lastId);
+  if (!item) return endQuiz();
+  quiz.lastId = item.id;
 
-  $("review-progress-text").textContent = `${review.idx + 1} / ${review.total}`;
+  const dir = quiz.direction === "mix" ? (Math.random() < 0.5 ? "t2e" : "e2t") : quiz.direction;
+  let mode = quiz.answerMode === "mix" ? (Math.random() < 0.5 ? "choice" : "type") : quiz.answerMode;
+  if (mode === "choice" && quiz.pool.length < 4) mode = "type";   // need distractors
+  quiz.current = { item, dir, mode };
+
+  $("review-progress-text").textContent = quiz.mode === "endless" ? `${quiz.answered} answered` : `${quiz.answered + 1} / ${quiz.total}`;
+  $("review-finish").hidden = quiz.mode !== "endless";
   $("review-prompt-label").textContent = dir === "t2e" ? "What does this mean?" : "How do you say this?";
   $("review-prompt").textContent = dir === "t2e" ? item.hanzi : item.english;
   $("review-prompt").className = "review-prompt" + (dir === "t2e" ? " is-hanzi" : "");
 
   const area = $("review-answer-area");
-  area.innerHTML = "";
-  area.hidden = false;
-  $("review-reveal").hidden = true;
-  $("review-reveal").innerHTML = "";
+  area.innerHTML = ""; area.hidden = false;
+  $("review-reveal").hidden = true; $("review-reveal").innerHTML = "";
   $("review-next").hidden = true;
 
   if (mode === "choice") renderChoices(item, dir, area);
@@ -241,15 +279,14 @@ function renderCard() {
 
 function renderChoices(item, dir, area) {
   const correct = answerText(item, dir);
-  const others = shuffle(review.allWords.filter((w) => w.id !== item.id));
+  const others = shuffle(quiz.pool.filter((w) => w.id !== item.id));
   const distractors = [];
   for (const w of others) {
     const t = answerText(w, dir);
     if (t && t !== correct && !distractors.includes(t)) distractors.push(t);
     if (distractors.length === 3) break;
   }
-  const options = shuffle([correct, ...distractors]);
-  for (const opt of options) {
+  for (const opt of shuffle([correct, ...distractors])) {
     const b = document.createElement("button");
     b.className = "review-choice";
     b.textContent = opt;
@@ -260,13 +297,13 @@ function renderChoices(item, dir, area) {
 
 const norm = (s) => String(s || "").toLowerCase().replace(/[\s,.!?;:'"()\[\]，。！？；：、]/g, "").trim();
 const stripTones = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
-
 function gradeType(input, item, dir) {
   const given = norm(input);
   if (!given) return false;
   if (dir === "t2e") {
-    const ans = norm(item.english);
-    return given === ans || (ans && (ans.includes(given) || given.includes(ans)));
+    // Lenient: any listed sense counts (senses are semicolon-separated).
+    const senses = String(item.english || "").split(/[;,/]/).map(norm).filter(Boolean);
+    return senses.some((s) => s === given || s.includes(given) || given.includes(s));
   }
   const han = norm(item.hanzi);
   const py = stripTones(norm(item.pinyin));
@@ -283,18 +320,14 @@ function renderType(item, dir, area) {
   input.autocomplete = "off"; input.autocapitalize = "off"; input.spellcheck = false;
   const submit = document.createElement("button");
   submit.type = "submit"; submit.className = "btn-primary"; submit.textContent = "Check";
-  form.appendChild(input);
-  form.appendChild(submit);
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    onAnswer(gradeType(input.value, item, dir), answerText(item, dir));
-  });
+  form.appendChild(input); form.appendChild(submit);
+  form.addEventListener("submit", (e) => { e.preventDefault(); onAnswer(gradeType(input.value, item, dir), answerText(item, dir)); });
   area.appendChild(form);
   setTimeout(() => input.focus(), 120);
 }
 
 async function onAnswer(correct, correctText) {
-  const { item, mode } = review.current;
+  const { item, mode } = quiz.current;
   const area = $("review-answer-area");
   if (mode === "choice") {
     for (const b of area.querySelectorAll(".review-choice")) {
@@ -304,20 +337,17 @@ async function onAnswer(correct, correctText) {
     }
   } else {
     const form = area.querySelector("form");
-    if (form) {
-      form.querySelector("input").disabled = true;
-      form.querySelector("button").disabled = true;
-      form.classList.add(correct ? "correct" : "wrong");
-    }
+    if (form) { form.querySelector("input").disabled = true; form.querySelector("button").disabled = true; form.classList.add(correct ? "correct" : "wrong"); }
   }
-  if (correct) review.correct++;
-  item.srs = schedule(item.srs, correct);
+  quiz.answered++;
+  if (correct) quiz.correct++;
+  recordAttempt(item, correct);
   await putVaultItem(item);
   _masteredDirty = true;
   renderReveal(item, correct);
   const next = $("review-next");
   next.hidden = false;
-  next.textContent = review.idx + 1 >= review.total ? "Finish" : "Next";
+  next.textContent = (quiz.mode !== "endless" && quiz.answered >= quiz.total) ? "Finish" : "Next";
 }
 
 function renderReveal(item, correct) {
@@ -334,34 +364,49 @@ function renderReveal(item, correct) {
 }
 
 function nextCard() {
-  if (!review) return;
-  review.idx++;
-  if (review.idx >= review.queue.length) return endReview();
+  if (!quiz) return;
+  if (quiz.mode !== "endless" && quiz.answered >= quiz.total) return endQuiz();
+  if (quiz.length === "all" && quiz.answered >= quiz.queue.length) return endQuiz();
   renderCard();
 }
 
-function endReview() {
+function endQuiz() {
   const done = $("review-done");
   $("review-card").hidden = true;
   done.hidden = false;
+  const acc = quiz && quiz.answered ? Math.round((quiz.correct / quiz.answered) * 100) : 0;
   done.innerHTML = `
-    <p class="empty-title">Review complete</p>
-    <p class="empty-sub">${review.correct} / ${review.total} correct</p>
+    <p class="empty-title">Quiz complete</p>
+    <p class="empty-sub">${quiz ? quiz.correct : 0} / ${quiz ? quiz.answered : 0} correct (${acc}%)</p>
     <button class="btn-primary" id="review-done-btn">Back to Vault</button>`;
-  done.querySelector("#review-done-btn").addEventListener("click", () => {
-    window.dispatchEvent(new CustomEvent("app:setview", { detail: "vault" }));
-  });
-  review = null;
+  done.querySelector("#review-done-btn").addEventListener("click", () => window.dispatchEvent(new CustomEvent("app:setview", { detail: "vault" })));
+  quiz = null;
 }
 
 export async function initVault() {
-  await ensureMastered();           // preload the mastered set for the reader
-  $("vault-start")?.addEventListener("click", startReview);
+  await ensureMastered();
+  $("vault-start")?.addEventListener("click", openQuizSetup);
+  $("quiz-setup-close")?.addEventListener("click", closeQuizSetup);
+  $("quiz-setup-backdrop")?.addEventListener("click", closeQuizSetup);
+  $("quiz-begin")?.addEventListener("click", beginQuiz);
   $("review-next")?.addEventListener("click", nextCard);
-  $("review-answer-mode")?.addEventListener("change", async (e) => {
-    await putSettings({ ...(await getSettings()), reviewAnswerMode: e.target.value });
-  });
-  $("review-direction")?.addEventListener("change", async (e) => {
-    await putSettings({ ...(await getSettings()), reviewDirection: e.target.value });
-  });
+  $("review-finish")?.addEventListener("click", endQuiz);
+
+  $("review-answer-mode")?.addEventListener("change", async (e) => { await putSettings({ ...(await getSettings()), reviewAnswerMode: e.target.value }); });
+  $("review-direction")?.addEventListener("change", async (e) => { await putSettings({ ...(await getSettings()), reviewDirection: e.target.value }); });
+
+  for (const btn of document.querySelectorAll("#quiz-setup .bucket-toggle")) {
+    btn.addEventListener("click", async () => {
+      btn.classList.toggle("on");
+      const buckets = [...document.querySelectorAll("#quiz-setup .bucket-toggle.on")].map((b) => b.dataset.bucket);
+      await putSettings({ ...(await getSettings()), reviewBuckets: buckets });
+    });
+  }
+  for (const btn of document.querySelectorAll("#quiz-setup .length-toggle")) {
+    btn.addEventListener("click", async () => {
+      document.querySelectorAll("#quiz-setup .length-toggle").forEach((b) => b.classList.remove("on"));
+      btn.classList.add("on");
+      await putSettings({ ...(await getSettings()), reviewLength: btn.dataset.len });
+    });
+  }
 }
