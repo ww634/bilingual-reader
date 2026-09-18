@@ -9,6 +9,7 @@
 // be added mid-conversation.
 
 import { getSettings } from "./db.js";
+import { speakWord } from "./speech.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -304,6 +305,26 @@ function selectionTargetText(sel) {
   } catch { return ""; }
 }
 
+// Reconstruct the HANZI of the current selection (for text-to-speech, which must
+// read characters not pinyin). Every word span in the target line carries a
+// data-hanzi attribute; the English line has none — so collecting data-hanzi
+// from the spans the selection touches gives just the Chinese, across lines, in
+// order. A partially-touched word contributes its whole character(s).
+function selectionHanzi() {
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed || sel.rangeCount === 0) return "";
+  const pages = $("reader-pages");
+  if (!pages) return "";
+  const range = sel.getRangeAt(0);
+  let han = "";
+  for (const el of pages.querySelectorAll("[data-hanzi]")) {
+    let hit = false;
+    try { hit = range.intersectsNode(el); } catch { hit = false; }
+    if (hit) han += el.getAttribute("data-hanzi") || "";
+  }
+  return han.trim();
+}
+
 function positionToolbar(rect) {
   const bar = $("sel-toolbar");
   bar.hidden = false;
@@ -395,11 +416,13 @@ export function initAssistant() {
     if (!btn) return;
     e.preventDefault();
     const act = btn.dataset.act;
-    if (act === "copy") {
-      // Copy is literal — copy exactly what was highlighted.
-      if (lastSelectionRaw) navigator.clipboard?.writeText(lastSelectionRaw).catch(() => {});
-      window.getSelection()?.removeAllRanges();
+    if (act === "pronounce") {
+      // Read the selection aloud in the book's language. Speak the HANZI (never
+      // the displayed pinyin), with English excluded even across lines. Runs
+      // inside this gesture so iOS allows the audio.
+      const han = selectionHanzi();
       hideToolbar();
+      if (han) speakWord(han, currentLang || "zh");
       return;
     }
     // Compute the target-only text now (pointerdown's preventDefault keeps the
