@@ -4,14 +4,17 @@ import { initSettings, loadSettingsIntoUI } from "./settings.js";
 import { initPopover, closePopover } from "./popover.js";
 import { initReaderOptions } from "./reader-options.js";
 import { initAssistant } from "./assistant.js";
+import { initVault, openVault } from "./vault.js";
 
-const VIEWS = ["home", "library", "browse", "book-detail", "quizzes", "reader", "settings"];
+const VIEWS = ["home", "library", "browse", "book-detail", "quizzes", "vault", "review", "reader", "settings"];
 const TITLES = {
   home: "Reader",
   library: "Library",
   browse: "Browse",
   "book-detail": "",   // set per-book
   quizzes: "Quizzes",
+  vault: "Memory Vault",
+  review: "Review",
   reader: "",          // set per-chapter
   settings: "Settings",
 };
@@ -41,6 +44,8 @@ function setView(name, { push = true } = {}) {
   // The reader-options (sliders) and assistant icons only make sense in the reader.
   if (readerOptionsBtn) readerOptionsBtn.hidden = name !== "reader";
   if (assistantBtn) assistantBtn.hidden = name !== "reader";
+
+  if (name === "vault") openVault();
 }
 
 function goBack() {
@@ -96,6 +101,9 @@ window.addEventListener("nav:reader", async (e) => {
   }
 });
 
+// Programmatic navigation from modules (e.g. vault → review → vault).
+window.addEventListener("app:setview", (e) => { if (e.detail) setView(e.detail); });
+
 window.addEventListener("settings:libraryUrl", () => refreshCatalog());
 window.addEventListener("settings:cleared", () => {
   if (currentView === "reader") closeReader();
@@ -117,6 +125,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   initPopover();
   await initReaderOptions();
   initAssistant();
+  await initVault();
   await initCatalog();
   setView("home", { push: false });
 })();

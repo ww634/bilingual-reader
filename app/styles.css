@@ -1428,3 +1428,131 @@ body.hide-cat-other          .reader-block .english .other                      
 }
 .sel-toolbar button:not(:last-child) { border-right: 1px solid var(--border); }
 .sel-toolbar button:active { background: var(--surface-2); }
+
+/* ============================================================
+   Memory Vault + review
+   ============================================================ */
+
+/* Reader: fade English for mastered words (when the toggle is on). */
+body.hide-mastered .reader-block .english .chunk.mastered { visibility: hidden; }
+
+#view-vault { padding: 16px 16px calc(var(--safe-bottom) + 32px); }
+
+.vault-summary {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.vault-stat {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 8px;
+  text-align: center;
+}
+.vault-stat span { display: block; font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+.vault-stat label { display: block; font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+
+.vault-controls { display: flex; gap: 10px; margin-bottom: 12px; }
+.vault-select {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.vault-select select {
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 9px 10px;
+}
+#vault-start { margin-bottom: 18px; }
+#vault-start:disabled { opacity: 0.5; }
+
+.vault-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.vault-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+.vault-word { flex: 1; min-width: 0; }
+.vault-hanzi { font-size: 18px; font-weight: 600; }
+.vault-pinyin { font-size: 13px; color: var(--accent); }
+.vault-english { font-size: 13px; color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; }
+.vault-status {
+  font-size: 11px; font-weight: 600; text-transform: capitalize;
+  padding: 3px 8px; border-radius: 999px; flex: 0 0 auto;
+}
+.vault-status-new { background: var(--surface-3); color: var(--text-dim); }
+.vault-status-learning { background: rgba(106,167,255,0.15); color: var(--accent); }
+.vault-status-mastered { background: rgba(94,234,212,0.15); color: #5eead4; }
+.vault-del {
+  flex: 0 0 auto; border: none; background: none; color: var(--text-muted);
+  font-size: 22px; line-height: 1; cursor: pointer; padding: 0 4px;
+}
+
+/* Review session */
+#view-review { padding: 16px 18px calc(var(--safe-bottom) + 24px); }
+.review-progress { text-align: center; font-size: 13px; color: var(--text-dim); margin-bottom: 20px; }
+.review-prompt-label { text-align: center; font-size: 13px; color: var(--text-dim); margin-bottom: 8px; }
+.review-prompt {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  overflow-wrap: anywhere;
+}
+.review-prompt.is-hanzi { font-size: 40px; font-weight: 700; }
+
+.review-answer-area { display: flex; flex-direction: column; gap: 10px; }
+.review-choice {
+  font: inherit; font-size: 17px; text-align: left;
+  padding: 15px 16px;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border-strong); border-radius: var(--radius);
+  cursor: pointer;
+}
+.review-choice:active { background: var(--surface-2); }
+.review-choice:disabled { cursor: default; }
+.review-choice.correct { border-color: #5eead4; background: rgba(94,234,212,0.14); color: #eafffb; }
+.review-choice.wrong { border-color: var(--danger); background: rgba(255,106,106,0.14); }
+.review-choice.dim { opacity: 0.5; }
+
+.review-type { display: flex; gap: 8px; }
+.review-type input {
+  flex: 1; font: inherit; font-size: 17px;
+  background: var(--surface-2); color: var(--text);
+  border: 1px solid var(--border-strong); border-radius: var(--radius);
+  padding: 13px 14px;
+}
+.review-type input:focus { outline: none; border-color: var(--accent); }
+.review-type.correct input { border-color: #5eead4; }
+.review-type.wrong input { border-color: var(--danger); }
+.review-type button { flex: 0 0 auto; }
+
+.review-reveal { text-align: center; margin-top: 22px; }
+.reveal-verdict { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.reveal-verdict.ok { color: #5eead4; }
+.reveal-verdict.no { color: var(--danger); }
+.reveal-hanzi { font-size: 34px; font-weight: 700; }
+.reveal-pinyin { font-size: 18px; color: var(--accent); margin-top: 2px; }
+.reveal-english { font-size: 16px; color: var(--text-dim); margin-top: 4px; }
+.reveal-context {
+  margin: 14px auto 0; max-width: 90%;
+  font-size: 14px; color: var(--text-dim);
+  border-top: 1px solid var(--border); padding-top: 12px;
+}
+.reveal-context span { display: block; color: var(--text-muted); margin-top: 3px; }
+#reveal-audio { margin-top: 14px; display: inline-block; }
+#review-next { margin-top: 24px; }

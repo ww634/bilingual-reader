@@ -6,6 +6,7 @@
 import { getSettings } from "./db.js";
 import { askWithContext } from "./assistant.js";
 import { speakWord } from "./speech.js";
+import { saveWord } from "./vault.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -314,15 +315,26 @@ async function hearPronunciation() {
   }
 }
 
+/** Save the current word to the Memory Vault (for spaced-repetition review). */
+async function saveToVault() {
+  const chunk = _state.chunk;
+  if (!chunk) return;
+  const btn = $("pop-act-save");
+  const result = await saveWord(chunk, _state.chapter);
+  const original = "Save to Memory Vault";
+  if (result.ok && result.already) btn.textContent = "✓ Already saved";
+  else if (result.ok) btn.textContent = "✓ Saved";
+  else btn.textContent = "Tap a highlighted word to save";
+  btn.disabled = true;
+  setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 1400);
+}
+
 export function initPopover() {
   $("popover-close").addEventListener("click", closePopover);
   $("popover-backdrop").addEventListener("click", closePopover);
   $("pop-act-explain").addEventListener("click", fetchExplanation);
   $("pop-act-ask").addEventListener("click", askAssistantFromPopover);
-  $("pop-act-save").addEventListener("click", () => {
-    // Memory Vault feature is deferred.
-    alert("Memory Vault is coming in a later version.");
-  });
+  $("pop-act-save").addEventListener("click", saveToVault);
   $("pop-act-hear").addEventListener("click", hearPronunciation);
   // Allow Escape to close.
   document.addEventListener("keydown", (e) => {

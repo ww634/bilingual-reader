@@ -63,6 +63,16 @@
           </div>
           <span class="tile-chev">›</span>
         </button>
+        <button class="home-tile" data-nav="vault">
+          <div class="tile-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="tile-text">
+            <span class="tile-title">Memory Vault</span>
+            <span class="tile-sub" id="tile-vault-count">Saved words &amp; review</span>
+          </div>
+          <span class="tile-chev">›</span>
+        </button>
         <button class="home-tile" data-nav="quizzes">
           <div class="tile-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
@@ -129,6 +139,51 @@
         <p class="empty-title">Quizzes</p>
         <p class="empty-sub">AI-generated quizzes per chapter will live here. Coming in a later version.</p>
       </div>
+    </main>
+
+    <!-- MEMORY VAULT -->
+    <main id="view-vault" class="view" hidden>
+      <div class="vault-summary">
+        <div class="vault-stat"><span id="vault-due">0</span><label>Due</label></div>
+        <div class="vault-stat"><span id="vault-learning">0</span><label>Learning</label></div>
+        <div class="vault-stat"><span id="vault-mastered">0</span><label>Mastered</label></div>
+      </div>
+      <div class="vault-controls">
+        <label class="vault-select">Answer
+          <select id="review-answer-mode">
+            <option value="choice">Multiple choice</option>
+            <option value="type">Type answer</option>
+            <option value="mix">Mix</option>
+          </select>
+        </label>
+        <label class="vault-select">Direction
+          <select id="review-direction">
+            <option value="t2e">Chinese → English</option>
+            <option value="e2t">English → Chinese</option>
+            <option value="mix">Mix</option>
+          </select>
+        </label>
+      </div>
+      <button id="vault-start" class="btn-primary btn-block">Start review</button>
+      <div class="book-detail-section-label">Saved words</div>
+      <div id="vault-empty" class="empty-state" hidden>
+        <p class="empty-title">No saved words yet</p>
+        <p class="empty-sub">Tap a word while reading, then “Save to Memory Vault”.</p>
+      </div>
+      <ul id="vault-list" class="vault-list"></ul>
+    </main>
+
+    <!-- REVIEW SESSION -->
+    <main id="view-review" class="view" hidden>
+      <div id="review-card" class="review-card">
+        <div class="review-progress"><span id="review-progress-text">0 / 0</span></div>
+        <div id="review-prompt-label" class="review-prompt-label"></div>
+        <div id="review-prompt" class="review-prompt"></div>
+        <div id="review-answer-area" class="review-answer-area"></div>
+        <div id="review-reveal" class="review-reveal" hidden></div>
+        <button id="review-next" class="btn-primary btn-block" hidden>Next</button>
+      </div>
+      <div id="review-done" class="empty-state" hidden></div>
     </main>
 
     <!-- READER -->
@@ -218,6 +273,10 @@
             <li><label class="cat-toggle"><input type="checkbox" data-cat="particle" /><span class="cat-swatch cat-particle" aria-hidden="true"></span><span class="cat-label">Particles</span></label></li>
             <li><label class="cat-toggle"><input type="checkbox" data-cat="other" /><span class="cat-swatch cat-other" aria-hidden="true"></span><span class="cat-label">Other</span></label></li>
           </ul>
+        </section>
+        <section class="sheet-section">
+          <label class="cat-toggle"><input type="checkbox" id="opt-hide-mastered" /><span class="cat-label">Hide English for words I've mastered</span></label>
+          <p class="sheet-hint">As you master words in the Memory Vault, their English fades from the reader — you read them in Chinese.</p>
         </section>
         <section class="sheet-section muted">
           <div class="sheet-section-label">More coming</div>

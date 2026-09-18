@@ -9,13 +9,14 @@
 //   settings — single record at key "current". App settings.
 
 const DB_NAME = "bilingual-reader";
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 
 const STORE_BOOKS = "books";
 const STORE_CHAPTERS = "chapters";
 const STORE_PROGRESS = "progress";
 const STORE_LIBRARY = "library";
 const STORE_SETTINGS = "settings";
+const STORE_VAULT = "vault";   // saved words for spaced-repetition review
 
 let _dbPromise = null;
 
@@ -51,6 +52,11 @@ function openDB() {
       }
       if (!db.objectStoreNames.contains(STORE_SETTINGS)) {
         db.createObjectStore(STORE_SETTINGS);
+      }
+      // v2 -> v3: add the Memory Vault store (keyed by the word's id). Additive
+      // — existing books/chapters/progress/settings are untouched.
+      if (!db.objectStoreNames.contains(STORE_VAULT)) {
+        db.createObjectStore(STORE_VAULT, { keyPath: "id" });
       }
     };
     req.onsuccess = () => resolve(req.result);
@@ -130,12 +136,34 @@ export async function getLibrary() {
   return asPromise(store.get("current"));
 }
 
+// ---------- vault (saved words) ----------
+export async function putVaultItem(item) {
+  const store = await tx(STORE_VAULT, "readwrite");
+  return asPromise(store.put(item));
+}
+export async function getVaultItem(id) {
+  const store = await tx(STORE_VAULT);
+  return asPromise(store.get(id));
+}
+export async function getAllVaultItems() {
+  const store = await tx(STORE_VAULT);
+  return asPromise(store.getAll());
+}
+export async function deleteVaultItem(id) {
+  const store = await tx(STORE_VAULT, "readwrite");
+  return asPromise(store.delete(id));
+}
+
 // ---------- settings ----------
 const DEFAULT_SETTINGS = {
   libraryUrl: "../content/library.json",
   fontSize: "medium",
   pairsPerPage: 7,
   openaiKey: "", // user-pasted via Settings; used only for tap-to-learn explanations
+  // Memory Vault review preferences.
+  reviewAnswerMode: "mix",   // "choice" | "type" | "mix"
+  reviewDirection: "mix",    // "t2e" | "e2t" | "mix"
+  hideMastered: true,        // hide English for mastered words in the reader
   // Per-category visibility for English translations in the reader. Toggled
   // via the reader-options sheet. When a category is false, the English part
   // of those chunks is rendered with visibility:hidden so the page layout
@@ -168,11 +196,9 @@ export async function putSettings(settings) {
 export async function clearAll() {
   const db = await openDB();
   return new Promise((resolve, reject) => {
-    const t = db.transaction(
-      [STORE_BOOKS, STORE_CHAPTERS, STORE_PROGRESS, STORE_LIBRARY, STORE_SETTINGS],
-      "readwrite"
-    );
-    for (const name of [STORE_BOOKS, STORE_CHAPTERS, STORE_PROGRESS, STORE_LIBRARY, STORE_SETTINGS]) {
+    const stores = [STORE_BOOKS, STORE_CHAPTERS, STORE_PROGRESS, STORE_LIBRARY, STORE_SETTINGS, STORE_VAULT];
+    const t = db.transaction(stores, "readwrite");
+    for (const name of stores) {
       t.objectStore(name).clear();
     }
     t.oncomplete = () => resolve();

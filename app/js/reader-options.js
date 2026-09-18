@@ -75,7 +75,11 @@ function syncCheckboxes() {
 
 function openSheet() {
   syncCheckboxes();
-  getSettings().then(s => { $("reader-script").value = s.readerScript || "pinyin"; });
+  getSettings().then(s => {
+    $("reader-script").value = s.readerScript || "pinyin";
+    const hm = $("opt-hide-mastered");
+    if (hm) hm.checked = s.hideMastered !== false;
+  });
   $("reader-options-backdrop").hidden = false;
   const sheet = $("reader-options");
   sheet.hidden = false;
@@ -122,6 +126,13 @@ export async function initReaderOptions() {
     window.dispatchEvent(new CustomEvent("reader:script", { detail: script }));
     const settings = await getSettings();
     await putSettings({ ...settings, readerScript: script });
+  });
+
+  $("opt-hide-mastered")?.addEventListener("change", async (event) => {
+    const on = event.target.checked;
+    document.body.classList.toggle("hide-mastered", on);
+    const settings = await getSettings();
+    await putSettings({ ...settings, hideMastered: on });
   });
 
   for (const { key } of CATEGORIES) {

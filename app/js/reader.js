@@ -1,8 +1,21 @@
 import { getChapter, getProgress, putProgress, getSettings, getBook } from "./db.js";
 import { openPopover } from "./popover.js";
+import { ensureMastered, getMasteredHanziSync } from "./vault.js";
 
 const pagesEl = () => document.getElementById("reader-pages");
 const indicatorEl = () => document.getElementById("page-indicator");
+
+/**
+ * Mark English chunk spans whose word the learner has mastered, so CSS can fade
+ * them (when body.hide-mastered is on). Called after each render.
+ */
+export function applyMasteredHiding() {
+  const set = getMasteredHanziSync();
+  const spans = document.querySelectorAll("#reader-pages .english .chunk[data-hanzi]");
+  spans.forEach((el) => {
+    el.classList.toggle("mastered", set.has(el.getAttribute("data-hanzi")));
+  });
+}
 
 let _state = {
   bookId: null,
@@ -315,6 +328,7 @@ function emitEnglishSlice(pair, coverage, start, end) {
         chunk.category ? `data-cat="${escape(chunk.category)}"` : "",
         chunk.frequency_band ? `data-freq="${escape(chunk.frequency_band)}"` : "",
         chunk.is_idiom ? `data-idiom="true"` : "",
+        chunk.hanzi ? `data-hanzi="${escape(chunk.hanzi)}"` : "",
       ].filter(Boolean).join(" ");
       html += `<span class="chunk" ${attrs}>${escape(text.slice(p, stop))}</span>`;
       p = stop;
@@ -873,6 +887,12 @@ export async function openReader(bookId, chapterId) {
     : "Chinese characters aren't included in this book yet.";
   renderChapter(chapter, settings.pairsPerPage);
   setReaderScript(settings.readerScript);
+
+  // Mastered-word English hiding: refresh the set, apply the body flag, and mark
+  // the matching English spans so they fade (if the setting is on).
+  await ensureMastered();
+  document.body.classList.toggle("hide-mastered", settings.hideMastered !== false);
+  applyMasteredHiding();
 
   document.getElementById("title").textContent = chapter.title.english;
 
