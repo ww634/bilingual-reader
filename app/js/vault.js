@@ -203,6 +203,13 @@ async function openQuizSetup() {
   for (const btn of document.querySelectorAll("#quiz-setup .script-toggle")) {
     btn.classList.toggle("on", btn.dataset.script === script);
   }
+  // Language-aware setup: name the language in the direction options, and hide
+  // the pinyin/characters choice for languages with a single written form.
+  const lang = getLearningLanguage();
+  const lname = languageName(lang);
+  $("dir-opt-t2e").textContent = `${lname} → English`;
+  $("dir-opt-e2t").textContent = `English → ${lname}`;
+  $("quiz-script-section").hidden = lang !== "zh";
   $("quiz-setup-note").textContent = "";
   $("quiz-setup-backdrop").hidden = false;
   const sheet = $("quiz-setup");
@@ -253,7 +260,7 @@ async function beginQuiz() {
   quiz = {
     mode, length, queue, total, answered: 0, correct: 0, pool, lastId: null,
     answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix",
-    script: s.reviewScript || "both", current: null,
+    script: lang === "zh" ? (s.reviewScript || "both") : "hanzi", lang, current: null,
   };
   closeQuizSetup();
   $("review-card").hidden = false;
@@ -341,7 +348,9 @@ function gradeType(input, item, dir) {
   const han = norm(item.hanzi);
   const py = stripTones(norm(item.pinyin));
   const g = stripTones(given);
-  return given === han || g === py || (py && (py.includes(g) || g.includes(py)));
+  // For languages like French the headword itself is Latin script, so also accept
+  // it without accents (eg. "ecole" for "école").
+  return given === han || g === stripTones(han) || (py && (g === py || py.includes(g) || g.includes(py)));
 }
 
 function renderType(item, dir, area, script) {
@@ -349,7 +358,8 @@ function renderType(item, dir, area, script) {
   form.className = "review-type";
   const input = document.createElement("input");
   input.type = "text";
-  input.placeholder = dir === "t2e" ? "Type the English…" : "Type the Chinese (hanzi or pinyin)…";
+  input.placeholder = dir === "t2e" ? "Type the English…"
+    : (quiz.lang === "zh" ? "Type the Chinese (hanzi or pinyin)…" : `Type the ${languageName(quiz.lang)}…`);
   input.autocomplete = "off"; input.autocapitalize = "off"; input.spellcheck = false;
   const submit = document.createElement("button");
   submit.type = "submit"; submit.className = "btn-primary"; submit.textContent = "Check";

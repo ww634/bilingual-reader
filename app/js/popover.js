@@ -7,6 +7,7 @@ import { getSettings } from "./db.js";
 import { askWithContext } from "./assistant.js";
 import { speakWord } from "./speech.js";
 import { saveWord, removeWord, isWordSaved } from "./vault.js";
+import { languageName } from "./languages.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -185,7 +186,34 @@ async function fetchExplanation() {
   const contextPinyin = pair ? pair.target : "";
   const contextEnglish = pair ? pair.english : "";
 
-  const systemPrompt =
+  const lang = _state.chapter?.language || "zh";
+  const isZh = lang === "zh";
+  const langName = languageName(lang);
+
+  // Non-Chinese languages (e.g. French) have no pinyin/characters, so they get
+  // their own prompt: IPA + a plain-English sound guide, grammar (gender/tense),
+  // and word parts (elision, prefixes/suffixes).
+  const otherSystemPrompt =
+    `You are a concise ${langName} tutor for an English-speaking learner. ` +
+    "Write the explanation in ENGLISH. " +
+    `Given a ${langName} word/phrase and the sentence it appears in, ` +
+    "give a short, learner-friendly explanation under 220 words with these labelled parts:\n" +
+    "Pronunciation: the word's IPA between slashes, then a plain-English approximation of how " +
+    "to say it syllable by syllable, noting silent letters, nasal vowels, liaison or elision where " +
+    "relevant (e.g. \"bonjour — /bɔ̃.ʒuʁ/ — roughly bon-ZHOOR, with a nasal 'on'\"). Make the " +
+    "approximation genuinely helpful.\n" +
+    "Meaning: the literal English meaning.\n" +
+    "Grammar: for a noun give its gender with the article (e.g. le/la/l') and any irregular " +
+    "plural; for a verb give the infinitive and which tense/person it is in this sentence; for an " +
+    "adjective note agreement. Omit this line if it doesn't apply.\n" +
+    "Word parts: if the word is a compound, has a clear prefix/suffix, or is an elision (l', j', " +
+    "qu', n'), explain the pieces. Omit this line if it doesn't apply.\n" +
+    "Usage: nuance / register notes in English.\n" +
+    `Examples: 1–2 short example sentences in ${langName}, each followed by its English translation ` +
+    "in parentheses.\n" +
+    "Plain text only, no markdown.";
+
+  const zhSystemPrompt =
     "You are a concise Mandarin Chinese tutor for an English-speaking learner. " +
     "Write the explanation in ENGLISH. Chinese characters MUST NOT appear at all — " +
     "use pinyin only (pinyin is allowed in the Pronunciation line and the example " +
@@ -207,12 +235,14 @@ async function fetchExplanation() {
     "followed by its English translation in parentheses.\n" +
     "Plain text only, no markdown.";
 
+  const systemPrompt = isZh ? zhSystemPrompt : otherSystemPrompt;
+
   const userPrompt =
     `Word/phrase: ${chunk.target}\n` +
     `English equivalent: ${chunk.english || "(none)"}\n` +
     `Part of speech: ${chunk.category || "(unspecified)"}\n` +
     (chunk.is_idiom ? `This is a fixed expression / idiom.\n` : "") +
-    (contextPinyin ? `\nSentence in the book (pinyin): ${contextPinyin}\nSentence in the book (English): ${contextEnglish}\n` : "");
+    (contextPinyin ? `\nSentence in the book (${isZh ? "pinyin" : langName}): ${contextPinyin}\nSentence in the book (English): ${contextEnglish}\n` : "");
 
   const EXPLAIN_MODEL = "gpt-5.4-nano";
   const isNewFamily = /^gpt-5|^o1|^o3/i.test(EXPLAIN_MODEL);

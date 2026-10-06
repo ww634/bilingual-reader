@@ -1,0 +1,982 @@
+{
+  "id": "ch-2",
+  "book_id": "la-lettre-du-grenier",
+  "language": "fr",
+  "version": 1,
+  "title": {
+    "target": "La lettre",
+    "english": "The Letter"
+  },
+  "pairs": [
+    {
+      "target": "Le lendemain matin, Camille se réveilla",
+      "english": "The next morning, Camille woke up",
+      "alignment": [
+        {
+          "english": "The next morning",
+          "target": "Le lendemain matin",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Camille",
+          "target": "Camille",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "woke up",
+          "target": "se réveilla",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "avec la lettre sur sa table de chevet.",
+      "english": "with the letter on her bedside table.",
+      "alignment": [
+        {
+          "english": "with",
+          "target": "avec",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the letter",
+          "target": "la lettre",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on",
+          "target": "sur",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "her bedside table",
+          "target": "sa table de chevet",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle l'avait regardée toute la nuit sans l'ouvrir.",
+      "english": "She had looked at it all night without opening it.",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "Elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had looked at it",
+          "target": "l'avait regardée",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "all night",
+          "target": "toute la nuit",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "without",
+          "target": "sans",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "opening it",
+          "target": "l'ouvrir",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Ce n'était pas à elle de la lire.",
+      "english": "It was not for her to read it.",
+      "alignment": [
+        {
+          "english": "It was not for her",
+          "target": "Ce n'était pas à elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to read it",
+          "target": "de la lire",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Mais à qui la donner ?",
+      "english": "But to whom could she give it?",
+      "alignment": [
+        {
+          "english": "But",
+          "target": "Mais",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to whom",
+          "target": "à qui",
+          "category": "function_word",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "give it",
+          "target": "la donner",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle descendit chez sa voisine, Madame Benoît,",
+      "english": "She went down to her neighbour's, Madame Benoît,",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "Elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "went down",
+          "target": "descendit",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to her neighbour's",
+          "target": "chez sa voisine",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Madame Benoît",
+          "target": "Madame Benoît",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "qui arrosait ses géraniums.",
+      "english": "who was watering her geraniums.",
+      "alignment": [
+        {
+          "english": "who",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was watering",
+          "target": "arrosait",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "her geraniums",
+          "target": "ses géraniums",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Étienne Marchand ? »",
+      "english": "\"Étienne Marchand?\"",
+      "alignment": [
+        {
+          "english": "Étienne Marchand",
+          "target": "Étienne Marchand",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "dit la vieille dame en riant.",
+      "english": "said the old lady, laughing.",
+      "alignment": [
+        {
+          "english": "said",
+          "target": "dit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the old lady",
+          "target": "la vieille dame",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "laughing",
+          "target": "en riant",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Bien sûr que je le connais !",
+      "english": "\"Of course I know him!",
+      "alignment": [
+        {
+          "english": "Of course",
+          "target": "Bien sûr que",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "I",
+          "target": "je",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "him",
+          "target": "le",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "know",
+          "target": "connais",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Tout le village le connaît. »",
+      "english": "The whole village knows him.\"",
+      "alignment": [
+        {
+          "english": "The whole village",
+          "target": "Tout le village",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "him",
+          "target": "le",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "knows",
+          "target": "connaît",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Il a quatre-vingt-dix ans et il fait encore",
+      "english": "\"He is ninety years old and he still makes",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "is ninety years old",
+          "target": "a quatre-vingt-dix ans",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he",
+          "target": "il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "makes",
+          "target": "fait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "still",
+          "target": "encore",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "le meilleur pain de la région. »",
+      "english": "the best bread in the region.\"",
+      "alignment": [
+        {
+          "english": "the best bread",
+          "target": "le meilleur pain",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "in the region",
+          "target": "de la région",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Camille resta sans voix.",
+      "english": "Camille remained speechless.",
+      "alignment": [
+        {
+          "english": "Camille",
+          "target": "Camille",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "remained",
+          "target": "resta",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "speechless",
+          "target": "sans voix",
+          "category": "adjective",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Il est toujours vivant ?",
+      "english": "\"Is he still alive?",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "is",
+          "target": "est",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "still",
+          "target": "toujours",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "alive",
+          "target": "vivant",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Vivant, et têtu comme un âne !",
+      "english": "\"Alive, and stubborn as a mule!",
+      "alignment": [
+        {
+          "english": "Alive",
+          "target": "Vivant",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "stubborn as a mule",
+          "target": "têtu comme un âne",
+          "category": "idiom",
+          "frequency_band": null,
+          "is_idiom": true
+        }
+      ]
+    },
+    {
+      "target": "La boulangerie est sur la place.",
+      "english": "The bakery is on the square.",
+      "alignment": [
+        {
+          "english": "The bakery",
+          "target": "La boulangerie",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "is",
+          "target": "est",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on",
+          "target": "sur",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the square",
+          "target": "la place",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Sa petite-fille s'en occupe maintenant. »",
+      "english": "His granddaughter runs it now.\"",
+      "alignment": [
+        {
+          "english": "His granddaughter",
+          "target": "Sa petite-fille",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "runs it",
+          "target": "s'en occupe",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "now",
+          "target": "maintenant",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Madame Benoît la regarda avec curiosité.",
+      "english": "Madame Benoît looked at her with curiosity.",
+      "alignment": [
+        {
+          "english": "Madame Benoît",
+          "target": "Madame Benoît",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "looked at her",
+          "target": "la regarda",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "with",
+          "target": "avec",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "curiosity",
+          "target": "curiosité",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Pourquoi me demandez-vous cela ?",
+      "english": "\"Why are you asking me that?",
+      "alignment": [
+        {
+          "english": "Why",
+          "target": "Pourquoi",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "me",
+          "target": "me",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "are you asking",
+          "target": "demandez-vous",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "cela",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Pour rien », répondit Camille.",
+      "english": "\"No reason,\" answered Camille.",
+      "alignment": [
+        {
+          "english": "No reason",
+          "target": "Pour rien",
+          "category": "idiom",
+          "frequency_band": null,
+          "is_idiom": true
+        },
+        {
+          "english": "answered",
+          "target": "répondit",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Camille",
+          "target": "Camille",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Une vieille histoire de ma grand-mère. »",
+      "english": "\"An old story about my grandmother.\"",
+      "alignment": [
+        {
+          "english": "An old story",
+          "target": "Une vieille histoire",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "about",
+          "target": "de",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "my grandmother",
+          "target": "ma grand-mère",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle remercia la voisine, prit sa veste",
+      "english": "She thanked the neighbour, took her jacket",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "Elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "thanked",
+          "target": "remercia",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the neighbour",
+          "target": "la voisine",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "took",
+          "target": "prit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "her jacket",
+          "target": "sa veste",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "et marcha vers la place.",
+      "english": "and walked toward the square.",
+      "alignment": [
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "walked",
+          "target": "marcha",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "toward",
+          "target": "vers",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the square",
+          "target": "la place",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "L'odeur du pain chaud l'accueillit",
+      "english": "The smell of warm bread welcomed her",
+      "alignment": [
+        {
+          "english": "The smell",
+          "target": "L'odeur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "of warm bread",
+          "target": "du pain chaud",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "welcomed her",
+          "target": "l'accueillit",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "avant même qu'elle voie l'enseigne.",
+      "english": "even before she saw the sign.",
+      "alignment": [
+        {
+          "english": "even before",
+          "target": "avant même qu'",
+          "category": "function_word",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "she",
+          "target": "elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "saw",
+          "target": "voie",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the sign",
+          "target": "l'enseigne",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Au-dessus de la porte, en lettres dorées, on lisait :",
+      "english": "Above the door, in golden letters, one read:",
+      "alignment": [
+        {
+          "english": "Above",
+          "target": "Au-dessus de",
+          "category": "function_word",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the door",
+          "target": "la porte",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in golden letters",
+          "target": "en lettres dorées",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "one",
+          "target": "on",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "read",
+          "target": "lisait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Boulangerie Marchand — depuis 1958. »",
+      "english": "\"Marchand Bakery — since 1958.\"",
+      "alignment": [
+        {
+          "english": "Marchand Bakery",
+          "target": "Boulangerie Marchand",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "since",
+          "target": "depuis",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "1958",
+          "target": "1958",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Camille respira profondément,",
+      "english": "Camille breathed deeply,",
+      "alignment": [
+        {
+          "english": "Camille",
+          "target": "Camille",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "breathed",
+          "target": "respira",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "deeply",
+          "target": "profondément",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "serra la lettre dans sa poche",
+      "english": "gripped the letter in her pocket",
+      "alignment": [
+        {
+          "english": "gripped",
+          "target": "serra",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "the letter",
+          "target": "la lettre",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in",
+          "target": "dans",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "her pocket",
+          "target": "sa poche",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "et poussa la porte.",
+      "english": "and pushed the door.",
+      "alignment": [
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "pushed",
+          "target": "poussa",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the door",
+          "target": "la porte",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Une petite cloche tinta.",
+      "english": "A little bell tinkled.",
+      "alignment": [
+        {
+          "english": "A little bell",
+          "target": "Une petite cloche",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "tinkled",
+          "target": "tinta",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": "markup-authored",
+    "createdAt": "2026-10-06",
+    "model": "claude",
+    "synopsis": null,
+    "has_alignment": true,
+    "alignment_complete": true
+  }
+}

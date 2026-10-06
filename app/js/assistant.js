@@ -316,13 +316,16 @@ function selectionHanzi() {
   const pages = $("reader-pages");
   if (!pages) return "";
   const range = sel.getRangeAt(0);
-  let han = "";
+  const parts = [];
   for (const el of pages.querySelectorAll("[data-hanzi]")) {
     let hit = false;
     try { hit = range.intersectsNode(el); } catch { hit = false; }
-    if (hit) han += el.getAttribute("data-hanzi") || "";
+    if (hit) parts.push(el.getAttribute("data-hanzi") || "");
   }
-  return han.trim();
+  // Chinese is written without spaces; languages like French need them between
+  // words or the speech engine would read the words run together.
+  const noSpaces = !currentLang || currentLang === "zh";
+  return parts.join(noSpaces ? "" : " ").replace(/\s+/g, " ").trim();
 }
 
 function positionToolbar(rect) {

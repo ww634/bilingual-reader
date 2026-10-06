@@ -30,6 +30,7 @@ const TTS_REV = "2";
 // delivery at a slightly slower pace.
 const TTS_INSTRUCTIONS = {
   zh: "Speak standard Putonghua. Pronounce every syllable clearly. Maintain natural Mandarin tone sandhi and neutral tones. Speak at 85% of normal conversational speed. Do not exaggerate tones.",
+  fr: "Speak standard metropolitan French. Pronounce every syllable clearly, with natural liaison, elision and nasal vowels. Speak at 85% of normal conversational speed. Do not exaggerate the intonation.",
 };
 const TTS_INSTRUCTIONS_DEFAULT =
   "Speak clearly and naturally at a slightly slower, learner-friendly pace. Pronounce every syllable distinctly without exaggerating.";
