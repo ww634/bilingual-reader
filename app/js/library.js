@@ -12,6 +12,7 @@ import {
   getProgress,
   chapterKey,
 } from "./db.js";
+import { getLearningLanguage, setLearningLanguage, availableLanguages, languageName } from "./languages.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -77,14 +78,35 @@ async function loadDownloadedIndex() {
 }
 
 function renderHomeCounts() {
-  const downloaded = state.downloadedBooks.size;
-  const catalog = (state.catalog?.books || []).filter((b) => b.language === "zh").length;
+  const lang = getLearningLanguage();
+  const downloaded = Array.from(state.downloadedBooks.values()).filter((b) => b.language === lang).length;
+  const catalog = (state.catalog?.books || []).filter((b) => b.language === lang).length;
   $("tile-library-count").textContent = downloaded === 0
     ? "Your downloaded books"
     : `${downloaded} book${downloaded === 1 ? "" : "s"}`;
   $("tile-browse-count").textContent = catalog === 0
     ? "Add new books to your library"
     : `${catalog} available`;
+}
+
+// Every language that has content (catalog or downloaded), used to populate the
+// switchers alongside the always-on base languages.
+function contentLanguages() {
+  const codes = new Set();
+  for (const b of state.catalog?.books || []) if (b.language) codes.add(b.language);
+  for (const b of state.downloadedBooks.values()) if (b.language) codes.add(b.language);
+  return [...codes];
+}
+
+// Fill every .lang-switch select with the available languages and the current
+// selection. Called after each catalog refresh and on language change.
+export function populateLangSwitchers() {
+  const current = getLearningLanguage();
+  const codes = availableLanguages(contentLanguages());
+  for (const sel of document.querySelectorAll(".lang-switch")) {
+    sel.innerHTML = codes.map((c) => `<option value="${c}">${languageName(c)}</option>`).join("");
+    sel.value = current;
+  }
 }
 
 /* ============ LIBRARY VIEW (downloaded books grid) ============ */
@@ -94,7 +116,7 @@ export function renderLibrary() {
   const empty = $("library-empty");
   grid.innerHTML = "";
 
-  const books = Array.from(state.downloadedBooks.values()).filter((b) => b.language === "zh");
+  const books = Array.from(state.downloadedBooks.values()).filter((b) => b.language === getLearningLanguage());
 
   if (books.length === 0) {
     grid.hidden = true;
@@ -133,14 +155,16 @@ export function renderBrowse() {
   const list = $("browse-list");
   list.innerHTML = "";
 
-  const books = (state.catalog?.books || []).filter((b) => b.language === "zh");
+  const books = (state.catalog?.books || []).filter((b) => b.language === getLearningLanguage());
 
   if (books.length === 0) {
     $("browse-status").textContent = state.online
-      ? "No books found in the catalog."
+      ? `No ${languageName(getLearningLanguage())} books available yet.`
       : "Offline — no cached catalog yet. Connect to fetch it.";
     return;
   }
+
+  if (!$("browse-status").classList.contains("error")) $("browse-status").textContent = "";
 
   for (const entry of books) {
     const local = state.downloadedBooks.get(entry.id);
@@ -568,6 +592,7 @@ export async function refreshCatalog() {
     $("browse-status").textContent = "Offline — showing cached catalog.";
   }
 
+  populateLangSwitchers();
   renderBrowse();
   renderLibrary();
   renderHomeCounts();
@@ -576,6 +601,19 @@ export async function refreshCatalog() {
 export function initCatalog() {
   window.addEventListener("online", () => { state.online = true; refreshCatalog(); });
   window.addEventListener("offline", () => { state.online = false; refreshCatalog(); });
+
+  // Any language switcher changes the global learning language.
+  for (const sel of document.querySelectorAll(".lang-switch")) {
+    sel.addEventListener("change", (e) => setLearningLanguage(e.target.value));
+  }
+  // Re-render the catalog views whenever the learning language changes.
+  window.addEventListener("language:changed", () => {
+    populateLangSwitchers();
+    renderBrowse();
+    renderLibrary();
+    renderHomeCounts();
+  });
+
   return refreshCatalog();
 }
 

@@ -13,6 +13,7 @@
 
 import { getSettings, putSettings, putVaultItem, getVaultItem, getAllVaultItems, deleteVaultItem } from "./db.js";
 import { speakWord } from "./speech.js";
+import { getLearningLanguage, languageName } from "./languages.js";
 
 const $ = (id) => document.getElementById(id);
 const escape = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -60,7 +61,7 @@ let _masteredDirty = true;
 async function refreshMastered() {
   try {
     const items = await getAllVaultItems();
-    _masteredSet = new Set(items.filter(isMastered).map((i) => i.hanzi));
+    _masteredSet = new Set(items.filter(isMastered).map((i) => i.id));
   } catch { _masteredSet = new Set(); }
   _masteredDirty = false;
 }
@@ -69,22 +70,27 @@ export async function ensureMastered() { if (_masteredDirty) await refreshMaster
 
 // ── Save / remove ──
 export async function saveWord(chunk, chapter) {
-  const hanzi = (chunk?.hanzi || "").trim();
-  if (!hanzi || chunk.chunkIdx == null) return { ok: false, reason: "not-a-word" };
-  const id = hanzi;
+  // The word in the target language's own script: hanzi for Chinese, the target
+  // text for languages without a separate script (e.g. French).
+  const word = (chunk?.hanzi || chunk?.target || "").trim();
+  if (!word || chunk.chunkIdx == null) return { ok: false, reason: "not-a-word" };
+  const id = word;
   if (await getVaultItem(id)) return { ok: true, already: true };
   const pair = chapter?.pairs?.[chunk.pairIdx];
   const storyGloss = (chunk.english || "").trim();
+  // Romanization only applies where the word differs from its reading (Chinese).
+  const pinyin = chunk.hanzi ? (chunk.pinyin || chunk.target || "") : "";
   await putVaultItem({
-    id, hanzi,
-    pinyin: chunk.pinyin || chunk.target || "",
+    id,
+    hanzi: word,            // the headword in its own script (name kept for compatibility)
+    pinyin,
     english: storyGloss,
     storyGloss,
     meaningRefined: false,
     category: chunk.category || null,
     frequency_band: chunk.frequency_band || null,
-    lang: chapter?.language || "zh",
-    context: pair ? { hanzi: pair.hanzi || "", target: pair.target || "", english: pair.english || "" } : null,
+    lang: chapter?.language || getLearningLanguage(),
+    context: pair ? { hanzi: pair.hanzi || pair.target || "", target: pair.target || "", english: pair.english || "" } : null,
     createdAt: Date.now(),
     attempts: [],
   });
@@ -107,15 +113,16 @@ export async function isWordSaved(hanzi) {
 // ── Dictionary meaning (general, multi-sense) via the API ──
 async function fetchMeaning(item, key) {
   const isNew = /^gpt-5|^o1|^o3/i.test(MEANING_MODEL);
+  const lang = languageName(item.lang || "zh");
   const sys =
-    "You are a concise Chinese-English dictionary. Given a Chinese word and the " +
+    `You are a concise ${lang}-English dictionary. Given a ${lang} word and the ` +
     "sentence it appeared in, return the word's GENERAL dictionary meaning in " +
     "English — NOT merely how it was translated in that one sentence. Include the " +
-    "common distinct senses, separated by semicolons (e.g. 有 → \"to have; there " +
-    'is/are; to exist"). Keep each sense short. For verb-complement compounds or ' +
-    'resultatives give the full meaning (e.g. 吃完 → "to finish eating"). Output ' +
-    "ONLY the meaning text — no pinyin, no Chinese characters, no examples, no quotes.";
-  const usr = `Word: ${item.hanzi}\nPinyin: ${item.pinyin}\nIn-sentence translation used: ${item.storyGloss || item.english}\nSentence: ${item.context?.hanzi || ""}`;
+    "common distinct senses, separated by semicolons. Keep each sense short. For " +
+    "compound or multi-part words give the full meaning (e.g. Chinese 吃完 → \"to " +
+    'finish eating"). Output ONLY the meaning text — no transliteration, no ' +
+    "examples, no quotes.";
+  const usr = `Word: ${item.hanzi}\n${item.pinyin ? `Pronunciation: ${item.pinyin}\n` : ""}In-sentence translation used: ${item.storyGloss || item.english}\nSentence: ${item.context?.hanzi || ""}`;
   const body = { model: MEANING_MODEL, messages: [{ role: "system", content: sys }, { role: "user", content: usr }], [isNew ? "max_completion_tokens" : "max_tokens"]: 200 };
   if (!isNew) body.temperature = 0.2;
   const res = await fetch("https://api.openai.com/v1/chat/completions", { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` }, body: JSON.stringify(body) });
@@ -143,7 +150,8 @@ async function refineMeaning(id) {
 const BUCKET_LABEL = { new: "New", learning: "Learning", mastered: "Mastered" };
 
 export async function openVault() {
-  const items = await getAllVaultItems();
+  const lang = getLearningLanguage();
+  const items = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
   const counts = { new: 0, learning: 0, mastered: 0 };
   for (const it of items) counts[bucketOf(it)]++;
   $("vault-new").textContent = counts.new;
@@ -231,7 +239,8 @@ async function beginQuiz() {
   const s = await getSettings();
   const buckets = s.reviewBuckets || ["new", "learning"];
   if (!buckets.length) { $("quiz-setup-note").textContent = "Pick at least one group to include."; return; }
-  const all = await getAllVaultItems();
+  const lang = getLearningLanguage();
+  const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
   const pool = all.filter((it) => buckets.includes(bucketOf(it)));
   if (!pool.length) { $("quiz-setup-note").textContent = "No saved words in the selected groups yet."; return; }
 
@@ -409,6 +418,10 @@ function endQuiz() {
 
 export async function initVault() {
   await ensureMastered();
+  // Re-render the vault for the newly chosen language (if it's the open view).
+  window.addEventListener("language:changed", () => {
+    if (document.body.getAttribute("data-view") === "vault") openVault();
+  });
   $("vault-start")?.addEventListener("click", openQuizSetup);
   $("quiz-setup-close")?.addEventListener("click", closeQuizSetup);
   $("quiz-setup-backdrop")?.addEventListener("click", closeQuizSetup);

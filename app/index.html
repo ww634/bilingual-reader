@@ -42,6 +42,10 @@
         <h2 class="hero-title">Bilingual Reader</h2>
         <p class="hero-sub">Personal language-learning library</p>
       </div>
+      <div class="lang-row">
+        <label for="lang-switch-home">I'm learning</label>
+        <select id="lang-switch-home" class="lang-switch"></select>
+      </div>
       <nav class="home-tiles">
         <button class="home-tile" data-nav="library">
           <div class="tile-icon" aria-hidden="true">
@@ -88,6 +92,10 @@
 
     <!-- LIBRARY (downloaded books only, grid of covers) -->
     <main id="view-library" class="view" hidden>
+      <div class="lang-row">
+        <label for="lang-switch-library">Learning</label>
+        <select id="lang-switch-library" class="lang-switch"></select>
+      </div>
       <div id="library-empty" class="empty-state" hidden>
         <p class="empty-title">No books yet</p>
         <p class="empty-sub">Browse to add books to your library.</p>
@@ -98,6 +106,10 @@
 
     <!-- BROWSE (catalog from library.json, add to library) -->
     <main id="view-browse" class="view" hidden>
+      <div class="lang-row">
+        <label for="lang-switch-browse">Learning</label>
+        <select id="lang-switch-browse" class="lang-switch"></select>
+      </div>
       <div id="browse-status" class="status"></div>
       <ul id="browse-list" class="book-list"></ul>
     </main>
@@ -143,6 +155,10 @@
 
     <!-- MEMORY VAULT -->
     <main id="view-vault" class="view" hidden>
+      <div class="lang-row">
+        <label for="lang-switch-vault">Learning</label>
+        <select id="lang-switch-vault" class="lang-switch"></select>
+      </div>
       <div class="vault-summary">
         <div class="vault-stat"><span id="vault-new">0</span><label>New</label></div>
         <div class="vault-stat"><span id="vault-learning">0</span><label>Learning</label></div>
@@ -294,7 +310,7 @@
         <button id="reader-options-close" class="sheet-close" aria-label="Close">×</button>
       </header>
       <div class="sheet-body">
-        <section class="sheet-section settings-group">
+        <section class="sheet-section settings-group" id="reader-script-section">
           <label for="reader-script">Chinese display</label>
           <select id="reader-script">
             <option value="pinyin">Pinyin</option>

@@ -5,6 +5,7 @@ import { initPopover, closePopover } from "./popover.js";
 import { initReaderOptions } from "./reader-options.js";
 import { initAssistant } from "./assistant.js";
 import { initVault, openVault } from "./vault.js";
+import { loadLearningLanguage } from "./languages.js";
 
 const VIEWS = ["home", "library", "browse", "book-detail", "quizzes", "vault", "review", "reader", "settings"];
 const TITLES = {
@@ -122,6 +123,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 
 (async function boot() {
   await initSettings();
+  await loadLearningLanguage();
   initPopover();
   await initReaderOptions();
   initAssistant();

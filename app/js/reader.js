@@ -324,11 +324,15 @@ function emitEnglishSlice(pair, coverage, start, end) {
       let stop = p;
       while (stop < end && coverage[stop] === claim) stop++;
       const chunk = pair.alignment[claim];
+      // Word key for vault/mastered matching: the target-language headword —
+      // hanzi for Chinese, the target text for languages without a separate
+      // script (e.g. French).
+      const wordKey = chunk.hanzi || chunk.target || "";
       const attrs = [
         chunk.category ? `data-cat="${escape(chunk.category)}"` : "",
         chunk.frequency_band ? `data-freq="${escape(chunk.frequency_band)}"` : "",
         chunk.is_idiom ? `data-idiom="true"` : "",
-        chunk.hanzi ? `data-hanzi="${escape(chunk.hanzi)}"` : "",
+        wordKey ? `data-hanzi="${escape(wordKey)}"` : "",
       ].filter(Boolean).join(" ");
       html += `<span class="chunk" ${attrs}>${escape(text.slice(p, stop))}</span>`;
       p = stop;
@@ -879,7 +883,12 @@ export async function openReader(bookId, chapterId) {
     },
   }));
 
-  const hasHanzi = chapter.pairs.every(pair => pair.hanzi &&
+  // The pinyin/characters toggle only makes sense for Chinese; hide it for other
+  // languages (e.g. French), which have a single written form.
+  const isChinese = (chapter.language || "zh") === "zh";
+  const scriptSection = document.getElementById("reader-script-section");
+  if (scriptSection) scriptSection.hidden = !isChinese;
+  const hasHanzi = isChinese && chapter.pairs.every(pair => pair.hanzi &&
     (pair.alignment || []).every(chunk => chunk.hanzi));
   document.getElementById("reader-script").disabled = !hasHanzi;
   document.getElementById("reader-script-hint").textContent = hasHanzi

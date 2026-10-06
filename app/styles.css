@@ -1619,3 +1619,20 @@ body.hide-mastered .reader-block .english .chunk.mastered { visibility: hidden; 
   margin: -14px 0 24px;
 }
 .review-prompt-sub[hidden] { display: none; }
+
+/* Learning-language switcher (home / browse / library / vault) */
+.lang-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 14px;
+}
+.lang-row label { font-size: 13px; color: var(--text-dim); }
+.lang-switch {
+  font: inherit; font-size: 14px; font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 7px 14px;
+}

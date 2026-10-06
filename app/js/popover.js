@@ -289,7 +289,8 @@ function askAssistantFromPopover() {
 async function hearPronunciation() {
   const chunk = _state.chunk;
   if (!chunk) return;
-  const text = chunk.hanzi || _state.chapter?.pairs?.[chunk.pairIdx]?.hanzi || "";
+  const pair = _state.chapter?.pairs?.[chunk.pairIdx];
+  const text = wordOf(chunk) || pair?.hanzi || pair?.target || "";
   const lang = _state.chapter?.language || "zh";
   const btn = $("pop-act-hear");
 
@@ -318,10 +319,16 @@ async function hearPronunciation() {
   }
 }
 
-// Can this word be saved to the vault? (Only aligned words carry a clean
-// per-word hanzi; uncovered taps fall back to the whole sentence.)
+// The headword in the target language's own script — hanzi for Chinese, or the
+// target text for languages without a separate script (e.g. French).
+function wordOf(chunk) {
+  return ((chunk && (chunk.hanzi || chunk.target)) || "").trim();
+}
+
+// Can this word be saved to the vault? (Only aligned words are clean single
+// words; uncovered taps fall back to the whole sentence.)
 function isSaveable(chunk) {
-  return !!(chunk && chunk.hanzi && chunk.chunkIdx != null);
+  return !!(chunk && wordOf(chunk) && chunk.chunkIdx != null);
 }
 
 function setSaveButton(state) {
@@ -336,7 +343,7 @@ async function refreshSaveButton(chunk) {
   const btn = $("pop-act-save");
   if (!isSaveable(chunk)) { setSaveButton("default"); btn.disabled = false; return; }
   btn.disabled = false;
-  setSaveButton((await isWordSaved(chunk.hanzi)) ? "saved" : "default");
+  setSaveButton((await isWordSaved(wordOf(chunk))) ? "saved" : "default");
 }
 
 /** Toggle the current word in the Memory Vault: save if new, or remove (with a
@@ -351,10 +358,11 @@ async function toggleSaveVault() {
     setTimeout(() => setSaveButton("default"), 1400);
     return;
   }
-  const already = await isWordSaved(chunk.hanzi);
+  const word = wordOf(chunk);
+  const already = await isWordSaved(word);
   if (already) {
-    if (!confirm(`Remove “${chunk.hanzi}” from your Memory Vault?`)) return;
-    await removeWord(chunk.hanzi);
+    if (!confirm(`Remove “${word}” from your Memory Vault?`)) return;
+    await removeWord(word);
     setSaveButton("default");
   } else {
     btn.disabled = true;
