@@ -126,7 +126,7 @@ async function main() {
       meta: {
         source: "markup-authored",
         createdAt: new Date().toISOString().slice(0, 10),
-        model: "claude",
+        ...(book.model ? { model: book.model } : {}),
         synopsis: null,
         has_alignment: true,
         alignment_complete: true,

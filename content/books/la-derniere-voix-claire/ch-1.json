@@ -1,0 +1,6120 @@
+{
+  "id": "ch-1",
+  "book_id": "la-derniere-voix-claire",
+  "language": "fr",
+  "version": 1,
+  "title": {
+    "target": "Ce qui reste",
+    "english": "What Remains"
+  },
+  "pairs": [
+    {
+      "target": "La femme voulait un mot.",
+      "english": "The woman wanted one word.",
+      "alignment": [
+        {
+          "english": "The woman",
+          "target": "La femme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "wanted",
+          "target": "voulait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "one word",
+          "target": "un mot",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel Mercer avait retrouvé vingt-trois minutes de son père,",
+      "english": "Daniel Mercer had recovered twenty-three minutes of her father,",
+      "alignment": [
+        {
+          "english": "Daniel Mercer",
+          "target": "Daniel Mercer",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "had recovered",
+          "target": "avait retrouvé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "twenty-three minutes",
+          "target": "vingt-trois minutes",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "of",
+          "target": "de",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "her father",
+          "target": "son père",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "mais elle voulait ce mot-là.",
+      "english": "but she wanted that particular word.",
+      "alignment": [
+        {
+          "english": "but",
+          "target": "mais",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she",
+          "target": "elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "wanted",
+          "target": "voulait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that particular word",
+          "target": "ce mot-là",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Sur l'écran, deux lignes bleues traversaient un fond gris.",
+      "english": "On the screen, two blue lines crossed a grey background.",
+      "alignment": [
+        {
+          "english": "On the screen",
+          "target": "Sur l'écran",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "two blue lines",
+          "target": "deux lignes bleues",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "crossed",
+          "target": "traversaient",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a grey background",
+          "target": "un fond gris",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel ramena le curseur au début du passage.",
+      "english": "Daniel moved back the cursor to the beginning of the passage.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "moved back",
+          "target": "ramena",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the cursor",
+          "target": "le curseur",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "to the beginning",
+          "target": "au début",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "of the passage",
+          "target": "du passage",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il ne lança pas tout de suite la lecture.",
+      "english": "He did not start playback immediately.",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "did not start",
+          "target": "ne lança pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "immediately",
+          "target": "tout de suite",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "playback",
+          "target": "la lecture",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Depuis huit heures, il écoutait ce même repas de famille.",
+      "english": "Since eight o'clock, he had been listening to this same family meal.",
+      "alignment": [
+        {
+          "english": "Since eight o'clock",
+          "target": "Depuis huit heures",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he",
+          "target": "il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had been listening",
+          "target": "écoutait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to this same family meal",
+          "target": "ce même repas de famille",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il connaissait maintenant le bruit des assiettes,",
+      "english": "He now knew the sound of the plates,",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "knew",
+          "target": "connaissait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "now",
+          "target": "maintenant",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the sound of the plates",
+          "target": "le bruit des assiettes",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "le chien qui aboyait dans le jardin,",
+      "english": "the dog that barked in the garden,",
+      "alignment": [
+        {
+          "english": "the dog",
+          "target": "le chien",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "barked",
+          "target": "aboyait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "in the garden",
+          "target": "dans le jardin",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "et l'homme qui demandait toujours où était la moutarde.",
+      "english": "and the man who always asked where the mustard was.",
+      "alignment": [
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the man",
+          "target": "l'homme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "who",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "asked",
+          "target": "demandait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "always",
+          "target": "toujours",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "where",
+          "target": "où",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was",
+          "target": "était",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the mustard",
+          "target": "la moutarde",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Vous pourriez enlever le souffle, dit Mme Holt.",
+      "english": "— You could remove the hiss, said Mrs Holt.",
+      "alignment": [
+        {
+          "english": "You",
+          "target": "Vous",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "could",
+          "target": "pourriez",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "remove",
+          "target": "enlever",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the hiss",
+          "target": "le souffle",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "said",
+          "target": "dit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Mrs Holt",
+          "target": "Mme Holt",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Une partie, oui.",
+      "english": "— Some, yes.",
+      "alignment": [
+        {
+          "english": "Some",
+          "target": "Une partie",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "yes",
+          "target": "oui",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Alors on entendrait la fin.",
+      "english": "— Then we would hear the end.",
+      "alignment": [
+        {
+          "english": "Then",
+          "target": "Alors",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "we would hear",
+          "target": "on entendrait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the end",
+          "target": "la fin",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel regarda la cassette dans sa boîte.",
+      "english": "Daniel looked at the cassette in its case.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "looked at",
+          "target": "regarda",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the cassette",
+          "target": "la cassette",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "in its case",
+          "target": "dans sa boîte",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Une étiquette portait la mention « Été 94 ».",
+      "english": "A label bore the words “Summer 94”.",
+      "alignment": [
+        {
+          "english": "A label",
+          "target": "Une étiquette",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "bore",
+          "target": "portait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the words",
+          "target": "la mention",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "“Summer 94”",
+          "target": "« Été 94 »",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le chiffre neuf avait une longue queue,",
+      "english": "The number nine had a long tail,",
+      "alignment": [
+        {
+          "english": "The number nine",
+          "target": "Le chiffre neuf",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had",
+          "target": "avait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a long tail",
+          "target": "une longue queue",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "comme un ballon attaché à une ficelle.",
+      "english": "like a balloon tied to a string.",
+      "alignment": [
+        {
+          "english": "like",
+          "target": "comme",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a balloon",
+          "target": "un ballon",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "tied",
+          "target": "attaché",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to a string",
+          "target": "à une ficelle",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "C'était l'écriture de l'homme qui cherchait la moutarde.",
+      "english": "It was the handwriting of the man who was looking for the mustard.",
+      "alignment": [
+        {
+          "english": "It was",
+          "target": "C'était",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the handwriting",
+          "target": "l'écriture",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "of the man",
+          "target": "de l'homme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "who",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was looking for",
+          "target": "cherchait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the mustard",
+          "target": "la moutarde",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Sa fille le lui avait précisé en arrivant.",
+      "english": "His daughter had told him so on arriving.",
+      "alignment": [
+        {
+          "english": "His daughter",
+          "target": "Sa fille",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had told him so",
+          "target": "le lui avait précisé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "on arriving",
+          "target": "en arrivant",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Le souffle recouvre certaines parties de la voix.",
+      "english": "— The hiss covers some parts of the voice.",
+      "alignment": [
+        {
+          "english": "The hiss",
+          "target": "Le souffle",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "covers",
+          "target": "recouvre",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "some parts of the voice",
+          "target": "certaines parties de la voix",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Si j'en retire trop,",
+      "english": "If I remove too much of it,",
+      "alignment": [
+        {
+          "english": "If",
+          "target": "Si",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "I remove too much of it",
+          "target": "j'en retire trop",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "je retire aussi une partie des mots.",
+      "english": "I also remove some of the words.",
+      "alignment": [
+        {
+          "english": "I also remove",
+          "target": "je retire aussi",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "some of the words",
+          "target": "une partie des mots",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Vous dites que ce sera pire ?",
+      "english": "— You're saying that it will be worse?",
+      "alignment": [
+        {
+          "english": "You're saying",
+          "target": "Vous dites",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "que",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "it will be worse",
+          "target": "ce sera pire",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Je dis que ce sera différent.",
+      "english": "— I'm saying that it will be different.",
+      "alignment": [
+        {
+          "english": "I'm saying",
+          "target": "Je dis",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "que",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "it will be different",
+          "target": "ce sera différent",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle attendit.",
+      "english": "She waited.",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "Elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "waited",
+          "target": "attendit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il connaissait ce silence-là.",
+      "english": "He knew that particular silence.",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "knew",
+          "target": "connaissait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that particular silence",
+          "target": "ce silence-là",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il aurait dû commencer par un exemple.",
+      "english": "He should have started with an example.",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "should have",
+          "target": "aurait dû",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "started",
+          "target": "commencer",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "with an example",
+          "target": "par un exemple",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il ouvrit une copie de travail du fichier.",
+      "english": "He opened a working copy of the file.",
+      "alignment": [
+        {
+          "english": "He opened",
+          "target": "Il ouvrit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a working copy",
+          "target": "une copie de travail",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "of the file",
+          "target": "du fichier",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le transfert original restait dans un autre dossier,",
+      "english": "The original transfer remained in another folder,",
+      "alignment": [
+        {
+          "english": "The original transfer",
+          "target": "Le transfert original",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "remained",
+          "target": "restait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in another folder",
+          "target": "dans un autre dossier",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "avec la date et les notes de lecture.",
+      "english": "with the date and the playback notes.",
+      "alignment": [
+        {
+          "english": "with",
+          "target": "avec",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the date",
+          "target": "la date",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the playback notes",
+          "target": "les notes de lecture",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Sur le papier, cela paraissait excessif pour un déjeuner.",
+      "english": "On paper, that seemed excessive for a lunch.",
+      "alignment": [
+        {
+          "english": "On paper",
+          "target": "Sur le papier",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "cela",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "seemed",
+          "target": "paraissait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "excessive",
+          "target": "excessif",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "for a lunch",
+          "target": "pour un déjeuner",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "En pratique, les gens tenaient davantage à ces déjeuners",
+      "english": "In practice, people cared more about these lunches",
+      "alignment": [
+        {
+          "english": "In practice",
+          "target": "En pratique",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "people",
+          "target": "les gens",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "cared",
+          "target": "tenaient",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "more",
+          "target": "davantage",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "about these lunches",
+          "target": "à ces déjeuners",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "qu'à bien des dossiers officiels.",
+      "english": "than about many official files.",
+      "alignment": [
+        {
+          "english": "than about",
+          "target": "qu'à",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "many official files",
+          "target": "bien des dossiers officiels",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel sélectionna un court intervalle sans paroles.",
+      "english": "Daniel selected a short interval without speech.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "selected",
+          "target": "sélectionna",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a short interval",
+          "target": "un court intervalle",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "without speech",
+          "target": "sans paroles",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Même là, il y avait un froissement,",
+      "english": "Even there, there was a rustle,",
+      "alignment": [
+        {
+          "english": "Even there",
+          "target": "Même là",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "there was",
+          "target": "il y avait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a rustle",
+          "target": "un froissement",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "puis une chaise qu'on reculait.",
+      "english": "then a chair being pushed back.",
+      "alignment": [
+        {
+          "english": "then",
+          "target": "puis",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a chair",
+          "target": "une chaise",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "being pushed back",
+          "target": "qu'on reculait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il chercha un endroit plus régulier.",
+      "english": "He looked for a place that was more consistent.",
+      "alignment": [
+        {
+          "english": "He looked for",
+          "target": "Il chercha",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a place",
+          "target": "un endroit",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that was more consistent",
+          "target": "plus régulier",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Je donne au logiciel un exemple du bruit.",
+      "english": "— I'm giving the software an example of the noise.",
+      "alignment": [
+        {
+          "english": "I'm giving",
+          "target": "Je donne",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the software",
+          "target": "au logiciel",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "an example of the noise",
+          "target": "un exemple du bruit",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il essaie ensuite d'en réduire la présence.",
+      "english": "It then tries to reduce its presence.",
+      "alignment": [
+        {
+          "english": "It then tries",
+          "target": "Il essaie ensuite",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to reduce its presence",
+          "target": "d'en réduire la présence",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Et il sait ce qui est une voix ?",
+      "english": "— And it knows what is a voice?",
+      "alignment": [
+        {
+          "english": "And",
+          "target": "Et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "it knows",
+          "target": "il sait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "what is a voice",
+          "target": "ce qui est une voix",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Pas comme vous et moi.",
+      "english": "— Not the way you and I do.",
+      "alignment": [
+        {
+          "english": "Not",
+          "target": "Pas",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the way you and I do",
+          "target": "comme vous et moi",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le matin même, avant de lancer le moindre filtre,",
+      "english": "That very morning, before starting a single filter,",
+      "alignment": [
+        {
+          "english": "That very morning",
+          "target": "Le matin même",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "before starting",
+          "target": "avant de lancer",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a single filter",
+          "target": "le moindre filtre",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "il avait passé vingt minutes à examiner la cassette.",
+      "english": "he had spent twenty minutes examining the cassette.",
+      "alignment": [
+        {
+          "english": "he had spent",
+          "target": "il avait passé",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "twenty minutes",
+          "target": "vingt minutes",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "examining",
+          "target": "à examiner",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the cassette",
+          "target": "la cassette",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le boîtier fermait correctement.",
+      "english": "The casing closed properly.",
+      "alignment": [
+        {
+          "english": "The casing",
+          "target": "Le boîtier",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "closed",
+          "target": "fermait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "properly",
+          "target": "correctement",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "La bande ne présentait pas de pli visible.",
+      "english": "The tape showed no visible crease.",
+      "alignment": [
+        {
+          "english": "The tape",
+          "target": "La bande",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "showed no",
+          "target": "ne présentait pas",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "visible crease",
+          "target": "de pli visible",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il avait vérifié son matériel,",
+      "english": "He had checked his equipment,",
+      "alignment": [
+        {
+          "english": "He had checked",
+          "target": "Il avait vérifié",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "his equipment",
+          "target": "son matériel",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "puis fait un premier transfert en surveillant le niveau.",
+      "english": "then made an initial transfer while monitoring the level.",
+      "alignment": [
+        {
+          "english": "then",
+          "target": "puis",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "made",
+          "target": "fait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "an initial transfer",
+          "target": "un premier transfert",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "while monitoring",
+          "target": "en surveillant",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the level",
+          "target": "le niveau",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il fallait garder assez de marge",
+      "english": "He needed to leave enough headroom",
+      "alignment": [
+        {
+          "english": "He needed",
+          "target": "Il fallait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to leave",
+          "target": "garder",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "enough headroom",
+          "target": "assez de marge",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "pour les éclats de rire.",
+      "english": "for the bursts of laughter.",
+      "alignment": [
+        {
+          "english": "for",
+          "target": "pour",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the bursts of laughter",
+          "target": "les éclats de rire",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Un son trop fort pouvait saturer l'entrée du système.",
+      "english": "An excessively loud sound could overload the input of the system.",
+      "alignment": [
+        {
+          "english": "An excessively loud sound",
+          "target": "Un son trop fort",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "could",
+          "target": "pouvait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "overload",
+          "target": "saturer",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "the input",
+          "target": "l'entrée",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "of the system",
+          "target": "du système",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il n'allait pas ajouter un défaut nouveau",
+      "english": "He was not going to add a new defect",
+      "alignment": [
+        {
+          "english": "He was not going",
+          "target": "Il n'allait pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to add",
+          "target": "ajouter",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a new defect",
+          "target": "un défaut nouveau",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "aux défauts que le temps avait déjà laissés.",
+      "english": "to the defects that time had already left.",
+      "alignment": [
+        {
+          "english": "to the defects",
+          "target": "aux défauts",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "que",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "time",
+          "target": "le temps",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had already left",
+          "target": "avait déjà laissés",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il avait écouté les deux faces jusqu'au bout.",
+      "english": "He had listened to both sides to the end.",
+      "alignment": [
+        {
+          "english": "He had listened to",
+          "target": "Il avait écouté",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "both sides",
+          "target": "les deux faces",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to the end",
+          "target": "jusqu'au bout",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Sur la seconde, après plusieurs minutes sans conversation,",
+      "english": "On the second, after several minutes without conversation,",
+      "alignment": [
+        {
+          "english": "On the second",
+          "target": "Sur la seconde",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "after",
+          "target": "après",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "several minutes",
+          "target": "plusieurs minutes",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "without conversation",
+          "target": "sans conversation",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "une enfant expliquait les règles d'un jeu.",
+      "english": "a little girl was explaining the rules of a game.",
+      "alignment": [
+        {
+          "english": "a little girl",
+          "target": "une enfant",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was explaining",
+          "target": "expliquait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the rules",
+          "target": "les règles",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "of a game",
+          "target": "d'un jeu",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Chaque fois qu'un adulte comprenait,",
+      "english": "Each time an adult understood,",
+      "alignment": [
+        {
+          "english": "Each time",
+          "target": "Chaque fois",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "an adult",
+          "target": "qu'un adulte",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "understood",
+          "target": "comprenait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "elle changeait une règle.",
+      "english": "she changed a rule.",
+      "alignment": [
+        {
+          "english": "she changed",
+          "target": "elle changeait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a rule",
+          "target": "une règle",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le père avait protesté avec une indignation parfaitement jouée.",
+      "english": "The father had protested with perfectly acted indignation.",
+      "alignment": [
+        {
+          "english": "The father",
+          "target": "Le père",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had protested",
+          "target": "avait protesté",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "with",
+          "target": "avec",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "indignation",
+          "target": "une indignation",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "perfectly acted",
+          "target": "parfaitement jouée",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel avait noté l'endroit dans son carnet.",
+      "english": "Daniel had noted the place in his notebook.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "had noted",
+          "target": "avait noté",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the place",
+          "target": "l'endroit",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in his notebook",
+          "target": "dans son carnet",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Sa cliente ne savait peut-être pas que ce passage existait.",
+      "english": "His client might not know that this passage existed.",
+      "alignment": [
+        {
+          "english": "His client",
+          "target": "Sa cliente",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "might not know",
+          "target": "ne savait peut-être pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "que",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "this passage",
+          "target": "ce passage",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "existed",
+          "target": "existait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "C'était aussi une raison de tout conserver.",
+      "english": "That was also a reason to keep everything.",
+      "alignment": [
+        {
+          "english": "That was also",
+          "target": "C'était aussi",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a reason",
+          "target": "une raison",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to keep everything",
+          "target": "de tout conserver",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le moment qui comptait n'était pas toujours",
+      "english": "The moment that mattered was not always",
+      "alignment": [
+        {
+          "english": "The moment",
+          "target": "Le moment",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "mattered",
+          "target": "comptait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was not always",
+          "target": "n'était pas toujours",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "celui qu'on lui avait demandé de chercher.",
+      "english": "the one he had been asked to look for.",
+      "alignment": [
+        {
+          "english": "the one",
+          "target": "celui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he had been asked",
+          "target": "qu'on lui avait demandé",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to look for",
+          "target": "de chercher",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il appliqua un réglage volontairement trop fort.",
+      "english": "He applied a setting that was deliberately too strong.",
+      "alignment": [
+        {
+          "english": "He applied",
+          "target": "Il appliqua",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "setting",
+          "target": "un réglage",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "deliberately",
+          "target": "volontairement",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "too strong",
+          "target": "trop fort",
+          "category": "adjective",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le souffle recula.",
+      "english": "The hiss receded.",
+      "alignment": [
+        {
+          "english": "The hiss",
+          "target": "Le souffle",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "receded",
+          "target": "recula",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "La pièce enregistrée sembla s'éloigner.",
+      "english": "The room on the recording seemed to recede.",
+      "alignment": [
+        {
+          "english": "The room",
+          "target": "La pièce",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the recording",
+          "target": "enregistrée",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "seemed",
+          "target": "sembla",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to recede",
+          "target": "s'éloigner",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Puis le père de Mme Holt se mit à parler,",
+      "english": "Then Mrs Holt's father began to speak,",
+      "alignment": [
+        {
+          "english": "Then",
+          "target": "Puis",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "father",
+          "target": "le père",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Mrs Holt's",
+          "target": "de Mme Holt",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "began to speak",
+          "target": "se mit à parler",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "avec une voix mince et étrangement métallique.",
+      "english": "with a thin and strangely metallic voice.",
+      "alignment": [
+        {
+          "english": "with",
+          "target": "avec",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "voice",
+          "target": "une voix",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "thin",
+          "target": "mince",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "strangely",
+          "target": "étrangement",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "metallic",
+          "target": "métallique",
+          "category": "adjective",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "La fin de sa phrase était toujours incompréhensible.",
+      "english": "The end of his sentence was still unintelligible.",
+      "alignment": [
+        {
+          "english": "The end of his sentence",
+          "target": "La fin de sa phrase",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was",
+          "target": "était",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "still",
+          "target": "toujours",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "unintelligible",
+          "target": "incompréhensible",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Mme Holt se pencha vers le haut-parleur.",
+      "english": "Mrs Holt leaned towards the speaker.",
+      "alignment": [
+        {
+          "english": "Mrs Holt",
+          "target": "Mme Holt",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "leaned",
+          "target": "se pencha",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "towards the speaker",
+          "target": "vers le haut-parleur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Ce n'est plus tout à fait lui.",
+      "english": "— That is no longer quite him.",
+      "alignment": [
+        {
+          "english": "That is no longer",
+          "target": "Ce n'est plus",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "quite",
+          "target": "tout à fait",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "him",
+          "target": "lui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel rétablit le réglage précédent.",
+      "english": "Daniel restored the previous setting.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "restored",
+          "target": "rétablit",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "the previous setting",
+          "target": "le réglage précédent",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il ajusta le volume pour comparer les deux versions,",
+      "english": "He adjusted the volume to compare the two versions,",
+      "alignment": [
+        {
+          "english": "He adjusted",
+          "target": "Il ajusta",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the volume",
+          "target": "le volume",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to compare",
+          "target": "pour comparer",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the two versions",
+          "target": "les deux versions",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "sans laisser la plus forte paraître meilleure.",
+      "english": "without letting the louder one seem better.",
+      "alignment": [
+        {
+          "english": "without",
+          "target": "sans",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "letting",
+          "target": "laisser",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the louder one",
+          "target": "la plus forte",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "seem",
+          "target": "paraître",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "better",
+          "target": "meilleure",
+          "category": "adjective",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Cette fois, elle reconnut le petit rire",
+      "english": "This time, she recognised the little laugh",
+      "alignment": [
+        {
+          "english": "This time",
+          "target": "Cette fois",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she",
+          "target": "elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "recognised",
+          "target": "reconnut",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the little laugh",
+          "target": "le petit rire",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "qui précédait la phrase.",
+      "english": "that preceded the sentence.",
+      "alignment": [
+        {
+          "english": "that",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "preceded",
+          "target": "précédait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the sentence",
+          "target": "la phrase",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Ses mains se desserrèrent sur son sac.",
+      "english": "Her hands unclenched on her bag.",
+      "alignment": [
+        {
+          "english": "Her hands",
+          "target": "Ses mains",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "unclenched",
+          "target": "se desserrèrent",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "on her bag",
+          "target": "sur son sac",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— C'était quand il allait dire une bêtise.",
+      "english": "— That was when he was about to say something silly.",
+      "alignment": [
+        {
+          "english": "That was",
+          "target": "C'était",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "when",
+          "target": "quand",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he was about to say",
+          "target": "il allait dire",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "something silly",
+          "target": "une bêtise",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il riait avant, pour être sûr.",
+      "english": "He laughed before, to make sure.",
+      "alignment": [
+        {
+          "english": "He laughed",
+          "target": "Il riait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "before",
+          "target": "avant",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to make sure",
+          "target": "pour être sûr",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Une précaution raisonnable, dit Daniel.",
+      "english": "— A sensible precaution, said Daniel.",
+      "alignment": [
+        {
+          "english": "A sensible precaution",
+          "target": "Une précaution raisonnable",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "said",
+          "target": "dit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle sourit, puis regarda de nouveau l'écran.",
+      "english": "She smiled, then looked at the screen again.",
+      "alignment": [
+        {
+          "english": "She smiled",
+          "target": "Elle sourit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "then",
+          "target": "puis",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "looked at",
+          "target": "regarda",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "again",
+          "target": "de nouveau",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the screen",
+          "target": "l'écran",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Ma sœur pense qu'il dit mon prénom.",
+      "english": "— My sister thinks he says my first name.",
+      "alignment": [
+        {
+          "english": "My sister",
+          "target": "Ma sœur",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "thinks",
+          "target": "pense",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he says",
+          "target": "qu'il dit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "my first name",
+          "target": "mon prénom",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il aurait préféré ne pas le savoir.",
+      "english": "He would have preferred not to know that.",
+      "alignment": [
+        {
+          "english": "He would have preferred",
+          "target": "Il aurait préféré",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "not to know that",
+          "target": "ne pas le savoir",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Maintenant, au prochain passage,",
+      "english": "Now, on the next playback,",
+      "alignment": [
+        {
+          "english": "Now",
+          "target": "Maintenant",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the next playback",
+          "target": "au prochain passage",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "il chercherait malgré lui les sons de ce prénom.",
+      "english": "he would look for the sounds of that name in spite of himself.",
+      "alignment": [
+        {
+          "english": "he would look for",
+          "target": "il chercherait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in spite of himself",
+          "target": "malgré lui",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the sounds of that name",
+          "target": "les sons de ce prénom",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il retira sa main de la souris.",
+      "english": "He took his hand off the mouse.",
+      "alignment": [
+        {
+          "english": "He took",
+          "target": "Il retira",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "his hand",
+          "target": "sa main",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "off the mouse",
+          "target": "de la souris",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Je ne peux pas vous le confirmer.",
+      "english": "— I cannot confirm that for you.",
+      "alignment": [
+        {
+          "english": "I cannot",
+          "target": "Je ne peux pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "confirm that for you",
+          "target": "vous le confirmer",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Même si vous y passez un peu plus de temps ?",
+      "english": "— Even if you spend on it a little more time?",
+      "alignment": [
+        {
+          "english": "Even",
+          "target": "Même",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "if",
+          "target": "si",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "you spend on it",
+          "target": "vous y passez",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a little more time",
+          "target": "un peu plus de temps",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Je pourrais y passer tout le week-end.",
+      "english": "— I could spend on it the whole weekend.",
+      "alignment": [
+        {
+          "english": "I could",
+          "target": "Je pourrais",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "spend on it",
+          "target": "y passer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the whole weekend",
+          "target": "tout le week-end",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Cela ne rendrait pas la réponse plus honnête.",
+      "english": "That would not make the answer more honest.",
+      "alignment": [
+        {
+          "english": "That",
+          "target": "Cela",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "would not make",
+          "target": "ne rendrait pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the answer",
+          "target": "la réponse",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "more honest",
+          "target": "plus honnête",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il avait parlé trop sèchement.",
+      "english": "He had spoken too sharply.",
+      "alignment": [
+        {
+          "english": "He had spoken",
+          "target": "Il avait parlé",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "too sharply",
+          "target": "trop sèchement",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "À soixante-sept ans, il s'en apercevait toujours un instant trop tard.",
+      "english": "At sixty-seven, he always noticed it a moment too late.",
+      "alignment": [
+        {
+          "english": "At sixty-seven",
+          "target": "À soixante-sept ans",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he",
+          "target": "il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "noticed it",
+          "target": "s'en apercevait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "always",
+          "target": "toujours",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a moment too late",
+          "target": "un instant trop tard",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il relança l'enregistrement un peu plus tôt.",
+      "english": "He restarted the recording a little earlier.",
+      "alignment": [
+        {
+          "english": "He restarted",
+          "target": "Il relança",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the recording",
+          "target": "l'enregistrement",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a little earlier",
+          "target": "un peu plus tôt",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Une femme ordonnait au chien de descendre.",
+      "english": "A woman was telling the dog to get down.",
+      "alignment": [
+        {
+          "english": "A woman",
+          "target": "Une femme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was telling",
+          "target": "ordonnait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the dog",
+          "target": "au chien",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to get down",
+          "target": "de descendre",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "L'homme répondit qu'il n'était pas sur la table.",
+      "english": "The man replied that he was not on the table.",
+      "alignment": [
+        {
+          "english": "The man",
+          "target": "L'homme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "replied",
+          "target": "répondit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that he was not",
+          "target": "qu'il n'était pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the table",
+          "target": "sur la table",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Quelqu'un éclata de rire,",
+      "english": "Someone burst out laughing,",
+      "alignment": [
+        {
+          "english": "Someone",
+          "target": "Quelqu'un",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "burst out laughing",
+          "target": "éclata de rire",
+          "category": "idiom",
+          "frequency_band": null,
+          "is_idiom": true
+        }
+      ]
+    },
+    {
+      "target": "si près du micro que le son grésilla.",
+      "english": "so close to the microphone that the sound crackled.",
+      "alignment": [
+        {
+          "english": "so close to the microphone",
+          "target": "si près du micro",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "que",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the sound",
+          "target": "le son",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "crackled",
+          "target": "grésilla",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Mme Holt ferma les yeux.",
+      "english": "Mrs Holt closed her eyes.",
+      "alignment": [
+        {
+          "english": "Mrs Holt",
+          "target": "Mme Holt",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "closed her eyes",
+          "target": "ferma les yeux",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— C'est moi, dit-elle.",
+      "english": "— That's me, she said.",
+      "alignment": [
+        {
+          "english": "That's me",
+          "target": "C'est moi",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she said",
+          "target": "dit-elle",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il laissa la bande continuer.",
+      "english": "He let the tape run on.",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "let",
+          "target": "laissa",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the tape",
+          "target": "la bande",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "run on",
+          "target": "continuer",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Cette fois, elle ne lui demanda pas de revenir en arrière.",
+      "english": "This time, she did not ask him to go back.",
+      "alignment": [
+        {
+          "english": "This time",
+          "target": "Cette fois",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she did not ask him",
+          "target": "elle ne lui demanda pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to go back",
+          "target": "de revenir en arrière",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Quand elle partit, elle emporta la cassette,",
+      "english": "When she left, she took the cassette,",
+      "alignment": [
+        {
+          "english": "When",
+          "target": "Quand",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she left",
+          "target": "elle partit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she took",
+          "target": "elle emporta",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the cassette",
+          "target": "la cassette",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "une clé USB et une feuille expliquant les fichiers.",
+      "english": "a USB drive and a sheet of paper explaining the files.",
+      "alignment": [
+        {
+          "english": "a USB drive",
+          "target": "une clé USB",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a sheet of paper",
+          "target": "une feuille",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "explaining",
+          "target": "expliquant",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the files",
+          "target": "les fichiers",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "La version traitée et le transfert sans traitement avaient des noms différents.",
+      "english": "The processed version and the unprocessed transfer had different names.",
+      "alignment": [
+        {
+          "english": "The processed version",
+          "target": "La version traitée",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the unprocessed transfer",
+          "target": "le transfert sans traitement",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "had",
+          "target": "avaient",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "different names",
+          "target": "des noms différents",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il avait facturé deux heures.",
+      "english": "He had charged for two hours.",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had charged for",
+          "target": "avait facturé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "two hours",
+          "target": "deux heures",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Son carnet en comptait presque quatre.",
+      "english": "His notebook recorded almost four.",
+      "alignment": [
+        {
+          "english": "His notebook",
+          "target": "Son carnet",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "recorded",
+          "target": "en comptait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "almost four",
+          "target": "presque quatre",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il raya une ligne sur la facture,",
+      "english": "He crossed out a line on the invoice,",
+      "alignment": [
+        {
+          "english": "He crossed out",
+          "target": "Il raya",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "a line",
+          "target": "une ligne",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the invoice",
+          "target": "sur la facture",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "avant qu'elle puisse lui poser une question.",
+      "english": "before she could ask him a question.",
+      "alignment": [
+        {
+          "english": "before",
+          "target": "avant",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she could",
+          "target": "qu'elle puisse",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "ask him a question",
+          "target": "lui poser une question",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Vous avez un travail merveilleux.",
+      "english": "— You have a wonderful job.",
+      "alignment": [
+        {
+          "english": "You",
+          "target": "Vous",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "have",
+          "target": "avez",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a wonderful job",
+          "target": "un travail merveilleux",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Surtout quand les gens écrivent la bonne date sur les boîtes.",
+      "english": "— Especially when people write the right date on the cases.",
+      "alignment": [
+        {
+          "english": "Especially",
+          "target": "Surtout",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "when",
+          "target": "quand",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "people",
+          "target": "les gens",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "write",
+          "target": "écrivent",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the right date",
+          "target": "la bonne date",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the cases",
+          "target": "sur les boîtes",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle ne savait pas s'il plaisantait.",
+      "english": "She did not know whether he was joking.",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "Elle",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "did not know",
+          "target": "ne savait pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "whether he was joking",
+          "target": "s'il plaisantait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Lui non plus, tout à fait.",
+      "english": "Neither did he, entirely.",
+      "alignment": [
+        {
+          "english": "Neither did he",
+          "target": "Lui non plus",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "entirely",
+          "target": "tout à fait",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Près de la porte, Mme Holt s'arrêta.",
+      "english": "Near the door, Mrs Holt stopped.",
+      "alignment": [
+        {
+          "english": "Near the door",
+          "target": "Près de la porte",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Mrs Holt",
+          "target": "Mme Holt",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "stopped",
+          "target": "s'arrêta",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Il faut que je garde la cassette aussi ?",
+      "english": "— Do I need to keep the cassette as well?",
+      "alignment": [
+        {
+          "english": "Do I need",
+          "target": "Il faut",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to keep",
+          "target": "que je garde",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the cassette",
+          "target": "la cassette",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "as well",
+          "target": "aussi",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Oui. Au sec, loin d'un radiateur.",
+      "english": "— Yes. Somewhere dry, away from a radiator.",
+      "alignment": [
+        {
+          "english": "Yes",
+          "target": "Oui",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Somewhere dry",
+          "target": "Au sec",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "away",
+          "target": "loin",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "from a radiator",
+          "target": "d'un radiateur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Mais vous avez tout sur l'ordinateur.",
+      "english": "— But you have everything on the computer.",
+      "alignment": [
+        {
+          "english": "But",
+          "target": "Mais",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "you have",
+          "target": "vous avez",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "everything",
+          "target": "tout",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the computer",
+          "target": "sur l'ordinateur",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Ce que j'ai transféré, oui.",
+      "english": "— What I transferred, yes.",
+      "alignment": [
+        {
+          "english": "What I transferred",
+          "target": "Ce que j'ai transféré",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "yes",
+          "target": "oui",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle retourna la petite boîte dans sa main.",
+      "english": "She turned over the little case in her hand.",
+      "alignment": [
+        {
+          "english": "She turned over",
+          "target": "Elle retourna",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the little case",
+          "target": "la petite boîte",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in her hand",
+          "target": "dans sa main",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Je n'ai plus de lecteur.",
+      "english": "— I no longer have a player.",
+      "alignment": [
+        {
+          "english": "I no longer have",
+          "target": "Je n'ai plus",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a player",
+          "target": "de lecteur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "— Vous n'avez pas à l'écouter pour la garder.",
+      "english": "— You don't have to listen to it to keep it.",
+      "alignment": [
+        {
+          "english": "You don't have",
+          "target": "Vous n'avez pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to listen to it",
+          "target": "à l'écouter",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to keep it",
+          "target": "pour la garder",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle rangea la cassette dans une poche séparée,",
+      "english": "She put away the cassette in a separate pocket,",
+      "alignment": [
+        {
+          "english": "She put away",
+          "target": "Elle rangea",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the cassette",
+          "target": "la cassette",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "in a separate pocket",
+          "target": "dans une poche séparée",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "où ses clés ne risqueraient pas de la rayer.",
+      "english": "where her keys would not be likely to scratch it.",
+      "alignment": [
+        {
+          "english": "where",
+          "target": "où",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "her keys",
+          "target": "ses clés",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "would not be likely",
+          "target": "ne risqueraient pas",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to scratch it",
+          "target": "de la rayer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il aurait pu lui dire que le boîtier supporterait quelques rayures.",
+      "english": "He could have told her that the casing would withstand a few scratches.",
+      "alignment": [
+        {
+          "english": "He could have",
+          "target": "Il aurait pu",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "told her",
+          "target": "lui dire",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "que",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the casing",
+          "target": "le boîtier",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "would withstand",
+          "target": "supporterait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a few scratches",
+          "target": "quelques rayures",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il n'en fit rien.",
+      "english": "He said nothing of the sort.",
+      "alignment": [
+        {
+          "english": "He said nothing of the sort",
+          "target": "Il n'en fit rien",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il lui montra plutôt la marche qu'il fallait éviter dans la cour.",
+      "english": "He showed her instead the step she needed to avoid in the courtyard.",
+      "alignment": [
+        {
+          "english": "He showed her",
+          "target": "Il lui montra",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "instead",
+          "target": "plutôt",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the step",
+          "target": "la marche",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she needed to avoid",
+          "target": "qu'il fallait éviter",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in the courtyard",
+          "target": "dans la cour",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "L'atelier occupait l'ancien garage,",
+      "english": "The workshop occupied the old garage,",
+      "alignment": [
+        {
+          "english": "The workshop",
+          "target": "L'atelier",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "occupied",
+          "target": "occupait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the old garage",
+          "target": "l'ancien garage",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "derrière une petite maison de briques.",
+      "english": "behind a small brick house.",
+      "alignment": [
+        {
+          "english": "behind",
+          "target": "derrière",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a small brick house",
+          "target": "une petite maison de briques",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Une porte donnait sur la cour.",
+      "english": "A door opened onto the courtyard.",
+      "alignment": [
+        {
+          "english": "A door",
+          "target": "Une porte",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "opened onto",
+          "target": "donnait sur",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the courtyard",
+          "target": "la cour",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "L'autre menait à un passage couvert,",
+      "english": "The other led to a covered passage,",
+      "alignment": [
+        {
+          "english": "The other",
+          "target": "L'autre",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "led",
+          "target": "menait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to a covered passage",
+          "target": "à un passage couvert",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "puis à la cuisine.",
+      "english": "then to the kitchen.",
+      "alignment": [
+        {
+          "english": "then",
+          "target": "puis",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to the kitchen",
+          "target": "à la cuisine",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Cette seconde porte frottait contre le sol depuis l'été.",
+      "english": "This second door had been scraping against the floor since the summer.",
+      "alignment": [
+        {
+          "english": "This second door",
+          "target": "Cette seconde porte",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had been scraping",
+          "target": "frottait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "against the floor",
+          "target": "contre le sol",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "since the summer",
+          "target": "depuis l'été",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel la souleva par la poignée pour passer.",
+      "english": "Daniel lifted it by the handle to get through.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "lifted it",
+          "target": "la souleva",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "by the handle",
+          "target": "par la poignée",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to get through",
+          "target": "pour passer",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Dans la cuisine, il remplit la bouilloire jusqu'au premier trait.",
+      "english": "In the kitchen, he filled the kettle to the first mark.",
+      "alignment": [
+        {
+          "english": "In the kitchen",
+          "target": "Dans la cuisine",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he filled",
+          "target": "il remplit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the kettle",
+          "target": "la bouilloire",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to the first mark",
+          "target": "jusqu'au premier trait",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Marianne la remplissait toujours jusqu'en haut.",
+      "english": "Marianne always used to fill it to the top.",
+      "alignment": [
+        {
+          "english": "Marianne",
+          "target": "Marianne",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "used to fill it",
+          "target": "la remplissait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "always",
+          "target": "toujours",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to the top",
+          "target": "jusqu'en haut",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle prétendait que cela lui évitait de réfléchir.",
+      "english": "She claimed that it saved her from having to think.",
+      "alignment": [
+        {
+          "english": "She claimed",
+          "target": "Elle prétendait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "que",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "it",
+          "target": "cela",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "saved her from",
+          "target": "lui évitait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "having to think",
+          "target": "de réfléchir",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il lui avait expliqué la dépense d'électricité,",
+      "english": "He had explained to her the electricity cost,",
+      "alignment": [
+        {
+          "english": "He had explained to her",
+          "target": "Il lui avait expliqué",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the electricity cost",
+          "target": "la dépense d'électricité",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "un soir, avec des chiffres.",
+      "english": "one evening, with figures.",
+      "alignment": [
+        {
+          "english": "one evening",
+          "target": "un soir",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "with",
+          "target": "avec",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "figures",
+          "target": "des chiffres",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le lendemain, elle avait collé sur la bouilloire",
+      "english": "The next day, she had stuck on the kettle",
+      "alignment": [
+        {
+          "english": "The next day",
+          "target": "Le lendemain",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "she had stuck",
+          "target": "elle avait collé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the kettle",
+          "target": "sur la bouilloire",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "une étiquette portant le mot « Centrale ».",
+      "english": "a label bearing the word “Power Station”.",
+      "alignment": [
+        {
+          "english": "a label",
+          "target": "une étiquette",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "bearing",
+          "target": "portant",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the word",
+          "target": "le mot",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "“Power Station”",
+          "target": "« Centrale »",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "La colle avait laissé un rectangle sombre.",
+      "english": "The glue had left a dark rectangle.",
+      "alignment": [
+        {
+          "english": "The glue",
+          "target": "La colle",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "had left",
+          "target": "avait laissé",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a dark rectangle",
+          "target": "un rectangle sombre",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Quatre ans après sa mort, le rectangle était toujours là.",
+      "english": "Four years after her death, the rectangle was still there.",
+      "alignment": [
+        {
+          "english": "Four years",
+          "target": "Quatre ans",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "after her death",
+          "target": "après sa mort",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the rectangle",
+          "target": "le rectangle",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "was still there",
+          "target": "était toujours là",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il but son thé debout,",
+      "english": "He drank his tea standing up,",
+      "alignment": [
+        {
+          "english": "He drank",
+          "target": "Il but",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "his tea",
+          "target": "son thé",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "standing up",
+          "target": "debout",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "en regardant une vis posée près de l'évier.",
+      "english": "looking at a screw lying beside the sink.",
+      "alignment": [
+        {
+          "english": "looking at",
+          "target": "en regardant",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a screw",
+          "target": "une vis",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "lying",
+          "target": "posée",
+          "category": "adjective",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "beside the sink",
+          "target": "près de l'évier",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle venait de la seconde chaise de l'atelier.",
+      "english": "It came from the second chair in the workshop.",
+      "alignment": [
+        {
+          "english": "It came",
+          "target": "Elle venait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "from the second chair",
+          "target": "de la seconde chaise",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in the workshop",
+          "target": "de l'atelier",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il l'avait retirée trois semaines plus tôt",
+      "english": "He had removed it three weeks earlier",
+      "alignment": [
+        {
+          "english": "He had removed it",
+          "target": "Il l'avait retirée",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "three weeks earlier",
+          "target": "trois semaines plus tôt",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "pour en acheter une autre.",
+      "english": "to buy another one.",
+      "alignment": [
+        {
+          "english": "to",
+          "target": "pour",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "buy",
+          "target": "en acheter",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "another one",
+          "target": "une autre",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Mme Holt avait dû s'asseoir sur le tabouret.",
+      "english": "Mrs Holt had had to sit on the stool.",
+      "alignment": [
+        {
+          "english": "Mrs Holt",
+          "target": "Mme Holt",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "had had to",
+          "target": "avait dû",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "sit",
+          "target": "s'asseoir",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the stool",
+          "target": "sur le tabouret",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Elle n'avait rien dit,",
+      "english": "She had said nothing,",
+      "alignment": [
+        {
+          "english": "She had said nothing",
+          "target": "Elle n'avait rien dit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "ce qui rendait la chose un peu plus gênante.",
+      "english": "which made it a little more embarrassing.",
+      "alignment": [
+        {
+          "english": "which",
+          "target": "ce qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "made",
+          "target": "rendait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "it",
+          "target": "la chose",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a little more embarrassing",
+          "target": "un peu plus gênante",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il glissa la vis dans sa poche.",
+      "english": "He slipped the screw into his pocket.",
+      "alignment": [
+        {
+          "english": "He slipped",
+          "target": "Il glissa",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the screw",
+          "target": "la vis",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "into his pocket",
+          "target": "dans sa poche",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "La quincaillerie fermait à midi et demi.",
+      "english": "The hardware shop closed at half past twelve.",
+      "alignment": [
+        {
+          "english": "The hardware shop",
+          "target": "La quincaillerie",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "closed",
+          "target": "fermait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "at half past twelve",
+          "target": "à midi et demi",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il lui restait vingt minutes.",
+      "english": "He had twenty minutes left.",
+      "alignment": [
+        {
+          "english": "He had",
+          "target": "Il lui restait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "twenty minutes",
+          "target": "vingt minutes",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Dehors, la pluie avait cessé,",
+      "english": "Outside, the rain had stopped,",
+      "alignment": [
+        {
+          "english": "Outside",
+          "target": "Dehors",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the rain",
+          "target": "la pluie",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had stopped",
+          "target": "avait cessé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "mais les arbres continuaient à goutter.",
+      "english": "but the trees continued to drip.",
+      "alignment": [
+        {
+          "english": "but",
+          "target": "mais",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the trees",
+          "target": "les arbres",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "continued",
+          "target": "continuaient",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to drip",
+          "target": "à goutter",
+          "category": "verb",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Calderwick avait cette odeur de feuilles mouillées",
+      "english": "Calderwick had that smell of wet leaves",
+      "alignment": [
+        {
+          "english": "Calderwick",
+          "target": "Calderwick",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "had",
+          "target": "avait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that smell",
+          "target": "cette odeur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "of wet leaves",
+          "target": "de feuilles mouillées",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "et de graisse chaude qui annonçait l'heure du déjeuner.",
+      "english": "and of hot fat that announced lunchtime.",
+      "alignment": [
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "of hot fat",
+          "target": "de graisse chaude",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "that",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "announced",
+          "target": "annonçait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "lunchtime",
+          "target": "l'heure du déjeuner",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "À l'angle, un livreur bloquait le trottoir",
+      "english": "On the corner, a delivery driver was blocking the pavement",
+      "alignment": [
+        {
+          "english": "On the corner",
+          "target": "À l'angle",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a delivery driver",
+          "target": "un livreur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "was blocking",
+          "target": "bloquait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the pavement",
+          "target": "le trottoir",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "avec trois caisses de lait.",
+      "english": "with three crates of milk.",
+      "alignment": [
+        {
+          "english": "with",
+          "target": "avec",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "three crates of milk",
+          "target": "trois caisses de lait",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel contourna les caisses.",
+      "english": "Daniel walked around the crates.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "walked around",
+          "target": "contourna",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the crates",
+          "target": "les caisses",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il s'était promis de ne pas devenir un homme",
+      "english": "He had promised himself not to become a man",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "Il",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had promised himself",
+          "target": "s'était promis",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "not to become",
+          "target": "de ne pas devenir",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a man",
+          "target": "un homme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "qui se plaignait des caisses de lait.",
+      "english": "who complained about crates of milk.",
+      "alignment": [
+        {
+          "english": "who",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "complained",
+          "target": "se plaignait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "about crates of milk",
+          "target": "des caisses de lait",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il avait encore quelques principes.",
+      "english": "He still had a few principles.",
+      "alignment": [
+        {
+          "english": "He still had",
+          "target": "Il avait encore",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a few principles",
+          "target": "quelques principes",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "À son retour, la vis neuve se trouvait dans un sachet",
+      "english": "On his return, the new screw was in a small bag",
+      "alignment": [
+        {
+          "english": "On his return",
+          "target": "À son retour",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the new screw",
+          "target": "la vis neuve",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "was",
+          "target": "se trouvait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in a small bag",
+          "target": "dans un sachet",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "avec trois autres dont il n'avait aucun usage.",
+      "english": "with three others for which he had no use.",
+      "alignment": [
+        {
+          "english": "with",
+          "target": "avec",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "three others",
+          "target": "trois autres",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "for which",
+          "target": "dont",
+          "category": "function_word",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "he had no use",
+          "target": "il n'avait aucun usage",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le commerçant ne les vendait pas à l'unité.",
+      "english": "The shopkeeper did not sell them individually.",
+      "alignment": [
+        {
+          "english": "The shopkeeper",
+          "target": "Le commerçant",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "did not sell them",
+          "target": "ne les vendait pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "individually",
+          "target": "à l'unité",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel avait exprimé son opinion sur ce point.",
+      "english": "Daniel had expressed his opinion on that point.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "had expressed",
+          "target": "avait exprimé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "his opinion",
+          "target": "son opinion",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on that point",
+          "target": "sur ce point",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Ses principes ne couvraient pas la quincaillerie.",
+      "english": "His principles did not cover hardware.",
+      "alignment": [
+        {
+          "english": "His principles",
+          "target": "Ses principes",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "did not cover",
+          "target": "ne couvraient pas",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "hardware",
+          "target": "la quincaillerie",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Un voyant rouge clignotait sur le répondeur.",
+      "english": "A red light was flashing on the answering machine.",
+      "alignment": [
+        {
+          "english": "A red light",
+          "target": "Un voyant rouge",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "was flashing",
+          "target": "clignotait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the answering machine",
+          "target": "sur le répondeur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "L'appareil servait uniquement à la ligne professionnelle.",
+      "english": "The machine served only the business line.",
+      "alignment": [
+        {
+          "english": "The machine",
+          "target": "L'appareil",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "served",
+          "target": "servait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "only",
+          "target": "uniquement",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the business line",
+          "target": "à la ligne professionnelle",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel en connaissait les boutons sans regarder.",
+      "english": "Daniel knew its buttons without looking.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "knew",
+          "target": "en connaissait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "its buttons",
+          "target": "les boutons",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "without looking",
+          "target": "sans regarder",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il posa le sachet et appuya sur lecture.",
+      "english": "He put down the small bag and pressed play.",
+      "alignment": [
+        {
+          "english": "He put down",
+          "target": "Il posa",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the small bag",
+          "target": "le sachet",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "pressed",
+          "target": "appuya",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "play",
+          "target": "sur lecture",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "D'abord, un souffle.",
+      "english": "First, a hiss.",
+      "alignment": [
+        {
+          "english": "First",
+          "target": "D'abord",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a hiss",
+          "target": "un souffle",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Puis une femme inspira, très près du téléphone.",
+      "english": "Then a woman drew breath, very close to the telephone.",
+      "alignment": [
+        {
+          "english": "Then",
+          "target": "Puis",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a woman",
+          "target": "une femme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "drew breath",
+          "target": "inspira",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "very close",
+          "target": "très près",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to the telephone",
+          "target": "du téléphone",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Daniel. C'est Ruth Bennett. »",
+      "english": "“Daniel. It's Ruth Bennett.”",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "It's",
+          "target": "C'est",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ruth Bennett",
+          "target": "Ruth Bennett",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il resta devant l'établi, la main sur le sachet.",
+      "english": "He stood at the workbench, his hand on the small bag.",
+      "alignment": [
+        {
+          "english": "He stood",
+          "target": "Il resta",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "at the workbench",
+          "target": "devant l'établi",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "his hand",
+          "target": "la main",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the small bag",
+          "target": "sur le sachet",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« L'affaire Anna Vale. Vous aviez travaillé sur l'enregistrement.",
+      "english": "“The Anna Vale case. You worked on the recording.",
+      "alignment": [
+        {
+          "english": "case",
+          "target": "L'affaire",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Anna Vale",
+          "target": "Anna Vale",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "You worked",
+          "target": "Vous aviez travaillé",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the recording",
+          "target": "sur l'enregistrement",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il faut que vous écoutiez quelque chose. »",
+      "english": "You need to listen to something.”",
+      "alignment": [
+        {
+          "english": "You need",
+          "target": "Il faut",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to listen",
+          "target": "que vous écoutiez",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to something",
+          "target": "quelque chose",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Au fond, une autre voix annonça quelques mots.",
+      "english": "In the background, another voice announced a few words.",
+      "alignment": [
+        {
+          "english": "In the background",
+          "target": "Au fond",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "another voice",
+          "target": "une autre voix",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "announced",
+          "target": "annonça",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a few words",
+          "target": "quelques mots",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il crut entendre « Mereford »,",
+      "english": "He thought he heard “Mereford”,",
+      "alignment": [
+        {
+          "english": "He thought he heard",
+          "target": "Il crut entendre",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "“Mereford”",
+          "target": "« Mereford »",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "puis un grondement couvrit la suite.",
+      "english": "then a rumble covered the rest.",
+      "alignment": [
+        {
+          "english": "then",
+          "target": "puis",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a rumble",
+          "target": "un grondement",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        },
+        {
+          "english": "covered",
+          "target": "couvrit",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the rest",
+          "target": "la suite",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Ruth attendit qu'il passe.",
+      "english": "Ruth waited for it to pass.",
+      "alignment": [
+        {
+          "english": "Ruth",
+          "target": "Ruth",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "waited",
+          "target": "attendit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "for it to pass",
+          "target": "qu'il passe",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Je peux venir à deux heures,",
+      "english": "“I can come at two o'clock,",
+      "alignment": [
+        {
+          "english": "I can come",
+          "target": "Je peux venir",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "at two o'clock",
+          "target": "à deux heures",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "si vous êtes toujours dans la même maison.",
+      "english": "if you are still in the same house.",
+      "alignment": [
+        {
+          "english": "if",
+          "target": "si",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "you are still",
+          "target": "vous êtes toujours",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in the same house",
+          "target": "dans la même maison",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Je suis revenue à Calderwick.",
+      "english": "I've come back to Calderwick.",
+      "alignment": [
+        {
+          "english": "I've come back",
+          "target": "Je suis revenue",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to Calderwick",
+          "target": "à Calderwick",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "S'il vous plaît, écoutez d'abord.",
+      "english": "Please, listen first.",
+      "alignment": [
+        {
+          "english": "Please",
+          "target": "S'il vous plaît",
+          "category": "idiom",
+          "frequency_band": null,
+          "is_idiom": true
+        },
+        {
+          "english": "listen first",
+          "target": "écoutez d'abord",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Avant d'en parler à Graham. »",
+      "english": "Before talking about it to Graham.”",
+      "alignment": [
+        {
+          "english": "Before",
+          "target": "Avant",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "talking about it",
+          "target": "d'en parler",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "to Graham",
+          "target": "à Graham",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Un petit choc, peut-être contre le combiné.",
+      "english": "A small knock, perhaps against the receiver.",
+      "alignment": [
+        {
+          "english": "A small knock",
+          "target": "Un petit choc",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "perhaps",
+          "target": "peut-être",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "against the receiver",
+          "target": "contre le combiné",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel entendit encore sa respiration.",
+      "english": "Daniel heard her breathing again.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "heard",
+          "target": "entendit",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "again",
+          "target": "encore",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "her breathing",
+          "target": "sa respiration",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Je n'étais pas aussi sûre. »",
+      "english": "“I wasn't that certain.”",
+      "alignment": [
+        {
+          "english": "I wasn't",
+          "target": "Je n'étais pas",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "that certain",
+          "target": "aussi sûre",
+          "category": "adjective",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "La ligne se coupa.",
+      "english": "The line went dead.",
+      "alignment": [
+        {
+          "english": "The line",
+          "target": "La ligne",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "went dead",
+          "target": "se coupa",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "L'appareil annonça l'heure du message.",
+      "english": "The machine announced the time of the message.",
+      "alignment": [
+        {
+          "english": "The machine",
+          "target": "L'appareil",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "announced",
+          "target": "annonça",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the time of the message",
+          "target": "l'heure du message",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Onze heures cinquante-deux.",
+      "english": "Eleven fifty-two.",
+      "alignment": [
+        {
+          "english": "Eleven fifty-two",
+          "target": "Onze heures cinquante-deux",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Ruth Bennett.",
+      "english": "Ruth Bennett.",
+      "alignment": [
+        {
+          "english": "Ruth Bennett",
+          "target": "Ruth Bennett",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il se rappelait une table recouverte d'une nappe en plastique,",
+      "english": "He remembered a table covered with a plastic tablecloth,",
+      "alignment": [
+        {
+          "english": "He remembered",
+          "target": "Il se rappelait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a table",
+          "target": "une table",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "covered",
+          "target": "recouverte",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "with a plastic tablecloth",
+          "target": "d'une nappe en plastique",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "et une femme qui gardait ses mains sous la table.",
+      "english": "and a woman who kept her hands under the table.",
+      "alignment": [
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a woman",
+          "target": "une femme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "who",
+          "target": "qui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "kept",
+          "target": "gardait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "her hands",
+          "target": "ses mains",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "under the table",
+          "target": "sous la table",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Graham s'était assis à côté d'elle.",
+      "english": "Graham had sat down beside her.",
+      "alignment": [
+        {
+          "english": "Graham",
+          "target": "Graham",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "had sat down",
+          "target": "s'était assis",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "beside her",
+          "target": "à côté d'elle",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel avait apporté un lecteur et des feuilles.",
+      "english": "Daniel had brought a player and some sheets of paper.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "had brought",
+          "target": "avait apporté",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a player",
+          "target": "un lecteur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "some sheets of paper",
+          "target": "des feuilles",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Cela remontait à vingt-cinq ans.",
+      "english": "That went back twenty-five years.",
+      "alignment": [
+        {
+          "english": "That went back",
+          "target": "Cela remontait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "twenty-five years",
+          "target": "à vingt-cinq ans",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il écouta le message une seconde fois,",
+      "english": "He listened to the message a second time,",
+      "alignment": [
+        {
+          "english": "He listened to",
+          "target": "Il écouta",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the message",
+          "target": "le message",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "a second time",
+          "target": "une seconde fois",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "sans toucher au volume.",
+      "english": "without touching the volume.",
+      "alignment": [
+        {
+          "english": "without touching",
+          "target": "sans toucher",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the volume",
+          "target": "au volume",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "À la fin, il nota le nom et l'heure sur un papier.",
+      "english": "At the end, he wrote down the name and the time on a piece of paper.",
+      "alignment": [
+        {
+          "english": "At the end",
+          "target": "À la fin",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he wrote down",
+          "target": "il nota",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the name",
+          "target": "le nom",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "and",
+          "target": "et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the time",
+          "target": "l'heure",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on a piece of paper",
+          "target": "sur un papier",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il écrivit aussi « deux heures »,",
+      "english": "He also wrote “two o'clock”,",
+      "alignment": [
+        {
+          "english": "He also wrote",
+          "target": "Il écrivit aussi",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "“two o'clock”",
+          "target": "« deux heures »",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "puis souligna ces deux mots.",
+      "english": "then underlined those two words.",
+      "alignment": [
+        {
+          "english": "then",
+          "target": "puis",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "underlined",
+          "target": "souligna",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "those two words",
+          "target": "ces deux mots",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Son téléphone portable était dans la cuisine.",
+      "english": "His mobile phone was in the kitchen.",
+      "alignment": [
+        {
+          "english": "His mobile phone",
+          "target": "Son téléphone portable",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was",
+          "target": "était",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "in the kitchen",
+          "target": "dans la cuisine",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il alla le chercher.",
+      "english": "He went to fetch it.",
+      "alignment": [
+        {
+          "english": "He went to fetch it",
+          "target": "Il alla le chercher",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Graham saurait ce qui se passait.",
+      "english": "Graham would know what was going on.",
+      "alignment": [
+        {
+          "english": "Graham",
+          "target": "Graham",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "would know",
+          "target": "saurait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "what was going on",
+          "target": "ce qui se passait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": "markup-authored",
+    "createdAt": "2026-10-09",
+    "synopsis": null,
+    "has_alignment": true,
+    "alignment_complete": true
+  }
+}
