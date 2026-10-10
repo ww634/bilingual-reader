@@ -242,6 +242,10 @@ async function fetchExplanation() {
     `English equivalent: ${chunk.english || "(none)"}\n` +
     `Part of speech: ${chunk.category || "(unspecified)"}\n` +
     (chunk.is_idiom ? `This is a fixed expression / idiom.\n` : "") +
+    // Characters are given ONLY so the model can tell apart words that share the
+    // same pinyin; the answer itself must still be pinyin-only.
+    (isZh && chunk.hanzi ? `Characters (to disambiguate homophones — do NOT write characters in your answer): ${chunk.hanzi}\n` : "") +
+    (isZh && pair?.hanzi ? `Sentence characters (same purpose): ${pair.hanzi}\n` : "") +
     (contextPinyin ? `\nSentence in the book (${isZh ? "pinyin" : langName}): ${contextPinyin}\nSentence in the book (English): ${contextEnglish}\n` : "");
 
   const EXPLAIN_MODEL = "gpt-5.4-nano";
@@ -294,14 +298,23 @@ function askAssistantFromPopover() {
   const chunk = _state.chunk;
   if (!chunk) return;
   const pair = _state.chapter?.pairs?.[chunk.pairIdx];
+  const isZh = (_state.chapter?.language || "zh") === "zh";
+  // For Chinese, always send the characters AND the pinyin (whichever one is
+  // on screen): different characters can share the same pinyin, so the
+  // characters are what disambiguate the word.
+  const wordText = isZh && chunk.hanzi && chunk.pinyin
+    ? `${chunk.hanzi} (${chunk.pinyin})`
+    : wordOf(chunk) || chunk.target;
   const lines = [];
   lines.push(
-    `Word: ${chunk.target}` +
+    `Word: ${wordText}` +
     (chunk.english ? ` — ${chunk.english}` : "") +
     (chunk.category ? ` (${chunk.category})` : "")
   );
   if (pair) {
-    const sentence = chunk.script === "hanzi" ? (pair.hanzi || pair.target) : pair.target;
+    const sentence = isZh && pair.hanzi
+      ? `${pair.hanzi} (${pair.target})`
+      : (pair.hanzi || pair.target);
     lines.push(`Sentence: ${sentence} — ${pair.english}`);
   }
   const explanation = explanationCache.get(cacheKey(chunk));

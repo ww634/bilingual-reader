@@ -23,7 +23,7 @@ const ASSISTANT_MODEL = "gpt-5.4-mini";
 // and any script/pronunciation guidance worth giving. Unknown codes fall back
 // to a generic phrasing so the assistant still works for any language.
 const LANGUAGES = {
-  zh: { name: "Mandarin Chinese", pron: "Always give pinyin with tone marks for any Chinese you mention, and show the Chinese characters too when it helps (the reader is learning to read them)." },
+  zh: { name: "Mandarin Chinese", pron: "Always give pinyin with tone marks for any Chinese you mention, and show the Chinese characters too when it helps (the reader is learning to read them). Highlighted Chinese text from the book arrives as the characters followed by their pinyin in parentheses — use the characters to tell apart words that share the same pinyin." },
   ja: { name: "Japanese", pron: "Give readings in hiragana/katakana and rōmaji, and show the kanji when relevant." },
   ko: { name: "Korean", pron: "Show Hangul and a Revised-Romanization reading." },
   es: { name: "Spanish", pron: "Note stress and accent marks where useful." },
@@ -305,43 +305,98 @@ function selectionTargetText(sel) {
   } catch { return ""; }
 }
 
-// Reconstruct the HANZI of the current selection (for text-to-speech, which must
-// read characters not pinyin). Every word span in the target line carries a
-// data-hanzi attribute; the English line has none — so collecting data-hanzi
-// from the spans the selection touches gives just the Chinese, across lines, in
-// order. A partially-touched word contributes its whole character(s).
-function selectionHanzi() {
+// The words the current selection touches, from the TARGET line only.
+// Every word on the target line is a span carrying data-hanzi (its characters,
+// or the word itself for languages without a separate script) and data-pinyin
+// (its romanization). The English gloss has its own spans that ALSO carry
+// data-hanzi (used to fade mastered words), so we must scope to `.target` or
+// the English side would be collected too and words would repeat.
+function selectedWordSpans() {
   const sel = window.getSelection();
-  if (!sel || sel.isCollapsed || sel.rangeCount === 0) return "";
+  if (!sel || sel.isCollapsed || sel.rangeCount === 0) return [];
   const pages = $("reader-pages");
-  if (!pages) return "";
+  if (!pages) return [];
   const range = sel.getRangeAt(0);
-  const parts = [];
-  for (const el of pages.querySelectorAll("[data-hanzi]")) {
+  const out = [];
+  for (const el of pages.querySelectorAll(".target [data-hanzi]")) {
     let hit = false;
     try { hit = range.intersectsNode(el); } catch { hit = false; }
-    if (hit) parts.push(el.getAttribute("data-hanzi") || "");
+    if (hit) out.push(el);
   }
-  // Chinese is written without spaces; languages like French need them between
-  // words or the speech engine would read the words run together.
-  const noSpaces = !currentLang || currentLang === "zh";
-  return parts.join(noSpaces ? "" : " ").replace(/\s+/g, " ").trim();
+  return out;
 }
 
-function positionToolbar(rect) {
+// Chinese is written without spaces; languages like French need them between
+// words (for speech and for reading).
+const joinsWithoutSpaces = () => !currentLang || currentLang === "zh";
+
+// The HANZI (target-script text) of the selection — what text-to-speech reads.
+function selectionHanzi() {
+  const parts = selectedWordSpans().map((el) => el.getAttribute("data-hanzi") || "");
+  return parts.join(joinsWithoutSpaces() ? "" : " ").replace(/\s+/g, " ").trim();
+}
+
+// The pinyin of the selection (Chinese only), tidied: words spaced, no gap
+// before punctuation.
+function selectionPinyin() {
+  const parts = selectedWordSpans().map((el) => (el.getAttribute("data-pinyin") || "").trim());
+  return parts.join(" ").replace(/\s+/g, " ").replace(/\s+([,.;:!?])/g, "$1").trim();
+}
+
+// What to attach as context for the assistant. For Chinese we send BOTH the
+// characters and the pinyin — different characters can share one pinyin
+// spelling, so the characters are what disambiguates — formatted "他走了 (tā zǒu
+// le)". Other languages send their target text.
+function selectionContextText(sel) {
+  if (currentLang === "zh") {
+    const hz = selectionHanzi();
+    const py = selectionPinyin();
+    if (hz && py && hz !== py) return `${hz} (${py})`;
+    if (hz) return hz;
+  }
+  return selectionTargetText(sel) || cleanText(sel.toString());
+}
+
+// Position the action bar under the END of the selection (last line), centred on
+// it, with a caret pointing at the text. Clears the iOS selection handle, and
+// flips above the selection if there's no room below.
+function positionToolbar(range) {
   const bar = $("sel-toolbar");
   bar.hidden = false;
-  const bw = bar.offsetWidth || 220;
-  const bh = bar.offsetHeight || 40;
-  let left = rect.left + rect.width / 2 - bw / 2;
-  left = Math.max(8, Math.min(left, window.innerWidth - bw - 8));
-  // Prefer BELOW the selection — iOS's own callout menu (Copy / Look Up / …)
-  // sits above the selection, so putting ours below keeps them from colliding.
-  // Drop back above only if there isn't room below.
-  let top = rect.bottom + 10;
-  if (top + bh > window.innerHeight - 8) top = rect.top - bh - 10;
+  const rects = [...range.getClientRects()].filter((r) => r.width > 1 && r.height > 1);
+  const whole = range.getBoundingClientRect();
+  // The LAST line of the selection = every rect whose bottom is (within a
+  // pixel or two of) the lowest bottom. Its horizontal extent is where we anchor.
+  const lowest = rects.length ? Math.max(...rects.map((r) => r.bottom)) : whole.bottom;
+  const lastLine = rects.filter((r) => r.bottom >= lowest - 3);
+  const lineLeft = lastLine.length ? Math.min(...lastLine.map((r) => r.left)) : whole.left;
+  const lineRight = lastLine.length ? Math.max(...lastLine.map((r) => r.right)) : whole.right;
+  const last = { bottom: lowest, left: lineLeft, width: lineRight - lineLeft };
+  const first = rects[0] || whole;
+
+  const bw = bar.offsetWidth || 260;
+  const bh = bar.offsetHeight || 56;
+  const vw = window.innerWidth;
+  const anchorX = Math.max(24, Math.min(last.left + last.width / 2, vw - 24));
+  const left = Math.max(8, Math.min(anchorX - bw / 2, vw - bw - 8));
+
+  // BELOW the selection by default: iOS's own callout (Copy / Look Up / …) sits
+  // above it. Go below the whole block the selection ends in — its English gloss
+  // included — so the bar never covers the guide text, while still clearing the
+  // selection's end handle.
+  let top = last.bottom + 30;
+  try {
+    const endEl = range.endContainer.nodeType === 1 ? range.endContainer : range.endContainer.parentElement;
+    const endBlock = endEl && endEl.closest && endEl.closest(".reader-block");
+    if (endBlock) top = Math.max(last.bottom + 16, endBlock.getBoundingClientRect().bottom + 10);
+  } catch { /* fall back to the line-based position */ }
+  let above = false;
+  if (top + bh > window.innerHeight - 8) { top = first.top - bh - 14; above = true; }
+
+  bar.classList.toggle("above", above);
+  bar.style.setProperty("--caret-x", `${Math.round(Math.max(20, Math.min(anchorX - left, bw - 20)))}px`);
   bar.style.left = `${Math.round(left)}px`;
-  bar.style.top = `${Math.round(top)}px`;
+  bar.style.top = `${Math.round(Math.max(8, top))}px`;
 }
 
 function hideToolbar() {
@@ -357,7 +412,7 @@ function onSelectionChange() {
   const raw = cleanText(sel.toString());
   if (!raw) { hideToolbar(); return; }
   lastSelectionRaw = raw;
-  try { positionToolbar(sel.getRangeAt(0).getBoundingClientRect()); }
+  try { positionToolbar(sel.getRangeAt(0)); }
   catch { hideToolbar(); }
 }
 
@@ -431,14 +486,17 @@ export function initAssistant() {
     // Compute the target-only text now (pointerdown's preventDefault keeps the
     // selection alive), falling back to the raw selection if nothing's left.
     const sel = currentReaderSelection();
-    const text = (sel && (selectionTargetText(sel) || cleanText(sel.toString()))) || lastSelectionRaw;
+    const text = (sel && selectionContextText(sel)) || lastSelectionRaw;
     hideToolbar();
     if (!text) return;
     addContext(text);
     openPanel();
     if (act === "explain") {
       // Give the panel a tick to open, then auto-ask for an explanation.
-      setTimeout(() => send("Explain this: pronunciation (pinyin + tones), meaning, and any grammar notes.", { auto: true }), 300);
+      const ask = currentLang === "zh"
+        ? "Explain this: pronunciation (pinyin + tones), meaning, and any grammar notes."
+        : "Explain this: pronunciation, meaning, and any grammar notes.";
+      setTimeout(() => send(ask, { auto: true }), 300);
     }
   });
 }

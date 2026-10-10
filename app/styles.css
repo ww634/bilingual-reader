@@ -1403,31 +1403,99 @@ body.hide-cat-other          .reader-block .english .other                      
 }
 .assistant-send:disabled { opacity: 0.5; }
 
-/* Floating toolbar shown when the reader text is highlighted. */
+/* ---------- Text selection (reader) ----------
+   Only the target language is selectable: the English gloss lines can't be
+   highlighted, so dragging across several lines selects/paints just the
+   Chinese (or French…) and never the guide text beneath it. */
+.reader-block .english {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.reader-block .target {
+  -webkit-user-select: text;
+  user-select: text;
+}
+/* A softer, on-brand highlight instead of the default solid blue block. */
+.reader-block .target ::selection,
+.reader-block .target::selection {
+  background: rgba(106, 167, 255, 0.30);
+}
+
+/* ---------- Selection action bar ----------
+   Floating bar shown under highlighted text: icon over label, frosted glass,
+   a caret pointing at the selection, and a quick pop-in. */
 .sel-toolbar {
   position: fixed;
   z-index: 88;
   display: flex;
-  background: #1b1e27;
-  border: 1px solid var(--border-strong);
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  align-items: stretch;
+  background: rgba(30, 34, 46, 0.94);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.35);
+  -webkit-user-select: none;
+  user-select: none;
+  --caret-x: 50%;
+  transform-origin: var(--caret-x) 0;
 }
 .sel-toolbar[hidden] { display: none; }
+.sel-toolbar:not([hidden]) { animation: seltb-pop 150ms cubic-bezier(0.2, 0.8, 0.3, 1); }
+@keyframes seltb-pop {
+  from { opacity: 0; transform: translateY(-4px) scale(0.96); }
+  to   { opacity: 1; transform: none; }
+}
+/* Caret pointing up at the selection (bar below it)… */
+.sel-toolbar::before {
+  content: "";
+  position: absolute;
+  left: var(--caret-x);
+  top: -6px;
+  width: 11px;
+  height: 11px;
+  margin-left: -5.5px;
+  background: inherit;
+  border-left: 1px solid rgba(255, 255, 255, 0.10);
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  border-top-left-radius: 3px;
+  transform: rotate(45deg);
+}
+/* …or down at it when the bar had to go above. */
+.sel-toolbar.above { transform-origin: var(--caret-x) 100%; }
+.sel-toolbar.above::before {
+  top: auto;
+  bottom: -6px;
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.10);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 0 0 3px 0;
+}
 .sel-toolbar button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 84px;
+  padding: 9px 10px 8px;
   border: none;
   background: none;
   color: var(--text);
   font: inherit;
-  font-size: 13px;
-  padding: 9px 13px;
-  cursor: pointer;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   white-space: nowrap;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.sel-toolbar button:not(:last-child) { border-right: 1px solid var(--border); }
-.sel-toolbar button:active { background: var(--surface-2); }
+.sel-toolbar button svg { color: var(--accent); flex: 0 0 auto; }
+.sel-toolbar button:first-child { border-radius: 13px 0 0 13px; }
+.sel-toolbar button:last-child { border-radius: 0 13px 13px 0; }
+.sel-toolbar button:not(:last-child) { border-right: 1px solid rgba(255, 255, 255, 0.08); }
+.sel-toolbar button:active { background: rgba(255, 255, 255, 0.09); }
 
 /* ============================================================
    Memory Vault + review
