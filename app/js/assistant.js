@@ -10,6 +10,7 @@
 
 import { getSettings } from "./db.js";
 import { speakWord } from "./speech.js";
+import { getSelectedSpans, clearSelection, wordHanzi, wordPinyin } from "./selection.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -64,7 +65,6 @@ function buildSystemPrompt(code) {
 // relaunching the app — restored when the same book is reopened.
 let transcript = [];
 let pendingContext = [];       // book snippets the user attached for the NEXT message
-let lastSelectionRaw = "";     // the literal selection (both languages) — used for Copy + fallback
 let busy = false;
 let greeted = false;
 let currentLang = "";          // language code of the currently open book
@@ -272,74 +272,26 @@ async function send(text, { auto = false } = {}) {
   }
 }
 
-// ── Selection toolbar ──
-
-// Is there a text selection inside the reader right now? Returns the Selection
-// or null. Cheap — safe to call on every selectionchange. Checks the anchor/
-// focus nodes directly (contains() accepts text nodes) since a block-spanning
-// selection's commonAncestorContainer can resolve above #reader-pages.
-function currentReaderSelection() {
-  const sel = window.getSelection();
-  if (!sel || sel.isCollapsed || sel.rangeCount === 0) return null;
-  const pages = $("reader-pages");
-  if (!pages) return null;
-  const within =
-    (sel.anchorNode && pages.contains(sel.anchorNode)) ||
-    (sel.focusNode && pages.contains(sel.focusNode));
-  return within ? sel : null;
-}
-
-const cleanText = (s) => String(s || "").replace(/\s+/g, " ").trim();
-
-// Target-language-only text of a selection (English gloss lines stripped).
-// Each block is `<p class="target">` (pinyin/hanzi) + `<p class="english">`, so
-// we clone the selected DOM and drop `.english`. Done LAZILY at action time —
-// never during the drag — so the DOM cloning can't interfere with the native
-// selection gesture on iOS.
-function selectionTargetText(sel) {
-  try {
-    const holder = document.createElement("div");
-    holder.appendChild(sel.getRangeAt(0).cloneContents());
-    holder.querySelectorAll(".english").forEach((el) => el.remove());
-    return cleanText(holder.textContent);
-  } catch { return ""; }
-}
-
-// The words the current selection touches, from the TARGET line only.
-// Every word on the target line is a span carrying data-hanzi (its characters,
-// or the word itself for languages without a separate script) and data-pinyin
-// (its romanization). The English gloss has its own spans that ALSO carry
-// data-hanzi (used to fade mastered words), so we must scope to `.target` or
-// the English side would be collected too and words would repeat.
-function selectedWordSpans() {
-  const sel = window.getSelection();
-  if (!sel || sel.isCollapsed || sel.rangeCount === 0) return [];
-  const pages = $("reader-pages");
-  if (!pages) return [];
-  const range = sel.getRangeAt(0);
-  const out = [];
-  for (const el of pages.querySelectorAll(".target [data-hanzi]")) {
-    let hit = false;
-    try { hit = range.intersectsNode(el); } catch { hit = false; }
-    if (hit) out.push(el);
-  }
-  return out;
-}
+// ── Selection action bar ──
+// The selection itself (highlight, handles, gestures) lives in selection.js — the
+// reader draws its own so only the target-language lines are highlighted. This
+// module just reads the chosen words and shows the action bar beside them.
 
 // Chinese is written without spaces; languages like French need them between
 // words (for speech and for reading).
 const joinsWithoutSpaces = () => !currentLang || currentLang === "zh";
 
 // The HANZI (target-script text) of the selection — what text-to-speech reads.
+// Only target-line words are selectable, so the English gloss can never leak in.
 function selectionHanzi() {
-  const parts = selectedWordSpans().map((el) => el.getAttribute("data-hanzi") || "");
+  const parts = getSelectedSpans().map(wordHanzi);
   return parts.join(joinsWithoutSpaces() ? "" : " ").replace(/\s+/g, " ").trim();
 }
 
 // The pinyin of the selection (Chinese only), tidied: words spaced, no gap
 // before punctuation.
 function selectionPinyin() {
-  const parts = selectedWordSpans().map((el) => (el.getAttribute("data-pinyin") || "").trim());
+  const parts = getSelectedSpans().map((el) => wordPinyin(el).trim());
   return parts.join(" ").replace(/\s+/g, " ").replace(/\s+([,.;:!?])/g, "$1").trim();
 }
 
@@ -347,51 +299,32 @@ function selectionPinyin() {
 // characters and the pinyin — different characters can share one pinyin
 // spelling, so the characters are what disambiguates — formatted "他走了 (tā zǒu
 // le)". Other languages send their target text.
-function selectionContextText(sel) {
+function selectionContextText() {
+  const hz = selectionHanzi();
   if (currentLang === "zh") {
-    const hz = selectionHanzi();
     const py = selectionPinyin();
     if (hz && py && hz !== py) return `${hz} (${py})`;
-    if (hz) return hz;
   }
-  return selectionTargetText(sel) || cleanText(sel.toString());
+  return hz;
 }
 
-// Position the action bar under the END of the selection (last line), centred on
-// it, with a caret pointing at the text. Clears the iOS selection handle, and
-// flips above the selection if there's no room below.
-function positionToolbar(range) {
+// Position the action bar from the selection's geometry: centred under the LAST
+// selected line, below the whole block it ends in (English gloss included, so the
+// bar never covers the guide text), with a caret pointing at the text. Flips
+// above the selection if there's no room below.
+function positionToolbar(g) {
   const bar = $("sel-toolbar");
   bar.hidden = false;
-  const rects = [...range.getClientRects()].filter((r) => r.width > 1 && r.height > 1);
-  const whole = range.getBoundingClientRect();
-  // The LAST line of the selection = every rect whose bottom is (within a
-  // pixel or two of) the lowest bottom. Its horizontal extent is where we anchor.
-  const lowest = rects.length ? Math.max(...rects.map((r) => r.bottom)) : whole.bottom;
-  const lastLine = rects.filter((r) => r.bottom >= lowest - 3);
-  const lineLeft = lastLine.length ? Math.min(...lastLine.map((r) => r.left)) : whole.left;
-  const lineRight = lastLine.length ? Math.max(...lastLine.map((r) => r.right)) : whole.right;
-  const last = { bottom: lowest, left: lineLeft, width: lineRight - lineLeft };
-  const first = rects[0] || whole;
-
   const bw = bar.offsetWidth || 260;
   const bh = bar.offsetHeight || 56;
   const vw = window.innerWidth;
-  const anchorX = Math.max(24, Math.min(last.left + last.width / 2, vw - 24));
+  const anchorX = Math.max(24, Math.min((g.last.left + g.last.right) / 2, vw - 24));
   const left = Math.max(8, Math.min(anchorX - bw / 2, vw - bw - 8));
 
-  // BELOW the selection by default: iOS's own callout (Copy / Look Up / …) sits
-  // above it. Go below the whole block the selection ends in — its English gloss
-  // included — so the bar never covers the guide text, while still clearing the
-  // selection's end handle.
-  let top = last.bottom + 30;
-  try {
-    const endEl = range.endContainer.nodeType === 1 ? range.endContainer : range.endContainer.parentElement;
-    const endBlock = endEl && endEl.closest && endEl.closest(".reader-block");
-    if (endBlock) top = Math.max(last.bottom + 16, endBlock.getBoundingClientRect().bottom + 10);
-  } catch { /* fall back to the line-based position */ }
+  // Clear the end handle's dot (~14px below the last line) as well as the gloss.
+  let top = Math.max(g.last.bottom + 22, g.blockBottom + 10);
   let above = false;
-  if (top + bh > window.innerHeight - 8) { top = first.top - bh - 14; above = true; }
+  if (top + bh > window.innerHeight - 8) { top = g.first.top - bh - 22; above = true; }
 
   bar.classList.toggle("above", above);
   bar.style.setProperty("--caret-x", `${Math.round(Math.max(20, Math.min(anchorX - left, bw - 20)))}px`);
@@ -403,17 +336,12 @@ function hideToolbar() {
   $("sel-toolbar").hidden = true;
 }
 
-function onSelectionChange() {
-  // Don't fight the panel's own text field selection.
-  if (document.activeElement === $("assistant-text")) return;
-  let sel = null;
-  try { sel = currentReaderSelection(); } catch { sel = null; }
-  if (!sel) { hideToolbar(); return; }
-  const raw = cleanText(sel.toString());
-  if (!raw) { hideToolbar(); return; }
-  lastSelectionRaw = raw;
-  try { positionToolbar(sel.getRangeAt(0)); }
-  catch { hideToolbar(); }
+// Show the bar when a selection is settled; hide it while it's being dragged or
+// once it's gone.
+function onSelectionEvent(e) {
+  const { active, dragging, geometry } = e.detail || {};
+  if (!active || dragging || !geometry) hideToolbar();
+  else positionToolbar(geometry);
 }
 
 // ── Wiring ──
@@ -458,35 +386,26 @@ export function initAssistant() {
     if (e.key === "Escape" && isOpen()) closePanel();
   });
 
-  // Selection toolbar: track selection changes (debounced), reposition on scroll.
-  let selTimer = null;
-  document.addEventListener("selectionchange", () => {
-    clearTimeout(selTimer);
-    selTimer = setTimeout(onSelectionChange, 120);
-  });
-  $("reader-pages")?.addEventListener("scroll", hideToolbar, { passive: true });
+  // Action bar follows the reader's own selection (see selection.js).
+  window.addEventListener("reader:selection", onSelectionEvent);
 
   const bar = $("sel-toolbar");
-  // Use pointerdown + preventDefault so tapping a button doesn't clear the
-  // selection before we read it.
+  // pointerdown + preventDefault so tapping a button doesn't steal focus.
   bar?.addEventListener("pointerdown", (e) => {
     const btn = e.target.closest("button[data-act]");
     if (!btn) return;
     e.preventDefault();
     const act = btn.dataset.act;
     if (act === "pronounce") {
-      // Read the selection aloud in the book's language. Speak the HANZI (never
-      // the displayed pinyin), with English excluded even across lines. Runs
-      // inside this gesture so iOS allows the audio.
+      // Read the selection aloud in the book's language. Speaks the HANZI (never
+      // the displayed pinyin); runs inside this gesture so iOS allows the audio.
+      // The selection and bar stay, so it can be replayed.
       const han = selectionHanzi();
-      hideToolbar();
       if (han) speakWord(han, currentLang || "zh");
       return;
     }
-    // Compute the target-only text now (pointerdown's preventDefault keeps the
-    // selection alive), falling back to the raw selection if nothing's left.
-    const sel = currentReaderSelection();
-    const text = (sel && selectionContextText(sel)) || lastSelectionRaw;
+    const text = selectionContextText();
+    clearSelection();            // dismiss the highlight + bar
     hideToolbar();
     if (!text) return;
     addContext(text);

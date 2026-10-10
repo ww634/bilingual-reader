@@ -1404,23 +1404,62 @@ body.hide-cat-other          .reader-block .english .other                      
 .assistant-send:disabled { opacity: 0.5; }
 
 /* ---------- Text selection (reader) ----------
-   Only the target language is selectable: the English gloss lines can't be
-   highlighted, so dragging across several lines selects/paints just the
-   Chinese (or French…) and never the guide text beneath it. */
-.reader-block .english {
+   The reader draws its OWN selection (see js/selection.js) because the system
+   one paints a single big box across the English gloss lines as well. So the
+   browser's selection + callout are switched off in the reading area, and:
+   - a highlight bar is drawn per TARGET-language line, behind the text;
+   - two drag handles adjust the selection. */
+#reader-pages {
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
 }
-.reader-block .target {
-  -webkit-user-select: text;
-  user-select: text;
+/* The highlight lives inside each target line, behind its text. */
+.reader-block > p.target {
+  position: relative;
+  isolation: isolate;
 }
-/* A softer, on-brand highlight instead of the default solid blue block. */
-.reader-block .target ::selection,
-.reader-block .target::selection {
+.sel-hl {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 6px;
   background: rgba(106, 167, 255, 0.30);
 }
+/* Drag handles (fixed, above everything in the reader). */
+.sel-handles[hidden] { display: none; }
+.sel-knob {
+  position: fixed;
+  z-index: 87;
+  width: 36px;
+  margin-left: -18px;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: grab;
+}
+.sel-stem {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--accent);
+  top: 0;
+  bottom: 0;
+  border-radius: 1px;
+}
+.sel-dot {
+  position: absolute;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(11, 13, 18, 0.9);
+}
+.sel-knob.start .sel-dot { top: 0; }
+.sel-knob.end .sel-dot { bottom: 0; }
 
 /* ---------- Selection action bar ----------
    Floating bar shown under highlighted text: icon over label, frosted glass,

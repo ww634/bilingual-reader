@@ -4,6 +4,7 @@ import { initSettings, loadSettingsIntoUI } from "./settings.js";
 import { initPopover, closePopover } from "./popover.js";
 import { initReaderOptions } from "./reader-options.js";
 import { initAssistant } from "./assistant.js";
+import { initSelection } from "./selection.js";
 import { initVault, openVault } from "./vault.js";
 import { loadLearningLanguage } from "./languages.js";
 
@@ -45,6 +46,9 @@ function setView(name, { push = true } = {}) {
   // The reader-options (sliders) and assistant icons only make sense in the reader.
   if (readerOptionsBtn) readerOptionsBtn.hidden = name !== "reader";
   if (assistantBtn) assistantBtn.hidden = name !== "reader";
+
+  // Let modules (e.g. the reader selection) react to leaving/entering a screen.
+  window.dispatchEvent(new CustomEvent("view:changed", { detail: name }));
 
   if (name === "vault") openVault();
 }
@@ -127,6 +131,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   initPopover();
   await initReaderOptions();
   initAssistant();
+  initSelection();
   await initVault();
   await initCatalog();
   setView("home", { push: false });
