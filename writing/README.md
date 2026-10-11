@@ -9,6 +9,7 @@ Read in this order before writing:
 0. `the-last-clear-voice-french-style.md` — mandatory French register, narrative tenses, character voices, and learner alignment rules.
 1. `crime-thriller-writing-guide.md` — standing craft principles and benchmark novels.
 2. `the-last-clear-voice-story-bible.md` — current working canon, complete crime solution, chronology, characters, evidence custody, research gates.
+   Read `the-last-clear-voice-continuity-through-ch7.md` alongside the bible for published timings, geography, source handling, permissions and relationship details before continuing with chapter 8.
 3. `the-last-clear-voice-chapter-plan.md` — chapter objectives, scenes, arcs, pacing, dependencies, and endings.
 4. `the-last-clear-voice-clue-ledger.md` — clue plants, transformations, red herrings, fair-play and rereading audit.
 5. `the-last-clear-voice-series-layer.md` — unknown adviser, subtle secondary seeds, Ruth’s late death, and future partnership.
