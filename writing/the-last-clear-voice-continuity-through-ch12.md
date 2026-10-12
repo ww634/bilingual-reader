@@ -1,0 +1,71 @@
+# Publication continuity — chapters 8–12
+
+12 October 2026. Read together with `the-last-clear-voice-continuity-through-ch7.md`, the story bible, clue ledger and French style reference before writing chapter 13. These facts extend the published canon. They do not reveal the later solution in the reader-facing app.
+
+## Chapter progression
+
+| Chapter | Title | Story work |
+|---|---|---|
+| 8 | Avant le procès / Before the Trial | Limited examination of Ruth's blue folder, with an officer present. Her early uncertainty contradicts the apparent certainty of later reporting. The rectangular folder, empty cassette sleeve and retained business correspondence are planted. A recent note echoes Daniel's old transcript. |
+| 9 | Un homme utile / A Useful Man | Paul helps them, supplies access and introduces Colin. His document wallet, questions about originals/copies, claimed absence of recent contact with Graham, and single-master-set assertion are visible. The first restrained adviser-related wording appears. |
+| 10 | La pièce au-dessus de la cour / The Room Above the Yard | A permitted visit reveals changed architecture. Ben contributes knowledge of building alterations; Daniel examines possible sound routes without pretending to reconstruct 2001. Anna's dictation habit and an old supplier dispute supply a new investigative route. |
+| 11 | Une visite plus tôt / An Earlier Visit | Michael's solicitor presents his account through a statement he previously authorised for review requests. His earlier visit, frightening conduct and lie remain real. Source access, independent review and a potential visit are requested, not instantly delivered. His question to reviewers challenges Daniel to commit himself in writing. |
+| 12 | Déjeuner à l'atelier / Lunch in the Workshop | Police corroborate the phone-box origin. Lunch, a modest practical improvement and an ordinary editing job allow Daniel and Ben to enjoy each other's company. Context, selection and editing choices matter to meaning. Judith arranges the next day's visit. |
+
+## Timeline and permissions
+
+- Chapter 8 is day 2 at 13:00, continuing the appointment made in chapter 7. Ben opens Ruth's flat; an unnamed policewoman accompanies them. They examine only the blue folder Ruth had invited Ben to read/take. The officer photographs useful documents. No general access to Ruth's private life follows from this.
+- Ruth lives on the first floor of a divided house, ten minutes from the canal; it is not the home Daniel visited in 2001.
+- Ben contacted Paul on the evening of day 1 among people who might have heard from Ruth. After chapter 8 they arrange the day 3 office visit. He also leaves a second message for Elsie. No reply or welfare confirmation from Elsie is known by chapter 12.
+- Paul sees them on day 3 before their 10:30 visit to Mill Lane. Jo limits that visit to twenty minutes; her next client arrives a little before 11:00.
+- Daniel contacted Michael's legal firm on day 2 after finding its details in a recent public article. Helen Ward offers an 11:30 telephone appointment on day 3. He takes it alone at his workshop. Ben collects supplies separately. There is no live prison call or same-day prison visit.
+- Ben texts at 12:40 that he will arrive in ten minutes and brings lunch. He must attend his own job later in the afternoon and offers to return afterwards. He agrees to text before returning.
+- During the gap after Helen's call and before/during lunch, Shah confirms that checks on the origin of Ruth's call match the phone-box number. Investigations into Ruth's subsequent movements continue; Daniel and Ben have no confirmed destination or safety news.
+- Judith's invitation is for the morning of day 4, chapter 13. Daniel had messaged her on day 2 about Graham's memoir notes. Police have already seen the personal papers she offers to show them. She reserves other material for herself and asks Daniel to return Graham's repaired desk lamp.
+
+## Established documents and exact wording
+
+- **Ruth's early letter (C1/P2a):** a retained copy addressed to Graham, dated **22 October 2001**. It says she did not see the departing man's face long enough to be certain; she thought of Michael while already knowing about the couple's argument. She does not want this converted into something she clearly saw. The copy alone does not prove dispatch or receipt. Later provenance checks remain necessary.
+- In the same letter Ruth describes a door slamming, looking through a service window into the Mill Lane yard, and a departing man holding something flat against his side: a stiff document folder or file, with a right angle visible under his arm. She cannot see its contents. This is generic, non-exclusive support, never a conclusive identification.
+- The letter ends with a request not to be called at work. The blue folder also contains a Sayer Property Services pay envelope, a timesheet and invoice correspondence. No financial scheme has yet been proved or described in full.
+- A later newspaper cutting reports Ruth recognising Michael as he left. It is explicitly a newspaper summary, not the trial transcript. It is a discrepancy to investigate, not yet proof of why her account changed.
+- **Cassette sleeve (B0):** an empty paper sleeve marked **« cassette — maison » / “cassette — home”**. Ben remembers Ruth using a small recorder for lists and questions for the doctor. Nobody knows the missing cassette's contents or when it left the sleeve. No claim of theft, destruction, exact carrier format or timestamp.
+- **Recent note (C4):** Ruth writes **« Graham veut que je confirme »**, followed by **« Le prénom était suffisamment distinct. » / “The first name was sufficiently distinct.”** Daniel recognises the latter wording from the margin of his old transcript. This is a statement about audibility, not the disputed audio phrase itself. Its exact phonetics remain undecided.
+- **First adviser-related phrasing (S2):** Paul says **« Un avis limité aux éléments soumis. » / “An opinion confined to the material supplied.”** He calls this prudent; Daniel answers that he must know what material is being supplied. This is fictional professional-sounding scope language, not a quotation from a legal rule. Use the same distinctive formulation in the old commissioning letter in chapter 13, as planned, without treating repetition alone as proof of wrongdoing. The later manipulator can reuse this framing. Do not silently substitute a different catchphrase.
+
+## Paul, Anna and the financial route
+
+- Paul still manages buildings, including Mill Lane; his office is near the town hall. He is not personally occupying Anna's old office. A routine call about a tenant without water gives his work an ordinary purpose.
+- He calls Ben “Benjamin”; Ben requests “Ben”. Paul remembers his apprenticeship, but Ben has been self-employed for six years. Paul gave him a bicycle at eight and still asks whether he uses it. Genuine help can coexist with patronising habits.
+- Paul claims to have last seen Ruth in town about a fortnight earlier and to have discussed Graham's book with her. He claims Graham only telephoned about dates/company names roughly three weeks earlier and that he has **not seen Graham for months**. He offers to find the earlier call. Do not later erase this explicit denial of recent contact (P4b).
+- Paul asks whether Ruth retained originals or copies, ostensibly to save duplicate searching. He handles a stiff document wallet normally. He says Anna kept **one master set** and directs discrepancies to **Colin Voss**, who still has an accounting practice. These are Paul's statements, not objective narrator assurances.
+- Paul describes his company managing money earmarked for maintenance. Anna reconciled ordered work, invoices and payments; Ruth entered payments/filed documents; Colin handled accounting. Their exact individual responsibilities will require records. The explanation preserves mundane reasons for discrepancies.
+- **Jo Harris** is the current upstairs occupier, a framer/restorer. She and her former husband **Martin Harris** ran **Harris Maintenance** downstairs in 2001, working for buildings managed by Sayer. Jo began framing after that business closed and took the upper floor in 2013. This explains her knowledge of Anna and the site; it is not a coincidence involving an unrelated new witness.
+- Jo recalls a payment dispute beginning before Anna's death and ending later with lawyers and an agreement. Some invoices said to be paid were still being chased by Martin. The substantive explanation remains open. Martin retained the dispute file and took it when they separated. Jo can pass on a request, not grant access to his records or promise he can find them. This is the retention/provenance route for P3, before the records become decisive.
+- Jo recalls Anna using a dictation recorder for invoice references and tasks, borrowing a stapler, and considering work in Birmingham. Anna discussed moving a plant by bus and declined Jo's offer of their van by joking she only meant the plant. No recorder model or exact tape format has yet been locked.
+
+## Space, sources and craft
+
+- Mill Lane runs along the canal east of the old interchange. The building has three upper windows, an ordinary side delivery entrance, an internal stair and a rear stair descending to a yard with a passage to the street.
+- Anna's and Ruth's old offices adjoined and looked onto the same yard. Their windows were nearer each other than their doors. A partition was removed in 2013; Jo retains photographs of those renovations. Cable trunking crosses an old closed doorway, making the relative sequence visible to Ben, not supplying an exact date by itself. Jo confirms the rewiring accompanied the alterations.
+- Daniel's rough present-day sketch is labelled **« état actuel »**. Ben adds the old doorway in dots. Jo permits photographs and offers the full renovation-photo set. Daniel hears Jo at the upper door, losing part of her sentence when she steps inside. This illustrates a possible sound route, not a validated 2001 acoustic reconstruction. Furniture, glazing, positions and door/window states differed or are unknown.
+- Helen Ward is Michael's current solicitor, not his trial advocate. Michael's earlier appeal failed. She discusses a possible review route without promising referral, acquittal, release or a timetable. She requires source verification and independent examination rather than Daniel judging his own work alone.
+- Michael's previously authorised statement admits the earlier visit, asking Anna to cover a debt, anger, hitting her door with his hand, frightening her and initially lying about the visit. He says he left and did not return that evening. These are his claims to test. His soft work bag with a strap contrasts weakly with Ruth's file description; it is not an exhaustive inventory or an alibi.
+- Helen says the defence had access to a complete copy of the recording in the original case. Daniel's selected extract was not the only available material. There is no newly invented suppression of the complete source.
+- She asks for all surviving notes and versions, including discrepancies. Daniel remembers revising punctuation but cannot establish the order without the sheets. This is identified as a recollection. He promises to examine sound, not recover a guaranteed sentence. Material and visits remain to be arranged with Michael's wishes and suitable access conditions.
+- Chapter 12 uses a local-history interview with **Mabel Turner**, authorised for demonstration and publication. A short selection makes “No, certainly not” sound like an answer about leaving the factory. Longer context makes clear she is refusing sugar, then says she wanted to stay until retirement. The quiet sugar question was present in both versions; no hidden edit removed it. Retain this distinction.
+- Daniel demonstrates nondestructive editing, context, boundaries and preservation of a complete breath. Ben mistakes a cup transient for a laugh on the waveform. An anecdote about a foreman smoking behind a no-smoking sign earns shared laughter. This develops E1/E5 without resolving Daniel's old failure prematurely.
+
+## Relationship and physical setups
+
+- Daniel and Ben still use **vous**, with first names. Trust is incomplete. Ben's practical competence and familiarity with ordinary people give him authority separate from Daniel's expertise.
+- Daniel makes two cups and fills the kettle to the second mark. The broken second chair remains unfixed. Ben uses the stool.
+- Ben asks permission to reroute Graham's desk-lamp lead after catching it with his foot. He switches off/unplugs it, routes it behind the bench with slack and checks it. No electrical installation repair, power-distribution change or door repair occurs.
+- The inner door to the covered passage/kitchen still sticks and must be lifted. The other door opens into the courtyard; a side passage leads to a gate onto the street. Keep both routes clear in future scenes. Ben will use the courtyard route with equipment.
+- Judith wants her repaired lamp back for practical use, not as a symbolic gift to Daniel. Bring it in chapter 13.
+
+## Research and release
+
+Background checks used [CCRC application guidance](https://ccrc.gov.uk/the-application-process/), [CCRC eligibility information](https://ccrc.gov.uk/can-i-apply/), the [official Criminal Procedure Rules index](https://www.gov.uk/guidance/criminal-procedure-rules-2025-and-criminal-practice-directions-2023), and [SWGDE audio enhancement guidance](https://www.swgde.org/documents/published-complete-listing/20-a-001-swgde-best-practices-for-the-enhancement-of-digital-audio/). Current rules are not asserted to have governed 2001. The novel's statements, solicitor arrangements, buildings and documents are fictional. Exact later source acquisition, historic forensic practice, pathology and evidential admissibility remain research gates in the story bible; no professional legal or acoustic review is claimed.
+
+Chapters 8–12 publish at version 1. Preserve chapters 1–7 and their existing versions byte-for-byte when building. Each new chapter has markup source, aligned reader JSON and French/English manuscript copies. No app-shell code change is needed for catalogue additions.
