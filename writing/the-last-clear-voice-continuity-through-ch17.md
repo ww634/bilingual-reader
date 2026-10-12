@@ -1,0 +1,85 @@
+# Publication continuity — chapters 13–17
+
+12 October 2026. Published canon supplements the previous continuity files, style reference, bible and clue ledger. Read before drafting chapter 18. Author-facing spoilers and future dependencies belong here, not in the app catalogue.
+
+## Chapter progression
+
+| Chapter | Title | Story work |
+|---|---|---|
+| 13 | La version de Graham / Graham's Version | Judith returns agency and complexity to Graham's household. His drafts show doubt and self-interest; an ambiguous appointment challenges Paul's account. Old commissioning language repeats the earlier seed. |
+| 14 | Personne ne l'a enlevée / No One Has Taken Her | Ruth makes contact; police independently confirm her welfare. Her voluntary withdrawal caused real harm. Ben can feel relief and anger together. She authorises release of the cassette. |
+| 15 | La cassette qu'elle avait gardée / The Cassette She Kept | Documented receipt, condition inspection, playback adjustment and preservation transfer. Daniel immediately acknowledges attending the old session. His introductory confidence is audible, while the central exchange remains genuinely unclear. |
+| 16 | Un seul jeu de comptes / One Set of Books | Martin's retained dispute documents expose changing reports and payment instructions. Colin's professional exposure, Ruth's entries and Paul's company all matter. A forwarded technical question plants another adviser seed. |
+| 17 | Un soir ordinaire / An Ordinary Evening | Ben visits Ruth offstage, then enjoys an ordinary meal with Daniel. Marianne becomes a funny, imperfect person through a specific memory. Reciprocal practical help and a future meal are established. Nisha agrees to begin independent examination. |
+
+## Chronology and next-batch handoff
+
+- Chapters 13–16 take place on **day 4**. Judith's visit is in the morning. Ben receives Elsie's return call outside her house. Police confirm direct welfare contact shortly before noon. Elsie calls again at 12:20 and delivers the cassette at 14:00. Colin sees them at 17:30 after his secretary leaves; he says he has twenty minutes before a train.
+- Chapter 17 is **day 5**. Ben visits Ruth in Mereford that morning, texts Daniel at 15:00 and arrives about 15:30. Cooking begins before 17:00. Nisha calls at **18:40**.
+- Daniel contacts Nisha on day 4, disclosing his prior role. Helen Ward confirms the terms of review. Authorised source files and documentation will be transmitted on the evening of day 5. They are not already privately held throughout the earlier chapters.
+- **Deliberate timetable adjustment:** Nisha begins on **day 6**, explicitly without promising a conclusion that day. Do not follow the older outline's same-day chapter 18–20 review literally. Chapter 18 may cover Daniel's work that evening and/or day 6; place Nisha's assessment and the rupture only after credible working time. Shift subsequent numbered story days as needed. No new external deadline prevents this. Keep the relative sequence of planned events and foreshadowing.
+- Ben has his own job on day 6 and offers to visit afterwards. Daniel invites him for a meal at **18:00** and writes it in his diary. Honour or explicitly change this appointment. The warm invitation may precede the rupture, but must not disappear from continuity.
+
+## Graham's papers and Judith
+
+- Daniel returns Graham's repaired lamp. Judith plugs it in beside her crosswords; she has not gifted it to Daniel.
+- Judith supplies an enumerated set of copies already seen by police, reserving private material. No secret diary is withheld from investigators. She wears Graham's shirt, has sympathy cards in shopping bags, and does not offer tea.
+- One draft celebrates a team that persevered; a handwritten question asks what they persevered against. Another calls Ruth categorical, then asks when and calls for the first accounts. Handwritten corrections themselves are not precisely dated.
+- An old commissioning letter bears a department reference and Daniel's name. Exact seed **S1**: **« Un avis limité aux éléments soumis. » / “An opinion confined to the material supplied.”** This matches Paul's chapter 9 wording. Enclosures list a recording and proposed transcript; the transcript is missing from this personal copy. Daniel notes he must request the complete file. Do not infer authorship or criminal influence yet. The letter's exact date remains to be examined later for S4.
+- The diary page for **the day before Graham's death** has **« P. Sayer — 18 h 30 »**, then **« confirmer »**. A line extends towards the next day's note. It does not establish whether this was a call, a planned visit, a rearrangement or an actual meeting.
+- Judith was at her sister's that evening. Graham phoned asking where the biscuits were because he expected someone; he did not name the person. Police already know. This conflicts potentially, not conclusively, with Paul's claim not to have seen Graham for months.
+- A contact list includes Ruth marked “follow up”; Michael has an old legal firm's name and an unticked line. Judith lets them read but retains this sheet. No claim that Graham actually wrote to Michael.
+- Judith resists Daniel's wish for an uncomplicated moral verdict. Graham wanted to finish his book as well as reassess the case. He chose a decades-old cover photograph; her joke gives their marriage ordinary life.
+- A recently dated revision removes **« La certitude de Daniel Mercer nous a permis d'avancer. »** and asks **« L'avons-nous aidée à se souvenir, ou à être d'accord ? »** Daniel wants to retain the flattering account. This is an early, visible conceptual clue; do not later pretend the possibility of influence never occurred to him.
+
+## Ruth's welfare and agency
+
+- Ruth has been at **Elsie's in Mereford since the beginning**, voluntarily. She tells Ben she boarded a coach for Mereford after changing her mind about meeting Daniel; she knowingly missed the planned meeting with Ben too. Exact service/departure time is not supplied. Her explanation is an account, not new forensic confirmation of every movement.
+- Elsie received Ben's messages and found police messages on returning home. Ruth requested first one day, then another without questions. Elsie called police back on the evening of day 3 and insisted Ruth speak to Ben. She explicitly apologises for not answering; this was harmful, not a clever protective ruse.
+- Ruth consulted her own unnamed solicitor on the morning of day 4. She calls Ben directly through Elsie's phone. Daniel steps outside the car and does not hear the private conversation except “three nights”.
+- Before noon, an officer confirms colleagues have seen Ruth and spoken to her alone. She is staying voluntarily and consents to reassurance being given to Ben. Neither Daniel nor Ben's recognition of her voice replaces this official welfare check. No ongoing kidnapping premise after chapter 14.
+- Ruth admits she herself failed to call back, not a broken phone or a person blocking her exit. She is ashamed and wants to explain to Ben in person. She refuses a meeting with Daniel while authorising him to examine the tape. Her emotional state is not proof of a particular crime.
+- Ben says he watched roadside ditches while driving. Daniel starts “At least…” but stops when challenged. Ben sends a message expressing both relief and anger. His mother asking if he ate does not erase what she did.
+- Ben visits her alone on day 5. He reports that they talked, not about everything, and he will return. She gives him three pairs of socks bought before she left. No undisclosed confession is kept from the reader via Daniel's viewpoint; he neither attends nor is given a detailed report. Preserve Ruth's later full account and agency.
+
+## Cassette B: format, custody and limits
+
+- Elsie delivers a sealed envelope and a separate note dated **the current day**, not an alleged contemporaneous timestamp. Ruth authorises transfer, examination, agreed distribution and Ben listening to everything. Her solicitor and Daniel have agreed arrangements; Shah knows of the delivery.
+- The note says Ruth recorded privately to remember what was being asked, put the recorder on a serving trolley at her home, did not announce recording, and dates the visit relatively **after her letter**. She kept the cassette with papers and took it when leaving. This is Ruth's present provenance account, requiring corroboration.
+- B is a **standard sixty-minute compact cassette**, in a clear case; label **« maison — octobre »**, no year. The empty sleeve in chapter 8 and this separate case are compatible. No make/model, precise recording speed variation or original noise-reduction system is canon.
+- Daniel photographs envelope, shell, label and spool positions; examines visible tape, shell and pressure pad. No split shell, fold or suspicious deposit. He does not open the shell, bake the tape or apply improvised cleaning. His maintained deck had a morning check.
+- He connects deck outputs to an audio interface. Short monitored playback checks condition and level, then checks azimuth with listening/instruments and documents the setting. A little treble improves. He must restore reference alignment afterwards. This does not relocate the original microphone or remove room sound.
+- The full transfer starts again from the beginning, preserves both sides and untreated files, and produces a working copy and operation record. Elsie leaves with a receipt before completion. Both Daniel and Ben hear the complete conversation during transfer, not an artificially cut-off intelligible revelation.
+- The intact opening contains Ruth's **« Dans le salon, ça ira. »**, Graham's **« Merci, madame Bennett. »**, ordinary milk/letter conversation, then Daniel's **« On va écouter ensemble. Vous allez l'entendre. »** He immediately says he attended and remembers the visit. His memory is not magically absent.
+- A persistent low hum obscures distant speech; another machine's playback is audible. Ruth overlaps that playback; only **« je ne »** is confidently intelligible in that portion on first listening. Daniel's low, quick reply remains unclear. He marks times and does not invent text. These are partial observations, not a verbatim transcription of the whole scene.
+- Later audible conversation: Ruth asks whether her employer will be told; Graham says they will discuss next steps; a chair scrapes; Ruth says she must collect Ben; visitors leave, then footsteps/crockery before the recording stops. The other side holds an incomplete gardening programme. No hidden message there.
+- **Future technical constraint:** reducing a hum may expose some information, but overlapping voices cannot simply be perfectly unmixed. When chapter 19 reconstructs sequence, use genuine recoverable intervals, cautious treatment, known playback timing and documentary comparison. Do not claim every masked word becomes certain or the disputed name resolves.
+- B's physical carrier is handed to the designated collecting officer on the morning of day 5, with the record. Daniel retains authorised digital copies; they are not the original analogue object. Do not later place the sole cassette in his desk or create single-copy-destruction stakes.
+
+## The financial trail and adviser question
+
+- Jo forwarded the request to Martin on day 3. He agrees to speak on day 4 and sends selected scans plus cover sheets from his retained supplier-dispute file in a removal box. He keeps originals. Daniel requests the complete set. These are private, lawfully shared retained records, not magically obtained 25-year-old bank records.
+- Invoice **HM1847**, Harris Maintenance, roofing work, **£4,860**. A company payment list shows it “paid”; Harris continues chasing at three weeks and two months. A ledger entry is not proof of receipt or actual destination. Colin notes possible allocation errors; Ben knows the difference from clients' payment claims.
+- Colin's earlier report carries a qualification about payments not reconciled with supporting documents and his initials. A later version attached to a later letter has the same total but lacks the qualification. He first calls it presentation, then says he was assured missing records had been found. He does not identify who assured him or claim a reliable recollection of inspecting them; promises to retrieve his file.
+- Colin says Anna asked everyone questions and always wanted the preceding document: invoice, then purchase order. This begins reconstructing her work and agency without making her merely the victim of a domestic argument.
+- A payment instruction dated **14 September 2001** redirects HM1847 to **Mill Lane Services Ltd**, rather than Harris. Ruth's handwritten annotation records entering the change. A separate retained business guarantee bears Paul's signature as that company's director. The connection is documented, not inferred solely from an address or shared name.
+- These papers establish a proposed beneficiary linked to Paul, Ruth's processing and Colin's sign-off. They do **not yet prove** actual payment, beneficial extraction, absence of a legitimate intermediary arrangement, or murder. Seek authorisation and third-party control documents in later chapters.
+- Paul rings Colin during the interview. Colin has been told Daniel is reviewing his old audio work; Daniel has not disclosed Ruth's private cassette to him. Paul therefore has an ordinary source for knowledge of an audio review, not covert access to new evidence.
+- Paul again asks about originals/copies, claims one set of books and distinguishes provisional schedules. Asked for explanatory documents, he promises to look.
+- Exact **S3** question Paul reads: **« Pouvez-vous certifier la génération de la copie examinée ? » / “Can you certify the generation of the copy examined?”** Asked which generation concerns him, he says he does not know and that the question was forwarded to him. Daniel assumes legal advice, explains successive copies and the need for carrier history. Hiss cannot supply a reliable copy count. No adviser is identified and no criminal coordination is established by this alone.
+
+## Relationship, voice and ordinary life
+
+- Close third person remains Daniel; main narration passé composé/imparfait/plus-que-parfait, modern spoken dialogue. Daniel/Ben continue **vous**. Judith and Daniel use **tu**.
+- The broken chair remains unrepaired. Ben asks to look at its leg in chapter 17; Daniel says not today and Ben accepts. Do not fix it before the intended later payoff. The sticking inner door is also still unfixed.
+- Mabel's authorised extract now retains the foreman story. Ben suggests allowing the end breath to finish; Daniel adopts the boundary. This is modest applied learning, not sudden forensic expertise.
+- Marianne story: Yorkshire wedding, her planned roadworks detour, Daniel takes over map, closed gate/sheep, late for ceremony but not meal. She asks which sheep is the groom, later sends sheep Christmas cards for three years. Wrong-sized envelopes required folding the cards. No new occupation, illness details or saintly advice are invented.
+- Ben loses a client after postponing twice during his mother's disappearance; materials bought already. Daniel offers scanner/time rather than a lecture. Ben selects receipts; Daniel scans/sends them without retaining copies; Ben submits a return request. No refund or client restoration is promised.
+- They make an early potato-and-egg meal, argue gently about cutting sizes, clear magazines from the table and share household tasks. The tomato from chapter 14 remained in the kitchen (Ben has seen it by chapter 17). Do not let the tomato joke become a permanent catchphrase.
+- Nisha's first listening must not include Daniel's proposed wording. Separate deliveries are arranged, not permanent withholding of relevant case information. She knows his conflict and reviews under Helen's agreed remit. Her assessment will not establish innocence or erase every other element of the case by itself.
+
+## Research and release
+
+Technical background checked against [IASA's professional cassette playback guidance](https://www.iasa-web.org/tc04/replay-equipment-professional-cassette-machines) and [analogue tape reproduction guidance, including alignment and handling](https://www.iasa-web.org/book/export/html/480). Welfare handling follows the distinction between direct police contact and family reassurance in the [College of Policing missing-person guidance](https://www.college.police.uk/app/major-investigation-and-public-protection/missing-persons/missing-person-investigations). Characters, documents and particular arrangements are fictional. No formal expert review or exact acoustic validation is claimed.
+
+Chapters 13–17 publish at version 1, with markup sources, aligned JSON and bilingual manuscripts. Preserve chapters 1–12 byte-for-byte and existing catalogue versions. No app-shell change is needed. Always restore the earlier versions after running the current builder, which otherwise increments catalogue versions and rewrites chapter metadata.

@@ -11,6 +11,7 @@ Read in this order before writing:
 2. `the-last-clear-voice-story-bible.md` — current working canon, complete crime solution, chronology, characters, evidence custody, research gates.
    Read `the-last-clear-voice-continuity-through-ch7.md` alongside the bible for published timings, geography, source handling, permissions and relationship details before continuing with chapter 8.
    Then read `the-last-clear-voice-continuity-through-ch12.md` for chapters 8–12, including the exact planted wording, document provenance, new characters and chapter 13 handoff.
+   Then read `the-last-clear-voice-continuity-through-ch17.md` for chapters 13–17, cassette handling, the financial documents, and the revised timetable for independent review.
 3. `the-last-clear-voice-chapter-plan.md` — chapter objectives, scenes, arcs, pacing, dependencies, and endings.
 4. `the-last-clear-voice-clue-ledger.md` — clue plants, transformations, red herrings, fair-play and rereading audit.
 5. `the-last-clear-voice-series-layer.md` — unknown adviser, subtle secondary seeds, Ruth’s late death, and future partnership.
