@@ -10,7 +10,7 @@ The first playback served to set the recording level. On the screen, Daniel watc
 
 He started the recording before touching the answering machine. He kept the beginning, the breathing, the whole message and the time announcement. During playback, he did not move. At the end, he waited a few seconds before stopping.
 
-The file received a plain name, with the date and the words “acoustic recording”. He saved it without processing, then made a working copy. It was still not the original file. A careful label did not change the nature of what it described.
+The file received a plain name, with the date and the words “acoustic recording”. He saved it without processing, then made a working copy. It was still not the original file. The label could be impeccable; it repaired nothing.
 
 He sent the copy and his notes by the method agreed with Shah. Then, he wrote at the top of a new page: “Where could she have been?” Not: “What did she know?” The message would not answer that second question.
 
@@ -18,7 +18,7 @@ Through headphones, Ruth seemed closer. That was an effect of listening, not inf
 
 After Anna's name, a distant voice spoke several syllables. The ending could have been “Mereford”. Before that name, he heard something that sounded like “bound for”. He wrote down the words in brackets. He was not certain of the beginning.
 
-A noise rose over the announcement and swallowed the rest. On the waveform, it made a bulge. The bulge did not say “bus”. It showed only a change in the recorded signal. Daniel enlarged the passage on the screen so he could find it easily, not to see in it what he wanted to hear.
+A noise rose over the announcement, like a wave erasing a line in the sand. On the waveform, it made a bulge. The bulge did not say “bus”. It showed only a change in the recorded signal. Daniel enlarged the passage on the screen so he could find it easily, not to see in it what he wanted to hear.
 
 He tried reducing the low frequencies. The rumble became less intrusive. The announcement remained incomplete. He pushed the setting a little further. Ruth's voice lost some of its body; the distant voice was reduced to dry fragments. He undid that last change. Less noise. No more words.
 

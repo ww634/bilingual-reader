@@ -2,7 +2,7 @@
   "id": "ch-18",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Moins de bruit",
     "english": "Less Noise"
@@ -63,8 +63,8 @@
       ]
     },
     {
-      "target": "Il avait attendu le matin. Ça lui avait demandé plus d'efforts qu'il ne voulait l'admettre.",
-      "english": "He had waited until morning. It had taken him more effort than he wanted to admit.",
+      "target": "Il avait attendu le matin. Il avait passé la soirée à trouver des raisons de traverser l'atelier, où l'ordinateur avait la décence de rester éteint.",
+      "english": "He had waited until morning. He had spent the evening finding reasons to cross the workshop, where the computer had the decency to stay off.",
       "alignment": [
         {
           "english": "He had waited until morning",
@@ -74,16 +74,51 @@
           "is_idiom": false
         },
         {
-          "english": "It had taken him",
-          "target": "Ça lui avait demandé",
+          "english": "He had spent",
+          "target": "Il avait passé",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the evening",
+          "target": "la soirée",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "finding reasons",
+          "target": "à trouver des raisons",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "more effort than he wanted to admit",
-          "target": "plus d'efforts qu'il ne voulait l'admettre",
+          "english": "to cross the workshop",
+          "target": "de traverser l'atelier",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "where the computer",
+          "target": "où l'ordinateur",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "had the decency",
+          "target": "avait la décence",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to stay off",
+          "target": "de rester éteint",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1058,26 +1093,6 @@
       ]
     },
     {
-      "target": "Quelqu'un d'autre aurait fait le mal.",
-      "english": "Someone else would have done the harm.",
-      "alignment": [
-        {
-          "english": "Someone else",
-          "target": "Quelqu'un d'autre",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "would have done the harm",
-          "target": "aurait fait le mal",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
       "target": "Il a agrandi l'image d'une ancienne page de travail.",
       "english": "He enlarged the image of an old working page.",
       "alignment": [
@@ -1232,35 +1247,35 @@
       ]
     },
     {
-      "target": "Avec le nom imprimé devant lui, les sons semblaient s'y accrocher.",
-      "english": "With the printed name in front of him, the sounds seemed to attach themselves to it.",
+      "target": "Le nom imprimé servait de moule ; les sons semblaient en prendre la forme.",
+      "english": "The printed name acted as a mould; the sounds seemed to take its shape.",
       "alignment": [
         {
-          "english": "With the printed name",
-          "target": "Avec le nom imprimé",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "in front of him",
-          "target": "devant lui",
-          "category": "adverb",
+          "english": "The printed name",
+          "target": "Le nom imprimé",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "the sounds seemed",
-          "target": "les sons semblaient",
+          "english": "acted as a mould",
+          "target": "servait de moule",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "to attach themselves to it",
-          "target": "s'y accrocher",
-          "category": "function_word",
-          "frequency_band": "very_common",
+          "english": "the sounds",
+          "target": "les sons",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "seemed to take its shape",
+          "target": "semblaient en prendre la forme",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -1642,20 +1657,48 @@
       ]
     },
     {
-      "target": "Un chien tirait son maître vers chaque banc.",
-      "english": "A dog was pulling its owner towards every bench.",
+      "target": "Un chien tirait son maître vers chaque banc. Au moins, lui, n'en écartait aucun.",
+      "english": "A dog pulled its owner towards every bench. At least it was ruling none out.",
       "alignment": [
         {
-          "english": "A dog was pulling",
-          "target": "Un chien tirait",
+          "english": "A dog",
+          "target": "Un chien",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "pulled its owner",
+          "target": "tirait son maître",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "its owner towards every bench",
-          "target": "son maître vers chaque banc",
+          "english": "towards every bench",
+          "target": "vers chaque banc",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "At least",
+          "target": "Au moins",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "it",
+          "target": "lui",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was ruling none out",
+          "target": "n'en écartait aucun",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2255,8 +2298,8 @@
       ]
     },
     {
-      "target": "— Vous avez entendu autre chose ?",
-      "english": "“Did you hear something else?”",
+      "target": "« Vous avez entendu autre chose ? » a demandé Ben.",
+      "english": "“Did you hear something else?” Ben asked.",
       "alignment": [
         {
           "english": "Did you hear something else",
@@ -2264,12 +2307,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Pas quelque chose que je puisse remplacer par un autre nom.",
-      "english": "“Not something I can replace with a different name.”",
+      "target": "« Pas quelque chose que je puisse remplacer par un autre nom », a répondu Daniel.",
+      "english": "“Not something I can replace with a different name,” Daniel replied.",
       "alignment": [
         {
           "english": "Not something",
@@ -2283,6 +2333,13 @@
           "target": "que je puisse remplacer par un autre nom",
           "category": "function_word",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -2315,7 +2372,7 @@
       ]
     },
     {
-      "target": "— Alors dites-le comme ça.",
+      "target": "« Alors dites-le comme ça. »",
       "english": "“Then say it like that.”",
       "alignment": [
         {
@@ -2414,6 +2471,7 @@
     "createdAt": "2026-10-13",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

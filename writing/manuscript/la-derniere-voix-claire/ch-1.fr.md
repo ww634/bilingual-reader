@@ -4,17 +4,31 @@ La femme voulait un mot. Daniel Mercer avait retrouvé vingt-trois minutes de so
 
 Sur l'écran, deux lignes bleues traversaient un fond gris. Daniel a ramené le curseur au début du passage. Il n'a pas lancé tout de suite la lecture. Depuis huit heures, il écoutait ce même repas de famille. Il connaissait maintenant le bruit des assiettes, le chien qui aboyait dans le jardin, et l'homme qui demandait toujours où était la moutarde.
 
-— Vous pourriez enlever le souffle, a dit Mme Holt. — Une partie, oui. — Alors on entendrait la fin.
+« Vous pourriez enlever le souffle », a dit Mme Holt.
+
+« Une partie, oui », a répondu Daniel.
+
+« Alors on entendrait la fin. »
 
 Daniel a regardé la cassette dans sa boîte. Une étiquette portait la mention « Été 94 ». Le chiffre neuf avait une longue queue, comme un ballon attaché à une ficelle. C'était l'écriture de l'homme qui cherchait la moutarde. Sa fille le lui avait précisé en arrivant.
 
-— Le souffle recouvre certaines parties de la voix. Si j'en retire trop, je retire aussi une partie des mots. — Vous dites que ce sera pire ? — Je dis que ce sera différent.
+« Le souffle recouvre certaines parties de la voix. Si j'en retire trop, je retire aussi une partie des mots », a dit Daniel.
 
-Elle a attendu. Il connaissait ce silence-là. Il aurait dû commencer par un exemple.
+« Vous dites que ce sera pire ? » a demandé Mme Holt.
+
+« Je dis que ce sera différent. »
+
+Elle a attendu. Il connaissait ce silence-là. Il aurait dû commencer par un exemple, avant de lui faire passer un examen.
 
 Il a ouvert une copie de travail du fichier. Le transfert original restait dans un autre dossier, avec la date et les notes de lecture. Sur le papier, ça paraissait excessif pour un déjeuner. En pratique, les gens tenaient davantage à ces déjeuners qu'à beaucoup de dossiers officiels.
 
-Daniel a sélectionné un court intervalle sans paroles. Même là, il y avait un froissement, puis une chaise qu'on reculait. Il a cherché un endroit plus régulier. — Je donne au logiciel un exemple du bruit. Il essaie ensuite d'en réduire la présence. — Et il sait ce qui est une voix ? — Pas comme vous et moi.
+Daniel a sélectionné un court intervalle sans paroles. Même là, il y avait un froissement, puis une chaise qu'on reculait. Il a cherché un endroit plus régulier.
+
+« Je donne au logiciel un exemple du bruit. Il essaie ensuite d'en réduire la présence. »
+
+« Et il sait ce qui est une voix ? » a demandé Mme Holt.
+
+« Pas comme vous et moi. »
 
 Le matin même, avant de lancer le moindre filtre, il avait passé vingt minutes à examiner la cassette. Le boîtier fermait correctement. La bande ne présentait pas de pli visible. Il avait vérifié son matériel, puis fait un premier transfert en surveillant le niveau. Il fallait garder assez de marge pour les éclats de rire. Un son trop fort pouvait saturer l'entrée du système. Il n'allait pas ajouter un défaut nouveau aux défauts que le temps avait déjà laissés.
 
@@ -22,29 +36,61 @@ Il avait écouté les deux faces jusqu'au bout. Sur la seconde, après plusieurs
 
 C'était aussi une raison de tout conserver. Le moment qui comptait n'était pas toujours celui qu'on lui avait demandé de chercher.
 
-Il a appliqué un réglage volontairement trop fort. Le souffle a reculé. La pièce enregistrée a semblé s'éloigner. Puis le père de Mme Holt s'est mis à parler, avec une voix mince et étrangement métallique. La fin de sa phrase était toujours incompréhensible.
+Il a appliqué un réglage volontairement trop fort. Le souffle a reculé. La pièce enregistrée a semblé s'éloigner, comme si on l'écoutait à travers une feuille d'aluminium. Puis le père de Mme Holt s'est mis à parler, avec une voix mince et étrangement métallique. La fin de sa phrase était toujours incompréhensible.
 
-Mme Holt s'est penchée vers le haut-parleur. — C'est pas tout à fait lui.
+Mme Holt s'est penchée vers le haut-parleur.
+
+« C'est pas tout à fait lui. »
 
 Daniel a rétabli le réglage précédent. Il a ajusté le volume pour comparer les deux versions, sans laisser la plus forte paraître meilleure. Cette fois, elle a reconnu le petit rire qui précédait la phrase. Ses mains se sont desserrées sur son sac.
 
-— C'était quand il allait dire une bêtise. Il riait avant, pour être sûr. — Une précaution raisonnable, a dit Daniel.
+« C'était quand il allait dire une bêtise. Il riait avant, pour être sûr », a dit Mme Holt.
 
-Elle a souri, puis a regardé de nouveau l'écran. — Ma sœur pense qu'il dit mon prénom.
+« Une précaution raisonnable », a dit Daniel.
 
-Il aurait préféré ne pas le savoir. Maintenant, au prochain passage, il chercherait malgré lui les sons de ce prénom. Il a retiré sa main de la souris. — Je ne peux pas vous le confirmer. — Même si vous y passez un peu plus de temps ? — Je pourrais y passer tout le week-end. Ça ne rendrait pas la réponse plus honnête.
+Elle a souri, puis a regardé de nouveau l'écran.
 
-Il avait parlé trop sèchement. À soixante-sept ans, il s'en apercevait toujours un instant trop tard. Il a relancé l'enregistrement un peu plus tôt. Une femme ordonnait au chien de descendre. L'homme a répondu qu'il n'était pas sur la table. Quelqu'un a éclaté de rire, si près du micro que le son a grésillé.
+« Ma sœur pense qu'il dit mon prénom. »
 
-Mme Holt a fermé les yeux. — C'est moi, a-t-elle dit.
+Il aurait préféré ne pas le savoir. Maintenant, au prochain passage, il chercherait malgré lui les sons de ce prénom. Il a retiré sa main de la souris.
+
+« Je ne peux pas vous le confirmer », a dit Daniel.
+
+« Même si vous y passez un peu plus de temps ? »
+
+« Je pourrais y passer tout le week-end. Ça ne rendrait pas la réponse plus honnête. »
+
+Il avait parlé trop sèchement. À soixante-sept ans, sa courtoisie arrivait encore par le train suivant. Il a relancé l'enregistrement un peu plus tôt. Une femme ordonnait au chien de descendre. L'homme a répondu qu'il n'était pas sur la table. Quelqu'un a éclaté de rire, si près du micro que le son a grésillé.
+
+Mme Holt a fermé les yeux.
+
+« C'est moi », a dit Mme Holt.
 
 Il a laissé la bande continuer. Cette fois, elle ne lui a pas demandé de revenir en arrière.
 
-Quand elle est partie, elle a emporté la cassette, une clé USB et une feuille expliquant les fichiers. La version traitée et le transfert sans traitement avaient des noms différents. Il avait facturé deux heures. Son carnet en comptait presque quatre. Il a rayé une ligne sur la facture, avant qu'elle puisse lui poser une question.
+Il lui a préparé la cassette, une clé USB et une feuille expliquant les fichiers. La version traitée et le transfert sans traitement avaient des noms différents. Il avait facturé deux heures. Son carnet en comptait presque quatre.
 
-— Vous avez un travail merveilleux. — Surtout quand les gens écrivent la bonne date sur les boîtes. Elle ne savait pas s'il plaisantait. Lui non plus, tout à fait.
+« Vous avez un travail merveilleux », a dit Mme Holt.
 
-Près de la porte, Mme Holt s'est arrêtée. — Il faut que je garde la cassette aussi ? — Oui. Au sec, loin d'un radiateur. — Mais vous avez tout sur l'ordinateur. — Ce que j'ai transféré, oui. Elle a retourné la petite boîte dans sa main. — Je n'ai plus de lecteur. — Vous n'avez pas à l'écouter pour la garder.
+« Surtout quand les gens écrivent la bonne date sur les boîtes. »
+
+Elle ne savait pas s'il plaisantait. Lui non plus, tout à fait.
+
+Près de la porte, Mme Holt s'est arrêtée.
+
+« Il faut que je garde la cassette aussi ? »
+
+« Oui. Au sec, loin d'un radiateur. »
+
+« Mais vous avez tout sur l'ordinateur. »
+
+« Ce que j'ai transféré, oui. »
+
+Elle a retourné la petite boîte dans sa main.
+
+« Je n'ai plus de lecteur. »
+
+« Vous n'avez pas à l'écouter pour la garder. »
 
 Elle a rangé la cassette dans une poche séparée, où ses clés ne risqueraient pas de la rayer. Il aurait pu lui dire que le boîtier supporterait quelques rayures. Il n'en a rien fait. Il lui a montré plutôt la marche qu'il fallait éviter dans la cour.
 

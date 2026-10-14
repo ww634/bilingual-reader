@@ -2,7 +2,7 @@
   "id": "ch-15",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "La cassette qu'elle avait gardée",
     "english": "The Cassette She Kept"
@@ -70,8 +70,8 @@
       ]
     },
     {
-      "target": "— J'aurais dû répondre, a-t-elle dit.",
-      "english": "“I should have answered,” she said.",
+      "target": "« J'aurais dû répondre », a dit Elsie.",
+      "english": "“I should have answered,” Elsie said.",
       "alignment": [
         {
           "english": "I should have answered",
@@ -81,23 +81,30 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Elsie said",
+          "target": "a dit Elsie",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui.",
-      "english": "“Yes.”",
+      "target": "« Oui », a répondu Ben.",
+      "english": "“Yes,” Ben replied.",
       "alignment": [
         {
           "english": "Yes",
           "target": "Oui",
           "category": "function_word",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -590,7 +597,7 @@
       ]
     },
     {
-      "target": "— Ça peut vous donner la date ? a demandé Ben.",
+      "target": "« Ça peut vous donner la date ? » a demandé Ben.",
       "english": "“Can that give you the date?” Ben asked.",
       "alignment": [
         {
@@ -610,8 +617,8 @@
       ]
     },
     {
-      "target": "— Non. La feuille nous dit ce que Ruth affirme aujourd'hui. Il faudra comparer.",
-      "english": "“No. The page tells us what Ruth says today. We'll need to compare it.”",
+      "target": "« Non. La feuille nous dit ce que Ruth affirme aujourd'hui. Il faudra comparer », a répondu Daniel.",
+      "english": "“No. The page tells us what Ruth says today. We'll need to compare it,” Daniel replied.",
       "alignment": [
         {
           "english": "No",
@@ -637,6 +644,13 @@
         {
           "english": "We'll need to compare it",
           "target": "Il faudra comparer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -738,8 +752,8 @@
       ]
     },
     {
-      "target": "— Vous allez l'ouvrir ?",
-      "english": "“Are you going to open it?”",
+      "target": "« Vous allez l'ouvrir ? » a demandé Ben.",
+      "english": "“Are you going to open it?” Ben asked.",
       "alignment": [
         {
           "english": "Are you going to open it",
@@ -747,18 +761,32 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Pas sans raison.",
-      "english": "“Not without a reason.”",
+      "target": "« Pas sans raison », a répondu Daniel.",
+      "english": "“Not without a reason,” Daniel replied.",
       "alignment": [
         {
           "english": "Not without a reason",
           "target": "Pas sans raison",
           "category": "function_word",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -831,7 +859,7 @@
       ]
     },
     {
-      "target": "— Pourquoi pas celui-là ?",
+      "target": "« Pourquoi pas celui-là ? »",
       "english": "“Why not that one?”",
       "alignment": [
         {
@@ -844,7 +872,7 @@
       ]
     },
     {
-      "target": "— J'aime savoir à quelle vitesse il tourne. Et pouvoir régler la lecture.",
+      "target": "« J'aime savoir à quelle vitesse il tourne. Et pouvoir régler la lecture. »",
       "english": "“I like to know what speed it's running at. And to be able to adjust playback.”",
       "alignment": [
         {
@@ -966,8 +994,8 @@
       ]
     },
     {
-      "target": "— Si ça se coince ?",
-      "english": "“What if it jams?”",
+      "target": "« Si ça se coince ? » a demandé Elsie.",
+      "english": "“What if it jams?” Elsie asked.",
       "alignment": [
         {
           "english": "If it jams",
@@ -975,11 +1003,18 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Elsie asked",
+          "target": "a demandé Elsie",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— J'arrête.",
+      "target": "« J'arrête. »",
       "english": "“I stop.”",
       "alignment": [
         {
@@ -1106,7 +1141,7 @@
       ]
     },
     {
-      "target": "— Graham, a dit Daniel. J'étais avec lui. Je me souviens de cette visite.",
+      "target": "« Graham », a dit Daniel. « J'étais avec lui. Je me souviens de cette visite. »",
       "english": "“Graham,” Daniel said. “I was with him. I remember this visit.”",
       "alignment": [
         {
@@ -1248,8 +1283,8 @@
       ]
     },
     {
-      "target": "— Le son arrive de travers ?",
-      "english": "“The sound comes in crooked?”",
+      "target": "« Le son arrive de travers ? » a demandé Ben.",
+      "english": "“The sound comes in crooked?” Ben asked.",
       "alignment": [
         {
           "english": "The sound comes in crooked",
@@ -1257,12 +1292,19 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— La comparaison est approximative.",
-      "english": "“The comparison is approximate.”",
+      "target": "« La comparaison est approximative », a répondu Daniel.",
+      "english": "“The comparison is approximate,” Daniel replied.",
       "alignment": [
         {
           "english": "The comparison is approximate",
@@ -1270,11 +1312,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— J'avais pas préparé de schéma.",
+      "target": "« J'avais pas préparé de schéma. »",
       "english": "“I hadn't prepared a diagram.”",
       "alignment": [
         {
@@ -1409,8 +1458,8 @@
       ]
     },
     {
-      "target": "Les consonnes étaient un peu moins ternes.",
-      "english": "The consonants were a little less dull.",
+      "target": "Les consonnes retrouvaient un peu de leur bord, comme des lettres dont l'encre avait bavé.",
+      "english": "The consonants were regaining a little of their edge, like letters whose ink had run.",
       "alignment": [
         {
           "english": "The consonants",
@@ -1420,9 +1469,30 @@
           "is_idiom": false
         },
         {
-          "english": "were a little less dull",
-          "target": "étaient un peu moins ternes",
+          "english": "were regaining",
+          "target": "retrouvaient",
           "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a little of their edge",
+          "target": "un peu de leur bord",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "like letters",
+          "target": "comme des lettres",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "whose ink had run",
+          "target": "dont l'encre avait bavé",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         }
@@ -1449,7 +1519,7 @@
       ]
     },
     {
-      "target": "— C'est mieux, a dit Ben.",
+      "target": "« C'est mieux », a dit Ben.",
       "english": "“That's better,” Ben said.",
       "alignment": [
         {
@@ -1469,7 +1539,7 @@
       ]
     },
     {
-      "target": "— Un peu. Je ne vais pas réparer la position du magnétophone avec une vis.",
+      "target": "« Un peu. Je ne vais pas réparer la position du magnétophone avec une vis. »",
       "english": "“A little. I'm not going to fix the recorder's position with a screw.”",
       "alignment": [
         {
@@ -1591,8 +1661,8 @@
       ]
     },
     {
-      "target": "— Elle veut savoir si ça va tenir.",
-      "english": "“She wants to know whether it'll hold together.”",
+      "target": "« Elle veut savoir si ça va tenir », a dit Elsie.",
+      "english": "“She wants to know whether it'll hold together,” Elsie said.",
       "alignment": [
         {
           "english": "She wants to know",
@@ -1606,6 +1676,13 @@
           "target": "si ça va tenir",
           "category": "verb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Elsie said",
+          "target": "a dit Elsie",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -1631,8 +1708,8 @@
       ]
     },
     {
-      "target": "— Dites-lui que je surveille.",
-      "english": "“Tell her I'm watching it.”",
+      "target": "« Dites-lui que je surveille », a dit Daniel.",
+      "english": "“Tell her I'm watching it,” Daniel said.",
       "alignment": [
         {
           "english": "Tell her",
@@ -1646,6 +1723,13 @@
           "target": "que je surveille",
           "category": "function_word",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -2150,7 +2234,7 @@
       ]
     },
     {
-      "target": "— Vous pouvez enlever ça ? a murmuré Ben.",
+      "target": "« Vous pouvez enlever ça ? » a murmuré Ben.",
       "english": "“Can you remove that?” Ben murmured.",
       "alignment": [
         {
@@ -2170,7 +2254,7 @@
       ]
     },
     {
-      "target": "— Peut-être réduire le ronflement. Pas séparer proprement deux personnes qui parlent ensemble.",
+      "target": "« Peut-être réduire le ronflement. Pas séparer proprement deux personnes qui parlent ensemble. »",
       "english": "“Perhaps reduce the hum. Not cleanly separate two people speaking at once.”",
       "alignment": [
         {
@@ -2224,26 +2308,47 @@
       ]
     },
     {
-      "target": "Il avait envie de faire essayer au logiciel tout ce qu'il proposait.",
-      "english": "He wanted to make the software try everything it offered.",
+      "target": "Chaque commande du logiciel lui offrait quelque chose à faire. C'était ce qui la rendait tentante.",
+      "english": "Every command in the software offered him something to do. That was what made it tempting.",
       "alignment": [
         {
-          "english": "He wanted",
-          "target": "Il avait envie",
+          "english": "Every command",
+          "target": "Chaque commande",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "in the software",
+          "target": "du logiciel",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "offered him",
+          "target": "lui offrait",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "to make the software try",
-          "target": "de faire essayer au logiciel",
+          "english": "something to do",
+          "target": "quelque chose à faire",
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "everything it offered",
-          "target": "tout ce qu'il proposait",
+          "english": "That was",
+          "target": "C'était",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "what made it tempting",
+          "target": "ce qui la rendait tentante",
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
@@ -2722,14 +2827,21 @@
       ]
     },
     {
-      "target": "— Vous étiez sûr de vous.",
-      "english": "“You were sure of yourself.”",
+      "target": "« Vous étiez sûr de vous », a dit Ben.",
+      "english": "“You were sure of yourself,” Ben said.",
       "alignment": [
         {
           "english": "You were sure of yourself",
           "target": "Vous étiez sûr de vous",
           "category": "function_word",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben said",
+          "target": "a dit Ben",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -2755,7 +2867,7 @@
       ]
     },
     {
-      "target": "— Oui.",
+      "target": "« Oui. »",
       "english": "“Yes.”",
       "alignment": [
         {
@@ -2800,6 +2912,7 @@
     "createdAt": "2026-10-12",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

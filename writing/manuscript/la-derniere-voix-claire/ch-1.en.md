@@ -4,17 +4,31 @@ The woman wanted one word. Daniel Mercer had recovered twenty-three minutes of h
 
 On the screen, two blue lines crossed a grey background. Daniel moved back the cursor to the beginning of the passage. He did not start playback immediately. Since eight o'clock, he had been listening to this same family meal. He now knew the sound of the plates, the dog that barked in the garden, and the man who always asked where the mustard was.
 
-— You could remove the hiss, said Mrs Holt. — Some, yes. — Then we would hear the end.
+“You could remove the hiss,” said Mrs Holt.
+
+“Some, yes,” Daniel replied.
+
+“Then we would hear the end.”
 
 Daniel looked at the cassette in its case. A label bore the words “Summer 94”. The number nine had a long tail, like a balloon tied to a string. It was the handwriting of the man who was looking for the mustard. His daughter had told him so on arriving.
 
-— The hiss covers some parts of the voice. If I remove too much of it, I also remove some of the words. — You're saying that it will be worse? — I'm saying that it will be different.
+“The hiss covers some parts of the voice. If I remove too much of it, I also remove some of the words,” Daniel said.
 
-She waited. He knew that particular silence. He should have started with an example.
+“You're saying that it will be worse?” Mrs Holt asked.
+
+“I'm saying that it will be different.”
+
+She waited. He knew that particular silence. He should have started with an example, before making her sit an examination.
 
 He opened a working copy of the file. The original transfer remained in another folder, with the date and the playback notes. On paper, that seemed excessive for a lunch. In practice, people cared more about these lunches than about many official files.
 
-Daniel selected a short interval without speech. Even there, there was a rustle, then a chair being pushed back. He looked for a place that was more consistent. — I'm giving the software an example of the noise. It then tries to reduce its presence. — And it knows what is a voice? — Not the way you and I do.
+Daniel selected a short interval without speech. Even there, there was a rustle, then a chair being pushed back. He looked for a place that was more consistent.
+
+“I'm giving the software an example of the noise. It then tries to reduce its presence.”
+
+“And it knows what is a voice?” Mrs Holt asked.
+
+“Not the way you and I do.”
 
 That very morning, before starting a single filter, he had spent twenty minutes examining the cassette. The casing closed properly. The tape showed no visible crease. He had checked his equipment, then made an initial transfer while monitoring the level. He needed to leave enough headroom for the bursts of laughter. An excessively loud sound could overload the input of the system. He was not going to add a new defect to the defects that time had already left.
 
@@ -22,29 +36,61 @@ He had listened to both sides to the end. On the second, after several minutes w
 
 That was also a reason to keep everything. The moment that mattered was not always the one he had been asked to look for.
 
-He applied a setting that was deliberately too strong. The hiss receded. The room on the recording seemed to recede. Then Mrs Holt's father began to speak, with a thin and strangely metallic voice. The end of his sentence was still unintelligible.
+He applied a setting that was deliberately too strong. The hiss receded. The room on the recording seemed to retreat, as though they were listening to it through a sheet of foil. Then Mrs Holt's father began to speak, with a thin and strangely metallic voice. The end of his sentence was still unintelligible.
 
-Mrs Holt leaned towards the speaker. — That isn't quite him.
+Mrs Holt leaned towards the speaker.
+
+“That isn't quite him.”
 
 Daniel restored the previous setting. He adjusted the volume to compare the two versions, without letting the louder one seem better. This time, she recognised the little laugh that preceded the sentence. Her hands unclenched on her bag.
 
-— That was when he was about to say something silly. He laughed before, to make sure. — A sensible precaution, said Daniel.
+“That was when he was about to say something silly. He laughed before, to make sure,” Mrs Holt said.
 
-She smiled, then looked at the screen again. — My sister thinks he says my first name.
+“A sensible precaution,” said Daniel.
 
-He would have preferred not to know that. Now, on the next playback, he would look for the sounds of that name in spite of himself. He took his hand off the mouse. — I cannot confirm that for you. — Even if you spend on it a little more time? — I could spend on it the whole weekend. That would not make the answer more honest.
+She smiled, then looked at the screen again.
 
-He had spoken too sharply. At sixty-seven, he always noticed it a moment too late. He restarted the recording a little earlier. A woman was telling the dog to get down. The man replied that he was not on the table. Someone burst out laughing, so close to the microphone that the sound crackled.
+“My sister thinks he says my first name.”
 
-Mrs Holt closed her eyes. — That's me, she said.
+He would have preferred not to know that. Now, on the next playback, he would look for the sounds of that name in spite of himself. He took his hand off the mouse.
+
+“I cannot confirm that for you,” Daniel said.
+
+“Even if you spend on it a little more time?”
+
+“I could spend on it the whole weekend. That would not make the answer more honest.”
+
+He had spoken too sharply. At sixty-seven, his courtesy still arrived on the next train. He restarted the recording a little earlier. A woman was telling the dog to get down. The man replied that he was not on the table. Someone burst out laughing, so close to the microphone that the sound crackled.
+
+Mrs Holt closed her eyes.
+
+“That's me,” Mrs Holt said.
 
 He let the tape run on. This time, she did not ask him to go back.
 
-When she left, she took the cassette, a USB drive and a sheet of paper explaining the files. The processed version and the unprocessed transfer had different names. He had charged for two hours. His notebook recorded almost four. He crossed out a line on the invoice, before she could ask him a question.
+He prepared for her the cassette, a USB stick and a sheet explaining the files. The processed version and the unprocessed transfer had different names. He had charged for two hours. His notebook recorded almost four.
 
-— You have a wonderful job. — Especially when people write the right date on the cases. She did not know whether he was joking. Neither did he, entirely.
+“You have a wonderful job,” Mrs Holt said.
 
-Near the door, Mrs Holt stopped. — Do I need to keep the cassette as well? — Yes. Somewhere dry, away from a radiator. — But you have everything on the computer. — What I transferred, yes. She turned over the little case in her hand. — I no longer have a player. — You don't have to listen to it to keep it.
+“Especially when people write the right date on the cases.”
+
+She did not know whether he was joking. Neither did he, entirely.
+
+Near the door, Mrs Holt stopped.
+
+“Do I need to keep the cassette as well?”
+
+“Yes. Somewhere dry, away from a radiator.”
+
+“But you have everything on the computer.”
+
+“What I transferred, yes.”
+
+She turned over the little case in her hand.
+
+“I no longer have a player.”
+
+“You don't have to listen to it to keep it.”
 
 She put away the cassette in a separate pocket, where her keys would not be likely to scratch it. He could have told her that the casing would withstand a few scratches. He said nothing of the sort. He showed her instead the step she needed to avoid in the courtyard.
 

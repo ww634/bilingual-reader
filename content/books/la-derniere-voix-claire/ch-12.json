@@ -2,7 +2,7 @@
   "id": "ch-12",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Déjeuner à l'atelier",
     "english": "Lunch in the Workshop"
@@ -124,8 +124,8 @@
       ]
     },
     {
-      "target": "Elle avait surtout servi à empêcher une feuille de glisser.",
-      "english": "It had mostly served to stop a sheet of paper sliding away.",
+      "target": "Elle avait surtout servi à empêcher une feuille de glisser. Un fruit avec des responsabilités administratives.",
+      "english": "It had mostly served to keep a sheet from slipping. A piece of fruit with administrative responsibilities.",
       "alignment": [
         {
           "english": "It had mostly served",
@@ -135,23 +135,23 @@
           "is_idiom": false
         },
         {
-          "english": "to stop",
-          "target": "à empêcher",
+          "english": "to keep a sheet from slipping",
+          "target": "à empêcher une feuille de glisser",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "a sheet of paper",
-          "target": "une feuille",
+          "english": "A piece of fruit",
+          "target": "Un fruit",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "sliding away",
-          "target": "de glisser",
-          "category": "verb",
+          "english": "with administrative responsibilities",
+          "target": "avec des responsabilités administratives",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -259,8 +259,8 @@
       ]
     },
     {
-      "target": "— Pour mon chantier, a dit Ben.",
-      "english": "— For my job, Ben said.",
+      "target": "« Pour mon chantier », a dit Ben.",
+      "english": "“For my job,” Ben said.",
       "alignment": [
         {
           "english": "For my job",
@@ -279,8 +279,8 @@
       ]
     },
     {
-      "target": "Je vous ai pas fait les courses.",
-      "english": "I have not done your shopping.",
+      "target": "« Je vous ai pas fait les courses. »",
+      "english": "“I have not done your shopping.”",
       "alignment": [
         {
           "english": "I have not",
@@ -299,8 +299,8 @@
       ]
     },
     {
-      "target": "— J'ai des vis.",
-      "english": "— I have screws.",
+      "target": "« J'ai des vis », a dit Daniel.",
+      "english": "“I have screws,” Daniel said.",
       "alignment": [
         {
           "english": "I have screws",
@@ -308,12 +308,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je suis content pour vous.",
-      "english": "— I am glad for you.",
+      "target": "« Je suis content pour vous. »",
+      "english": "“I am glad for you.”",
       "alignment": [
         {
           "english": "I am glad",
@@ -481,8 +488,8 @@
       ]
     },
     {
-      "target": "— Thé ?",
-      "english": "— Tea?",
+      "target": "« Thé ? »",
+      "english": "“Tea?”",
       "alignment": [
         {
           "english": "Tea",
@@ -494,14 +501,21 @@
       ]
     },
     {
-      "target": "— Oui.",
-      "english": "— Yes.",
+      "target": "« Oui », a répondu Ben.",
+      "english": "“Yes,” Ben replied.",
       "alignment": [
         {
           "english": "Yes",
           "target": "Oui",
           "category": "adverb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -885,8 +899,8 @@
       ]
     },
     {
-      "target": "— Vous êtes d'accord avec ça ?",
-      "english": "— Are you all right with that?",
+      "target": "« Vous êtes d'accord avec ça ? » a demandé Ben.",
+      "english": "“Are you all right with that?” Ben asked.",
       "alignment": [
         {
           "english": "Are you all right",
@@ -901,12 +915,19 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— C'est nécessaire.",
-      "english": "— It is necessary.",
+      "target": "« C'est nécessaire », a répondu Daniel.",
+      "english": "“It is necessary,” Daniel replied.",
       "alignment": [
         {
           "english": "It is necessary",
@@ -914,12 +935,19 @@
           "category": "adjective",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— C'est pas ce que j'ai demandé.",
-      "english": "— That is not what I asked.",
+      "target": "« C'est pas ce que j'ai demandé. »",
+      "english": "“That is not what I asked.”",
       "alignment": [
         {
           "english": "That is not",
@@ -985,8 +1013,8 @@
       ]
     },
     {
-      "target": "— Je vais m'y habituer.",
-      "english": "— I am going to get used to it.",
+      "target": "« Je vais m'y habituer », a dit Daniel.",
+      "english": "“I am going to get used to it,” Daniel said.",
       "alignment": [
         {
           "english": "I am going to",
@@ -998,6 +1026,13 @@
         {
           "english": "get used to it",
           "target": "m'y habituer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1100,8 +1135,8 @@
       ]
     },
     {
-      "target": "— Qu'est-ce qui est branché là-dessus ?",
-      "english": "— What is connected to this?",
+      "target": "« Qu'est-ce qui est branché là-dessus ? » a demandé Ben.",
+      "english": "“What is connected to this?” Ben asked.",
       "alignment": [
         {
           "english": "What is connected",
@@ -1116,12 +1151,19 @@
           "category": "adverb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— La lampe.",
-      "english": "— The lamp.",
+      "target": "« La lampe.",
+      "english": "“The lamp.",
       "alignment": [
         {
           "english": "The lamp",
@@ -1133,8 +1175,8 @@
       ]
     },
     {
-      "target": "C'était celle de Graham.",
-      "english": "It was Graham's.",
+      "target": "C'était celle de Graham », a répondu Daniel.",
+      "english": "It was Graham's,” Daniel replied.",
       "alignment": [
         {
           "english": "It was",
@@ -1147,6 +1189,13 @@
           "english": "Graham's",
           "target": "celle de Graham",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1194,8 +1243,8 @@
       ]
     },
     {
-      "target": "— Je peux le faire passer derrière l'établi ?",
-      "english": "— May I run it behind the workbench?",
+      "target": "« Je peux le faire passer derrière l'établi ? »",
+      "english": "“May I run it behind the workbench?”",
       "alignment": [
         {
           "english": "May I",
@@ -1248,8 +1297,8 @@
       ]
     },
     {
-      "target": "— Oui.",
-      "english": "— Yes.",
+      "target": "« Oui. »",
+      "english": "“Yes.”",
       "alignment": [
         {
           "english": "Yes",
@@ -1390,8 +1439,8 @@
       ]
     },
     {
-      "target": "— Vous faites ça chez tous les gens ?",
-      "english": "— Do you do this in everyone's house?",
+      "target": "« Vous faites ça chez tous les gens ? » a demandé Daniel.",
+      "english": "“Do you do this in everyone's house?” Daniel asked.",
       "alignment": [
         {
           "english": "Do you do",
@@ -1406,12 +1455,19 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Seulement chez ceux qui essaient de me faire tomber.",
-      "english": "— Only where people try to trip me up.",
+      "target": "« Seulement chez ceux qui essaient de me faire tomber », a répondu Ben.",
+      "english": "“Only where people try to trip me up,” Ben replied.",
       "alignment": [
         {
           "english": "Only",
@@ -1437,6 +1493,13 @@
         {
           "english": "to trip me up",
           "target": "de me faire tomber",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1505,8 +1568,8 @@
       ]
     },
     {
-      "target": "En revenant, Daniel a soulevé la porte intérieure pour passer.",
-      "english": "On his way back, Daniel lifted the inner door to get through.",
+      "target": "En revenant, il a soulevé la porte intérieure pour passer.",
+      "english": "On his way back, he lifted the inner door to get through.",
       "alignment": [
         {
           "english": "On his way back",
@@ -1516,15 +1579,8 @@
           "is_idiom": false
         },
         {
-          "english": "Daniel",
-          "target": "Daniel",
-          "category": "proper_noun",
-          "frequency_band": null,
-          "is_idiom": false
-        },
-        {
-          "english": "lifted",
-          "target": "a soulevé",
+          "english": "he lifted",
+          "target": "il a soulevé",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1539,7 +1595,7 @@
         {
           "english": "to get through",
           "target": "pour passer",
-          "category": "adverb",
+          "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
         }
@@ -1566,8 +1622,8 @@
       ]
     },
     {
-      "target": "— Celle-là aussi ?",
-      "english": "— That one too?",
+      "target": "« Celle-là aussi ? »",
+      "english": "“That one too?”",
       "alignment": [
         {
           "english": "That one too",
@@ -1579,8 +1635,8 @@
       ]
     },
     {
-      "target": "— Elle mène à la cuisine. Elle est susceptible.",
-      "english": "— It leads to the kitchen. It is touchy.",
+      "target": "« Elle mène à la cuisine. Elle est susceptible », a répondu Daniel.",
+      "english": "“It leads to the kitchen. It is touchy,” Daniel replied.",
       "alignment": [
         {
           "english": "It leads",
@@ -1602,12 +1658,19 @@
           "category": "adjective",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Ça, c'est votre diagnostic ?",
-      "english": "— That is your diagnosis?",
+      "target": "« Ça, c'est votre diagnostic ? »",
+      "english": "“That is your diagnosis?”",
       "alignment": [
         {
           "english": "That",
@@ -1626,8 +1689,8 @@
       ]
     },
     {
-      "target": "— Je la connais depuis trente ans.",
-      "english": "— I have known it for thirty years.",
+      "target": "« Je la connais depuis trente ans. »",
+      "english": "“I have known it for thirty years.”",
       "alignment": [
         {
           "english": "I have known it",
@@ -1721,8 +1784,8 @@
       ]
     },
     {
-      "target": "— Je passerai par là avec le matériel.",
-      "english": "— I will go that way with the equipment.",
+      "target": "« Je passerai par là avec le matériel. »",
+      "english": "“I will go that way with the equipment.”",
       "alignment": [
         {
           "english": "I will go",
@@ -1924,8 +1987,8 @@
       ]
     },
     {
-      "target": "— C'est encore une histoire de meurtre ?",
-      "english": "— Is this another murder story?",
+      "target": "« C'est encore une histoire de meurtre ? » a demandé Ben.",
+      "english": "“Is this another murder story?” Ben asked.",
       "alignment": [
         {
           "english": "Is this another",
@@ -1940,12 +2003,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Une ouvrière et une bouilloire.",
-      "english": "— A factory worker and a kettle.",
+      "target": "« Une ouvrière et une bouilloire », a répondu Daniel.",
+      "english": "“A factory worker and a kettle,” Daniel replied.",
       "alignment": [
         {
           "english": "A factory worker",
@@ -1960,12 +2030,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je prends.",
-      "english": "— I will take it.",
+      "target": "« Je prends. »",
+      "english": "“I will take it.”",
       "alignment": [
         {
           "english": "I will take it",
@@ -2269,8 +2346,8 @@
       ]
     },
     {
-      "target": "— Elle en avait assez, a dit Ben.",
-      "english": "— She had had enough, Ben said.",
+      "target": "« Elle en avait assez », a dit Ben.",
+      "english": "“She had had enough,” Ben said.",
       "alignment": [
         {
           "english": "She had had enough",
@@ -2289,8 +2366,8 @@
       ]
     },
     {
-      "target": "— C'est la phrase qu'ils ont mise dans le résumé.",
-      "english": "— That is the sentence they put in the summary.",
+      "target": "« C'est la phrase qu'ils ont mise dans le résumé », a répondu Daniel.",
+      "english": "“That is the sentence they put in the summary,” Daniel replied.",
       "alignment": [
         {
           "english": "That is",
@@ -2317,6 +2394,13 @@
           "english": "in the summary",
           "target": "dans le résumé",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2546,8 +2630,8 @@
       ]
     },
     {
-      "target": "— La question sur le sucre, vous l'aviez coupée ?",
-      "english": "— The question about sugar, had you cut it out?",
+      "target": "« La question sur le sucre, vous l'aviez coupée ? » a demandé Ben.",
+      "english": "“The question about sugar, had you cut it out?” Ben asked.",
       "alignment": [
         {
           "english": "The question about sugar",
@@ -2562,12 +2646,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Non. Elle était déjà là.",
-      "english": "— No. It was already there.",
+      "target": "« Non. Elle était déjà là.",
+      "english": "“No. It was already there.",
       "alignment": [
         {
           "english": "No",
@@ -2640,8 +2731,8 @@
       ]
     },
     {
-      "target": "J'ai changé l'endroit où nous nous arrêtons.",
-      "english": "I changed the point where we stop.",
+      "target": "J'ai changé l'endroit où nous nous arrêtons », a répondu Daniel.",
+      "english": "I changed the point where we stop,” Daniel replied.",
       "alignment": [
         {
           "english": "I changed",
@@ -2661,6 +2752,13 @@
           "english": "where we stop",
           "target": "où nous nous arrêtons",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2701,8 +2799,8 @@
       ]
     },
     {
-      "target": "— Le logiciel n'a pas tort.",
-      "english": "— The software is not wrong.",
+      "target": "« Le logiciel n'a pas tort », a dit Ben.",
+      "english": "“The software is not wrong,” Ben said.",
       "alignment": [
         {
           "english": "The software",
@@ -2717,12 +2815,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben said",
+          "target": "a dit Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Non.",
-      "english": "— No.",
+      "target": "« Non. »",
+      "english": "“No.”",
       "alignment": [
         {
           "english": "No",
@@ -2931,8 +3036,8 @@
       ]
     },
     {
-      "target": "— Vous allez garder l'histoire du panneau ?",
-      "english": "— Are you going to keep the story about the sign?",
+      "target": "« Vous allez garder l'histoire du panneau ? » a demandé Ben.",
+      "english": "“Are you going to keep the story about the sign?” Ben asked.",
       "alignment": [
         {
           "english": "Are you going to keep",
@@ -2947,16 +3052,10 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "— Je vais la proposer.",
-      "english": "— I am going to suggest it.",
-      "alignment": [
+        },
         {
-          "english": "I am going to suggest it",
-          "target": "Je vais la proposer",
+          "english": "Ben asked",
+          "target": "a demandé Ben",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -2964,8 +3063,28 @@
       ]
     },
     {
-      "target": "— Elle est meilleure que votre extrait.",
-      "english": "— It is better than your extract.",
+      "target": "« Je vais la proposer », a répondu Daniel.",
+      "english": "“I am going to suggest it,” Daniel replied.",
+      "alignment": [
+        {
+          "english": "I am going to suggest it",
+          "target": "Je vais la proposer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Elle est meilleure que votre extrait. »",
+      "english": "“It is better than your extract.”",
       "alignment": [
         {
           "english": "It is better",
@@ -2984,8 +3103,8 @@
       ]
     },
     {
-      "target": "— Ce n'était pas mon extrait.",
-      "english": "— It was not my extract.",
+      "target": "« Ce n'était pas mon extrait. »",
+      "english": "“It was not my extract.”",
       "alignment": [
         {
           "english": "It was not",
@@ -3004,8 +3123,8 @@
       ]
     },
     {
-      "target": "— Vous l'avez dit.",
-      "english": "— You said that.",
+      "target": "« Vous l'avez dit. »",
+      "english": "“You said that.”",
       "alignment": [
         {
           "english": "You said that",
@@ -3050,26 +3169,6 @@
         {
           "english": "was smiling",
           "target": "souriait",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "Cette fois, il ne lui reprochait rien.",
-      "english": "This time, he was not accusing him of anything.",
-      "alignment": [
-        {
-          "english": "This time",
-          "target": "Cette fois",
-          "category": "adverb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "he was not accusing him of anything",
-          "target": "il ne lui reprochait rien",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -3131,8 +3230,8 @@
       ]
     },
     {
-      "target": "— Et si je veux entendre seulement l'histoire du panneau ?",
-      "english": "— And if I want to hear just the story about the sign?",
+      "target": "« Et si je veux entendre seulement l'histoire du panneau ? »",
+      "english": "“And if I want to hear just the story about the sign?”",
       "alignment": [
         {
           "english": "And if I want",
@@ -3273,8 +3372,8 @@
       ]
     },
     {
-      "target": "— On dirait qu'elle a mal.",
-      "english": "— It sounds as though she is in pain.",
+      "target": "« On dirait qu'elle a mal. »",
+      "english": "“It sounds as though she is in pain.”",
       "alignment": [
         {
           "english": "It sounds as though",
@@ -3395,8 +3494,8 @@
       ]
     },
     {
-      "target": "— Vous pouvez enlever les hésitations ?",
-      "english": "— Can you remove the hesitations?",
+      "target": "« Vous pouvez enlever les hésitations ? » a demandé Ben.",
+      "english": "“Can you remove the hesitations?” Ben asked.",
       "alignment": [
         {
           "english": "Can you",
@@ -3411,12 +3510,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Certaines. Mais je dois me demander pourquoi.",
-      "english": "— Some. But I have to ask myself why.",
+      "target": "« Certaines. Mais je dois me demander pourquoi.",
+      "english": "“Some. But I have to ask myself why.",
       "alignment": [
         {
           "english": "Some",
@@ -3442,8 +3548,8 @@
       ]
     },
     {
-      "target": "Si elle cherche une date, je ne vais pas la faire paraître certaine.",
-      "english": "If she is searching for a date, I am not going to make her sound certain.",
+      "target": "Si elle cherche une date, je ne vais pas la faire paraître certaine », a répondu Daniel.",
+      "english": "If she is searching for a date, I am not going to make her sound certain,” Daniel replied.",
       "alignment": [
         {
           "english": "If she is searching for",
@@ -3469,6 +3575,13 @@
         {
           "english": "make her sound certain",
           "target": "la faire paraître certaine",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -3537,8 +3650,8 @@
       ]
     },
     {
-      "target": "— C'est la tasse, a dit Daniel.",
-      "english": "— That is the cup, Daniel said.",
+      "target": "« C'est la tasse », a dit Daniel.",
+      "english": "“That is the cup,” Daniel said.",
       "alignment": [
         {
           "english": "That is",
@@ -3564,13 +3677,20 @@
       ]
     },
     {
-      "target": "— Une tasse très expressive.",
-      "english": "— A very expressive cup.",
+      "target": "« Une tasse très expressive », a répondu Ben.",
+      "english": "“A very expressive cup,” Ben replied.",
       "alignment": [
         {
           "english": "A very expressive cup",
           "target": "Une tasse très expressive",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -3768,8 +3888,8 @@
       ]
     },
     {
-      "target": "— Je vous écris. Comme tout à l'heure.",
-      "english": "— I will text you. Like earlier.",
+      "target": "« Je vous écris. Comme tout à l'heure. »",
+      "english": "“I will text you. Like earlier.”",
       "alignment": [
         {
           "english": "I will text you",
@@ -3978,8 +4098,8 @@
       ]
     },
     {
-      "target": "— Les autres, je les garde pour moi, a-t-elle dit.",
-      "english": "— The others, I am keeping to myself, she said.",
+      "target": "« Les autres, je les garde pour moi », a dit Judith.",
+      "english": "“The others, I am keeping to myself,” Judith said.",
       "alignment": [
         {
           "english": "The others",
@@ -3996,17 +4116,17 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Judith said",
+          "target": "a dit Judith",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Bien sûr.",
-      "english": "— Of course.",
+      "target": "« Bien sûr », a répondu Daniel.",
+      "english": "“Of course,” Daniel replied.",
       "alignment": [
         {
           "english": "Of course",
@@ -4014,12 +4134,19 @@
           "category": "adverb",
           "frequency_band": null,
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Et Daniel… apporte la lampe.",
-      "english": "— And Daniel… bring the lamp.",
+      "target": "« Et Daniel… apporte la lampe. »",
+      "english": "“And Daniel… bring the lamp.”",
       "alignment": [
         {
           "english": "And Daniel",
@@ -4072,8 +4199,8 @@
       ]
     },
     {
-      "target": "— Elle est réparée ?",
-      "english": "— Is it fixed?",
+      "target": "« Elle est réparée ? » a demandé Judith.",
+      "english": "“Is it fixed?” Judith asked.",
       "alignment": [
         {
           "english": "Is it fixed",
@@ -4081,12 +4208,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Judith asked",
+          "target": "a demandé Judith",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui.",
-      "english": "— Yes.",
+      "target": "« Oui », a répondu Daniel.",
+      "english": "“Yes,” Daniel replied.",
       "alignment": [
         {
           "english": "Yes",
@@ -4094,12 +4228,19 @@
           "category": "adverb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Alors apporte-la. Il me manque une lampe dans le salon.",
-      "english": "— Then bring it. I need a lamp in the sitting room.",
+      "target": "« Alors apporte-la. Il me manque une lampe dans le salon. »",
+      "english": "“Then bring it. I need a lamp in the sitting room.”",
       "alignment": [
         {
           "english": "Then bring it",
@@ -4205,6 +4346,7 @@
     "createdAt": "2026-10-12",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

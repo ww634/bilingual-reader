@@ -2,7 +2,7 @@
   "id": "ch-10",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "La pièce au-dessus de la cour",
     "english": "The Room Above the Yard"
@@ -43,8 +43,8 @@
       ]
     },
     {
-      "target": "— Vous avez vingt minutes, a-t-elle dit.",
-      "english": "— You have twenty minutes, she said.",
+      "target": "« Vous avez vingt minutes », a dit Jo.",
+      "english": "“You have twenty minutes,” Jo said.",
       "alignment": [
         {
           "english": "You have",
@@ -61,17 +61,17 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Jo said",
+          "target": "a dit Jo",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
     },
     {
-      "target": "À onze heures, je dois expliquer à une cliente pourquoi le verre coûte plus cher que son tableau.",
-      "english": "At eleven, I have to explain to a customer why the glass costs more than her painting.",
+      "target": "« À onze heures, je dois expliquer à une cliente pourquoi le verre coûte plus cher que son tableau. »",
+      "english": "“At eleven, I have to explain to a customer why the glass costs more than her painting.”",
       "alignment": [
         {
           "english": "At eleven",
@@ -118,8 +118,8 @@
       ]
     },
     {
-      "target": "— C'est souvent le cas ? a demandé Ben.",
-      "english": "— That often happens? Ben asked.",
+      "target": "« C'est souvent le cas ? » a demandé Ben.",
+      "english": "“That often happens?” Ben asked.",
       "alignment": [
         {
           "english": "That often happens",
@@ -138,8 +138,8 @@
       ]
     },
     {
-      "target": "— Quand le tableau vient de son beau-frère, oui.",
-      "english": "— When the painting comes from her brother-in-law, yes.",
+      "target": "« Quand le tableau vient de son beau-frère, oui. »",
+      "english": "“When the painting comes from her brother-in-law, yes.”",
       "alignment": [
         {
           "english": "When the painting",
@@ -307,11 +307,11 @@
       ]
     },
     {
-      "target": "Le dossier lui avait donné l'impression d'y avoir passé des heures.",
-      "english": "The case file had given him the impression of having spent hours there.",
+      "target": "Le dossier lui avait donné l'impression d'y avoir passé des heures. Il connaissait les angles des photographies, pas la pièce.",
+      "english": "The file had given him the impression of having spent hours there. He knew the angles in the photographs, not the room.",
       "alignment": [
         {
-          "english": "The case file",
+          "english": "The file",
           "target": "Le dossier",
           "category": "noun",
           "frequency_band": "common",
@@ -325,16 +325,30 @@
           "is_idiom": false
         },
         {
-          "english": "the impression",
-          "target": "l'impression",
+          "english": "the impression of having spent hours there",
+          "target": "l'impression d'y avoir passé des heures",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "of having spent hours there",
-          "target": "d'y avoir passé des heures",
-          "category": "adverb",
+          "english": "He knew",
+          "target": "Il connaissait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the angles in the photographs",
+          "target": "les angles des photographies",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "not the room",
+          "target": "pas la pièce",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -497,8 +511,8 @@
       ]
     },
     {
-      "target": "— Le bureau d'Anna était là, a-t-elle dit.",
-      "english": "— Anna's office was there, she said.",
+      "target": "« Le bureau d'Anna était là », a dit Jo.",
+      "english": "“Anna's office was there,” Jo said.",
       "alignment": [
         {
           "english": "Anna's office",
@@ -515,10 +529,10 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Jo said",
+          "target": "a dit Jo",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -687,8 +701,8 @@
       ]
     },
     {
-      "target": "— Il y avait une cloison ici ?",
-      "english": "— There used to be a partition here?",
+      "target": "« Il y avait une cloison ici ? »",
+      "english": "“There used to be a partition here?”",
       "alignment": [
         {
           "english": "There used to be",
@@ -714,8 +728,8 @@
       ]
     },
     {
-      "target": "— Oui. On l'a enlevée quand j'ai pris l'étage.",
-      "english": "— Yes. We removed it when I took over the upper floor.",
+      "target": "« Oui. On l'a enlevée quand j'ai pris l'étage.",
+      "english": "“Yes. We removed it when I took over the upper floor.",
       "alignment": [
         {
           "english": "Yes",
@@ -754,8 +768,8 @@
       ]
     },
     {
-      "target": "Avant, j'avais seulement le rez-de-chaussée.",
-      "english": "Before that, I only had the ground floor.",
+      "target": "Avant, j'avais seulement le rez-de-chaussée », a répondu Jo.",
+      "english": "Before that, I only had the ground floor,” Jo replied.",
       "alignment": [
         {
           "english": "Before that",
@@ -775,6 +789,13 @@
           "english": "the ground floor",
           "target": "le rez-de-chaussée",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Jo replied",
+          "target": "a répondu Jo",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -849,8 +870,8 @@
       ]
     },
     {
-      "target": "— Ça vous apprend quoi ? a demandé Daniel.",
-      "english": "— What does that tell you? Daniel asked.",
+      "target": "« Ça vous apprend quoi ? » a demandé Daniel.",
+      "english": "“What does that tell you?” Daniel asked.",
       "alignment": [
         {
           "english": "What does that tell you",
@@ -869,8 +890,8 @@
       ]
     },
     {
-      "target": "— Que les gens ne circulaient pas comme nous.",
-      "english": "— That people did not move around the way we do.",
+      "target": "« Que les gens ne circulaient pas comme nous.",
+      "english": "“That people did not move around the way we do.",
       "alignment": [
         {
           "english": "That people",
@@ -896,8 +917,8 @@
       ]
     },
     {
-      "target": "Et que vous allez dessiner une pièce trop grande si vous commencez maintenant.",
-      "english": "And that you are going to draw a room that is too big if you start now.",
+      "target": "Et que vous allez dessiner une pièce trop grande si vous commencez maintenant », a répondu Ben.",
+      "english": "And that you are going to draw a room that is too big if you start now,” Ben replied.",
       "alignment": [
         {
           "english": "And that you are going to",
@@ -917,6 +938,13 @@
           "english": "if you start now",
           "target": "si vous commencez maintenant",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -970,8 +998,8 @@
       ]
     },
     {
-      "target": "— Alors montrez-moi.",
-      "english": "— Then show me.",
+      "target": "« Alors montrez-moi. »",
+      "english": "“Then show me.”",
       "alignment": [
         {
           "english": "Then show me",
@@ -1207,8 +1235,8 @@
       ]
     },
     {
-      "target": "— Celle-ci passe devant l'ancienne porte.",
-      "english": "— This one runs in front of the old doorway.",
+      "target": "« Celle-ci passe devant l'ancienne porte.",
+      "english": "“This one runs in front of the old doorway.",
       "alignment": [
         {
           "english": "This one",
@@ -1234,8 +1262,8 @@
       ]
     },
     {
-      "target": "Elle a été posée après sa fermeture.",
-      "english": "It was installed after it was closed up.",
+      "target": "Elle a été posée après sa fermeture. »",
+      "english": "It was installed after it was closed up.”",
       "alignment": [
         {
           "english": "It was installed",
@@ -1308,33 +1336,33 @@
       ]
     },
     {
-      "target": "Pour Ben, elle avait un avant et un après.",
-      "english": "To Ben, it had a before and an after.",
+      "target": "Ben y lisait une succession de travaux, comme Daniel dans les bruits de fond.",
+      "english": "Ben could read in it a sequence of jobs, as Daniel could in background noise.",
       "alignment": [
         {
-          "english": "To Ben",
-          "target": "Pour Ben",
-          "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "it had",
-          "target": "elle avait",
+          "english": "Ben could read in it",
+          "target": "Ben y lisait",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "a before",
-          "target": "un avant",
+          "english": "a sequence of jobs",
+          "target": "une succession de travaux",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "and an after",
-          "target": "et un après",
+          "english": "as Daniel",
+          "target": "comme Daniel",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "could in background noise",
+          "target": "dans les bruits de fond",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
@@ -1342,8 +1370,8 @@
       ]
     },
     {
-      "target": "— Vous pouvez dire quand ?",
-      "english": "— Can you say when?",
+      "target": "« Vous pouvez dire quand ? » a demandé Daniel.",
+      "english": "“Can you say when?” Daniel asked.",
       "alignment": [
         {
           "english": "Can you",
@@ -1358,12 +1386,19 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Avec ça seulement, non.",
-      "english": "— From this alone, no.",
+      "target": "« Avec ça seulement, non.",
+      "english": "“From this alone, no.",
       "alignment": [
         {
           "english": "From this alone",
@@ -1382,8 +1417,8 @@
       ]
     },
     {
-      "target": "Mais si quelqu'un vous donne un plan avec cette prise et vous dit qu'il date de 2001, vous posez une question de plus.",
-      "english": "But if someone gives you a plan with this socket and tells you it dates from 2001, you ask one more question.",
+      "target": "Mais si quelqu'un vous donne un plan avec cette prise et vous dit qu'il date de 2001, vous posez une question de plus », a répondu Ben.",
+      "english": "But if someone gives you a plan with this socket and tells you it dates from 2001, you ask one more question,” Ben replied.",
       "alignment": [
         {
           "english": "But if someone",
@@ -1431,6 +1466,13 @@
           "english": "one more question",
           "target": "une question de plus",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1573,8 +1615,8 @@
       ]
     },
     {
-      "target": "— Vous avez toujours un crayon sur vous ? a demandé Ben.",
-      "english": "— Do you always have a pencil on you? Ben asked.",
+      "target": "« Vous avez toujours un crayon sur vous ? » a demandé Ben.",
+      "english": "“Do you always have a pencil on you?” Ben asked.",
       "alignment": [
         {
           "english": "Do you always have",
@@ -1607,8 +1649,8 @@
       ]
     },
     {
-      "target": "— Il fonctionne sans batterie.",
-      "english": "— It works without a battery.",
+      "target": "« Il fonctionne sans batterie », a répondu Daniel.",
+      "english": "“It works without a battery,” Daniel replied.",
       "alignment": [
         {
           "english": "It works",
@@ -1623,12 +1665,19 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Moi aussi, avant le déjeuner.",
-      "english": "— So do I, before lunch.",
+      "target": "« Moi aussi, avant le déjeuner. »",
+      "english": "“So do I, before lunch.”",
       "alignment": [
         {
           "english": "So do I",
@@ -1925,8 +1974,8 @@
       ]
     },
     {
-      "target": "— Qu'est-ce que je dis ?",
-      "english": "— What shall I say?",
+      "target": "« Qu'est-ce que je dis ? »",
+      "english": "“What shall I say?”",
       "alignment": [
         {
           "english": "What shall I say",
@@ -1938,8 +1987,8 @@
       ]
     },
     {
-      "target": "— N'importe quoi.",
-      "english": "— Anything.",
+      "target": "« N'importe quoi », a répondu Daniel.",
+      "english": "“Anything,” Daniel replied.",
       "alignment": [
         {
           "english": "Anything",
@@ -1947,12 +1996,19 @@
           "category": "noun",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Le verre coûte plus cher que le tableau.",
-      "english": "— The glass costs more than the painting.",
+      "target": "« Le verre coûte plus cher que le tableau. »",
+      "english": "“The glass costs more than the painting.”",
       "alignment": [
         {
           "english": "The glass costs more",
@@ -2120,54 +2176,34 @@
       ]
     },
     {
-      "target": "Il ne cherchait pas à refaire la soirée de 2001.",
-      "english": "He was not trying to recreate the evening in 2001.",
+      "target": "À côté de ces conditions, il a noté ce qu'il faudrait vérifier sur les anciens plans.",
+      "english": "Beside these conditions, he noted what would need checking against the old plans.",
       "alignment": [
         {
-          "english": "He was not trying",
-          "target": "Il ne cherchait pas",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "to recreate",
-          "target": "à refaire",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "the evening in 2001",
-          "target": "la soirée de 2001",
+          "english": "Beside these conditions",
+          "target": "À côté de ces conditions",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "Il cherchait les points à vérifier sur les anciens plans.",
-      "english": "He was identifying what to check against the old plans.",
-      "alignment": [
+        },
         {
-          "english": "He was identifying",
-          "target": "Il cherchait",
+          "english": "he noted",
+          "target": "il a noté",
           "category": "verb",
-          "frequency_band": "common",
+          "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "what to check",
-          "target": "les points à vérifier",
-          "category": "noun",
-          "frequency_band": "common",
+          "english": "what would need checking",
+          "target": "ce qu'il faudrait vérifier",
+          "category": "function_word",
+          "frequency_band": "very_common",
           "is_idiom": false
         },
         {
           "english": "against the old plans",
           "target": "sur les anciens plans",
-          "category": "adverb",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2323,8 +2359,8 @@
       ]
     },
     {
-      "target": "— Donc, elle pouvait entendre sans tout comprendre, a dit Ben.",
-      "english": "— So she could hear without understanding everything, Ben said.",
+      "target": "« Donc, elle pouvait entendre sans tout comprendre », a dit Ben.",
+      "english": "“So she could hear without understanding everything,” Ben said.",
       "alignment": [
         {
           "english": "So",
@@ -2357,8 +2393,8 @@
       ]
     },
     {
-      "target": "— Oui. C'est une possibilité.",
-      "english": "— Yes. That is a possibility.",
+      "target": "« Oui. C'est une possibilité », a répondu Daniel.",
+      "english": "“Yes. That is a possibility,” Daniel replied.",
       "alignment": [
         {
           "english": "Yes",
@@ -2371,6 +2407,13 @@
           "english": "That is a possibility",
           "target": "C'est une possibilité",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2404,8 +2447,8 @@
       ]
     },
     {
-      "target": "— Anna parlait beaucoup toute seule.",
-      "english": "— Anna used to talk a lot to herself.",
+      "target": "« Anna parlait beaucoup toute seule.",
+      "english": "“Anna used to talk a lot to herself.",
       "alignment": [
         {
           "english": "Anna",
@@ -2498,8 +2541,8 @@
       ]
     },
     {
-      "target": "Elle disait qu'elle pouvait parler plus vite qu'elle ne pouvait écrire.",
-      "english": "She said she could talk faster than she could write.",
+      "target": "Elle disait qu'elle pouvait parler plus vite qu'elle ne pouvait écrire. »",
+      "english": "She said she could talk faster than she could write.”",
       "alignment": [
         {
           "english": "She said",
@@ -2532,8 +2575,8 @@
       ]
     },
     {
-      "target": "— Vous la connaissiez bien ?",
-      "english": "— Did you know her well?",
+      "target": "« Vous la connaissiez bien ? » a demandé Daniel.",
+      "english": "“Did you know her well?” Daniel asked.",
       "alignment": [
         {
           "english": "Did you know her well",
@@ -2541,12 +2584,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Assez pour lui prêter une agrafeuse et devoir aller la rechercher.",
-      "english": "— Well enough to lend her a stapler and have to go and get it back.",
+      "target": "« Assez pour lui prêter une agrafeuse et devoir aller la rechercher », a répondu Jo.",
+      "english": "“Well enough to lend her a stapler and have to go and get it back,” Jo replied.",
       "alignment": [
         {
           "english": "Well enough",
@@ -2572,6 +2622,13 @@
         {
           "english": "and have to go and get it back",
           "target": "et devoir aller la rechercher",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Jo replied",
+          "target": "a répondu Jo",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -2613,8 +2670,8 @@
       ]
     },
     {
-      "target": "— Elle voulait partir. Trouver du travail à Birmingham.",
-      "english": "— She wanted to leave. Find work in Birmingham.",
+      "target": "« Elle voulait partir. Trouver du travail à Birmingham.",
+      "english": "“She wanted to leave. Find work in Birmingham.",
       "alignment": [
         {
           "english": "She wanted to leave",
@@ -2701,8 +2758,8 @@
       ]
     },
     {
-      "target": "Elle a dit qu'elle parlait seulement de la plante.",
-      "english": "She said she was only talking about the plant.",
+      "target": "Elle a dit qu'elle parlait seulement de la plante. »",
+      "english": "She said she was only talking about the plant.”",
       "alignment": [
         {
           "english": "She said",
@@ -2755,8 +2812,8 @@
       ]
     },
     {
-      "target": "— Vous aviez une entreprise ici avec votre mari ? a demandé Ben.",
-      "english": "— Did you have a business here with your husband? Ben asked.",
+      "target": "« Vous aviez une entreprise ici avec votre mari ? » a demandé Ben.",
+      "english": "“Did you have a business here with your husband?” Ben asked.",
       "alignment": [
         {
           "english": "Did you have",
@@ -2836,8 +2893,8 @@
       ]
     },
     {
-      "target": "— Au rez-de-chaussée, oui.",
-      "english": "— On the ground floor, yes.",
+      "target": "« Au rez-de-chaussée, oui.",
+      "english": "“On the ground floor, yes.",
       "alignment": [
         {
           "english": "On the ground floor",
@@ -2883,8 +2940,8 @@
       ]
     },
     {
-      "target": "Martin a vendu le matériel. Moi, j'ai gardé le local.",
-      "english": "Martin sold the equipment. As for me, I kept the premises.",
+      "target": "Martin a vendu le matériel. Moi, j'ai gardé le local », a dit Jo.",
+      "english": "Martin sold the equipment. As for me, I kept the premises,” Jo said.",
       "alignment": [
         {
           "english": "Martin",
@@ -2927,12 +2984,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Jo said",
+          "target": "a dit Jo",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Vous travailliez pour Sayer ?",
-      "english": "— Did you work for Sayer?",
+      "target": "« Vous travailliez pour Sayer ? » a demandé Daniel.",
+      "english": "“Did you work for Sayer?” Daniel asked.",
       "alignment": [
         {
           "english": "Did you work",
@@ -2947,12 +3011,19 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Pour les immeubles qu'il gérait.",
-      "english": "— For the buildings he managed.",
+      "target": "« Pour les immeubles qu'il gérait.",
+      "english": "“For the buildings he managed.",
       "alignment": [
         {
           "english": "For the buildings",
@@ -2991,8 +3062,8 @@
       ]
     },
     {
-      "target": "Des factures qu'on disait réglées et que Martin réclamait encore.",
-      "english": "Invoices that were said to have been paid and which Martin was still chasing.",
+      "target": "Des factures qu'on disait réglées et que Martin réclamait encore », a répondu Jo.",
+      "english": "Invoices that were said to have been paid and which Martin was still chasing,” Jo replied.",
       "alignment": [
         {
           "english": "Invoices",
@@ -3018,6 +3089,13 @@
         {
           "english": "was still chasing",
           "target": "réclamait encore",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Jo replied",
+          "target": "a répondu Jo",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -3052,8 +3130,8 @@
       ]
     },
     {
-      "target": "— Avant la mort d'Anna ?",
-      "english": "— Before Anna died?",
+      "target": "« Avant la mort d'Anna ? »",
+      "english": "“Before Anna died?”",
       "alignment": [
         {
           "english": "Before Anna died",
@@ -3065,8 +3143,8 @@
       ]
     },
     {
-      "target": "— Ça avait commencé avant. Ça s'est terminé bien après.",
-      "english": "— It had started before. It ended long afterwards.",
+      "target": "« Ça avait commencé avant. Ça s'est terminé bien après », a répondu Jo.",
+      "english": "“It had started before. It ended long afterwards,” Jo replied.",
       "alignment": [
         {
           "english": "It had started",
@@ -3093,6 +3171,13 @@
           "english": "long afterwards",
           "target": "bien après",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Jo replied",
+          "target": "a répondu Jo",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -3242,8 +3327,8 @@
       ]
     },
     {
-      "target": "— Il garde tout, a-t-elle dit.",
-      "english": "— He keeps everything, she said.",
+      "target": "« Il garde tout », a dit Jo.",
+      "english": "“He keeps everything,” Jo said.",
       "alignment": [
         {
           "english": "He keeps everything",
@@ -3253,17 +3338,17 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Jo said",
+          "target": "a dit Jo",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
     },
     {
-      "target": "Je peux pas vous garantir qu'il retrouve tout.",
-      "english": "I cannot guarantee you that he can find everything.",
+      "target": "« Je peux pas vous garantir qu'il retrouve tout. »",
+      "english": "“I cannot guarantee you that he can find everything.”",
       "alignment": [
         {
           "english": "I cannot",
@@ -3452,8 +3537,8 @@
       ]
     },
     {
-      "target": "— Vous pensez qu'elle a pris le verre le moins cher ?",
-      "english": "— Do you think she took the cheapest glass?",
+      "target": "« Vous pensez qu'elle a pris le verre le moins cher ? »",
+      "english": "“Do you think she took the cheapest glass?”",
       "alignment": [
         {
           "english": "Do you think",
@@ -3653,6 +3738,7 @@
     "createdAt": "2026-10-12",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

@@ -10,7 +10,7 @@ La première lecture a servi à régler le niveau d'enregistrement. Sur l'écran
 
 Il a lancé l'enregistrement avant de toucher au répondeur. Il a gardé le début, la respiration, le message entier et l'annonce de l'heure. Pendant la lecture, il n'a pas bougé. À la fin, il a attendu quelques secondes avant d'arrêter.
 
-Le fichier a reçu un nom banal, avec la date et la mention « prise acoustique ». Il l'a sauvegardé sans traitement, puis en a fait une copie de travail. Ce n'était toujours pas le fichier d'origine. Une étiquette soigneuse ne changeait pas la nature de ce qu'elle désignait.
+Le fichier a reçu un nom banal, avec la date et la mention « prise acoustique ». Il l'a sauvegardé sans traitement, puis en a fait une copie de travail. Ce n'était toujours pas le fichier d'origine. L'étiquette pouvait être impeccable ; elle ne réparait rien.
 
 Il a envoyé la copie et ses notes par le moyen convenu avec Shah. Ensuite, il a écrit en haut d'une nouvelle page : « Où pouvait-elle être ? » Pas : « Qu'est-ce qu'elle savait ? » Le message ne répondrait pas à cette deuxième question.
 
@@ -18,7 +18,7 @@ Au casque, Ruth semblait plus proche. C'était un effet de l'écoute, pas un ren
 
 Après le nom d'Anna, une voix lointaine prononçait plusieurs syllabes. La fin pouvait être « Mereford ». Avant ce nom, il entendait quelque chose qui ressemblait à « à destination de ». Il a noté les mots entre crochets. Il n'était pas certain du début.
 
-Un bruit montait par-dessus l'annonce et en mangeait la suite. Sur la forme d'onde, ça faisait une bosse. La bosse ne disait pas « autobus ». Elle indiquait seulement une variation du signal enregistré. Daniel a agrandi le passage sur l'écran pour le retrouver facilement, pas pour y voir ce qu'il voulait entendre.
+Un bruit montait par-dessus l'annonce, comme une vague qui efface une ligne dans le sable. Sur la forme d'onde, ça faisait une bosse. La bosse ne disait pas « autobus ». Elle indiquait seulement une variation du signal enregistré. Daniel a agrandi le passage sur l'écran pour le retrouver facilement, pas pour y voir ce qu'il voulait entendre.
 
 Il a essayé d'atténuer les sons graves. Le grondement est devenu moins envahissant. L'annonce restait incomplète. Il a poussé le réglage un peu plus loin. La voix de Ruth a perdu de l'épaisseur ; la voix lointaine s'est réduite à des fragments secs. Il a annulé ce dernier changement. Moins de bruit. Pas plus de mots.
 

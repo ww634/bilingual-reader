@@ -2,7 +2,7 @@
   "id": "ch-5",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "La mauvaise gare",
     "english": "The Wrong Station"
@@ -937,8 +937,8 @@
       ]
     },
     {
-      "target": "— Vous attendez quelqu'un ?",
-      "english": "— Are you waiting for someone?",
+      "target": "« Vous attendez quelqu'un ? » a demandé l'agent.",
+      "english": "“Are you waiting for someone?” the member of staff asked.",
       "alignment": [
         {
           "english": "Are you waiting for",
@@ -952,6 +952,13 @@
           "target": "quelqu'un",
           "category": "noun",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the member of staff asked",
+          "target": "a demandé l'agent",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -1011,8 +1018,8 @@
       ]
     },
     {
-      "target": "— Je cherche une femme qui a peut-être appelé d'ici hier.",
-      "english": "— I am looking for a woman who may have called from here yesterday.",
+      "target": "« Je cherche une femme qui a peut-être appelé d'ici hier.",
+      "english": "“I am looking for a woman who may have called from here yesterday.",
       "alignment": [
         {
           "english": "I am looking for",
@@ -1052,8 +1059,8 @@
       ]
     },
     {
-      "target": "La police est au courant.",
-      "english": "The police know about it.",
+      "target": "La police est au courant », a dit Daniel.",
+      "english": "The police know about it,” Daniel said.",
       "alignment": [
         {
           "english": "The police",
@@ -1065,6 +1072,13 @@
         {
           "english": "know about it",
           "target": "est au courant",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1200,8 +1214,8 @@
       ]
     },
     {
-      "target": "— Pour les images des caméras, il faut passer par notre responsable, a dit l'agent.",
-      "english": "— For the camera footage, you need to go through our manager, the member of staff said.",
+      "target": "« Pour les images des caméras, il faut passer par notre responsable », a dit l'agent.",
+      "english": "“For the camera footage, you need to go through our manager,” the member of staff said.",
       "alignment": [
         {
           "english": "For the camera footage",
@@ -1485,28 +1499,49 @@
       ]
     },
     {
-      "target": "La correction était facile sur le papier.",
-      "english": "The correction was easy on paper.",
+      "target": "Sur le papier, le mot se laissait déplacer. Dans sa tête, il avait déjà des fondations.",
+      "english": "On paper, the word was easy to move. In his head, it had already laid foundations.",
       "alignment": [
         {
-          "english": "The correction",
-          "target": "La correction",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "was easy",
-          "target": "était facile",
-          "category": "adjective",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "on paper",
-          "target": "sur le papier",
+          "english": "On paper",
+          "target": "Sur le papier",
           "category": "adverb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the word",
+          "target": "le mot",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "was easy to move",
+          "target": "se laissait déplacer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "In his head",
+          "target": "Dans sa tête",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "it had",
+          "target": "il avait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "already laid foundations",
+          "target": "déjà des fondations",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -1642,8 +1677,8 @@
       ]
     },
     {
-      "target": "— Ici, ça marche assez bien.",
-      "english": "— Here, it works quite well.",
+      "target": "« Ici, ça marche assez bien », a dit l’employée.",
+      "english": "“Here, it works quite well,” the woman at the information desk said.",
       "alignment": [
         {
           "english": "Here",
@@ -1658,12 +1693,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "the woman at the information desk said",
+          "target": "a dit l’employée",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Une annonce pour Mereford, avec du trafic juste à côté.",
-      "english": "— An announcement for Mereford, with traffic right beside it.",
+      "target": "« Une annonce pour Mereford, avec du trafic juste à côté », a répondu Daniel.",
+      "english": "“An announcement for Mereford, with traffic right beside it,” Daniel replied.",
       "alignment": [
         {
           "english": "An announcement for Mereford",
@@ -1685,12 +1727,19 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Vous cherchez un train ou un bus ?",
-      "english": "— Are you looking for a train or a bus?",
+      "target": "« Vous cherchez un train ou un bus ? »",
+      "english": "“Are you looking for a train or a bus?”",
       "alignment": [
         {
           "english": "Are you looking for",
@@ -1716,8 +1765,8 @@
       ]
     },
     {
-      "target": "— C'est une bonne question.",
-      "english": "— That is a good question.",
+      "target": "« C'est une bonne question. »",
+      "english": "“That is a good question.”",
       "alignment": [
         {
           "english": "That is",
@@ -1933,8 +1982,8 @@
       ]
     },
     {
-      "target": "— L'ancienne gare routière est encore ouverte ?",
-      "english": "— The old bus station is still open?",
+      "target": "« L'ancienne gare routière est encore ouverte ? » a demandé Daniel.",
+      "english": "“The old bus station is still open?” Daniel asked.",
       "alignment": [
         {
           "english": "The old bus station",
@@ -1949,12 +1998,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Vous savez, « ancienne », c'est surtout ce qu'on l'appelle.",
-      "english": "— You know, “old” is mostly what we call it.",
+      "target": "« Vous savez, “ancienne”, c'est surtout ce qu'on l'appelle. »",
+      "english": "“You know, ‘old’ is mostly what we call it.”",
       "alignment": [
         {
           "english": "You know",
@@ -1964,8 +2020,8 @@
           "is_idiom": false
         },
         {
-          "english": "“old”",
-          "target": "« ancienne »",
+          "english": "‘old’",
+          "target": "“ancienne”",
           "category": "adjective",
           "frequency_band": "common",
           "is_idiom": false
@@ -2271,27 +2327,27 @@
       ]
     },
     {
-      "target": "Il ne pouvait pas en vouloir au monde de la vérifier.",
-      "english": "He could not resent the world for testing it.",
+      "target": "Il ne pouvait pas reprocher au monde de manquer de coopération.",
+      "english": "He could hardly blame the world for being uncooperative.",
       "alignment": [
         {
-          "english": "He could not",
-          "target": "Il ne pouvait pas",
+          "english": "He could hardly blame",
+          "target": "Il ne pouvait pas reprocher",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "resent the world",
-          "target": "en vouloir au monde",
-          "category": "verb",
+          "english": "the world",
+          "target": "au monde",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "for testing it",
-          "target": "de la vérifier",
-          "category": "adverb",
+          "english": "for being uncooperative",
+          "target": "de manquer de coopération",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2339,8 +2395,8 @@
       ]
     },
     {
-      "target": "Un salon de coiffure, un réparateur de téléphones, un local vide qui promettait encore une ouverture prochaine.",
-      "english": "A hairdresser's, a phone repair shop, an empty unit still promising to open soon.",
+      "target": "Un salon de coiffure, un réparateur de téléphones, un local vide qui promettait encore une ouverture prochaine. Le mot « prochainement » avait jauni au soleil.",
+      "english": "A hairdresser's, a phone repair shop, an empty shop still promising to open soon. The word “soon” had yellowed in the sun.",
       "alignment": [
         {
           "english": "A hairdresser's",
@@ -2357,7 +2413,7 @@
           "is_idiom": false
         },
         {
-          "english": "an empty unit",
+          "english": "an empty shop",
           "target": "un local vide",
           "category": "noun",
           "frequency_band": "common",
@@ -2373,7 +2429,35 @@
         {
           "english": "to open soon",
           "target": "une ouverture prochaine",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "The word",
+          "target": "Le mot",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "soon",
+          "target": "prochainement",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "had yellowed",
+          "target": "avait jauni",
           "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "in the sun",
+          "target": "au soleil",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -3247,8 +3331,8 @@
       ]
     },
     {
-      "target": "— Je vous ai déjà montré la photo hier.",
-      "english": "— I already showed you the photograph yesterday.",
+      "target": "« Je vous ai déjà montré la photo hier », a dit le jeune homme.",
+      "english": "“I already showed you the photograph yesterday,” the young man said.",
       "alignment": [
         {
           "english": "I already showed you",
@@ -3269,6 +3353,13 @@
           "target": "hier",
           "category": "adverb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the young man said",
+          "target": "a dit le jeune homme",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -3376,8 +3467,8 @@
       ]
     },
     {
-      "target": "— Elle s'appelle Ruth Bennett, a dit le jeune homme.",
-      "english": "— Her name is Ruth Bennett, the young man said.",
+      "target": "« Elle s'appelle Ruth Bennett », a dit le jeune homme.",
+      "english": "“Her name is Ruth Bennett,” the young man said.",
       "alignment": [
         {
           "english": "Her name is",
@@ -3462,6 +3553,7 @@
     "createdAt": "2026-10-11",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

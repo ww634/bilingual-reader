@@ -2,7 +2,7 @@
   "id": "ch-19",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Avant son accord",
     "english": "Before She Agreed"
@@ -77,8 +77,8 @@
       ]
     },
     {
-      "target": "Le reste du temps, il avait vérifié que son téléphone fonctionnait.",
-      "english": "For the rest of the time, he had checked that his phone was working.",
+      "target": "Le reste du temps, il avait soumis son téléphone à des vérifications qu'aucun défaut ne justifiait.",
+      "english": "For the rest of the time, he had subjected his telephone to checks that no fault justified.",
       "alignment": [
         {
           "english": "For the rest of the time",
@@ -88,17 +88,38 @@
           "is_idiom": false
         },
         {
-          "english": "he had checked",
-          "target": "il avait vérifié",
+          "english": "he had subjected",
+          "target": "il avait soumis",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "that his phone was working",
-          "target": "que son téléphone fonctionnait",
-          "category": "function_word",
-          "frequency_band": "very_common",
+          "english": "his telephone",
+          "target": "son téléphone",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to checks",
+          "target": "à des vérifications",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "that no fault",
+          "target": "qu'aucun défaut",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "justified",
+          "target": "ne justifiait",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -131,7 +152,7 @@
       ]
     },
     {
-      "target": "— J'ai consigné ma première écoute, a dit Nisha. Avant d'ouvrir votre transcription.",
+      "target": "« J'ai consigné ma première écoute », a dit Nisha. « Avant d'ouvrir votre transcription. »",
       "english": "“I've recorded my first listening,” Nisha said. “Before opening your transcript.”",
       "alignment": [
         {
@@ -158,7 +179,7 @@
       ]
     },
     {
-      "target": "— Et ?",
+      "target": "« Et ? »",
       "english": "“And?”",
       "alignment": [
         {
@@ -171,7 +192,7 @@
       ]
     },
     {
-      "target": "— Je ne peux pas identifier ce prénom de manière fiable.",
+      "target": "« Je ne peux pas identifier ce prénom de manière fiable. »",
       "english": "“I can't identify that first name reliably.”",
       "alignment": [
         {
@@ -238,8 +259,8 @@
       ]
     },
     {
-      "target": "— Même dans la version traitée ?",
-      "english": "“Even in the processed version?”",
+      "target": "« Même dans la version traitée ? » a demandé Daniel.",
+      "english": "“Even in the processed version?” Daniel asked.",
       "alignment": [
         {
           "english": "Even in the processed version",
@@ -247,11 +268,18 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Elle est plus confortable à écouter. Ça ne suffit pas.",
+      "target": "« Elle est plus confortable à écouter. Ça ne suffit pas. »",
       "english": "“It's more comfortable to listen to. That's not enough.”",
       "alignment": [
         {
@@ -352,7 +380,7 @@
       ]
     },
     {
-      "target": "— Je ne vous dis pas que c'est impossible. Je vous dis que le signal ne justifie pas votre assurance.",
+      "target": "« Je ne vous dis pas que c'est impossible. Je vous dis que le signal ne justifie pas votre assurance. »",
       "english": "“I'm not telling you it's impossible. I'm telling you the signal doesn't justify your certainty.”",
       "alignment": [
         {
@@ -542,8 +570,8 @@
       ]
     },
     {
-      "target": "— Ce n'est pas une comparaison de locuteurs, a-t-elle dit. Vous m'avez demandé d'examiner les paroles.",
-      "english": "“It is not a speaker comparison,” she said. “You asked me to examine the words.”",
+      "target": "« Ce n'est pas une comparaison de locuteurs », a dit Nisha. « Vous m'avez demandé d'examiner les paroles. »",
+      "english": "“It is not a speaker comparison,” Nisha said. “You asked me to examine the words.”",
       "alignment": [
         {
           "english": "It is not",
@@ -560,10 +588,10 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Nisha said",
+          "target": "a dit Nisha",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
@@ -583,7 +611,7 @@
       ]
     },
     {
-      "target": "— Je sais.",
+      "target": "« Je sais. »",
       "english": "“I know.”",
       "alignment": [
         {
@@ -670,8 +698,8 @@
       ]
     },
     {
-      "target": "— Celui qui retire trop de voix est dans le même dossier.",
-      "english": "“The one that removes too much speech is in the same folder.”",
+      "target": "« Celui qui retire trop de voix est dans le même dossier », a dit Daniel.",
+      "english": "“The one that removes too much speech is in the same folder,” Daniel said.",
       "alignment": [
         {
           "english": "The one that removes too much speech",
@@ -686,11 +714,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Bien.",
+      "target": "« Bien. »",
       "english": "“Good.”",
       "alignment": [
         {
@@ -817,8 +852,8 @@
       ]
     },
     {
-      "target": "— Vous avez repris le passage après la lecture ?",
-      "english": "“Have you gone back to the passage after the playback?”",
+      "target": "« Vous avez repris le passage après la lecture ? » a demandé Nisha.",
+      "english": "“Have you gone back to the passage after the playback?” Nisha asked.",
       "alignment": [
         {
           "english": "Have you gone back to",
@@ -833,12 +868,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Nisha asked",
+          "target": "a demandé Nisha",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Celui où elle parle par-dessus ?",
-      "english": "“The one where she speaks over it?”",
+      "target": "« Celui où elle parle par-dessus ? » a demandé Daniel.",
+      "english": "“The one where she speaks over it?” Daniel asked.",
       "alignment": [
         {
           "english": "The one where she speaks over it",
@@ -846,11 +888,18 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Après. Quand l'autre appareil s'arrête.",
+      "target": "« Après. Quand l'autre appareil s'arrête. »",
       "english": "“After that. When the other machine stops.”",
       "alignment": [
         {
@@ -1462,27 +1511,41 @@
       ]
     },
     {
-      "target": "Il avait conservé ce souvenir-là avec beaucoup de soin.",
-      "english": "He had retained that memory with great care.",
+      "target": "Ce souvenir-là n'avait pas pris une ride. Il l'avait si peu exposé à la lumière.",
+      "english": "That memory had not aged a day. He had exposed it so little to the light.",
       "alignment": [
         {
-          "english": "He had retained",
-          "target": "Il avait conservé",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "that memory",
-          "target": "ce souvenir-là",
+          "english": "That memory",
+          "target": "Ce souvenir-là",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "with great care",
-          "target": "avec beaucoup de soin",
-          "category": "adverb",
+          "english": "had not aged a day",
+          "target": "n'avait pas pris une ride",
+          "category": "idiom",
+          "frequency_band": "common",
+          "is_idiom": true
+        },
+        {
+          "english": "He had",
+          "target": "Il l'avait",
+          "category": "function_word",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "exposed it so little",
+          "target": "si peu exposé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to the light",
+          "target": "à la lumière",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2134,7 +2197,7 @@
       ]
     },
     {
-      "target": "— Elle finit par entendre la même chose, a dit Daniel.",
+      "target": "« Elle finit par entendre la même chose », a dit Daniel.",
       "english": "“She ends up hearing the same thing,” Daniel said.",
       "alignment": [
         {
@@ -2154,8 +2217,8 @@
       ]
     },
     {
-      "target": "— Après que vous lui avez donné le nom.",
-      "english": "“After you give her the name.”",
+      "target": "« Après que vous lui avez donné le nom », a répondu Nisha.",
+      "english": "“After you give her the name,” Nisha replied.",
       "alignment": [
         {
           "english": "After you give her the name",
@@ -2163,11 +2226,18 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Nisha replied",
+          "target": "a répondu Nisha",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui.",
+      "target": "« Oui. »",
       "english": "“Yes.”",
       "alignment": [
         {
@@ -2180,7 +2250,7 @@
       ]
     },
     {
-      "target": "— Son accord ne constitue donc pas une vérification indépendante de votre lecture.",
+      "target": "« Son accord ne constitue donc pas une vérification indépendante de votre lecture. »",
       "english": "“So her agreement does not constitute an independent check on your reading.”",
       "alignment": [
         {
@@ -2214,33 +2284,6 @@
           "english": "the three sheets",
           "target": "les trois feuilles",
           "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "L'accord de Ruth ne pouvait plus confirmer sa lecture de la manière qu'il avait imaginée.",
-      "english": "Ruth's agreement could no longer confirm his reading in the way he had imagined.",
-      "alignment": [
-        {
-          "english": "Ruth's agreement",
-          "target": "L'accord de Ruth",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "could no longer confirm his reading",
-          "target": "ne pouvait plus confirmer sa lecture",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "in the way he had imagined",
-          "target": "de la manière qu'il avait imaginée",
-          "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2328,8 +2371,8 @@
       ]
     },
     {
-      "target": "— On comprend mieux une partie de la cassette de votre mère. Je lui ai donné le nom avant qu'elle le répète.",
-      "english": "“We can understand more of part of your mother's cassette. I gave her the name before she repeated it.”",
+      "target": "« On comprend mieux une partie de la cassette de votre mère. Je lui ai donné le nom avant qu'elle le répète », a dit Daniel.",
+      "english": "“We can understand more of part of your mother's cassette. I gave her the name before she repeated it,” Daniel said.",
       "alignment": [
         {
           "english": "We can understand more of",
@@ -2356,6 +2399,13 @@
           "english": "before she repeated it",
           "target": "avant qu'elle le répète",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2389,8 +2439,8 @@
       ]
     },
     {
-      "target": "— Je veux écouter. Tout le passage.",
-      "english": "“I want to listen. The whole passage.”",
+      "target": "« Je veux écouter. Tout le passage », a dit Ben.",
+      "english": "“I want to listen. The whole passage,” Ben said.",
       "alignment": [
         {
           "english": "I want to listen",
@@ -2405,11 +2455,18 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben said",
+          "target": "a dit Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui.",
+      "target": "« Oui. »",
       "english": "“Yes.”",
       "alignment": [
         {
@@ -2454,6 +2511,7 @@
     "createdAt": "2026-10-13",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

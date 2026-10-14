@@ -2,7 +2,7 @@
   "id": "ch-8",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Avant le procès",
     "english": "Before the Trial"
@@ -288,8 +288,8 @@
       ]
     },
     {
-      "target": "— Elle l'achète tous les ans, a dit Ben.",
-      "english": "— She buys it every year, Ben said.",
+      "target": "« Elle l'achète tous les ans », a dit Ben.",
+      "english": "“She buys it every year,” Ben said.",
       "alignment": [
         {
           "english": "She buys it",
@@ -315,8 +315,8 @@
       ]
     },
     {
-      "target": "Elle prétend que c'est pour moi.",
-      "english": "She claims it is for me.",
+      "target": "« Elle prétend que c'est pour moi. »",
+      "english": "“She claims it is for me.”",
       "alignment": [
         {
           "english": "She claims",
@@ -593,8 +593,8 @@
       ]
     },
     {
-      "target": "Le magazine promettait un verger.",
-      "english": "The magazine promised an orchard.",
+      "target": "Le magazine promettait un verger. Il devait compter sur la coopération des voisins.",
+      "english": "The magazine promised an orchard. It must be counting on the neighbours' cooperation.",
       "alignment": [
         {
           "english": "The magazine",
@@ -604,15 +604,29 @@
           "is_idiom": false
         },
         {
-          "english": "promised",
-          "target": "promettait",
+          "english": "promised an orchard",
+          "target": "promettait un verger",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "an orchard",
-          "target": "un verger",
+          "english": "It must",
+          "target": "Il devait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "be counting on",
+          "target": "compter sur",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the neighbours' cooperation",
+          "target": "la coopération des voisins",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
@@ -797,8 +811,8 @@
       ]
     },
     {
-      "target": "— Elle était comptable ?",
-      "english": "— Was she an accountant?",
+      "target": "« Elle était comptable ? » a demandé Daniel.",
+      "english": "“Was she an accountant?” Daniel asked.",
       "alignment": [
         {
           "english": "Was she an accountant",
@@ -806,12 +820,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Elle tenait les comptes. Elle disait que c'était différent.",
-      "english": "— She kept the books. She used to say that it was different.",
+      "target": "« Elle tenait les comptes. Elle disait que c'était différent », a répondu Ben.",
+      "english": "“She kept the books. She used to say that it was different,” Ben replied.",
       "alignment": [
         {
           "english": "She kept the books",
@@ -830,6 +851,13 @@
         {
           "english": "that it was different",
           "target": "que c'était différent",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -871,8 +899,8 @@
       ]
     },
     {
-      "target": "— Elle travaillait le soir, quand je dormais.",
-      "english": "— She worked in the evenings, when I was asleep.",
+      "target": "« Elle travaillait le soir, quand je dormais.",
+      "english": "“She worked in the evenings, when I was asleep.",
       "alignment": [
         {
           "english": "She worked",
@@ -952,8 +980,8 @@
       ]
     },
     {
-      "target": "Je prenais le rouleau pour faire des routes.",
-      "english": "I used to take the roll to make roads.",
+      "target": "Je prenais le rouleau pour faire des routes. »",
+      "english": "I used to take the roll to make roads.”",
       "alignment": [
         {
           "english": "I used to take",
@@ -979,8 +1007,8 @@
       ]
     },
     {
-      "target": "— Une utilisation coûteuse.",
-      "english": "— An expensive use.",
+      "target": "« Une utilisation coûteuse. »",
+      "english": "“An expensive use.”",
       "alignment": [
         {
           "english": "An expensive use",
@@ -992,8 +1020,8 @@
       ]
     },
     {
-      "target": "— Elle trouvait aussi.",
-      "english": "— She thought so too.",
+      "target": "« Elle trouvait aussi. »",
+      "english": "“She thought so too.”",
       "alignment": [
         {
           "english": "She thought so too",
@@ -1161,8 +1189,8 @@
       ]
     },
     {
-      "target": "— Elle m'a offert une plante quand j'ai pris mon appartement, a-t-il dit.",
-      "english": "— She gave me a plant when I got my flat, he said.",
+      "target": "« Elle m'a offert une plante quand j'ai pris mon appartement », a dit Ben.",
+      "english": "“She gave me a plant when I got my flat,” Ben said.",
       "alignment": [
         {
           "english": "She gave me",
@@ -1186,8 +1214,8 @@
           "is_idiom": false
         },
         {
-          "english": "he said",
-          "target": "a-t-il dit",
+          "english": "Ben said",
+          "target": "a dit Ben",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1195,8 +1223,8 @@
       ]
     },
     {
-      "target": "Elle venait voir comment elle allait.",
-      "english": "She used to come to see how it was doing.",
+      "target": "« Elle venait voir comment elle allait. »",
+      "english": "“She used to come to see how it was doing.”",
       "alignment": [
         {
           "english": "She used to come",
@@ -1215,8 +1243,8 @@
       ]
     },
     {
-      "target": "— La plante ?",
-      "english": "— The plant?",
+      "target": "« La plante ? » a demandé Daniel.",
+      "english": "“The plant?” Daniel asked.",
       "alignment": [
         {
           "english": "The plant",
@@ -1224,12 +1252,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Officiellement.",
-      "english": "— Officially.",
+      "target": "« Officiellement. »",
+      "english": "“Officially.”",
       "alignment": [
         {
           "english": "Officially",
@@ -1384,48 +1419,41 @@
       ]
     },
     {
-      "target": "Daniel a reconnu cette attente qui donnait à chaque téléphone une importance excessive.",
-      "english": "Daniel recognised that waiting which gave every telephone too much importance.",
+      "target": "Daniel a reconnu cette façon de regarder un téléphone, comme s'il fallait l'aider à sonner.",
+      "english": "Daniel recognised that way of watching a telephone, as though one had to help it ring.",
       "alignment": [
         {
-          "english": "Daniel",
-          "target": "Daniel",
-          "category": "proper_noun",
-          "frequency_band": null,
-          "is_idiom": false
-        },
-        {
-          "english": "recognised",
-          "target": "a reconnu",
+          "english": "Daniel recognised",
+          "target": "Daniel a reconnu",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "that waiting",
-          "target": "cette attente",
+          "english": "that way of watching",
+          "target": "cette façon de regarder",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "which gave",
-          "target": "qui donnait",
+          "english": "a telephone",
+          "target": "un téléphone",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "as though one had to",
+          "target": "comme s'il fallait",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "help it ring",
+          "target": "l'aider à sonner",
           "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "every telephone",
-          "target": "à chaque téléphone",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "too much importance",
-          "target": "une importance excessive",
-          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1798,8 +1826,8 @@
       ]
     },
     {
-      "target": "— Ça, c'est ce qu'elle disait la semaine dernière.",
-      "english": "— That is what she was saying last week.",
+      "target": "« Ça, c'est ce qu'elle disait la semaine dernière. »",
+      "english": "“That is what she was saying last week.”",
       "alignment": [
         {
           "english": "That",
@@ -1940,8 +1968,8 @@
       ]
     },
     {
-      "target": "— Mais elle l'a écrit.",
-      "english": "— But she wrote it.",
+      "target": "« Mais elle l'a écrit. »",
+      "english": "“But she wrote it.”",
       "alignment": [
         {
           "english": "But she wrote it",
@@ -1953,8 +1981,8 @@
       ]
     },
     {
-      "target": "— Oui.",
-      "english": "— Yes.",
+      "target": "« Oui. »",
+      "english": "“Yes.”",
       "alignment": [
         {
           "english": "Yes",
@@ -2209,8 +2237,8 @@
       ]
     },
     {
-      "target": "— Paul Sayer est toujours ici ?",
-      "english": "— Paul Sayer is still here?",
+      "target": "« Paul Sayer est toujours ici ? » a demandé Daniel.",
+      "english": "“Paul Sayer is still here?” Daniel asked.",
       "alignment": [
         {
           "english": "Paul Sayer",
@@ -2225,12 +2253,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Il a un bureau près de la mairie.",
-      "english": "— He has an office near the town hall.",
+      "target": "« Il a un bureau près de la mairie.",
+      "english": "“He has an office near the town hall.",
       "alignment": [
         {
           "english": "He has an office",
@@ -2282,8 +2317,8 @@
       ]
     },
     {
-      "target": "Il m'a dit de passer si je voulais.",
-      "english": "He told me to come by if I wanted.",
+      "target": "Il m'a dit de passer si je voulais », a répondu Ben.",
+      "english": "He told me to come by if I wanted,” Ben replied.",
       "alignment": [
         {
           "english": "He told me",
@@ -2303,6 +2338,13 @@
           "english": "if I wanted",
           "target": "si je voulais",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2493,8 +2535,8 @@
       ]
     },
     {
-      "target": "— Un article, c'est pas une transcription du procès, a dit Ben.",
-      "english": "— A newspaper article is not a trial transcript, Ben said.",
+      "target": "« Un article, c'est pas une transcription du procès », a dit Ben.",
+      "english": "“A newspaper article is not a trial transcript,” Ben said.",
       "alignment": [
         {
           "english": "A newspaper article",
@@ -2527,8 +2569,8 @@
       ]
     },
     {
-      "target": "— Non.",
-      "english": "— No.",
+      "target": "« Non. »",
+      "english": "“No.”",
       "alignment": [
         {
           "english": "No",
@@ -2540,8 +2582,8 @@
       ]
     },
     {
-      "target": "— Vous alliez me le dire.",
-      "english": "— You were going to tell me that.",
+      "target": "« Vous alliez me le dire. »",
+      "english": "“You were going to tell me that.”",
       "alignment": [
         {
           "english": "You were going",
@@ -2560,8 +2602,8 @@
       ]
     },
     {
-      "target": "— Probablement.",
-      "english": "— Probably.",
+      "target": "« Probablement. »",
+      "english": "“Probably.”",
       "alignment": [
         {
           "english": "Probably",
@@ -2702,8 +2744,8 @@
       ]
     },
     {
-      "target": "Il s'est entendu aligner les possibilités qui ne changeaient rien.",
-      "english": "He heard himself listing the possibilities that changed nothing.",
+      "target": "Il s'est entendu aligner les possibilités comme des chaises devant une porte.",
+      "english": "He heard himself lining up possibilities like chairs in front of a door.",
       "alignment": [
         {
           "english": "He heard himself",
@@ -2713,16 +2755,23 @@
           "is_idiom": false
         },
         {
-          "english": "listing the possibilities",
+          "english": "lining up possibilities",
           "target": "aligner les possibilités",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "that changed nothing",
-          "target": "qui ne changeaient rien",
-          "category": "adjective",
+          "english": "like chairs",
+          "target": "comme des chaises",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "in front of a door",
+          "target": "devant une porte",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2743,26 +2792,6 @@
           "english": "the third",
           "target": "la troisième",
           "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "Quelqu'un avait peut-être eu tort.",
-      "english": "Perhaps someone had been wrong.",
-      "alignment": [
-        {
-          "english": "Perhaps someone had",
-          "target": "Quelqu'un avait peut-être",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "been wrong",
-          "target": "eu tort",
-          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2843,8 +2872,8 @@
       ]
     },
     {
-      "target": "— Elle enregistrait des choses, a dit Ben.",
-      "english": "— She used to record things, Ben said.",
+      "target": "« Elle enregistrait des choses », a dit Ben.",
+      "english": "“She used to record things,” Ben said.",
       "alignment": [
         {
           "english": "She used to record",
@@ -2870,8 +2899,8 @@
       ]
     },
     {
-      "target": "Des listes. Ce qu'elle devait demander au médecin.",
-      "english": "Lists. What she needed to ask the doctor.",
+      "target": "« Des listes. Ce qu'elle devait demander au médecin.",
+      "english": "“Lists. What she needed to ask the doctor.",
       "alignment": [
         {
           "english": "Lists",
@@ -2897,8 +2926,8 @@
       ]
     },
     {
-      "target": "J'avais pas le droit de toucher au petit appareil.",
-      "english": "I was not allowed to touch the little machine.",
+      "target": "J'avais pas le droit de toucher au petit appareil. »",
+      "english": "I was not allowed to touch the little machine.”",
       "alignment": [
         {
           "english": "I was not allowed",
@@ -2917,8 +2946,8 @@
       ]
     },
     {
-      "target": "— Vous savez ce qu'il y avait sur celle-ci ?",
-      "english": "— Do you know what was on this one?",
+      "target": "« Vous savez ce qu'il y avait sur celle-ci ? » a demandé Daniel.",
+      "english": "“Do you know what was on this one?” Daniel asked.",
       "alignment": [
         {
           "english": "Do you know",
@@ -2938,6 +2967,13 @@
           "english": "on this one",
           "target": "sur celle-ci",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -3471,6 +3507,7 @@
     "createdAt": "2026-10-12",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

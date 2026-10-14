@@ -6,6 +6,8 @@ The user selected and approved the core premise: older, grumpy, widowed audio sp
 
 Read in this order before writing:
 
+Read `crime-mystery-editorial-guide.md` for every revision and new chapter. This is the user's standing editorial standard, including quotation marks, speaker clarity, Daniel's dry narrative voice, and sequential/whole-manuscript review. Apply it according to scene purpose, not as a quota of techniques. `the-last-clear-voice-editorial-review.md` records the October 2026 review of chapters 1–22 and the obligations carried forward.
+
 0. `the-last-clear-voice-french-style.md` — mandatory French register, narrative tenses, character voices, and learner alignment rules.
 1. `crime-thriller-writing-guide.md` — standing craft principles and benchmark novels.
 2. `the-last-clear-voice-story-bible.md` — current working canon, complete crime solution, chronology, characters, evidence custody, research gates.

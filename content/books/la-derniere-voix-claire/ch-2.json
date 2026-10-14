@@ -2,7 +2,7 @@
   "id": "ch-2",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Le nom dans le message",
     "english": "The Name in the Message"
@@ -260,8 +260,8 @@
       ]
     },
     {
-      "target": "— C'est moi. Ruth Bennett vient de m'appeler.",
-      "english": "— It's me. Ruth Bennett has just called me.",
+      "target": "« C'est moi. Ruth Bennett vient de m'appeler.",
+      "english": "“It's me. Ruth Bennett has just called me.",
       "alignment": [
         {
           "english": "It's me",
@@ -321,8 +321,8 @@
       ]
     },
     {
-      "target": "Tu sais de quoi il s'agit ?",
-      "english": "Do you know what this is about?",
+      "target": "Tu sais de quoi il s'agit ? » a demandé Daniel.",
+      "english": "Do you know what this is about?” Daniel asked.",
       "alignment": [
         {
           "english": "Do you know",
@@ -336,6 +336,13 @@
           "target": "de quoi il s'agit",
           "category": "verb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -368,8 +375,8 @@
       ]
     },
     {
-      "target": "— Rappelle-moi avant deux heures, si possible.",
-      "english": "— Call me back before two o'clock, if possible.",
+      "target": "« Rappelle-moi avant deux heures, si possible. »",
+      "english": "“Call me back before two o'clock, if possible.”",
       "alignment": [
         {
           "english": "Call me back",
@@ -1349,27 +1356,34 @@
       ]
     },
     {
-      "target": "Daniel n'avait jamais aimé ce dernier adjectif.",
-      "english": "Daniel had never liked that last adjective.",
+      "target": "Daniel n'avait jamais aimé ce dernier adjectif. Il fermait le dossier avant même qu'on l'ouvre.",
+      "english": "Daniel had never liked that last adjective. It closed the case before anyone opened it.",
       "alignment": [
         {
-          "english": "Daniel",
-          "target": "Daniel",
-          "category": "proper_noun",
-          "frequency_band": null,
-          "is_idiom": false
-        },
-        {
-          "english": "had never liked",
-          "target": "n'avait jamais aimé",
+          "english": "Daniel had never liked",
+          "target": "Daniel n'avait jamais aimé",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
           "english": "that last adjective",
           "target": "ce dernier adjectif",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "It closed the case",
+          "target": "Il fermait le dossier",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "before anyone opened it",
+          "target": "avant même qu'on l'ouvre",
+          "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2202,8 +2216,8 @@
       ]
     },
     {
-      "target": "— La moitié, ça ne compte pas.",
-      "english": "— Half doesn't count.",
+      "target": "« La moitié, ça ne compte pas », a dit Graham.",
+      "english": "“Half doesn't count,” Graham said.",
       "alignment": [
         {
           "english": "Half",
@@ -2218,12 +2232,19 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Graham said",
+          "target": "a dit Graham",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— C'est une théorie intéressante.",
-      "english": "— That's an interesting theory.",
+      "target": "« C'est une théorie intéressante », a répondu Daniel.",
+      "english": "“That's an interesting theory,” Daniel replied.",
       "alignment": [
         {
           "english": "That's",
@@ -2245,12 +2266,19 @@
           "category": "adjective",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je compte la faire publier.",
-      "english": "— I intend to have it published.",
+      "target": "« Je compte la faire publier. »",
+      "english": "“I intend to have it published.”",
       "alignment": [
         {
           "english": "I intend",
@@ -2398,8 +2426,8 @@
       ]
     },
     {
-      "target": "— Je vais pas leur tomber dessus.",
-      "english": "— I'm not going to spring it on them.",
+      "target": "« Je vais pas leur tomber dessus.",
+      "english": "“I'm not going to spring it on them.",
       "alignment": [
         {
           "english": "I'm not going",
@@ -2418,8 +2446,8 @@
       ]
     },
     {
-      "target": "Je leur ferai lire ce qui les concerne.",
-      "english": "I'll let them read what concerns them.",
+      "target": "Je leur ferai lire ce qui les concerne », a dit Graham.",
+      "english": "I'll let them read what concerns them,” Graham said.",
       "alignment": [
         {
           "english": "I'll let them read",
@@ -2433,6 +2461,13 @@
           "target": "ce qui les concerne",
           "category": "noun",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Graham said",
+          "target": "a dit Graham",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -2680,46 +2715,33 @@
       ]
     },
     {
-      "target": "Il a été soulagé de le remarquer,",
-      "english": "He was relieved to notice that,",
+      "target": "Il s'est accroché à cette différence, comme à une poignée dans un escalier sombre.",
+      "english": "He clung to that distinction like a handhold on a dark staircase.",
       "alignment": [
         {
-          "english": "He was relieved",
-          "target": "Il a été soulagé",
+          "english": "He clung",
+          "target": "Il s'est accroché",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "to notice that",
-          "target": "de le remarquer",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "puis un peu honteux de son soulagement.",
-      "english": "then a little ashamed of his relief.",
-      "alignment": [
-        {
-          "english": "then",
-          "target": "puis",
-          "category": "adverb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "a little ashamed",
-          "target": "un peu honteux",
-          "category": "adjective",
+          "english": "to that distinction",
+          "target": "à cette différence",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "of his relief",
-          "target": "de son soulagement",
+          "english": "like a handhold",
+          "target": "comme à une poignée",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "on a dark staircase",
+          "target": "dans un escalier sombre",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
@@ -3388,11 +3410,11 @@
       ]
     },
     {
-      "target": "Elle a émis deux notes qu'il a trouvées excessivement gaies.",
-      "english": "It gave two notes he found excessively cheerful.",
+      "target": "Elle a émis deux notes d'une gaieté sans rapport avec les visites qu'il recevait.",
+      "english": "It sounded two notes of a cheerfulness unrelated to the visits he received.",
       "alignment": [
         {
-          "english": "It gave",
+          "english": "It sounded",
           "target": "Elle a émis",
           "category": "verb",
           "frequency_band": "common",
@@ -3406,16 +3428,23 @@
           "is_idiom": false
         },
         {
-          "english": "he found",
-          "target": "qu'il a trouvées",
-          "category": "verb",
+          "english": "of a cheerfulness",
+          "target": "d'une gaieté",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "unrelated to",
+          "target": "sans rapport avec",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "excessively cheerful",
-          "target": "excessivement gaies",
-          "category": "adjective",
+          "english": "the visits he received",
+          "target": "les visites qu'il recevait",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -5094,8 +5123,8 @@
       ]
     },
     {
-      "target": "— Judith, excuse-moi de vous déranger.",
-      "english": "— Judith, sorry to bother you both.",
+      "target": "« Judith, excuse-moi de te déranger », a dit Daniel.",
+      "english": "“Judith, sorry to bother you both,” Daniel said.",
       "alignment": [
         {
           "english": "Judith",
@@ -5113,7 +5142,14 @@
         },
         {
           "english": "to bother you both",
-          "target": "de vous déranger",
+          "target": "de te déranger",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -5270,8 +5306,8 @@
       ]
     },
     {
-      "target": "— Daniel. Je viens de voir ton message.",
-      "english": "— Daniel. I've just seen your message.",
+      "target": "« Daniel. Je viens de voir ton message », a dit Judith.",
+      "english": "“Daniel. I've just seen your message,” Judith said.",
       "alignment": [
         {
           "english": "Daniel",
@@ -5293,12 +5329,19 @@
           "category": "noun",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Judith said",
+          "target": "a dit Judith",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Ce n'est rien. Je cherchais Graham.",
-      "english": "— It's nothing. I was trying to reach Graham.",
+      "target": "« Ce n'est rien. Je cherchais Graham. »",
+      "english": "“It's nothing. I was trying to reach Graham.”",
       "alignment": [
         {
           "english": "It's nothing",
@@ -5324,8 +5367,8 @@
       ]
     },
     {
-      "target": "— Oui.",
-      "english": "— Yes.",
+      "target": "« Oui. »",
+      "english": "“Yes.”",
       "alignment": [
         {
           "english": "Yes",
@@ -5398,8 +5441,8 @@
       ]
     },
     {
-      "target": "— Graham est mort.",
-      "english": "— Graham is dead.",
+      "target": "« Graham est mort. »",
+      "english": "“Graham is dead.”",
       "alignment": [
         {
           "english": "Graham",
@@ -5553,8 +5596,8 @@
       ]
     },
     {
-      "target": "— Daniel ?",
-      "english": "— Daniel?",
+      "target": "« Daniel ? » a demandé Judith.",
+      "english": "“Daniel?” Judith asked.",
       "alignment": [
         {
           "english": "Daniel",
@@ -5562,12 +5605,19 @@
           "category": "proper_noun",
           "frequency_band": null,
           "is_idiom": false
+        },
+        {
+          "english": "Judith asked",
+          "target": "a demandé Judith",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je suis là.",
-      "english": "— I'm here.",
+      "target": "« Je suis là. »",
+      "english": "“I'm here.”",
       "alignment": [
         {
           "english": "I'm here",
@@ -5734,8 +5784,8 @@
       ]
     },
     {
-      "target": "— Ils veulent savoir à qui il a parlé hier.",
-      "english": "— They want to know whom he spoke to yesterday.",
+      "target": "« Ils veulent savoir à qui il a parlé hier.",
+      "english": "“They want to know whom he spoke to yesterday.",
       "alignment": [
         {
           "english": "They want to know",
@@ -5768,8 +5818,8 @@
       ]
     },
     {
-      "target": "Tu l'as eu ?",
-      "english": "Did you speak to him?",
+      "target": "Tu l'as eu ? » a demandé Judith.",
+      "english": "Did you speak to him?” Judith asked.",
       "alignment": [
         {
           "english": "Did you speak to him",
@@ -5777,12 +5827,19 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Judith asked",
+          "target": "a demandé Judith",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Non. Pas hier.",
-      "english": "— No. Not yesterday.",
+      "target": "« Non. Pas hier. »",
+      "english": "“No. Not yesterday.”",
       "alignment": [
         {
           "english": "No",
@@ -5801,8 +5858,8 @@
       ]
     },
     {
-      "target": "— Je peux leur donner ton numéro ?",
-      "english": "— May I give them your number?",
+      "target": "« Je peux leur donner ton numéro ? »",
+      "english": "“May I give them your number?”",
       "alignment": [
         {
           "english": "May I",
@@ -5828,8 +5885,8 @@
       ]
     },
     {
-      "target": "— Bien sûr.",
-      "english": "— Of course.",
+      "target": "« Bien sûr. »",
+      "english": "“Of course.”",
       "alignment": [
         {
           "english": "Of course",
@@ -6313,6 +6370,6 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-10"
+    "updatedAt": "2026-10-14"
   }
 }

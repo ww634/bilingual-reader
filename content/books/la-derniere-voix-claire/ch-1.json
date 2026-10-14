@@ -2,7 +2,7 @@
   "id": "ch-1",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Ce qui reste",
     "english": "What Remains"
@@ -384,8 +384,8 @@
       ]
     },
     {
-      "target": "— Vous pourriez enlever le souffle, a dit Mme Holt.",
-      "english": "— You could remove the hiss, said Mrs Holt.",
+      "target": "« Vous pourriez enlever le souffle », a dit Mme Holt.",
+      "english": "“You could remove the hiss,” said Mrs Holt.",
       "alignment": [
         {
           "english": "You",
@@ -432,8 +432,8 @@
       ]
     },
     {
-      "target": "— Une partie, oui.",
-      "english": "— Some, yes.",
+      "target": "« Une partie, oui », a répondu Daniel.",
+      "english": "“Some, yes,” Daniel replied.",
       "alignment": [
         {
           "english": "Some",
@@ -448,12 +448,19 @@
           "category": "adverb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Alors on entendrait la fin.",
-      "english": "— Then we would hear the end.",
+      "target": "« Alors on entendrait la fin. »",
+      "english": "“Then we would hear the end.”",
       "alignment": [
         {
           "english": "Then",
@@ -683,8 +690,8 @@
       ]
     },
     {
-      "target": "— Le souffle recouvre certaines parties de la voix.",
-      "english": "— The hiss covers some parts of the voice.",
+      "target": "« Le souffle recouvre certaines parties de la voix.",
+      "english": "“The hiss covers some parts of the voice.",
       "alignment": [
         {
           "english": "The hiss",
@@ -730,8 +737,8 @@
       ]
     },
     {
-      "target": "je retire aussi une partie des mots.",
-      "english": "I also remove some of the words.",
+      "target": "je retire aussi une partie des mots », a dit Daniel.",
+      "english": "I also remove some of the words,” Daniel said.",
       "alignment": [
         {
           "english": "I also remove",
@@ -746,12 +753,19 @@
           "category": "noun",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Vous dites que ce sera pire ?",
-      "english": "— You're saying that it will be worse?",
+      "target": "« Vous dites que ce sera pire ? » a demandé Mme Holt.",
+      "english": "“You're saying that it will be worse?” Mrs Holt asked.",
       "alignment": [
         {
           "english": "You're saying",
@@ -773,12 +787,19 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Mrs Holt asked",
+          "target": "a demandé Mme Holt",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je dis que ce sera différent.",
-      "english": "— I'm saying that it will be different.",
+      "target": "« Je dis que ce sera différent. »",
+      "english": "“I'm saying that it will be different.”",
       "alignment": [
         {
           "english": "I'm saying",
@@ -851,28 +872,14 @@
       ]
     },
     {
-      "target": "Il aurait dû commencer par un exemple.",
-      "english": "He should have started with an example.",
+      "target": "Il aurait dû commencer par un exemple, avant de lui faire passer un examen.",
+      "english": "He should have started with an example, before making her sit an examination.",
       "alignment": [
         {
-          "english": "He",
-          "target": "Il",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "should have",
-          "target": "aurait dû",
+          "english": "He should have started",
+          "target": "Il aurait dû commencer",
           "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "started",
-          "target": "commencer",
-          "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
@@ -880,6 +887,20 @@
           "target": "par un exemple",
           "category": "noun",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "before making her sit",
+          "target": "avant de lui faire passer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "an examination",
+          "target": "un examen",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -1190,8 +1211,8 @@
       ]
     },
     {
-      "target": "— Je donne au logiciel un exemple du bruit.",
-      "english": "— I'm giving the software an example of the noise.",
+      "target": "« Je donne au logiciel un exemple du bruit.",
+      "english": "“I'm giving the software an example of the noise.",
       "alignment": [
         {
           "english": "I'm giving",
@@ -1217,8 +1238,8 @@
       ]
     },
     {
-      "target": "Il essaie ensuite d'en réduire la présence.",
-      "english": "It then tries to reduce its presence.",
+      "target": "Il essaie ensuite d'en réduire la présence. »",
+      "english": "It then tries to reduce its presence.”",
       "alignment": [
         {
           "english": "It then tries",
@@ -1237,8 +1258,8 @@
       ]
     },
     {
-      "target": "— Et il sait ce qui est une voix ?",
-      "english": "— And it knows what is a voice?",
+      "target": "« Et il sait ce qui est une voix ? » a demandé Mme Holt.",
+      "english": "“And it knows what is a voice?” Mrs Holt asked.",
       "alignment": [
         {
           "english": "And",
@@ -1260,12 +1281,19 @@
           "category": "noun",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Mrs Holt asked",
+          "target": "a demandé Mme Holt",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Pas comme vous et moi.",
-      "english": "— Not the way you and I do.",
+      "target": "« Pas comme vous et moi. »",
+      "english": "“Not the way you and I do.”",
       "alignment": [
         {
           "english": "Not",
@@ -2009,34 +2037,34 @@
       ]
     },
     {
-      "target": "La pièce enregistrée a semblé s'éloigner.",
-      "english": "The room on the recording seemed to recede.",
+      "target": "La pièce enregistrée a semblé s'éloigner, comme si on l'écoutait à travers une feuille d'aluminium.",
+      "english": "The room on the recording seemed to retreat, as though they were listening to it through a sheet of foil.",
       "alignment": [
         {
-          "english": "The room",
-          "target": "La pièce",
+          "english": "The room on the recording",
+          "target": "La pièce enregistrée",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "seemed to retreat",
+          "target": "a semblé s'éloigner",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "as though they were listening to it",
+          "target": "comme si on l'écoutait",
+          "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "on the recording",
-          "target": "enregistrée",
-          "category": "adjective",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "seemed",
-          "target": "a semblé",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "to recede",
-          "target": "s'éloigner",
-          "category": "verb",
+          "english": "through a sheet of foil",
+          "target": "à travers une feuille d'aluminium",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2186,8 +2214,8 @@
       ]
     },
     {
-      "target": "— C'est pas tout à fait lui.",
-      "english": "— That isn't quite him.",
+      "target": "« C'est pas tout à fait lui. »",
+      "english": "“That isn't quite him.”",
       "alignment": [
         {
           "english": "That isn't",
@@ -2403,8 +2431,8 @@
       ]
     },
     {
-      "target": "— C'était quand il allait dire une bêtise.",
-      "english": "— That was when he was about to say something silly.",
+      "target": "« C'était quand il allait dire une bêtise.",
+      "english": "“That was when he was about to say something silly.",
       "alignment": [
         {
           "english": "That was",
@@ -2437,8 +2465,8 @@
       ]
     },
     {
-      "target": "Il riait avant, pour être sûr.",
-      "english": "He laughed before, to make sure.",
+      "target": "Il riait avant, pour être sûr », a dit Mme Holt.",
+      "english": "He laughed before, to make sure,” Mrs Holt said.",
       "alignment": [
         {
           "english": "He laughed",
@@ -2460,12 +2488,19 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Mrs Holt said",
+          "target": "a dit Mme Holt",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Une précaution raisonnable, a dit Daniel.",
-      "english": "— A sensible precaution, said Daniel.",
+      "target": "« Une précaution raisonnable », a dit Daniel.",
+      "english": "“A sensible precaution,” said Daniel.",
       "alignment": [
         {
           "english": "A sensible precaution",
@@ -2532,8 +2567,8 @@
       ]
     },
     {
-      "target": "— Ma sœur pense qu'il dit mon prénom.",
-      "english": "— My sister thinks he says my first name.",
+      "target": "« Ma sœur pense qu'il dit mon prénom. »",
+      "english": "“My sister thinks he says my first name.”",
       "alignment": [
         {
           "english": "My sister",
@@ -2660,8 +2695,8 @@
       ]
     },
     {
-      "target": "— Je ne peux pas vous le confirmer.",
-      "english": "— I cannot confirm that for you.",
+      "target": "« Je ne peux pas vous le confirmer », a dit Daniel.",
+      "english": "“I cannot confirm that for you,” Daniel said.",
       "alignment": [
         {
           "english": "I cannot",
@@ -2676,12 +2711,19 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Même si vous y passez un peu plus de temps ?",
-      "english": "— Even if you spend on it a little more time?",
+      "target": "« Même si vous y passez un peu plus de temps ? »",
+      "english": "“Even if you spend on it a little more time?”",
       "alignment": [
         {
           "english": "Even",
@@ -2714,8 +2756,8 @@
       ]
     },
     {
-      "target": "— Je pourrais y passer tout le week-end.",
-      "english": "— I could spend on it the whole weekend.",
+      "target": "« Je pourrais y passer tout le week-end.",
+      "english": "“I could spend on it the whole weekend.",
       "alignment": [
         {
           "english": "I could",
@@ -2741,8 +2783,8 @@
       ]
     },
     {
-      "target": "Ça ne rendrait pas la réponse plus honnête.",
-      "english": "That would not make the answer more honest.",
+      "target": "Ça ne rendrait pas la réponse plus honnête. »",
+      "english": "That would not make the answer more honest.”",
       "alignment": [
         {
           "english": "That",
@@ -2795,8 +2837,8 @@
       ]
     },
     {
-      "target": "À soixante-sept ans, il s'en apercevait toujours un instant trop tard.",
-      "english": "At sixty-seven, he always noticed it a moment too late.",
+      "target": "À soixante-sept ans, sa courtoisie arrivait encore par le train suivant.",
+      "english": "At sixty-seven, his courtesy still arrived on the next train.",
       "alignment": [
         {
           "english": "At sixty-seven",
@@ -2806,31 +2848,24 @@
           "is_idiom": false
         },
         {
-          "english": "he",
-          "target": "il",
-          "category": "function_word",
-          "frequency_band": "very_common",
+          "english": "his courtesy",
+          "target": "sa courtoisie",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "noticed it",
-          "target": "s'en apercevait",
+          "english": "still arrived",
+          "target": "arrivait encore",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "always",
-          "target": "toujours",
-          "category": "adverb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "a moment too late",
-          "target": "un instant trop tard",
-          "category": "adverb",
-          "frequency_band": "very_common",
+          "english": "on the next train",
+          "target": "par le train suivant",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -3005,8 +3040,8 @@
       ]
     },
     {
-      "target": "— C'est moi, a-t-elle dit.",
-      "english": "— That's me, she said.",
+      "target": "« C'est moi », a dit Mme Holt.",
+      "english": "“That's me,” Mrs Holt said.",
       "alignment": [
         {
           "english": "That's me",
@@ -3016,10 +3051,10 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Mrs Holt said",
+          "target": "a dit Mme Holt",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -3086,26 +3121,12 @@
       ]
     },
     {
-      "target": "Quand elle est partie, elle a emporté la cassette,",
-      "english": "When she left, she took the cassette,",
+      "target": "Il lui a préparé la cassette, une clé USB et une feuille expliquant les fichiers.",
+      "english": "He prepared for her the cassette, a USB stick and a sheet explaining the files.",
       "alignment": [
         {
-          "english": "When",
-          "target": "Quand",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "she left",
-          "target": "elle est partie",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "she took",
-          "target": "elle a emporté",
+          "english": "He prepared for her",
+          "target": "Il lui a préparé",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -3116,45 +3137,25 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "une clé USB et une feuille expliquant les fichiers.",
-      "english": "a USB drive and a sheet of paper explaining the files.",
-      "alignment": [
+        },
         {
-          "english": "a USB drive",
+          "english": "a USB stick",
           "target": "une clé USB",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "and",
-          "target": "et",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "a sheet of paper",
-          "target": "une feuille",
+          "english": "and a sheet",
+          "target": "et une feuille",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "explaining",
-          "target": "expliquant",
+          "english": "explaining the files",
+          "target": "expliquant les fichiers",
           "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "the files",
-          "target": "les fichiers",
-          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -3256,62 +3257,8 @@
       ]
     },
     {
-      "target": "Il a rayé une ligne sur la facture,",
-      "english": "He crossed out a line on the invoice,",
-      "alignment": [
-        {
-          "english": "He crossed out",
-          "target": "Il a rayé",
-          "category": "verb",
-          "frequency_band": "uncommon",
-          "is_idiom": false
-        },
-        {
-          "english": "a line",
-          "target": "une ligne",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "on the invoice",
-          "target": "sur la facture",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "avant qu'elle puisse lui poser une question.",
-      "english": "before she could ask him a question.",
-      "alignment": [
-        {
-          "english": "before",
-          "target": "avant",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "she could",
-          "target": "qu'elle puisse",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "ask him a question",
-          "target": "lui poser une question",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "— Vous avez un travail merveilleux.",
-      "english": "— You have a wonderful job.",
+      "target": "« Vous avez un travail merveilleux », a dit Mme Holt.",
+      "english": "“You have a wonderful job,” Mrs Holt said.",
       "alignment": [
         {
           "english": "You",
@@ -3333,12 +3280,19 @@
           "category": "noun",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Mrs Holt said",
+          "target": "a dit Mme Holt",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Surtout quand les gens écrivent la bonne date sur les boîtes.",
-      "english": "— Especially when people write the right date on the cases.",
+      "target": "« Surtout quand les gens écrivent la bonne date sur les boîtes. »",
+      "english": "“Especially when people write the right date on the cases.”",
       "alignment": [
         {
           "english": "Especially",
@@ -3459,8 +3413,8 @@
       ]
     },
     {
-      "target": "— Il faut que je garde la cassette aussi ?",
-      "english": "— Do I need to keep the cassette as well?",
+      "target": "« Il faut que je garde la cassette aussi ? »",
+      "english": "“Do I need to keep the cassette as well?”",
       "alignment": [
         {
           "english": "Do I need",
@@ -3493,8 +3447,8 @@
       ]
     },
     {
-      "target": "— Oui. Au sec, loin d'un radiateur.",
-      "english": "— Yes. Somewhere dry, away from a radiator.",
+      "target": "« Oui. Au sec, loin d'un radiateur. »",
+      "english": "“Yes. Somewhere dry, away from a radiator.”",
       "alignment": [
         {
           "english": "Yes",
@@ -3527,8 +3481,8 @@
       ]
     },
     {
-      "target": "— Mais vous avez tout sur l'ordinateur.",
-      "english": "— But you have everything on the computer.",
+      "target": "« Mais vous avez tout sur l'ordinateur. »",
+      "english": "“But you have everything on the computer.”",
       "alignment": [
         {
           "english": "But",
@@ -3561,8 +3515,8 @@
       ]
     },
     {
-      "target": "— Ce que j'ai transféré, oui.",
-      "english": "— What I transferred, yes.",
+      "target": "« Ce que j'ai transféré, oui. »",
+      "english": "“What I transferred, yes.”",
       "alignment": [
         {
           "english": "What I transferred",
@@ -3608,8 +3562,8 @@
       ]
     },
     {
-      "target": "— Je n'ai plus de lecteur.",
-      "english": "— I no longer have a player.",
+      "target": "« Je n'ai plus de lecteur. »",
+      "english": "“I no longer have a player.”",
       "alignment": [
         {
           "english": "I no longer have",
@@ -3628,8 +3582,8 @@
       ]
     },
     {
-      "target": "— Vous n'avez pas à l'écouter pour la garder.",
-      "english": "— You don't have to listen to it to keep it.",
+      "target": "« Vous n'avez pas à l'écouter pour la garder. »",
+      "english": "“You don't have to listen to it to keep it.”",
       "alignment": [
         {
           "english": "You don't have",
@@ -6116,6 +6070,6 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-10"
+    "updatedAt": "2026-10-14"
   }
 }

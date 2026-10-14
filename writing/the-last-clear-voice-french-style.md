@@ -38,3 +38,6 @@ Keep all clue wording, timing, ambiguity and evidence limitations consistent wit
 - Treat the app's `_src/ch-N.txt` markup as the publication source. Regenerate chapter JSON and manuscript reading copies after edits. Match catalogue and chapter versions when publishing a revision.
 
 The revised first two chapters are the starting reference for subsequent French chapters.
+# Standing editorial companion
+
+Read [the user's editorial guide](crime-mystery-editorial-guide.md) alongside this style reference before writing or revising. Direct speech uses French guillemets and English curly quotation marks, with clear speaker anchors and a new manuscript paragraph on speaker changes. Tags and actions stay outside quoted speech. Preserve the spoken register and passé composé while allowing precise imagery, organic wordplay, and Daniel's dry, sometimes self-incriminating observations. Do not explain an implication that the scene has already earned, or force humour into grief. See [the review through chapter 22](the-last-clear-voice-editorial-review.md) for the current baseline.

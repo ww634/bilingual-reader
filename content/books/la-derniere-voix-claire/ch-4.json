@@ -2,7 +2,7 @@
   "id": "ch-4",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Derrière sa voix",
     "english": "Behind Her Voice"
@@ -885,27 +885,27 @@
       ]
     },
     {
-      "target": "Une étiquette soigneuse ne changeait pas la nature de ce qu'elle désignait.",
-      "english": "A careful label did not change the nature of what it described.",
+      "target": "L'étiquette pouvait être impeccable ; elle ne réparait rien.",
+      "english": "The label could be impeccable; it repaired nothing.",
       "alignment": [
         {
-          "english": "A careful label",
-          "target": "Une étiquette soigneuse",
+          "english": "The label",
+          "target": "L'étiquette",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "did not change",
-          "target": "ne changeait pas",
+          "english": "could be impeccable",
+          "target": "pouvait être impeccable",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "the nature of what it described",
-          "target": "la nature de ce qu'elle désignait",
-          "category": "noun",
+          "english": "it repaired nothing",
+          "target": "elle ne réparait rien",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1311,8 +1311,8 @@
       ]
     },
     {
-      "target": "Un bruit montait par-dessus l'annonce et en mangeait la suite.",
-      "english": "A noise rose over the announcement and swallowed the rest.",
+      "target": "Un bruit montait par-dessus l'annonce, comme une vague qui efface une ligne dans le sable.",
+      "english": "A noise rose over the announcement, like a wave erasing a line in the sand.",
       "alignment": [
         {
           "english": "A noise",
@@ -1322,23 +1322,30 @@
           "is_idiom": false
         },
         {
-          "english": "rose",
-          "target": "montait",
+          "english": "rose over the announcement",
+          "target": "montait par-dessus l'annonce",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "over the announcement",
-          "target": "par-dessus l'annonce",
-          "category": "adverb",
+          "english": "like a wave",
+          "target": "comme une vague",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "and swallowed the rest",
-          "target": "et en mangeait la suite",
+          "english": "erasing",
+          "target": "qui efface",
           "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a line in the sand",
+          "target": "une ligne dans le sable",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -3624,6 +3631,7 @@
     "createdAt": "2026-10-11",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

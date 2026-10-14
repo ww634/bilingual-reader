@@ -2,7 +2,7 @@
   "id": "ch-21",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Ce qu'il avait laissé de côté",
     "english": "What He Had Left Out"
@@ -312,8 +312,8 @@
       ]
     },
     {
-      "target": "— Vous retirez votre identification ?",
-      "english": "“Are you withdrawing your identification?”",
+      "target": "« Vous retirez votre identification ? » a demandé Helen.",
+      "english": "“Are you withdrawing your identification?” Helen asked.",
       "alignment": [
         {
           "english": "Are you withdrawing your identification",
@@ -321,12 +321,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Helen asked",
+          "target": "a demandé Helen",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je retire la certitude que je lui ai donnée. Je ne peux pas soutenir que le prénom est identifiable de manière fiable.",
-      "english": "“I'm withdrawing the certainty I gave it. I cannot maintain that the first name can be reliably identified.”",
+      "target": "« Je retire la certitude que je lui ai donnée. Je ne peux pas soutenir que le prénom est identifiable de manière fiable », a répondu Daniel.",
+      "english": "“I'm withdrawing the certainty I gave it. I cannot maintain that the first name can be reliably identified,” Daniel replied.",
       "alignment": [
         {
           "english": "I'm withdrawing the certainty",
@@ -355,11 +362,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Il faudra comparer cette formulation à votre rapport et à ce qui a été dit au procès.",
+      "target": "« Il faudra comparer cette formulation à votre rapport et à ce qui a été dit au procès. »",
       "english": "“We will need to compare that wording with your report and with what was said at trial.”",
       "alignment": [
         {
@@ -413,28 +427,49 @@
       ]
     },
     {
-      "target": "Il contenait assez de travail pour empêcher un homme pressé de se croire arrivé.",
-      "english": "It contained enough work to stop a man in a hurry from thinking he was finished.",
+      "target": "Les pièces dépassaient de la chemise. Son courrier y ajouterait une feuille, pas un point final.",
+      "english": "The papers protruded from the folder. His letter would add a page, not a full stop.",
       "alignment": [
         {
-          "english": "It contained",
-          "target": "Il contenait",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "enough work",
-          "target": "assez de travail",
+          "english": "The papers",
+          "target": "Les pièces",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "to stop a man in a hurry from thinking he was finished",
-          "target": "pour empêcher un homme pressé de se croire arrivé",
-          "category": "function_word",
+          "english": "protruded from the folder",
+          "target": "dépassaient de la chemise",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "His letter",
+          "target": "Son courrier",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "would add",
+          "target": "y ajouterait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a page",
+          "target": "une feuille",
+          "category": "noun",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "not a full stop",
+          "target": "pas un point final",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -575,8 +610,8 @@
       ]
     },
     {
-      "target": "— Et ma lettre ?",
-      "english": "“And my letter?”",
+      "target": "« Et ma lettre ? » a demandé Daniel.",
+      "english": "“And my letter?” Daniel asked.",
       "alignment": [
         {
           "english": "And my letter",
@@ -584,12 +619,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Elle sera utile. Ce n'est pas une décision sur la condamnation.",
-      "english": "“It will be useful. It is not a decision on the conviction.”",
+      "target": "« Elle sera utile. Ce n'est pas une décision sur la condamnation », a répondu Helen.",
+      "english": "“It will be useful. It is not a decision on the conviction,” Helen replied.",
       "alignment": [
         {
           "english": "It will be useful",
@@ -609,6 +651,13 @@
           "english": "a decision on the conviction",
           "target": "une décision sur la condamnation",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen replied",
+          "target": "a répondu Helen",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -764,7 +813,7 @@
       ]
     },
     {
-      "target": "— Je vais lui communiquer ce que vous acceptez de mettre par écrit.",
+      "target": "« Je vais lui communiquer ce que vous acceptez de mettre par écrit. »",
       "english": "“I will pass on to him what you are willing to put in writing.”",
       "alignment": [
         {
@@ -939,7 +988,7 @@
       ]
     },
     {
-      "target": "— Je vais vous demander de reprendre depuis le début.",
+      "target": "« Je vais vous demander de reprendre depuis le début. »",
       "english": "“I'm going to ask you to go through it from the beginning.”",
       "alignment": [
         {
@@ -979,7 +1028,7 @@
       ]
     },
     {
-      "target": "— Depuis 2001, a dit Shah.",
+      "target": "« Depuis 2001 », a dit Shah.",
       "english": "“From 2001,” Shah said.",
       "alignment": [
         {
@@ -1074,8 +1123,8 @@
       ]
     },
     {
-      "target": "— Une lecture.",
-      "english": "“A reading.”",
+      "target": "« Une lecture », a dit Daniel.",
+      "english": "“A reading,” Daniel said.",
       "alignment": [
         {
           "english": "A reading",
@@ -1083,12 +1132,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— De qui ?",
-      "english": "“Whose?”",
+      "target": "« De qui ? » a demandé Shah.",
+      "english": "“Whose?” Shah asked.",
       "alignment": [
         {
           "english": "Whose",
@@ -1096,11 +1152,18 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Shah asked",
+          "target": "a demandé Shah",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Elle figurait dans la demande. Je dois retrouver qui l'avait formulée.",
+      "target": "« Elle figurait dans la demande. Je dois retrouver qui l'avait formulée. »",
       "english": "“It appeared in the request. I need to find who had formulated it.”",
       "alignment": [
         {
@@ -1255,12 +1318,19 @@
       ]
     },
     {
-      "target": "— Pourquoi ne pas l'avoir dit ?",
-      "english": "“Why didn't you say so?”",
+      "target": "« Pourquoi ne pas l'avoir dit ? » a demandé Shah.",
+      "english": "“Why didn't you say so?” Shah asked.",
       "alignment": [
         {
           "english": "Why didn't you say so",
           "target": "Pourquoi ne pas l'avoir dit",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Shah asked",
+          "target": "a demandé Shah",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1288,7 +1358,7 @@
       ]
     },
     {
-      "target": "— Je pensais que nous l'avions aidée. J'ai continué à préférer cette explication.",
+      "target": "« Je pensais que nous l'avions aidée. J'ai continué à préférer cette explication. »",
       "english": "“I thought we'd helped her. I kept preferring that explanation.”",
       "alignment": [
         {
@@ -1369,7 +1439,7 @@
       ]
     },
     {
-      "target": "— J'ai relancé l'extrait. Plusieurs fois.",
+      "target": "« J'ai relancé l'extrait. Plusieurs fois. »",
       "english": "“I played the extract again. Several times.”",
       "alignment": [
         {
@@ -1389,8 +1459,8 @@
       ]
     },
     {
-      "target": "— Après lui avoir montré votre texte ?",
-      "english": "“After showing her your text?”",
+      "target": "« Après lui avoir montré votre texte ? » a demandé Shah.",
+      "english": "“After showing her your text?” Shah asked.",
       "alignment": [
         {
           "english": "After showing her your text",
@@ -1398,11 +1468,18 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Shah asked",
+          "target": "a demandé Shah",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui.",
+      "target": "« Oui. »",
       "english": "“Yes.”",
       "alignment": [
         {
@@ -1469,7 +1546,7 @@
       ]
     },
     {
-      "target": "— C'est cela qui manque dans votre courrier.",
+      "target": "« C'est cela qui manque dans votre courrier. »",
       "english": "“That is what is missing from your letter.”",
       "alignment": [
         {
@@ -1489,8 +1566,8 @@
       ]
     },
     {
-      "target": "Il avait décrit les gestes et les paroles.",
-      "english": "He had described the actions and the words.",
+      "target": "Il avait décrit les gestes et les paroles, comme on inventorie les outils après un accident.",
+      "english": "He had described the actions and the words, as one inventories the tools after an accident.",
       "alignment": [
         {
           "english": "He had described",
@@ -1503,6 +1580,27 @@
           "english": "the actions and the words",
           "target": "les gestes et les paroles",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "as one inventories",
+          "target": "comme on inventorie",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the tools",
+          "target": "les outils",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "after an accident",
+          "target": "après un accident",
+          "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1871,7 +1969,7 @@
       ]
     },
     {
-      "target": "— Si l'ancien dossier est fragilisé, a demandé Daniel, est-ce que cela change votre enquête sur Graham ?",
+      "target": "« Si l'ancien dossier est fragilisé », a demandé Daniel, « est-ce que cela change votre enquête sur Graham ? »",
       "english": "“If the old case is weakened,” Daniel asked, “does that change your investigation into Graham?”",
       "alignment": [
         {
@@ -1905,8 +2003,8 @@
       ]
     },
     {
-      "target": "— Cela peut changer les questions que nous posons. Ça ne nous dit pas qui était avec lui.",
-      "english": "“It may change the questions we ask. It doesn't tell us who was with him.”",
+      "target": "« Cela peut changer les questions que nous posons. Ça ne nous dit pas qui était avec lui », a répondu Shah.",
+      "english": "“It may change the questions we ask. It doesn't tell us who was with him,” Shah replied.",
       "alignment": [
         {
           "english": "It may change",
@@ -1934,6 +2032,13 @@
           "target": "qui était avec lui",
           "category": "verb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Shah replied",
+          "target": "a répondu Shah",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -2081,8 +2186,8 @@
       ]
     },
     {
-      "target": "— Qu'est-ce que Graham avait appris sur le travail d'Anna ?",
-      "english": "“What had Graham learned about Anna's work?”",
+      "target": "« Qu'est-ce que Graham avait appris sur le travail d'Anna ? » a demandé Shah.",
+      "english": "“What had Graham learned about Anna's work?” Shah asked.",
       "alignment": [
         {
           "english": "What had Graham learned",
@@ -2096,6 +2201,13 @@
           "target": "sur le travail d'Anna",
           "category": "function_word",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Shah asked",
+          "target": "a demandé Shah",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -2315,6 +2427,7 @@
     "createdAt": "2026-10-13",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

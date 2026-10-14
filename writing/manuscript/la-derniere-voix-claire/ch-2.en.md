@@ -2,9 +2,11 @@
 
 Graham did not answer. At the fifth ring, Daniel prepared to hang up. At the sixth, his friend's voice invited him to leave a message. Graham had recorded that greeting in his car. You could hear the clicking of the indicator. Daniel had pointed it out to him several times. His friend had replied that people called to speak to him, not to listen to the quality of the silence.
 
-— It's me. Ruth Bennett has just called me. She wants to see me about the Vale case. Do you know what this is about?
+“It's me. Ruth Bennett has just called me. She wants to see me about the Vale case. Do you know what this is about?” Daniel asked.
 
-He hesitated, then added: — Call me back before two o'clock, if possible.
+He hesitated, then added:
+
+“Call me back before two o'clock, if possible.”
 
 He did not repeat Ruth's request not to talk about it to Graham. It seemed to him simpler to understand first. Graham knew people. Daniel knew recordings. It was that way that they had worked for years.
 
@@ -16,7 +18,7 @@ The name of Anna Vale produced results that were more specific. He did not need 
 
 The photograph was small, poorly reproduced. Anna was wearing a light-coloured jacket. She was looking at someone outside the frame. It was the same photograph as back then. He remembered the white border on a file of Graham's. He did not remember who had taken the photograph.
 
-The article spoke of a violent husband, of an argument and of a decisive recording. Daniel had never liked that last adjective. There had been discussions about the words. Objections too. He had explained what he heard, and the defence had been able to challenge it. The jury had heard the rest.
+The article spoke of a violent husband, of an argument and of a decisive recording. Daniel had never liked that last adjective. It closed the case before anyone opened it. There had been discussions about the words. Objections too. He had explained what he heard, and the defence had been able to challenge it. The jury had heard the rest.
 
 He caught himself formulating that answer as though someone had questioned him. Nobody had questioned him. A woman had asked to speak to him.
 
@@ -24,13 +26,21 @@ He closed the article and searched his emails. Graham had sent him something in 
 
 The attachment contained a few pages of professional recollections. A local publisher was interested in the cases on which Graham had worked. His friend had begun with the stories that made him laugh. A thief who had forgotten his bicycle. A lady who refused to open up to the police before the end of her programme. The Vale case appeared only in the contents.
 
-Daniel remembered their last conversation about it. They had eaten in a pub beside the canal. Graham had ordered a dessert after explaining that he was watching his weight. He had pushed half of it towards Daniel. — Half doesn't count. — That's an interesting theory. — I intend to have it published.
+Daniel remembered their last conversation about it. They had eaten in a pub beside the canal. Graham had ordered a dessert after explaining that he was watching his weight. He had pushed half of it towards Daniel.
 
-It was like that that the book had entered the conversation. Daniel had asked him whether the people concerned had any wish to feature in it. Graham had stopped smiling. — I'm not going to spring it on them. I'll let them read what concerns them.
+“Half doesn't count,” Graham said.
+
+“That's an interesting theory,” Daniel replied.
+
+“I intend to have it published.”
+
+It was like that that the book had entered the conversation. Daniel had asked him whether the people concerned had any wish to feature in it. Graham had stopped smiling.
+
+“I'm not going to spring it on them. I'll let them read what concerns them,” Graham said.
 
 Daniel reread the contents. He might have his explanation. Ruth had received a chapter. Something in the account had upset her. After twenty-five years, memories did not appear always in the same order.
 
-He went back to the answering machine. He listened to the last sentence again. I wasn't that certain. She had not said that he had been wrong. He was relieved to notice that, then a little ashamed of his relief.
+He went back to the answering machine. He listened to the last sentence again. I wasn't that certain. She had not said that he had been wrong. He clung to that distinction like a handhold on a dark staircase.
 
 At one o'clock, he ate some bread and some cheese. He put a second cup beside the kettle. He looked for some biscuits, found an open packet and tried one. He threw away the packet. An unexpected visit did not justify just anything.
 
@@ -38,7 +48,7 @@ In the workshop, he cleared the stool and placed a fresh notebook on the table. 
 
 He had tried to make things less difficult for her. He was sure of that. He did not remember the exact sentences he had used. The recording had been played several times. He had shown on a sheet of paper the passages he had been able to transcribe. Ruth had ended by nodding. At the time, he had believed that it had helped her.
 
-Ten to two. He checked that the doorbell worked. It gave two notes he found excessively cheerful. In the street, a woman was walking a dog without a lead. The dog had the lead in its mouth. Graham would have had something to say about that.
+Ten to two. He checked that the doorbell worked. It sounded two notes of a cheerfulness unrelated to the visits he received. In the street, a woman was walking a dog without a lead. The dog had the lead in its mouth. Graham would have had something to say about that.
 
 At ten past two, Daniel moved the stool so that it would not block the way. At twenty past two, he called Graham again. The indicator clicked with the same regularity. He did not leave a second message.
 
@@ -56,23 +66,37 @@ He had an order to finish. A local association had entrusted to him some intervi
 
 He reread the same line three times. A man was called Peter Lane in the file, and Peter Laine on the form. Once, he would have found this mistake irritating. This afternoon, he was almost grateful that a mistake could be so small.
 
-At twelve minutes past four, his mobile rang. Judith's name appeared on the screen. He answered as he stood up. — Judith, sorry to bother you both.
+At twelve minutes past four, his mobile rang. Judith's name appeared on the screen. He answered as he stood up.
+
+“Judith, sorry to bother you both,” Daniel said.
 
 She did not answer straight away. He heard a door close, then someone ask her whether she wanted to sit down. Judith replied “no”, but it was not to him that she was speaking.
 
-— Daniel. I've just seen your message. — It's nothing. I was trying to reach Graham. — Yes.
+“Daniel. I've just seen your message,” Judith said.
+
+“It's nothing. I was trying to reach Graham.”
+
+“Yes.”
 
 She said his first name a second time. He put his hand on the back of his chair.
 
-— Graham is dead.
+“Graham is dead.”
 
 He looked at the little bag lying beside the answering machine. There were four screws inside. He had paid for all four because it was not possible to buy just one. That thought occupied all the space for a moment.
 
-— Daniel? — I'm here.
+“Daniel?” Judith asked.
+
+“I'm here.”
 
 Judith told him that she had spent the night at her sister's. That she had come home this morning. That there were police officers in the house. He did not ask her why. She was searching for her words, and he did not want to impose any on her.
 
-— They want to know whom he spoke to yesterday. Did you speak to him? — No. Not yesterday. — May I give them your number? — Of course.
+“They want to know whom he spoke to yesterday. Did you speak to him?” Judith asked.
+
+“No. Not yesterday.”
+
+“May I give them your number?”
+
+“Of course.”
 
 He wanted to offer to come over. He wanted to ask her whether she had eaten. He wanted her to repeat what she had just said. Yet he had heard perfectly.
 

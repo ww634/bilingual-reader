@@ -2,7 +2,7 @@
   "id": "ch-13",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "La version de Graham",
     "english": "Graham's Version"
@@ -63,8 +63,8 @@
       ]
     },
     {
-      "target": "— Pose-la ici, a-t-elle dit en montrant une petite table.",
-      "english": "“Put it here,” she said, pointing to a small table.",
+      "target": "« Pose-la ici », a dit Judith en montrant une petite table.",
+      "english": "“Put it here,” Judith said, pointing to a small table.",
       "alignment": [
         {
           "english": "Put it here",
@@ -74,10 +74,10 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Judith said",
+          "target": "a dit Judith",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
@@ -124,8 +124,8 @@
       ]
     },
     {
-      "target": "— Elle fonctionne.",
-      "english": "“It works.”",
+      "target": "« Elle fonctionne », a dit Daniel.",
+      "english": "“It works,” Daniel said.",
       "alignment": [
         {
           "english": "It works",
@@ -133,11 +133,18 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— J'avais compris. Merci.",
+      "target": "« J'avais compris. Merci. »",
       "english": "“I'd gathered that. Thank you.”",
       "alignment": [
         {
@@ -306,8 +313,8 @@
       ]
     },
     {
-      "target": "— Les copies sont là. Pas le reste.",
-      "english": "“The copies are there. Not the rest.”",
+      "target": "« Les copies sont là. Pas le reste », a dit Judith.",
+      "english": "“The copies are there. Not the rest,” Judith said.",
       "alignment": [
         {
           "english": "The copies are there",
@@ -321,6 +328,13 @@
           "target": "Pas le reste",
           "category": "verb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Judith said",
+          "target": "a dit Judith",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -353,7 +367,7 @@
       ]
     },
     {
-      "target": "— L'inspectrice a déjà tout ça. J'ai fait une liste de ce que je vous donne.",
+      "target": "« L'inspectrice a déjà tout ça. J'ai fait une liste de ce que je vous donne. »",
       "english": "“The inspector already has all this. I made a list of what I'm giving you.”",
       "alignment": [
         {
@@ -380,7 +394,7 @@
       ]
     },
     {
-      "target": "— Tu n'étais pas obligée…",
+      "target": "« Tu n'étais pas obligée… »",
       "english": "“You didn't have to…”",
       "alignment": [
         {
@@ -393,7 +407,7 @@
       ]
     },
     {
-      "target": "— Je sais.",
+      "target": "« Je sais. »",
       "english": "“I know.”",
       "alignment": [
         {
@@ -521,21 +535,42 @@
       ]
     },
     {
-      "target": "Il ne se rappelait pas ce qu'ils avaient célébré.",
-      "english": "He did not remember what they had been celebrating.",
+      "target": "Il ne se rappelait plus ce qu'ils avaient célébré. Le poisson avait mieux résisté que l'occasion.",
+      "english": "He could no longer remember what they had been celebrating. The fish had lasted better than the occasion.",
       "alignment": [
         {
-          "english": "He did not remember",
-          "target": "Il ne se rappelait pas",
+          "english": "He could no longer remember",
+          "target": "Il ne se rappelait plus",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
           "english": "what they had been celebrating",
           "target": "ce qu'ils avaient célébré",
-          "category": "verb",
+          "category": "function_word",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "The fish",
+          "target": "Le poisson",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "had lasted better",
+          "target": "avait mieux résisté",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "than the occasion",
+          "target": "que l'occasion",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -656,8 +691,8 @@
       ]
     },
     {
-      "target": "— Il avait commencé à douter.",
-      "english": "“He'd begun to have doubts.”",
+      "target": "« Il avait commencé à douter », a dit Daniel.",
+      "english": "“He'd begun to have doubts,” Daniel said.",
       "alignment": [
         {
           "english": "He'd begun to have doubts",
@@ -665,11 +700,18 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Il avait commencé à réécrire, a dit Judith. C'est ce que je sais.",
+      "target": "« Il avait commencé à réécrire », a dit Judith. « C'est ce que je sais. »",
       "english": "“He'd begun to rewrite,” Judith said. “That's what I know.”",
       "alignment": [
         {
@@ -716,7 +758,7 @@
       ]
     },
     {
-      "target": "— Tu penses qu'il cherchait à se protéger ?",
+      "target": "« Tu penses qu'il cherchait à se protéger ? »",
       "english": "“Do you think he was trying to protect himself?”",
       "alignment": [
         {
@@ -736,7 +778,7 @@
       ]
     },
     {
-      "target": "— Je pense que tu voudrais une réponse simple avant même d'avoir lu.",
+      "target": "« Je pense que tu voudrais une réponse simple avant même d'avoir lu. »",
       "english": "“I think you'd like a simple answer before you've even read it.”",
       "alignment": [
         {
@@ -790,7 +832,7 @@
       ]
     },
     {
-      "target": "— Ici, il écrit que ma mère était catégorique.",
+      "target": "« Ici, il écrit que ma mère était catégorique. »",
       "english": "“Here, he writes that my mother was categorical.”",
       "alignment": [
         {
@@ -912,7 +954,7 @@
       ]
     },
     {
-      "target": "— Il passait d'une version à l'autre. Et il perdait ses lunettes. Je peux te dater ça : tous les jours.",
+      "target": "« Il passait d'une version à l'autre. Et il perdait ses lunettes. Je peux te dater ça : tous les jours. »",
       "english": "“He moved between versions. And he lost his glasses. I can give you a date for that: every day.”",
       "alignment": [
         {
@@ -1235,7 +1277,7 @@
       ]
     },
     {
-      "target": "— Il attendait quelqu'un ce soir-là, a dit Judith.",
+      "target": "« Il attendait quelqu'un ce soir-là », a dit Judith.",
       "english": "“He was expecting someone that evening,” Judith said.",
       "alignment": [
         {
@@ -1262,8 +1304,8 @@
       ]
     },
     {
-      "target": "— Paul ?",
-      "english": "“Paul?”",
+      "target": "« Paul ? » a demandé Daniel.",
+      "english": "“Paul?” Daniel asked.",
       "alignment": [
         {
           "english": "Paul",
@@ -1271,11 +1313,18 @@
           "category": "proper_noun",
           "frequency_band": null,
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Il ne m'a pas donné de nom. J'étais chez ma sœur.",
+      "target": "« Il ne m'a pas donné de nom. J'étais chez ma sœur. »",
       "english": "“He didn't give me a name. I was at my sister's.”",
       "alignment": [
         {
@@ -1315,7 +1364,7 @@
       ]
     },
     {
-      "target": "— Il m'a appelée pour demander où étaient les biscuits.",
+      "target": "« Il m'a appelée pour demander où étaient les biscuits. »",
       "english": "“He called me to ask where the biscuits were.”",
       "alignment": [
         {
@@ -1463,8 +1512,8 @@
       ]
     },
     {
-      "target": "— Vous pouvez emporter la copie. C'est pour ça qu'elle est là.",
-      "english": "“You can take the copy. That's why it's there.”",
+      "target": "« Vous pouvez emporter la copie. C'est pour ça qu'elle est là », a dit Judith.",
+      "english": "“You can take the copy. That's why it's there,” Judith said.",
       "alignment": [
         {
           "english": "You can take the copy",
@@ -1478,6 +1527,13 @@
           "target": "C'est pour ça qu'elle est là",
           "category": "verb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Judith said",
+          "target": "a dit Judith",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -1591,7 +1647,7 @@
       ]
     },
     {
-      "target": "— Celle-ci, vous pouvez la regarder. Je la garde.",
+      "target": "« Celle-ci, vous pouvez la regarder. Je la garde. »",
       "english": "“This one, you can look at. I'm keeping it.”",
       "alignment": [
         {
@@ -1705,8 +1761,8 @@
       ]
     },
     {
-      "target": "— Il lui avait écrit ?",
-      "english": "“Had he written to him?”",
+      "target": "« Il lui avait écrit ? » a demandé Daniel.",
+      "english": "“Had he written to him?” Daniel asked.",
       "alignment": [
         {
           "english": "Had he written to him",
@@ -1714,11 +1770,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je ne sais pas. Il m'a dit qu'il devait retrouver une adresse.",
+      "target": "« Je ne sais pas. Il m'a dit qu'il devait retrouver une adresse. »",
       "english": "“I don't know. He told me he needed to find an address.”",
       "alignment": [
         {
@@ -1772,7 +1835,7 @@
       ]
     },
     {
-      "target": "— Pour ma mère, il l'avait.",
+      "target": "« Pour ma mère, il l'avait. »",
       "english": "“For my mother, he had it.”",
       "alignment": [
         {
@@ -1846,34 +1909,41 @@
       ]
     },
     {
-      "target": "Une feuille manquait, un nom devait être vérifié, et la lettre difficile pouvait attendre encore.",
-      "english": "A page was missing, a name needed checking, and the difficult letter could wait a little longer.",
+      "target": "Une feuille manquait, un nom restait à vérifier : les petites tâches faisaient la queue devant la lettre difficile.",
+      "english": "A page was missing, a name still needed checking: small tasks queued up ahead of the difficult letter.",
       "alignment": [
         {
           "english": "A page was missing",
           "target": "Une feuille manquait",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "a name needed checking",
-          "target": "un nom devait être vérifié",
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "and the difficult letter",
-          "target": "et la lettre difficile",
+          "english": "a name still needed checking",
+          "target": "un nom restait à vérifier",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "small tasks",
+          "target": "les petites tâches",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "could wait a little longer",
-          "target": "pouvait attendre encore",
+          "english": "queued up",
+          "target": "faisaient la queue",
           "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "ahead of the difficult letter",
+          "target": "devant la lettre difficile",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1926,8 +1996,8 @@
       ]
     },
     {
-      "target": "— Il voulait bien faire, a-t-il dit.",
-      "english": "“He meant well,” he said.",
+      "target": "« Il voulait bien faire », a dit Daniel.",
+      "english": "“He meant well,” Daniel said.",
       "alignment": [
         {
           "english": "He meant well",
@@ -1937,8 +2007,8 @@
           "is_idiom": false
         },
         {
-          "english": "he said",
-          "target": "a-t-il dit",
+          "english": "Daniel said",
+          "target": "a dit Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1966,7 +2036,7 @@
       ]
     },
     {
-      "target": "— Il voulait aussi finir son livre. Les deux peuvent être vrais.",
+      "target": "« Il voulait aussi finir son livre. Les deux peuvent être vrais. »",
       "english": "“He also wanted to finish his book. Both can be true.”",
       "alignment": [
         {
@@ -2006,7 +2076,7 @@
       ]
     },
     {
-      "target": "— Il avait choisi une photographie pour la couverture. Il m'a demandé si elle le vieillissait.",
+      "target": "« Il avait choisi une photographie pour la couverture. Il m'a demandé si elle le vieillissait. »",
       "english": "“He'd chosen a photograph for the cover. He asked me whether it made him look old.”",
       "alignment": [
         {
@@ -2040,8 +2110,8 @@
       ]
     },
     {
-      "target": "— Et ?",
-      "english": "“And?”",
+      "target": "« Et ? » a demandé Daniel.",
+      "english": "“And?” Daniel asked.",
       "alignment": [
         {
           "english": "And",
@@ -2049,11 +2119,18 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je lui ai dit que les trente ans écoulés depuis s'en étaient chargés.",
+      "target": "« Je lui ai dit que les trente ans écoulés depuis s'en étaient chargés. »",
       "english": "“I told him the thirty years since had taken care of that.”",
       "alignment": [
         {
@@ -2181,19 +2258,19 @@
       ]
     },
     {
-      "target": "Daniel a commencé à lui expliquer ce qu'il avait remplacé.",
-      "english": "Daniel began explaining to her what he had replaced.",
+      "target": "Daniel a commencé à lui expliquer ce qu'il avait remplacé. Enfin, quelque chose qu'il avait su réparer.",
+      "english": "Daniel began to explain to her what he had replaced. At last, something he had known how to mend.",
       "alignment": [
         {
-          "english": "Daniel",
-          "target": "Daniel",
-          "category": "proper_noun",
-          "frequency_band": null,
+          "english": "Daniel began",
+          "target": "Daniel a commencé",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "began explaining to her",
-          "target": "a commencé à lui expliquer",
+          "english": "to explain to her",
+          "target": "à lui expliquer",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -2201,14 +2278,35 @@
         {
           "english": "what he had replaced",
           "target": "ce qu'il avait remplacé",
-          "category": "verb",
+          "category": "function_word",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "At last",
+          "target": "Enfin",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "something",
+          "target": "quelque chose",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "he had known how to mend",
+          "target": "qu'il avait su réparer",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Après, a-t-elle dit.",
+      "target": "« Après », a-t-elle dit.",
       "english": "“Later,” she said.",
       "alignment": [
         {
@@ -2268,7 +2366,7 @@
       ]
     },
     {
-      "target": "— Là.",
+      "target": "« Là. »",
       "english": "“There.”",
       "alignment": [
         {
@@ -2482,6 +2580,7 @@
     "createdAt": "2026-10-12",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

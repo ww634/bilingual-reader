@@ -2,7 +2,7 @@
   "id": "ch-11",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Une visite plus tôt",
     "english": "An Earlier Visit"
@@ -178,8 +178,8 @@
       ]
     },
     {
-      "target": "Il n'avait plus d'excuse pratique pour trouver l'idée mauvaise.",
-      "english": "He no longer had a practical excuse for disliking the idea.",
+      "target": "Il n'avait plus d'excuse pratique. Les autres auraient demandé un peu de franchise.",
+      "english": "He no longer had a practical excuse. The others would have required a little honesty.",
       "alignment": [
         {
           "english": "He no longer had",
@@ -196,9 +196,23 @@
           "is_idiom": false
         },
         {
-          "english": "for disliking the idea",
-          "target": "pour trouver l'idée mauvaise",
-          "category": "adverb",
+          "english": "The others",
+          "target": "Les autres",
+          "category": "function_word",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "would have required",
+          "target": "auraient demandé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a little honesty",
+          "target": "un peu de franchise",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -347,8 +361,8 @@
       ]
     },
     {
-      "target": "— Une ancienne témoin voulait me faire écouter quelque chose.",
-      "english": "— A former witness wanted me to listen to something.",
+      "target": "« Une ancienne témoin voulait me faire écouter quelque chose.",
+      "english": "“A former witness wanted me to listen to something.",
       "alignment": [
         {
           "english": "A former witness",
@@ -394,8 +408,8 @@
       ]
     },
     {
-      "target": "J'ai seulement son message et une lettre ancienne qui exprime des réserves.",
-      "english": "I only have her message and an old letter expressing reservations.",
+      "target": "J'ai seulement son message et une lettre ancienne qui exprime des réserves », a dit Daniel.",
+      "english": "I only have her message and an old letter expressing reservations,” Daniel said.",
       "alignment": [
         {
           "english": "I only have",
@@ -424,12 +438,19 @@
           "category": "adjective",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Vous remettez en cause votre conclusion ?",
-      "english": "— Are you questioning your conclusion?",
+      "target": "« Vous remettez en cause votre conclusion ? » a demandé Helen.",
+      "english": "“Are you questioning your conclusion?” Helen asked.",
       "alignment": [
         {
           "english": "Are you questioning",
@@ -442,6 +463,13 @@
           "english": "your conclusion",
           "target": "votre conclusion",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen asked",
+          "target": "a demandé Helen",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -482,8 +510,8 @@
       ]
     },
     {
-      "target": "— Je veux revoir sur quoi elle reposait.",
-      "english": "— I want to review what it was based on.",
+      "target": "« Je veux revoir sur quoi elle reposait. »",
+      "english": "“I want to review what it was based on.”",
       "alignment": [
         {
           "english": "I want to review",
@@ -502,8 +530,8 @@
       ]
     },
     {
-      "target": "— Ce n'est pas la même chose.",
-      "english": "— That is not the same thing.",
+      "target": "« Ce n'est pas la même chose. »",
+      "english": "“That is not the same thing.”",
       "alignment": [
         {
           "english": "That is not",
@@ -522,8 +550,8 @@
       ]
     },
     {
-      "target": "— Non.",
-      "english": "— No.",
+      "target": "« Non. »",
+      "english": "“No.”",
       "alignment": [
         {
           "english": "No",
@@ -698,8 +726,8 @@
       ]
     },
     {
-      "target": "— La CCRC peut examiner une condamnation contestée, a-t-elle dit.",
-      "english": "— The CCRC can examine a disputed conviction, she said.",
+      "target": "« La CCRC peut examiner une condamnation contestée », a dit Helen.",
+      "english": "“The CCRC can examine a disputed conviction,” Helen said.",
       "alignment": [
         {
           "english": "The CCRC",
@@ -723,17 +751,17 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Helen said",
+          "target": "a dit Helen",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
     },
     {
-      "target": "Mais une demande n'est pas un acquittement.",
-      "english": "But an application is not an acquittal.",
+      "target": "« Mais une demande n'est pas un acquittement.",
+      "english": "“But an application is not an acquittal.",
       "alignment": [
         {
           "english": "But an application",
@@ -759,8 +787,8 @@
       ]
     },
     {
-      "target": "Et l'inquiétude d'un ancien expert n'est pas encore un nouvel élément.",
-      "english": "And the concern of a former expert is not yet new evidence.",
+      "target": "Et l'inquiétude d'un ancien expert n'est pas encore un nouvel élément. »",
+      "english": "And the concern of a former expert is not yet new evidence.”",
       "alignment": [
         {
           "english": "And the concern",
@@ -868,8 +896,8 @@
       ]
     },
     {
-      "target": "— Vous pouvez expliquer votre travail.",
-      "english": "— You can explain your work.",
+      "target": "« Vous pouvez expliquer votre travail.",
+      "english": "“You can explain your work.",
       "alignment": [
         {
           "english": "You can",
@@ -888,8 +916,8 @@
       ]
     },
     {
-      "target": "Vous ne pouvez pas être seul à décider s'il était juste.",
-      "english": "You cannot be alone in deciding whether it was right.",
+      "target": "Vous ne pouvez pas être seul à décider s'il était juste », a dit Helen.",
+      "english": "You cannot be alone in deciding whether it was right,” Helen said.",
       "alignment": [
         {
           "english": "You cannot",
@@ -916,6 +944,13 @@
           "english": "whether it was right",
           "target": "s'il était juste",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen said",
+          "target": "a dit Helen",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1099,27 +1134,41 @@
       ]
     },
     {
-      "target": "Il se rappelait les titres mieux que les dates.",
-      "english": "He remembered the headings better than the dates.",
+      "target": "Les titres revenaient mieux que les dates. Ils avaient de plus grosses lettres.",
+      "english": "The headlines came back more readily than the dates. They had larger type.",
       "alignment": [
         {
-          "english": "He remembered",
-          "target": "Il se rappelait",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "the headings",
-          "target": "les titres",
+          "english": "The headlines",
+          "target": "Les titres",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "better than the dates",
+          "english": "came back",
+          "target": "revenaient",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "more readily than the dates",
           "target": "mieux que les dates",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "They had",
+          "target": "Ils avaient",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "larger type",
+          "target": "de plus grosses lettres",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1247,8 +1296,8 @@
       ]
     },
     {
-      "target": "— Il avait dit qu'il n'y était pas allé, a dit Daniel.",
-      "english": "— He had said he had not been there, Daniel said.",
+      "target": "« Il avait dit qu'il n'y était pas allé », a dit Daniel.",
+      "english": "“He had said he had not been there,” Daniel said.",
       "alignment": [
         {
           "english": "He had said",
@@ -1274,8 +1323,8 @@
       ]
     },
     {
-      "target": "— Au début, oui.",
-      "english": "— At first, yes.",
+      "target": "« Au début, oui », a répondu Helen.",
+      "english": "“At first, yes,” Helen replied.",
       "alignment": [
         {
           "english": "At first",
@@ -1290,16 +1339,30 @@
           "category": "adverb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Helen replied",
+          "target": "a répondu Helen",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Ça n'a pas aidé.",
-      "english": "— That did not help.",
+      "target": "« Ça n'a pas aidé », a répondu Daniel.",
+      "english": "“That did not help,” Daniel replied.",
       "alignment": [
         {
           "english": "That did not help",
           "target": "Ça n'a pas aidé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1354,8 +1417,8 @@
       ]
     },
     {
-      "target": "— J'ai une déclaration qu'il m'a autorisée à communiquer pour les demandes d'examen de son dossier.",
-      "english": "— I have a statement he authorised me to share for requests to review his case.",
+      "target": "« J'ai une déclaration qu'il m'a autorisée à communiquer pour les demandes d'examen de son dossier.",
+      "english": "“I have a statement he authorised me to share for requests to review his case.",
       "alignment": [
         {
           "english": "I have a statement",
@@ -1388,8 +1451,8 @@
       ]
     },
     {
-      "target": "Je vais vous en lire un passage.",
-      "english": "I am going to read you a passage.",
+      "target": "Je vais vous en lire un passage », a dit Helen.",
+      "english": "I am going to read you a passage,” Helen said.",
       "alignment": [
         {
           "english": "I am going to read you",
@@ -1402,6 +1465,13 @@
           "english": "a passage",
           "target": "un passage",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen said",
+          "target": "a dit Helen",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1929,8 +1999,8 @@
       ]
     },
     {
-      "target": "— Il dit toujours qu'il n'est pas revenu le soir ?",
-      "english": "— He still says that he did not return that evening?",
+      "target": "« Il dit toujours qu'il n'est pas revenu le soir ? » a demandé Daniel.",
+      "english": "“He still says that he did not return that evening?” Daniel asked.",
       "alignment": [
         {
           "english": "He still says",
@@ -1952,12 +2022,19 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui. Et nous devons éprouver son récit, pas simplement le préférer.",
-      "english": "— Yes. And we have to test his account, not simply prefer it.",
+      "target": "« Oui. Et nous devons éprouver son récit, pas simplement le préférer », a répondu Helen.",
+      "english": "“Yes. And we have to test his account, not simply prefer it,” Helen replied.",
       "alignment": [
         {
           "english": "Yes",
@@ -1990,6 +2067,13 @@
         {
           "english": "prefer it",
           "target": "le préférer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen replied",
+          "target": "a répondu Helen",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -2031,8 +2115,8 @@
       ]
     },
     {
-      "target": "— Avait-il quelque chose avec lui lors de la première visite ?",
-      "english": "— Did he have anything with him on the first visit?",
+      "target": "« Avait-il quelque chose avec lui lors de la première visite ? » a demandé Daniel.",
+      "english": "“Did he have anything with him on the first visit?” Daniel asked.",
       "alignment": [
         {
           "english": "Did he have",
@@ -2061,6 +2145,13 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
@@ -2085,8 +2176,8 @@
       ]
     },
     {
-      "target": "— Son sac de travail, d'après son récit.",
-      "english": "— His work bag, according to his account.",
+      "target": "« Son sac de travail, d'après son récit.",
+      "english": "“His work bag, according to his account.",
       "alignment": [
         {
           "english": "His work bag",
@@ -2125,8 +2216,8 @@
       ]
     },
     {
-      "target": "Ce n'est pas un inventaire de tout ce qu'il a pu porter ce jour-là.",
-      "english": "That is not an inventory of everything he might have carried that day.",
+      "target": "Ce n'est pas un inventaire de tout ce qu'il a pu porter ce jour-là », a dit Helen.",
+      "english": "That is not an inventory of everything he might have carried that day,” Helen said.",
       "alignment": [
         {
           "english": "That is not",
@@ -2153,6 +2244,13 @@
           "english": "that day",
           "target": "ce jour-là",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen said",
+          "target": "a dit Helen",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2356,8 +2454,8 @@
       ]
     },
     {
-      "target": "— Vous voulez mon ancien extrait ?",
-      "english": "— Do you want my old extract?",
+      "target": "« Vous voulez mon ancien extrait ? » a demandé Daniel.",
+      "english": "“Do you want my old extract?” Daniel asked.",
       "alignment": [
         {
           "english": "Do you want",
@@ -2372,12 +2470,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je veux savoir comment vous êtes arrivé à cet extrait.",
-      "english": "— I want to know how you arrived at that extract.",
+      "target": "« Je veux savoir comment vous êtes arrivé à cet extrait.",
+      "english": "“I want to know how you arrived at that extract.",
       "alignment": [
         {
           "english": "I want to know",
@@ -2403,8 +2508,8 @@
       ]
     },
     {
-      "target": "Et obtenir une copie appropriée de la source pour un nouvel examen.",
-      "english": "And obtain an appropriate copy of the source for a fresh examination.",
+      "target": "Et obtenir une copie appropriée de la source pour un nouvel examen », a répondu Helen.",
+      "english": "And obtain an appropriate copy of the source for a fresh examination,” Helen replied.",
       "alignment": [
         {
           "english": "And obtain",
@@ -2426,12 +2531,19 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Helen replied",
+          "target": "a répondu Helen",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Votre première transcription, a demandé Helen Ward, vous l'avez encore ?",
-      "english": "— Your first transcript, Helen Ward asked, do you still have it?",
+      "target": "« Votre première transcription », a demandé Helen Ward, « vous l'avez encore ? »",
+      "english": "“Your first transcript,” Helen Ward asked, “do you still have it?”",
       "alignment": [
         {
           "english": "Your first transcript",
@@ -2457,8 +2569,8 @@
       ]
     },
     {
-      "target": "— J'ai mes notes. Je dois vérifier quelles versions j'ai conservées.",
-      "english": "— I have my notes. I need to check which versions I kept.",
+      "target": "« J'ai mes notes. Je dois vérifier quelles versions j'ai conservées », a répondu Daniel.",
+      "english": "“I have my notes. I need to check which versions I kept,” Daniel replied.",
       "alignment": [
         {
           "english": "I have my notes",
@@ -2487,12 +2599,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Vérifiez. Gardez aussi ce qui ne correspond pas à votre souvenir.",
-      "english": "— Check. Keep anything that does not match your recollection too.",
+      "target": "« Vérifiez. Gardez aussi ce qui ne correspond pas à votre souvenir », a répondu Helen.",
+      "english": "“Check. Keep anything that does not match your recollection too,” Helen replied.",
       "alignment": [
         {
           "english": "Check",
@@ -2519,6 +2638,13 @@
           "english": "your recollection",
           "target": "à votre souvenir",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen replied",
+          "target": "a répondu Helen",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2552,75 +2678,48 @@
       ]
     },
     {
-      "target": "Il savait ce qu'elle voulait éviter.",
-      "english": "He knew what she wanted to avoid.",
+      "target": "Il pouvait déjà imaginer le dossier bien rangé, les impasses effacées, chaque page indiquant poliment la suivante.",
+      "english": "He could already imagine the neatly arranged file, the dead ends erased, every page politely pointing to the next.",
       "alignment": [
         {
-          "english": "He knew",
-          "target": "Il savait",
+          "english": "He could already imagine",
+          "target": "Il pouvait déjà imaginer",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "what she wanted to avoid",
-          "target": "ce qu'elle voulait éviter",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "Un dossier préparé aujourd'hui, dans lequel les étapes auraient toutes l'air d'avoir mené au même résultat.",
-      "english": "A file prepared today, in which the steps would all look as though they had led to the same result.",
-      "alignment": [
-        {
-          "english": "A file",
-          "target": "Un dossier",
+          "english": "the neatly arranged file",
+          "target": "le dossier bien rangé",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "prepared today",
-          "target": "préparé aujourd'hui",
-          "category": "adjective",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "in which",
-          "target": "dans lequel",
-          "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "the steps",
-          "target": "les étapes",
+          "english": "the dead ends",
+          "target": "les impasses",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "would all look",
-          "target": "auraient toutes l'air",
+          "english": "erased",
+          "target": "effacées",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "as though they had led",
-          "target": "d'avoir mené",
-          "category": "verb",
+          "english": "every page",
+          "target": "chaque page",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "to the same result",
-          "target": "au même résultat",
-          "category": "adverb",
+          "english": "politely pointing to the next",
+          "target": "indiquant poliment la suivante",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2817,8 +2916,8 @@
       ]
     },
     {
-      "target": "— Quand vous aurez la copie, vous pourrez me dire ce qu'il a réellement dit ?",
-      "english": "— When you have the copy, will you be able to tell me what he actually said?",
+      "target": "« Quand vous aurez la copie, vous pourrez me dire ce qu'il a réellement dit ? » a demandé Helen.",
+      "english": "“When you have the copy, will you be able to tell me what he actually said?” Helen asked.",
       "alignment": [
         {
           "english": "When you have",
@@ -2852,6 +2951,13 @@
           "english": "what he actually said",
           "target": "ce qu'il a réellement dit",
           "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen asked",
+          "target": "a demandé Helen",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -2919,8 +3025,8 @@
       ]
     },
     {
-      "target": "— Je pourrai examiner le son.",
-      "english": "— I will be able to examine the sound.",
+      "target": "« Je pourrai examiner le son.",
+      "english": "“I will be able to examine the sound.",
       "alignment": [
         {
           "english": "I will be able to",
@@ -2939,8 +3045,8 @@
       ]
     },
     {
-      "target": "Je ne peux pas vous promettre une phrase.",
-      "english": "I cannot promise you a sentence.",
+      "target": "Je ne peux pas vous promettre une phrase », a dit Daniel.",
+      "english": "I cannot promise you a sentence,” Daniel said.",
       "alignment": [
         {
           "english": "I cannot",
@@ -2962,12 +3068,19 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— C'est la réponse que je transmettrai.",
-      "english": "— That is the answer I will pass on.",
+      "target": "« C'est la réponse que je transmettrai. »",
+      "english": "“That is the answer I will pass on.”",
       "alignment": [
         {
           "english": "That is",
@@ -3223,8 +3336,8 @@
       ]
     },
     {
-      "target": "— Il y a une autre phrase dans sa déclaration, a dit Helen Ward.",
-      "english": "— There is another sentence in his statement, Helen Ward said.",
+      "target": "« Il y a une autre phrase dans sa déclaration », a dit Helen Ward.",
+      "english": "“There is another sentence in his statement,” Helen Ward said.",
       "alignment": [
         {
           "english": "There is",
@@ -3257,8 +3370,8 @@
       ]
     },
     {
-      "target": "Elle vise les personnes qui reviennent sur leur travail.",
-      "english": "It is addressed to the people who come back to reconsider their work.",
+      "target": "« Elle vise les personnes qui reviennent sur leur travail. »",
+      "english": "“It is addressed to the people who come back to reconsider their work.”",
       "alignment": [
         {
           "english": "It is addressed to",
@@ -3318,12 +3431,12 @@
       ]
     },
     {
-      "target": "— « Je n'ai pas besoin qu'on me dise qu'on est désolé.",
-      "english": "— “I do not need to be told that someone is sorry.",
+      "target": "« Je n'ai pas besoin qu'on me dise qu'on est désolé.",
+      "english": "“‘I do not need to be told that someone is sorry.",
       "alignment": [
         {
-          "english": "“I do not need",
-          "target": "« Je n'ai pas besoin",
+          "english": "‘I do not need",
+          "target": "Je n'ai pas besoin",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -3345,8 +3458,8 @@
       ]
     },
     {
-      "target": "Qu'est-ce que vous êtes prêt à mettre par écrit, maintenant ? »",
-      "english": "What are you prepared to put in writing, now?”",
+      "target": "Qu'est-ce que vous êtes prêt à mettre par écrit, maintenant ? » a demandé Helen.",
+      "english": "What are you prepared to put in writing, now?’” Helen asked.",
       "alignment": [
         {
           "english": "What are you prepared",
@@ -3367,6 +3480,13 @@
           "target": "maintenant",
           "category": "adverb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Helen asked",
+          "target": "a demandé Helen",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -3431,6 +3551,7 @@
     "createdAt": "2026-10-12",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

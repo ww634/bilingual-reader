@@ -2,7 +2,7 @@
   "id": "ch-20",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Sa propre voix",
     "english": "His Own Voice"
@@ -90,7 +90,7 @@
       ]
     },
     {
-      "target": "— Je peux écouter comme ça ? a demandé Ben, en montrant les enceintes.",
+      "target": "« Je peux écouter comme ça ? » a demandé Ben, en montrant les enceintes.",
       "english": "“Can I listen like that?” Ben asked, pointing to the speakers.",
       "alignment": [
         {
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "target": "— Oui. Et reprendre au casque si vous préférez.",
+      "target": "« Oui. Et reprendre au casque si vous préférez. »",
       "english": "“Yes. And listen again on headphones if you prefer.”",
       "alignment": [
         {
@@ -246,8 +246,8 @@
       ]
     },
     {
-      "target": "— Je peux arrêter quand vous voulez.",
-      "english": "“I can stop whenever you want.”",
+      "target": "« Je peux arrêter quand vous voulez », a dit Daniel.",
+      "english": "“I can stop whenever you want,” Daniel said.",
       "alignment": [
         {
           "english": "I can stop",
@@ -262,11 +262,18 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Commencez.",
+      "target": "« Commencez. »",
       "english": "“Start.”",
       "alignment": [
         {
@@ -972,8 +979,8 @@
       ]
     },
     {
-      "target": "— Elle signe après ça.",
-      "english": "“She signs after that.”",
+      "target": "« Elle signe après ça », a dit Ben.",
+      "english": "“She signs after that,” Ben said.",
       "alignment": [
         {
           "english": "She signs",
@@ -988,11 +995,18 @@
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben said",
+          "target": "a dit Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui.",
+      "target": "« Oui. »",
       "english": "“Yes.”",
       "alignment": [
         {
@@ -1052,8 +1066,8 @@
       ]
     },
     {
-      "target": "— Au café, je vous ai demandé ce que vous aviez fait.",
-      "english": "“At the café, I asked you what you had done.”",
+      "target": "« Au café, je vous ai demandé ce que vous aviez fait », a dit Ben.",
+      "english": "“At the café, I asked you what you had done,” Ben said.",
       "alignment": [
         {
           "english": "At the café",
@@ -1075,12 +1089,19 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben said",
+          "target": "a dit Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je vous ai dit que nous étions allés chez elle.",
-      "english": "“I told you we'd gone to her house.”",
+      "target": "« Je vous ai dit que nous étions allés chez elle », a répondu Daniel.",
+      "english": "“I told you we'd gone to her house,” Daniel replied.",
       "alignment": [
         {
           "english": "I told you",
@@ -1095,11 +1116,18 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui. Vous avez dit que vous lui aviez fait écouter des passages.",
+      "target": "« Oui. Vous avez dit que vous lui aviez fait écouter des passages. »",
       "english": "“Yes. You said you'd played her some passages.”",
       "alignment": [
         {
@@ -1160,28 +1188,49 @@
       ]
     },
     {
-      "target": "Cette description était exacte. Elle avait été commode.",
-      "english": "That description was accurate. It had been convenient.",
+      "target": "Pas un mot de faux. Et assez d'espace entre les mots pour s'y cacher.",
+      "english": "Not a word was false. And enough space between the words to hide in.",
       "alignment": [
         {
-          "english": "That description was accurate",
-          "target": "Cette description était exacte",
-          "category": "verb",
-          "frequency_band": "very_common",
+          "english": "Not a word",
+          "target": "Pas un mot",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "It had been convenient",
-          "target": "Elle avait été commode",
+          "english": "was false",
+          "target": "de faux",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "And enough space",
+          "target": "Et assez d'espace",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "between the words",
+          "target": "entre les mots",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to hide in",
+          "target": "pour s'y cacher",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Je ne me rappelais pas les phrases exactes.",
-      "english": "“I didn't remember the exact sentences.”",
+      "target": "« Je ne me rappelais pas les phrases exactes », a dit Daniel.",
+      "english": "“I didn't remember the exact sentences,” Daniel said.",
       "alignment": [
         {
           "english": "I didn't remember",
@@ -1196,12 +1245,19 @@
           "category": "noun",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Mais vous vous rappeliez que vous aviez une phrase à lui proposer.",
-      "english": "“But you remembered having a sentence to offer her.”",
+      "target": "« Mais vous vous rappeliez que vous aviez une phrase à lui proposer », a répondu Ben.",
+      "english": "“But you remembered having a sentence to offer her,” Ben replied.",
       "alignment": [
         {
           "english": "But you remembered",
@@ -1216,11 +1272,18 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben replied",
+          "target": "a répondu Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui.",
+      "target": "« Oui. »",
       "english": "“Yes.”",
       "alignment": [
         {
@@ -1233,7 +1296,7 @@
       ]
     },
     {
-      "target": "— Et qu'elle hésitait.",
+      "target": "« Et qu'elle hésitait. »",
       "english": "“And that she hesitated.”",
       "alignment": [
         {
@@ -1273,7 +1336,7 @@
       ]
     },
     {
-      "target": "— Oui.",
+      "target": "« Oui. »",
       "english": "“Yes.”",
       "alignment": [
         {
@@ -1420,7 +1483,7 @@
       ]
     },
     {
-      "target": "— Vous étiez gentil, a dit Ben.",
+      "target": "« Vous étiez gentil », a dit Ben.",
       "english": "“You were being kind,” Ben said.",
       "alignment": [
         {
@@ -1474,7 +1537,7 @@
       ]
     },
     {
-      "target": "— C'est votre explication ?",
+      "target": "« C'est votre explication ? »",
       "english": "“Is that your explanation?”",
       "alignment": [
         {
@@ -1527,12 +1590,19 @@
       ]
     },
     {
-      "target": "— Je voulais qu'elle soit d'accord.",
-      "english": "“I wanted her to agree.”",
+      "target": "« Je voulais qu'elle soit d'accord », a dit Daniel.",
+      "english": "“I wanted her to agree,” Daniel said.",
       "alignment": [
         {
           "english": "I wanted her to agree",
           "target": "Je voulais qu'elle soit d'accord",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1641,7 +1711,7 @@
       ]
     },
     {
-      "target": "— Ça va.",
+      "target": "« Ça va. »",
       "english": "“I'm all right.”",
       "alignment": [
         {
@@ -1674,8 +1744,8 @@
       ]
     },
     {
-      "target": "— Donc elle n'avait pas reconnu cet homme.",
-      "english": "“So she hadn't recognised that man.”",
+      "target": "« Donc elle n'avait pas reconnu cet homme », a dit Ben.",
+      "english": "“So she hadn't recognised that man,” Ben said.",
       "alignment": [
         {
           "english": "So she hadn't recognised that man",
@@ -1683,16 +1753,10 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "— Je ne peux pas conclure ça.",
-      "english": "“I can't conclude that.”",
-      "alignment": [
+        },
         {
-          "english": "I can't conclude that",
-          "target": "Je ne peux pas conclure ça",
+          "english": "Ben said",
+          "target": "a dit Ben",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1700,7 +1764,27 @@
       ]
     },
     {
-      "target": "— Bien sûr.",
+      "target": "« Je ne peux pas conclure ça », a répondu Daniel.",
+      "english": "“I can't conclude that,” Daniel replied.",
+      "alignment": [
+        {
+          "english": "I can't conclude that",
+          "target": "Je ne peux pas conclure ça",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Bien sûr. »",
       "english": "“Of course.”",
       "alignment": [
         {
@@ -1740,8 +1824,8 @@
       ]
     },
     {
-      "target": "— La bande montre ce que nous lui avons dit. Elle ne me permet pas de savoir tout ce qu'elle avait vu.",
-      "english": "“The tape shows what we told her. It doesn't allow me to know everything she had seen.”",
+      "target": "« La bande montre ce que nous lui avons dit. Elle ne me permet pas de savoir tout ce qu'elle avait vu », a dit Daniel.",
+      "english": "“The tape shows what we told her. It doesn't allow me to know everything she had seen,” Daniel said.",
       "alignment": [
         {
           "english": "The tape shows",
@@ -1769,6 +1853,13 @@
           "target": "de savoir tout ce qu'elle avait vu",
           "category": "verb",
           "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -1801,7 +1892,7 @@
       ]
     },
     {
-      "target": "— Les limites, vous les trouvez toujours quand ça concerne quelqu'un d'autre.",
+      "target": "« Les limites, vous les trouvez toujours quand ça concerne quelqu'un d'autre. »",
       "english": "“The limits, you always find them when it's about someone else.”",
       "alignment": [
         {
@@ -1902,8 +1993,8 @@
       ]
     },
     {
-      "target": "— J'aurais dû vous dire plus clairement ce que je savais déjà.",
-      "english": "“I should have told you more clearly what I already knew.”",
+      "target": "« J'aurais dû vous dire plus clairement ce que je savais déjà », a dit Daniel.",
+      "english": "“I should have told you more clearly what I already knew,” Daniel said.",
       "alignment": [
         {
           "english": "I should have told you more clearly",
@@ -1918,11 +2009,18 @@
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Oui.",
+      "target": "« Oui. »",
       "english": "“Yes.”",
       "alignment": [
         {
@@ -1996,7 +2094,7 @@
       ]
     },
     {
-      "target": "— Elle l'a gardée. Pendant tout ce temps.",
+      "target": "« Elle l'a gardée. Pendant tout ce temps. »",
       "english": "“She kept it. All that time.”",
       "alignment": [
         {
@@ -2036,7 +2134,7 @@
       ]
     },
     {
-      "target": "— Elle pouvait la ressortir.",
+      "target": "« Elle pouvait la ressortir. »",
       "english": "“She could have brought it out.”",
       "alignment": [
         {
@@ -2103,7 +2201,7 @@
       ]
     },
     {
-      "target": "— J'ai envie que vous soyez responsables de tout.",
+      "target": "« J'ai envie que vous soyez responsables de tout. »",
       "english": "“I want you to be responsible for everything.”",
       "alignment": [
         {
@@ -2136,7 +2234,7 @@
       ]
     },
     {
-      "target": "— Vous et Graham. Ça m'arrangerait.",
+      "target": "« Vous et Graham. Ça m'arrangerait. »",
       "english": "“You and Graham. That would suit me.”",
       "alignment": [
         {
@@ -2264,8 +2362,8 @@
       ]
     },
     {
-      "target": "— Vous devrez lui poser vos questions, a-t-il dit.",
-      "english": "“You will have to ask her your questions,” he said.",
+      "target": "« Vous devrez lui poser vos questions », a dit Daniel.",
+      "english": "“You will have to ask her your questions,” Daniel said.",
       "alignment": [
         {
           "english": "You will have to ask her",
@@ -2282,8 +2380,8 @@
           "is_idiom": false
         },
         {
-          "english": "he said",
-          "target": "a-t-il dit",
+          "english": "Daniel said",
+          "target": "a dit Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -2291,7 +2389,7 @@
       ]
     },
     {
-      "target": "— Je sais. Ce soir, je vous pose les miennes.",
+      "target": "« Je sais. Ce soir, je vous pose les miennes. »",
       "english": "“I know. Tonight, I'm asking you mine.”",
       "alignment": [
         {
@@ -2338,8 +2436,8 @@
       ]
     },
     {
-      "target": "— Hier, quand vous m'avez parlé du prénom, vous aviez déjà entendu ça ?",
-      "english": "“Yesterday, when you talked to me about the name, had you already heard this?”",
+      "target": "« Hier, quand vous m'avez parlé du prénom, vous aviez déjà entendu ça ? » a demandé Ben.",
+      "english": "“Yesterday, when you talked to me about the name, had you already heard this?” Ben asked.",
       "alignment": [
         {
           "english": "Yesterday",
@@ -2361,12 +2459,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben asked",
+          "target": "a demandé Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Non. J'ai compris ces phrases cet après-midi. Je vous ai appelé ensuite.",
-      "english": "“No. I understood these sentences this afternoon. I called you afterwards.”",
+      "target": "« Non. J'ai compris ces phrases cet après-midi. Je vous ai appelé ensuite », a répondu Daniel.",
+      "english": "“No. I understood these sentences this afternoon. I called you afterwards,” Daniel replied.",
       "alignment": [
         {
           "english": "No",
@@ -2385,6 +2490,13 @@
         {
           "english": "I called you afterwards",
           "target": "Je vous ai appelé ensuite",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -2419,33 +2531,6 @@
       ]
     },
     {
-      "target": "Il ne lui donnait pas raison. Il vérifiait ce qu'il pouvait encore croire.",
-      "english": "He was not agreeing with him. He was checking what he could still believe.",
-      "alignment": [
-        {
-          "english": "He was not agreeing with him",
-          "target": "Il ne lui donnait pas raison",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "He was checking",
-          "target": "Il vérifiait",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "what he could still believe",
-          "target": "ce qu'il pouvait encore croire",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
       "target": "Près de la porte, Ben s'est arrêté.",
       "english": "Near the door, Ben stopped.",
       "alignment": [
@@ -2473,7 +2558,7 @@
       ]
     },
     {
-      "target": "— Ne l'appelez pas ce soir.",
+      "target": "« Ne l'appelez pas ce soir. »",
       "english": "“Don't call her tonight.”",
       "alignment": [
         {
@@ -2486,7 +2571,7 @@
       ]
     },
     {
-      "target": "— Elle ne souhaite toujours pas me parler.",
+      "target": "« Elle ne souhaite toujours pas me parler. »",
       "english": "“She still doesn't want to speak to me.”",
       "alignment": [
         {
@@ -2499,7 +2584,7 @@
       ]
     },
     {
-      "target": "— Alors respectez ça.",
+      "target": "« Alors respectez ça. »",
       "english": "“Then respect that.”",
       "alignment": [
         {
@@ -2726,6 +2811,7 @@
     "createdAt": "2026-10-13",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }

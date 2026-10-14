@@ -2,7 +2,7 @@
   "id": "ch-14",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Personne ne l'a enlevée",
     "english": "No One Has Taken Her"
@@ -63,8 +63,8 @@
       ]
     },
     {
-      "target": "— Elsie. Enfin.",
-      "english": "“Elsie. At last.”",
+      "target": "« Elsie. Enfin », a dit Ben.",
+      "english": "“Elsie. At last,” Ben said.",
       "alignment": [
         {
           "english": "Elsie",
@@ -77,6 +77,13 @@
           "english": "At last",
           "target": "Enfin",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Ben said",
+          "target": "a dit Ben",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -178,7 +185,7 @@
       ]
     },
     {
-      "target": "— Vous êtes où ?",
+      "target": "« Vous êtes où ? »",
       "english": "“Where are you?”",
       "alignment": [
         {
@@ -225,7 +232,7 @@
       ]
     },
     {
-      "target": "— Depuis quand ?",
+      "target": "« Depuis quand ? »",
       "english": "“Since when?”",
       "alignment": [
         {
@@ -305,7 +312,7 @@
       ]
     },
     {
-      "target": "— Passez-la-moi, a dit Ben.",
+      "target": "« Passez-la-moi », a dit Ben.",
       "english": "“Put her on,” Ben said.",
       "alignment": [
         {
@@ -345,7 +352,7 @@
       ]
     },
     {
-      "target": "— Maman ?",
+      "target": "« Maman ? »",
       "english": "“Mum?”",
       "alignment": [
         {
@@ -520,7 +527,7 @@
       ]
     },
     {
-      "target": "— Elle est chez Elsie. Depuis le début.",
+      "target": "« Elle est chez Elsie. Depuis le début. »",
       "english": "“She's at Elsie's. Since the beginning.”",
       "alignment": [
         {
@@ -540,8 +547,8 @@
       ]
     },
     {
-      "target": "— Elle va bien ?",
-      "english": "“Is she all right?”",
+      "target": "« Elle va bien ? » a demandé Daniel.",
+      "english": "“Is she all right?” Daniel asked.",
       "alignment": [
         {
           "english": "Is she all right",
@@ -549,11 +556,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Elle m'a demandé si j'avais pensé à manger.",
+      "target": "« Elle m'a demandé si j'avais pensé à manger. »",
       "english": "“She asked me whether I'd remembered to eat.”",
       "alignment": [
         {
@@ -593,7 +607,7 @@
       ]
     },
     {
-      "target": "— Alors oui. Elle va assez bien pour ça.",
+      "target": "« Alors oui. Elle va assez bien pour ça. »",
       "english": "“So yes. She's well enough for that.”",
       "alignment": [
         {
@@ -613,19 +627,47 @@
       ]
     },
     {
-      "target": "Le premier soulagement de Daniel a laissé place à l'impatience.",
-      "english": "Daniel's first feeling of relief gave way to impatience.",
+      "target": "Chez Daniel, le soulagement a à peine eu le temps de s'installer que les questions réclamaient sa place.",
+      "english": "For Daniel, relief barely had time to settle before the questions were demanding its seat.",
       "alignment": [
         {
-          "english": "Daniel's first feeling of relief",
-          "target": "Le premier soulagement de Daniel",
+          "english": "For Daniel",
+          "target": "Chez Daniel",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "relief",
+          "target": "le soulagement",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "gave way to impatience",
-          "target": "a laissé place à l'impatience",
+          "english": "barely had time",
+          "target": "a à peine eu le temps",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to settle",
+          "target": "de s'installer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "before the questions",
+          "target": "que les questions",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "were demanding its seat",
+          "target": "réclamaient sa place",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -673,7 +715,7 @@
       ]
     },
     {
-      "target": "— Au moins…",
+      "target": "« Au moins… »",
       "english": "“At least…”",
       "alignment": [
         {
@@ -706,7 +748,7 @@
       ]
     },
     {
-      "target": "— Ne finissez pas.",
+      "target": "« Ne finissez pas. »",
       "english": "“Don't finish that.”",
       "alignment": [
         {
@@ -894,8 +936,8 @@
       ]
     },
     {
-      "target": "— Elle a dit qu'elle voulait d'abord voir un avocat.",
-      "english": "“She said she wanted to see a solicitor first.”",
+      "target": "« Elle a dit qu'elle voulait d'abord voir un avocat », a dit Ben.",
+      "english": "“She said she wanted to see a solicitor first,” Ben said.",
       "alignment": [
         {
           "english": "She said",
@@ -910,11 +952,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben said",
+          "target": "a dit Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Elle en a vu un ?",
+      "target": "« Elle en a vu un ? »",
       "english": "“Has she seen one?”",
       "alignment": [
         {
@@ -927,7 +976,7 @@
       ]
     },
     {
-      "target": "— Ce matin. Et maintenant, elle voudrait que je sois calme.",
+      "target": "« Ce matin. Et maintenant, elle voudrait que je sois calme. »",
       "english": "“This morning. And now she'd like me to be calm.”",
       "alignment": [
         {
@@ -981,7 +1030,7 @@
       ]
     },
     {
-      "target": "— Je regardais les fossés, quand je conduisais.",
+      "target": "« Je regardais les fossés, quand je conduisais. »",
       "english": "“I was looking in ditches when I drove.”",
       "alignment": [
         {
@@ -1309,8 +1358,8 @@
       ]
     },
     {
-      "target": "— Je peux vous emmener à Mereford, a-t-il dit.",
-      "english": "“I can drive you to Mereford,” he said.",
+      "target": "« Je peux vous emmener à Mereford », a dit Daniel.",
+      "english": "“I can drive you to Mereford,” Daniel said.",
       "alignment": [
         {
           "english": "I can drive you to Mereford",
@@ -1320,8 +1369,8 @@
           "is_idiom": false
         },
         {
-          "english": "he said",
-          "target": "a-t-il dit",
+          "english": "Daniel said",
+          "target": "a dit Daniel",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1329,7 +1378,7 @@
       ]
     },
     {
-      "target": "— Elle veut m'y voir demain matin. Seul.",
+      "target": "« Elle veut m'y voir demain matin. Seul. »",
       "english": "“She wants to see me there tomorrow morning. Alone.”",
       "alignment": [
         {
@@ -1349,7 +1398,7 @@
       ]
     },
     {
-      "target": "— D'accord.",
+      "target": "« D'accord. »",
       "english": "“All right.”",
       "alignment": [
         {
@@ -1362,7 +1411,7 @@
       ]
     },
     {
-      "target": "— Elle veut pas vous voir.",
+      "target": "« Elle veut pas vous voir. »",
       "english": "“She doesn't want to see you.”",
       "alignment": [
         {
@@ -1402,7 +1451,7 @@
       ]
     },
     {
-      "target": "— J'avais compris.",
+      "target": "« J'avais compris. »",
       "english": "“I'd gathered that.”",
       "alignment": [
         {
@@ -1523,7 +1572,7 @@
       ]
     },
     {
-      "target": "— Elle est montée dans un car, a-t-il dit. Pour Mereford.",
+      "target": "« Elle est montée dans un car », a-t-il dit. « Pour Mereford. »",
       "english": "“She got on a coach,” he said. “To Mereford.”",
       "alignment": [
         {
@@ -1584,8 +1633,8 @@
       ]
     },
     {
-      "target": "— Elle vous a donné une heure ?",
-      "english": "“Did she give you a time?”",
+      "target": "« Elle vous a donné une heure ? » a demandé Daniel.",
+      "english": "“Did she give you a time?” Daniel asked.",
       "alignment": [
         {
           "english": "Did she give you a time",
@@ -1593,11 +1642,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— J'ai pas demandé le numéro du service.",
+      "target": "« J'ai pas demandé le numéro du service. »",
       "english": "“I didn't ask for the service number.”",
       "alignment": [
         {
@@ -1637,7 +1693,7 @@
       ]
     },
     {
-      "target": "— Pardon.",
+      "target": "« Pardon. »",
       "english": "“Sorry.”",
       "alignment": [
         {
@@ -1670,7 +1726,7 @@
       ]
     },
     {
-      "target": "— Non. Je sais pourquoi vous demandez. Mais j'en suis pas là.",
+      "target": "« Non. Je sais pourquoi vous demandez. Mais j'en suis pas là. »",
       "english": "“No. I know why you're asking. But I'm not there yet.”",
       "alignment": [
         {
@@ -1777,7 +1833,7 @@
       ]
     },
     {
-      "target": "— Elle dit qu'elle allait rappeler.",
+      "target": "« Elle dit qu'elle allait rappeler. »",
       "english": "“She says she was going to call back.”",
       "alignment": [
         {
@@ -1797,8 +1853,8 @@
       ]
     },
     {
-      "target": "— Qu'est-ce qui l'en a empêchée ?",
-      "english": "“What stopped her?”",
+      "target": "« Qu'est-ce qui l'en a empêchée ? » a demandé Daniel.",
+      "english": "“What stopped her?” Daniel asked.",
       "alignment": [
         {
           "english": "What stopped her",
@@ -1806,11 +1862,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Elle.",
+      "target": "« Elle. »",
       "english": "“She did.”",
       "alignment": [
         {
@@ -1843,7 +1906,7 @@
       ]
     },
     {
-      "target": "— C'est ce qu'elle a dit. Pas une panne. Pas quelqu'un devant la porte.",
+      "target": "« C'est ce qu'elle a dit. Pas une panne. Pas quelqu'un devant la porte. »",
       "english": "“That's what she said. Not a fault. Not someone outside the door.”",
       "alignment": [
         {
@@ -1978,35 +2041,49 @@
       ]
     },
     {
-      "target": "Il aurait voulu pouvoir offrir à Ben une explication qu'on puisse écouter, arrêter et reprendre.",
-      "english": "He would have liked to be able to offer Ben an explanation they could listen to, stop and play again.",
+      "target": "Il aurait voulu que la peur de Ben ait un bouton d'arrêt. Il avait tout ce matériel, et rien pour ça.",
+      "english": "He wished Ben's fear had a stop button. He had all this equipment, and nothing for that.",
       "alignment": [
         {
-          "english": "He would have liked",
+          "english": "He wished",
           "target": "Il aurait voulu",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "to be able to offer Ben",
-          "target": "pouvoir offrir à Ben",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "an explanation they could listen to",
-          "target": "une explication qu'on puisse écouter",
+          "english": "Ben's fear",
+          "target": "que la peur de Ben",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "stop and play again",
-          "target": "arrêter et reprendre",
+          "english": "had a stop button",
+          "target": "ait un bouton d'arrêt",
           "category": "verb",
           "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "He had",
+          "target": "Il avait",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "all this equipment",
+          "target": "tout ce matériel",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and nothing for that",
+          "target": "et rien pour ça",
+          "category": "function_word",
+          "frequency_band": "very_common",
           "is_idiom": false
         }
       ]
@@ -2046,8 +2123,8 @@
       ]
     },
     {
-      "target": "— Elle m'a dit qu'elle avait honte. Je lui ai demandé de quoi.",
-      "english": "“She told me she was ashamed. I asked her of what.”",
+      "target": "« Elle m'a dit qu'elle avait honte. Je lui ai demandé de quoi », a dit Ben.",
+      "english": "“She told me she was ashamed. I asked her of what,” Ben said.",
       "alignment": [
         {
           "english": "She told me",
@@ -2069,11 +2146,18 @@
           "category": "verb",
           "frequency_band": "very_common",
           "is_idiom": false
+        },
+        {
+          "english": "Ben said",
+          "target": "a dit Ben",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Et ?",
+      "target": "« Et ? »",
       "english": "“And?”",
       "alignment": [
         {
@@ -2086,7 +2170,7 @@
       ]
     },
     {
-      "target": "— Elle veut me le dire en face.",
+      "target": "« Elle veut me le dire en face. »",
       "english": "“She wants to tell me in person.”",
       "alignment": [
         {
@@ -2153,8 +2237,8 @@
       ]
     },
     {
-      "target": "— J'ai une cassette, a-t-elle dit. Ruth l'a apportée avec elle.",
-      "english": "“I have a cassette,” she said. “Ruth brought it with her.”",
+      "target": "« J'ai une cassette », a dit Elsie. « Ruth l'a apportée avec elle. »",
+      "english": "“I have a cassette,” Elsie said. “Ruth brought it with her.”",
       "alignment": [
         {
           "english": "I have a cassette",
@@ -2164,10 +2248,10 @@
           "is_idiom": false
         },
         {
-          "english": "she said",
-          "target": "a-t-elle dit",
+          "english": "Elsie said",
+          "target": "a dit Elsie",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
@@ -2214,8 +2298,8 @@
       ]
     },
     {
-      "target": "— Celle de la pochette vide ?",
-      "english": "“The one from the empty sleeve?”",
+      "target": "« Celle de la pochette vide ? » a demandé Daniel.",
+      "english": "“The one from the empty sleeve?” Daniel asked.",
       "alignment": [
         {
           "english": "The one from the empty sleeve",
@@ -2223,11 +2307,18 @@
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel asked",
+          "target": "a demandé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Elle dit que oui. Elle accepte que vous l'écoutiez. Pas que vous l'appeliez.",
+      "target": "« Elle dit que oui. Elle accepte que vous l'écoutiez. Pas que vous l'appeliez. »",
       "english": "“She says so. She's willing to let you listen to it. Not to have you call her.”",
       "alignment": [
         {
@@ -2342,7 +2433,7 @@
       ]
     },
     {
-      "target": "— Elle a écrit quelque chose, a dit Elsie. Je vous l'apporte.",
+      "target": "« Elle a écrit quelque chose », a dit Elsie. « Je vous l'apporte. »",
       "english": "“She's written something,” Elsie said. “I'll bring it.”",
       "alignment": [
         {
@@ -2464,7 +2555,7 @@
       ]
     },
     {
-      "target": "— J'ai pas dit que j'étais content de l'entendre.",
+      "target": "« J'ai pas dit que j'étais content de l'entendre. »",
       "english": "“I didn't say I was glad to hear her.”",
       "alignment": [
         {
@@ -2504,7 +2595,7 @@
       ]
     },
     {
-      "target": "— Je l'étais.",
+      "target": "« Je l'étais. »",
       "english": "“I was.”",
       "alignment": [
         {
@@ -2517,8 +2608,8 @@
       ]
     },
     {
-      "target": "— Vous pouvez lui écrire.",
-      "english": "“You can write to her.”",
+      "target": "« Vous pouvez lui écrire », a répondu Daniel.",
+      "english": "“You can write to her,” Daniel replied.",
       "alignment": [
         {
           "english": "You can write to her",
@@ -2526,11 +2617,18 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Daniel replied",
+          "target": "a répondu Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "— Ça va lui donner l'impression que tout va bien.",
+      "target": "« Ça va lui donner l'impression que tout va bien. »",
       "english": "“That'll make her think everything's all right.”",
       "alignment": [
         {
@@ -2577,7 +2675,7 @@
       ]
     },
     {
-      "target": "— Alors écrivez les deux.",
+      "target": "« Alors écrivez les deux. »",
       "english": "“Then write both.”",
       "alignment": [
         {
@@ -2696,6 +2794,7 @@
     "createdAt": "2026-10-12",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "updatedAt": "2026-10-14"
   }
 }
