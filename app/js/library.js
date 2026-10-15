@@ -56,24 +56,22 @@ async function loadDownloadedIndex() {
   const map = new Map();
   for (const b of all) map.set(b.id, b);
 
-  // Count how many chapters of each book are actually present in IndexedDB.
-  // Used by renderBrowse to detect partial downloads ("Resume X/Y").
-  const chapterKeys = await getAllChapterKeys();
-  const counts = new Map();
-  for (const key of chapterKeys) {
-    const bookId = String(key).split("/")[0];
-    counts.set(bookId, (counts.get(bookId) || 0) + 1);
-  }
-  for (const [bookId, count] of counts) {
-    const book = map.get(bookId);
-    if (book) book.downloadedChapterCount = count;
-  }
-  // Books with a record but zero chapter entries get 0 by default.
+  // Inspect stored content, not the book metadata saved before a download.
+  // This also detects an interrupted update when all chapter keys still exist.
   for (const book of map.values()) {
-    if (typeof book.downloadedChapterCount !== "number") {
-      book.downloadedChapterCount = 0;
-    }
+    book.downloadedChapterCount = 0;
+    book.downloadedChapterVersions = {};
   }
+  const chapterKeys = await getAllChapterKeys();
+  await Promise.all(chapterKeys.map(async (key) => {
+    const [bookId, chapterId] = String(key).split("/");
+    const book = map.get(bookId);
+    if (!book) return;
+    const chapter = await getChapter(bookId, chapterId);
+    if (!chapter?.pairs?.length) return;
+    book.downloadedChapterCount++;
+    book.downloadedChapterVersions[chapterId] = chapter.catalogVersion ?? chapter.version ?? 1;
+  }));
   return map;
 }
 
@@ -188,9 +186,16 @@ export function renderBrowse() {
       expectedChapters > 0 &&
       downloadedChapters < expectedChapters;
 
+    const hasUpdate = !!local && (
+      local.version !== entry.version ||
+      entry.chapters.some((chapter) => {
+        const stored = local.downloadedChapterVersions[chapter.id];
+        return stored !== undefined && stored !== (chapter.version ?? 1);
+      })
+    );
     let stateLabel, stateCls;
     if (!local) { stateLabel = "Not in library"; stateCls = ""; }
-    else if (local.version !== entry.version) { stateLabel = "Update available"; stateCls = "update"; }
+    else if (hasUpdate) { stateLabel = "Update available"; stateCls = "update"; }
     else if (isPartial) {
       stateLabel = `Partial · ${downloadedChapters}/${expectedChapters} ch.`;
       stateCls = "update";
@@ -214,7 +219,7 @@ export function renderBrowse() {
       btn.disabled = !state.online;
       if (state.online) btn.addEventListener("click", () => downloadBook(entry, btn));
       actions.appendChild(btn);
-    } else if (local.version !== entry.version) {
+    } else if (hasUpdate) {
       const btn = document.createElement("button");
       btn.className = "primary";
       btn.textContent = state.online ? "Update" : "Offline";
@@ -282,8 +287,8 @@ async function downloadBook(catalogEntry, btn) {
     await putBook(bookRecord);
     state.downloadedBooks.set(catalogEntry.id, bookRecord);
 
-    // 3. Download chapters that aren't already stored. Skipping ones we
-    //    already have lets a re-run after partial failure resume cleanly.
+    // 3. Replace stale chapters, and resume missing ones after a failure.
+    //    Reading progress and saved vocabulary live separately and stay intact.
     const total = catalogEntry.chapters?.length || 0;
     let downloadedCount = 0;
     let skippedCount = 0;
@@ -291,7 +296,8 @@ async function downloadBook(catalogEntry, btn) {
       const ch = catalogEntry.chapters[i];
       // Check if this chapter is already in IndexedDB.
       const existing = await getChapter(catalogEntry.id, ch.id);
-      if (existing && Array.isArray(existing.pairs) && existing.pairs.length > 0) {
+      if (existing && Array.isArray(existing.pairs) && existing.pairs.length > 0 &&
+          (existing.catalogVersion ?? existing.version ?? 1) === (ch.version ?? 1)) {
         skippedCount++;
         continue;
       }
@@ -299,6 +305,8 @@ async function downloadBook(catalogEntry, btn) {
       const chUrl = resolveUrl(settings.libraryUrl, ch.url);
       const chJson = await fetchJson(chUrl);
       if (!Array.isArray(chJson.pairs)) throw new Error(`Chapter ${ch.id}: invalid format`);
+      // Older content files may have their own unrelated version number.
+      chJson.catalogVersion = ch.version ?? 1;
       await putChapter(catalogEntry.id, ch.id, chJson);
       downloadedCount++;
     }
