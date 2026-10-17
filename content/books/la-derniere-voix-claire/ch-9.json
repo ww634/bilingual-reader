@@ -2,7 +2,7 @@
   "id": "ch-9",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Un homme utile",
     "english": "A Useful Man"
@@ -3124,11 +3124,11 @@
       ]
     },
     {
-      "target": "« Un avis limité aux éléments soumis. C'est plus prudent.",
-      "english": "“An opinion confined to the material supplied. That is more prudent.",
+      "target": "« Un avis limité aux éléments soumis. C'est plus prudent », a répondu Paul.",
+      "english": "“An opinion limited to the material submitted. That is more prudent,” Paul replied.",
       "alignment": [
         {
-          "english": "An opinion confined to the material supplied",
+          "english": "An opinion limited to the material submitted",
           "target": "Un avis limité aux éléments soumis",
           "category": "noun",
           "frequency_band": "common",
@@ -3140,12 +3140,19 @@
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
+        },
+        {
+          "english": "Paul replied",
+          "target": "a répondu Paul",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
         }
       ]
     },
     {
-      "target": "Daniel a reposé sa tasse », a répondu Paul.",
-      "english": "Daniel put down his cup,” Paul replied.",
+      "target": "Daniel a reposé sa tasse.",
+      "english": "Daniel put down his cup.",
       "alignment": [
         {
           "english": "Daniel",
@@ -3165,13 +3172,6 @@
           "english": "his cup",
           "target": "sa tasse",
           "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "Paul replied",
-          "target": "a répondu Paul",
-          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         }

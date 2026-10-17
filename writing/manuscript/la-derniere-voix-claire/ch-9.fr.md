@@ -134,7 +134,9 @@ Il a refermé la chemise et noté l'adresse de Daniel.
 
 « Si je peux obtenir une copie par les bonnes voies », a répondu Daniel.
 
-« Un avis limité aux éléments soumis. C'est plus prudent. Daniel a reposé sa tasse », a répondu Paul.
+« Un avis limité aux éléments soumis. C'est plus prudent », a répondu Paul.
+
+Daniel a reposé sa tasse.
 
 « Il faudra surtout savoir ce qu'on me transmet », a dit Daniel.
 

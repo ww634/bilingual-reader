@@ -2,6 +2,8 @@
 
 ## The Last Clear Voice
 
+The first-book narrative is complete: **40 chapters plus an epilogue**. Read `the-last-clear-voice-completion-notes.md` after the publication continuity files for the final outcomes, message wording, access limits and open sequel questions.
+
 The user selected and approved the core premise: older, grumpy, widowed audio specialist Daniel Mercer follows clues in a missing witness's voicemail to a phone box, then meets her adult son. Their difficult, funny, affectionate partnership develops alongside the investigation of Daniel's old case.
 
 Read in this order before writing:
@@ -18,6 +20,7 @@ Read `crime-mystery-editorial-guide.md` for every revision and new chapter. This
    Then read `the-last-clear-voice-continuity-through-ch27.md` for chapters 23–27, Ruth's disclosure, Paul's revised account, Michael's meeting, the limits of the audio comparison and the day 13 handoff.
    Then read `the-last-clear-voice-continuity-through-ch32.md` for chapters 28–32, the payment trail, checked visit timings, Graham's final inquiries, Ruth's death, and the immediate day 16 handoff.
    Then read `the-last-clear-voice-continuity-through-ch39.md` for chapters 33–39, report submission, the explicit inference, workshop confrontation and arrest, injury/custody continuity, legal aftermath, and the chapter 40/epilogue handoff.
+   Finally read `the-last-clear-voice-completion-notes.md` for chapter 40 and the epilogue, the eighteen-month time jump, legal outcomes, final audio, and the chapter 9/13 consistency corrections.
 3. `the-last-clear-voice-chapter-plan.md` — chapter objectives, scenes, arcs, pacing, dependencies, and endings.
 4. `the-last-clear-voice-clue-ledger.md` — clue plants, transformations, red herrings, fair-play and rereading audit.
 5. `the-last-clear-voice-series-layer.md` — unknown adviser, subtle secondary seeds, Ruth’s late death, and future partnership.

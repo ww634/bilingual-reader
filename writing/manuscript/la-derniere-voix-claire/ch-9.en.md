@@ -134,7 +134,9 @@ He closed the wallet and wrote down Daniel's address.
 
 “If I can obtain a copy through the proper channels,” Daniel replied.
 
-“An opinion confined to the material supplied. That is more prudent. Daniel put down his cup,” Paul replied.
+“An opinion limited to the material submitted. That is more prudent,” Paul replied.
+
+Daniel put down his cup.
 
 “Above all, we will need to know what I am being given,” Daniel said.
 
