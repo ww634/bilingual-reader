@@ -1,0 +1,1163 @@
+{
+  "id": "ch-35",
+  "book_id": "la-derniere-voix-claire",
+  "language": "fr",
+  "version": 1,
+  "title": {
+    "target": "La phrase à signer",
+    "english": "The Sentence to Sign"
+  },
+  "pairs": [
+    {
+      "target": "Daniel a composé le 999.",
+      "english": "Daniel dialled 999.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "dialled",
+          "target": "a composé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "999",
+          "target": "le 999",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Paul a passé le bras par la vitre brisée.",
+      "english": "Paul put his arm through the broken pane.",
+      "alignment": [
+        {
+          "english": "Paul",
+          "target": "Paul",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "put his arm",
+          "target": "a passé le bras",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "through the broken pane",
+          "target": "par la vitre brisée",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le tissu de sa manche s'est accroché au bord.",
+      "english": "The fabric of his sleeve caught on the edge.",
+      "alignment": [
+        {
+          "english": "The fabric",
+          "target": "Le tissu",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "of his sleeve",
+          "target": "de sa manche",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "caught",
+          "target": "s'est accroché",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the edge",
+          "target": "au bord",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il a tourné la clé restée dans la serrure et poussé la porte.",
+      "english": "He turned the key left in the lock and pushed the door.",
+      "alignment": [
+        {
+          "english": "He turned",
+          "target": "Il a tourné",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the key",
+          "target": "la clé",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "left in the lock",
+          "target": "restée dans la serrure",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and pushed",
+          "target": "et poussé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the door",
+          "target": "la porte",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« La police », a dit Daniel à l'opérateur.",
+      "english": "“Police,” Daniel said to the operator.",
+      "alignment": [
+        {
+          "english": "Police",
+          "target": "La police",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel said",
+          "target": "a dit Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to the operator",
+          "target": "à l'opérateur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il a donné l'adresse dès qu'il a pu.",
+      "english": "He gave the address as soon as he could.",
+      "alignment": [
+        {
+          "english": "He gave",
+          "target": "Il a donné",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the address",
+          "target": "l'adresse",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "as soon as he could",
+          "target": "dès qu'il a pu",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Un homme venait d'entrer de force dans son atelier.",
+      "english": "A man had just forced his way into his workshop.",
+      "alignment": [
+        {
+          "english": "A man",
+          "target": "Un homme",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "had just forced his way",
+          "target": "venait d'entrer de force",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "into his workshop",
+          "target": "dans son atelier",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il s'appelait Paul Sayer.",
+      "english": "His name was Paul Sayer.",
+      "alignment": [
+        {
+          "english": "His name was",
+          "target": "Il s'appelait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Paul Sayer",
+          "target": "Paul Sayer",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel a reculé derrière l'établi en parlant.",
+      "english": "Daniel stepped back behind the bench as he spoke.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "stepped back",
+          "target": "a reculé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "behind the bench",
+          "target": "derrière l'établi",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "as he spoke",
+          "target": "en parlant",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Posez ça », a dit Paul. « Je veux juste une signature. »",
+      "english": "“Put that down,” Paul said. “I just want a signature.”",
+      "alignment": [
+        {
+          "english": "Put that down",
+          "target": "Posez ça",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Paul said",
+          "target": "a dit Paul",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "I just want",
+          "target": "Je veux juste",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a signature",
+          "target": "une signature",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Paul lui montrait la feuille.",
+      "english": "Paul was showing him the sheet.",
+      "alignment": [
+        {
+          "english": "Paul",
+          "target": "Paul",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "was showing him",
+          "target": "lui montrait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the sheet",
+          "target": "la feuille",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Sa manche portait une déchirure.",
+      "english": "His sleeve bore a tear.",
+      "alignment": [
+        {
+          "english": "His sleeve",
+          "target": "Sa manche",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "bore",
+          "target": "portait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a tear",
+          "target": "une déchirure",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Du sang dessinait une ligne sur sa main.",
+      "english": "Blood traced a line across his hand.",
+      "alignment": [
+        {
+          "english": "Blood",
+          "target": "Du sang",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "traced",
+          "target": "dessinait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "a line",
+          "target": "une ligne",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "across his hand",
+          "target": "sur sa main",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« La porte de la cour », a précisé Daniel dans le téléphone. « Par le passage à côté de la maison. »",
+      "english": "“The courtyard door,” Daniel added into the telephone. “Through the passage beside the house.”",
+      "alignment": [
+        {
+          "english": "The courtyard door",
+          "target": "La porte de la cour",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel added",
+          "target": "a précisé Daniel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "into the telephone",
+          "target": "dans le téléphone",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Through the passage",
+          "target": "Par le passage",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "beside the house",
+          "target": "à côté de la maison",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Paul a contourné le bout de l'établi.",
+      "english": "Paul went round the end of the bench.",
+      "alignment": [
+        {
+          "english": "Paul",
+          "target": "Paul",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "went round",
+          "target": "a contourné",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the end of the bench",
+          "target": "le bout de l'établi",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel a posé le téléphone sans raccrocher, derrière l'écran.",
+      "english": "Daniel put down the telephone without hanging up, behind the monitor.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "put down",
+          "target": "a posé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the telephone",
+          "target": "le téléphone",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "without hanging up",
+          "target": "sans raccrocher",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "behind the monitor",
+          "target": "derrière l'écran",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il avait besoin de ses deux mains.",
+      "english": "He needed both hands.",
+      "alignment": [
+        {
+          "english": "He needed",
+          "target": "Il avait besoin",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "both hands",
+          "target": "de ses deux mains",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "La voix continuait, petite et régulière.",
+      "english": "The voice continued, small and steady.",
+      "alignment": [
+        {
+          "english": "The voice",
+          "target": "La voix",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "continued",
+          "target": "continuait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "small and steady",
+          "target": "petite et régulière",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Reculez. Sortez de chez moi. »",
+      "english": "“Step back. Get out of my house.”",
+      "alignment": [
+        {
+          "english": "Step back",
+          "target": "Reculez",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Get out of my house",
+          "target": "Sortez de chez moi",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Paul a déplié la feuille sur l'établi.",
+      "english": "Paul unfolded the sheet on the bench.",
+      "alignment": [
+        {
+          "english": "Paul",
+          "target": "Paul",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "unfolded",
+          "target": "a déplié",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the sheet",
+          "target": "la feuille",
+          "category": "noun",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "on the bench",
+          "target": "sur l'établi",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Une ligne était prévue pour la signature.",
+      "english": "A line had been provided for the signature.",
+      "alignment": [
+        {
+          "english": "A line",
+          "target": "Une ligne",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "had been provided",
+          "target": "était prévue",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "for the signature",
+          "target": "pour la signature",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Au-dessus, Daniel a lu : « La date d'enregistrement ne peut être certifiée à partir du seul support examiné. »",
+      "english": "Above it, Daniel read: “The recording date cannot be certified from the examined carrier alone.”",
+      "alignment": [
+        {
+          "english": "Above it",
+          "target": "Au-dessus",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "read",
+          "target": "a lu",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "The recording date",
+          "target": "La date d'enregistrement",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "cannot be certified",
+          "target": "ne peut être certifiée",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "from the examined carrier alone",
+          "target": "à partir du seul support examiné",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« C'est votre réponse », a dit Paul. « Je vous demande pas de mentir. »",
+      "english": "“That's your answer,” Paul said. “I'm not asking you to lie.”",
+      "alignment": [
+        {
+          "english": "That's your answer",
+          "target": "C'est votre réponse",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "Paul said",
+          "target": "a dit Paul",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "I'm not asking you",
+          "target": "Je vous demande pas",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to lie",
+          "target": "de mentir",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel a glissé vers l'autre bout de l'établi.",
+      "english": "Daniel edged towards the other end of the bench.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "edged",
+          "target": "a glissé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "towards the other end",
+          "target": "vers l'autre bout",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "of the bench",
+          "target": "de l'établi",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Paul s'est déplacé avec lui.",
+      "english": "Paul moved with him.",
+      "alignment": [
+        {
+          "english": "Paul",
+          "target": "Paul",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "moved",
+          "target": "s'est déplacé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "with him",
+          "target": "avec lui",
+          "category": "function_word",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il était maintenant entre Daniel et les deux portes.",
+      "english": "He was now between Daniel and both doors.",
+      "alignment": [
+        {
+          "english": "He was now",
+          "target": "Il était maintenant",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "between Daniel",
+          "target": "entre Daniel",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and both doors",
+          "target": "et les deux portes",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Mon rapport est parti. Avec les documents qui donnent le contexte. »",
+      "english": "“My report has been sent. With the documents that provide the context.”",
+      "alignment": [
+        {
+          "english": "My report",
+          "target": "Mon rapport",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "has been sent",
+          "target": "est parti",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "With the documents",
+          "target": "Avec les documents",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "that provide the context",
+          "target": "qui donnent le contexte",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Paul a regardé l'ordinateur.",
+      "english": "Paul looked at the computer.",
+      "alignment": [
+        {
+          "english": "Paul",
+          "target": "Paul",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "looked at",
+          "target": "a regardé",
+          "category": "verb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "the computer",
+          "target": "l'ordinateur",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Vous pouvez envoyer un complément. »",
+      "english": "“You can send an addendum.”",
+      "alignment": [
+        {
+          "english": "You can send",
+          "target": "Vous pouvez envoyer",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "an addendum",
+          "target": "un complément",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Ce mot lui venait sans effort.",
+      "english": "That word came to him without effort.",
+      "alignment": [
+        {
+          "english": "That word",
+          "target": "Ce mot",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "came to him",
+          "target": "lui venait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "without effort",
+          "target": "sans effort",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Il a tapé sur la feuille.",
+      "english": "He tapped the sheet.",
+      "alignment": [
+        {
+          "english": "He tapped",
+          "target": "Il a tapé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "the sheet",
+          "target": "sur la feuille",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« C'est limité. Ça suffit. Je règle l'argent. Vous réglez ça. »",
+      "english": "“It's limited. That's enough. I'll settle the money. You settle this.”",
+      "alignment": [
+        {
+          "english": "It's limited",
+          "target": "C'est limité",
+          "category": "adjective",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "That's enough",
+          "target": "Ça suffit",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "I'll settle the money",
+          "target": "Je règle l'argent",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "You settle this",
+          "target": "Vous réglez ça",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Vous ne décidez pas ce qui suffit. »",
+      "english": "“You don't decide what is enough.”",
+      "alignment": [
+        {
+          "english": "You don't decide",
+          "target": "Vous ne décidez pas",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "what is enough",
+          "target": "ce qui suffit",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel a tendu la main vers le téléphone.",
+      "english": "Daniel reached towards the telephone.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "reached",
+          "target": "a tendu la main",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "towards the telephone",
+          "target": "vers le téléphone",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Paul a saisi son poignet gauche et l'a tiré contre le bord de l'établi.",
+      "english": "Paul caught his left wrist and pulled him against the edge of the bench.",
+      "alignment": [
+        {
+          "english": "Paul",
+          "target": "Paul",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "caught",
+          "target": "a saisi",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "his left wrist",
+          "target": "son poignet gauche",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "and pulled him",
+          "target": "et l'a tiré",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "against the edge",
+          "target": "contre le bord",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "of the bench",
+          "target": "de l'établi",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Une douleur vive est montée jusqu'au coude.",
+      "english": "A sharp pain shot up to his elbow.",
+      "alignment": [
+        {
+          "english": "A sharp pain",
+          "target": "Une douleur vive",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "shot",
+          "target": "est montée",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "up to his elbow",
+          "target": "jusqu'au coude",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Daniel a essayé de dégager son bras.",
+      "english": "Daniel tried to free his arm.",
+      "alignment": [
+        {
+          "english": "Daniel",
+          "target": "Daniel",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "tried",
+          "target": "a essayé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "to free his arm",
+          "target": "de dégager son bras",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "Le papier a glissé entre eux.",
+      "english": "The paper slipped between them.",
+      "alignment": [
+        {
+          "english": "The paper",
+          "target": "Le papier",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "slipped",
+          "target": "a glissé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "between them",
+          "target": "entre eux",
+          "category": "adverb",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "« Signez. »",
+      "english": "“Sign it.”",
+      "alignment": [
+        {
+          "english": "Sign it",
+          "target": "Signez",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": "markup-authored",
+    "createdAt": "2026-10-17",
+    "synopsis": null,
+    "has_alignment": true,
+    "alignment_complete": true
+  }
+}

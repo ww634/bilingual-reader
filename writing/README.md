@@ -17,6 +17,7 @@ Read `crime-mystery-editorial-guide.md` for every revision and new chapter. This
    Then read `the-last-clear-voice-continuity-through-ch22.md` for chapters 18–22, the now-audible dialogue, the relationship rupture, Anna's letter, and the day 8 handoff.
    Then read `the-last-clear-voice-continuity-through-ch27.md` for chapters 23–27, Ruth's disclosure, Paul's revised account, Michael's meeting, the limits of the audio comparison and the day 13 handoff.
    Then read `the-last-clear-voice-continuity-through-ch32.md` for chapters 28–32, the payment trail, checked visit timings, Graham's final inquiries, Ruth's death, and the immediate day 16 handoff.
+   Then read `the-last-clear-voice-continuity-through-ch39.md` for chapters 33–39, report submission, the explicit inference, workshop confrontation and arrest, injury/custody continuity, legal aftermath, and the chapter 40/epilogue handoff.
 3. `the-last-clear-voice-chapter-plan.md` — chapter objectives, scenes, arcs, pacing, dependencies, and endings.
 4. `the-last-clear-voice-clue-ledger.md` — clue plants, transformations, red herrings, fair-play and rereading audit.
 5. `the-last-clear-voice-series-layer.md` — unknown adviser, subtle secondary seeds, Ruth’s late death, and future partnership.
