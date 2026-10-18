@@ -2,7 +2,7 @@
   "id": "ch-7",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Les conditions",
     "english": "The Terms"
@@ -1607,7 +1607,7 @@
     },
     {
       "target": "« Peut-être. C'est pas ce qu'elle a dit. »",
-      "english": "“Maybe. That is not what she said.”",
+      "english": "“Maybe. That's not what she said.”",
       "alignment": [
         {
           "english": "Maybe",
@@ -1617,7 +1617,7 @@
           "is_idiom": false
         },
         {
-          "english": "That is not",
+          "english": "That's not",
           "target": "C'est pas",
           "category": "verb",
           "frequency_band": "very_common",
@@ -2094,7 +2094,7 @@
     },
     {
       "target": "« Oui, Daniel. J'ai des notes. »",
-      "english": "“Yes, Daniel. I have notes.”",
+      "english": "“Yes, Daniel. I've got notes.”",
       "alignment": [
         {
           "english": "Yes",
@@ -2111,7 +2111,7 @@
           "is_idiom": false
         },
         {
-          "english": "I have",
+          "english": "I've got",
           "target": "J'ai",
           "category": "verb",
           "frequency_band": "common",
@@ -4352,17 +4352,17 @@
     },
     {
       "target": "« Je vous promets pas de vous faire confiance », a dit Ben.",
-      "english": "“I am not promising you that I will trust you,” Ben said.",
+      "english": "“I'm not promising to trust you,” Ben said.",
       "alignment": [
         {
-          "english": "I am not promising you",
+          "english": "I'm not promising",
           "target": "Je vous promets pas",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "that I will trust you",
+          "english": "to trust you",
           "target": "de vous faire confiance",
           "category": "verb",
           "frequency_band": "common",
@@ -4392,17 +4392,24 @@
     },
     {
       "target": "« Et vous me dites quand vous savez pas. »",
-      "english": "“And you tell me when you do not know.”",
+      "english": "“And you tell me when you don't know.”",
       "alignment": [
         {
-          "english": "And you tell me",
-          "target": "Et vous me dites",
+          "english": "And",
+          "target": "Et",
+          "category": "function_word",
+          "frequency_band": "very_common",
+          "is_idiom": false
+        },
+        {
+          "english": "you tell me",
+          "target": "vous me dites",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "when you do not know",
+          "english": "when you don't know",
           "target": "quand vous savez pas",
           "category": "adverb",
           "frequency_band": "common",

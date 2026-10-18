@@ -72,7 +72,7 @@ The tea was still too hot. Daniel put down the cup without drinking.
 
 “She was upset by the way he portrayed her,” Daniel said.
 
-“Maybe. That is not what she said.”
+“Maybe. That's not what she said.”
 
 Ben had not raised his voice. Daniel was two words away from explaining Ruth to her son. He closed his mouth.
 
@@ -92,7 +92,7 @@ His phone vibrated on the table. He read the message, then typed a reply.
 
 “Do you have notes?”
 
-“Yes, Daniel. I have notes.”
+“Yes, Daniel. I've got notes.”
 
 He pressed send. Daniel drank his tea. This time, he could do so.
 
@@ -162,11 +162,11 @@ He did not say “someone stopped her”. Daniel did not know whether he had the
 
 On the pavement, Ben finally put away the card.
 
-“I am not promising you that I will trust you,” Ben said.
+“I'm not promising to trust you,” Ben said.
 
 “I did not ask you to.”
 
-“And you tell me when you do not know.”
+“And you tell me when you don't know.”
 
 Daniel thought of the station, the circle, the little question mark.
 

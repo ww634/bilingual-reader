@@ -2,7 +2,7 @@
   "id": "ch-15",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "La cassette qu'elle avait gardée",
     "english": "The Cassette She Kept"
@@ -998,11 +998,11 @@
       "english": "“What if it jams?” Elsie asked.",
       "alignment": [
         {
-          "english": "If it jams",
+          "english": "What if it jams",
           "target": "Si ça se coince",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
+          "category": "idiom",
+          "frequency_band": "common",
+          "is_idiom": true
         },
         {
           "english": "Elsie asked",

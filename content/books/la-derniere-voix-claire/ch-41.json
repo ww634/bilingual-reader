@@ -2,7 +2,7 @@
   "id": "ch-41",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Épilogue — Les mots qui sont là",
     "english": "Epilogue — The Words That Are There"
@@ -167,7 +167,7 @@
     },
     {
       "target": "« Il voulait faire la démonstration à ma sœur », a dit Mme Holt. « Elle habitait loin. On lui envoyait des cassettes. »",
-      "english": "“He wanted to demonstrate to my sister,” Mrs Holt said. “She lived a long way away. We used to send her cassettes.”",
+      "english": "“He wanted to show my sister how it was done,” Mrs Holt said. “She lived a long way away. We used to send her cassettes.”",
       "alignment": [
         {
           "english": "He wanted",
@@ -177,16 +177,9 @@
           "is_idiom": false
         },
         {
-          "english": "to demonstrate",
-          "target": "faire la démonstration",
+          "english": "to show my sister how it was done",
+          "target": "faire la démonstration à ma sœur",
           "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "to my sister",
-          "target": "à ma sœur",
-          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
@@ -976,17 +969,17 @@
     },
     {
       "target": "La main conservait des objections que le bois avait abandonnées.",
-      "english": "The hand retained objections the wood had abandoned.",
+      "english": "His hand still raised objections the wood had abandoned.",
       "alignment": [
         {
-          "english": "The hand",
+          "english": "His hand",
           "target": "La main",
           "category": "noun",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "retained",
+          "english": "still raised",
           "target": "conservait",
           "category": "verb",
           "frequency_band": "common",
@@ -1016,34 +1009,27 @@
       ]
     },
     {
-      "target": "Le vitrage de la cour avait été remplacé après la restitution de l'atelier.",
-      "english": "The courtyard glazing had been replaced after the release of the workshop.",
+      "target": "La vitre de la porte donnant sur la cour avait été remplacée une fois l'atelier rendu à Daniel.",
+      "english": "The pane in the courtyard door had been replaced once the workshop was handed back to Daniel.",
       "alignment": [
         {
-          "english": "The courtyard glazing",
-          "target": "Le vitrage de la cour",
+          "english": "The pane in the courtyard door",
+          "target": "La vitre de la porte donnant sur la cour",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
           "english": "had been replaced",
-          "target": "avait été remplacé",
+          "target": "avait été remplacée",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "after the release",
-          "target": "après la restitution",
+          "english": "once the workshop was handed back to Daniel",
+          "target": "une fois l'atelier rendu à Daniel",
           "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "of the workshop",
-          "target": "de l'atelier",
-          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1439,8 +1425,8 @@
       ]
     },
     {
-      "target": "Pourquoi avait-il laissé croire que Ruth confirmait quelque chose qu'elle avait reconnu seule ?",
-      "english": "Why had he allowed people to believe that Ruth was confirming something she had recognised on her own?",
+      "target": "Pourquoi avait-il laissé croire que Ruth avait reconnu le prénom sans son aide ?",
+      "english": "Why had he allowed people to believe that Ruth had recognised the first name without his help?",
       "alignment": [
         {
           "english": "Why had he",
@@ -1457,36 +1443,22 @@
           "is_idiom": false
         },
         {
-          "english": "that Ruth",
-          "target": "que Ruth",
-          "category": "proper_noun",
-          "frequency_band": null,
-          "is_idiom": false
-        },
-        {
-          "english": "was confirming",
-          "target": "confirmait",
+          "english": "that Ruth had recognised",
+          "target": "que Ruth avait reconnu",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "something",
-          "target": "quelque chose",
-          "category": "function_word",
-          "frequency_band": "very_common",
+          "english": "the first name",
+          "target": "le prénom",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "she had recognised",
-          "target": "qu'elle avait reconnu",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "on her own",
-          "target": "seule",
+          "english": "without his help",
+          "target": "sans son aide",
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1760,8 +1732,8 @@
       ]
     },
     {
-      "target": "Le prénom sur A n'avait pas cessé d'être incertain.",
-      "english": "The first name on A had not ceased to be uncertain.",
+      "target": "Le prénom sur A restait incertain.",
+      "english": "The first name on A remained uncertain.",
       "alignment": [
         {
           "english": "The first name",
@@ -1778,22 +1750,15 @@
           "is_idiom": false
         },
         {
-          "english": "had not",
-          "target": "n'avait pas",
-          "category": "function_word",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "ceased",
-          "target": "cessé",
+          "english": "remained",
+          "target": "restait",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "to be uncertain",
-          "target": "d'être incertain",
+          "english": "uncertain",
+          "target": "incertain",
           "category": "adjective",
           "frequency_band": "common",
           "is_idiom": false

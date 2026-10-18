@@ -50,7 +50,7 @@ Il n'y avait aucune hostilité dans sa réponse. C'était une unité de mesure.
 
 Ben a rangé son téléphone.
 
-« M. Owen, hier, vous m'avez dit que vous aviez une livraison vers midi. Vous étiez dans la réserve tout le temps ? » a demandé Ben.
+« Owen, hier, vous m'avez dit que vous aviez une livraison vers midi. Vous étiez dans la réserve tout le temps ? » a demandé Ben.
 
 « Non, justement. Il manquait une caisse. J'attendais qu'il la retrouve », a dit Owen.
 
@@ -68,15 +68,15 @@ Daniel avait envie de demander si elle semblait avoir peur. Il a regardé la dis
 
 « Pas bien », a répondu Owen.
 
-M. Owen a regardé Ben.
+Owen a regardé Ben.
 
 « Je voudrais vous dire oui. »
 
 « Je sais », a répondu Ben.
 
-Ben a demandé s'il avait encore le bon de livraison. Peut-être que l'heure permettrait de préciser son souvenir. M. Owen a sorti une chemise de dessous le comptoir. Le reçu portait une signature, pas d'heure. Ben ne lui a pas demandé d'en inventer une. Il a noté le nom du fournisseur pour le transmettre à la police.
+Ben a demandé s'il avait encore le bon de livraison. Peut-être que l'heure permettrait de préciser son souvenir. Owen a sorti une chemise de dessous le comptoir. Le reçu portait une signature, pas d'heure. Ben ne lui a pas demandé d'en inventer une. Il a noté le nom du fournisseur pour le transmettre à la police.
 
-M. Owen a refermé la chemise, puis l'a rouverte.
+Owen a refermé la chemise, puis l'a rouverte.
 
 « J'ai pas envie qu'on écrive que je l'ai reconnue », a dit Owen.
 
@@ -170,7 +170,7 @@ Ben a cessé de regarder les bus.
 
 « Je ne sais pas. »
 
-Ben a regardé la cabine, puis le numéro de Shah sur la carte que Daniel lui tendait. Il a pris une inspiration avant de composer. Ils ont appelé le numéro qu'elle avait laissé et transmis les deux références. Ben a décrit ce que M. Owen venait de dire. Daniel a précisé que le commerçant avait déjà vu la photo de Ruth. La photographie avait précédé la question ; il fallait que le compte rendu le dise.
+Ben a regardé la cabine, puis le numéro de Shah sur la carte que Daniel lui tendait. Il a pris une inspiration avant de composer. Ils ont appelé le numéro qu'elle avait laissé et transmis les deux références. Ben a décrit ce qu'Owen venait de dire. Daniel a précisé que le commerçant avait déjà vu la photo de Ruth. La photographie avait précédé la question ; il fallait que le compte rendu le dise.
 
 Après l'appel, Ben a regardé les bus.
 

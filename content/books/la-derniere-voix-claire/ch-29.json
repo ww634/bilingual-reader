@@ -2,7 +2,7 @@
   "id": "ch-29",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Les lignes communes",
     "english": "The Matching Entries"
@@ -655,26 +655,26 @@
       ]
     },
     {
-      "target": "« Qui autorisait Harris à être payé par cet intermédiaire ? »",
-      "english": "“Who authorised Harris to be paid through this intermediary?”",
+      "target": "« Harris avait-il autorisé le versement à cet intermédiaire ? »",
+      "english": "“Had Harris authorised the payment to this intermediary?”",
       "alignment": [
         {
-          "english": "Who authorised",
-          "target": "Qui autorisait",
+          "english": "Had Harris authorised",
+          "target": "Harris avait-il autorisé",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "Harris to be paid",
-          "target": "Harris à être payé",
-          "category": "verb",
+          "english": "the payment",
+          "target": "le versement",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "through this intermediary",
-          "target": "par cet intermédiaire",
+          "english": "to this intermediary",
+          "target": "à cet intermédiaire",
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false

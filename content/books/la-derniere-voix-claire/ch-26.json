@@ -2,7 +2,7 @@
   "id": "ch-26",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Ce qu'il pouvait rendre",
     "english": "What He Could Give Back"
@@ -895,8 +895,8 @@
       ]
     },
     {
-      "target": "« Si un élément nouveau change mon analyse, je devrai l'expliquer. Je ne pourrai pas faire disparaître ce que j'ai écrit ici. »",
-      "english": "“If something new changes my analysis, I'll have to explain it. I won't be able to make disappear what I've written here.”",
+      "target": "« Si un élément nouveau change mon analyse, je devrai l'expliquer. Je ne pourrai pas effacer ce que j'ai écrit ici. »",
+      "english": "“If something new changes my analysis, I'll have to explain it. I won't be able to erase what I've written here.”",
       "alignment": [
         {
           "english": "If something new",
@@ -920,15 +920,8 @@
           "is_idiom": false
         },
         {
-          "english": "I won't be able to",
-          "target": "Je ne pourrai pas",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "make disappear",
-          "target": "faire disparaître",
+          "english": "I won't be able to erase",
+          "target": "Je ne pourrai pas effacer",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -1915,8 +1908,8 @@
       ]
     },
     {
-      "target": "« J'avais voulu les emporter quand je suis parti. Elle m'a demandé si je voulais les chaussures ou lui laisser des pots vides. »",
-      "english": "“I'd wanted to take them when I left. She asked me whether I wanted the shoes or to leave her empty pots.”",
+      "target": "« J'avais voulu les emporter quand je suis parti. Elle m'a demandé ce qu'elle était censée faire des plantes. »",
+      "english": "“I'd wanted to take them when I left. She asked me what she was supposed to do with the plants.”",
       "alignment": [
         {
           "english": "I'd wanted",
@@ -1947,29 +1940,15 @@
           "is_idiom": false
         },
         {
-          "english": "whether I wanted",
-          "target": "si je voulais",
+          "english": "what she was supposed to do",
+          "target": "ce qu'elle était censée faire",
           "category": "function_word",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "the shoes",
-          "target": "les chaussures",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "or to leave her",
-          "target": "ou lui laisser",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "empty pots",
-          "target": "des pots vides",
+          "english": "with the plants",
+          "target": "des plantes",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false

@@ -2,7 +2,7 @@
   "id": "ch-8",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Avant le procès",
     "english": "Before the Trial"
@@ -363,7 +363,7 @@
     },
     {
       "target": "Ils regarderaient le dossier bleu que Ruth avait proposé à son fils de lire.",
-      "english": "They would look at the blue folder that Ruth had offered her son to read.",
+      "english": "They would look at the blue folder that Ruth had invited her son to read.",
       "alignment": [
         {
           "english": "They would look at",
@@ -387,22 +387,8 @@
           "is_idiom": false
         },
         {
-          "english": "had offered",
-          "target": "avait proposé",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "her son",
-          "target": "à son fils",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "to read",
-          "target": "de lire",
+          "english": "had invited her son to read",
+          "target": "avait proposé à son fils de lire",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -2650,7 +2636,7 @@
     },
     {
       "target": "Daniel a expliqué qu'il faudrait retrouver les comptes rendus de l'époque.",
-      "english": "Daniel explained that they would need to find the accounts from the time.",
+      "english": "Daniel explained that they would need to find the statements from the time.",
       "alignment": [
         {
           "english": "Daniel",
@@ -2674,7 +2660,7 @@
           "is_idiom": false
         },
         {
-          "english": "to find the accounts",
+          "english": "to find the statements",
           "target": "retrouver les comptes rendus",
           "category": "verb",
           "frequency_band": "common",

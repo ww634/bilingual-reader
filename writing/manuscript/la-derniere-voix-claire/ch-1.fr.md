@@ -68,13 +68,13 @@ Mme Holt a fermé les yeux.
 
 Il a laissé la bande continuer. Cette fois, elle ne lui a pas demandé de revenir en arrière.
 
-Il lui a préparé la cassette, une clé USB et une feuille expliquant les fichiers. La version traitée et le transfert sans traitement avaient des noms différents. Il avait facturé deux heures. Son carnet en comptait presque quatre.
+Il lui a remis la cassette, une clé USB et une feuille expliquant les fichiers. La version traitée et le transfert sans traitement avaient des noms différents. Il avait facturé deux heures. Son carnet en comptait presque quatre.
 
 « Vous avez un travail merveilleux », a dit Mme Holt.
 
 « Surtout quand les gens écrivent la bonne date sur les boîtes. »
 
-Elle ne savait pas s'il plaisantait. Lui non plus, tout à fait.
+Elle ne savait pas s'il plaisantait. Lui non plus n'en était pas tout à fait sûr.
 
 Près de la porte, Mme Holt s'est arrêtée.
 

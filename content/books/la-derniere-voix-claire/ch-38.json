@@ -2,7 +2,7 @@
   "id": "ch-38",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Ce que les autres ont gardé",
     "english": "What Others Kept"
@@ -180,74 +180,6 @@
           "english": "against the cupboard",
           "target": "contre le placard",
           "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "La veille, Ben avait demandé un moment seul pour parler à Elsie.",
-      "english": "The previous evening, Ben had asked for a moment alone to speak to Elsie.",
-      "alignment": [
-        {
-          "english": "The previous evening",
-          "target": "La veille",
-          "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "Ben",
-          "target": "Ben",
-          "category": "proper_noun",
-          "frequency_band": null,
-          "is_idiom": false
-        },
-        {
-          "english": "had asked for",
-          "target": "avait demandé",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "a moment alone",
-          "target": "un moment seul",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "to speak to Elsie",
-          "target": "pour parler à Elsie",
-          "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "Daniel avait fermé la porte du salon.",
-      "english": "Daniel had closed the sitting-room door.",
-      "alignment": [
-        {
-          "english": "Daniel",
-          "target": "Daniel",
-          "category": "proper_noun",
-          "frequency_band": null,
-          "is_idiom": false
-        },
-        {
-          "english": "had closed",
-          "target": "avait fermé",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "the sitting-room door",
-          "target": "la porte du salon",
-          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }
@@ -1121,7 +1053,7 @@
       ]
     },
     {
-      "target": "« Les pièces qu'elle avait autorisé à transmettre ont été reçues », a dit Malik. « Sa déclaration signée est conservée. »",
+      "target": "« Les pièces dont elle avait autorisé la transmission ont été reçues », a dit Malik. « Sa déclaration signée est conservée. »",
       "english": "“The documents she had authorised for release have been received,” Malik said. “Her signed statement is preserved.”",
       "alignment": [
         {
@@ -1132,16 +1064,9 @@
           "is_idiom": false
         },
         {
-          "english": "she had authorised",
-          "target": "qu'elle avait autorisé",
+          "english": "she had authorised for release",
+          "target": "dont elle avait autorisé la transmission",
           "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "for release",
-          "target": "à transmettre",
-          "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
         },

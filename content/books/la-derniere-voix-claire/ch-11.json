@@ -2,7 +2,7 @@
   "id": "ch-11",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Une visite plus tôt",
     "english": "An Earlier Visit"
@@ -2543,7 +2543,7 @@
     },
     {
       "target": "« Votre première transcription », a demandé Helen Ward, « vous l'avez encore ? »",
-      "english": "“Your first transcript,” Helen Ward asked, “do you still have it?”",
+      "english": "“Your first transcript,” Helen Ward asked, “have you still got it?”",
       "alignment": [
         {
           "english": "Your first transcript",
@@ -2560,7 +2560,7 @@
           "is_idiom": false
         },
         {
-          "english": "do you still have it",
+          "english": "have you still got it",
           "target": "vous l'avez encore",
           "category": "verb",
           "frequency_band": "common",
@@ -2611,7 +2611,7 @@
     },
     {
       "target": "« Vérifiez. Gardez aussi ce qui ne correspond pas à votre souvenir », a répondu Helen.",
-      "english": "“Check. Keep anything that does not match your recollection too,” Helen replied.",
+      "english": "“Check. Also keep anything that does not match your recollection,” Helen replied.",
       "alignment": [
         {
           "english": "Check",
@@ -2621,7 +2621,7 @@
           "is_idiom": false
         },
         {
-          "english": "Keep",
+          "english": "Also keep",
           "target": "Gardez aussi",
           "category": "verb",
           "frequency_band": "common",
@@ -2630,7 +2630,7 @@
         {
           "english": "anything that does not match",
           "target": "ce qui ne correspond pas",
-          "category": "noun",
+          "category": "function_word",
           "frequency_band": "common",
           "is_idiom": false
         },
@@ -3458,8 +3458,8 @@
       ]
     },
     {
-      "target": "Qu'est-ce que vous êtes prêt à mettre par écrit, maintenant ? » a demandé Helen.",
-      "english": "What are you prepared to put in writing, now?’” Helen asked.",
+      "target": "Qu'est-ce que vous êtes prêt à mettre par écrit, maintenant ? » a lu Helen.",
+      "english": "What are you prepared to put in writing now?’” Helen read.",
       "alignment": [
         {
           "english": "What are you prepared",
@@ -3483,8 +3483,8 @@
           "is_idiom": false
         },
         {
-          "english": "Helen asked",
-          "target": "a demandé Helen",
+          "english": "Helen read",
+          "target": "a lu Helen",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false

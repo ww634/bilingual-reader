@@ -2,7 +2,7 @@
   "id": "ch-17",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Un soir ordinaire",
     "english": "An Ordinary Evening"
@@ -64,7 +64,7 @@
     },
     {
       "target": "Daniel travaillait depuis huit heures.",
-      "english": "Daniel was working and had been since eight.",
+      "english": "Daniel had been working since eight.",
       "alignment": [
         {
           "english": "Daniel",
@@ -74,14 +74,14 @@
           "is_idiom": false
         },
         {
-          "english": "was working",
+          "english": "had been working",
           "target": "travaillait",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "and had been since eight",
+          "english": "since eight",
           "target": "depuis huit heures",
           "category": "adverb",
           "frequency_band": "very_common",

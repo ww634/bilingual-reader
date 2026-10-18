@@ -2,7 +2,7 @@
   "id": "ch-5",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "La mauvaise gare",
     "english": "The Wrong Station"
@@ -2009,8 +2009,8 @@
       ]
     },
     {
-      "target": "« Vous savez, “ancienne”, c'est surtout ce qu'on l'appelle. »",
-      "english": "“You know, ‘old’ is mostly what we call it.”",
+      "target": "« Vous savez, “ancienne”, c'est surtout une façon de parler. »",
+      "english": "“You know, ‘old’ is mostly just a name.”",
       "alignment": [
         {
           "english": "You know",
@@ -2027,18 +2027,11 @@
           "is_idiom": false
         },
         {
-          "english": "is",
-          "target": "c'est",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "mostly what we call it",
-          "target": "surtout ce qu'on l'appelle",
-          "category": "noun",
+          "english": "is mostly just a name",
+          "target": "c'est surtout une façon de parler",
+          "category": "idiom",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": true
         }
       ]
     },

@@ -2,7 +2,7 @@
   "id": "ch-34",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "L'homme des deux histoires",
     "english": "The Man in Both Stories"
@@ -1890,12 +1890,19 @@
       ]
     },
     {
-      "target": "Il cherchait l'adresse d'une cliente qu'il devait prévenir quand on a frappé.",
-      "english": "He was looking for the address of a client he needed to inform when there was a knock.",
+      "target": "Un peu avant midi, il cherchait l'adresse d'une cliente qu'il devait prévenir quand on a frappé.",
+      "english": "Shortly before noon, he was looking for the address of a client he needed to inform when there was a knock.",
       "alignment": [
         {
-          "english": "He was looking for",
-          "target": "Il cherchait",
+          "english": "Shortly before noon",
+          "target": "Un peu avant midi",
+          "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "he was looking for",
+          "target": "il cherchait",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false

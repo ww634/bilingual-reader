@@ -40,7 +40,7 @@ Shah lui a demandé si Graham avait récemment changé ses habitudes. Daniel a p
 
 « Depuis la mort de ma femme. »
 
-Le collègue de Shah a levé les yeux. Daniel a donné l'année pour éviter qu'on lui présente des condoléances pour la deuxième fois dans la même conversation.
+Le collègue de Shah a levé les yeux. Daniel a donné l'année pour éviter des condoléances en retard de quatre ans.
 
 Graham passait parfois sans prévenir. Il apportait quelque chose qui avait besoin d'être réparé. Une enceinte, une radio, un jour une lampe de bureau. Daniel lui avait expliqué qu'une lampe n'était pas un appareil audio. Graham avait fait claquer l'interrupteur près de son oreille. Il avait trouvé sa démonstration suffisante.
 

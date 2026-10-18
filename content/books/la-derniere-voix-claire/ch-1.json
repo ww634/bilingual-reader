@@ -2,7 +2,7 @@
   "id": "ch-1",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "Ce qui reste",
     "english": "What Remains"
@@ -146,7 +146,7 @@
     },
     {
       "target": "Daniel a ramené le curseur au début du passage.",
-      "english": "Daniel moved back the cursor to the beginning of the passage.",
+      "english": "Daniel moved the cursor back to the beginning of the passage.",
       "alignment": [
         {
           "english": "Daniel",
@@ -156,17 +156,10 @@
           "is_idiom": false
         },
         {
-          "english": "moved back",
-          "target": "a ramené",
+          "english": "moved the cursor back",
+          "target": "a ramené le curseur",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "the cursor",
-          "target": "le curseur",
-          "category": "noun",
-          "frequency_band": "uncommon",
           "is_idiom": false
         },
         {
@@ -1259,7 +1252,7 @@
     },
     {
       "target": "« Et il sait ce qui est une voix ? » a demandé Mme Holt.",
-      "english": "“And it knows what is a voice?” Mrs Holt asked.",
+      "english": "“And it can tell what's a voice?” Mrs Holt asked.",
       "alignment": [
         {
           "english": "And",
@@ -1269,17 +1262,10 @@
           "is_idiom": false
         },
         {
-          "english": "it knows",
-          "target": "il sait",
+          "english": "it can tell what's a voice",
+          "target": "il sait ce qui est une voix",
           "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "what is a voice",
-          "target": "ce qui est une voix",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false
         },
         {
@@ -1994,24 +1980,10 @@
           "is_idiom": false
         },
         {
-          "english": "setting",
-          "target": "un réglage",
+          "english": "a setting that was deliberately too strong",
+          "target": "un réglage volontairement trop fort",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "deliberately",
-          "target": "volontairement",
-          "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "too strong",
-          "target": "trop fort",
-          "category": "adjective",
-          "frequency_band": "very_common",
           "is_idiom": false
         }
       ]
@@ -2116,38 +2088,10 @@
           "is_idiom": false
         },
         {
-          "english": "voice",
-          "target": "une voix",
+          "english": "a thin and strangely metallic voice",
+          "target": "une voix mince et étrangement métallique",
           "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "thin",
-          "target": "mince",
-          "category": "adjective",
           "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "and",
-          "target": "et",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "strangely",
-          "target": "étrangement",
-          "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "metallic",
-          "target": "métallique",
-          "category": "adjective",
-          "frequency_band": "uncommon",
           "is_idiom": false
         }
       ]
@@ -2723,7 +2667,7 @@
     },
     {
       "target": "« Même si vous y passez un peu plus de temps ? »",
-      "english": "“Even if you spend on it a little more time?”",
+      "english": "“Even if you spend a little more time on it?”",
       "alignment": [
         {
           "english": "Even",
@@ -2740,14 +2684,14 @@
           "is_idiom": false
         },
         {
-          "english": "you spend on it",
+          "english": "you spend",
           "target": "vous y passez",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "a little more time",
+          "english": "a little more time on it",
           "target": "un peu plus de temps",
           "category": "noun",
           "frequency_band": "very_common",
@@ -2757,7 +2701,7 @@
     },
     {
       "target": "« Je pourrais y passer tout le week-end.",
-      "english": "“I could spend on it the whole weekend.",
+      "english": "“I could spend the whole weekend on it.",
       "alignment": [
         {
           "english": "I could",
@@ -2767,14 +2711,14 @@
           "is_idiom": false
         },
         {
-          "english": "spend on it",
+          "english": "spend",
           "target": "y passer",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "the whole weekend",
+          "english": "the whole weekend on it",
           "target": "tout le week-end",
           "category": "noun",
           "frequency_band": "very_common",
@@ -3121,12 +3065,12 @@
       ]
     },
     {
-      "target": "Il lui a préparé la cassette, une clé USB et une feuille expliquant les fichiers.",
-      "english": "He prepared for her the cassette, a USB stick and a sheet explaining the files.",
+      "target": "Il lui a remis la cassette, une clé USB et une feuille expliquant les fichiers.",
+      "english": "He handed her the cassette, a USB stick and a sheet explaining the files.",
       "alignment": [
         {
-          "english": "He prepared for her",
-          "target": "Il lui a préparé",
+          "english": "He handed her",
+          "target": "Il lui a remis",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -3366,21 +3310,14 @@
       ]
     },
     {
-      "target": "Lui non plus, tout à fait.",
-      "english": "Neither did he, entirely.",
+      "target": "Lui non plus n'en était pas tout à fait sûr.",
+      "english": "He wasn't entirely sure either.",
       "alignment": [
         {
-          "english": "Neither did he",
-          "target": "Lui non plus",
-          "category": "adverb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "entirely",
-          "target": "tout à fait",
-          "category": "adverb",
-          "frequency_band": "very_common",
+          "english": "He wasn't entirely sure either",
+          "target": "Lui non plus n'en était pas tout à fait sûr",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false
         }
       ]
@@ -3610,24 +3547,17 @@
     },
     {
       "target": "Elle a rangé la cassette dans une poche séparée,",
-      "english": "She put away the cassette in a separate pocket,",
+      "english": "She tucked the cassette into a separate pocket,",
       "alignment": [
         {
-          "english": "She put away",
-          "target": "Elle a rangé",
+          "english": "She tucked the cassette",
+          "target": "Elle a rangé la cassette",
           "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "the cassette",
-          "target": "la cassette",
-          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
         {
-          "english": "in a separate pocket",
+          "english": "into a separate pocket",
           "target": "dans une poche séparée",
           "category": "noun",
           "frequency_band": "very_common",
@@ -4510,7 +4440,7 @@
     },
     {
       "target": "Il lui restait vingt minutes.",
-      "english": "He had twenty minutes left.",
+      "english": "He had twenty minutes.",
       "alignment": [
         {
           "english": "He had",
@@ -5245,17 +5175,10 @@
       "english": "“The Anna Vale case. You worked on the recording.",
       "alignment": [
         {
-          "english": "case",
-          "target": "L'affaire",
+          "english": "The Anna Vale case",
+          "target": "L'affaire Anna Vale",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "Anna Vale",
-          "target": "Anna Vale",
-          "category": "proper_noun",
-          "frequency_band": null,
           "is_idiom": false
         },
         {

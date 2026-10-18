@@ -4,6 +4,8 @@
 
 The first-book narrative is complete: **40 chapters plus an epilogue**. Read `the-last-clear-voice-completion-notes.md` after the publication continuity files for the final outcomes, message wording, access limits and open sequel questions.
 
+The latest whole-manuscript assessment is [the complete bilingual review](the-last-clear-voice-full-book-review.md), covering all 41 chapter files, corrections and larger development opportunities. Read it before further revisions.
+
 The user selected and approved the core premise: older, grumpy, widowed audio specialist Daniel Mercer follows clues in a missing witness's voicemail to a phone box, then meets her adult son. Their difficult, funny, affectionate partnership develops alongside the investigation of Daniel's old case.
 
 Read in this order before writing:

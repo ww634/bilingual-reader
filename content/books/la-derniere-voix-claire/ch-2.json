@@ -2,7 +2,7 @@
   "id": "ch-2",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "Le nom dans le message",
     "english": "The Name in the Message"
@@ -1694,11 +1694,11 @@
       ]
     },
     {
-      "target": "L'objet du message était « Ton avis, vieux ronchon ».",
-      "english": "The subject of the message was “Your opinion, old misery”.",
+      "target": "L'objet du message était « Ton avis vieux ronchon ».",
+      "english": "The subject line was “Your opinion you old misery”.",
       "alignment": [
         {
-          "english": "The subject of the message",
+          "english": "The subject line",
           "target": "L'objet du message",
           "category": "noun",
           "frequency_band": "very_common",
@@ -1712,8 +1712,8 @@
           "is_idiom": false
         },
         {
-          "english": "“Your opinion, old misery”",
-          "target": "« Ton avis, vieux ronchon »",
+          "english": "“Your opinion you old misery”",
+          "target": "« Ton avis vieux ronchon »",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
@@ -2254,17 +2254,10 @@
           "is_idiom": false
         },
         {
-          "english": "theory",
-          "target": "une théorie",
+          "english": "an interesting theory",
+          "target": "une théorie intéressante",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "interesting",
-          "target": "intéressante",
-          "category": "adjective",
-          "frequency_band": "very_common",
           "is_idiom": false
         },
         {
@@ -2581,8 +2574,8 @@
       ]
     },
     {
-      "target": "Après vingt-cinq ans, les souvenirs ne se présentaient pas",
-      "english": "After twenty-five years, memories did not appear",
+      "target": "Après vingt-cinq ans, les souvenirs ne se présentaient pas toujours dans le même ordre.",
+      "english": "After twenty-five years, memories did not always come back in the same order.",
       "alignment": [
         {
           "english": "After twenty-five years",
@@ -2599,23 +2592,10 @@
           "is_idiom": false
         },
         {
-          "english": "did not appear",
-          "target": "ne se présentaient pas",
+          "english": "did not always come back",
+          "target": "ne se présentaient pas toujours",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
-        }
-      ]
-    },
-    {
-      "target": "toujours dans le même ordre.",
-      "english": "always in the same order.",
-      "alignment": [
-        {
-          "english": "always",
-          "target": "toujours",
-          "category": "adverb",
-          "frequency_band": "very_common",
           "is_idiom": false
         },
         {

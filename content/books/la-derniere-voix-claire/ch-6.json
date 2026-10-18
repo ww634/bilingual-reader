@@ -2,7 +2,7 @@
   "id": "ch-6",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Quelqu'un d'autre la cherche",
     "english": "Someone Else Looking"
@@ -878,12 +878,12 @@
       ]
     },
     {
-      "target": "« M. Owen, hier, vous m'avez dit que vous aviez une livraison vers midi.",
-      "english": "“Mr Owen, yesterday, you told me that you had a delivery around midday.",
+      "target": "« Owen, hier, vous m'avez dit que vous aviez une livraison vers midi.",
+      "english": "“Owen, yesterday, you told me that you had a delivery around midday.",
       "alignment": [
         {
-          "english": "Mr Owen",
-          "target": "M. Owen",
+          "english": "Owen",
+          "target": "Owen",
           "category": "proper_noun",
           "frequency_band": null,
           "is_idiom": false
@@ -1373,12 +1373,12 @@
       ]
     },
     {
-      "target": "M. Owen a regardé Ben.",
-      "english": "Mr Owen looked at Ben.",
+      "target": "Owen a regardé Ben.",
+      "english": "Owen looked at Ben.",
       "alignment": [
         {
-          "english": "Mr Owen",
-          "target": "M. Owen",
+          "english": "Owen",
+          "target": "Owen",
           "category": "proper_noun",
           "frequency_band": null,
           "is_idiom": false
@@ -1501,12 +1501,12 @@
       ]
     },
     {
-      "target": "M. Owen a sorti une chemise de dessous le comptoir.",
-      "english": "Mr Owen took out a folder from beneath the counter.",
+      "target": "Owen a sorti une chemise de dessous le comptoir.",
+      "english": "Owen took out a folder from beneath the counter.",
       "alignment": [
         {
-          "english": "Mr Owen",
-          "target": "M. Owen",
+          "english": "Owen",
+          "target": "Owen",
           "category": "proper_noun",
           "frequency_band": null,
           "is_idiom": false
@@ -1630,12 +1630,12 @@
       ]
     },
     {
-      "target": "M. Owen a refermé la chemise, puis l'a rouverte.",
-      "english": "Mr Owen closed the folder, then opened it again.",
+      "target": "Owen a refermé la chemise, puis l'a rouverte.",
+      "english": "Owen closed the folder, then opened it again.",
       "alignment": [
         {
-          "english": "Mr Owen",
-          "target": "M. Owen",
+          "english": "Owen",
+          "target": "Owen",
           "category": "proper_noun",
           "frequency_band": null,
           "is_idiom": false
@@ -2740,18 +2740,11 @@
     },
     {
       "target": "« Vous, vous faites quoi ? »",
-      "english": "“You, what do you do?”",
+      "english": "“And what do you do?”",
       "alignment": [
         {
-          "english": "You",
-          "target": "Vous",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false
-        },
-        {
-          "english": "what do you do",
-          "target": "vous faites quoi",
+          "english": "And what do you do",
+          "target": "Vous, vous faites quoi",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -3611,18 +3604,11 @@
     },
     {
       "target": "« Ma mère est au courant ? »",
-      "english": "“My mother knows?”",
+      "english": "“Does my mother know?”",
       "alignment": [
         {
-          "english": "My mother",
-          "target": "Ma mère",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "knows",
-          "target": "est au courant",
+          "english": "Does my mother know",
+          "target": "Ma mère est au courant",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
@@ -3766,8 +3752,8 @@
       ]
     },
     {
-      "target": "Ben a décrit ce que M. Owen venait de dire.",
-      "english": "Ben described what Mr Owen had just said.",
+      "target": "Ben a décrit ce qu'Owen venait de dire.",
+      "english": "Ben described what Owen had just said.",
       "alignment": [
         {
           "english": "Ben",
@@ -3784,8 +3770,8 @@
           "is_idiom": false
         },
         {
-          "english": "what Mr Owen",
-          "target": "ce que M. Owen",
+          "english": "what Owen",
+          "target": "ce qu'Owen",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false

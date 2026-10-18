@@ -2,7 +2,7 @@
   "id": "ch-10",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "La pièce au-dessus de la cour",
     "english": "The Room Above the Yard"
@@ -119,10 +119,10 @@
     },
     {
       "target": "« C'est souvent le cas ? » a demandé Ben.",
-      "english": "“That often happens?” Ben asked.",
+      "english": "“Does that happen often?” Ben asked.",
       "alignment": [
         {
-          "english": "That often happens",
+          "english": "Does that happen often",
           "target": "C'est souvent le cas",
           "category": "verb",
           "frequency_band": "common",
@@ -813,16 +813,9 @@
           "is_idiom": false
         },
         {
-          "english": "followed",
-          "target": "a suivi des yeux",
+          "english": "followed a join with his eyes",
+          "target": "a suivi des yeux une ligne de raccord",
           "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "a join",
-          "target": "une ligne de raccord",
-          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         },
@@ -2941,7 +2934,7 @@
     },
     {
       "target": "Martin a vendu le matériel. Moi, j'ai gardé le local », a dit Jo.",
-      "english": "Martin sold the equipment. As for me, I kept the premises,” Jo said.",
+      "english": "Martin sold the equipment. I kept the premises,” Jo said.",
       "alignment": [
         {
           "english": "Martin",
@@ -2965,14 +2958,14 @@
           "is_idiom": false
         },
         {
-          "english": "As for me",
+          "english": "I",
           "target": "Moi",
           "category": "function_word",
           "frequency_band": "very_common",
           "is_idiom": false
         },
         {
-          "english": "I kept",
+          "english": "kept",
           "target": "j'ai gardé",
           "category": "verb",
           "frequency_band": "common",

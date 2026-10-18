@@ -2,7 +2,7 @@
   "id": "ch-36",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "La porte ouverte",
     "english": "The Open Door"
@@ -1306,8 +1306,8 @@
       ]
     },
     {
-      "target": "Ben a baissé les yeux vers sa main.",
-      "english": "Ben looked down at his hand.",
+      "target": "Ben a baissé les yeux.",
+      "english": "Ben lowered his eyes.",
       "alignment": [
         {
           "english": "Ben",
@@ -1317,16 +1317,9 @@
           "is_idiom": false
         },
         {
-          "english": "looked down",
+          "english": "lowered his eyes",
           "target": "a baissé les yeux",
           "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "at his hand",
-          "target": "vers sa main",
-          "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false
         }

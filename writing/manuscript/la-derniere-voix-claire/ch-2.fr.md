@@ -22,7 +22,7 @@ L'article parlait d'un mari violent, d'une dispute et d'un enregistrement décis
 
 Il s'est surpris à formuler cette réponse comme si quelqu'un l'avait interrogé. Personne ne l'avait interrogé. Une femme avait demandé à lui parler.
 
-Il a quitté l'article et a cherché dans ses courriels. Graham lui avait envoyé quelque chose en septembre. L'objet du message était « Ton avis, vieux ronchon ». Daniel avait répondu qu'il fallait une virgule après « avis ». Graham avait ajouté trois virgules au message suivant.
+Il a quitté l'article et a cherché dans ses courriels. Graham lui avait envoyé quelque chose en septembre. L'objet du message était « Ton avis vieux ronchon ». Daniel avait répondu qu'il fallait une virgule après « avis ». Graham avait ajouté trois virgules au message suivant.
 
 La pièce jointe contenait quelques pages de souvenirs professionnels. Un éditeur local s'intéressait aux affaires sur lesquelles Graham avait travaillé. Son ami avait commencé par les histoires qui le faisaient rire. Un voleur ayant oublié son vélo. Une dame qui refusait d'ouvrir à la police avant la fin de son émission. L'affaire Vale n'apparaissait que dans le sommaire.
 

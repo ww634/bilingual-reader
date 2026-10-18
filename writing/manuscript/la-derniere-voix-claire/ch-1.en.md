@@ -2,7 +2,7 @@
 
 The woman wanted one word. Daniel Mercer had recovered twenty-three minutes of her father, but she wanted that particular word.
 
-On the screen, two blue lines crossed a grey background. Daniel moved back the cursor to the beginning of the passage. He did not start playback immediately. Since eight o'clock, he had been listening to this same family meal. He now knew the sound of the plates, the dog that barked in the garden, and the man who always asked where the mustard was.
+On the screen, two blue lines crossed a grey background. Daniel moved the cursor back to the beginning of the passage. He did not start playback immediately. Since eight o'clock, he had been listening to this same family meal. He now knew the sound of the plates, the dog that barked in the garden, and the man who always asked where the mustard was.
 
 “You could remove the hiss,” said Mrs Holt.
 
@@ -26,7 +26,7 @@ Daniel selected a short interval without speech. Even there, there was a rustle,
 
 “I'm giving the software an example of the noise. It then tries to reduce its presence.”
 
-“And it knows what is a voice?” Mrs Holt asked.
+“And it can tell what's a voice?” Mrs Holt asked.
 
 “Not the way you and I do.”
 
@@ -56,9 +56,9 @@ He would have preferred not to know that. Now, on the next playback, he would lo
 
 “I cannot confirm that for you,” Daniel said.
 
-“Even if you spend on it a little more time?”
+“Even if you spend a little more time on it?”
 
-“I could spend on it the whole weekend. That would not make the answer more honest.”
+“I could spend the whole weekend on it. That would not make the answer more honest.”
 
 He had spoken too sharply. At sixty-seven, his courtesy still arrived on the next train. He restarted the recording a little earlier. A woman was telling the dog to get down. The man replied that he was not on the table. Someone burst out laughing, so close to the microphone that the sound crackled.
 
@@ -68,13 +68,13 @@ Mrs Holt closed her eyes.
 
 He let the tape run on. This time, she did not ask him to go back.
 
-He prepared for her the cassette, a USB stick and a sheet explaining the files. The processed version and the unprocessed transfer had different names. He had charged for two hours. His notebook recorded almost four.
+He handed her the cassette, a USB stick and a sheet explaining the files. The processed version and the unprocessed transfer had different names. He had charged for two hours. His notebook recorded almost four.
 
 “You have a wonderful job,” Mrs Holt said.
 
 “Especially when people write the right date on the cases.”
 
-She did not know whether he was joking. Neither did he, entirely.
+She did not know whether he was joking. He wasn't entirely sure either.
 
 Near the door, Mrs Holt stopped.
 
@@ -92,7 +92,7 @@ She turned over the little case in her hand.
 
 “You don't have to listen to it to keep it.”
 
-She put away the cassette in a separate pocket, where her keys would not be likely to scratch it. He could have told her that the casing would withstand a few scratches. He said nothing of the sort. He showed her instead the step she needed to avoid in the courtyard.
+She tucked the cassette into a separate pocket, where her keys would not be likely to scratch it. He could have told her that the casing would withstand a few scratches. He said nothing of the sort. He showed her instead the step she needed to avoid in the courtyard.
 
 The workshop occupied the old garage, behind a small brick house. A door opened onto the courtyard. The other led to a covered passage, then to the kitchen. This second door had been scraping against the floor since the summer. Daniel lifted it by the handle to get through.
 
@@ -100,7 +100,7 @@ In the kitchen, he filled the kettle to the first mark. Marianne always used to 
 
 He drank his tea standing up, looking at a screw lying beside the sink. It came from the second chair in the workshop. He had removed it three weeks earlier to buy another one. Mrs Holt had had to sit on the stool. She had said nothing, which made it a little more embarrassing.
 
-He slipped the screw into his pocket. The hardware shop closed at half past twelve. He had twenty minutes left.
+He slipped the screw into his pocket. The hardware shop closed at half past twelve. He had twenty minutes.
 
 Outside, the rain had stopped, but the trees continued to drip. Calderwick had that smell of wet leaves and of hot fat that announced lunchtime. On the corner, a delivery driver was blocking the pavement with three crates of milk. Daniel walked around the crates. He had promised himself not to become a man who complained about crates of milk. He still had a few principles.
 

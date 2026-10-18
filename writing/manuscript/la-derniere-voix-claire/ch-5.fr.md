@@ -42,7 +42,7 @@ Les cars qui s'arrêtaient devant la gare partaient sans annonce extérieure, a-
 
 « L'ancienne gare routière est encore ouverte ? » a demandé Daniel.
 
-« Vous savez, “ancienne”, c'est surtout ce qu'on l'appelle. »
+« Vous savez, “ancienne”, c'est surtout une façon de parler. »
 
 Elle a retourné un plan et lui a montré le trajet. Douze minutes en descendant vers le canal, puis à droite, avant le pont. Daniel l'a remerciée. Il a emporté le plan. Cette fois, personne n'avait entouré la réponse à l'avance.
 

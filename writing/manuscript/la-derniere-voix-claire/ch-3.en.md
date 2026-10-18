@@ -40,7 +40,7 @@ Shah asked him whether Graham had recently changed his habits. Daniel thought of
 
 “Since my wife died.”
 
-Shah's colleague looked up. Daniel gave the year to avoid being offered condolences for the second time in the same conversation.
+Shah's colleague looked up. Daniel gave the year to forestall condolences four years late.
 
 Graham sometimes came round without warning. He brought something that needed repairing. A speaker, a radio, once a desk lamp. Daniel had explained to him that a lamp was not an audio device. Graham had clicked the switch beside his ear. He had found his demonstration sufficient.
 

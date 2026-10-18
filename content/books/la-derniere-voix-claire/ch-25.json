@@ -2,7 +2,7 @@
   "id": "ch-25",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "La visite oubliée",
     "english": "The Forgotten Visit"
@@ -537,7 +537,7 @@
     },
     {
       "target": "Daniel a transmis séparément ses propres notes.",
-      "english": "Daniel sent separately his own notes.",
+      "english": "Daniel sent his own notes separately.",
       "alignment": [
         {
           "english": "Daniel",
@@ -547,16 +547,9 @@
           "is_idiom": false
         },
         {
-          "english": "sent separately",
-          "target": "a transmis séparément",
+          "english": "sent his own notes separately",
+          "target": "a transmis séparément ses propres notes",
           "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "his own notes",
-          "target": "ses propres notes",
-          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }

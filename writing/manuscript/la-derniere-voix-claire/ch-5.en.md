@@ -42,7 +42,7 @@ The coaches that stopped outside the station left without an outdoor announcemen
 
 “The old bus station is still open?” Daniel asked.
 
-“You know, ‘old’ is mostly what we call it.”
+“You know, ‘old’ is mostly just a name.”
 
 She turned over a map and showed him the route. Twelve minutes walking down towards the canal, then right, before the bridge. Daniel thanked her. He took the map. This time, nobody had circled the answer in advance.
 

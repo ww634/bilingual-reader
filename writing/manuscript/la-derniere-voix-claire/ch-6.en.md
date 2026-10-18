@@ -50,7 +50,7 @@ There was no hostility in his answer. It was a unit of measurement.
 
 Ben put away his phone.
 
-“Mr Owen, yesterday, you told me that you had a delivery around midday. Were you in the stockroom the whole time?” Ben asked.
+“Owen, yesterday, you told me that you had a delivery around midday. Were you in the stockroom the whole time?” Ben asked.
 
 “No, actually. One crate was missing. I was waiting for him to find it,” Owen said.
 
@@ -68,15 +68,15 @@ Daniel wanted to ask whether she seemed afraid. He looked at the distance betwee
 
 “Not clearly,” Owen replied.
 
-Mr Owen looked at Ben.
+Owen looked at Ben.
 
 “I would like to tell you yes.”
 
 “I know,” Ben replied.
 
-Ben asked whether he still had the delivery note. Perhaps the time would make it possible to narrow down his recollection. Mr Owen took out a folder from beneath the counter. The receipt bore a signature, no time. Ben did not ask him to invent one. He noted down the supplier's name to pass it on to the police.
+Ben asked whether he still had the delivery note. Perhaps the time would make it possible to narrow down his recollection. Owen took out a folder from beneath the counter. The receipt bore a signature, no time. Ben did not ask him to invent one. He noted down the supplier's name to pass it on to the police.
 
-Mr Owen closed the folder, then opened it again.
+Owen closed the folder, then opened it again.
 
 “I do not want anyone writing that I recognised her,” Owen said.
 
@@ -122,7 +122,7 @@ He moved on to the next photograph. In it, Ruth was holding a cake knife and poi
 
 He unscrewed the bottle cap and drank half.
 
-“You, what do you do?”
+“And what do you do?”
 
 “I work on recordings.”
 
@@ -166,11 +166,11 @@ Ben stopped watching the buses.
 
 “Yes.”
 
-“My mother knows?”
+“Does my mother know?”
 
 “I do not know.”
 
-Ben looked at the phone box, then Shah's number on the card that Daniel was holding out to him. He took a breath before dialling. They called the number she had left and passed on both reference numbers. Ben described what Mr Owen had just said. Daniel made clear that the shopkeeper had already seen Ruth's photograph. The photograph had preceded the question; that needed to be in the account.
+Ben looked at the phone box, then Shah's number on the card that Daniel was holding out to him. He took a breath before dialling. They called the number she had left and passed on both reference numbers. Ben described what Owen had just said. Daniel made clear that the shopkeeper had already seen Ruth's photograph. The photograph had preceded the question; that needed to be in the account.
 
 After the call, Ben looked at the buses.
 

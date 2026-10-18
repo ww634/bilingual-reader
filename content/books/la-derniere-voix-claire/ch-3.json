@@ -2,7 +2,7 @@
   "id": "ch-3",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Une chute dans l'escalier",
     "english": "A Fall on the Stairs"
@@ -1585,8 +1585,8 @@
       ]
     },
     {
-      "target": "Daniel a donné l'année pour éviter qu'on lui présente des condoléances pour la deuxième fois dans la même conversation.",
-      "english": "Daniel gave the year to avoid being offered condolences for the second time in the same conversation.",
+      "target": "Daniel a donné l'année pour éviter des condoléances en retard de quatre ans.",
+      "english": "Daniel gave the year to forestall condolences four years late.",
       "alignment": [
         {
           "english": "Daniel",
@@ -1610,16 +1610,9 @@
           "is_idiom": false
         },
         {
-          "english": "to avoid",
+          "english": "to forestall",
           "target": "pour éviter",
           "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "being offered",
-          "target": "qu'on lui présente",
-          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false
         },
@@ -1631,15 +1624,8 @@
           "is_idiom": false
         },
         {
-          "english": "for the second time",
-          "target": "pour la deuxième fois",
-          "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false
-        },
-        {
-          "english": "in the same conversation",
-          "target": "dans la même conversation",
+          "english": "four years late",
+          "target": "en retard de quatre ans",
           "category": "adverb",
           "frequency_band": "common",
           "is_idiom": false

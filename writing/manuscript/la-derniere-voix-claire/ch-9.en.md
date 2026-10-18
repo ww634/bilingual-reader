@@ -144,7 +144,7 @@ Paul nodded and added a name to the card: Colin Voss.
 
 By the door, he asked Ben whether he still worked for the firm where he had trained.
 
-“I am self-employed and have been for six years,” Ben said.
+“I've been self-employed for six years,” Ben said.
 
 “That is good. Your mother must be proud.”
 

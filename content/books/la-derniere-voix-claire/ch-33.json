@@ -2,7 +2,7 @@
   "id": "ch-33",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Le rapport complet",
     "english": "The Full Report"
@@ -1033,6 +1033,40 @@
           "english": "without being replaced",
           "target": "sans être remplacés",
           "category": "adverb",
+          "frequency_band": "common",
+          "is_idiom": false
+        }
+      ]
+    },
+    {
+      "target": "A désignait l'enregistrement d'Anna ; B, la cassette de Ruth.",
+      "english": "A meant Anna's recording; B, Ruth's cassette.",
+      "alignment": [
+        {
+          "english": "A meant",
+          "target": "A désignait",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "Anna's recording",
+          "target": "l'enregistrement d'Anna",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false
+        },
+        {
+          "english": "B",
+          "target": "B",
+          "category": "proper_noun",
+          "frequency_band": null,
+          "is_idiom": false
+        },
+        {
+          "english": "Ruth's cassette",
+          "target": "la cassette de Ruth",
+          "category": "noun",
           "frequency_band": "common",
           "is_idiom": false
         }

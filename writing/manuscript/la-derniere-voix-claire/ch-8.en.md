@@ -6,7 +6,7 @@ Ruth lived on the first floor of a small house divided in two, ten minutes from 
 
 “She buys it every year,” Ben said. “She claims it is for me.”
 
-The officer reminded them of what had been agreed. They would look at the blue folder that Ruth had offered her son to read. The other papers would stay where they were. Useful documents would be photographed before any decision about keeping them. Ben pointed to the sitting-room table. He did not open the drawers as he passed.
+The officer reminded them of what had been agreed. They would look at the blue folder that Ruth had invited her son to read. The other papers would stay where they were. Useful documents would be photographed before any decision about keeping them. Ben pointed to the sitting-room table. He did not open the drawers as he passed.
 
 The folder was under a gardening magazine. Ruth had three pots on a balcony barely wider than the table. The magazine promised an orchard. It must be counting on the neighbours' cooperation. Daniel took the chair indicated to him and waited for the officer to finish her photographs.
 
@@ -70,7 +70,7 @@ The newspaper cutting reported that Ruth had recognised Michael leaving the scen
 
 “Probably.”
 
-The officer photographed both documents for Shah. Daniel explained that they would need to find the accounts from the time. Ruth's memory could have become clearer. She could also have used different words depending on the question. He heard himself lining up possibilities like chairs in front of a door. He did not add the third.
+The officer photographed both documents for Shah. Daniel explained that they would need to find the statements from the time. Ruth's memory could have become clearer. She could also have used different words depending on the question. He heard himself lining up possibilities like chairs in front of a door. He did not add the third.
 
 A paper sleeve slipped between two sheets. It was empty. On the front, Ruth had written “cassette — home”.
 

@@ -22,7 +22,7 @@ The article spoke of a violent husband, of an argument and of a decisive recordi
 
 He caught himself formulating that answer as though someone had questioned him. Nobody had questioned him. A woman had asked to speak to him.
 
-He closed the article and searched his emails. Graham had sent him something in September. The subject of the message was “Your opinion, old misery”. Daniel had replied that it was necessary to have a comma after “opinion”. Graham had added three commas to the next message.
+He closed the article and searched his emails. Graham had sent him something in September. The subject line was “Your opinion you old misery”. Daniel had replied that it was necessary to have a comma after “opinion”. Graham had added three commas to the next message.
 
 The attachment contained a few pages of professional recollections. A local publisher was interested in the cases on which Graham had worked. His friend had begun with the stories that made him laugh. A thief who had forgotten his bicycle. A lady who refused to open up to the police before the end of her programme. The Vale case appeared only in the contents.
 
@@ -38,7 +38,7 @@ It was like that that the book had entered the conversation. Daniel had asked hi
 
 “I'm not going to spring it on them. I'll let them read what concerns them,” Graham said.
 
-Daniel reread the contents. He might have his explanation. Ruth had received a chapter. Something in the account had upset her. After twenty-five years, memories did not appear always in the same order.
+Daniel reread the contents. He might have his explanation. Ruth had received a chapter. Something in the account had upset her. After twenty-five years, memories did not always come back in the same order.
 
 He went back to the answering machine. He listened to the last sentence again. I wasn't that certain. She had not said that he had been wrong. He clung to that distinction like a handhold on a dark staircase.
 
