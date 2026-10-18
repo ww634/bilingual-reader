@@ -11,7 +11,7 @@
 // draw that favours low-mastery and recently-wrong words, so it adapts. All
 // local; review audio + meaning lookups reuse the existing helpers.
 
-import { getSettings, putSettings, putVaultItem, getVaultItem, getAllVaultItems, deleteVaultItem } from "./db.js";
+import { getSettings, updateSettings, bumpActivity, putVaultItem, getVaultItem, getAllVaultItems, deleteVaultItem } from "./db.js";
 import { speakWord } from "./speech.js";
 import { getLearningLanguage, languageName } from "./languages.js";
 
@@ -52,7 +52,46 @@ function recordAttempt(item, correct) {
   a.push(!!correct);
   while (a.length > WINDOW) a.shift();
   item.attempts = a;
+  item.lastSeen = Date.now();
   return item;
+}
+
+// ── Due for review ──
+// A light spacing rule on top of the accuracy model: a word comes back after a
+// rest that grows with mastery, and sooner if the last answer was wrong.
+const HOUR = 3600 * 1000;
+const REST = { new: 12 * HOUR, learning: 20 * HOUR, mastered: 7 * 24 * HOUR };
+function isDue(item, now = Date.now()) {
+  const a = attemptsOf(item);
+  if (!a.length || !item.lastSeen) return true;          // never quizzed
+  const rest = a[a.length - 1] === false ? 4 * HOUR : REST[bucketOf(item)];
+  return now - item.lastSeen >= rest;
+}
+
+/** Counts for the home screen: { total, due, new, learning, mastered }. */
+export async function vaultStats(lang = getLearningLanguage()) {
+  const items = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
+  const out = { total: items.length, due: 0, new: 0, learning: 0, mastered: 0 };
+  const now = Date.now();
+  for (const it of items) { out[bucketOf(it)]++; if (isDue(it, now)) out.due++; }
+  return out;
+}
+
+/** Saved, not-yet-mastered words that appear in a chapter: [{ item, bucket }]. */
+export async function chapterWatchWords(chapter) {
+  const lang = chapter?.language || "zh";
+  const keys = new Set();
+  for (const p of chapter?.pairs || []) {
+    for (const c of p.alignment || []) {
+      const k = (c.hanzi || c.target || "").trim();
+      if (k) keys.add(k);
+    }
+  }
+  const items = (await getAllVaultItems())
+    .filter((it) => (it.lang || "zh") === lang && keys.has(it.id) && !isMastered(it));
+  return items
+    .map((item) => ({ item, bucket: bucketOf(item) }))
+    .sort((a, b) => masteryPct(b.item) - masteryPct(a.item));
 }
 
 // ── Mastered set for the reader's auto-hide ──
@@ -259,14 +298,46 @@ async function beginQuiz() {
 
   quiz = {
     mode, length, queue, total, answered: 0, correct: 0, pool, lastId: null,
+    distractors: all,
     answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix",
     script: lang === "zh" ? (s.reviewScript || "both") : "hanzi", lang, current: null,
   };
   closeQuizSetup();
+  showQuiz();
+}
+
+function showQuiz() {
   $("review-card").hidden = false;
   $("review-done").hidden = true;
   window.dispatchEvent(new CustomEvent("app:setview", { detail: "review" }));
   renderCard();
+}
+
+/**
+ * Quiz a specific set of words once each (e.g. a chapter's words, or today's
+ * due words), using the learner's saved answer/direction/script preferences.
+ */
+export async function startQuizWithItems(items, { title = "" } = {}) {
+  if (!items?.length) return;
+  const s = await getSettings();
+  const lang = items[0].lang || getLearningLanguage();
+  const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
+  const queue = shuffle(items.slice());
+  quiz = {
+    mode: "fixed", length: "all", queue, total: queue.length, answered: 0, correct: 0,
+    pool: queue, lastId: null, distractors: all, title,
+    answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix",
+    script: lang === "zh" ? (s.reviewScript || "both") : "hanzi", lang, current: null,
+  };
+  showQuiz();
+}
+
+/** Today's review: the words that are due, most in need first (max 20). */
+export async function startDailyReview() {
+  const lang = getLearningLanguage();
+  const due = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang && isDue(it));
+  due.sort((a, b) => weightFor(b) - weightFor(a));
+  await startQuizWithItems(due.slice(0, 20), { title: "Daily review" });
 }
 
 // The Chinese side of a card rendered in the chosen script.
@@ -275,8 +346,33 @@ function chineseStr(item, script) {
   if (script === "both") return item.pinyin ? `${item.hanzi} · ${item.pinyin}` : item.hanzi;
   return item.hanzi;
 }
-// The "answer" text for a card: English (t2e) or Chinese in the chosen script (e2t).
+// The "answer" text for a card: English (t2e) or the word in the chosen script
+// (e2t, and cloze — where the missing word is the answer).
 const answerText = (item, dir, script) => (dir === "t2e" ? item.english : chineseStr(item, script));
+
+// ── Fill-in-the-sentence (cloze) ──
+// Blank the word out of the sentence it was saved from. Returns the HTML lines
+// to show for the chosen script, or null if the word can't be found in them.
+function blankOut(sentence, word) {
+  if (!sentence || !word) return null;
+  const i = sentence.toLowerCase().indexOf(word.toLowerCase());
+  if (i < 0) return null;
+  return `${escape(sentence.slice(0, i))}<span class="cloze-gap">${"＿".repeat(Math.min(Math.max([...word].length, 2), 4))}</span>${escape(sentence.slice(i + word.length))}`;
+}
+function clozeLines(item, script) {
+  const c = item.context;
+  if (!c) return null;
+  const isZh = (item.lang || "zh") === "zh" && !!item.pinyin;
+  const lines = [];
+  if (!isZh) {
+    const l = blankOut(c.target || c.hanzi, item.hanzi);
+    if (l) lines.push({ html: l, cls: "" });
+  } else {
+    if (script !== "pinyin") { const l = blankOut(c.hanzi, item.hanzi); if (l) lines.push({ html: l, cls: "is-hanzi" }); }
+    if (script !== "hanzi") { const l = blankOut(c.target, item.pinyin); if (l) lines.push({ html: l, cls: "is-pinyin" }); }
+  }
+  return lines.length ? lines : null;
+}
 
 function renderCard() {
   let item;
@@ -285,22 +381,33 @@ function renderCard() {
   if (!item) return endQuiz();
   quiz.lastId = item.id;
 
-  const dir = quiz.direction === "mix" ? (Math.random() < 0.5 ? "t2e" : "e2t") : quiz.direction;
-  let mode = quiz.answerMode === "mix" ? (Math.random() < 0.5 ? "choice" : "type") : quiz.answerMode;
-  if (mode === "choice" && quiz.pool.length < 4) mode = "type";   // need distractors
   const script = quiz.script;
+  const cloze = clozeLines(item, script);
+  let dir = quiz.direction;
+  if (dir === "mix") {
+    const dirs = cloze ? ["t2e", "e2t", "cloze"] : ["t2e", "e2t"];
+    dir = dirs[Math.floor(Math.random() * dirs.length)];
+  }
+  if (dir === "cloze" && !cloze) dir = "e2t";   // no usable sentence for this word
+  let mode = quiz.answerMode === "mix" ? (Math.random() < 0.5 ? "choice" : "type") : quiz.answerMode;
+  if (mode === "choice" && (quiz.distractors || quiz.pool).length < 4) mode = "type";   // need distractors
   quiz.current = { item, dir, mode, script };
 
   $("review-progress-text").textContent = quiz.mode === "endless" ? `${quiz.answered} answered` : `${quiz.answered + 1} / ${quiz.total}`;
   $("review-finish").hidden = quiz.mode !== "endless";
-  $("review-prompt-label").textContent = dir === "t2e" ? "What does this mean?" : "How do you say this?";
+  $("review-prompt-label").textContent = dir === "t2e" ? "What does this mean?"
+    : dir === "cloze" ? "Fill in the missing word" : "How do you say this?";
 
   // Prompt: for Chinese→English, show the Chinese in the chosen script (with the
   // pinyin as a sub-line in "both"). For English→Chinese, show the English.
   const promptEl = $("review-prompt");
   const subEl = $("review-prompt-sub");
   subEl.hidden = true; subEl.textContent = "";
-  if (dir === "t2e") {
+  if (dir === "cloze") {
+    promptEl.className = "review-prompt is-sentence";
+    promptEl.innerHTML = cloze.map((l) => `<div class="cloze-line ${l.cls}">${l.html}</div>`).join("")
+      + (item.context.english ? `<div class="cloze-en">${escape(item.context.english)}</div>` : "");
+  } else if (dir === "t2e") {
     if (script === "pinyin") { promptEl.textContent = item.pinyin || item.hanzi; promptEl.className = "review-prompt"; }
     else { promptEl.textContent = item.hanzi; promptEl.className = "review-prompt is-hanzi";
            if (script === "both" && item.pinyin) { subEl.textContent = item.pinyin; subEl.hidden = false; } }
@@ -319,7 +426,7 @@ function renderCard() {
 
 function renderChoices(item, dir, area, script) {
   const correct = answerText(item, dir, script);
-  const others = shuffle(quiz.pool.filter((w) => w.id !== item.id));
+  const others = shuffle((quiz.distractors || quiz.pool).filter((w) => w.id !== item.id));
   const distractors = [];
   for (const w of others) {
     const t = answerText(w, dir, script);
@@ -340,7 +447,7 @@ const stripTones = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
 function gradeType(input, item, dir) {
   const given = norm(input);
   if (!given) return false;
-  if (dir === "t2e") {
+  if (dir === "t2e") {   // (cloze and e2t both expect the word itself)
     // Lenient: any listed sense counts (senses are semicolon-separated).
     const senses = String(item.english || "").split(/[;,/]/).map(norm).filter(Boolean);
     return senses.some((s) => s === given || s.includes(given) || given.includes(s));
@@ -359,6 +466,7 @@ function renderType(item, dir, area, script) {
   const input = document.createElement("input");
   input.type = "text";
   input.placeholder = dir === "t2e" ? "Type the English…"
+    : dir === "cloze" && quiz.lang !== "zh" ? "Type the missing word…"
     : (quiz.lang === "zh" ? "Type the Chinese (hanzi or pinyin)…" : `Type the ${languageName(quiz.lang)}…`);
   input.autocomplete = "off"; input.autocapitalize = "off"; input.spellcheck = false;
   const submit = document.createElement("button");
@@ -387,6 +495,7 @@ async function onAnswer(correct, correctText) {
   recordAttempt(item, correct);
   await putVaultItem(item);
   _masteredDirty = true;
+  bumpActivity({ answers: 1 }).catch(() => {});
   renderReveal(item, correct);
   const next = $("review-next");
   next.hidden = false;
@@ -402,8 +511,12 @@ function renderReveal(item, correct) {
     <div class="reveal-pinyin">${escape(item.pinyin)}</div>
     <div class="reveal-english">${escape(item.english)}</div>
     ${item.context && item.context.hanzi ? `<div class="reveal-context">${escape(item.context.hanzi)}<span>${escape(item.context.english)}</span></div>` : ""}
-    <button id="reveal-audio" class="pop-act">▶ Hear it</button>`;
+    <div class="reveal-audio-row">
+      <button id="reveal-audio" class="pop-act">▶ Hear it</button>
+      ${item.context && item.context.hanzi ? `<button id="reveal-audio-sentence" class="pop-act">▶ Hear sentence</button>` : ""}
+    </div>`;
   el.querySelector("#reveal-audio").addEventListener("click", () => speakWord(item.hanzi, item.lang || "zh"));
+  el.querySelector("#reveal-audio-sentence")?.addEventListener("click", () => speakWord(item.context.hanzi, item.lang || "zh"));
 }
 
 function nextCard() {
@@ -419,15 +532,18 @@ function endQuiz() {
   done.hidden = false;
   const acc = quiz && quiz.answered ? Math.round((quiz.correct / quiz.answered) * 100) : 0;
   done.innerHTML = `
-    <p class="empty-title">Quiz complete</p>
+    <p class="empty-title">${quiz?.title ? `${escape(quiz.title)} complete` : "Quiz complete"}</p>
     <p class="empty-sub">${quiz ? quiz.correct : 0} / ${quiz ? quiz.answered : 0} correct (${acc}%)</p>
-    <button class="btn-primary" id="review-done-btn">Back to Vault</button>`;
-  done.querySelector("#review-done-btn").addEventListener("click", () => window.dispatchEvent(new CustomEvent("app:setview", { detail: "vault" })));
+    <button class="btn-primary" id="review-done-btn">Done</button>`;
+  // Back to wherever the quiz was started from (vault, home, or the reader).
+  done.querySelector("#review-done-btn").addEventListener("click", () => window.dispatchEvent(new CustomEvent("app:back")));
+  window.dispatchEvent(new CustomEvent("vault:changed"));
   quiz = null;
 }
 
 export async function initVault() {
   await ensureMastered();
+  window.addEventListener("vault:changed", () => { _masteredDirty = true; });
   // Re-render the vault for the newly chosen language (if it's the open view).
   window.addEventListener("language:changed", () => {
     if (document.body.getAttribute("data-view") === "vault") openVault();
@@ -439,28 +555,28 @@ export async function initVault() {
   $("review-next")?.addEventListener("click", nextCard);
   $("review-finish")?.addEventListener("click", endQuiz);
 
-  $("review-answer-mode")?.addEventListener("change", async (e) => { await putSettings({ ...(await getSettings()), reviewAnswerMode: e.target.value }); });
-  $("review-direction")?.addEventListener("change", async (e) => { await putSettings({ ...(await getSettings()), reviewDirection: e.target.value }); });
+  $("review-answer-mode")?.addEventListener("change", async (e) => { await updateSettings({ reviewAnswerMode: e.target.value }); });
+  $("review-direction")?.addEventListener("change", async (e) => { await updateSettings({ reviewDirection: e.target.value }); });
 
   for (const btn of document.querySelectorAll("#quiz-setup .bucket-toggle")) {
     btn.addEventListener("click", async () => {
       btn.classList.toggle("on");
       const buckets = [...document.querySelectorAll("#quiz-setup .bucket-toggle.on")].map((b) => b.dataset.bucket);
-      await putSettings({ ...(await getSettings()), reviewBuckets: buckets });
+      await updateSettings({ reviewBuckets: buckets });
     });
   }
   for (const btn of document.querySelectorAll("#quiz-setup .length-toggle")) {
     btn.addEventListener("click", async () => {
       document.querySelectorAll("#quiz-setup .length-toggle").forEach((b) => b.classList.remove("on"));
       btn.classList.add("on");
-      await putSettings({ ...(await getSettings()), reviewLength: btn.dataset.len });
+      await updateSettings({ reviewLength: btn.dataset.len });
     });
   }
   for (const btn of document.querySelectorAll("#quiz-setup .script-toggle")) {
     btn.addEventListener("click", async () => {
       document.querySelectorAll("#quiz-setup .script-toggle").forEach((b) => b.classList.remove("on"));
       btn.classList.add("on");
-      await putSettings({ ...(await getSettings()), reviewScript: btn.dataset.script });
+      await updateSettings({ reviewScript: btn.dataset.script });
     });
   }
 }

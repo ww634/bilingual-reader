@@ -3,7 +3,7 @@
 // Quizzes are filtered and sorted by. One global setting, switchable from the
 // language pickers, cached here so views can read it synchronously.
 
-import { getSettings, putSettings } from "./db.js";
+import { getSettings, updateSettings } from "./db.js";
 
 // Display names for languages the app knows about. `base` languages always
 // appear in the switcher (so a language can be selected before it has content);
@@ -34,8 +34,7 @@ export async function loadLearningLanguage() {
 export async function setLearningLanguage(code) {
   if (!code || code === _current) { _current = code || _current; }
   _current = code;
-  const s = await getSettings();
-  await putSettings({ ...s, learningLanguage: code });
+  await updateSettings({ learningLanguage: code });
   window.dispatchEvent(new CustomEvent("language:changed", { detail: code }));
 }
 

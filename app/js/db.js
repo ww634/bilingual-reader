@@ -125,6 +125,17 @@ export async function getProgress(bookId, chapterId) {
   const store = await tx(STORE_PROGRESS);
   return asPromise(store.get(chapterKey(bookId, chapterId)));
 }
+/** Write a raw progress record by its "<book>/<chapter>" key (used by restore). */
+export async function putProgressRecord(key, value) {
+  const store = await tx(STORE_PROGRESS, "readwrite");
+  return asPromise(store.put(value, key));
+}
+/** Every progress record as { key: "<book>/<chapter>", value: {lastPage, updatedAt} }. */
+export async function getAllProgress() {
+  const store = await tx(STORE_PROGRESS);
+  const [keys, values] = await Promise.all([asPromise(store.getAllKeys()), asPromise(store.getAll())]);
+  return keys.map((key, i) => ({ key: String(key), value: values[i] }));
+}
 
 // ---------- library cache ----------
 export async function putLibrary(library) {
@@ -194,6 +205,70 @@ export async function getSettings() {
 export async function putSettings(settings) {
   const store = await tx(STORE_SETTINGS, "readwrite");
   return asPromise(store.put(settings, "current"));
+}
+
+/**
+ * Merge `patch` into the stored settings inside ONE readwrite transaction, so two
+ * quick changes (e.g. two toggles) can't read the same old record and overwrite
+ * each other. Prefer this over getSettings() + putSettings(). Returns the result.
+ */
+export async function updateSettings(patch) {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const t = db.transaction(STORE_SETTINGS, "readwrite");
+    const store = t.objectStore(STORE_SETTINGS);
+    let next = null;
+    const req = store.get("current");
+    req.onsuccess = () => {
+      next = { ...DEFAULT_SETTINGS, ...(req.result || {}), ...patch };
+      store.put(next, "current");
+    };
+    t.oncomplete = () => resolve(next);
+    t.onerror = () => reject(t.error);
+  });
+}
+
+// ---------- daily activity (streak + today's counts) ----------
+// Stored in the settings store under its own key: { days: { "YYYY-MM-DD": { pages, answers } } }.
+const ACTIVITY_KEY = "activity";
+const ACTIVITY_KEEP_DAYS = 400;
+
+/** Local calendar date as YYYY-MM-DD. */
+export function dayKey(d = new Date()) {
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+export async function getActivity() {
+  const store = await tx(STORE_SETTINGS);
+  const rec = await asPromise(store.get(ACTIVITY_KEY));
+  return rec && rec.days ? rec : { days: {} };
+}
+
+/** Add to today's counters, e.g. bumpActivity({ pages: 1 }). Atomic, like updateSettings. */
+export async function bumpActivity(counts) {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const t = db.transaction(STORE_SETTINGS, "readwrite");
+    const store = t.objectStore(STORE_SETTINGS);
+    const req = store.get(ACTIVITY_KEY);
+    req.onsuccess = () => {
+      const rec = req.result && req.result.days ? req.result : { days: {} };
+      const today = dayKey();
+      const day = rec.days[today] || { pages: 0, answers: 0 };
+      for (const [k, v] of Object.entries(counts)) day[k] = (day[k] || 0) + v;
+      rec.days[today] = day;
+      const keys = Object.keys(rec.days).sort();
+      while (keys.length > ACTIVITY_KEEP_DAYS) delete rec.days[keys.shift()];
+      store.put(rec, ACTIVITY_KEY);
+    };
+    t.oncomplete = () => resolve();
+    t.onerror = () => reject(t.error);
+  });
+}
+export async function putActivity(rec) {
+  const store = await tx(STORE_SETTINGS, "readwrite");
+  return asPromise(store.put(rec && rec.days ? rec : { days: {} }, ACTIVITY_KEY));
 }
 
 // ---------- nuke ----------

@@ -22,6 +22,10 @@
       </button>
       <h1 id="title">Reader</h1>
       <div id="topbar-actions" class="topbar-actions">
+        <button id="listen-btn" class="iconbtn" aria-label="Listen" hidden>
+          <!-- headphones icon -->
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        </button>
         <button id="reader-options-btn" class="iconbtn" aria-label="Reader options" hidden>
           <!-- "sliders" icon -->
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="9" cy="6" r="2" fill="var(--bg)"/><circle cx="15" cy="12" r="2" fill="var(--bg)"/><circle cx="8" cy="18" r="2" fill="var(--bg)"/></svg>
@@ -46,6 +50,21 @@
         <label for="lang-switch-home">I'm learning</label>
         <select id="lang-switch-home" class="lang-switch"></select>
       </div>
+      <section class="today" aria-label="Today">
+        <button id="home-continue" class="continue-card" hidden></button>
+        <div class="today-card">
+          <div class="today-top">
+            <div class="streak">
+              <span id="home-streak" class="streak-num">0</span>
+              <span id="home-streak-label" class="streak-label">day streak</span>
+            </div>
+            <div id="home-week" class="week"></div>
+          </div>
+          <p id="home-today-stats" class="today-stats"></p>
+          <button id="home-review" class="btn-primary btn-block" hidden>Review</button>
+          <p id="home-review-sub" class="today-sub"></p>
+        </div>
+      </section>
       <nav class="home-tiles">
         <button class="home-tile" data-nav="library">
           <div class="tile-icon" aria-hidden="true">
@@ -74,16 +93,6 @@
           <div class="tile-text">
             <span class="tile-title">Memory Vault</span>
             <span class="tile-sub" id="tile-vault-count">Saved words &amp; review</span>
-          </div>
-          <span class="tile-chev">›</span>
-        </button>
-        <button class="home-tile" data-nav="quizzes">
-          <div class="tile-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
-          </div>
-          <div class="tile-text">
-            <span class="tile-title">Quizzes</span>
-            <span class="tile-sub">Coming soon</span>
           </div>
           <span class="tile-chev">›</span>
         </button>
@@ -145,14 +154,6 @@
       <ul id="book-detail-chapters" class="chapter-list"></ul>
     </main>
 
-    <!-- QUIZZES (placeholder) -->
-    <main id="view-quizzes" class="view" hidden>
-      <div class="empty-state">
-        <p class="empty-title">Quizzes</p>
-        <p class="empty-sub">AI-generated quizzes per chapter will live here. Coming in a later version.</p>
-      </div>
-    </main>
-
     <!-- MEMORY VAULT -->
     <main id="view-vault" class="view" hidden>
       <div class="lang-row">
@@ -195,6 +196,7 @@
           <select id="review-direction">
             <option value="t2e" id="dir-opt-t2e">Chinese → English</option>
             <option value="e2t" id="dir-opt-e2t">English → Chinese</option>
+            <option value="cloze">Fill in the sentence</option>
             <option value="mix">Mix</option>
           </select>
         </section>
@@ -252,6 +254,24 @@
       <footer id="reader-footer">
         <span id="page-indicator">1 / 1</span>
       </footer>
+      <!-- LISTEN MODE player (shown while the chapter is being read aloud) -->
+      <div id="listen-bar" class="listen-bar" role="region" aria-label="Listen" hidden>
+        <button id="listen-speed" class="listen-speed">Normal</button>
+        <div class="listen-controls">
+          <button id="listen-prev" class="listen-btn" aria-label="Previous sentence">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
+          </button>
+          <button id="listen-play" class="listen-btn listen-play" aria-label="Play">
+            <svg class="i-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+          </button>
+          <button id="listen-next" class="listen-btn" aria-label="Next sentence">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg>
+          </button>
+        </div>
+        <button id="listen-close" class="listen-close" aria-label="Stop listening">×</button>
+        <div id="listen-status" class="listen-status"></div>
+      </div>
     </main>
 
     <!-- SELECTION TOOLBAR (floating; appears when book text is highlighted) -->
@@ -328,6 +348,7 @@
           <select id="reader-script">
             <option value="pinyin">Pinyin</option>
             <option value="hanzi">Chinese characters · 汉字</option>
+            <option value="ruby">Characters with pinyin above</option>
           </select>
           <p id="reader-script-hint" class="sheet-hint">Switch anytime. English and word colours stay the same.</p>
         </section>
@@ -348,12 +369,12 @@
           </ul>
         </section>
         <section class="sheet-section">
-          <label class="cat-toggle"><input type="checkbox" id="opt-hide-mastered" /><span class="cat-label">Hide English for words I've mastered</span></label>
-          <p class="sheet-hint">As you master words in the Memory Vault, their English fades from the reader — you read them in Chinese.</p>
+          <label class="cat-toggle"><input type="checkbox" id="opt-hide-mastered" /><span class="cat-label">Hide help for words I've mastered</span></label>
+          <p class="sheet-hint">As you master words in the Memory Vault, their English fades from the reader. With characters + pinyin, their pinyin fades too. Tap a word to look it up.</p>
         </section>
         <section class="sheet-section muted">
           <div class="sheet-section-label">More coming</div>
-          <p class="sheet-hint">Font size, theme, in-book search, and share will live here.</p>
+          <p class="sheet-hint">Theme, in-book search, and share will live here.</p>
         </section>
       </div>
     </aside>
@@ -390,8 +411,21 @@
         <p class="hint">Used for the reader's "See explanation" popover and the Language Assistant. Stored locally on this device, never uploaded.</p>
       </div>
       <div class="settings-group">
-        <button id="clear-cache" class="danger">Clear cache</button>
-        <p class="hint">Deletes all downloaded books, progress, and settings.</p>
+        <label>Your data</label>
+        <div class="data-actions">
+          <button id="backup-export">Back up now</button>
+          <button id="backup-import">Restore…</button>
+        </div>
+        <input type="file" id="backup-file" accept="application/json,.json" hidden />
+        <p id="backup-status" class="hint"></p>
+        <p id="storage-status" class="hint"></p>
+      </div>
+      <div class="settings-group">
+        <label>App</label>
+        <button id="refresh-app">Refresh app</button>
+        <p class="hint">Reloads the latest version of the app. Your books, saved words and progress are kept.</p>
+        <button id="clear-cache" class="danger">Reset everything…</button>
+        <p class="hint">Erases everything on this device: books, progress, settings and your Memory Vault. Back up first.</p>
       </div>
       <div class="settings-group muted">
         <p>Bilingual Reader · personal-use PWA</p>

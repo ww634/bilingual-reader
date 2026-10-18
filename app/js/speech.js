@@ -35,8 +35,15 @@ const TTS_INSTRUCTIONS = {
 const TTS_INSTRUCTIONS_DEFAULT =
   "Speak clearly and naturally at a slightly slower, learner-friendly pace. Pronounce every syllable distinctly without exaggerating.";
 
-function ttsInstructions(code) {
-  return TTS_INSTRUCTIONS[String(code || "").toLowerCase()] || TTS_INSTRUCTIONS_DEFAULT;
+// "slow" swaps the speed sentence for a slower pace with pauses between phrases
+// (used by Listen mode). Slowing the voice itself, rather than the playback,
+// keeps the pitch (and so the tones) natural.
+const SLOW_PACE = "Speak slowly, at about 65% of normal conversational speed, with a brief pause between phrases.";
+function ttsInstructions(code, variant = "normal") {
+  const base = TTS_INSTRUCTIONS[String(code || "").toLowerCase()] || TTS_INSTRUCTIONS_DEFAULT;
+  if (variant !== "slow") return base;
+  const replaced = base.replace(/Speak at \d+% of normal conversational speed\./, SLOW_PACE);
+  return replaced === base ? `${base} ${SLOW_PACE}` : replaced;
 }
 const modelSupportsInstructions = /^gpt-4o/i.test(TTS_MODEL);
 
@@ -113,10 +120,11 @@ function ensureCtx() {
   } catch { return null; }
 }
 
-function cacheKey(text, code) {
+function cacheKey(text, code, variant = "normal") {
   // Same-origin relative URL used purely as a Cache API key. TTS_REV busts the
   // cache when the delivery instructions change.
-  return `tts-cache/${TTS_REV}/${TTS_MODEL}/${TTS_VOICE}/${encodeURIComponent(code)}/${encodeURIComponent(text)}`;
+  const rev = variant === "slow" ? `${TTS_REV}s` : TTS_REV;
+  return `tts-cache/${rev}/${TTS_MODEL}/${TTS_VOICE}/${encodeURIComponent(code)}/${encodeURIComponent(text)}`;
 }
 
 async function getCachedBytes(key) {
@@ -143,64 +151,134 @@ function playBuffer(ctx, buffer) {
   _currentSource = src;
 }
 
-async function decodeAndPlay(ctx, bytes, key) {
-  // decodeAudioData detaches the ArrayBuffer, so decode a copy and keep the
-  // original bytes for caching.
-  const buffer = await ctx.decodeAudioData(bytes.slice(0));
-  _bufferCache.set(key, buffer);
-  playBuffer(ctx, buffer);
+async function fetchTtsBytes(text, code, variant, apiKey) {
+  const payload = { model: TTS_MODEL, voice: TTS_VOICE, input: text, response_format: "mp3" };
+  if (modelSupportsInstructions) payload.instructions = ttsInstructions(code, variant);
+  const res = await fetch("https://api.openai.com/v1/audio/speech", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+    body: JSON.stringify(payload),
+  });
+  if (!res.ok) {
+    const msg = await res.text().catch(() => "");
+    throw new Error(`HTTP ${res.status} ${msg.slice(0, 160)}`);
+  }
+  return res.arrayBuffer();
+}
+
+const _inflight = new Map();   // key -> Promise<AudioBuffer|null>, so prefetch + play share one request
+
+/**
+ * Decoded audio for `text`: memory → persistent cache → OpenAI. Resolves null
+ * when OpenAI isn't usable (no key / offline), so the caller can fall back to
+ * the system voice. Rejects if the request itself fails.
+ */
+async function getBuffer(ctx, text, code, variant = "normal") {
+  const key = cacheKey(text, code, variant);
+  if (_bufferCache.has(key)) return _bufferCache.get(key);
+  if (_inflight.has(key)) return _inflight.get(key);
+  const job = (async () => {
+    let bytes = await getCachedBytes(key);
+    if (!bytes) {
+      const settings = await getSettings().catch(() => ({}));
+      if (!settings.openaiKey || !navigator.onLine) return null;
+      bytes = await fetchTtsBytes(text, code, variant, settings.openaiKey);
+      await putCachedBytes(key, bytes);
+    }
+    // decodeAudioData detaches the ArrayBuffer, so decode a copy.
+    const buffer = await ctx.decodeAudioData(bytes.slice(0));
+    _bufferCache.set(key, buffer);
+    return buffer;
+  })();
+  _inflight.set(key, job);
+  try { return await job; } finally { _inflight.delete(key); }
+}
+
+/** Fetch + cache a sentence ahead of time (no playback). Safe to call freely. */
+export function prefetchSpeech(text, code, { slow = false } = {}) {
+  const t = String(text || "").trim();
+  const ctx = _ctx;   // only once audio is unlocked; never creates a context
+  if (!t || !ctx) return;
+  getBuffer(ctx, t, code, slow ? "slow" : "normal").catch(() => {});
 }
 
 /**
- * Speak `text` with the best available voice: OpenAI TTS if a key is set and
- * we're online, otherwise the system voice. `code` is the book's language code.
- * `onState(state)` receives "loading" | "playing" | "fallback" | "idle".
- * MUST be called from within a user gesture (a click/tap).
+ * Play one sentence and report when it finishes — the building block for
+ * Listen mode. Returns a controller immediately: { stop(), done }.
+ * `onEnded` fires only when the audio finishes naturally (not after stop()).
+ * The first call must happen inside a tap so iOS allows audio.
  */
+export function playSpeech(text, code, { slow = false, onEnded, onState } = {}) {
+  const t = String(text || "").trim();
+  const ctx = ensureCtx();   // synchronously, inside the gesture
+  const ctl = {
+    stopped: false,
+    src: null,
+    system: false,
+    stop() {
+      ctl.stopped = true;
+      try { ctl.src && ctl.src.stop(); } catch {}
+      if (ctl.system) { try { window.speechSynthesis.cancel(); } catch {} }
+    },
+  };
+  const finish = () => { if (!ctl.stopped) { ctl.stopped = true; onEnded && onEnded(); } };
+  ctl.done = (async () => {
+    if (!t) return finish();
+    let buffer = null;
+    if (ctx) {
+      onState && onState("loading");
+      try { buffer = await getBuffer(ctx, t, code, slow ? "slow" : "normal"); }
+      catch (err) { console.warn("TTS failed, using system voice:", err.message); }
+    }
+    if (ctl.stopped) return;
+    if (buffer) {
+      const src = ctx.createBufferSource();
+      src.buffer = buffer;
+      src.connect(ctx.destination);
+      src.onended = finish;
+      ctl.src = src;
+      src.start(0);
+      onState && onState("playing");
+      return;
+    }
+    // System-voice fallback (no key, offline, or the request failed).
+    if (!canSpeak()) return finish();
+    try {
+      const synth = window.speechSynthesis;
+      synth.cancel();
+      if (!_voices.length) refreshVoices();
+      const u = new window.SpeechSynthesisUtterance(t);
+      u.lang = langTag(code);
+      const v = pickVoice(u.lang);
+      if (v) u.voice = v;
+      u.rate = slow ? 0.7 : 0.9;
+      u.onend = finish;
+      u.onerror = finish;
+      ctl.system = true;
+      synth.speak(u);
+      onState && onState("fallback");
+    } catch { finish(); }
+  })();
+  return ctl;
+}
+
 export async function speakWord(text, code, { onState } = {}) {
   const t = String(text || "").trim();
   if (!t) return;
   const ctx = ensureCtx(); // resume synchronously inside the gesture
+  if (!ctx) { speak(t, code); return; }
 
   const key = cacheKey(t, code);
-
-  // 1) In-memory decoded buffer — instant, no cost.
-  if (ctx && _bufferCache.has(key)) { playBuffer(ctx, _bufferCache.get(key)); return; }
-
-  // 2) Persistent cache — no cost.
-  if (ctx) {
-    const cachedBytes = await getCachedBytes(key);
-    if (cachedBytes) {
-      try { await decodeAndPlay(ctx, cachedBytes, key); return; } catch { /* fall through */ }
-    }
-  }
-
-  // 3) Fetch from OpenAI TTS.
-  const settings = await getSettings().catch(() => ({}));
-  if (!ctx || !settings.openaiKey || !navigator.onLine) {
-    if (onState) onState("fallback");
-    speak(t, code);
-    if (onState) onState("idle");
-    return;
-  }
-
-  if (onState) onState("loading");
+  if (!_bufferCache.has(key) && onState) onState("loading");
   try {
-    const payload = { model: TTS_MODEL, voice: TTS_VOICE, input: t, response_format: "mp3" };
-    if (modelSupportsInstructions) payload.instructions = ttsInstructions(code);
-    const res = await fetch("https://api.openai.com/v1/audio/speech", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${settings.openaiKey}` },
-      body: JSON.stringify(payload),
-    });
-    if (!res.ok) {
-      const msg = await res.text().catch(() => "");
-      throw new Error(`HTTP ${res.status} ${msg.slice(0, 160)}`);
+    const buffer = await getBuffer(ctx, t, code);
+    if (buffer) {
+      if (onState) onState("playing");
+      playBuffer(ctx, buffer);
+    } else {
+      if (onState) onState("fallback");
+      speak(t, code);
     }
-    const bytes = await res.arrayBuffer();
-    await putCachedBytes(key, bytes);
-    if (onState) onState("playing");
-    await decodeAndPlay(ctx, bytes, key);
   } catch (err) {
     console.warn("TTS failed, using system voice:", err.message);
     if (onState) onState("fallback");

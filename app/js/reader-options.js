@@ -7,7 +7,7 @@
 // instant — no re-render — and pagination stays stable because we use
 // visibility:hidden rather than display:none.
 
-import { getSettings, putSettings } from "./db.js";
+import { getSettings, updateSettings } from "./db.js";
 
 // Keep this list in sync with the toggles in index.html and the
 // body.hide-cat-<key> rules in styles.css. Adding a category here = adding
@@ -104,9 +104,7 @@ async function onToggleChange(key, checked) {
   applyVisibilityClasses(_state.visibility);
   // Persist. We re-fetch settings so we don't clobber any other field that
   // got updated since boot.
-  const settings = await getSettings();
-  settings.categoryVisibility = { ..._state.visibility };
-  await putSettings(settings);
+  await updateSettings({ categoryVisibility: { ..._state.visibility } });
 }
 
 export async function initReaderOptions() {
@@ -124,15 +122,13 @@ export async function initReaderOptions() {
   $("reader-script")?.addEventListener("change", async (event) => {
     const script = event.target.value;
     window.dispatchEvent(new CustomEvent("reader:script", { detail: script }));
-    const settings = await getSettings();
-    await putSettings({ ...settings, readerScript: script });
+    await updateSettings({ readerScript: script });
   });
 
   $("opt-hide-mastered")?.addEventListener("change", async (event) => {
     const on = event.target.checked;
     document.body.classList.toggle("hide-mastered", on);
-    const settings = await getSettings();
-    await putSettings({ ...settings, hideMastered: on });
+    await updateSettings({ hideMastered: on });
   });
 
   for (const { key } of CATEGORIES) {

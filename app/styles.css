@@ -1743,3 +1743,200 @@ body.hide-mastered .reader-block .english .chunk.mastered { visibility: hidden; 
   border-radius: 999px;
   padding: 7px 14px;
 }
+
+/* ============================================================
+   Settings — your data
+   ============================================================ */
+.data-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.settings-group button + .hint + button { margin-top: 14px; }
+.settings-group button:disabled { opacity: 0.6; }
+#backup-status:empty, #storage-status:empty { display: none; }
+
+/* ============================================================
+   Home — Today panel
+   ============================================================ */
+.today { display: flex; flex-direction: column; gap: 12px; padding: 0 16px 14px; }
+.continue-card {
+  display: flex; align-items: center; gap: 14px;
+  width: 100%; padding: 12px 14px 12px 12px;
+  background: linear-gradient(135deg, rgba(106,167,255,0.16), rgba(106,167,255,0.04));
+  border: 1px solid rgba(106,167,255,0.28);
+  border-radius: var(--radius-lg);
+  color: var(--text); font-family: inherit; text-align: left; cursor: pointer;
+  transition: transform 80ms ease;
+}
+.continue-card[hidden] { display: none; }
+.continue-card:active { transform: scale(0.985); }
+.continue-cover {
+  width: 46px; height: 64px; flex: 0 0 auto;
+  border-radius: 6px; overflow: hidden; background: var(--surface-3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+.continue-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.continue-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.continue-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.continue-title { font-size: 16px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.continue-sub { font-size: 13px; color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.continue-play {
+  width: 38px; height: 38px; flex: 0 0 auto; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: #0b0d12;
+}
+
+.today-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+.today-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.streak { display: flex; align-items: baseline; gap: 7px; }
+.streak-num { font-size: 30px; font-weight: 700; letter-spacing: -0.03em; color: var(--gold); line-height: 1; }
+.streak-label { font-size: 13px; color: var(--text-dim); }
+.week { display: flex; gap: 6px; }
+.week-day {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 600; color: var(--text-muted);
+}
+.week-day i {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--surface-3); display: block;
+}
+.week-day.on i { background: var(--gold); box-shadow: 0 0 8px rgba(255,208,137,0.35); }
+.week-day.today { color: var(--text); }
+.week-day.today i { outline: 1.5px solid var(--text-dim); outline-offset: 2px; }
+.today-stats { font-size: 13px; color: var(--text-dim); margin: 12px 0 14px; }
+.today-sub { font-size: 12px; color: var(--text-muted); margin: 8px 2px 0; text-align: center; }
+.today-sub:empty { display: none; }
+#home-review[hidden] { display: none; }
+#home-review:disabled { background: var(--surface-3); color: var(--text-dim); cursor: default; }
+
+/* ============================================================
+   Reader — characters with pinyin above (ruby)
+   ============================================================ */
+body[data-script="ruby"] .reader-block > p.target { line-height: 2.3; }
+body[data-script="ruby"] .reader-page.title-page .target { line-height: 2.2; }
+.reader-pages ruby { ruby-position: over; }
+.reader-pages rt {
+  font-size: 0.58em;
+  font-weight: 600;
+  letter-spacing: 0;
+  opacity: 0.85;
+  -webkit-user-select: none;
+  user-select: none;
+}
+body.hide-mastered[data-script="ruby"] .reader-block > p.target .chunk.mastered rt { visibility: hidden; }
+
+/* ---------- Words to watch (chapter title page) ---------- */
+.chapter-watch {
+  margin-top: 34px; width: 100%; max-width: 340px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 16px;
+  text-align: center;
+}
+.chapter-watch[hidden] { display: none; }
+.watch-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+.watch-summary { font-size: 13px; color: var(--text-dim); margin: 4px 0 12px; }
+.watch-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-bottom: 14px; }
+.watch-chip {
+  font-size: 15px; font-weight: 600; padding: 4px 10px; border-radius: 999px;
+  background: var(--surface-3); color: var(--text-dim);
+}
+.watch-chip.learning { background: rgba(106,167,255,0.15); color: var(--accent); }
+.watch-more { font-size: 13px; color: var(--text-muted); align-self: center; }
+.watch-quiz {
+  font: inherit; font-size: 14px; font-weight: 600;
+  width: 100%; padding: 11px 14px; border-radius: 999px; border: none;
+  background: var(--accent); color: #0b0d12; cursor: pointer;
+}
+.watch-quiz:active { background: #5a97ee; }
+
+/* ============================================================
+   Listen mode
+   ============================================================ */
+#listen-btn.on { color: var(--accent); background: var(--accent-dim); }
+.listen-hl {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 6px;
+  background: rgba(255, 208, 137, 0.20);
+  box-shadow: inset 0 -2px 0 rgba(255, 208, 137, 0.55);
+}
+body.listening .reader-page:not(.title-page):not(.end-page) { padding-bottom: calc(var(--safe-bottom) + 150px); }
+body.listening #reader-footer { opacity: 0; }
+.listen-bar {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--safe-bottom) + 14px);
+  transform: translateX(-50%);
+  width: min(calc(100% - 24px), 420px);
+  z-index: 60;
+  display: grid;
+  grid-template-columns: 68px 1fr 68px;
+  grid-template-rows: auto auto;
+  align-items: center;
+  padding: 8px 10px 9px;
+  background: rgba(30, 34, 46, 0.94);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  animation: seltb-pop 160ms cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+.listen-bar[hidden] { display: none; }
+.listen-controls { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.listen-btn {
+  width: 42px; height: 42px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: none; background: none; color: var(--text); cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.listen-btn:active { background: rgba(255, 255, 255, 0.09); }
+.listen-play { width: 50px; height: 50px; background: var(--accent); color: #0b0d12; }
+.listen-play:active { background: #5a97ee; }
+.listen-play .i-pause { display: none; }
+.listen-play.playing .i-play { display: none; }
+.listen-play.playing .i-pause { display: block; }
+.listen-speed {
+  justify-self: start;
+  font: inherit; font-size: 12px; font-weight: 600;
+  padding: 6px 10px; border-radius: 999px;
+  border: 1px solid var(--border-strong); background: none; color: var(--text-dim);
+  cursor: pointer;
+}
+.listen-speed.on { color: var(--gold); border-color: rgba(255, 208, 137, 0.45); }
+.listen-close {
+  justify-self: end;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: none; background: var(--surface-2); color: var(--text-dim);
+  font-size: 20px; line-height: 1; cursor: pointer;
+}
+.listen-status {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* ============================================================
+   Quiz — fill in the sentence
+   ============================================================ */
+.review-prompt.is-sentence { font-size: 20px; font-weight: 600; line-height: 1.5; text-align: left; }
+.cloze-line + .cloze-line { margin-top: 6px; }
+.cloze-line.is-hanzi { font-size: 24px; }
+.cloze-line.is-pinyin { font-size: 17px; color: var(--accent); }
+.cloze-gap {
+  display: inline-block;
+  min-width: 2.2em;
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold);
+  line-height: 1.1;
+  letter-spacing: -0.1em;
+  text-align: center;
+}
+.cloze-en { font-size: 14px; font-weight: 400; color: var(--text-muted); margin-top: 12px; line-height: 1.4; }
+.reveal-audio-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+.reveal-audio-row #reveal-audio { margin-top: 0; }

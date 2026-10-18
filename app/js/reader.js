@@ -1,6 +1,6 @@
-import { getChapter, getProgress, putProgress, getSettings, getBook } from "./db.js";
+import { getChapter, getProgress, putProgress, getSettings, getBook, bumpActivity } from "./db.js";
 import { openPopover } from "./popover.js";
-import { ensureMastered, getMasteredHanziSync } from "./vault.js";
+import { ensureMastered, getMasteredHanziSync, chapterWatchWords, startQuizWithItems } from "./vault.js";
 
 const pagesEl = () => document.getElementById("reader-pages");
 const indicatorEl = () => document.getElementById("page-indicator");
@@ -11,7 +11,9 @@ const indicatorEl = () => document.getElementById("page-indicator");
  */
 export function applyMasteredHiding() {
   const set = getMasteredHanziSync();
-  const spans = document.querySelectorAll("#reader-pages .english .chunk[data-hanzi]");
+  // English spans (their translation fades) and target-word spans (their pinyin
+  // fades in the characters-with-pinyin mode).
+  const spans = document.querySelectorAll("#reader-pages .english .chunk[data-hanzi], #reader-pages .target .chunk[data-hanzi]");
   spans.forEach((el) => {
     el.classList.toggle("mastered", set.has(el.getAttribute("data-hanzi")));
   });
@@ -30,16 +32,31 @@ let _state = {
   script: "pinyin",
 };
 
-function scriptSpan(pinyin, hanzi) {
-  return `<span data-pinyin="${escape(pinyin)}" data-hanzi="${escape(hanzi ?? pinyin)}">${escape(pinyin)}</span>`;
+// A run of target text that can be shown in either script. `pairIdx` (optional)
+// tags which sentence it belongs to, for Listen mode's sentence highlight.
+function scriptSpan(pinyin, hanzi, pairIdx) {
+  const pairAttr = Number.isFinite(pairIdx) ? ` data-pair="${pairIdx}"` : "";
+  return `<span data-pinyin="${escape(pinyin)}" data-hanzi="${escape(hanzi ?? pinyin)}"${pairAttr}>${escape(pinyin)}</span>`;
 }
 
-// Keep the original line grouping and English DOM intact when switching.
+// Script modes: "pinyin", "hanzi", or "ruby" (characters with pinyin above).
+// Keep the original line grouping and English DOM intact when switching. Line
+// breaks are measured in pinyin, the widest form, so the other modes always fit.
+const HAN = /[\u3400-\u9fff]/;
+const EDGE_PUNCT = /^([\p{P}\p{S}\s]*)([\s\S]*?)([\p{P}\p{S}\s]*)$/u;
+function renderScriptInto(el, script) {
+  const py = el.dataset.pinyin, hz = el.dataset.hanzi;
+  if (script !== "ruby") { el.textContent = script === "hanzi" ? hz : py; return; }
+  if (!HAN.test(hz) || hz === py) { el.textContent = hz; return; }
+  // Punctuation stays outside the annotation; only the words get pinyin.
+  const [, lead, core, trail] = hz.match(EDGE_PUNCT);
+  const rt = py.replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, "");
+  el.innerHTML = `${escape(lead)}<ruby>${escape(core)}<rt>${escape(rt)}</rt></ruby>${escape(trail)}`;
+}
 function setReaderScript(script) {
-  _state.script = script === "hanzi" ? "hanzi" : "pinyin";
-  for (const el of pagesEl().querySelectorAll("[data-pinyin]")) {
-    el.textContent = el.dataset[_state.script];
-  }
+  _state.script = script === "hanzi" || script === "ruby" ? script : "pinyin";
+  document.body.dataset.script = _state.script;
+  for (const el of pagesEl().querySelectorAll("[data-pinyin]")) renderScriptInto(el, _state.script);
 }
 
 function escape(s) {
@@ -415,7 +432,7 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
       const hanziStart = chunk.hanzi && pair.hanzi
         ? pair.hanzi.indexOf(chunk.hanzi, hanziCursor) : -1;
       if (hanziStart >= 0) {
-        parts.push(scriptSpan(pair.target.slice(cursor, pos.tStart), pair.hanzi.slice(hanziCursor, hanziStart)));
+        parts.push(scriptSpan(pair.target.slice(cursor, pos.tStart), pair.hanzi.slice(hanziCursor, hanziStart), pairIdx));
       } else if (pos.tStart > cursor) {
         pushUncoveredText(parts, pair.target.slice(cursor, pos.tStart), pairIdx);
       }
@@ -444,7 +461,7 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
     }
 
     if (cursor < pair.target.length) {
-      if (pair.hanzi && hanziCursor) parts.push(scriptSpan(pair.target.slice(cursor), pair.hanzi.slice(hanziCursor)));
+      if (pair.hanzi && hanziCursor) parts.push(scriptSpan(pair.target.slice(cursor), pair.hanzi.slice(hanziCursor), pairIdx));
       else pushUncoveredText(parts, pair.target.slice(cursor), pairIdx);
     }
 
@@ -703,6 +720,7 @@ function renderChapter(chapter, perPage) {
   titlePage.innerHTML = `
     <div class="target">${scriptSpan(chapter.title.target, chapter.title.hanzi)}</div>
     <div class="english">${escape(chapter.title.english)}</div>
+    <div class="chapter-watch" hidden></div>
   `;
   container.appendChild(titlePage);
 
@@ -771,6 +789,8 @@ function handleScroll() {
   if (page === _state.currentPage) return;
   _state.currentPage = page;
   updateIndicator();
+  bumpActivity({ pages: 1 }).catch(() => {});
+  window.dispatchEvent(new CustomEvent("reader:page", { detail: { page } }));
   clearTimeout(_state.saveTimer);
   _state.saveTimer = setTimeout(() => {
     if (_state.bookId && _state.chapterId) {
@@ -821,7 +841,7 @@ function handleChunkTap(event) {
 
     openPopover(
       {
-        target: _state.script === "hanzi" ? (align.hanzi || align.target) : align.target,
+        target: _state.script !== "pinyin" ? (align.hanzi || align.target) : align.target,
         english: align.english,
         category: align.category,
         frequency_band: align.frequency_band,
@@ -830,7 +850,7 @@ function handleChunkTap(event) {
         pinyin: align.target || null,    // the chunk's pinyin (for the "other script" line)
         pairIdx,
         chunkIdx,
-        script: _state.script,
+        script: _state.script === "pinyin" ? "pinyin" : "hanzi",
       },
       _state.chapter
     );
@@ -895,13 +915,15 @@ export async function openReader(bookId, chapterId) {
     ? "Switch anytime. English and word colours stay the same."
     : "Chinese characters aren't included in this book yet.";
   renderChapter(chapter, settings.pairsPerPage);
-  setReaderScript(settings.readerScript);
+  // Books without characters (pinyin-only, or other languages) always show plain text.
+  setReaderScript(hasHanzi ? settings.readerScript : "pinyin");
 
   // Mastered-word English hiding: refresh the set, apply the body flag, and mark
   // the matching English spans so they fade (if the setting is on).
   await ensureMastered();
   document.body.classList.toggle("hide-mastered", settings.hideMastered !== false);
   applyMasteredHiding();
+  renderChapterWatch();
 
   document.getElementById("title").textContent = chapter.title.english;
 
@@ -921,6 +943,57 @@ export async function openReader(bookId, chapterId) {
   container.addEventListener("click", handleNextChapterTap);
 
   return true;
+}
+
+/* ───────────────────────── words to watch (title page) ───────────────────────── */
+
+// Saved words that appear in this chapter and aren't mastered yet, shown on the
+// title page with a button to quiz them before reading.
+async function renderChapterWatch() {
+  const slot = pagesEl().querySelector(".title-page .chapter-watch");
+  if (!slot || !_state.chapter) return;
+  const words = await chapterWatchWords(_state.chapter);
+  if (!words.length) { slot.hidden = true; slot.innerHTML = ""; return; }
+  const counts = { new: 0, learning: 0 };
+  for (const w of words) counts[w.bucket] = (counts[w.bucket] || 0) + 1;
+  const summary = [counts.learning && `${counts.learning} learning`, counts.new && `${counts.new} new`].filter(Boolean).join(" · ");
+  const shown = words.slice(0, 10);
+  const wordLabel = (w) => (_state.script === "pinyin" && w.item.pinyin ? w.item.pinyin : w.item.hanzi);
+  slot.innerHTML = `
+    <div class="watch-label">Words to watch</div>
+    <div class="watch-summary">${escape(summary)} from your Memory Vault</div>
+    <div class="watch-chips">${shown.map((w) => `<span class="watch-chip ${w.bucket}">${escape(wordLabel(w))}</span>`).join("")}${words.length > shown.length ? `<span class="watch-more">+${words.length - shown.length}</span>` : ""}</div>
+    <button class="watch-quiz">Quiz ${words.length === 1 ? "this word" : `these ${words.length}`} first</button>`;
+  slot.hidden = false;
+  slot.querySelector(".watch-quiz").addEventListener("click", () => {
+    startQuizWithItems(words.map((w) => w.item), { title: "Chapter words" });
+  });
+}
+
+/** Read-only view of the open chapter, for Listen mode. */
+export function getReaderContext() {
+  if (!_state.chapter) return null;
+  return {
+    bookId: _state.bookId,
+    chapterId: _state.chapterId,
+    chapter: _state.chapter,
+    language: _state.chapter.language || "zh",
+    currentPage: _state.currentPage,
+    pagesCount: _state.pagesCount,
+    script: _state.script,
+  };
+}
+
+/** The page <section> elements, in order (title, content…, end). */
+export function getPageElements() {
+  return [...pagesEl().children];
+}
+
+/** Turn to a page programmatically (fires the normal page-change handling). */
+export function goToPage(page) {
+  const container = pagesEl();
+  const p = Math.min(Math.max(page, 0), _state.pagesCount - 1);
+  scrollToPage(container, p);
 }
 
 export function closeReader() {

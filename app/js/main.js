@@ -1,5 +1,5 @@
 import { initCatalog, refreshCatalog, openBookDetail, renderBookDetail } from "./library.js";
-import { openReader, closeReader } from "./reader.js";
+import { openReader, closeReader, getReaderContext } from "./reader.js";
 import { initSettings, loadSettingsIntoUI } from "./settings.js";
 import { initPopover, closePopover } from "./popover.js";
 import { initReaderOptions } from "./reader-options.js";
@@ -7,14 +7,16 @@ import { initAssistant } from "./assistant.js";
 import { initSelection } from "./selection.js";
 import { initVault, openVault } from "./vault.js";
 import { loadLearningLanguage } from "./languages.js";
+import { initHome } from "./home.js";
+import { initListen } from "./listen.js";
+import { requestPersistence } from "./backup.js";
 
-const VIEWS = ["home", "library", "browse", "book-detail", "quizzes", "vault", "review", "reader", "settings"];
+const VIEWS = ["home", "library", "browse", "book-detail", "vault", "review", "reader", "settings"];
 const TITLES = {
   home: "Reader",
   library: "Library",
   browse: "Browse",
   "book-detail": "",   // set per-book
-  quizzes: "Quizzes",
   vault: "Memory Vault",
   review: "Review",
   reader: "",          // set per-chapter
@@ -26,6 +28,7 @@ const backBtn = document.getElementById("back-btn");
 const settingsBtn = document.getElementById("settings-btn");
 const readerOptionsBtn = document.getElementById("reader-options-btn");
 const assistantBtn = document.getElementById("assistant-btn");
+const listenBtn = document.getElementById("listen-btn");
 
 const navStack = [];     // history of view names for back navigation
 let currentView = "home";
@@ -46,6 +49,7 @@ function setView(name, { push = true } = {}) {
   // The reader-options (sliders) and assistant icons only make sense in the reader.
   if (readerOptionsBtn) readerOptionsBtn.hidden = name !== "reader";
   if (assistantBtn) assistantBtn.hidden = name !== "reader";
+  if (listenBtn) listenBtn.hidden = name !== "reader";
 
   // Let modules (e.g. the reader selection) react to leaving/entering a screen.
   window.dispatchEvent(new CustomEvent("view:changed", { detail: name }));
@@ -62,6 +66,8 @@ function goBack() {
   setView(prev, { push: false });
   if (prev === "library" || prev === "browse") refreshCatalog();
   if (prev === "book-detail") renderBookDetail();
+  // Back into an open chapter (e.g. after its "words to watch" quiz).
+  if (prev === "reader") titleEl.textContent = getReaderContext()?.chapter?.title?.english || "";
 }
 
 document.querySelectorAll("[data-nav]").forEach((el) => {
@@ -108,6 +114,8 @@ window.addEventListener("nav:reader", async (e) => {
 
 // Programmatic navigation from modules (e.g. vault → review → vault).
 window.addEventListener("app:setview", (e) => { if (e.detail) setView(e.detail); });
+// "Done" from a quiz returns to wherever it was started (vault, home, reader).
+window.addEventListener("app:back", goBack);
 
 window.addEventListener("settings:libraryUrl", () => refreshCatalog());
 window.addEventListener("settings:cleared", () => {
@@ -132,7 +140,11 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   await initReaderOptions();
   initAssistant();
   initSelection();
+  initListen();
+  initHome();
   await initVault();
   await initCatalog();
   setView("home", { push: false });
+  // Ask iOS to keep this app's data even when the phone is short of space.
+  requestPersistence();
 })();

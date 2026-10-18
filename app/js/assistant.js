@@ -347,7 +347,10 @@ function onSelectionEvent(e) {
 // The selection as it appears on screen (pinyin or characters for Chinese,
 // the words themselves otherwise) — what Copy puts on the clipboard.
 function selectionDisplayText() {
-  const parts = getSelectedSpans().map((el) => (el.textContent || "").trim()).filter(Boolean);
+  // Words shown with pinyin above (ruby) copy as their characters only.
+  const parts = getSelectedSpans()
+    .map((el) => (el.querySelector("rt") ? wordHanzi(el) : el.textContent || "").trim())
+    .filter(Boolean);
   const hasHan = parts.some((t) => /[\u3400-\u9fff]/.test(t));
   return parts.join(hasHan ? "" : " ")
     .replace(/\s+/g, " ")
