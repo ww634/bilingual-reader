@@ -344,6 +344,39 @@ function onSelectionEvent(e) {
   else positionToolbar(geometry);
 }
 
+// The selection as it appears on screen (pinyin or characters for Chinese,
+// the words themselves otherwise) — what Copy puts on the clipboard.
+function selectionDisplayText() {
+  const parts = getSelectedSpans().map((el) => (el.textContent || "").trim()).filter(Boolean);
+  const hasHan = parts.some((t) => /[\u3400-\u9fff]/.test(t));
+  return parts.join(hasHan ? "" : " ")
+    .replace(/\s+/g, " ")
+    .replace(/\s+([,.;:!?。，！？；：、])/g, "$1")
+    .trim();
+}
+
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    // Fallback for browsers without the async clipboard API (or that refuse it).
+    try {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      const ok = document.execCommand("copy");
+      ta.remove();
+      return ok;
+    } catch { return false; }
+  }
+}
+
 // ── Wiring ──
 
 /**
@@ -396,6 +429,7 @@ export function initAssistant() {
     if (!btn) return;
     e.preventDefault();
     const act = btn.dataset.act;
+    if (act === "copy") return;          // handled on click (Safari's clipboard rule)
     if (act === "pronounce") {
       // Read the selection aloud in the book's language. Speaks the HANZI (never
       // the displayed pinyin); runs inside this gesture so iOS allows the audio.
@@ -417,5 +451,21 @@ export function initAssistant() {
         : "Explain this: pronunciation, meaning, and any grammar notes.";
       setTimeout(() => send(ask, { auto: true }), 300);
     }
+  });
+
+  // Copy runs on click: Safari only allows clipboard writes from a completed tap.
+  bar?.addEventListener("click", async (e) => {
+    const btn = e.target.closest('button[data-act="copy"]');
+    if (!btn) return;
+    const text = selectionDisplayText();
+    if (!text) return;
+    const ok = await copyToClipboard(text);
+    const label = btn.querySelector("span");
+    if (label) label.textContent = ok ? "Copied" : "Failed";
+    setTimeout(() => {
+      if (label) label.textContent = "Copy";
+      clearSelection();
+      hideToolbar();
+    }, 700);
   });
 }

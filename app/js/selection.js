@@ -32,6 +32,16 @@ let knobGrab = { x: 0, y: 0 };  // where on a handle the finger grabbed it
 let suppressClick = false;      // swallow the click that follows a selection gesture
 let suppressTimer = null;
 let knobs = null;               // { root, start, end }
+let lastPointer = null;         // latest pointer position during a drag
+let autoRaf = null;             // timer id of the auto-scroll loop
+let autoLast = 0;               // timestamp of the previous auto-scroll step
+
+// Auto-scroll: while dragging a selection, a finger near the top/bottom of the
+// page scrolls it (faster the closer to the edge), like iOS does. Driven by a
+// timer with a time-based step, so the speed stays right even if frames lag.
+const EDGE_PX = 70;             // edge zone height
+const MAX_SPEED = 900;          // px per second at the very edge
+const STEP_MS = 16;
 
 // ── Word helpers (also used by the assistant) ──
 
@@ -70,6 +80,7 @@ export function clearSelection() {
   state = null;
   drag = null;
   press = null;
+  stopAutoScroll();
   removeHighlights();
   hideKnobs();
   emit();
@@ -207,6 +218,55 @@ function startNewDrag(el) {
   emit();
 }
 
+// Extend the selection to the word nearest (x, y) for the current drag kind.
+function updateDragAt(x, y) {
+  if (drag === "new") {
+    const idx = nearestIndex(x, y);
+    state.lo = Math.min(state.anchor, idx);
+    state.hi = Math.max(state.anchor, idx);
+  } else {
+    const idx = nearestIndex(x - knobGrab.x, y - knobGrab.y);
+    if (drag === "start") state.lo = Math.min(idx, state.hi);
+    else state.hi = Math.max(idx, state.lo);
+  }
+  render();
+}
+
+// Word positions are cached in viewport coordinates; refresh after any scroll.
+function remeasure() {
+  if (state) state.rects = state.spans.map((el) => el.getBoundingClientRect());
+}
+
+function stopAutoScroll() {
+  if (autoRaf) clearTimeout(autoRaf);
+  autoRaf = null;
+  lastPointer = null;
+}
+
+function autoScrollTick() {
+  autoRaf = null;
+  if (!drag || !state || !lastPointer) return;
+  const page = state.page;
+  const box = page.getBoundingClientRect();
+  const top = Math.max(box.top, 0);
+  const bottom = Math.min(box.bottom, window.innerHeight);
+  const y = lastPointer.y;
+  let dir = 0;
+  if (y > bottom - EDGE_PX) dir = Math.min(1, (y - (bottom - EDGE_PX)) / EDGE_PX);
+  else if (y < top + EDGE_PX) dir = -Math.min(1, (top + EDGE_PX - y) / EDGE_PX);
+  if (!dir) return;                       // left the edge zone — stop until it re-enters
+  const now = performance.now();
+  const dt = Math.min(0.1, (now - autoLast) / 1000);   // cap so a stall can't jump far
+  autoLast = now;
+  const before = page.scrollTop;
+  page.scrollTop = before + dir * Math.max(1, MAX_SPEED * dt);
+  if (page.scrollTop !== before) {        // actually moved (not already at the end)
+    remeasure();
+    updateDragAt(lastPointer.x, lastPointer.y);
+  }
+  autoRaf = setTimeout(autoScrollTick, STEP_MS);
+}
+
 function onPointerDown(e) {
   if (e.button) return;                          // primary button only
   if (state) { clearSelection(); armSuppress(); } // a tap while selected just dismisses
@@ -222,16 +282,9 @@ function onPointerDown(e) {
 function onPointerMove(e) {
   if (drag) {
     if (!state) return;
-    if (drag === "new") {
-      const idx = nearestIndex(e.clientX, e.clientY);
-      state.lo = Math.min(state.anchor, idx);
-      state.hi = Math.max(state.anchor, idx);
-    } else {
-      const idx = nearestIndex(e.clientX - knobGrab.x, e.clientY - knobGrab.y);
-      if (drag === "start") state.lo = Math.min(idx, state.hi);
-      else state.hi = Math.max(idx, state.lo);
-    }
-    render();
+    lastPointer = { x: e.clientX, y: e.clientY };
+    updateDragAt(e.clientX, e.clientY);
+    if (!autoRaf) { autoLast = performance.now(); autoRaf = setTimeout(autoScrollTick, STEP_MS); }
     return;
   }
   if (!press || e.pointerId !== press.id) return;
@@ -247,6 +300,7 @@ function onPointerMove(e) {
 
 function onPointerUp() {
   if (press) { clearTimeout(press.timer); press = null; }
+  stopAutoScroll();
   if (drag) {
     drag = null;
     armSuppress();        // the click that follows a drag must not open the popover
@@ -285,7 +339,17 @@ function init() {
   }, true);
 
   // Anything that moves or rewrites the text invalidates the highlight geometry.
-  pages.addEventListener("scroll", clearSelection, { passive: true });
+  // Scroll events don't bubble, so listen in the capture phase to also hear the
+  // pages' own vertical scrolling. Turning the page (the pager itself scrolls)
+  // clears the selection; scrolling within a page keeps it and re-positions the
+  // handles and action bar.
+  pages.addEventListener("scroll", (e) => {
+    if (!state) return;
+    if (e.target === pages) { clearSelection(); return; }
+    remeasure();
+    render();
+    if (!drag) emit();
+  }, { passive: true, capture: true });
   window.addEventListener("resize", clearSelection);
   window.addEventListener("reader:script", clearSelection);
   window.addEventListener("reader:opened", clearSelection);
