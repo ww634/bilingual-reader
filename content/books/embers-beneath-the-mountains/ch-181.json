@@ -1,0 +1,6128 @@
+{
+  "id": "ch-181",
+  "book_id": "embers-beneath-the-mountains",
+  "language": "zh",
+  "version": 1,
+  "title": {
+    "target": "huílái jiǎng gěi nǐ tīng",
+    "english": "Back to Tell You",
+    "hanzi": "回来讲给你听"
+  },
+  "pairs": [
+    {
+      "target": "tóng jiē chéng de kè bù bǐ tā jìde de chǎo . chuán zài dìwǔtiān xiàwǔ kàoàn , tǎ wéi bèizhe bāo zǒushàng zhànqiáo , tīngjiàn yǒurén jiàomài rètāng , chàdiǎn xiān huítóu zhǎo bǔguō de nǚrén .",
+      "english": "Copperstep's passenger landing was noisier than he remembered. Docking on the fifth afternoon, Tavi stepped onto the gangway with his bag; a hot-soup vendor's call almost made him look for the pot mender.",
+      "hanzi": "铜阶城的客埠比他记得的吵。\n船在第五天下午靠岸，塔维背着包走上栈桥，听见有人叫卖热汤，差点先回头找补锅的女人。",
+      "alignment": [
+        {
+          "english": "Copperstep",
+          "target": "tóng jiē chéng",
+          "hanzi": "铜阶城",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "Copperstep's",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "passenger landing",
+          "target": "kè bù",
+          "hanzi": "客埠",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "than",
+          "target": "bǐ",
+          "hanzi": "比",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "remembered",
+          "target": "jìde",
+          "hanzi": "记得",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "remembered",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "noisier",
+          "target": "chǎo",
+          "hanzi": "吵",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "Docking",
+          "target": "chuán",
+          "hanzi": "船",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "on",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "fifth",
+          "target": "dìwǔ",
+          "hanzi": "第五",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "fifth",
+          "target": "tiān",
+          "hanzi": "天",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "afternoon",
+          "target": "xiàwǔ",
+          "hanzi": "下午",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Docking",
+          "target": "kàoàn",
+          "hanzi": "靠岸",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "with",
+          "target": "bèi",
+          "hanzi": "背",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "zhe",
+          "hanzi": "着",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "bag",
+          "target": "bāo",
+          "hanzi": "包",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "stepped onto",
+          "target": "zǒushàng",
+          "hanzi": "走上",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "gangway",
+          "target": "zhànqiáo",
+          "hanzi": "栈桥",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "call",
+          "target": "tīngjiàn",
+          "hanzi": "听见",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "a",
+          "target": "yǒu",
+          "hanzi": "有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "vendor",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "call",
+          "target": "jiàomài",
+          "hanzi": "叫卖",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "hot-soup",
+          "target": "rètāng",
+          "hanzi": "热汤",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "almost",
+          "target": "chàdiǎn",
+          "hanzi": "差点",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "look",
+          "target": "xiān",
+          "hanzi": "先",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "look",
+          "target": "huítóu",
+          "hanzi": "回头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "look for",
+          "target": "zhǎo",
+          "hanzi": "找",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pot mender",
+          "target": "bǔguō",
+          "hanzi": "补锅",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "pot",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "mender",
+          "target": "nǚrén",
+          "hanzi": "女人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "tā zǎo zài yú wān xiàchuán , rújīn shēnbiān zhǐyǒu bào zhe zìjǐ tiěxiá de sāng ruì . tā xiàng tā diǎntóu , méi duō hánxuān , biàn qù zhǎo děng zài huò pái páng de zhùshǒu .",
+      "english": "She had left at Elmbay; only Sangrui with her iron cases was beside him now. She nodded, then went without much chat to her assistant waiting by the freight sign.",
+      "hanzi": "她早在榆湾下船，如今身边只有抱着自己铁匣的桑芮。她向他点头，没多寒暄，便去找等在货牌旁的助手。\n",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "had",
+          "target": "zǎo",
+          "hanzi": "早",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "at",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Elmbay",
+          "target": "yú wān",
+          "hanzi": "榆湾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "left",
+          "target": "xiàchuán",
+          "hanzi": "下船",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "now",
+          "target": "rújīn",
+          "hanzi": "如今",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "beside him",
+          "target": "shēnbiān",
+          "hanzi": "身边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "only",
+          "target": "zhǐyǒu",
+          "hanzi": "只有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "with",
+          "target": "bào",
+          "hanzi": "抱",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "zhe",
+          "hanzi": "着",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "her",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "iron cases",
+          "target": "tiěxiá",
+          "hanzi": "铁匣",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "her",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Sangrui",
+          "target": "sāng ruì",
+          "hanzi": "桑芮",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "She",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "nodded",
+          "target": "xiàng",
+          "hanzi": "向",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "him",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "nodded",
+          "target": "diǎntóu",
+          "hanzi": "点头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "without",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "much",
+          "target": "duō",
+          "hanzi": "多",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "chat",
+          "target": "hánxuān",
+          "hanzi": "寒暄",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "then",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "went",
+          "target": "qù",
+          "hanzi": "去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "to",
+          "target": "zhǎo",
+          "hanzi": "找",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "waiting",
+          "target": "děng",
+          "hanzi": "等",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "by",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "freight sign",
+          "target": "huò pái",
+          "hanzi": "货牌",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "by",
+          "target": "páng",
+          "hanzi": "旁",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "waiting",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "assistant",
+          "target": "zhùshǒu",
+          "hanzi": "助手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "tā zhào yuándìng de lùshang pō huíjiā . sè lā bú zài ménkǒu , wūlǐ yě méi tèyì duō bǎi yífù wǎnkuài . tā zhèng gěi yíjiàn yīfu fèng zuìhòu nàduàn xiù biān , táitóu kàn tā , xiān shuō zhuōshàng yǒu shuǐ , bié bǎ bāo gē tā bù shàng . tā jìng juéde zhè jù huà tīng zhe hěn shūfú .",
+      "english": "He followed his planned uphill route home. Sela wasn't at the door, no special place set inside. Sewing the final cuff seam, she looked up: water on the table, don't put the bag on her cloth. He found those words wonderfully comforting.",
+      "hanzi": "他照原定的路上坡回家。瑟拉不在门口，屋里也没特意多摆一副碗筷。她正给一件衣服缝最后那段袖边，抬头看他，先说桌上有水，别把包搁她布上。\n他竟觉得这句话听着很舒服。\n",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "followed",
+          "target": "zhào",
+          "hanzi": "照",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "planned",
+          "target": "yuándìng",
+          "hanzi": "原定",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "planned",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "route",
+          "target": "lù",
+          "hanzi": "路",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "uphill",
+          "target": "shang pō",
+          "hanzi": "上坡",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "home",
+          "target": "huíjiā",
+          "hanzi": "回家",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Sela",
+          "target": "sè lā",
+          "hanzi": "瑟拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "wasn't",
+          "target": "bú",
+          "hanzi": "不",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "at",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "door",
+          "target": "ménkǒu",
+          "hanzi": "门口",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "inside",
+          "target": "wūlǐ",
+          "hanzi": "屋里",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "no",
+          "target": "yě",
+          "hanzi": "也",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "no",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "special",
+          "target": "tèyì",
+          "hanzi": "特意",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "special",
+          "target": "duō",
+          "hanzi": "多",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "set",
+          "target": "bǎi",
+          "hanzi": "摆",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "place",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "place",
+          "target": "fù",
+          "hanzi": "副",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "place",
+          "target": "wǎnkuài",
+          "hanzi": "碗筷",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "she",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Sewing",
+          "target": "zhèng",
+          "hanzi": "正",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Sewing",
+          "target": "gěi",
+          "hanzi": "给",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "seam",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "seam",
+          "target": "jiàn",
+          "hanzi": "件",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cuff",
+          "target": "yīfu",
+          "hanzi": "衣服",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Sewing",
+          "target": "fèng",
+          "hanzi": "缝",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "final",
+          "target": "zuìhòu",
+          "hanzi": "最后",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "seam",
+          "target": "duàn",
+          "hanzi": "段",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cuff seam",
+          "target": "xiù biān",
+          "hanzi": "袖边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "looked up",
+          "target": "táitóu",
+          "hanzi": "抬头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "looked",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "water",
+          "target": "xiān",
+          "hanzi": "先",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "words",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "table",
+          "target": "zhuō",
+          "hanzi": "桌",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "on",
+          "target": "shàng",
+          "hanzi": "上",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "water",
+          "target": "yǒu",
+          "hanzi": "有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "water",
+          "target": "shuǐ",
+          "hanzi": "水",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "don't",
+          "target": "bié",
+          "hanzi": "别",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the bag",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "bag",
+          "target": "bāo",
+          "hanzi": "包",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "put",
+          "target": "gē",
+          "hanzi": "搁",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "her",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cloth",
+          "target": "bù",
+          "hanzi": "布",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "on",
+          "target": "shàng",
+          "hanzi": "上",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "wonderfully",
+          "target": "jìng",
+          "hanzi": "竟",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "found",
+          "target": "juéde",
+          "hanzi": "觉得",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "those",
+          "target": "zhè",
+          "hanzi": "这",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "words",
+          "target": "jù",
+          "hanzi": "句",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "words",
+          "target": "huà",
+          "hanzi": "话",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "words",
+          "target": "tīng",
+          "hanzi": "听",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "words",
+          "target": "zhe",
+          "hanzi": "着",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "wonderfully",
+          "target": "hěn",
+          "hanzi": "很",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "comforting",
+          "target": "shūfú",
+          "hanzi": "舒服",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "hē guò shuǐ , tā bǎ sānwǎn kèzhàn de dānzi ná chūlái , yòu náchū jiù dēngjì de chāo yè . sè lā fàngxià zhēn , děng tā bǎ lái chù jiǎngwán , cái yòng gānjìng shǒu jiē .",
+      "english": "After water he produced the Three Bowls Inn receipt and copied register page. Sela put down her needle, waiting for his explanation of the source before taking it with clean hands.",
+      "hanzi": "喝过水，他把三碗客栈的单子拿出来，又拿出旧登记的抄页。瑟拉放下针，等他把来处讲完，才用干净手接。",
+      "alignment": [
+        {
+          "english": "After",
+          "target": "hē",
+          "hanzi": "喝",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "After",
+          "target": "guò",
+          "hanzi": "过",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "water",
+          "target": "shuǐ",
+          "hanzi": "水",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the Three Bowls Inn receipt",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Three Bowls Inn",
+          "target": "sānwǎn kèzhàn",
+          "hanzi": "三碗客栈",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "Inn",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "receipt",
+          "target": "dānzi",
+          "hanzi": "单子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "produced",
+          "target": "ná chūlái",
+          "hanzi": "拿出来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "and",
+          "target": "yòu",
+          "hanzi": "又",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "produced",
+          "target": "náchū",
+          "hanzi": "拿出",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "register",
+          "target": "jiù",
+          "hanzi": "旧",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "register",
+          "target": "dēngjì",
+          "hanzi": "登记",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "register",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "copied register page",
+          "target": "chāo yè",
+          "hanzi": "抄页",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Sela",
+          "target": "sè lā",
+          "hanzi": "瑟拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "put down",
+          "target": "fàngxià",
+          "hanzi": "放下",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "needle",
+          "target": "zhēn",
+          "hanzi": "针",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "waiting",
+          "target": "děng",
+          "hanzi": "等",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his explanation",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "source",
+          "target": "lái chù",
+          "hanzi": "来处",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "explanation",
+          "target": "jiǎngwán",
+          "hanzi": "讲完",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "before",
+          "target": "cái",
+          "hanzi": "才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "yòng",
+          "hanzi": "用",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "clean",
+          "target": "gānjìng",
+          "hanzi": "干净",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "hands",
+          "target": "shǒu",
+          "hanzi": "手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "taking",
+          "target": "jiē",
+          "hanzi": "接",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "tā cóng yuán shěn gěi kàn de sāncè bó jiǎng qǐ , jiǎng nàge bú zài lán lǐ de chā , méi bǎ zìjǐ nà yíshùnjiān de xīnhuāng shěngdiào , yě méi bǎ méiyǒu hòuxù shuō chéng yìzhǒng dáàn .",
+      "english": "He began with Yuan's three volumes and the cross outside the column, neither omitting his moment of panic nor calling the lack of follow-up an answer.",
+      "hanzi": "他从袁婶给看的三册簿讲起，讲那个不在栏里的叉，没把自己那一瞬间的心慌省掉，也没把没有后续说成一种答案。\n",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "cóng",
+          "hanzi": "从",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Yuan",
+          "target": "yuán shěn",
+          "hanzi": "袁婶",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "Yuan's",
+          "target": "gěi",
+          "hanzi": "给",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Yuan's",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Yuan's",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "three",
+          "target": "sān",
+          "hanzi": "三",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "volumes",
+          "target": "cè",
+          "hanzi": "册",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "volumes",
+          "target": "bó",
+          "hanzi": "簿",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "began",
+          "target": "jiǎng qǐ",
+          "hanzi": "讲起",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "jiǎng",
+          "hanzi": "讲",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cross",
+          "target": "ge",
+          "hanzi": "个",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "outside",
+          "target": "bú",
+          "hanzi": "不",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "outside",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "column",
+          "target": "lán",
+          "hanzi": "栏",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "outside",
+          "target": "lǐ",
+          "hanzi": "里",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "outside",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cross",
+          "target": "chā",
+          "hanzi": "叉",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "neither",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his moment",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "moment",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "moment",
+          "target": "shùnjiān",
+          "hanzi": "瞬间",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "of",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "panic",
+          "target": "xīnhuāng",
+          "hanzi": "心慌",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "omitting",
+          "target": "shěngdiào",
+          "hanzi": "省掉",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "nor",
+          "target": "yě",
+          "hanzi": "也",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "nor",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the lack",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "lack",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "follow-up",
+          "target": "hòuxù",
+          "hanzi": "后续",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "calling",
+          "target": "shuō chéng",
+          "hanzi": "说成",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "an",
+          "target": "yì",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "answer",
+          "target": "zhǒng",
+          "hanzi": "种",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "answer",
+          "target": "dáàn",
+          "hanzi": "答案",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "sè lā dú dào kě dài sòng dài lǐng yòutóng shàngpō , tíng le hǎojiǔ . \" shì tā zìjǐ xiě de ? \" \" dēngjì de rén xiě de . nà cè méi shuō shuí tì tā luòbǐ . \"",
+      "english": "Sela paused a long time at the offer to escort uncollected children uphill. “Did she write it herself?” “The registrar did. The volume doesn't say who wrote for her.”",
+      "hanzi": "瑟拉读到可代送待领幼童上坡，停了好久。\n“是她自己写的？”\n“登记的人写的。那册没说谁替她落笔。”\n",
+      "alignment": [
+        {
+          "english": "Sela",
+          "target": "sè lā",
+          "hanzi": "瑟拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "at",
+          "target": "dú dào",
+          "hanzi": "读到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "offer",
+          "target": "kě",
+          "hanzi": "可",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "escort",
+          "target": "dài sòng",
+          "hanzi": "代送",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "uncollected",
+          "target": "dài lǐng",
+          "hanzi": "待领",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "children",
+          "target": "yòutóng",
+          "hanzi": "幼童",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "uphill",
+          "target": "shàngpō",
+          "hanzi": "上坡",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "paused",
+          "target": "tíng",
+          "hanzi": "停",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "paused",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "a long time",
+          "target": "hǎojiǔ",
+          "hanzi": "好久",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "Did",
+          "target": "shì",
+          "hanzi": "是",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "she",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "herself",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "write",
+          "target": "xiě",
+          "hanzi": "写",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "it",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "registrar",
+          "target": "dēngjì",
+          "hanzi": "登记",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "registrar",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "registrar",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "did",
+          "target": "xiě",
+          "hanzi": "写",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "did",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "The",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "volume",
+          "target": "cè",
+          "hanzi": "册",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "doesn't",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "say",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "who",
+          "target": "shuí",
+          "hanzi": "谁",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "for",
+          "target": "tì",
+          "hanzi": "替",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "her",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "wrote",
+          "target": "luòbǐ",
+          "hanzi": "落笔",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        }
+      ]
+    },
+    {
+      "target": "tā diǎntóu , jìxù dú xiàqù . tā hūrán xiǎng xièxiè yuán shěn ràng zìjǐ chāo quán , ruò zhī dài zhe fú lán liǎnggè zì huílái , lián zhè jù huà dōu shuōbùqīng .",
+      "english": "She nodded and read on. He suddenly wanted to thank Yuan for the complete copy; with only Fulan's name, he couldn't even have explained that.",
+      "hanzi": "她点头，继续读下去。他忽然想谢谢袁婶让自己抄全，若只带着芙兰两个字回来，连这句话都说不清。\n",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "nodded",
+          "target": "diǎntóu",
+          "hanzi": "点头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "on",
+          "target": "jìxù",
+          "hanzi": "继续",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "read",
+          "target": "dú",
+          "hanzi": "读",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "on",
+          "target": "xiàqù",
+          "hanzi": "下去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "suddenly",
+          "target": "hūrán",
+          "hanzi": "忽然",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "wanted",
+          "target": "xiǎng",
+          "hanzi": "想",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "thank",
+          "target": "xièxiè",
+          "hanzi": "谢谢",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "Yuan",
+          "target": "yuán shěn",
+          "hanzi": "袁婶",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "for",
+          "target": "ràng",
+          "hanzi": "让",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "copy",
+          "target": "chāo",
+          "hanzi": "抄",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "complete",
+          "target": "quán",
+          "hanzi": "全",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with only",
+          "target": "ruò",
+          "hanzi": "若",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "only",
+          "target": "zhī",
+          "hanzi": "只",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "dài",
+          "hanzi": "带",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "zhe",
+          "hanzi": "着",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Fulan",
+          "target": "fú lán",
+          "hanzi": "芙兰",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "name",
+          "target": "liǎng",
+          "hanzi": "两",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "name",
+          "target": "gè",
+          "hanzi": "个",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "name",
+          "target": "zì",
+          "hanzi": "字",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "huílái",
+          "hanzi": "回来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "even",
+          "target": "lián",
+          "hanzi": "连",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that",
+          "target": "zhè",
+          "hanzi": "这",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that",
+          "target": "jù",
+          "hanzi": "句",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that",
+          "target": "huà",
+          "hanzi": "话",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "even",
+          "target": "dōu",
+          "hanzi": "都",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "couldn't even have explained",
+          "target": "shuōbùqīng",
+          "hanzi": "说不清",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "\" wǒ bù zhīdào tā hòulái yǒuméiyǒu zài zhǎo zhe nàge háizi . \" tā shuō . \" ǹg . \" \" yě bù zhīdào zhèlǐ de háizi shìbushì wǒ . \"",
+      "english": "“I don't know whether she ever found that child afterward,” he said. “Mm.” “Or whether that child is me.”",
+      "hanzi": "“我不知道她后来有没有再找着那个孩子。”他说。\n“嗯。”\n“也不知道这里的孩子是不是我。”\n",
+      "alignment": [
+        {
+          "english": "I",
+          "target": "wǒ",
+          "hanzi": "我",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "don't know",
+          "target": "bù zhīdào",
+          "hanzi": "不知道",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "she",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "afterward",
+          "target": "hòulái",
+          "hanzi": "后来",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "whether",
+          "target": "yǒuméiyǒu",
+          "hanzi": "有没有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "ever",
+          "target": "zài",
+          "hanzi": "再",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "found",
+          "target": "zhǎo zhe",
+          "hanzi": "找着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "child",
+          "target": "ge",
+          "hanzi": "个",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "child",
+          "target": "háizi",
+          "hanzi": "孩子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "said",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Mm",
+          "target": "ǹg",
+          "hanzi": "嗯",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Or",
+          "target": "yě",
+          "hanzi": "也",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "whether",
+          "target": "bù zhīdào",
+          "hanzi": "不知道",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that",
+          "target": "zhèlǐ",
+          "hanzi": "这里",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "child",
+          "target": "háizi",
+          "hanzi": "孩子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "whether",
+          "target": "shìbushì",
+          "hanzi": "是不是",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "me",
+          "target": "wǒ",
+          "hanzi": "我",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "sè lā yòu yìng le yìshēng , méiyǒu tì tā bǎ zhè jù bú quèdìng gǎnjǐn biànchéng quèdìng . tā jiāng zhǐ fàng píng , wèn tā zuòchuán yǒuméiyǒu chī rèfàn . tā xiào chūlái , xiào dào yíbàn , hūrán bǎ liǎn mái jìn shuāngshǒu lǐ .",
+      "english": "Sela acknowledged him again, without rushing uncertainty into certainty for him. She laid the paper flat and asked about hot meals aboard. He laughed, then suddenly buried his face in both hands.",
+      "hanzi": "瑟拉又应了一声，没有替他把这句不确定赶紧变成确定。她将纸放平，问他坐船有没有吃热饭。他笑出来，笑到一半，忽然把脸埋进双手里。\n",
+      "alignment": [
+        {
+          "english": "Sela",
+          "target": "sè lā",
+          "hanzi": "瑟拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "again",
+          "target": "yòu",
+          "hanzi": "又",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "acknowledged",
+          "target": "yìng",
+          "hanzi": "应",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "acknowledged",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "acknowledged",
+          "target": "yì",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "acknowledged",
+          "target": "shēng",
+          "hanzi": "声",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "without",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "for",
+          "target": "tì",
+          "hanzi": "替",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "him",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "uncertainty",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "uncertainty",
+          "target": "zhè",
+          "hanzi": "这",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "uncertainty",
+          "target": "jù",
+          "hanzi": "句",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "uncertainty",
+          "target": "bú quèdìng",
+          "hanzi": "不确定",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "rushing",
+          "target": "gǎnjǐn",
+          "hanzi": "赶紧",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "into",
+          "target": "biànchéng",
+          "hanzi": "变成",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "certainty",
+          "target": "quèdìng",
+          "hanzi": "确定",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "She",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the paper",
+          "target": "jiāng",
+          "hanzi": "将",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "paper",
+          "target": "zhǐ",
+          "hanzi": "纸",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "laid the paper flat",
+          "target": "fàng píng",
+          "hanzi": "放平",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "asked about",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "aboard",
+          "target": "zuòchuán",
+          "hanzi": "坐船",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "about",
+          "target": "yǒuméiyǒu",
+          "hanzi": "有没有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "meals",
+          "target": "chī",
+          "hanzi": "吃",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "hot meals",
+          "target": "rèfàn",
+          "hanzi": "热饭",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "laughed",
+          "target": "xiào",
+          "hanzi": "笑",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "laughed",
+          "target": "chūlái",
+          "hanzi": "出来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "laughed",
+          "target": "xiào",
+          "hanzi": "笑",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "then",
+          "target": "dào",
+          "hanzi": "到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "then",
+          "target": "yíbàn",
+          "hanzi": "一半",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "suddenly",
+          "target": "hūrán",
+          "hanzi": "忽然",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his face",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "face",
+          "target": "liǎn",
+          "hanzi": "脸",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "buried",
+          "target": "mái jìn",
+          "hanzi": "埋进",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "both hands",
+          "target": "shuāngshǒu",
+          "hanzi": "双手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "in",
+          "target": "lǐ",
+          "hanzi": "里",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "tā méi zài wèn . zhēnxiàn réng fàngzài pángbiān , chuāngwài yǒurén tuīchē zǒuguò , lúnzǐ niǎndào ménqián nà kuài bùpíng de shítou , gēdēng yìxiǎng . tā táiqǐ tóu shí , tā dì lái yíkuài xǐ guò de bù , biānjiǎo hái méi zhé qí .",
+      "english": "She asked no more. Needlework stayed beside her. Outside a cart wheel clunked over the uneven doorstep stone. When he raised his head, she handed him a washed cloth, its corners still unfolded.",
+      "hanzi": "她没再问。针线仍放在旁边，窗外有人推车走过，轮子碾到门前那块不平的石头，咯噔一响。他抬起头时，她递来一块洗过的布，边角还没折齐。\n",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "no more",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "no more",
+          "target": "zài",
+          "hanzi": "再",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "asked",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Needlework",
+          "target": "zhēnxiàn",
+          "hanzi": "针线",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "stayed",
+          "target": "réng",
+          "hanzi": "仍",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stayed",
+          "target": "fàng",
+          "hanzi": "放",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "beside",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "her",
+          "target": "pángbiān",
+          "hanzi": "旁边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Outside",
+          "target": "chuāngwài",
+          "hanzi": "窗外",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "a",
+          "target": "yǒu",
+          "hanzi": "有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cart",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cart",
+          "target": "tuīchē",
+          "hanzi": "推车",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "over",
+          "target": "zǒuguò",
+          "hanzi": "走过",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "wheel",
+          "target": "lúnzǐ",
+          "hanzi": "轮子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "over",
+          "target": "niǎndào",
+          "hanzi": "碾到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "doorstep",
+          "target": "ménqián",
+          "hanzi": "门前",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stone",
+          "target": "kuài",
+          "hanzi": "块",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "uneven",
+          "target": "bùpíng",
+          "hanzi": "不平",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "uneven",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stone",
+          "target": "shítou",
+          "hanzi": "石头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "clunked",
+          "target": "gēdēng",
+          "hanzi": "咯噔",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "clunked",
+          "target": "yì",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "clunked",
+          "target": "xiǎng",
+          "hanzi": "响",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "raised his head",
+          "target": "táiqǐ tóu",
+          "hanzi": "抬起头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "When",
+          "target": "shí",
+          "hanzi": "时",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "she",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "handed",
+          "target": "dì lái",
+          "hanzi": "递来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "a",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cloth",
+          "target": "kuài",
+          "hanzi": "块",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "washed",
+          "target": "xǐ",
+          "hanzi": "洗",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "washed",
+          "target": "guò",
+          "hanzi": "过",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "washed",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cloth",
+          "target": "bù",
+          "hanzi": "布",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "corners",
+          "target": "biānjiǎo",
+          "hanzi": "边角",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "still",
+          "target": "hái",
+          "hanzi": "还",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "unfolded",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "unfolded",
+          "target": "zhé qí",
+          "hanzi": "折齐",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "wǎnfàn chī dé hěn wǎn . tǎ wéi jiǎng yú jià , rǎnbù de xiàngzi hé zuò chuāng gōu de gūniáng , sè lā tīngdào nà zhū tiāntiān cóng yǎnqián lòudiào de yúshù , xiào le bàntiān .",
+      "english": "They ate late. Tavi described fish racks, the dyeing lane and the window-hook girl; Sela laughed long at the elm overlooked daily.",
+      "hanzi": "晚饭吃得很晚。塔维讲鱼架、染布的巷子和做窗钩的姑娘，瑟拉听到那株天天从眼前漏掉的榆树，笑了半天。",
+      "alignment": [
+        {
+          "english": "ate",
+          "target": "wǎnfàn",
+          "hanzi": "晚饭",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "ate",
+          "target": "chī",
+          "hanzi": "吃",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "late",
+          "target": "dé",
+          "hanzi": "得",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "late",
+          "target": "hěn",
+          "hanzi": "很",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "late",
+          "target": "wǎn",
+          "hanzi": "晚",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "described",
+          "target": "jiǎng",
+          "hanzi": "讲",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "fish racks",
+          "target": "yú jià",
+          "hanzi": "鱼架",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "dyeing",
+          "target": "rǎnbù",
+          "hanzi": "染布",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "dyeing",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "lane",
+          "target": "xiàngzi",
+          "hanzi": "巷子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "and",
+          "target": "hé",
+          "hanzi": "和",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "window-hook",
+          "target": "zuò",
+          "hanzi": "做",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "window-hook",
+          "target": "chuāng gōu",
+          "hanzi": "窗钩",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "window-hook",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "girl",
+          "target": "gūniáng",
+          "hanzi": "姑娘",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Sela",
+          "target": "sè lā",
+          "hanzi": "瑟拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "at",
+          "target": "tīngdào",
+          "hanzi": "听到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "elm",
+          "target": "zhū",
+          "hanzi": "株",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "daily",
+          "target": "tiāntiān",
+          "hanzi": "天天",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "overlooked",
+          "target": "cóng",
+          "hanzi": "从",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "overlooked",
+          "target": "yǎnqián",
+          "hanzi": "眼前",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "overlooked",
+          "target": "lòudiào",
+          "hanzi": "漏掉",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "overlooked",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "elm",
+          "target": "yúshù",
+          "hanzi": "榆树",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "laughed",
+          "target": "xiào",
+          "hanzi": "笑",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "laughed",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "long",
+          "target": "bàntiān",
+          "hanzi": "半天",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "tā yòu jiǎng sāng ruì de liǎngfèn yànshōu , shuō xuégōng yào ràng tāmen gēn bìyè de rén gān shíliù zhōu huó , zìjǐ hái méi dìng gēn shuí . sè lā wèn chī zhù xiě méi xiěmíng , tīng tā shuō huì xiě , biàn zhī wèn xiǎnggànshénme .",
+      "english": "He described Sangrui's two inspections and the academy's sixteen weeks working with graduates, his host still undecided. Sela asked about written living terms; hearing they would be specified, she only asked what he wanted to do.",
+      "hanzi": "他又讲桑芮的两份验收，说学宫要让他们跟毕业的人干十六周活，自己还没定跟谁。\n瑟拉问吃住写没写明，听他说会写，便只问想干什么。\n",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "described",
+          "target": "yòu",
+          "hanzi": "又",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "described",
+          "target": "jiǎng",
+          "hanzi": "讲",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Sangrui",
+          "target": "sāng ruì",
+          "hanzi": "桑芮",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "Sangrui's",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "two",
+          "target": "liǎng",
+          "hanzi": "两",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "inspections",
+          "target": "fèn",
+          "hanzi": "份",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "inspections",
+          "target": "yànshōu",
+          "hanzi": "验收",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "academy",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "academy",
+          "target": "xuégōng",
+          "hanzi": "学宫",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "working",
+          "target": "yào",
+          "hanzi": "要",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "working",
+          "target": "ràng",
+          "hanzi": "让",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "working",
+          "target": "tāmen",
+          "hanzi": "他们",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "with",
+          "target": "gēn",
+          "hanzi": "跟",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "graduates",
+          "target": "bìyè",
+          "hanzi": "毕业",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "graduates",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "graduates",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "working",
+          "target": "gān",
+          "hanzi": "干",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sixteen",
+          "target": "shíliù",
+          "hanzi": "十六",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "weeks",
+          "target": "zhōu",
+          "hanzi": "周",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "working",
+          "target": "huó",
+          "hanzi": "活",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "still",
+          "target": "hái",
+          "hanzi": "还",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "undecided",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "undecided",
+          "target": "dìng",
+          "hanzi": "定",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "host",
+          "target": "gēn",
+          "hanzi": "跟",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "host",
+          "target": "shuí",
+          "hanzi": "谁",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Sela",
+          "target": "sè lā",
+          "hanzi": "瑟拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "asked about",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "living",
+          "target": "chī zhù",
+          "hanzi": "吃住",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "written living terms",
+          "target": "xiě méi xiěmíng",
+          "hanzi": "写没写明",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "hearing",
+          "target": "tīng",
+          "hanzi": "听",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "hearing",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "would be",
+          "target": "huì",
+          "hanzi": "会",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "specified",
+          "target": "xiě",
+          "hanzi": "写",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "only",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "only",
+          "target": "zhī",
+          "hanzi": "只",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "asked",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "wanted",
+          "target": "xiǎng",
+          "hanzi": "想",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "do",
+          "target": "gàn",
+          "hanzi": "干",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "what",
+          "target": "shénme",
+          "hanzi": "什么",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "\" xiǎng qù kànkàn lù wèishénme néng zǒu , huài le yǐhòu yòu shì shuí qù guǎn . \" tā dá dé bǐ zài xuéxiào shí kuài , suíhòu yǒuxiē búzìzài , \" bù zhī huà zài tú shàng de nàtiáo . \"",
+      "english": "“I want to see why roads can be used, and who handles them when they break.” He answered faster than at school, then felt awkward. “Not just the one drawn on a map.”",
+      "hanzi": "“想去看看路为什么能走，坏了以后又是谁去管。”他答得比在学校时快，随后有些不自在，“不只画在图上的那条。”\n",
+      "alignment": [
+        {
+          "english": "want",
+          "target": "xiǎng",
+          "hanzi": "想",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "to",
+          "target": "qù",
+          "hanzi": "去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "see",
+          "target": "kànkàn",
+          "hanzi": "看看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "roads",
+          "target": "lù",
+          "hanzi": "路",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "why",
+          "target": "wèishénme",
+          "hanzi": "为什么",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "can be",
+          "target": "néng",
+          "hanzi": "能",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "used",
+          "target": "zǒu",
+          "hanzi": "走",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "break",
+          "target": "huài",
+          "hanzi": "坏",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "when",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "when",
+          "target": "yǐhòu",
+          "hanzi": "以后",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "and",
+          "target": "yòu",
+          "hanzi": "又",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "who",
+          "target": "shì",
+          "hanzi": "是",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "who",
+          "target": "shuí",
+          "hanzi": "谁",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "handles",
+          "target": "qù",
+          "hanzi": "去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "handles",
+          "target": "guǎn",
+          "hanzi": "管",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "answered",
+          "target": "dá",
+          "hanzi": "答",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "faster",
+          "target": "dé",
+          "hanzi": "得",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "than",
+          "target": "bǐ",
+          "hanzi": "比",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "at",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "school",
+          "target": "xuéxiào",
+          "hanzi": "学校",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "at school",
+          "target": "shí",
+          "hanzi": "时",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "faster",
+          "target": "kuài",
+          "hanzi": "快",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "then",
+          "target": "suíhòu",
+          "hanzi": "随后",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "felt",
+          "target": "yǒuxiē",
+          "hanzi": "有些",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "awkward",
+          "target": "búzìzài",
+          "hanzi": "不自在",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "Not just",
+          "target": "bù zhī",
+          "hanzi": "不只",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "drawn",
+          "target": "huà",
+          "hanzi": "画",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "on",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "map",
+          "target": "tú",
+          "hanzi": "图",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "on",
+          "target": "shàng",
+          "hanzi": "上",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "drawn",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "one",
+          "target": "tiáo",
+          "hanzi": "条",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "tā bǎ tāngwǎn wǎng tā nàbiān nuó le nuó , shuō nà jiù wènwèn gān zhège de rén , bié bǎ měigè qùchù dōu xiān xiǎng chéng yuèjiè kè .",
+      "english": "She moved the soup toward him: ask people who do that work, then, don't imagine every posting as an Outrider's life.",
+      "hanzi": "她把汤碗往他那边挪了挪，说那就问问干这个的人，别把每个去处都先想成越界客。\n",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the soup",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "soup",
+          "target": "tāngwǎn",
+          "hanzi": "汤碗",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "toward",
+          "target": "wǎng",
+          "hanzi": "往",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "him",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "him",
+          "target": "nàbiān",
+          "hanzi": "那边",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "moved",
+          "target": "nuó",
+          "hanzi": "挪",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "moved",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "moved",
+          "target": "nuó",
+          "hanzi": "挪",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "ask",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "then",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "then",
+          "target": "jiù",
+          "hanzi": "就",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "ask",
+          "target": "wènwèn",
+          "hanzi": "问问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "do",
+          "target": "gān",
+          "hanzi": "干",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that",
+          "target": "zhè",
+          "hanzi": "这",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "work",
+          "target": "ge",
+          "hanzi": "个",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "who",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "people",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "don't",
+          "target": "bié",
+          "hanzi": "别",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "every posting",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "every",
+          "target": "měi",
+          "hanzi": "每",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "posting",
+          "target": "gè",
+          "hanzi": "个",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "posting",
+          "target": "qùchù",
+          "hanzi": "去处",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "every",
+          "target": "dōu",
+          "hanzi": "都",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "imagine",
+          "target": "xiān",
+          "hanzi": "先",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "imagine",
+          "target": "xiǎng chéng",
+          "hanzi": "想成",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Outrider",
+          "target": "yuèjiè kè",
+          "hanzi": "越界客",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        }
+      ]
+    },
+    {
+      "target": "shuì qián , tā jiāng dēngjì chāo yè fàngzài zìjǐ bùtào zhōng , méiyǒu gēn fú lán yuán xìn huàn . yuán xìn réng zài sè lā guìzi lǐ de zhēnxiàn tiěhé . tā shuō huíxiào yào chāo yífèn jì wū yà , wèn tā rèn bu rènde bó shàng nàduàn shìqíng ; shuōwán yòu bǔ yíjù , bù jí zhe jīnwǎn xiě .",
+      "english": "Before bed he kept the register copy in his sleeve, without exchanging it for Fulan's original in Sela's cupboard sewing tin. He would copy and mail it to Wuya after returning to school, asking about the entry, then added there was no rush to write tonight.",
+      "hanzi": "睡前，他将登记抄页放在自己布套中，没有跟芙兰原信换。原信仍在瑟拉柜子里的针线铁盒。他说回校要抄一份寄乌娅，问她认不认得簿上那段事情；说完又补一句，不急着今晚写。\n",
+      "alignment": [
+        {
+          "english": "Before bed",
+          "target": "shuì qián",
+          "hanzi": "睡前",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the register copy",
+          "target": "jiāng",
+          "hanzi": "将",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "register",
+          "target": "dēngjì",
+          "hanzi": "登记",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "copy",
+          "target": "chāo yè",
+          "hanzi": "抄页",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "kept",
+          "target": "fàng",
+          "hanzi": "放",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "in",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sleeve",
+          "target": "bùtào",
+          "hanzi": "布套",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "in",
+          "target": "zhōng",
+          "hanzi": "中",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "without",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "for",
+          "target": "gēn",
+          "hanzi": "跟",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Fulan",
+          "target": "fú lán",
+          "hanzi": "芙兰",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "original",
+          "target": "yuán xìn",
+          "hanzi": "原信",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "exchanging",
+          "target": "huàn",
+          "hanzi": "换",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "original",
+          "target": "yuán xìn",
+          "hanzi": "原信",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "in",
+          "target": "réng",
+          "hanzi": "仍",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "in",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Sela",
+          "target": "sè lā",
+          "hanzi": "瑟拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "cupboard",
+          "target": "guìzi",
+          "hanzi": "柜子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "in",
+          "target": "lǐ",
+          "hanzi": "里",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Sela's",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sewing",
+          "target": "zhēnxiàn",
+          "hanzi": "针线",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "tin",
+          "target": "tiěhé",
+          "hanzi": "铁盒",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "would",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "returning to school",
+          "target": "huíxiào",
+          "hanzi": "回校",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "would",
+          "target": "yào",
+          "hanzi": "要",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "copy",
+          "target": "chāo",
+          "hanzi": "抄",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "copy",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "copy",
+          "target": "fèn",
+          "hanzi": "份",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "mail",
+          "target": "jì",
+          "hanzi": "寄",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Wuya",
+          "target": "wū yà",
+          "hanzi": "乌娅",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "asking",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "about",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "about",
+          "target": "rèn bu rènde",
+          "hanzi": "认不认得",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "entry",
+          "target": "bó",
+          "hanzi": "簿",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "entry",
+          "target": "shàng",
+          "hanzi": "上",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "entry",
+          "target": "duàn",
+          "hanzi": "段",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "entry",
+          "target": "shìqíng",
+          "hanzi": "事情",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "then",
+          "target": "shuōwán",
+          "hanzi": "说完",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "then",
+          "target": "yòu",
+          "hanzi": "又",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "added",
+          "target": "bǔ",
+          "hanzi": "补",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "added",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "added",
+          "target": "jù",
+          "hanzi": "句",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "no",
+          "target": "bù",
+          "hanzi": "不",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "rush",
+          "target": "jí",
+          "hanzi": "急",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "rush",
+          "target": "zhe",
+          "hanzi": "着",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "tonight",
+          "target": "jīnwǎn",
+          "hanzi": "今晚",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "write",
+          "target": "xiě",
+          "hanzi": "写",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "sè lā shuō zhènghǎo , dēngyóu yě búshì búyào qián . dìèrtiān xiàwǔ huí xuégōng , tā méiyǒu duō shuì diào liúchū de nà yìtiān . hái wán wàichū lián , biàn qù kàn shuí huílái le .",
+      "english": "Sela said good, lamp oil wasn't free either. Next afternoon he returned to school, without sleeping away his spare day. After returning his itinerary copy, he went to see who was back.",
+      "hanzi": "瑟拉说正好，灯油也不是不要钱。\n第二天下午回学宫，他没有多睡掉留出的那一天。还完外出联，便去看谁回来了。",
+      "alignment": [
+        {
+          "english": "Sela",
+          "target": "sè lā",
+          "hanzi": "瑟拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "said",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "good",
+          "target": "zhènghǎo",
+          "hanzi": "正好",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "lamp oil",
+          "target": "dēngyóu",
+          "hanzi": "灯油",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "either",
+          "target": "yě",
+          "hanzi": "也",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "wasn't",
+          "target": "búshì",
+          "hanzi": "不是",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "free",
+          "target": "búyào qián",
+          "hanzi": "不要钱",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Next",
+          "target": "dìèr",
+          "hanzi": "第二",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Next",
+          "target": "tiān",
+          "hanzi": "天",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "afternoon",
+          "target": "xiàwǔ",
+          "hanzi": "下午",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "returned",
+          "target": "huí",
+          "hanzi": "回",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "school",
+          "target": "xuégōng",
+          "hanzi": "学宫",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "without",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "away",
+          "target": "duō",
+          "hanzi": "多",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sleeping away",
+          "target": "shuì diào",
+          "hanzi": "睡掉",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "spare",
+          "target": "liúchū",
+          "hanzi": "留出",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "spare",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "day",
+          "target": "yì",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "day",
+          "target": "tiān",
+          "hanzi": "天",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "returning",
+          "target": "hái wán",
+          "hanzi": "还完",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "itinerary copy",
+          "target": "wàichū lián",
+          "hanzi": "外出联",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "After",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "went",
+          "target": "qù",
+          "hanzi": "去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "see",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "who",
+          "target": "shuí",
+          "hanzi": "谁",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "back",
+          "target": "huílái",
+          "hanzi": "回来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "was",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "dé mǎ dài le yíguàn jiālǐ de suāncài , pà wò yǐjīng nálái pèi bǐng , yīwén wǎnyìdiǎn cái dào , xiùzǐ lǐ nà zhāng tú zhōngyú bújiàn le .",
+      "english": "Dema brought home pickles, already paired with bread by Pavo. Iven arrived later, his sleeve map finally gone.",
+      "hanzi": "德玛带了一罐家里的酸菜，帕沃已经拿来配饼，伊文晚一点才到，袖子里那张图终于不见了。\n",
+      "alignment": [
+        {
+          "english": "Dema",
+          "target": "dé mǎ",
+          "hanzi": "德玛",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "brought",
+          "target": "dài",
+          "hanzi": "带",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "brought",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pickles",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pickles",
+          "target": "guàn",
+          "hanzi": "罐",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "home",
+          "target": "jiālǐ",
+          "hanzi": "家里",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "home",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pickles",
+          "target": "suāncài",
+          "hanzi": "酸菜",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "Pavo",
+          "target": "pà wò",
+          "hanzi": "帕沃",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "already",
+          "target": "yǐjīng",
+          "hanzi": "已经",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "paired",
+          "target": "nálái",
+          "hanzi": "拿来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "paired",
+          "target": "pèi",
+          "hanzi": "配",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "bread",
+          "target": "bǐng",
+          "hanzi": "饼",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Iven",
+          "target": "yīwén",
+          "hanzi": "伊文",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "later",
+          "target": "wǎn",
+          "hanzi": "晚",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "later",
+          "target": "yìdiǎn",
+          "hanzi": "一点",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "later",
+          "target": "cái",
+          "hanzi": "才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "arrived",
+          "target": "dào",
+          "hanzi": "到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sleeve",
+          "target": "xiùzǐ",
+          "hanzi": "袖子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "sleeve",
+          "target": "lǐ",
+          "hanzi": "里",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "map",
+          "target": "zhāng",
+          "hanzi": "张",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "map",
+          "target": "tú",
+          "hanzi": "图",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "finally",
+          "target": "zhōngyú",
+          "hanzi": "终于",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "gone",
+          "target": "bújiàn",
+          "hanzi": "不见",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "gone",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "bàngwǎn tāmen zài xī jiē chī le chūfā qián shuōhǎo de fàn . tǎ wéi qǐngkè , mǐlā nà yídùn bàn méiyǒu suànjìnqù , sū yǐ tì tā shǒuzhù le zhèbǐ zhàng . shuí yě méi cuī zhe kàn xìn , tā biàn zhī shuō zài yú wān jiàndào yícè jiù dēngjì , zhǎo zhe yìdiǎn , hái méiyǒu quánbù míngbái .",
+      "english": "At dusk they ate the promised return dinner at West Steps, Tavi paying. Mira's meal-and-a-half debt stayed separate, Suyi defending that account. Nobody pressed for letters; he only mentioned an old register in Elmbay, finding a little without fully understanding yet.",
+      "hanzi": "傍晚他们在西阶吃了出发前说好的饭。塔维请客，米拉那一顿半没有算进去，苏苡替他守住了这笔账。谁也没催着看信，他便只说在榆湾见到一册旧登记，找着一点，还没有全部明白。\n",
+      "alignment": [
+        {
+          "english": "At dusk",
+          "target": "bàngwǎn",
+          "hanzi": "傍晚",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "they",
+          "target": "tāmen",
+          "hanzi": "他们",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "at",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "West Steps",
+          "target": "xī jiē",
+          "hanzi": "西阶",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "ate",
+          "target": "chī",
+          "hanzi": "吃",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "ate",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "return",
+          "target": "chūfā",
+          "hanzi": "出发",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "promised",
+          "target": "qián",
+          "hanzi": "前",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "promised",
+          "target": "shuōhǎo",
+          "hanzi": "说好",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "promised",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "dinner",
+          "target": "fàn",
+          "hanzi": "饭",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "paying",
+          "target": "qǐngkè",
+          "hanzi": "请客",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "Mira",
+          "target": "mǐlā",
+          "hanzi": "米拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "Mira's",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "meal",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "meal",
+          "target": "dùn",
+          "hanzi": "顿",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "a-half",
+          "target": "bàn",
+          "hanzi": "半",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stayed separate",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stayed separate",
+          "target": "suànjìnqù",
+          "hanzi": "算进去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "Suyi",
+          "target": "sū yǐ",
+          "hanzi": "苏苡",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "defending",
+          "target": "tì",
+          "hanzi": "替",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "that",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "defending",
+          "target": "shǒuzhù",
+          "hanzi": "守住",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "defending",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that",
+          "target": "zhè",
+          "hanzi": "这",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "account",
+          "target": "bǐ",
+          "hanzi": "笔",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "account",
+          "target": "zhàng",
+          "hanzi": "账",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "Nobody",
+          "target": "shuí",
+          "hanzi": "谁",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Nobody",
+          "target": "yě",
+          "hanzi": "也",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Nobody",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pressed",
+          "target": "cuī",
+          "hanzi": "催",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "pressed",
+          "target": "zhe",
+          "hanzi": "着",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "letters",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "letters",
+          "target": "xìn",
+          "hanzi": "信",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "only",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "only",
+          "target": "zhī",
+          "hanzi": "只",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "mentioned",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "in",
+          "target": "zài",
+          "hanzi": "在",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Elmbay",
+          "target": "yú wān",
+          "hanzi": "榆湾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "finding",
+          "target": "jiàndào",
+          "hanzi": "见到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "an",
+          "target": "yí",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "register",
+          "target": "cè",
+          "hanzi": "册",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "old",
+          "target": "jiù",
+          "hanzi": "旧",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "register",
+          "target": "dēngjì",
+          "hanzi": "登记",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "finding",
+          "target": "zhǎo zhe",
+          "hanzi": "找着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "a little",
+          "target": "yìdiǎn",
+          "hanzi": "一点",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "yet",
+          "target": "hái",
+          "hanzi": "还",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "without",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "fully",
+          "target": "quánbù",
+          "hanzi": "全部",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "understanding",
+          "target": "míngbái",
+          "hanzi": "明白",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "mǐlā wèn tā yǒuméiyǒu gěi zìjǐ liú shíjiān kàn biéde . tā shuō yǒu , jiàndào jǐgè gēnběn bù xūyào děng zìjǐ qù wèn cái huì guòrìzi de rén .",
+      "english": "Mira asked if he had left time to see other things. Yes, he said: people who didn't need to wait for his questions before living their lives.",
+      "hanzi": "米拉问他有没有给自己留时间看别的。他说有，见到几个根本不需要等自己去问才会过日子的人。\n",
+      "alignment": [
+        {
+          "english": "Mira",
+          "target": "mǐlā",
+          "hanzi": "米拉",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "asked",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "if",
+          "target": "yǒuméiyǒu",
+          "hanzi": "有没有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "time",
+          "target": "gěi",
+          "hanzi": "给",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "left",
+          "target": "liú",
+          "hanzi": "留",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "time",
+          "target": "shíjiān",
+          "hanzi": "时间",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "see",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "other things",
+          "target": "biéde",
+          "hanzi": "别的",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "said",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Yes",
+          "target": "yǒu",
+          "hanzi": "有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "people",
+          "target": "jiàndào",
+          "hanzi": "见到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "people",
+          "target": "jǐ",
+          "hanzi": "几",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "people",
+          "target": "gè",
+          "hanzi": "个",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "didn't",
+          "target": "gēnběn",
+          "hanzi": "根本",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "didn't need",
+          "target": "bù xūyào",
+          "hanzi": "不需要",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "wait",
+          "target": "děng",
+          "hanzi": "等",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "questions",
+          "target": "qù",
+          "hanzi": "去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "questions",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "before",
+          "target": "cái",
+          "hanzi": "才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "living",
+          "target": "huì",
+          "hanzi": "会",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "living their lives",
+          "target": "guòrìzi",
+          "hanzi": "过日子",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "people",
+          "target": "de",
+          "hanzi": "的",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "people",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "\" zhèhuà zhēn rào . \" dé mǎ shuō , \" suǒyǐ dàodǐ hǎobuhǎo wán ? \" tā xiǎng le xiǎng , shuō yǒu yìtiān hěn hǎo , yǒu yìtiān hěn lèi , háiyǒu yìtiān kàn biérén suàn gōngqián , suàn dé bǐ zìjǐ hái xiōng .",
+      "english": "“That's a roundabout answer,” Dema said. “So was it fun?” He considered: one day good, one exhausting, another watching someone negotiate pay more fiercely than he did.",
+      "hanzi": "“这话真绕。”德玛说，“所以到底好不好玩？”\n他想了想，说有一天很好，有一天很累，还有一天看别人算工钱，算得比自己还凶。\n",
+      "alignment": [
+        {
+          "english": "That's",
+          "target": "zhè",
+          "hanzi": "这",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "answer",
+          "target": "huà",
+          "hanzi": "话",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "roundabout",
+          "target": "zhēn",
+          "hanzi": "真",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "roundabout",
+          "target": "rào",
+          "hanzi": "绕",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Dema",
+          "target": "dé mǎ",
+          "hanzi": "德玛",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "said",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "So",
+          "target": "suǒyǐ",
+          "hanzi": "所以",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "was",
+          "target": "dàodǐ",
+          "hanzi": "到底",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "was it fun",
+          "target": "hǎobuhǎo wán",
+          "hanzi": "好不好玩",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "considered",
+          "target": "xiǎng",
+          "hanzi": "想",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "considered",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "considered",
+          "target": "xiǎng",
+          "hanzi": "想",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "one day",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "one",
+          "target": "yǒu",
+          "hanzi": "有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "one",
+          "target": "yì",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "day",
+          "target": "tiān",
+          "hanzi": "天",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "good",
+          "target": "hěn",
+          "hanzi": "很",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "good",
+          "target": "hǎo",
+          "hanzi": "好",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "one",
+          "target": "yǒu",
+          "hanzi": "有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "one",
+          "target": "yì",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "one",
+          "target": "tiān",
+          "hanzi": "天",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "exhausting",
+          "target": "hěn",
+          "hanzi": "很",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "exhausting",
+          "target": "lèi",
+          "hanzi": "累",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "another",
+          "target": "háiyǒu",
+          "hanzi": "还有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "another",
+          "target": "yì",
+          "hanzi": "一",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "another",
+          "target": "tiān",
+          "hanzi": "天",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "watching",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "someone",
+          "target": "biérén",
+          "hanzi": "别人",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "negotiate",
+          "target": "suàn",
+          "hanzi": "算",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pay",
+          "target": "gōngqián",
+          "hanzi": "工钱",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "negotiate",
+          "target": "suàn",
+          "hanzi": "算",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "fiercely",
+          "target": "dé",
+          "hanzi": "得",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "than",
+          "target": "bǐ",
+          "hanzi": "比",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "more",
+          "target": "hái",
+          "hanzi": "还",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "fiercely",
+          "target": "xiōng",
+          "hanzi": "凶",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "yīwén lìkè fàngxià kuàizi , wèn gōngqián zěnme suàn . pà wò shuō xiān bǎ fàn suàn wán , zhè guō kuài kōng le . tǎ wéi bǎ zuìhòu yìdiǎn tāng fēn jìn dàjiā wǎn lǐ , shǒubiān nà zhāng gēn gǎng yìxiàng zhǐ kōng zhe , míngzǎo cái yào tián . tā zhèhuí méiyǒu juéde , kōng zhe biànshì méiyǒu huà kě xiě .",
+      "english": "Iven immediately lowered his chopsticks to ask about pay. Pavo said finish dinner first; the pot was nearly empty. Tavi divided the last soup among their bowls. His placement preference sheet lay blank beside him, due tomorrow. This time blank didn't mean having nothing to write.",
+      "hanzi": "伊文立刻放下筷子，问工钱怎么算。帕沃说先把饭算完，这锅快空了。塔维把最后一点汤分进大家碗里，手边那张跟岗意向纸空着，明早才要填。他这回没有觉得，空着便是没有话可写。\n",
+      "alignment": [
+        {
+          "english": "Iven",
+          "target": "yīwén",
+          "hanzi": "伊文",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "immediately",
+          "target": "lìkè",
+          "hanzi": "立刻",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "lowered",
+          "target": "fàngxià",
+          "hanzi": "放下",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "chopsticks",
+          "target": "kuàizi",
+          "hanzi": "筷子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "ask",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pay",
+          "target": "gōngqián",
+          "hanzi": "工钱",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "about",
+          "target": "zěnme",
+          "hanzi": "怎么",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pay",
+          "target": "suàn",
+          "hanzi": "算",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Pavo",
+          "target": "pà wò",
+          "hanzi": "帕沃",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "said",
+          "target": "shuō",
+          "hanzi": "说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "first",
+          "target": "xiān",
+          "hanzi": "先",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "dinner",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "dinner",
+          "target": "fàn",
+          "hanzi": "饭",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "finish",
+          "target": "suàn wán",
+          "hanzi": "算完",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the",
+          "target": "zhè",
+          "hanzi": "这",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pot",
+          "target": "guō",
+          "hanzi": "锅",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "nearly",
+          "target": "kuài",
+          "hanzi": "快",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "empty",
+          "target": "kōng",
+          "hanzi": "空",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "was",
+          "target": "le",
+          "hanzi": "了",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "the last soup",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "last",
+          "target": "zuìhòu",
+          "hanzi": "最后",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "last",
+          "target": "yìdiǎn",
+          "hanzi": "一点",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "soup",
+          "target": "tāng",
+          "hanzi": "汤",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "divided",
+          "target": "fēn jìn",
+          "hanzi": "分进",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "their",
+          "target": "dàjiā",
+          "hanzi": "大家",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "bowls",
+          "target": "wǎn",
+          "hanzi": "碗",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "among",
+          "target": "lǐ",
+          "hanzi": "里",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "beside him",
+          "target": "shǒubiān",
+          "hanzi": "手边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "His",
+          "target": "nà",
+          "hanzi": "那",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sheet",
+          "target": "zhāng",
+          "hanzi": "张",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "placement",
+          "target": "gēn gǎng",
+          "hanzi": "跟岗",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "preference",
+          "target": "yìxiàng",
+          "hanzi": "意向",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "sheet",
+          "target": "zhǐ",
+          "hanzi": "纸",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "blank",
+          "target": "kōng",
+          "hanzi": "空",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "lay",
+          "target": "zhe",
+          "hanzi": "着",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "tomorrow",
+          "target": "míngzǎo",
+          "hanzi": "明早",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "due",
+          "target": "cái",
+          "hanzi": "才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "due",
+          "target": "yào",
+          "hanzi": "要",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "due",
+          "target": "tián",
+          "hanzi": "填",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "him",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "This time",
+          "target": "zhèhuí",
+          "hanzi": "这回",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "didn't",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "mean",
+          "target": "juéde",
+          "hanzi": "觉得",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "blank",
+          "target": "kōng",
+          "hanzi": "空",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "blank",
+          "target": "zhe",
+          "hanzi": "着",
+          "category": "particle",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "mean",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "mean",
+          "target": "shì",
+          "hanzi": "是",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "nothing",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "nothing",
+          "target": "huà",
+          "hanzi": "话",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "to",
+          "target": "kě",
+          "hanzi": "可",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "write",
+          "target": "xiě",
+          "hanzi": "写",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": "author-agent",
+    "createdAt": "2026-10-18",
+    "model": "Codex (GPT-6)",
+    "synopsis": null,
+    "has_alignment": true,
+    "alignment_complete": true
+  }
+}
