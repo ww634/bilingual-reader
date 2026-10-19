@@ -11,6 +11,8 @@
 import { getSettings } from "./db.js";
 import { speakWord } from "./speech.js";
 import { getSelectedSpans, clearSelection, wordHanzi, wordPinyin } from "./selection.js";
+import { getReaderContext } from "./reader.js";
+import { saveSentence, sentenceRange } from "./vault.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -332,6 +334,26 @@ function positionToolbar(g) {
   bar.style.top = `${Math.round(Math.max(8, top))}px`;
 }
 
+// Save the whole sentence(s) the highlight touches to the Memory Vault, as one
+// item: partial highlights are widened to complete sentences.
+async function saveSelectedSentences(btn) {
+  const ctx = getReaderContext();
+  const idx = getSelectedSpans()
+    .map((el) => parseInt((el.closest("[data-pair]") || el).dataset.pair, 10))
+    .filter(Number.isFinite);
+  if (!ctx || !idx.length) return;
+  const [lo, hi] = sentenceRange(ctx.chapter.pairs, Math.min(...idx), Math.max(...idx));
+  const pairs = ctx.chapter.pairs.slice(lo, hi + 1);
+  const res = await saveSentence(pairs, { ...ctx.chapter, book_id: ctx.bookId });
+  const label = btn.querySelector("span");
+  if (label) label.textContent = res.already ? "Already saved" : res.ok ? "Saved" : "Failed";
+  setTimeout(() => {
+    if (label) label.textContent = "Save";
+    clearSelection();
+    hideToolbar();
+  }, 800);
+}
+
 function hideToolbar() {
   $("sel-toolbar").hidden = true;
 }
@@ -433,6 +455,7 @@ export function initAssistant() {
     e.preventDefault();
     const act = btn.dataset.act;
     if (act === "copy") return;          // handled on click (Safari's clipboard rule)
+    if (act === "save") { saveSelectedSentences(btn); return; }
     if (act === "pronounce") {
       // Read the selection aloud in the book's language. Speaks the HANZI (never
       // the displayed pinyin); runs inside this gesture so iOS allows the audio.
@@ -457,6 +480,7 @@ export function initAssistant() {
   });
 
   // Copy runs on click: Safari only allows clipboard writes from a completed tap.
+  // (Save is handled on pointerdown above.)
   bar?.addEventListener("click", async (e) => {
     const btn = e.target.closest('button[data-act="copy"]');
     if (!btn) return;

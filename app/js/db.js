@@ -179,6 +179,7 @@ const DEFAULT_SETTINGS = {
   reviewLength: "20",                // "10" | "20" | "30" | "all" | "endless"
   reviewScript: "both",              // how Chinese shows in quizzes: "hanzi" | "pinyin" | "both"
   hideMastered: true,                // hide English for mastered words in the reader
+  myLevel: 2,                        // learner level 1–6 (Newbie … Advanced), see levels.js
   // Per-category visibility for English translations in the reader. Toggled
   // via the reader-options sheet. When a category is false, the English part
   // of those chunks is rendered with visibility:hidden so the page layout

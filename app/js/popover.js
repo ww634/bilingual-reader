@@ -6,7 +6,8 @@
 import { getSettings } from "./db.js";
 import { askWithContext } from "./assistant.js";
 import { speakWord } from "./speech.js";
-import { saveWord, removeWord, isWordSaved } from "./vault.js";
+import { saveWord, removeWord, isWordSaved, saveSentence, sentenceRange } from "./vault.js";
+import { openWriter } from "./write.js";
 import { languageName } from "./languages.js";
 
 const $ = (id) => document.getElementById(id);
@@ -109,10 +110,17 @@ export function openPopover(chunkData, chapter) {
     const pair = chapter.pairs[chunkData.pairIdx];
     if (pair) {
       contextEl.innerHTML = `
-        <strong>In context</strong>
+        <div class="pop-context-head"><strong>In context</strong><button class="pop-save-sentence">+ Save sentence</button></div>
         <div>${escape(chunkData.script === "hanzi" ? (pair.hanzi || pair.target) : pair.target)}</div>
         <div style="margin-top:4px; color: var(--text-muted)">${escape(pair.english)}</div>
       `;
+      contextEl.querySelector(".pop-save-sentence").addEventListener("click", async (e) => {
+        const btn = e.currentTarget;
+        const [lo, hi] = sentenceRange(chapter.pairs, chunkData.pairIdx, chunkData.pairIdx);
+        const res = await saveSentence(chapter.pairs.slice(lo, hi + 1), chapter);
+        btn.textContent = res.already ? "✓ Already saved" : res.ok ? "✓ Saved" : "Couldn't save";
+        btn.disabled = true;
+      });
     } else {
       contextEl.innerHTML = "";
     }
@@ -127,6 +135,10 @@ export function openPopover(chunkData, chapter) {
 
   // Reflect whether this word is already in the vault.
   refreshSaveButton(chunkData);
+
+  // Handwriting practice: Chinese words with characters.
+  const writeBtn = $("pop-act-write");
+  if (writeBtn) writeBtn.hidden = !(chunkData.hanzi && /[\u3400-\u9fff]/.test(chunkData.hanzi) && Number.isFinite(chunkData.chunkIdx));
 
   // Show.
   $("popover-backdrop").hidden = false;
@@ -423,6 +435,13 @@ export function initPopover() {
   $("pop-act-ask").addEventListener("click", askAssistantFromPopover);
   $("pop-act-save").addEventListener("click", toggleSaveVault);
   $("pop-act-hear").addEventListener("click", hearPronunciation);
+  $("pop-act-write")?.addEventListener("click", () => {
+    const c = _state.chunk;
+    if (!c?.hanzi) return;
+    const { hanzi, pinyin } = c;
+    closePopover();
+    openWriter(hanzi, pinyin || "");
+  });
   // Allow Escape to close.
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !$("popover").hidden) closePopover();

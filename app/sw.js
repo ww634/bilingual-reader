@@ -3,7 +3,7 @@
 
 // Keep this version in sync with APP_VERSION in js/version.js — bump both on
 // each deploy so the version shown in Settings matches the cached shell.
-const SHELL_CACHE = "reader-shell-v45";
+const SHELL_CACHE = "reader-shell-v46";
 const SHELL_FILES = [
   "./",
   "./index.html",
@@ -25,8 +25,18 @@ const SHELL_FILES = [
   "./js/backup.js",
   "./js/home.js",
   "./js/listen.js",
+  "./js/levels.js",
+  "./js/chapterquiz.js",
+  "./js/write.js",
+  "./js/stories.js",
+  "./data/zh-levels.tsv",
   "./icons/icon.svg",
 ];
+
+// Caches that hold the learner's own (paid-for / slow-to-fetch) data. They are
+// kept across app updates — only old app-shell caches are deleted on activate.
+const KEEP_CACHE_PREFIXES = ["tts-audio", "hanzi-data"];
+const HANZI_DATA_CACHE = "hanzi-data-v1";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -45,7 +55,9 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== SHELL_CACHE).map((k) => caches.delete(k)))
+      Promise.all(keys
+        .filter((k) => k !== SHELL_CACHE && !KEEP_CACHE_PREFIXES.some((p) => k.startsWith(p)))
+        .map((k) => caches.delete(k)))
     )
   );
   self.clients.claim();
@@ -62,6 +74,20 @@ self.addEventListener("fetch", (event) => {
   // lets the network call fail and the app catches it.
   if (url.pathname.endsWith("library.json") || url.pathname.includes("/books/")) {
     return; // default fetch
+  }
+
+  // Stroke-order data for handwriting practice: cache-first, kept forever, so a
+  // character seen once works offline.
+  if (url.hostname === "cdn.jsdelivr.net" && url.pathname.includes("/hanzi-writer-data")) {
+    event.respondWith(
+      caches.open(HANZI_DATA_CACHE).then((cache) =>
+        cache.match(req).then((hit) => hit || fetch(req).then((res) => {
+          if (res.ok) cache.put(req, res.clone());
+          return res;
+        }))
+      )
+    );
+    return;
   }
 
   // Cache-first for app shell.

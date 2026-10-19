@@ -12,8 +12,9 @@
 // local; review audio + meaning lookups reuse the existing helpers.
 
 import { getSettings, updateSettings, bumpActivity, putVaultItem, getVaultItem, getAllVaultItems, deleteVaultItem } from "./db.js";
-import { speakWord } from "./speech.js";
+import { speakWord, unlockAudio } from "./speech.js";
 import { getLearningLanguage, languageName } from "./languages.js";
+import { openWriter } from "./write.js";
 
 const $ = (id) => document.getElementById(id);
 const escape = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -40,13 +41,14 @@ function masteryPct(item) {
   const correct = a.reduce((n, x) => n + (x ? 1 : 0), 0);
   return Math.round((correct / WINDOW) * 100);
 }
-function bucketOf(item) {
+export function bucketOf(item) {
   const p = masteryPct(item);
   if (p <= 25) return "new";
   if (p <= 90) return "learning";
   return "mastered";
 }
-const isMastered = (item) => bucketOf(item) === "mastered";
+export const isMastered = (item) => bucketOf(item) === "mastered";
+export const isSentence = (item) => item?.kind === "sentence";
 function recordAttempt(item, correct) {
   const a = attemptsOf(item).slice();
   a.push(!!correct);
@@ -77,6 +79,15 @@ export async function vaultStats(lang = getLearningLanguage()) {
   return out;
 }
 
+/** Map word -> bucket for the learner's saved words (sentences excluded). */
+export async function vaultBucketMap(lang = getLearningLanguage()) {
+  const map = new Map();
+  for (const it of await getAllVaultItems()) {
+    if ((it.lang || "zh") === lang && !isSentence(it)) map.set(it.id, bucketOf(it));
+  }
+  return map;
+}
+
 /** Saved, not-yet-mastered words that appear in a chapter: [{ item, bucket }]. */
 export async function chapterWatchWords(chapter) {
   const lang = chapter?.language || "zh";
@@ -100,7 +111,7 @@ let _masteredDirty = true;
 async function refreshMastered() {
   try {
     const items = await getAllVaultItems();
-    _masteredSet = new Set(items.filter(isMastered).map((i) => i.id));
+    _masteredSet = new Set(items.filter((i) => !isSentence(i) && isMastered(i)).map((i) => i.id));
   } catch { _masteredSet = new Set(); }
   _masteredDirty = false;
 }
@@ -149,6 +160,66 @@ export async function isWordSaved(hanzi) {
   return !!(await getVaultItem(hanzi.trim()));
 }
 
+// Books store sentences as clauses ("她蹲下来，" / "从轨道里…。"). Widen a clause
+// range [lo, hi] to whole sentences: back to just after the previous full stop,
+// forward to the next one (at most 8 clauses each way).
+const SENTENCE_END = /[。！？!?….]["”’」』)»]*\s*$/;
+export function sentenceRange(pairs, lo, hi) {
+  const ends = (i) => SENTENCE_END.test((pairs[i]?.hanzi || pairs[i]?.target || "").trim());
+  let a = lo, b = hi;
+  for (let n = 0; a > 0 && !ends(a - 1) && n < 8; n++) a--;
+  for (let n = 0; b < pairs.length - 1 && !ends(b) && n < 8; n++) b++;
+  return [a, b];
+}
+
+/**
+ * Save one or more consecutive sentences (reader pairs) as a single vault item.
+ * Returns { ok, already, text }.
+ */
+export async function saveSentence(pairs, chapter) {
+  if (!pairs?.length) return { ok: false };
+  const lang = chapter?.language || getLearningLanguage();
+  const isZh = lang === "zh" && pairs.every((p) => p.hanzi);
+  const own = pairs.map((p) => (isZh ? p.hanzi : p.target || "").trim());
+  const text = isZh ? own.join("") : own.join(" ");
+  const id = `s:${text}`;
+  if (await getVaultItem(id)) return { ok: true, already: true, text };
+  const target = pairs.map((p) => (p.target || "").trim()).join(" ");
+  const english = pairs.map((p) => (p.english || "").trim()).join(" ");
+  await putVaultItem({
+    id,
+    kind: "sentence",
+    hanzi: text,
+    pinyin: isZh ? target : "",
+    english,
+    lang,
+    context: { hanzi: text, target, english },
+    source: { bookId: chapter?.book_id || null, chapterId: chapter?.id || null },
+    createdAt: Date.now(),
+    attempts: [],
+  });
+  window.dispatchEvent(new CustomEvent("vault:changed"));
+  return { ok: true, text };
+}
+
+/** Save ready-made word items (e.g. words missed in a chapter quiz). */
+export async function saveItems(items) {
+  let added = 0;
+  for (const it of items) {
+    if (!it?.id || (await getVaultItem(it.id))) continue;
+    await putVaultItem({
+      id: it.id, hanzi: it.hanzi, pinyin: it.pinyin || "", english: it.english, storyGloss: it.english,
+      meaningRefined: false, category: it.category || null, frequency_band: it.frequency_band || null,
+      lang: it.lang || getLearningLanguage(), context: it.context || null, createdAt: Date.now(), attempts: [],
+    });
+    refineMeaning(it.id);
+    added++;
+  }
+  _masteredDirty = true;
+  window.dispatchEvent(new CustomEvent("vault:changed"));
+  return added;
+}
+
 // ── Dictionary meaning (general, multi-sense) via the API ──
 async function fetchMeaning(item, key) {
   const isNew = /^gpt-5|^o1|^o3/i.test(MEANING_MODEL);
@@ -187,37 +258,65 @@ async function refineMeaning(id) {
 
 // ── Vault screen ──
 const BUCKET_LABEL = { new: "New", learning: "Learning", mastered: "Mastered" };
+let vaultTab = "word";   // "word" | "sentence"
 
 export async function openVault() {
   const lang = getLearningLanguage();
-  const items = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
+  const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
+  const nSentences = all.filter(isSentence).length;
+  for (const btn of document.querySelectorAll("#vault-tabs button")) {
+    const kind = btn.dataset.kind;
+    btn.classList.toggle("on", kind === vaultTab);
+    btn.querySelector("span").textContent = kind === "sentence" ? nSentences : all.length - nSentences;
+  }
+  const items = all.filter((it) => (vaultTab === "sentence") === isSentence(it));
   const counts = { new: 0, learning: 0, mastered: 0 };
   for (const it of items) counts[bucketOf(it)]++;
   $("vault-new").textContent = counts.new;
   $("vault-learning").textContent = counts.learning;
   $("vault-mastered").textContent = counts.mastered;
-  $("vault-start").disabled = items.length === 0;
+  $("vault-start").disabled = all.length === 0;
+  $("vault-story").hidden = vaultTab === "sentence" || !items.length;
 
   const list = $("vault-list");
   const empty = $("vault-empty");
   list.innerHTML = "";
+  $("vault-empty-title").textContent = vaultTab === "sentence" ? "No saved sentences yet" : "No saved words yet";
+  $("vault-empty-sub").textContent = vaultTab === "sentence"
+    ? "Highlight a sentence while reading, then tap Save."
+    : "Tap a word while reading, then “Save to Memory Vault”.";
   if (!items.length) { empty.hidden = false; return; }
   empty.hidden = true;
   items.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
   for (const it of items) {
     const b = bucketOf(it);
+    const sentence = isSentence(it);
     const li = document.createElement("li");
-    li.className = "vault-row";
+    li.className = `vault-row${sentence ? " is-sentence" : ""}`;
+    const canWrite = !sentence && (it.lang || "zh") === "zh" && /[㐀-鿿]/.test(it.hanzi);
     li.innerHTML = `
       <div class="vault-word">
         <div class="vault-hanzi">${escape(it.hanzi)}</div>
         <div class="vault-pinyin">${escape(it.pinyin)}</div>
         <div class="vault-english">${escape(it.english)}</div>
       </div>
-      <span class="vault-status vault-status-${b}">${BUCKET_LABEL[b]} · ${masteryPct(it)}%</span>
-      <button class="vault-del" aria-label="Remove">×</button>`;
+      <div class="vault-side">
+        <span class="vault-status vault-status-${b}">${BUCKET_LABEL[b]} · ${masteryPct(it)}%</span>
+        <div class="vault-tools">
+          <button class="vault-tool vault-hear" aria-label="Hear it">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+          </button>
+          ${canWrite ? `<button class="vault-tool vault-write" aria-label="Practise writing">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          </button>` : ""}
+          <button class="vault-tool vault-del" aria-label="Remove">×</button>
+        </div>
+      </div>`;
+    li.querySelector(".vault-hear").addEventListener("click", () => speakWord(it.hanzi, it.lang || "zh"));
+    li.querySelector(".vault-write")?.addEventListener("click", () => openWriter(it.hanzi, it.pinyin));
     li.querySelector(".vault-del").addEventListener("click", async () => {
-      if (!confirm(`Remove “${it.hanzi}” from your Memory Vault?`)) return;
+      const label = sentence ? "this sentence" : `“${it.hanzi}”`;
+      if (!confirm(`Remove ${label} from your Memory Vault?`)) return;
       await removeWord(it.id);
       openVault();
     });
@@ -226,6 +325,14 @@ export async function openVault() {
 }
 
 // ── Quiz setup sheet ──
+const DIR_LABELS = (lname) => ({
+  t2e: `Meaning: ${lname} → English`,
+  e2t: `Say it: English → ${lname}`,
+  cloze: "Fill in the sentence",
+  dictation: "Dictation: listen and answer",
+  mix: "Mix of everything",
+});
+
 async function openQuizSetup() {
   const s = await getSettings();
   $("review-answer-mode").value = s.reviewAnswerMode || "mix";
@@ -233,6 +340,10 @@ async function openQuizSetup() {
   const buckets = s.reviewBuckets || ["new", "learning"];
   for (const btn of document.querySelectorAll("#quiz-setup .bucket-toggle")) {
     btn.classList.toggle("on", buckets.includes(btn.dataset.bucket));
+  }
+  const kinds = s.reviewKinds || ["word", "sentence"];
+  for (const btn of document.querySelectorAll("#quiz-setup .kind-toggle")) {
+    btn.classList.toggle("on", kinds.includes(btn.dataset.kind));
   }
   const length = s.reviewLength || "20";
   for (const btn of document.querySelectorAll("#quiz-setup .length-toggle")) {
@@ -242,12 +353,11 @@ async function openQuizSetup() {
   for (const btn of document.querySelectorAll("#quiz-setup .script-toggle")) {
     btn.classList.toggle("on", btn.dataset.script === script);
   }
-  // Language-aware setup: name the language in the direction options, and hide
-  // the pinyin/characters choice for languages with a single written form.
+  // Language-aware setup: name the language in the question types, and hide the
+  // pinyin/characters choice for languages with a single written form.
   const lang = getLearningLanguage();
-  const lname = languageName(lang);
-  $("dir-opt-t2e").textContent = `${lname} → English`;
-  $("dir-opt-e2t").textContent = `English → ${lname}`;
+  const labels = DIR_LABELS(languageName(lang));
+  for (const opt of $("review-direction").options) opt.textContent = labels[opt.value] || opt.textContent;
   $("quiz-script-section").hidden = lang !== "zh";
   $("quiz-setup-note").textContent = "";
   $("quiz-setup-backdrop").hidden = false;
@@ -263,6 +373,16 @@ function closeQuizSetup() {
 }
 
 // ── Quiz engine ──
+//
+// One engine for every quiz: vault quizzes (weighted or a fixed set), the daily
+// review, chapter "words to watch", and end-of-chapter quizzes. A quiz walks a
+// list of cards { item, dir?, options? } — `dir` and `options` are fixed for
+// prepared quizzes (chapter quizzes) and chosen per card otherwise.
+//
+// Question types (dir): t2e meaning · e2t say it · cloze fill in the sentence ·
+// dictation listen and answer. Answer modes: choice · type · self (show the
+// answer, then "I got it" / "I missed it" — for whole sentences, which can't be
+// graded reliably from typing).
 let quiz = null;
 
 function weightFor(item) {
@@ -281,27 +401,37 @@ function pickWeighted(pool, excludeId) {
   return cands[cands.length - 1];
 }
 
-async function beginQuiz() {
+async function newQuiz(fields) {
   const s = await getSettings();
-  const buckets = s.reviewBuckets || ["new", "learning"];
-  if (!buckets.length) { $("quiz-setup-note").textContent = "Pick at least one group to include."; return; }
-  const lang = getLearningLanguage();
+  const lang = fields.lang || getLearningLanguage();
   const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
-  const pool = all.filter((it) => buckets.includes(bucketOf(it)));
-  if (!pool.length) { $("quiz-setup-note").textContent = "No saved words in the selected groups yet."; return; }
-
-  const length = s.reviewLength || "20";
-  const mode = length === "endless" ? "endless" : "fixed";
-  let queue = null, total = 0;
-  if (length === "all") { queue = shuffle(pool.slice()); total = queue.length; }
-  else if (mode === "fixed") { total = parseInt(length, 10) || 20; }
-
-  quiz = {
-    mode, length, queue, total, answered: 0, correct: 0, pool, lastId: null,
-    distractors: all,
+  return {
+    mode: "fixed", total: 0, answered: 0, correct: 0, queue: null, pool: null, lastId: null,
+    distractors: all, title: "", chapter: false, missed: [],
     answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix",
     script: lang === "zh" ? (s.reviewScript || "both") : "hanzi", lang, current: null,
+    ...fields,
   };
+}
+
+async function beginQuiz() {
+  unlockAudio();   // inside the tap, so dictation audio may play later
+  const s = await getSettings();
+  const buckets = s.reviewBuckets || ["new", "learning"];
+  const kinds = s.reviewKinds || ["word", "sentence"];
+  if (!buckets.length) { $("quiz-setup-note").textContent = "Pick at least one group to include."; return; }
+  if (!kinds.length) { $("quiz-setup-note").textContent = "Pick words, sentences or both."; return; }
+  const lang = getLearningLanguage();
+  const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
+  const pool = all.filter((it) => buckets.includes(bucketOf(it)) && kinds.includes(isSentence(it) ? "sentence" : "word"));
+  if (!pool.length) { $("quiz-setup-note").textContent = "Nothing saved in the selected groups yet."; return; }
+
+  const length = s.reviewLength || "20";
+  const fields = { lang, pool };
+  if (length === "endless") fields.mode = "endless";
+  else if (length === "all") { fields.queue = shuffle(pool.slice()).map((item) => ({ item })); fields.total = pool.length; }
+  else fields.total = parseInt(length, 10) || 20;
+  quiz = await newQuiz(fields);
   closeQuizSetup();
   showQuiz();
 }
@@ -315,24 +445,33 @@ function showQuiz() {
 
 /**
  * Quiz a specific set of words once each (e.g. a chapter's words, or today's
- * due words), using the learner's saved answer/direction/script preferences.
+ * due words), using the learner's saved answer/question-type/script preferences.
  */
 export async function startQuizWithItems(items, { title = "" } = {}) {
   if (!items?.length) return;
-  const s = await getSettings();
-  const lang = items[0].lang || getLearningLanguage();
-  const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
-  const queue = shuffle(items.slice());
-  quiz = {
-    mode: "fixed", length: "all", queue, total: queue.length, answered: 0, correct: 0,
-    pool: queue, lastId: null, distractors: all, title,
-    answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix",
-    script: lang === "zh" ? (s.reviewScript || "both") : "hanzi", lang, current: null,
-  };
+  unlockAudio();
+  quiz = await newQuiz({
+    lang: items[0].lang || getLearningLanguage(),
+    queue: shuffle(items.slice()).map((item) => ({ item })),
+    total: items.length,
+    title,
+  });
   showQuiz();
 }
 
-/** Today's review: the words that are due, most in need first (max 20). */
+/**
+ * Run a prepared quiz (end-of-chapter): fixed question types and options, always
+ * multiple choice. Words already in the vault count toward their mastery; words
+ * missed that aren't saved yet are offered for saving at the end.
+ */
+export async function startCardQuiz(cards, { title = "", lang } = {}) {
+  if (!cards?.length) return;
+  unlockAudio();
+  quiz = await newQuiz({ lang: lang || cards[0].item.lang, queue: cards, total: cards.length, title, chapter: true, answerMode: "choice" });
+  showQuiz();
+}
+
+/** Today's review: the words and sentences that are due, most in need first (max 20). */
 export async function startDailyReview() {
   const lang = getLearningLanguage();
   const due = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang && isDue(it));
@@ -340,15 +479,22 @@ export async function startDailyReview() {
   await startQuizWithItems(due.slice(0, 20), { title: "Daily review" });
 }
 
-// The Chinese side of a card rendered in the chosen script.
+// The target-language side of a card in the chosen script.
 function chineseStr(item, script) {
   if (script === "pinyin") return item.pinyin || item.hanzi;
   if (script === "both") return item.pinyin ? `${item.hanzi} · ${item.pinyin}` : item.hanzi;
   return item.hanzi;
 }
-// The "answer" text for a card: English (t2e) or the word in the chosen script
-// (e2t, and cloze — where the missing word is the answer).
+// The answer for a card: English (t2e) or the word/sentence itself.
 const answerText = (item, dir, script) => (dir === "t2e" ? item.english : chineseStr(item, script));
+// HTML label for a choice button (sentences in "both" put pinyin on a 2nd line).
+function optionHtml(item, dir, script) {
+  if (dir === "t2e") return escape(item.english);
+  if (isSentence(item) && script === "both" && item.pinyin) {
+    return `${escape(item.hanzi)}<small>${escape(item.pinyin)}</small>`;
+  }
+  return escape(chineseStr(item, script));
+}
 
 // ── Fill-in-the-sentence (cloze) ──
 // Blank the word out of the sentence it was saved from. Returns the HTML lines
@@ -361,7 +507,7 @@ function blankOut(sentence, word) {
 }
 function clozeLines(item, script) {
   const c = item.context;
-  if (!c) return null;
+  if (!c || isSentence(item)) return null;
   const isZh = (item.lang || "zh") === "zh" && !!item.pinyin;
   const lines = [];
   if (!isZh) {
@@ -374,45 +520,82 @@ function clozeLines(item, script) {
   return lines.length ? lines : null;
 }
 
-function renderCard() {
-  let item;
-  if (quiz.length === "all") item = quiz.queue[quiz.answered];
-  else item = pickWeighted(quiz.pool, quiz.lastId);
-  if (!item) return endQuiz();
-  quiz.lastId = item.id;
+// The sentence itself, in the chosen script, as prompt lines.
+function sentenceLines(item, script) {
+  const isZh = (item.lang || "zh") === "zh" && !!item.pinyin;
+  if (!isZh) return `<div class="cloze-line">${escape(item.hanzi)}</div>`;
+  const lines = [];
+  if (script !== "pinyin") lines.push(`<div class="cloze-line is-hanzi">${escape(item.hanzi)}</div>`);
+  if (script !== "hanzi") lines.push(`<div class="cloze-line is-pinyin">${escape(item.pinyin)}</div>`);
+  return lines.join("");
+}
 
+// Same-kind items to draw wrong options from.
+const peersOf = (item) => (quiz.distractors || []).filter((w) => w.id !== item.id && isSentence(w) === isSentence(item));
+
+function nextSpec() {
+  if (quiz.queue) return quiz.queue[quiz.answered] || null;
+  const item = pickWeighted(quiz.pool, quiz.lastId);
+  return item ? { item } : null;
+}
+
+function renderCard() {
+  const spec = nextSpec();
+  if (!spec) return endQuiz();
+  const item = spec.item;
+  quiz.lastId = item.id;
   const script = quiz.script;
+  const sentence = isSentence(item);
   const cloze = clozeLines(item, script);
-  let dir = quiz.direction;
+
+  // Question type.
+  let dir = spec.dir || quiz.direction;
   if (dir === "mix") {
-    const dirs = cloze ? ["t2e", "e2t", "cloze"] : ["t2e", "e2t"];
+    const dirs = sentence ? ["t2e", "e2t", "dictation"] : ["t2e", "e2t", "dictation"].concat(cloze ? ["cloze"] : []);
     dir = dirs[Math.floor(Math.random() * dirs.length)];
   }
-  if (dir === "cloze" && !cloze) dir = "e2t";   // no usable sentence for this word
-  let mode = quiz.answerMode === "mix" ? (Math.random() < 0.5 ? "choice" : "type") : quiz.answerMode;
-  if (mode === "choice" && (quiz.distractors || quiz.pool).length < 4) mode = "type";   // need distractors
-  quiz.current = { item, dir, mode, script };
+  if (dir === "cloze" && !cloze) dir = sentence ? "dictation" : "e2t";   // no usable sentence
+
+  // Answer mode.
+  let mode = spec.options ? "choice" : quiz.answerMode;
+  if (mode === "mix") mode = Math.random() < 0.5 ? "choice" : "type";
+  if (mode === "choice" && !spec.options && peersOf(item).length < 3) mode = "type";   // need distractors
+  if (sentence && mode === "type" && dir !== "dictation") mode = "self";
+  quiz.current = { item, dir, mode, script, options: spec.options || null };
 
   $("review-progress-text").textContent = quiz.mode === "endless" ? `${quiz.answered} answered` : `${quiz.answered + 1} / ${quiz.total}`;
   $("review-finish").hidden = quiz.mode !== "endless";
-  $("review-prompt-label").textContent = dir === "t2e" ? "What does this mean?"
-    : dir === "cloze" ? "Fill in the missing word" : "How do you say this?";
+  $("review-prompt-label").textContent =
+    dir === "t2e" ? "What does this mean?"
+    : dir === "cloze" ? "Fill in the missing word"
+    : dir === "dictation" ? (sentence ? "What sentence do you hear?" : "What word do you hear?")
+    : "How do you say this?";
 
-  // Prompt: for Chinese→English, show the Chinese in the chosen script (with the
-  // pinyin as a sub-line in "both"). For English→Chinese, show the English.
   const promptEl = $("review-prompt");
   const subEl = $("review-prompt-sub");
   subEl.hidden = true; subEl.textContent = "";
-  if (dir === "cloze") {
+  if (dir === "dictation") {
+    promptEl.className = "review-prompt is-audio";
+    promptEl.innerHTML = `<button class="dictation-play" aria-label="Play">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+      </button><div class="dictation-hint">Tap to play again</div>`;
+    const play = () => speakWord(item.hanzi, item.lang || "zh");
+    promptEl.querySelector(".dictation-play").addEventListener("click", play);
+    play();
+  } else if (dir === "cloze") {
     promptEl.className = "review-prompt is-sentence";
     promptEl.innerHTML = cloze.map((l) => `<div class="cloze-line ${l.cls}">${l.html}</div>`).join("")
       + (item.context.english ? `<div class="cloze-en">${escape(item.context.english)}</div>` : "");
   } else if (dir === "t2e") {
-    if (script === "pinyin") { promptEl.textContent = item.pinyin || item.hanzi; promptEl.className = "review-prompt"; }
-    else { promptEl.textContent = item.hanzi; promptEl.className = "review-prompt is-hanzi";
-           if (script === "both" && item.pinyin) { subEl.textContent = item.pinyin; subEl.hidden = false; } }
+    if (sentence) { promptEl.className = "review-prompt is-sentence"; promptEl.innerHTML = sentenceLines(item, script); }
+    else if (script === "pinyin") { promptEl.textContent = item.pinyin || item.hanzi; promptEl.className = "review-prompt"; }
+    else {
+      promptEl.textContent = item.hanzi; promptEl.className = "review-prompt is-hanzi";
+      if (script === "both" && item.pinyin) { subEl.textContent = item.pinyin; subEl.hidden = false; }
+    }
   } else {
-    promptEl.textContent = item.english; promptEl.className = "review-prompt";
+    promptEl.textContent = item.english;
+    promptEl.className = `review-prompt${sentence ? " is-sentence" : ""}`;
   }
 
   const area = $("review-answer-area");
@@ -420,34 +603,76 @@ function renderCard() {
   $("review-reveal").hidden = true; $("review-reveal").innerHTML = "";
   $("review-next").hidden = true;
 
-  if (mode === "choice") renderChoices(item, dir, area, script);
+  if (mode === "choice") renderChoices(item, dir, area, script, spec.options);
+  else if (mode === "self") renderSelf(item, dir, area);
   else renderType(item, dir, area, script);
 }
 
-function renderChoices(item, dir, area, script) {
+function renderChoices(item, dir, area, script, fixedOptions) {
   const correct = answerText(item, dir, script);
-  const others = shuffle((quiz.distractors || quiz.pool).filter((w) => w.id !== item.id));
-  const distractors = [];
-  for (const w of others) {
+  const pool = fixedOptions ? fixedOptions.slice() : shuffle(peersOf(item));
+  const wrong = [];
+  for (const w of pool) {
     const t = answerText(w, dir, script);
-    if (t && t !== correct && !distractors.includes(t)) distractors.push(t);
-    if (distractors.length === 3) break;
+    if (t && t !== correct && !wrong.some((x) => answerText(x, dir, script) === t)) wrong.push(w);
+    if (wrong.length === 3) break;
   }
-  for (const opt of shuffle([correct, ...distractors])) {
+  const options = shuffle([{ it: item, ok: true }, ...wrong.map((w) => ({ it: w, ok: false }))]);
+  for (const o of options) {
     const b = document.createElement("button");
     b.className = "review-choice";
-    b.textContent = opt;
-    b.addEventListener("click", () => onAnswer(opt === correct, correct));
+    b.innerHTML = optionHtml(o.it, dir, script);
+    if (o.ok) b.dataset.correct = "1";
+    b.addEventListener("click", () => onAnswer(o.ok));
     area.appendChild(b);
   }
 }
 
-const norm = (s) => String(s || "").toLowerCase().replace(/[\s,.!?;:'"()\[\]，。！？；：、]/g, "").trim();
+// Self-graded: reveal the answer, then the learner says whether they had it.
+function renderSelf(item, dir, area) {
+  const show = document.createElement("button");
+  show.className = "btn-primary btn-block";
+  show.textContent = "Show answer";
+  show.addEventListener("click", () => {
+    area.innerHTML = `<p class="self-q">Did you get it?</p>`;
+    const row = document.createElement("div");
+    row.className = "self-row";
+    for (const [label, ok] of [["I missed it", false], ["I got it", true]]) {
+      const b = document.createElement("button");
+      b.className = `self-btn ${ok ? "ok" : "no"}`;
+      b.textContent = label;
+      b.addEventListener("click", () => onAnswer(ok));
+      row.appendChild(b);
+    }
+    area.appendChild(row);
+    renderReveal(item, null);
+  });
+  area.appendChild(show);
+}
+
+const norm = (s) => String(s || "").toLowerCase().replace(/[\s,.!?;:'"“”‘’()\[\]，。！？；：、…—-]/g, "").trim();
 const stripTones = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+
+// Similarity 0..1 between two strings (longest common subsequence / longer length).
+function similarity(a, b) {
+  const x = [...a], y = [...b];
+  if (!x.length || !y.length) return 0;
+  const prev = new Array(y.length + 1).fill(0);
+  for (let i = 1; i <= x.length; i++) {
+    let diag = 0;
+    for (let j = 1; j <= y.length; j++) {
+      const tmp = prev[j];
+      prev[j] = x[i - 1] === y[j - 1] ? diag + 1 : Math.max(prev[j], prev[j - 1]);
+      diag = tmp;
+    }
+  }
+  return prev[y.length] / Math.max(x.length, y.length);
+}
+
 function gradeType(input, item, dir) {
   const given = norm(input);
   if (!given) return false;
-  if (dir === "t2e") {   // (cloze and e2t both expect the word itself)
+  if (dir === "t2e") {
     // Lenient: any listed sense counts (senses are semicolon-separated).
     const senses = String(item.english || "").split(/[;,/]/).map(norm).filter(Boolean);
     return senses.some((s) => s === given || s.includes(given) || given.includes(s));
@@ -455,6 +680,12 @@ function gradeType(input, item, dir) {
   const han = norm(item.hanzi);
   const py = stripTones(norm(item.pinyin));
   const g = stripTones(given);
+  if (isSentence(item)) {
+    // Whole-sentence dictation: close enough counts (a slip or two is fine).
+    const vsHan = similarity(given, han);
+    const vsPy = py ? similarity(g, py) : 0;
+    return Math.max(vsHan, vsPy, similarity(g, stripTones(han))) >= 0.85;
+  }
   // For languages like French the headword itself is Latin script, so also accept
   // it without accents (eg. "ecole" for "école").
   return given === han || g === stripTones(han) || (py && (g === py || py.includes(g) || g.includes(py)));
@@ -465,36 +696,49 @@ function renderType(item, dir, area, script) {
   form.className = "review-type";
   const input = document.createElement("input");
   input.type = "text";
+  const lname = languageName(quiz.lang);
   input.placeholder = dir === "t2e" ? "Type the English…"
+    : dir === "dictation" ? (quiz.lang === "zh" ? "Type what you hear (characters or pinyin)…" : "Type what you hear…")
     : dir === "cloze" && quiz.lang !== "zh" ? "Type the missing word…"
-    : (quiz.lang === "zh" ? "Type the Chinese (hanzi or pinyin)…" : `Type the ${languageName(quiz.lang)}…`);
+    : (quiz.lang === "zh" ? "Type the Chinese (hanzi or pinyin)…" : `Type the ${lname}…`);
   input.autocomplete = "off"; input.autocapitalize = "off"; input.spellcheck = false;
   const submit = document.createElement("button");
   submit.type = "submit"; submit.className = "btn-primary"; submit.textContent = "Check";
   form.appendChild(input); form.appendChild(submit);
-  form.addEventListener("submit", (e) => { e.preventDefault(); onAnswer(gradeType(input.value, item, dir), answerText(item, dir, script)); });
+  form.addEventListener("submit", (e) => { e.preventDefault(); onAnswer(gradeType(input.value, item, dir)); });
   area.appendChild(form);
-  setTimeout(() => input.focus(), 120);
+  // Don't pop the keyboard over a dictation prompt before it has been heard.
+  if (dir !== "dictation") setTimeout(() => input.focus(), 120);
 }
 
-async function onAnswer(correct, correctText) {
+async function onAnswer(correct) {
   const { item, mode } = quiz.current;
   const area = $("review-answer-area");
   if (mode === "choice") {
     for (const b of area.querySelectorAll(".review-choice")) {
       b.disabled = true;
-      if (b.textContent === correctText) b.classList.add("correct");
+      if (b.dataset.correct) b.classList.add("correct");
       else b.classList.add(correct ? "dim" : "wrong");
     }
-  } else {
+  } else if (mode === "type") {
     const form = area.querySelector("form");
     if (form) { form.querySelector("input").disabled = true; form.querySelector("button").disabled = true; form.classList.add(correct ? "correct" : "wrong"); }
+  } else {
+    area.innerHTML = "";
   }
   quiz.answered++;
   if (correct) quiz.correct++;
-  recordAttempt(item, correct);
-  await putVaultItem(item);
-  _masteredDirty = true;
+
+  // Count toward mastery: the vault copy of the word (chapter quizzes use their
+  // own word objects, so look the saved one up).
+  const saved = quiz.chapter ? await getVaultItem(item.id) : item;
+  if (saved) {
+    recordAttempt(saved, correct);
+    await putVaultItem(saved);
+    _masteredDirty = true;
+  } else if (!correct && !quiz.missed.some((m) => m.id === item.id)) {
+    quiz.missed.push(item);
+  }
   bumpActivity({ answers: 1 }).catch(() => {});
   renderReveal(item, correct);
   const next = $("review-next");
@@ -502,27 +746,32 @@ async function onAnswer(correct, correctText) {
   next.textContent = (quiz.mode !== "endless" && quiz.answered >= quiz.total) ? "Finish" : "Next";
 }
 
+// correct: true / false, or null when revealing a self-graded answer.
 function renderReveal(item, correct) {
   const el = $("review-reveal");
   el.hidden = false;
+  const sentence = isSentence(item);
+  const canWrite = !sentence && (item.lang || "zh") === "zh" && /[㐀-鿿]/.test(item.hanzi);
+  const verdict = correct === null ? "" : `<div class="reveal-verdict ${correct ? "ok" : "no"}">${correct ? "Correct" : "Not quite"}</div>`;
   el.innerHTML = `
-    <div class="reveal-verdict ${correct ? "ok" : "no"}">${correct ? "Correct" : "Not quite"}</div>
-    <div class="reveal-hanzi">${escape(item.hanzi)}</div>
+    ${verdict}
+    <div class="reveal-hanzi${sentence ? " is-sentence" : ""}">${escape(item.hanzi)}</div>
     <div class="reveal-pinyin">${escape(item.pinyin)}</div>
     <div class="reveal-english">${escape(item.english)}</div>
-    ${item.context && item.context.hanzi ? `<div class="reveal-context">${escape(item.context.hanzi)}<span>${escape(item.context.english)}</span></div>` : ""}
+    ${!sentence && item.context && item.context.hanzi ? `<div class="reveal-context">${escape(item.context.hanzi)}<span>${escape(item.context.english)}</span></div>` : ""}
     <div class="reveal-audio-row">
       <button id="reveal-audio" class="pop-act">▶ Hear it</button>
-      ${item.context && item.context.hanzi ? `<button id="reveal-audio-sentence" class="pop-act">▶ Hear sentence</button>` : ""}
+      ${!sentence && item.context && item.context.hanzi ? `<button id="reveal-audio-sentence" class="pop-act">▶ Hear sentence</button>` : ""}
+      ${canWrite ? `<button id="reveal-write" class="pop-act">✎ Write it</button>` : ""}
     </div>`;
   el.querySelector("#reveal-audio").addEventListener("click", () => speakWord(item.hanzi, item.lang || "zh"));
   el.querySelector("#reveal-audio-sentence")?.addEventListener("click", () => speakWord(item.context.hanzi, item.lang || "zh"));
+  el.querySelector("#reveal-write")?.addEventListener("click", () => openWriter(item.hanzi, item.pinyin));
 }
 
 function nextCard() {
   if (!quiz) return;
   if (quiz.mode !== "endless" && quiz.answered >= quiz.total) return endQuiz();
-  if (quiz.length === "all" && quiz.answered >= quiz.queue.length) return endQuiz();
   renderCard();
 }
 
@@ -530,11 +779,25 @@ function endQuiz() {
   const done = $("review-done");
   $("review-card").hidden = true;
   done.hidden = false;
-  const acc = quiz && quiz.answered ? Math.round((quiz.correct / quiz.answered) * 100) : 0;
+  const q = quiz;
+  const acc = q && q.answered ? Math.round((q.correct / q.answered) * 100) : 0;
+  const missed = q?.missed || [];
   done.innerHTML = `
-    <p class="empty-title">${quiz?.title ? `${escape(quiz.title)} complete` : "Quiz complete"}</p>
-    <p class="empty-sub">${quiz ? quiz.correct : 0} / ${quiz ? quiz.answered : 0} correct (${acc}%)</p>
+    <p class="empty-title">${q?.title ? `${escape(q.title)} complete` : "Quiz complete"}</p>
+    <p class="empty-sub">${q ? q.correct : 0} / ${q ? q.answered : 0} correct (${acc}%)</p>
+    ${missed.length ? `
+      <div class="missed-box">
+        <div class="missed-label">Words you missed</div>
+        <div class="missed-words">${missed.map((m) => `<span>${escape(m.hanzi)}${m.pinyin ? ` <i>${escape(m.pinyin)}</i>` : ""} <em>${escape(m.english)}</em></span>`).join("")}</div>
+        <button class="pop-act" id="review-save-missed">Save ${missed.length === 1 ? "it" : `all ${missed.length}`} to Memory Vault</button>
+      </div>` : ""}
     <button class="btn-primary" id="review-done-btn">Done</button>`;
+  done.querySelector("#review-save-missed")?.addEventListener("click", async (e) => {
+    const btn = e.currentTarget;
+    btn.disabled = true;
+    const n = await saveItems(missed);
+    btn.textContent = n ? `✓ Saved ${n} word${n === 1 ? "" : "s"}` : "✓ Already saved";
+  });
   // Back to wherever the quiz was started from (vault, home, or the reader).
   done.querySelector("#review-done-btn").addEventListener("click", () => window.dispatchEvent(new CustomEvent("app:back")));
   window.dispatchEvent(new CustomEvent("vault:changed"));
@@ -549,6 +812,12 @@ export async function initVault() {
     if (document.body.getAttribute("data-view") === "vault") openVault();
   });
   $("vault-start")?.addEventListener("click", openQuizSetup);
+  $("vault-story")?.addEventListener("click", () => {
+    window.dispatchEvent(new CustomEvent("stories:new", { detail: { words: "learning" } }));
+  });
+  for (const btn of document.querySelectorAll("#vault-tabs button")) {
+    btn.addEventListener("click", () => { vaultTab = btn.dataset.kind; openVault(); });
+  }
   $("quiz-setup-close")?.addEventListener("click", closeQuizSetup);
   $("quiz-setup-backdrop")?.addEventListener("click", closeQuizSetup);
   $("quiz-begin")?.addEventListener("click", beginQuiz);
@@ -563,6 +832,13 @@ export async function initVault() {
       btn.classList.toggle("on");
       const buckets = [...document.querySelectorAll("#quiz-setup .bucket-toggle.on")].map((b) => b.dataset.bucket);
       await updateSettings({ reviewBuckets: buckets });
+    });
+  }
+  for (const btn of document.querySelectorAll("#quiz-setup .kind-toggle")) {
+    btn.addEventListener("click", async () => {
+      btn.classList.toggle("on");
+      const kinds = [...document.querySelectorAll("#quiz-setup .kind-toggle.on")].map((b) => b.dataset.kind);
+      await updateSettings({ reviewKinds: kinds });
     });
   }
   for (const btn of document.querySelectorAll("#quiz-setup .length-toggle")) {

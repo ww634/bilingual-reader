@@ -1,6 +1,8 @@
-import { getChapter, getProgress, putProgress, getSettings, getBook, bumpActivity } from "./db.js";
+import { getChapter, getProgress, putProgress, getSettings, getBook, bumpActivity, updateSettings } from "./db.js";
 import { openPopover } from "./popover.js";
-import { ensureMastered, getMasteredHanziSync, chapterWatchWords, startQuizWithItems } from "./vault.js";
+import { ensureMastered, getMasteredHanziSync, chapterWatchWords, startQuizWithItems, startCardQuiz, vaultBucketMap } from "./vault.js";
+import { LEVELS, levelName, loadLevels, chapterKnowledge, clampLevel } from "./levels.js";
+import { buildChapterQuiz, bookQuizPrefs } from "./chapterquiz.js";
 
 const pagesEl = () => document.getElementById("reader-pages");
 const indicatorEl = () => document.getElementById("page-indicator");
@@ -720,6 +722,7 @@ function renderChapter(chapter, perPage) {
   titlePage.innerHTML = `
     <div class="target">${scriptSpan(chapter.title.target, chapter.title.hanzi)}</div>
     <div class="english">${escape(chapter.title.english)}</div>
+    <div class="chapter-known-line" hidden></div>
     <div class="chapter-watch" hidden></div>
   `;
   container.appendChild(titlePage);
@@ -746,6 +749,7 @@ function renderChapter(chapter, perPage) {
 
   if (nextChapter) {
     endPage.innerHTML = `
+      <div class="end-quiz" hidden></div>
       <div class="end-card">
         <div class="end-label">You've finished this chapter</div>
         <div class="end-divider"></div>
@@ -757,6 +761,7 @@ function renderChapter(chapter, perPage) {
     `;
   } else {
     endPage.innerHTML = `
+      <div class="end-quiz" hidden></div>
       <div class="end-card">
         <div class="end-label">End of book</div>
         <p class="end-msg">You've finished the last chapter.</p>
@@ -924,6 +929,8 @@ export async function openReader(bookId, chapterId) {
   document.body.classList.toggle("hide-mastered", settings.hideMastered !== false);
   applyMasteredHiding();
   renderChapterWatch();
+  renderKnownLine();
+  renderEndQuiz();
 
   document.getElementById("title").textContent = chapter.title.english;
 
@@ -968,6 +975,66 @@ async function renderChapterWatch() {
   slot.querySelector(".watch-quiz").addEventListener("click", () => {
     startQuizWithItems(words.map((w) => w.item), { title: "Chapter words" });
   });
+}
+
+/* ───────────────────────── how much you know (title page) ───────────────────────── */
+
+async function renderKnownLine() {
+  const el = pagesEl().querySelector(".title-page .chapter-known-line");
+  const chapter = _state.chapter;
+  if (!el || !chapter) return;
+  const lang = chapter.language || "zh";
+  if (lang === "zh") await loadLevels();
+  const level = clampLevel((await getSettings()).myLevel);
+  const k = chapterKnowledge(chapter, level, await vaultBucketMap(lang));
+  if (_state.chapter !== chapter || !k.total) return;
+  const n = k.newWords.length;
+  el.innerHTML = `<b>≈${k.pct}%</b> of the words here are ones you know <span>${n} new word${n === 1 ? "" : "s"} · at ${escape(levelName(level))} level</span>`;
+  el.className = `chapter-known-line ${k.pct >= 95 ? "easy" : k.pct >= 85 ? "ok" : "hard"}`;
+  el.hidden = false;
+}
+
+/* ───────────────────────── end-of-chapter quiz ───────────────────────── */
+
+async function renderEndQuiz() {
+  const slot = pagesEl().querySelector(".end-page .end-quiz");
+  const chapter = _state.chapter, bookId = _state.bookId;
+  if (!slot || !chapter) return;
+  const settings = await getSettings();
+  const prefs = bookQuizPrefs(settings, bookId);
+  if (!prefs.on) { slot.hidden = true; return; }
+  const lang = chapter.language || "zh";
+  if (lang === "zh") await loadLevels();
+  if (_state.chapter !== chapter) return;
+
+  const draw = (level) => {
+    const quiz = buildChapterQuiz(chapter, level, { bookId });
+    if (!quiz.cards.length) { slot.hidden = true; return; }
+    slot.innerHTML = `
+      <div class="end-quiz-head">
+        <div>
+          <div class="end-label">Chapter quiz</div>
+          <div class="end-quiz-sub">${quiz.cards.length} questions on this chapter's words</div>
+        </div>
+        <select class="end-quiz-level" aria-label="Quiz level">
+          ${LEVELS.map((l) => `<option value="${l.n}"${l.n === level ? " selected" : ""}>${l.name}</option>`).join("")}
+        </select>
+      </div>
+      <button class="end-quiz-start">Start quiz</button>
+      <p class="end-quiz-note">Optional. Turn it off or set the default level on the book's page.</p>`;
+    slot.hidden = false;
+    slot.querySelector(".end-quiz-start").addEventListener("click", () => {
+      startCardQuiz(quiz.cards, { title: `${levelName(level)} chapter quiz`, lang });
+    });
+    slot.querySelector(".end-quiz-level").addEventListener("change", async (e) => {
+      const lvl = clampLevel(e.target.value);
+      draw(lvl);
+      // Remember the choice for this book, like the book page's level picker.
+      const s = await getSettings();
+      await updateSettings({ bookQuiz: { ...(s.bookQuiz || {}), [bookId]: { ...bookQuizPrefs(s, bookId), level: lvl } } });
+    });
+  };
+  draw(prefs.level);
 }
 
 /** Read-only view of the open chapter, for Listen mode. */

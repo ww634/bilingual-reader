@@ -11,8 +11,13 @@ import {
   getAllChapterKeys,
   getProgress,
   chapterKey,
+  updateSettings,
 } from "./db.js";
 import { getLearningLanguage, setLearningLanguage, availableLanguages, languageName } from "./languages.js";
+import { LEVELS, levelHint, loadLevels, chapterKnowledge, clampLevel } from "./levels.js";
+import { bookQuizPrefs } from "./chapterquiz.js";
+import { vaultBucketMap } from "./vault.js";
+import { isPracticeBook, deletePracticeStory } from "./stories.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -505,10 +510,15 @@ export async function renderBookDetail() {
     if (continueBtn) continueBtn.parentElement.hidden = true;
   }
 
+  // End-of-chapter quiz preferences for this book.
+  await renderBookQuizPrefs(book, isDownloaded);
+  $("book-detail-new-story").hidden = !isPracticeBook(book.id);
+
   // Chapter list with per-chapter status indicators
   const list = $("book-detail-chapters");
   list.innerHTML = "";
   const chapters = book.chapters || [];
+  const practice = isPracticeBook(book.id);
 
   let perChapterProgress = null;
   if (isDownloaded) {
@@ -535,8 +545,9 @@ export async function renderBookDetail() {
       <div class="chapter-info">
         <div class="chapter-title">${escape(ch.title?.english || ch.id)}</div>
         <div class="chapter-target">${escape(ch.title?.target || "")}</div>
-        ${statusHtml}
+        <div class="chapter-badges">${statusHtml}<span class="chapter-known" data-ch="${escape(ch.id)}"></span></div>
       </div>
+      ${practice ? `<button class="chapter-del" aria-label="Delete story">×</button>` : ""}
       <span class="chapter-chev">›</span>
     `;
     if (isDownloaded) {
@@ -546,8 +557,68 @@ export async function renderBookDetail() {
     } else {
       li.classList.add("locked");
     }
+    li.querySelector(".chapter-del")?.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      if (!confirm(`Delete the story “${ch.title?.english || ch.id}”?`)) return;
+      await deletePracticeStory(book.id, ch.id);
+      if (state.downloadedBooks.has(book.id)) renderBookDetail();
+      else window.dispatchEvent(new CustomEvent("app:back"));
+    });
     list.appendChild(li);
   }
+
+  if (isDownloaded) fillKnownPills(book);
+}
+
+// "≈ 84% known" on each chapter row, worked out from the learner's level and
+// Memory Vault. Filled in after the list renders (it reads every chapter).
+let _knownRun = 0;
+async function fillKnownPills(book) {
+  const run = ++_knownRun;
+  const settings = await getSettings();
+  const level = clampLevel(settings.myLevel);
+  if (book.language === "zh") await loadLevels();
+  const buckets = await vaultBucketMap(book.language);
+  for (const ch of book.chapters || []) {
+    if (run !== _knownRun || state.selectedBookId !== book.id) return;   // navigated away / re-rendered
+    const chapter = await getChapter(book.id, ch.id);
+    const pill = document.querySelector(`.chapter-known[data-ch="${CSS.escape(ch.id)}"]`);
+    if (!chapter || !pill) continue;
+    const k = chapterKnowledge(chapter, level, buckets);
+    pill.textContent = `≈${k.pct}% known`;
+    pill.className = `chapter-known ${k.pct >= 95 ? "easy" : k.pct >= 85 ? "ok" : "hard"}`;
+  }
+}
+
+async function renderBookQuizPrefs(book, isDownloaded) {
+  const box = $("book-quiz");
+  if (!isDownloaded) { box.hidden = true; return; }
+  box.hidden = false;
+  const prefs = bookQuizPrefs(await getSettings(), book.id);
+  const on = $("book-quiz-on");
+  on.checked = prefs.on;
+  const levels = $("book-quiz-levels");
+  levels.innerHTML = LEVELS.map((l) => `<button class="chip${l.n === prefs.level ? " on" : ""}" data-n="${l.n}">${l.name}</button>`).join("");
+  const hint = () => {
+    const cur = bookQuizPrefs({ bookQuiz: { [book.id]: { on: on.checked, level: +levels.querySelector(".chip.on")?.dataset.n } } }, book.id);
+    $("book-quiz-hint").textContent = on.checked
+      ? `Tests the chapter's ${book.language === "zh" ? `${levelHint(cur.level, "zh").split(" · ")[0]} words` : levelHint(cur.level, book.language)}. Shown on the last page of each chapter.`
+      : "Turned off for this book.";
+    levels.classList.toggle("off", !on.checked);
+  };
+  const save = async (patch) => {
+    const s = await getSettings();
+    const all = { ...(s.bookQuiz || {}) };
+    all[book.id] = { ...bookQuizPrefs(s, book.id), ...patch };
+    await updateSettings({ bookQuiz: all });
+  };
+  on.onchange = () => { hint(); save({ on: on.checked }); };
+  levels.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
+    levels.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === b));
+    hint();
+    save({ level: +b.dataset.n });
+  }));
+  hint();
 }
 
 // Settings cache for cover URL resolution (used when rendering catalog entries

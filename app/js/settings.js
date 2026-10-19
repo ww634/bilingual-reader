@@ -1,6 +1,8 @@
 import { getSettings, updateSettings, clearAll, getAllVaultItems } from "./db.js";
 import { APP_VERSION } from "./version.js";
 import { exportBackup, importBackup, isPersisted } from "./backup.js";
+import { LEVELS, levelHint, clampLevel } from "./levels.js";
+import { getLearningLanguage } from "./languages.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -23,11 +25,21 @@ export async function loadSettingsIntoUI() {
   els.fontSize().value = s.fontSize;
   els.pairsPerPage().value = String(s.pairsPerPage);
   if (els.openaiKey()) els.openaiKey().value = s.openaiKey || "";
+  const lvl = $("my-level");
+  lvl.innerHTML = LEVELS.map((l) => `<option value="${l.n}">${l.name}</option>`).join("");
+  lvl.value = String(clampLevel(s.myLevel));
+  showLevelHint(lvl.value);
   applyFontSize(s.fontSize);
   updateOnlineStatus();
   const ver = document.getElementById("app-version");
   if (ver) ver.textContent = `Version v${APP_VERSION}`;
   refreshDataStatus(s);
+}
+
+function showLevelHint(n) {
+  const lang = getLearningLanguage();
+  const what = lang === "zh" ? levelHint(clampLevel(n), "zh") : `roughly: you know ${levelHint(clampLevel(n), lang)}`;
+  $("my-level-hint").textContent = `${what}. Used for “% known” on chapters, the default chapter-quiz level, and practice stories.`;
 }
 
 function timeAgo(iso) {
@@ -93,6 +105,11 @@ export function initSettings() {
       await save({ openaiKey: e.target.value.trim() });
     });
   }
+
+  $("my-level").addEventListener("change", async (e) => {
+    showLevelHint(e.target.value);
+    await save({ myLevel: clampLevel(e.target.value) });
+  });
 
   $("backup-export").addEventListener("click", async (e) => {
     const btn = e.currentTarget;

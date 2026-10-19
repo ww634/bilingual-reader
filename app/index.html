@@ -105,6 +105,13 @@
         <label for="lang-switch-library">Learning</label>
         <select id="lang-switch-library" class="lang-switch"></select>
       </div>
+      <button id="library-new-story" class="new-story-btn">
+        <span class="new-story-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>
+        </span>
+        <span class="new-story-text"><b>New practice story</b><span>Your topic, your words, your level</span></span>
+        <span class="tile-chev">›</span>
+      </button>
       <div id="library-empty" class="empty-state" hidden>
         <p class="empty-title">No books yet</p>
         <p class="empty-sub">Browse to add books to your library.</p>
@@ -149,6 +156,19 @@
         <button id="book-detail-continue" class="btn-primary btn-block"></button>
       </div>
 
+      <div class="book-detail-cta">
+        <button id="book-detail-new-story" class="btn-secondary btn-block" hidden>+ New practice story</button>
+      </div>
+
+      <section id="book-quiz" class="book-quiz" hidden>
+        <label class="book-quiz-toggle">
+          <span><b>End-of-chapter quiz</b><span>A short optional quiz on each chapter's words</span></span>
+          <input type="checkbox" id="book-quiz-on" class="switch" />
+        </label>
+        <div id="book-quiz-levels" class="chip-row"></div>
+        <p id="book-quiz-hint" class="book-quiz-hint"></p>
+      </section>
+
       <p id="book-detail-synopsis" class="book-detail-synopsis"></p>
       <div class="book-detail-section-label">Chapters</div>
       <ul id="book-detail-chapters" class="chapter-list"></ul>
@@ -160,16 +180,21 @@
         <label for="lang-switch-vault">Learning</label>
         <select id="lang-switch-vault" class="lang-switch"></select>
       </div>
+      <div id="vault-tabs" class="seg-tabs">
+        <button data-kind="word" class="on">Words <span>0</span></button>
+        <button data-kind="sentence">Sentences <span>0</span></button>
+      </div>
       <div class="vault-summary">
         <div class="vault-stat"><span id="vault-new">0</span><label>New</label></div>
         <div class="vault-stat"><span id="vault-learning">0</span><label>Learning</label></div>
         <div class="vault-stat"><span id="vault-mastered">0</span><label>Mastered</label></div>
       </div>
       <button id="vault-start" class="btn-primary btn-block">Start quiz</button>
+      <button id="vault-story" class="btn-secondary btn-block" hidden>Write a practice story with my words</button>
       <div class="book-detail-section-label">Saved words</div>
       <div id="vault-empty" class="empty-state" hidden>
-        <p class="empty-title">No saved words yet</p>
-        <p class="empty-sub">Tap a word while reading, then “Save to Memory Vault”.</p>
+        <p id="vault-empty-title" class="empty-title">No saved words yet</p>
+        <p id="vault-empty-sub" class="empty-sub">Tap a word while reading, then “Save to Memory Vault”.</p>
       </div>
       <ul id="vault-list" class="vault-list"></ul>
     </main>
@@ -192,11 +217,12 @@
           </select>
         </section>
         <section class="sheet-section settings-group">
-          <label for="review-direction">Direction</label>
+          <label for="review-direction">Question type</label>
           <select id="review-direction">
-            <option value="t2e" id="dir-opt-t2e">Chinese → English</option>
-            <option value="e2t" id="dir-opt-e2t">English → Chinese</option>
+            <option value="t2e">Meaning</option>
+            <option value="e2t">Say it</option>
             <option value="cloze">Fill in the sentence</option>
+            <option value="dictation">Dictation</option>
             <option value="mix">Mix</option>
           </select>
         </section>
@@ -209,7 +235,14 @@
           </div>
         </section>
         <section class="sheet-section">
-          <div class="sheet-section-label">Include words</div>
+          <div class="sheet-section-label">Quiz on</div>
+          <div class="bucket-toggles">
+            <button class="kind-toggle bucket-toggle-like" data-kind="word">Words</button>
+            <button class="kind-toggle bucket-toggle-like" data-kind="sentence">Sentences</button>
+          </div>
+        </section>
+        <section class="sheet-section">
+          <div class="sheet-section-label">Include</div>
           <div class="bucket-toggles">
             <button class="bucket-toggle" data-bucket="new">New</button>
             <button class="bucket-toggle" data-bucket="learning">Learning</button>
@@ -278,19 +311,23 @@
     <div id="sel-toolbar" class="sel-toolbar" hidden>
       <button data-act="explain">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z"/><path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>
-        <span>See explanation</span>
+        <span>Explain</span>
       </button>
       <button data-act="ask">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8A8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
-        <span>Ask Assistant</span>
+        <span>Ask</span>
       </button>
       <button data-act="pronounce">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
-        <span>Pronunciation</span>
+        <span>Hear</span>
       </button>
       <button data-act="copy">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         <span>Copy</span>
+      </button>
+      <button data-act="save">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        <span>Save</span>
       </button>
     </div>
 
@@ -331,6 +368,7 @@
         <button id="pop-act-ask" class="pop-act">Ask Assistant</button>
         <button id="pop-act-save" class="pop-act">Save to Memory Vault</button>
         <button id="pop-act-hear" class="pop-act">Hear pronunciation</button>
+        <button id="pop-act-write" class="pop-act" hidden>Write it</button>
       </div>
     </div>
 
@@ -379,6 +417,69 @@
       </div>
     </aside>
 
+    <!-- HANDWRITING SHEET (stroke order + practice) -->
+    <div id="write-backdrop" class="sheet-backdrop" hidden></div>
+    <aside id="write-sheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="write-word" hidden>
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="sheet-head">
+        <div class="write-head">
+          <h3 id="write-word"></h3>
+          <span id="write-pinyin" class="write-pinyin"></span>
+        </div>
+        <button id="write-close" class="sheet-close" aria-label="Close">×</button>
+      </header>
+      <div class="sheet-body write-body">
+        <div id="write-tabs" class="write-tabs"></div>
+        <div class="write-pad"><div id="write-target"></div></div>
+        <p id="write-status" class="write-status"></p>
+        <div class="write-actions">
+          <button id="write-watch" class="pop-act">▶ Watch</button>
+          <button id="write-practise" class="pop-act primary">✎ Practise</button>
+          <button id="write-outline" class="pop-act on" aria-label="Show outline">Outline</button>
+        </div>
+        <button id="write-next" class="btn-primary btn-block" hidden>Next character →</button>
+      </div>
+    </aside>
+
+    <!-- PRACTICE STORY SHEET -->
+    <div id="story-backdrop" class="sheet-backdrop" hidden></div>
+    <aside id="story-sheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="story-title" hidden>
+      <div class="sheet-handle" aria-hidden="true"></div>
+      <header class="sheet-head">
+        <h3 id="story-title">New practice story</h3>
+        <button id="story-close" class="sheet-close" aria-label="Close">×</button>
+      </header>
+      <div class="sheet-body">
+        <p id="story-key-note" class="sheet-hint warn" hidden>Stories are written by OpenAI. Add your API key in Settings first.</p>
+        <section class="sheet-section">
+          <div class="sheet-section-label">What should it be about?</div>
+          <input id="story-topic" class="sheet-input" type="text" placeholder="e.g. colours, ordering at a café, a lost cat" autocomplete="off" />
+          <div id="story-ideas" class="chip-row"></div>
+        </section>
+        <section class="sheet-section">
+          <div class="sheet-section-label">Words to practise</div>
+          <div id="story-words" class="chip-row"></div>
+          <div id="story-custom-wrap" hidden>
+            <textarea id="story-custom" class="sheet-input" rows="2" placeholder="Words separated by commas, e.g. 红色, 蓝色, 绿色"></textarea>
+          </div>
+        </section>
+        <section class="sheet-section settings-group flat">
+          <label for="story-level">Level</label>
+          <select id="story-level"></select>
+        </section>
+        <section class="sheet-section">
+          <div class="sheet-section-label">Length</div>
+          <div id="story-length" class="chip-row"></div>
+        </section>
+        <section class="sheet-section">
+          <div class="sheet-section-label">Style</div>
+          <div id="story-style" class="chip-row"></div>
+        </section>
+        <button id="story-generate" class="btn-primary btn-block">Write my story</button>
+        <p id="story-status" class="story-status" hidden></p>
+      </div>
+    </aside>
+
     <!-- SETTINGS -->
     <main id="view-settings" class="view" hidden>
       <div class="settings-group">
@@ -404,6 +505,11 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
+      </div>
+      <div class="settings-group">
+        <label for="my-level">My level</label>
+        <select id="my-level"></select>
+        <p id="my-level-hint" class="hint"></p>
       </div>
       <div class="settings-group">
         <label for="openai-key">OpenAI API key (optional)</label>

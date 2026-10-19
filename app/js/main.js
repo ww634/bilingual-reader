@@ -10,6 +10,8 @@ import { loadLearningLanguage } from "./languages.js";
 import { initHome } from "./home.js";
 import { initListen } from "./listen.js";
 import { requestPersistence } from "./backup.js";
+import { initWriter } from "./write.js";
+import { initStories } from "./stories.js";
 
 const VIEWS = ["home", "library", "browse", "book-detail", "vault", "review", "reader", "settings"];
 const TITLES = {
@@ -142,6 +144,8 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   initSelection();
   initListen();
   initHome();
+  initWriter();
+  initStories();
   await initVault();
   await initCatalog();
   setView("home", { push: false });

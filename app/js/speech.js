@@ -120,6 +120,9 @@ function ensureCtx() {
   } catch { return null; }
 }
 
+/** Resume audio inside a tap so sound started later (after an await) may play. */
+export function unlockAudio() { ensureCtx(); }
+
 function cacheKey(text, code, variant = "normal") {
   // Same-origin relative URL used purely as a Cache API key. TTS_REV busts the
   // cache when the delivery instructions change.
