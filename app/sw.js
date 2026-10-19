@@ -3,7 +3,7 @@
 
 // Keep this version in sync with APP_VERSION in js/version.js — bump both on
 // each deploy so the version shown in Settings matches the cached shell.
-const SHELL_CACHE = "reader-shell-v48";
+const SHELL_CACHE = "reader-shell-v49";
 const SHELL_FILES = [
   "./",
   "./index.html",
@@ -29,6 +29,7 @@ const SHELL_FILES = [
   "./js/chapterquiz.js",
   "./js/write.js",
   "./js/stories.js",
+  "./js/feedback.js",
   "./data/zh-levels.tsv",
   "./icons/icon.svg",
 ];

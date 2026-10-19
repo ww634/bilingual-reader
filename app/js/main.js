@@ -12,6 +12,7 @@ import { initListen } from "./listen.js";
 import { requestPersistence } from "./backup.js";
 import { initWriter } from "./write.js";
 import { initStories } from "./stories.js";
+import { initFeedback } from "./feedback.js";
 
 const VIEWS = ["home", "library", "browse", "book-detail", "vault", "review", "reader", "settings"];
 const TITLES = {
@@ -146,6 +147,7 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   initHome();
   initWriter();
   initStories();
+  initFeedback();
   await initVault();
   await initCatalog();
   setView("home", { push: false });

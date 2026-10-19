@@ -13,6 +13,7 @@ import { speakWord } from "./speech.js";
 import { getSelectedSpans, clearSelection, wordHanzi, wordPinyin } from "./selection.js";
 import { getReaderContext } from "./reader.js";
 import { saveSentence, sentenceRange } from "./vault.js";
+import { openFeedback } from "./feedback.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -358,12 +359,50 @@ function hideToolbar() {
   $("sel-toolbar").hidden = true;
 }
 
+// The bar has two pages (like iOS): Explain · Ask · Hear · Save › and ‹ Copy · Feedback.
+let lastGeometry = null;
+function showToolbarPage(n) {
+  for (const page of document.querySelectorAll("#sel-toolbar .sel-page")) page.hidden = page.dataset.page !== String(n);
+  if (lastGeometry) positionToolbar(lastGeometry);   // its width changed — re-centre
+}
+
+// Everything the feedback form needs about the highlighted words, captured now
+// (the selection is cleared when the form opens).
+function selectionForFeedback() {
+  const ctx = getReaderContext();
+  const spans = getSelectedSpans();
+  const idx = spans.map((el) => parseInt((el.closest("[data-pair]") || el).dataset.pair, 10)).filter(Number.isFinite);
+  const lo = idx.length ? Math.min(...idx) : null, hi = idx.length ? Math.max(...idx) : null;
+  return {
+    shown: selectionDisplayText(),
+    hanzi: selectionHanzi(),
+    pinyin: currentLang === "zh" ? selectionPinyin() : "",
+    language: ctx?.language || currentLang || "",
+    bookId: ctx?.bookId || null,
+    chapterId: ctx?.chapterId || null,
+    chapterTitle: ctx?.chapter?.title?.english || "",
+    script: ctx?.script || "",
+    pairs: lo === null ? [] : ctx.chapter.pairs.slice(lo, hi + 1).map((p, k) => ({
+      index: lo + k,
+      target: p.target,
+      hanzi: p.hanzi || null,
+      english: p.english,
+      words: (p.alignment || []).map((a) => `${a.hanzi || a.target} = ${a.english}`).join(" · "),
+    })),
+  };
+}
+
 // Show the bar when a selection is settled; hide it while it's being dragged or
 // once it's gone.
 function onSelectionEvent(e) {
   const { active, dragging, geometry } = e.detail || {};
-  if (!active || dragging || !geometry) hideToolbar();
-  else positionToolbar(geometry);
+  if (!active || dragging || !geometry) { hideToolbar(); return; }
+  // A freshly shown bar always opens on its first page.
+  if ($("sel-toolbar").hidden) {
+    for (const page of document.querySelectorAll("#sel-toolbar .sel-page")) page.hidden = page.dataset.page !== "1";
+  }
+  lastGeometry = geometry;
+  positionToolbar(geometry);
 }
 
 // The selection as it appears on screen (pinyin or characters for Chinese,
@@ -456,6 +495,15 @@ export function initAssistant() {
     const act = btn.dataset.act;
     if (act === "copy") return;          // handled on click (Safari's clipboard rule)
     if (act === "save") { saveSelectedSentences(btn); return; }
+    if (act === "more") { showToolbarPage(2); return; }
+    if (act === "back") { showToolbarPage(1); return; }
+    if (act === "feedback") {
+      const sel = selectionForFeedback();
+      clearSelection();
+      hideToolbar();
+      openFeedback(sel);
+      return;
+    }
     if (act === "pronounce") {
       // Read the selection aloud in the book's language. Speaks the HANZI (never
       // the displayed pinyin); runs inside this gesture so iOS allows the audio.

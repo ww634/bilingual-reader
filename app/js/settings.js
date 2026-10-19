@@ -3,6 +3,7 @@ import { APP_VERSION } from "./version.js";
 import { exportBackup, importBackup, isPersisted } from "./backup.js";
 import { LEVELS, levelHint, clampLevel } from "./levels.js";
 import { getLearningLanguage } from "./languages.js";
+import { flushFeedback, feedbackSummary, KINDS } from "./feedback.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -34,6 +35,27 @@ export async function loadSettingsIntoUI() {
   const ver = document.getElementById("app-version");
   if (ver) ver.textContent = `Version v${APP_VERSION}`;
   refreshDataStatus(s);
+  $("feedback-repo").value = s.feedbackRepo || "";
+  $("feedback-token").value = s.feedbackToken || "";
+  refreshFeedbackStatus();
+}
+
+async function refreshFeedbackStatus() {
+  const { all, sent, waiting } = await feedbackSummary();
+  const s = await getSettings();
+  const ready = !!(s.feedbackRepo && s.feedbackToken);
+  $("feedback-summary").textContent = !all.length
+    ? (ready ? "Ready. Nothing sent yet." : "Add the repository and token to start sending feedback.")
+    : `${sent} sent${waiting ? ` · ${waiting} waiting to send` : ""}${!ready && waiting ? " (add the token to send)" : ""}`;
+  $("feedback-flush").hidden = !(waiting && ready);
+  const kind = (id) => KINDS.find((k) => k.id === id)?.label || id;
+  const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  $("feedback-list").innerHTML = all.slice(0, 6).map((f) => `
+    <li>
+      <span class="fb-words">${esc((f.selection?.hanzi || f.selection?.shown || "").slice(0, 24))}</span>
+      <span class="fb-kind">${esc(kind(f.kind))} · ${esc(f.message.slice(0, 60))}</span>
+      <span class="fb-state ${f.status === "sent" ? "sent" : "waiting"}">${f.status === "sent" ? `✓ #${f.issue?.number ?? ""}` : "waiting"}</span>
+    </li>`).join("");
 }
 
 function showLevelHint(n) {
@@ -105,6 +127,23 @@ export function initSettings() {
       await save({ openaiKey: e.target.value.trim() });
     });
   }
+
+  const saveFeedbackSetup = async () => {
+    await save({ feedbackRepo: $("feedback-repo").value.trim(), feedbackToken: $("feedback-token").value.trim() });
+    await flushFeedback();
+    refreshFeedbackStatus();
+  };
+  $("feedback-repo").addEventListener("change", saveFeedbackSetup);
+  $("feedback-token").addEventListener("change", saveFeedbackSetup);
+  $("feedback-flush").addEventListener("click", async () => {
+    $("feedback-summary").textContent = "Sending…";
+    const r = await flushFeedback();
+    if (r && r.waiting && r.setup) $("feedback-summary").textContent = "Couldn't send. Check the token and repository, or your connection.";
+    else refreshFeedbackStatus();
+  });
+  window.addEventListener("feedback:changed", () => {
+    if (document.body.getAttribute("data-view") === "settings") refreshFeedbackStatus();
+  });
 
   $("my-level").addEventListener("change", async (e) => {
     showLevelHint(e.target.value);

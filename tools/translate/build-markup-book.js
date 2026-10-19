@@ -10,6 +10,10 @@
 //                 # Titre | English title
 //                 {Il|It|f|1} {pleuvait|was raining|v|2} {sur|on|f|1} … ||| It was raining on …
 //
+// A blank line between pair lines marks a new paragraph: the first pair after it
+// (and the chapter's first pair) gets `paragraph_start: true`, which the reader
+// uses to lay out paragraphs when English is hidden.
+//
 // Each {target|english|cat|band} tags one chunk. Cat: n v adj adv f(function word)
 // pn(proper noun) id(idiom). Band: 1 very_common · 2 common · 3 uncommon ·
 // 4 rare · - none. Untagged text (punctuation) stays as plain text.
@@ -120,9 +124,11 @@ async function main() {
     const lines = (await fs.readFile(path.join(srcDir, file), "utf8")).split(/\r?\n/);
     let title = null;
     const pairs = [];
+    let newParagraph = true;
     lines.forEach((raw, i) => {
       const line = raw.trim();
-      if (!line || line.startsWith("//")) return;
+      if (!line) { newParagraph = true; return; }
+      if (line.startsWith("//")) return;
       const where = `${file}:${i + 1}`;
       if (line.startsWith("#")) {
         const [t, e] = line.replace(/^#\s*/, "").split("|").map((s) => s.trim());
@@ -132,6 +138,8 @@ async function main() {
       const p = parsePair(line, where);
       if (p) {
         if (vocabulary) for (const chunk of p.alignment) chunk.lookup = frenchLookups(chunk, vocabulary);
+        if (newParagraph) p.paragraph_start = true;
+        newParagraph = false;
         pairs.push(p);
       }
     });

@@ -9,7 +9,7 @@
 //   settings — single record at key "current". App settings.
 
 const DB_NAME = "bilingual-reader";
-const DB_VERSION = 3;
+const DB_VERSION = 4;
 
 const STORE_BOOKS = "books";
 const STORE_CHAPTERS = "chapters";
@@ -17,6 +17,7 @@ const STORE_PROGRESS = "progress";
 const STORE_LIBRARY = "library";
 const STORE_SETTINGS = "settings";
 const STORE_VAULT = "vault";   // saved words for spaced-repetition review
+const STORE_FEEDBACK = "feedback";   // reader feedback reports (kept until sent, then as a record)
 
 let _dbPromise = null;
 
@@ -57,6 +58,10 @@ function openDB() {
       // — existing books/chapters/progress/settings are untouched.
       if (!db.objectStoreNames.contains(STORE_VAULT)) {
         db.createObjectStore(STORE_VAULT, { keyPath: "id" });
+      }
+      // v3 -> v4: feedback reports. Additive.
+      if (!db.objectStoreNames.contains(STORE_FEEDBACK)) {
+        db.createObjectStore(STORE_FEEDBACK, { keyPath: "id" });
       }
     };
     req.onsuccess = () => resolve(req.result);
@@ -167,6 +172,16 @@ export async function deleteVaultItem(id) {
   return asPromise(store.delete(id));
 }
 
+// ---------- feedback ----------
+export async function putFeedback(item) {
+  const store = await tx(STORE_FEEDBACK, "readwrite");
+  return asPromise(store.put(item));
+}
+export async function getAllFeedback() {
+  const store = await tx(STORE_FEEDBACK);
+  return asPromise(store.getAll());
+}
+
 // ---------- settings ----------
 const DEFAULT_SETTINGS = {
   libraryUrl: "../content/library.json",
@@ -182,6 +197,8 @@ const DEFAULT_SETTINGS = {
   reviewScript: "both",              // how Chinese shows in quizzes: "hanzi" | "pinyin" | "both"
   hideMastered: true,                // hide English for mastered words in the reader
   showEnglish: true,                 // false = target language only, flowing like a book
+  feedbackRepo: "ww634/reader-feedback", // private GitHub repo that receives feedback as issues
+  feedbackToken: "",                 // fine-grained token: Issues read/write on that repo only
   myLevel: 2,                        // learner level 1–6 (Newbie … Advanced), see levels.js
   // Per-category visibility for English translations in the reader. Toggled
   // via the reader-options sheet. When a category is false, the English part
@@ -279,7 +296,7 @@ export async function putActivity(rec) {
 export async function clearAll() {
   const db = await openDB();
   return new Promise((resolve, reject) => {
-    const stores = [STORE_BOOKS, STORE_CHAPTERS, STORE_PROGRESS, STORE_LIBRARY, STORE_SETTINGS, STORE_VAULT];
+    const stores = [STORE_BOOKS, STORE_CHAPTERS, STORE_PROGRESS, STORE_LIBRARY, STORE_SETTINGS, STORE_VAULT, STORE_FEEDBACK];
     const t = db.transaction(stores, "readwrite");
     for (const name of stores) {
       t.objectStore(name).clear();
