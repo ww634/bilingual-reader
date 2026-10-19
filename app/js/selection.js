@@ -92,6 +92,27 @@ function removeHighlights() {
   document.querySelectorAll(".sel-hl").forEach((el) => el.remove());
 }
 
+/**
+ * Group word elements into visual lines: same paragraph and vertically
+ * overlapping. Uses each element's per-line boxes, so a span that wraps (in the
+ * book layout, a run of punctuation and spaces can) lands on both its lines.
+ * Returns, in order, [{ line: <p.target>, rects: [...] }].
+ */
+export function groupByLine(els) {
+  const groups = [];
+  for (const el of els) {
+    const line = el.closest("p.target");
+    for (const r of el.getClientRects()) {
+      if (r.width < 1) continue;
+      const mid = (r.top + r.bottom) / 2;
+      let g = groups.find((x) => x.line === line && Math.abs(x.mid - mid) < Math.max(4, Math.min(x.h, r.bottom - r.top) * 0.5));
+      if (!g) { g = { line, mid, h: r.bottom - r.top, rects: [] }; groups.push(g); }
+      g.rects.push(r);
+    }
+  }
+  return groups;
+}
+
 const unionRect = (rects) => ({
   left: Math.min(...rects.map((r) => r.left)),
   right: Math.max(...rects.map((r) => r.right)),
@@ -106,16 +127,12 @@ function render() {
   if (!state) { geometry = null; hideKnobs(); return; }
 
   const els = state.spans.slice(state.lo, state.hi + 1);
-  // Group the selected words by their target line (each .target is one visual line).
-  const groups = new Map();
-  els.forEach((el, k) => {
-    const line = el.closest("p.target");
-    if (!groups.has(line)) groups.set(line, []);
-    groups.get(line).push(state.rects[state.lo + k]);
-  });
+  // Group the selected words by visual line. (A bilingual block's target is one
+  // line; in the book layout a paragraph wraps over many.)
+  const groups = groupByLine(els);
 
   let firstRect = null, lastRect = null, lastLineEl = null;
-  for (const [line, rects] of groups) {
+  for (const { line, rects } of groups) {
     const u = unionRect(rects);
     const lineBox = line.getBoundingClientRect();
     const hl = document.createElement("div");
@@ -130,11 +147,15 @@ function render() {
     lastLineEl = line;
   }
 
+  if (!lastRect) { geometry = null; hideKnobs(); return; }   // nothing laid out (yet)
+
+  // The action bar sits under the English line of the last selected line — or,
+  // with no English (book layout), right under the line itself.
   const block = lastLineEl && lastLineEl.closest(".reader-block");
   geometry = {
     first: firstRect,
     last: lastRect,
-    blockBottom: block ? block.getBoundingClientRect().bottom : lastRect.bottom,
+    blockBottom: block && !block.classList.contains("flow") ? block.getBoundingClientRect().bottom : lastRect.bottom,
   };
   positionKnobs();
 }
@@ -353,6 +374,7 @@ function init() {
   window.addEventListener("resize", clearSelection);
   window.addEventListener("reader:script", clearSelection);
   window.addEventListener("reader:opened", clearSelection);
+  window.addEventListener("reader:rerendered", clearSelection);
   window.addEventListener("view:changed", clearSelection);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") clearSelection(); });
 }

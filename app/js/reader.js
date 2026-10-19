@@ -3,6 +3,7 @@ import { openPopover } from "./popover.js";
 import { ensureMastered, getMasteredHanziSync, chapterWatchWords, startQuizWithItems, startCardQuiz, vaultBucketMap } from "./vault.js";
 import { LEVELS, levelName, loadLevels, chapterKnowledge, clampLevel } from "./levels.js";
 import { buildChapterQuiz, bookQuizPrefs } from "./chapterquiz.js";
+import { isTargetOnly } from "./reader-options.js";
 
 const pagesEl = () => document.getElementById("reader-pages");
 const indicatorEl = () => document.getElementById("page-indicator");
@@ -32,6 +33,8 @@ let _state = {
   currentPage: 0,
   saveTimer: null,
   script: "pinyin",
+  targetOnly: false,   // English hidden: text flows like a normal book
+  pairPage: new Map(), // sentence (pair) index -> page index
 };
 
 // A run of target text that can be shown in either script. `pairIdx` (optional)
@@ -48,15 +51,18 @@ const HAN = /[\u3400-\u9fff]/;
 const EDGE_PUNCT = /^([\p{P}\p{S}\s]*)([\s\S]*?)([\p{P}\p{S}\s]*)$/u;
 function renderScriptInto(el, script) {
   const py = el.dataset.pinyin, hz = el.dataset.hanzi;
-  if (script !== "ruby") { el.textContent = script === "hanzi" ? hz : py; return; }
+  // Pinyin lines carry a space before punctuation ("yíbàn , mén"); drop it so a
+  // line never wraps to start with a comma.
+  if (script !== "ruby") { el.textContent = script === "hanzi" ? hz : py.replace(/\s+(?=[,.!?;:)\]…])/g, ""); return; }
   if (!HAN.test(hz) || hz === py) { el.textContent = hz; return; }
   // Punctuation stays outside the annotation; only the words get pinyin.
   const [, lead, core, trail] = hz.match(EDGE_PUNCT);
   const rt = py.replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, "");
   el.innerHTML = `${escape(lead)}<ruby>${escape(core)}<rt>${escape(rt)}</rt></ruby>${escape(trail)}`;
 }
+const normScript = (script) => (script === "hanzi" || script === "ruby" ? script : "pinyin");
 function setReaderScript(script) {
-  _state.script = script === "hanzi" || script === "ruby" ? script : "pinyin";
+  _state.script = normScript(script);
   document.body.dataset.script = _state.script;
   for (const el of pagesEl().querySelectorAll("[data-pinyin]")) renderScriptInto(el, _state.script);
 }
@@ -727,15 +733,19 @@ function renderChapter(chapter, perPage) {
   `;
   container.appendChild(titlePage);
 
-  // Content pages — append first so renderPageInto can measure real width.
-  const chunks = chunkPairs(chapter.pairs, perPage);
-  let globalStart = 0;
-  for (const pageChunk of chunks) {
-    const page = document.createElement("section");
-    page.className = "reader-page";
-    container.appendChild(page);
-    renderPageInto(page, pageChunk, globalStart);
-    globalStart += pageChunk.length;
+  if (_state.targetOnly) {
+    renderFlowPages(container, chapter);
+  } else {
+    // Content pages — append first so renderPageInto can measure real width.
+    const chunks = chunkPairs(chapter.pairs, perPage);
+    let globalStart = 0;
+    for (const pageChunk of chunks) {
+      const page = document.createElement("section");
+      page.className = "reader-page";
+      container.appendChild(page);
+      renderPageInto(page, pageChunk, globalStart);
+      globalStart += pageChunk.length;
+    }
   }
 
   // End-of-chapter page. Shows the next chapter's title with a "Read" button,
@@ -770,7 +780,131 @@ function renderChapter(chapter, perPage) {
   }
   container.appendChild(endPage);
 
-  _state.pagesCount = 1 + chunks.length + 1;
+  _state.pagesCount = container.children.length;
+  buildPairPageMap();
+}
+
+/* ───────────────────────── target language only (book layout) ───────────────────────── */
+
+// Where paragraphs start, best source first:
+//   1. `paragraph_start: true` on pairs (if any pair in the chapter has the field);
+//   2. a line break in the text — the AI-written books begin each new
+//      paragraph's first sentence with "\n";
+//   3. otherwise, where a line of dialogue starts or ends (the usual shape of a novel).
+const OPEN_QUOTE = /^[“"«「『‘]/;
+const CLOSE_QUOTE = /[”"»」』’][。.!?！？,，…]?$/;
+const rawText = (p) => p.hanzi || p.target || "";
+const NO_LINE_START = /^[，。、！？；：”’）》」』,.!?;:)\]…]/;
+function paragraphStarts(pairs) {
+  const marked = pairs.some((p) => "paragraph_start" in p);
+  const hasBreaks = !marked && pairs.some((p) => rawText(p).includes("\n"));
+  return pairs.map((p, i) => {
+    if (i === 0) return true;
+    if (marked) return !!p.paragraph_start;
+    if (hasBreaks) return /^\s*\n/.test(rawText(p)) || /\n\s*$/.test(rawText(pairs[i - 1]));
+    return OPEN_QUOTE.test(rawText(p).trim()) || CLOSE_QUOTE.test(rawText(pairs[i - 1]).trim());
+  });
+}
+
+/**
+ * Lay the chapter out as flowing paragraphs (no English lines), filling each
+ * page to the screen: sentences are added until the page would overflow, then
+ * a new page starts (continuing the paragraph). Measured in the current script,
+ * so it's re-run when the script changes.
+ */
+function renderFlowPages(container, chapter) {
+  const pairs = chapter.pairs;
+  const starts = paragraphStarts(pairs);
+  // Chinese characters run together; pinyin and other languages are spaced.
+  const joiner = (chapter.language || "zh") === "zh" && _state.script !== "pinyin" ? "" : " ";
+  let page, block, para;
+  const newPage = () => {
+    page = document.createElement("section");
+    page.className = "reader-page flow-page";
+    block = document.createElement("div");
+    block.className = "reader-block flow";
+    page.appendChild(block);
+    container.appendChild(page);
+    para = null;
+  };
+  const newPara = (continued) => {
+    para = document.createElement("p");
+    para.className = continued ? "target cont" : "target";
+    block.appendChild(para);
+  };
+  newPage();
+  pairs.forEach((pair, i) => {
+    if (!para || starts[i]) newPara(false);
+    const sep = para.childNodes.length && joiner ? document.createTextNode(joiner) : null;
+    if (sep) para.appendChild(sep);
+    const span = document.createElement("span");
+    span.className = "flow-pair";
+    span.innerHTML = buildPinyinHtml([pair], i).html;
+    for (const el of span.querySelectorAll("[data-pinyin]")) renderScriptInto(el, _state.script);
+    // Allow a line break between any two words (characters with pinyin above
+    // otherwise run together with nowhere to wrap).
+    // Never before closing punctuation, so no line starts with "，" or "。".
+    for (const el of span.querySelectorAll(".seg, [data-pinyin]")) {
+      let sib = el.nextSibling;
+      while (sib && !(sib.textContent || "").trim()) sib = sib.nextSibling;   // skip empty gaps
+      if (!NO_LINE_START.test((sib?.textContent || "").trimStart())) el.after(document.createElement("wbr"));
+    }
+    para.appendChild(span);
+    // Overflowed (and not the page's only sentence)? Move it to a fresh page.
+    if (page.scrollHeight > page.clientHeight + 1 && block.querySelectorAll(".flow-pair").length > 1) {
+      span.remove();
+      if (sep) sep.remove();
+      if (!para.childNodes.length) para.remove();
+      newPage();
+      newPara(!starts[i]);
+      para.appendChild(span);
+    }
+  });
+}
+
+function buildPairPageMap() {
+  _state.pairPage = new Map();
+  [...pagesEl().children].forEach((page, pi) => {
+    for (const el of page.querySelectorAll(".reader-block > p.target [data-pair]")) {
+      const i = parseInt(el.dataset.pair, 10);
+      if (Number.isFinite(i) && !_state.pairPage.has(i)) _state.pairPage.set(i, pi);
+    }
+  });
+}
+
+// First sentence on a page: null on the title page, -1 on the end page.
+function anchorPair(page) {
+  if (page <= 0) return null;
+  if (page >= _state.pagesCount - 1) return -1;
+  let min = null;
+  for (const [i, p] of _state.pairPage) if (p === page && (min === null || i < min)) min = i;
+  return min;
+}
+function pageForAnchor(anchor, fallbackPage) {
+  if (anchor === -1) return _state.pagesCount - 1;
+  if (anchor !== null && anchor !== undefined && _state.pairPage.has(anchor)) return _state.pairPage.get(anchor);
+  return Math.min(Math.max(fallbackPage ?? 0, 0), _state.pagesCount - 1);
+}
+
+/** Re-render the open chapter (English on/off, or a script change in book layout), keeping the place. */
+async function relayout() {
+  if (!_state.chapter) return;
+  const settings = await getSettings();
+  const anchor = anchorPair(_state.currentPage);
+  const fromPage = _state.currentPage;
+  _state.targetOnly = isTargetOnly(settings);
+  document.body.classList.toggle("target-only", _state.targetOnly);
+  renderChapter(_state.chapter, settings.pairsPerPage);
+  setReaderScript(_state.script);
+  applyMasteredHiding();
+  renderChapterWatch();
+  renderKnownLine();
+  renderEndQuiz();
+  const page = fromPage === 0 ? 0 : pageForAnchor(anchor, fromPage);
+  _state.currentPage = page;
+  scrollToPage(pagesEl(), page);
+  updateIndicator();
+  window.dispatchEvent(new CustomEvent("reader:rerendered"));
 }
 
 function updateIndicator() {
@@ -799,7 +933,7 @@ function handleScroll() {
   clearTimeout(_state.saveTimer);
   _state.saveTimer = setTimeout(() => {
     if (_state.bookId && _state.chapterId) {
-      putProgress(_state.bookId, _state.chapterId, _state.currentPage);
+      putProgress(_state.bookId, _state.chapterId, _state.currentPage, anchorPair(_state.currentPage));
     }
   }, 300);
 }
@@ -919,9 +1053,14 @@ export async function openReader(bookId, chapterId) {
   document.getElementById("reader-script-hint").textContent = hasHanzi
     ? "Switch anytime. English and word colours stay the same."
     : "Chinese characters aren't included in this book yet.";
-  renderChapter(chapter, settings.pairsPerPage);
   // Books without characters (pinyin-only, or other languages) always show plain text.
-  setReaderScript(hasHanzi ? settings.readerScript : "pinyin");
+  const script = hasHanzi ? settings.readerScript : "pinyin";
+  _state.script = normScript(script);   // the book layout measures in the shown script
+  document.body.dataset.script = _state.script;   // (with its styles applied)
+  _state.targetOnly = isTargetOnly(settings);
+  document.body.classList.toggle("target-only", _state.targetOnly);
+  renderChapter(chapter, settings.pairsPerPage);
+  setReaderScript(script);
 
   // Mastered-word English hiding: refresh the set, apply the body flag, and mark
   // the matching English spans so they fade (if the setting is on).
@@ -935,12 +1074,17 @@ export async function openReader(bookId, chapterId) {
   document.getElementById("title").textContent = chapter.title.english;
 
   const container = pagesEl();
-  requestAnimationFrame(() => {
-    const startPage = Math.min(Math.max(progress?.lastPage ?? 0, 0), _state.pagesCount - 1);
+  // Prefer the saved sentence: page numbers differ between layouts. Position now
+  // (layout is already done — the pages were measured) and again after the next
+  // paint in case the browser hadn't applied the scroll yet.
+  const startPage = (progress?.lastPage ?? 0) === 0 ? 0 : pageForAnchor(progress?.pair, progress?.lastPage);
+  const position = () => {
     _state.currentPage = startPage;
     scrollToPage(container, startPage);
     updateIndicator();
-  });
+  };
+  position();
+  requestAnimationFrame(() => { if (_state.chapter === chapter && _state.currentPage === startPage) position(); });
 
   container.removeEventListener("scroll", handleScroll);
   container.addEventListener("scroll", handleScroll, { passive: true });
@@ -1070,7 +1214,7 @@ export function closeReader() {
   container.removeEventListener("click", handleNextChapterTap);
   clearTimeout(_state.saveTimer);
   if (_state.bookId && _state.chapterId) {
-    putProgress(_state.bookId, _state.chapterId, _state.currentPage);
+    putProgress(_state.bookId, _state.chapterId, _state.currentPage, anchorPair(_state.currentPage));
   }
   _state.bookId = null;
   _state.chapterId = null;
@@ -1081,4 +1225,8 @@ export function closeReader() {
   pagesEl().innerHTML = "";
 }
 
-window.addEventListener("reader:script", (event) => setReaderScript(event.detail));
+window.addEventListener("reader:script", (event) => {
+  setReaderScript(event.detail);
+  if (_state.targetOnly) relayout();   // re-paginate: characters take less room than pinyin
+});
+window.addEventListener("reader:layout", () => relayout());

@@ -117,9 +117,11 @@ export async function getAllChapterKeys() {
 }
 
 // ---------- progress ----------
-export async function putProgress(bookId, chapterId, lastPage) {
+// `pair` = the first sentence on that page (-1 on the end page), so the place
+// survives layout changes (English on/off re-paginates the chapter).
+export async function putProgress(bookId, chapterId, lastPage, pair = null) {
   const store = await tx(STORE_PROGRESS, "readwrite");
-  return asPromise(store.put({ lastPage, updatedAt: new Date().toISOString() }, chapterKey(bookId, chapterId)));
+  return asPromise(store.put({ lastPage, pair, updatedAt: new Date().toISOString() }, chapterKey(bookId, chapterId)));
 }
 export async function getProgress(bookId, chapterId) {
   const store = await tx(STORE_PROGRESS);
@@ -179,6 +181,7 @@ const DEFAULT_SETTINGS = {
   reviewLength: "20",                // "10" | "20" | "30" | "all" | "endless"
   reviewScript: "both",              // how Chinese shows in quizzes: "hanzi" | "pinyin" | "both"
   hideMastered: true,                // hide English for mastered words in the reader
+  showEnglish: true,                 // false = target language only, flowing like a book
   myLevel: 2,                        // learner level 1–6 (Newbie … Advanced), see levels.js
   // Per-category visibility for English translations in the reader. Toggled
   // via the reader-options sheet. When a category is false, the English part

@@ -13,7 +13,7 @@
 import { getReaderContext, getPageElements, goToPage } from "./reader.js";
 import { playSpeech, prefetchSpeech } from "./speech.js";
 import { getSettings, updateSettings } from "./db.js";
-import { hasSelection } from "./selection.js";
+import { hasSelection, groupByLine } from "./selection.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -67,14 +67,9 @@ function drawHighlight() {
   if (!page) return;
   const spans = [...page.querySelectorAll(`.reader-block > p.target [data-pair="${L.idx}"]`)]
     .filter((el) => (el.textContent || "").trim());
-  const lines = new Map();
-  for (const el of spans) {
-    const line = el.closest("p.target");
-    if (!lines.has(line)) lines.set(line, []);
-    lines.get(line).push(el.getBoundingClientRect());
-  }
-  let first = null;
-  for (const [line, rects] of lines) {
+  const groups = groupByLine(spans);
+  let first = null, sTop = Infinity, sBottom = -Infinity;
+  for (const { line, rects } of groups) {
     const box = line.getBoundingClientRect();
     const left = Math.min(...rects.map((r) => r.left));
     const right = Math.max(...rects.map((r) => r.right));
@@ -88,15 +83,17 @@ function drawHighlight() {
     hl.style.height = `${bottom - top + 4}px`;
     line.appendChild(hl);
     if (!first) first = line;
+    sTop = Math.min(sTop, top);
+    // Include the English line under it in the bilingual layout.
+    const block = line.closest(".reader-block");
+    sBottom = Math.max(sBottom, block && !block.classList.contains("flow") ? block.getBoundingClientRect().bottom : bottom);
   }
   // Keep the sentence comfortably in view inside the (vertically scrolling) page.
   if (first) {
-    const block = first.closest(".reader-block") || first;
     const pb = page.getBoundingClientRect();
-    const bb = block.getBoundingClientRect();
     const margin = 90;
-    if (bb.top < pb.top + 10 || bb.bottom > pb.bottom - margin - 70) {
-      page.scrollTo({ top: page.scrollTop + (bb.top - pb.top) - pb.height * 0.3, behavior: "smooth" });
+    if (sTop < pb.top + 10 || sBottom > pb.bottom - margin - 70) {
+      page.scrollTo({ top: page.scrollTop + (sTop - pb.top) - pb.height * 0.3, behavior: "smooth" });
     }
   }
 }
@@ -259,4 +256,10 @@ export function initListen() {
   // Leaving the reader or opening another chapter ends listening.
   window.addEventListener("view:changed", (e) => { if (e.detail !== "reader") close(); });
   window.addEventListener("reader:opened", close);
+  // Re-laid out (English on/off): new pages, so re-map and redraw.
+  window.addEventListener("reader:rerendered", () => {
+    if (!L.active) return;
+    buildMap();
+    drawHighlight();
+  });
 }

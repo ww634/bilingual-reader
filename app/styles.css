@@ -2180,3 +2180,23 @@ input.switch:checked::after { transform: translateX(18px); }
 .story-status { font-size: 13px; color: var(--text-dim); text-align: center; margin: 12px 0 0; line-height: 1.4; }
 .story-status.busy { color: var(--gold); }
 .story-status.error { color: var(--danger); }
+
+/* ============================================================
+   Reader — target language only ("book" layout)
+   English lines are gone; the text flows in paragraphs like a printed book.
+   Word colours, tapping, selection, Listen etc. all work as before.
+   ============================================================ */
+.reader-block.flow { margin: 0; }
+.reader-block.flow > p.target {
+  font-weight: 500;
+  font-size: calc(var(--reader-font) * 1.12);
+  line-height: 1.8;
+  margin: 0 0 0.8em;
+  text-indent: 1.5em;
+}
+.reader-block.flow > p.target.cont { text-indent: 0; }   /* paragraph continued from the previous page */
+.reader-block.flow > p.target:last-child { margin-bottom: 0; }
+body[data-script="ruby"] .reader-block.flow > p.target { line-height: 2.5; }
+body[data-script="hanzi"] .reader-block.flow > p.target { text-indent: 2em; letter-spacing: 0.02em; }
+/* Category switches are moot while English is off. */
+#cat-section.off { opacity: 0.4; pointer-events: none; }

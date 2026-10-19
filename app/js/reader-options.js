@@ -40,6 +40,28 @@ const DEFAULT_VISIBILITY = {
 
 const $ = (id) => document.getElementById(id);
 
+/**
+ * True when the reader should show the target language only: the "Show English"
+ * switch is off, or every English category has been switched off one by one.
+ * Either way the English lines are removed and the text flows like a book.
+ */
+export function isTargetOnly(settings) {
+  if (settings?.showEnglish === false) return true;
+  const vis = { ...DEFAULT_VISIBILITY, ...(settings?.categoryVisibility || {}) };
+  return CATEGORIES.every(({ key }) => vis[key] === false);
+}
+
+// Re-lay out the open chapter (English on ⇄ off). reader.js listens.
+const relayout = () => window.dispatchEvent(new CustomEvent("reader:layout"));
+
+function syncEnglishSwitch(settings) {
+  const sw = $("opt-show-english");
+  if (!sw) return;
+  const off = isTargetOnly(settings);
+  sw.checked = !off;
+  $("cat-section")?.classList.toggle("off", off);
+}
+
 let _state = {
   visibility: { ...DEFAULT_VISIBILITY },
 };
@@ -76,6 +98,7 @@ function syncCheckboxes() {
 function openSheet() {
   syncCheckboxes();
   getSettings().then(s => {
+    syncEnglishSwitch(s);
     $("reader-script").value = s.readerScript || "pinyin";
     const hm = $("opt-hide-mastered");
     if (hm) hm.checked = s.hideMastered !== false;
@@ -100,11 +123,28 @@ function closeSheet() {
 }
 
 async function onToggleChange(key, checked) {
+  const before = isTargetOnly(await getSettings());
   _state.visibility[key] = checked;
   applyVisibilityClasses(_state.visibility);
-  // Persist. We re-fetch settings so we don't clobber any other field that
-  // got updated since boot.
-  await updateSettings({ categoryVisibility: { ..._state.visibility } });
+  const after = await updateSettings({ categoryVisibility: { ..._state.visibility } });
+  syncEnglishSwitch(after);
+  // Switching off the last category (or one back on from none) changes the layout.
+  if (before !== isTargetOnly(after)) relayout();
+}
+
+async function onEnglishSwitch(on) {
+  const patch = { showEnglish: on };
+  // Turning English back on with every category off would still show nothing:
+  // bring the categories back too.
+  if (on && CATEGORIES.every(({ key }) => _state.visibility[key] === false)) {
+    for (const { key } of CATEGORIES) _state.visibility[key] = true;
+    applyVisibilityClasses(_state.visibility);
+    syncCheckboxes();
+    patch.categoryVisibility = { ..._state.visibility };
+  }
+  const next = await updateSettings(patch);
+  syncEnglishSwitch(next);
+  relayout();
 }
 
 export async function initReaderOptions() {
@@ -124,6 +164,8 @@ export async function initReaderOptions() {
     window.dispatchEvent(new CustomEvent("reader:script", { detail: script }));
     await updateSettings({ readerScript: script });
   });
+
+  $("opt-show-english")?.addEventListener("change", (e) => onEnglishSwitch(e.target.checked));
 
   $("opt-hide-mastered")?.addEventListener("change", async (event) => {
     const on = event.target.checked;
