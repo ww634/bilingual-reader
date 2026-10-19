@@ -2,7 +2,7 @@
   "id": "ch-29",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "Les lignes communes",
     "english": "The Matching Entries"
@@ -31,7 +31,7 @@
             {
               "target": "lendemain",
               "english": "next day",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
@@ -112,7 +112,7 @@
             {
               "target": "autorisées",
               "english": "authorised",
-              "category": "noun",
+              "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 11,
@@ -598,7 +598,7 @@
             {
               "target": "convenues",
               "english": "agreed",
-              "category": "adverb",
+              "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 20,
@@ -867,8 +867,8 @@
             },
             {
               "target": "reçu",
-              "english": "receipt",
-              "category": "noun",
+              "english": "received",
+              "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 12,
@@ -4415,21 +4415,12 @@
               "end": 2
             },
             {
-              "target": "a",
-              "english": "has",
+              "target": "a affichée",
+              "english": "displayed",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 2,
-              "end": 3
-            },
-            {
-              "target": "affichée",
-              "english": "displayed",
-              "category": "noun",
-              "frequency_band": "common",
-              "is_idiom": false,
-              "start": 4,
               "end": 12
             }
           ]
@@ -4981,7 +4972,7 @@
             {
               "target": "chronologie",
               "english": "chronology",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 8,
@@ -7036,7 +7027,7 @@
             {
               "target": "convenue",
               "english": "agreed",
-              "category": "adverb",
+              "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
@@ -7396,7 +7387,7 @@
             {
               "target": "carte",
               "english": "card",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
@@ -7839,7 +7830,7 @@
             },
             {
               "target": "savoir",
-              "english": "To know",
+              "english": "know",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,

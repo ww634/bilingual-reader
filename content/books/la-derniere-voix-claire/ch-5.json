@@ -2,7 +2,7 @@
   "id": "ch-5",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "La mauvaise gare",
     "english": "The Wrong Station"
@@ -31,7 +31,7 @@
             {
               "target": "lendemain",
               "english": "next day",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 3,
@@ -190,7 +190,7 @@
             {
               "target": "pont",
               "english": "bridge",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 7,
@@ -385,7 +385,7 @@
             {
               "target": "carte",
               "english": "card",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
@@ -1165,7 +1165,7 @@
             {
               "target": "casque",
               "english": "headphones",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
@@ -3614,21 +3614,12 @@
           "is_idiom": false,
           "lookup": [
             {
-              "target": "a",
-              "english": "has",
+              "target": "a failli",
+              "english": "almost",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 1
-            },
-            {
-              "target": "failli",
-              "english": "almost",
-              "category": "adverb",
-              "frequency_band": "common",
-              "is_idiom": false,
-              "start": 2,
               "end": 8
             },
             {
@@ -4273,7 +4264,7 @@
             {
               "target": "ans",
               "english": "years",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 11,
@@ -5065,7 +5056,7 @@
             {
               "target": "conversation",
               "english": "conversation",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
@@ -7993,7 +7984,7 @@
             {
               "target": "pont",
               "english": "bridge",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 9,
@@ -11191,7 +11182,7 @@
             {
               "target": "compliquée",
               "english": "complicated",
-              "category": "adverb",
+              "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 17,
@@ -11470,7 +11461,7 @@
             {
               "target": "bout",
               "english": "end",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
@@ -13300,7 +13291,7 @@
             {
               "target": "gâteau",
               "english": "cake",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 10,

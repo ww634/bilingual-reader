@@ -2,7 +2,7 @@
   "id": "ch-11",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "Une visite plus tôt",
     "english": "An Earlier Visit"
@@ -103,7 +103,7 @@
             {
               "target": "cinq",
               "english": "five",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
@@ -1539,8 +1539,8 @@
           "lookup": [
             {
               "target": "reçu",
-              "english": "receipt",
-              "category": "noun",
+              "english": "received",
+              "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
@@ -2917,7 +2917,7 @@
             {
               "target": "contestée",
               "english": "disputed",
-              "category": "noun",
+              "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 17,
@@ -3868,7 +3868,7 @@
             {
               "target": "commentaires",
               "english": "comments",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 15,
@@ -4177,7 +4177,7 @@
             {
               "target": "concernées",
               "english": "concerned",
-              "category": "noun",
+              "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 19,
@@ -4327,7 +4327,7 @@
             {
               "target": "affaire",
               "english": "matter",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 14,
@@ -5281,7 +5281,7 @@
             {
               "target": "début",
               "english": "beginning",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 3,
@@ -9322,7 +9322,7 @@
             {
               "target": "affaire",
               "english": "matter",
-              "category": "adverb",
+              "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 16,
@@ -9942,7 +9942,7 @@
             },
             {
               "target": "savoir",
-              "english": "To know",
+              "english": "know",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
@@ -10084,7 +10084,7 @@
             {
               "target": "appropriée",
               "english": "appropriate",
-              "category": "noun",
+              "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
@@ -11969,21 +11969,12 @@
           "is_idiom": false,
           "lookup": [
             {
-              "target": "a",
-              "english": "has",
+              "target": "a failli",
+              "english": "almost",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 1
-            },
-            {
-              "target": "failli",
-              "english": "almost",
-              "category": "adverb",
-              "frequency_band": "common",
-              "is_idiom": false,
-              "start": 2,
               "end": 8
             }
           ]
