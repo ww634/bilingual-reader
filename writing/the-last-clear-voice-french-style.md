@@ -43,3 +43,18 @@ The revised first two chapters are the starting reference for subsequent French 
 Read [the user's editorial guide](crime-mystery-editorial-guide.md) alongside this style reference before writing or revising. Direct speech uses French guillemets and English curly quotation marks, with clear speaker anchors and a new manuscript paragraph on speaker changes. Tags and actions stay outside quoted speech. Preserve the spoken register and passé composé while allowing precise imagery, organic wordplay, and Daniel's dry, sometimes self-incriminating observations. Do not explain an implication that the scene has already earned, or force humour into grief. See [the review through chapter 22](the-last-clear-voice-editorial-review.md) for the current baseline.
 
 The latest manuscript-wide review is [the complete bilingual review](the-last-clear-voice-full-book-review.md). It records language corrections, source-label definitions and climax timing, as well as development opportunities for an expanded edition.
+
+## Word lookup granularity — 19 October 2026
+
+The reader's French vocabulary entries must be smaller than its sentence
+translation alignments. Separate subjects, articles, possessives, ordinary
+nouns and modifiers. Keep compact compound verbs (a posé → put down), real
+fixed expressions and technical compounds together when meaningful. Never
+bundle an object into its verb merely to reproduce English word order.
+
+Use the actual contextual sense: sa → his in Daniel a posé sa fourchette;
+use her when the subject and translation establish her. The full English
+sentence remains natural and unchanged. Author and review the separate
+`_src/vocabulary/` resources, then rebuild the chapter `lookup` entries.
+Read that folder's README for the schema and checks. Revisions must preserve
+both the original French text and the full English sentence translations.

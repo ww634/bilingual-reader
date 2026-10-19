@@ -2,7 +2,7 @@
   "id": "ch-35",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "La phrase à signer",
     "english": "The Sentence to Sign"
@@ -17,21 +17,63 @@
           "target": "Daniel",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "dialled",
           "target": "a composé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a composé",
+              "english": "dialled",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "999",
           "target": "le 999",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "999",
+              "english": "999",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            }
+          ]
         }
       ]
     },
@@ -44,21 +86,99 @@
           "target": "Paul",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            }
+          ]
         },
         {
           "english": "put his arm",
           "target": "a passé le bras",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a passé",
+              "english": "put",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 7
+            },
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 10
+            },
+            {
+              "target": "bras",
+              "english": "arm",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 15
+            }
+          ]
         },
         {
           "english": "through the broken pane",
           "target": "par la vitre brisée",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "par",
+              "english": "through",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 6
+            },
+            {
+              "target": "vitre",
+              "english": "glass",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 12
+            },
+            {
+              "target": "brisée",
+              "english": "broken",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 19
+            }
+          ]
         }
       ]
     },
@@ -71,28 +191,117 @@
           "target": "Le tissu",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "tissu",
+              "english": "fabric",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 8
+            }
+          ]
         },
         {
           "english": "of his sleeve",
           "target": "de sa manche",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "sa",
+              "english": "his",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 5
+            },
+            {
+              "target": "manche",
+              "english": "sleeve",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 12
+            }
+          ]
         },
         {
           "english": "caught",
           "target": "s'est accroché",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "s'",
+              "english": "reflexive pronoun",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "est accroché",
+              "english": "caught",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 14
+            }
+          ]
         },
         {
           "english": "on the edge",
           "target": "au bord",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "au",
+              "english": "at the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "bord",
+              "english": "edge",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            }
+          ]
         }
       ]
     },
@@ -105,35 +314,153 @@
           "target": "Il a tourné",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Il",
+              "english": "he",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "a tourné",
+              "english": "turned",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 11
+            }
+          ]
         },
         {
           "english": "the key",
           "target": "la clé",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "clé",
+              "english": "key",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "left in the lock",
           "target": "restée dans la serrure",
           "category": "adjective",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "restée",
+              "english": "stayed",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            },
+            {
+              "target": "dans",
+              "english": "in",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 11
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 14
+            },
+            {
+              "target": "serrure",
+              "english": "lock",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 22
+            }
+          ]
         },
         {
           "english": "and pushed",
           "target": "et poussé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "et",
+              "english": "and",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "poussé",
+              "english": "pushed",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "the door",
           "target": "la porte",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "porte",
+              "english": "door",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 8
+            }
+          ]
         }
       ]
     },
@@ -146,21 +473,90 @@
           "target": "La police",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "La",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "police",
+              "english": "police",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "Daniel said",
           "target": "a dit Daniel",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a dit",
+              "english": "said",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 5
+            },
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 6,
+              "end": 12
+            }
+          ]
         },
         {
           "english": "to the operator",
           "target": "à l'opérateur",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "à",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 1
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 4
+            },
+            {
+              "target": "opérateur",
+              "english": "operator",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 13
+            }
+          ]
         }
       ]
     },
@@ -173,21 +569,99 @@
           "target": "Il a donné",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Il",
+              "english": "he",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "a donné",
+              "english": "gave",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 10
+            }
+          ]
         },
         {
           "english": "the address",
           "target": "l'adresse",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "adresse",
+              "english": "address",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "as soon as he could",
           "target": "dès qu'il a pu",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "dès",
+              "english": "as soon as",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "qu'",
+              "english": "that",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 7
+            },
+            {
+              "target": "il",
+              "english": "he",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
+            },
+            {
+              "target": "a pu",
+              "english": "able",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 14
+            }
+          ]
         }
       ]
     },
@@ -200,21 +674,117 @@
           "target": "Un homme",
           "category": "noun",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Un",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "homme",
+              "english": "man",
+              "category": "noun",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 8
+            }
+          ]
         },
         {
           "english": "had just forced his way",
           "target": "venait d'entrer de force",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "venait",
+              "english": "came",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            },
+            {
+              "target": "d'",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
+            },
+            {
+              "target": "entrer",
+              "english": "to go in",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 15
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 16,
+              "end": 18
+            },
+            {
+              "target": "force",
+              "english": "strength",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 19,
+              "end": 24
+            }
+          ]
         },
         {
           "english": "into his workshop",
           "target": "dans son atelier",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "dans",
+              "english": "in",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "son",
+              "english": "his",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 8
+            },
+            {
+              "target": "atelier",
+              "english": "workshop",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 16
+            }
+          ]
         }
       ]
     },
@@ -227,14 +797,54 @@
           "target": "Il s'appelait",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Il",
+              "english": "he",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "s'",
+              "english": "reflexive pronoun",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 5
+            },
+            {
+              "target": "appelait",
+              "english": "called",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 13
+            }
+          ]
         },
         {
           "english": "Paul Sayer",
           "target": "Paul Sayer",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Paul Sayer",
+              "english": "Paul Sayer",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 10
+            }
+          ]
         }
       ]
     },
@@ -247,28 +857,99 @@
           "target": "Daniel",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "stepped back",
           "target": "a reculé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a reculé",
+              "english": "stepped back",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
+            }
+          ]
         },
         {
           "english": "behind the bench",
           "target": "derrière l'établi",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "derrière",
+              "english": "behind",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 11
+            },
+            {
+              "target": "établi",
+              "english": "bench",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 17
+            }
+          ]
         },
         {
           "english": "as he spoke",
           "target": "en parlant",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "en",
+              "english": "while",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "parlant",
+              "english": "speaking",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 10
+            }
+          ]
         }
       ]
     },
@@ -281,28 +962,117 @@
           "target": "Posez ça",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Posez",
+              "english": "ask",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 5
+            },
+            {
+              "target": "ça",
+              "english": "that",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 8
+            }
+          ]
         },
         {
           "english": "Paul said",
           "target": "a dit Paul",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a dit",
+              "english": "said",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 5
+            },
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 6,
+              "end": 10
+            }
+          ]
         },
         {
           "english": "I just want",
           "target": "Je veux juste",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Je",
+              "english": "I",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "veux",
+              "english": "want",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            },
+            {
+              "target": "juste",
+              "english": "just",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 13
+            }
+          ]
         },
         {
           "english": "a signature",
           "target": "une signature",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "une",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "signature",
+              "english": "signature",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 13
+            }
+          ]
         }
       ]
     },
@@ -315,21 +1085,72 @@
           "target": "Paul",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            }
+          ]
         },
         {
           "english": "was showing him",
           "target": "lui montrait",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "lui",
+              "english": "him",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "montrait",
+              "english": "showed",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 12
+            }
+          ]
         },
         {
           "english": "the sheet",
           "target": "la feuille",
           "category": "noun",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "feuille",
+              "english": "sheet",
+              "category": "noun",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 10
+            }
+          ]
         }
       ]
     },
@@ -342,21 +1163,72 @@
           "target": "Sa manche",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Sa",
+              "english": "his",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "manche",
+              "english": "sleeve",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "bore",
           "target": "portait",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "portait",
+              "english": "bore",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 7
+            }
+          ]
         },
         {
           "english": "a tear",
           "target": "une déchirure",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "une",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "déchirure",
+              "english": "tear",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 13
+            }
+          ]
         }
       ]
     },
@@ -369,28 +1241,108 @@
           "target": "Du sang",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Du",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "sang",
+              "english": "Blood",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            }
+          ]
         },
         {
           "english": "traced",
           "target": "dessinait",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "dessinait",
+              "english": "traced",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "a line",
           "target": "une ligne",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "une",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "ligne",
+              "english": "line",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "across his hand",
           "target": "sur sa main",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "sur",
+              "english": "on",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "sa",
+              "english": "his",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 6
+            },
+            {
+              "target": "main",
+              "english": "hand",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 11
+            }
+          ]
         }
       ]
     },
@@ -403,35 +1355,198 @@
           "target": "La porte de la cour",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "La",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "porte",
+              "english": "door",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 8
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 11
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 14
+            },
+            {
+              "target": "cour",
+              "english": "courtyard",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 19
+            }
+          ]
         },
         {
           "english": "Daniel added",
           "target": "a précisé Daniel",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a précisé",
+              "english": "made clear",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 9
+            },
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 10,
+              "end": 16
+            }
+          ]
         },
         {
           "english": "into the telephone",
           "target": "dans le téléphone",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "dans",
+              "english": "in",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "téléphone",
+              "english": "telephone",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 17
+            }
+          ]
         },
         {
           "english": "Through the passage",
           "target": "Par le passage",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Par",
+              "english": "through",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 6
+            },
+            {
+              "target": "passage",
+              "english": "passage",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 14
+            }
+          ]
         },
         {
           "english": "beside the house",
           "target": "à côté de la maison",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "à côté",
+              "english": "beside",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 12
+            },
+            {
+              "target": "maison",
+              "english": "house",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 19
+            }
+          ]
         }
       ]
     },
@@ -444,21 +1559,90 @@
           "target": "Paul",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            }
+          ]
         },
         {
           "english": "went round",
           "target": "a contourné",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a contourné",
+              "english": "went round",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 11
+            }
+          ]
         },
         {
           "english": "the end of the bench",
           "target": "le bout de l'établi",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "bout",
+              "english": "end",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 10
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 13
+            },
+            {
+              "target": "établi",
+              "english": "bench",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 19
+            }
+          ]
         }
       ]
     },
@@ -471,35 +1655,126 @@
           "target": "Daniel",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "put down",
           "target": "a posé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a posé",
+              "english": "put down",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "the telephone",
           "target": "le téléphone",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "téléphone",
+              "english": "telephone",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 12
+            }
+          ]
         },
         {
           "english": "without hanging up",
           "target": "sans raccrocher",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "sans",
+              "english": "without",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "raccrocher",
+              "english": "hang up",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 15
+            }
+          ]
         },
         {
           "english": "behind the monitor",
           "target": "derrière l'écran",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "derrière",
+              "english": "behind",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 11
+            },
+            {
+              "target": "écran",
+              "english": "screen",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 16
+            }
+          ]
         }
       ]
     },
@@ -512,14 +1787,81 @@
           "target": "Il avait besoin",
           "category": "verb",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Il",
+              "english": "he",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "avait",
+              "english": "had",
+              "category": "verb",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 8
+            },
+            {
+              "target": "besoin",
+              "english": "need",
+              "category": "noun",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 15
+            }
+          ]
         },
         {
           "english": "both hands",
           "target": "de ses deux mains",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "ses",
+              "english": "his",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            },
+            {
+              "target": "deux",
+              "english": "two",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 11
+            },
+            {
+              "target": "mains",
+              "english": "hands",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 17
+            }
+          ]
         }
       ]
     },
@@ -532,21 +1874,81 @@
           "target": "La voix",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "La",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "voix",
+              "english": "voice",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            }
+          ]
         },
         {
           "english": "continued",
           "target": "continuait",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "continuait",
+              "english": "continued",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 10
+            }
+          ]
         },
         {
           "english": "small and steady",
           "target": "petite et régulière",
           "category": "adjective",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "petite",
+              "english": "small",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            },
+            {
+              "target": "et",
+              "english": "and",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
+            },
+            {
+              "target": "régulière",
+              "english": "steady",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 19
+            }
+          ]
         }
       ]
     },
@@ -559,14 +1961,63 @@
           "target": "Reculez",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Reculez",
+              "english": "Step back",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 7
+            }
+          ]
         },
         {
           "english": "Get out of my house",
           "target": "Sortez de chez moi",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Sortez",
+              "english": "get out",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
+            },
+            {
+              "target": "chez",
+              "english": "at",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 14
+            },
+            {
+              "target": "moi",
+              "english": "me",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 18
+            }
+          ]
         }
       ]
     },
@@ -579,28 +2030,99 @@
           "target": "Paul",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            }
+          ]
         },
         {
           "english": "unfolded",
           "target": "a déplié",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a déplié",
+              "english": "unfolded",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
+            }
+          ]
         },
         {
           "english": "the sheet",
           "target": "la feuille",
           "category": "noun",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "feuille",
+              "english": "sheet",
+              "category": "noun",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 10
+            }
+          ]
         },
         {
           "english": "on the bench",
           "target": "sur l'établi",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "sur",
+              "english": "on",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 6
+            },
+            {
+              "target": "établi",
+              "english": "bench",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 12
+            }
+          ]
         }
       ]
     },
@@ -613,21 +2135,81 @@
           "target": "Une ligne",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Une",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "ligne",
+              "english": "line",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "had been provided",
           "target": "était prévue",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "était prévue",
+              "english": "had been provided",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 12
+            }
+          ]
         },
         {
           "english": "for the signature",
           "target": "pour la signature",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "pour",
+              "english": "for",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "signature",
+              "english": "signature",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 17
+            }
+          ]
         }
       ]
     },
@@ -640,42 +2222,207 @@
           "target": "Au-dessus",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Au-dessus",
+              "english": "above",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "Daniel",
           "target": "Daniel",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "read",
           "target": "a lu",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a lu",
+              "english": "read",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            }
+          ]
         },
         {
           "english": "The recording date",
           "target": "La date d'enregistrement",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "La",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "date",
+              "english": "date",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            },
+            {
+              "target": "d'",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 10
+            },
+            {
+              "target": "enregistrement",
+              "english": "recording",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 24
+            }
+          ]
         },
         {
           "english": "cannot be certified",
           "target": "ne peut être certifiée",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "ne",
+              "english": "negation marker",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "peut",
+              "english": "can",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            },
+            {
+              "target": "être",
+              "english": "be",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 12
+            },
+            {
+              "target": "certifiée",
+              "english": "certified",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 22
+            }
+          ]
         },
         {
           "english": "from the examined carrier alone",
           "target": "à partir du seul support examiné",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "à",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 1
+            },
+            {
+              "target": "partir",
+              "english": "leave",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 8
+            },
+            {
+              "target": "du",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 11
+            },
+            {
+              "target": "seul",
+              "english": "alone",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 16
+            },
+            {
+              "target": "support",
+              "english": "carrier",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 17,
+              "end": 24
+            },
+            {
+              "target": "examiné",
+              "english": "examined",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 25,
+              "end": 32
+            }
+          ]
         }
       ]
     },
@@ -688,28 +2435,144 @@
           "target": "C'est votre réponse",
           "category": "function_word",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "C'",
+              "english": "that",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "est",
+              "english": "is",
+              "category": "verb",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 5
+            },
+            {
+              "target": "votre",
+              "english": "your",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 11
+            },
+            {
+              "target": "réponse",
+              "english": "answer",
+              "category": "noun",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 19
+            }
+          ]
         },
         {
           "english": "Paul said",
           "target": "a dit Paul",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a dit",
+              "english": "said",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 5
+            },
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 6,
+              "end": 10
+            }
+          ]
         },
         {
           "english": "I'm not asking you",
           "target": "Je vous demande pas",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Je",
+              "english": "I",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "vous",
+              "english": "you",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            },
+            {
+              "target": "demande",
+              "english": "request",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 15
+            },
+            {
+              "target": "pas",
+              "english": "not",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 16,
+              "end": 19
+            }
+          ]
         },
         {
           "english": "to lie",
           "target": "de mentir",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "de",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "mentir",
+              "english": "lie",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 9
+            }
+          ]
         }
       ]
     },
@@ -722,28 +2585,117 @@
           "target": "Daniel",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "edged",
           "target": "a glissé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a glissé",
+              "english": "edged",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
+            }
+          ]
         },
         {
           "english": "towards the other end",
           "target": "vers l'autre bout",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "vers",
+              "english": "towards",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "autre",
+              "english": "other",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 12
+            },
+            {
+              "target": "bout",
+              "english": "end",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 17
+            }
+          ]
         },
         {
           "english": "of the bench",
           "target": "de l'établi",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 5
+            },
+            {
+              "target": "établi",
+              "english": "bench",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 11
+            }
+          ]
         }
       ]
     },
@@ -756,21 +2708,72 @@
           "target": "Paul",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            }
+          ]
         },
         {
           "english": "moved",
           "target": "s'est déplacé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "s'",
+              "english": "reflexive pronoun",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "est déplacé",
+              "english": "moved",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 13
+            }
+          ]
         },
         {
           "english": "with him",
           "target": "avec lui",
           "category": "function_word",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "avec",
+              "english": "with",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "lui",
+              "english": "him",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 8
+            }
+          ]
         }
       ]
     },
@@ -783,21 +2786,108 @@
           "target": "Il était maintenant",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Il",
+              "english": "he",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "était",
+              "english": "was",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 8
+            },
+            {
+              "target": "maintenant",
+              "english": "now",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 19
+            }
+          ]
         },
         {
           "english": "between Daniel",
           "target": "entre Daniel",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "entre",
+              "english": "between",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 5
+            },
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 6,
+              "end": 12
+            }
+          ]
         },
         {
           "english": "and both doors",
           "target": "et les deux portes",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "et",
+              "english": "and",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "les",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            },
+            {
+              "target": "deux",
+              "english": "two",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 11
+            },
+            {
+              "target": "portes",
+              "english": "doors",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 18
+            }
+          ]
         }
       ]
     },
@@ -810,28 +2900,126 @@
           "target": "Mon rapport",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Mon",
+              "english": "my",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "rapport",
+              "english": "report",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 11
+            }
+          ]
         },
         {
           "english": "has been sent",
           "target": "est parti",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "est parti",
+              "english": "has been sent",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "With the documents",
           "target": "Avec les documents",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Avec",
+              "english": "with",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "les",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 8
+            },
+            {
+              "target": "documents",
+              "english": "documents",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 18
+            }
+          ]
         },
         {
           "english": "that provide the context",
           "target": "qui donnent le contexte",
           "category": "function_word",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "qui",
+              "english": "that",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "donnent",
+              "english": "provide",
+              "category": "verb",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 11
+            },
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 14
+            },
+            {
+              "target": "contexte",
+              "english": "context",
+              "category": "noun",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 23
+            }
+          ]
         }
       ]
     },
@@ -844,21 +3032,63 @@
           "target": "Paul",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            }
+          ]
         },
         {
           "english": "looked at",
           "target": "a regardé",
           "category": "verb",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a regardé",
+              "english": "looked at",
+              "category": "verb",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "the computer",
           "target": "l'ordinateur",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "ordinateur",
+              "english": "computer",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 12
+            }
+          ]
         }
       ]
     },
@@ -871,14 +3101,63 @@
           "target": "Vous pouvez envoyer",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Vous",
+              "english": "you",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "pouvez",
+              "english": "Can",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 11
+            },
+            {
+              "target": "envoyer",
+              "english": "send",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 19
+            }
+          ]
         },
         {
           "english": "an addendum",
           "target": "un complément",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "un",
+              "english": "an",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "complément",
+              "english": "addendum",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 13
+            }
+          ]
         }
       ]
     },
@@ -891,21 +3170,81 @@
           "target": "Ce mot",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Ce",
+              "english": "that",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "mot",
+              "english": "word",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "came to him",
           "target": "lui venait",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "lui",
+              "english": "him",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "venait",
+              "english": "came",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 10
+            }
+          ]
         },
         {
           "english": "without effort",
           "target": "sans effort",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "sans",
+              "english": "without",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "effort",
+              "english": "effort",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 11
+            }
+          ]
         }
       ]
     },
@@ -918,14 +3257,63 @@
           "target": "Il a tapé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Il",
+              "english": "he",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "a tapé",
+              "english": "typed",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "the sheet",
           "target": "sur la feuille",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "sur",
+              "english": "on",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 6
+            },
+            {
+              "target": "feuille",
+              "english": "sheet",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 14
+            }
+          ]
         }
       ]
     },
@@ -938,28 +3326,144 @@
           "target": "C'est limité",
           "category": "adjective",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "C'",
+              "english": "it",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "est",
+              "english": "is",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 5
+            },
+            {
+              "target": "limité",
+              "english": "limited",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 12
+            }
+          ]
         },
         {
           "english": "That's enough",
           "target": "Ça suffit",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Ça",
+              "english": "that",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "suffit",
+              "english": "is enough",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "I'll settle the money",
           "target": "Je règle l'argent",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Je",
+              "english": "I",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "règle",
+              "english": "rule",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 8
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 11
+            },
+            {
+              "target": "argent",
+              "english": "money",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 17
+            }
+          ]
         },
         {
           "english": "You settle this",
           "target": "Vous réglez ça",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Vous",
+              "english": "you",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "réglez",
+              "english": "settle",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 11
+            },
+            {
+              "target": "ça",
+              "english": "that",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 14
+            }
+          ]
         }
       ]
     },
@@ -972,14 +3476,81 @@
           "target": "Vous ne décidez pas",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Vous",
+              "english": "you",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "ne",
+              "english": "negation marker",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "décidez",
+              "english": "decide",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 15
+            },
+            {
+              "target": "pas",
+              "english": "not",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 16,
+              "end": 19
+            }
+          ]
         },
         {
           "english": "what is enough",
           "target": "ce qui suffit",
           "category": "function_word",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "ce",
+              "english": "this",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "qui",
+              "english": "who",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            },
+            {
+              "target": "suffit",
+              "english": "is enough",
+              "category": "verb",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 13
+            }
+          ]
         }
       ]
     },
@@ -992,21 +3563,90 @@
           "target": "Daniel",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "reached",
           "target": "a tendu la main",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a tendu",
+              "english": "handed",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 7
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 10
+            },
+            {
+              "target": "main",
+              "english": "hand",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 15
+            }
+          ]
         },
         {
           "english": "towards the telephone",
           "target": "vers le téléphone",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "vers",
+              "english": "towards",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "téléphone",
+              "english": "telephone",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 17
+            }
+          ]
         }
       ]
     },
@@ -1019,42 +3659,180 @@
           "target": "Paul",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Paul",
+              "english": "Paul",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            }
+          ]
         },
         {
           "english": "caught",
           "target": "a saisi",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a saisi",
+              "english": "caught",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 7
+            }
+          ]
         },
         {
           "english": "his left wrist",
           "target": "son poignet gauche",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "son",
+              "english": "his",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "poignet",
+              "english": "wrist",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 11
+            },
+            {
+              "target": "gauche",
+              "english": "Left",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 18
+            }
+          ]
         },
         {
           "english": "and pulled him",
           "target": "et l'a tiré",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "et",
+              "english": "and",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "l'",
+              "english": "him",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 5
+            },
+            {
+              "target": "a tiré",
+              "english": "pulled",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 11
+            }
+          ]
         },
         {
           "english": "against the edge",
           "target": "contre le bord",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "contre",
+              "english": "against",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            },
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
+            },
+            {
+              "target": "bord",
+              "english": "edge",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 14
+            }
+          ]
         },
         {
           "english": "of the bench",
           "target": "de l'établi",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 5
+            },
+            {
+              "target": "établi",
+              "english": "bench",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 11
+            }
+          ]
         }
       ]
     },
@@ -1067,21 +3845,90 @@
           "target": "Une douleur vive",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Une",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "douleur",
+              "english": "pain",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 11
+            },
+            {
+              "target": "vive",
+              "english": "sharp",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 16
+            }
+          ]
         },
         {
           "english": "shot",
           "target": "est montée",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "est montée",
+              "english": "shot",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 10
+            }
+          ]
         },
         {
           "english": "up to his elbow",
           "target": "jusqu'au coude",
           "category": "adverb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "jusqu'",
+              "english": "until",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            },
+            {
+              "target": "au",
+              "english": "at the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 8
+            },
+            {
+              "target": "coude",
+              "english": "elbow",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 14
+            }
+          ]
         }
       ]
     },
@@ -1094,21 +3941,81 @@
           "target": "Daniel",
           "category": "proper_noun",
           "frequency_band": null,
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Daniel",
+              "english": "Daniel",
+              "category": "proper_noun",
+              "frequency_band": null,
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         },
         {
           "english": "tried",
           "target": "a essayé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a essayé",
+              "english": "tried",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
+            }
+          ]
         },
         {
           "english": "to free his arm",
           "target": "de dégager son bras",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "de",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "dégager",
+              "english": "free",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 10
+            },
+            {
+              "target": "son",
+              "english": "his",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 14
+            },
+            {
+              "target": "bras",
+              "english": "arm",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 19
+            }
+          ]
         }
       ]
     },
@@ -1121,21 +4028,72 @@
           "target": "Le papier",
           "category": "noun",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "papier",
+              "english": "paper",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 9
+            }
+          ]
         },
         {
           "english": "slipped",
           "target": "a glissé",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a glissé",
+              "english": "slipped",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
+            }
+          ]
         },
         {
           "english": "between them",
           "target": "entre eux",
           "category": "adverb",
           "frequency_band": "very_common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "entre",
+              "english": "between",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 5
+            },
+            {
+              "target": "eux",
+              "english": "them",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 9
+            }
+          ]
         }
       ]
     },
@@ -1148,7 +4106,18 @@
           "target": "Signez",
           "category": "verb",
           "frequency_band": "common",
-          "is_idiom": false
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Signez",
+              "english": "sign",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 6
+            }
+          ]
         }
       ]
     }

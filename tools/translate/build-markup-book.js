@@ -24,6 +24,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readLibrary, upsertBook, writeLibrary } from "./lib/library.js";
 import { renderCover } from "./lib/cover.js";
+import { frenchLookups } from "./lib/french-vocabulary.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = path.resolve(__dirname, "..", "..", "content");
@@ -95,6 +96,20 @@ async function main() {
   const srcDir = path.resolve(process.argv[2] || "");
   if (!process.argv[2]) { console.error("usage: build-markup-book.js <_src dir>"); process.exit(1); }
   const book = JSON.parse(await fs.readFile(path.join(srcDir, "book.json"), "utf8"));
+  // Optional authored vocabulary keeps word lookups independent of the larger
+  // spans needed for a natural sentence translation. Other books are unchanged.
+  let vocabulary = null;
+  if (book.language === "fr") {
+    let words = null;
+    try {
+      words = JSON.parse(await fs.readFile(path.join(srcDir, "vocabulary", "words.json"), "utf8"));
+    } catch (error) { if (error.code !== "ENOENT") throw error; }
+    if (words) {
+      const names = ["phrases", "verbs", "overrides"];
+      const data = await Promise.all(names.map(name => fs.readFile(path.join(srcDir, "vocabulary", `${name}.json`), "utf8")));
+      vocabulary = {words, ...Object.fromEntries(names.map((name, i) => [name, JSON.parse(data[i])]))};
+    }
+  }
   const bookDir = path.dirname(srcDir);
   const files = (await fs.readdir(srcDir)).filter((f) => /^ch-\d+\.txt$/.test(f))
     .sort((a, b) => parseInt(a.slice(3), 10) - parseInt(b.slice(3), 10));
@@ -115,7 +130,10 @@ async function main() {
         return;
       }
       const p = parsePair(line, where);
-      if (p) pairs.push(p);
+      if (p) {
+        if (vocabulary) for (const chunk of p.alignment) chunk.lookup = frenchLookups(chunk, vocabulary);
+        pairs.push(p);
+      }
     });
     if (!title) { warn(file, "missing '# Titre | Title' line"); continue; }
 

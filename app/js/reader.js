@@ -456,7 +456,29 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
         chunk.frequency_band ? `data-freq="${escape(chunk.frequency_band)}"` : "",
         chunk.is_idiom ? `data-idiom="true"` : "",
       ].filter(Boolean).join(" ");
-      parts.push(`<span ${attrs}>${escape(chunk.target)}</span>`);
+      if (Array.isArray(chunk.lookup) && chunk.lookup.length) {
+        // A phrase may have one sentence-alignment span but several vocabulary
+        // units. Emit flat, independently selectable spans; preserve every
+        // intervening apostrophe, space and punctuation mark exactly.
+        let wordCursor = 0;
+        for (let wi = 0; wi < chunk.lookup.length; wi++) {
+          const word = chunk.lookup[wi];
+          parts.push(escape(chunk.target.slice(wordCursor, word.start)));
+          const wordAttrs = [
+            `class="seg chunk"`, `data-uid="${uid}"`, `data-lookup="${wi}"`,
+            `data-pinyin="${escape(word.target)}"`, `data-hanzi="${escape(word.target)}"`,
+            `data-pair="${pairIdx}"`,
+            word.category ? `data-cat="${escape(word.category)}"` : "",
+            word.frequency_band ? `data-freq="${escape(word.frequency_band)}"` : "",
+            word.is_idiom ? `data-idiom="true"` : "",
+          ].filter(Boolean).join(" ");
+          parts.push(`<span ${wordAttrs}>${escape(word.target)}</span>`);
+          wordCursor = word.end;
+        }
+        parts.push(escape(chunk.target.slice(wordCursor)));
+      } else {
+        parts.push(`<span ${attrs}>${escape(chunk.target)}</span>`);
+      }
 
       chunkMeta.push({
         uid, pairIdx, chunkIdx,
@@ -975,7 +997,9 @@ function handleChunkTap(event) {
     const chunkIdx = parseInt(m[2], 10);
 
     const pair = _state.chapter?.pairs?.[pairIdx];
-    const align = pair?.alignment?.[chunkIdx];
+    const parent = pair?.alignment?.[chunkIdx];
+    const lookupIdx = segEl.hasAttribute("data-lookup") ? Number(segEl.dataset.lookup) : null;
+    const align = lookupIdx !== null ? parent?.lookup?.[lookupIdx] : parent;
     if (!align) return;
 
     openPopover(
