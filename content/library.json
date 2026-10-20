@@ -3126,6 +3126,72 @@
           "url": "books/la-derniere-voix-claire/ch-41.json"
         }
       ]
+    },
+    {
+      "version": 1,
+      "id": "le-petit-manuel-du-cidrier-amateur",
+      "language": "fr",
+      "title": {
+        "target": "Le Petit Manuel du cidrier amateur",
+        "english": "The Amateur Cider Maker’s Handbook"
+      },
+      "author": "Original nonfiction · AI-assisted",
+      "synopsis": "An approachable French guide to cider making, from the apple tree to the glass. Learn the craft and its vocabulary through careful observation, practical explanations and a little humour, with aligned English translations. Chapters 1–5 cover the journey, tasting apples, choosing trees, orchard care and harvesting.",
+      "genres": [
+        "nonfiction",
+        "food and drink",
+        "craft",
+        "horticulture",
+        "French learning"
+      ],
+      "cover": "books/le-petit-manuel-du-cidrier-amateur/cover.svg",
+      "chapters": [
+        {
+          "id": "ch-1",
+          "title": {
+            "target": "Une pomme, beaucoup de possibilités",
+            "english": "One Apple, Many Possibilities"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-1.json",
+          "version": 1
+        },
+        {
+          "id": "ch-2",
+          "title": {
+            "target": "Apprendre à goûter une pomme",
+            "english": "Learning to Taste an Apple"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-2.json",
+          "version": 1
+        },
+        {
+          "id": "ch-3",
+          "title": {
+            "target": "Choisir son pommier",
+            "english": "Choosing an Apple Tree"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-3.json",
+          "version": 1
+        },
+        {
+          "id": "ch-4",
+          "title": {
+            "target": "Une année au verger",
+            "english": "A Year in the Orchard"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-4.json",
+          "version": 1
+        },
+        {
+          "id": "ch-5",
+          "title": {
+            "target": "Le bon moment pour récolter",
+            "english": "The Right Moment to Harvest"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-5.json",
+          "version": 1
+        }
+      ]
     }
   ]
 }
