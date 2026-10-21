@@ -1,12 +1,12 @@
 # Choosing an Apple Tree
 
-In a catalogue, all the apple trees seem to have found the ideal garden. Their fruit shine, their branches bother nobody and the sky cooperates. At your home, there may be a wall, a damp corner and a neighbour attached to his daylight. The right choice begins with that real garden.
+In a catalogue, all the apple trees seem to have found the ideal garden. Their apples shine, their branches bother nobody and the sky cooperates. At your home, there may be a wall, a damp corner and a neighbour attached to his daylight. The right choice begins with that real garden.
 
 Before choosing a variety name, observe the site. Which parts of the garden receive sunlight during the warmer months? After rain, does water remain for long? How much space will be available when the tree is mature? These questions are less poetic than a photograph of blossom, but they prepare the introduction much better.
 
 An apple tree appreciates a sunny position and well-drained soil. Well-drained does not mean constantly dry. It means that excess water can drain away. Ask for local advice if your land has difficult conditions. A famous variety does not turn a poor site into a good site.
 
-On the label, look for two pieces of information: the variety and the rootstock. The variety here identifies the chosen apple tree for its fruit. The rootstock forms the roots and the lower part of the trunk. The two parts are joined by a graft. You are therefore buying a partnership, even if the shop gives you only one tree.
+On the label, look for two pieces of information: the variety and the rootstock. The variety name identifies the type of apple tree chosen for its fruit. The rootstock forms the roots and the lower part of the trunk. The two parts are joined by a graft. You are therefore buying a partnership, even if the shop gives you only one tree.
 
 The rootstock strongly influences vigour and future dimensions. The variety, the soil and growing conditions also matter. A dwarfing rootstock allows a smaller tree; it does not make a miniature version of every apple. The word dwarfing concerns the growth of the tree, not the size of your snack.
 
@@ -30,6 +30,6 @@ Think also about the time when you will be available for harvesting. A late vari
 
 During your visit to the nursery, describe your land before showing the photograph that caught your eye. Ask what could make your choice difficult. A good answer sometimes includes a reservation. Perhaps it will spare you several years spent asking a tree for what it cannot give.
 
-Keep the label and a copy of the information received. In a few years, perhaps “the small tree near the wall” will be an imprecise memory. An exact name allows you to find again advice and to share your observations. Good notes do not make the tree grow, but they develop your understanding.
+Keep the label and a copy of the information received. In a few years, perhaps “the small tree near the wall” will be an imprecise memory. An exact name helps you find the right guidance and share your observations. Good notes do not make the tree grow, but they develop your understanding.
 
 Before planting, check once more support requirements, spacing and the planting method suited to your tree. We will not set one single distance for every garden. The right apple tree is a tree whose needs you understand. Once established, it will give you something else besides a harvest: a reason to look at the seasons more closely.

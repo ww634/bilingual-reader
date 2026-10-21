@@ -1,6 +1,6 @@
 # Le Petit Manuel du cidrier amateur
 
-Authoring pack · 21 October 2026 · all 20 chapters written and validated.
+Authoring pack · 21 October 2026 · all 20 chapters written, reviewed and validated.
 
 Working subtitle: *Du pommier au verre, comprendre et réussir son cidre*.
 English working title: *The Amateur Cider Maker's Handbook*.
@@ -19,3 +19,5 @@ These are living authoring documents, not app chapters. Planning notes are in En
 The user has approved a lively, detailed French handbook, covering growing through finishing, designed first for language learning. Tables, diagrams and other special presentation features are excluded. The level, chapter count, length and example method below are editorial working decisions, not preferences explicitly selected by the user.
 
 Current state: all 20 chapters are written, translated, aligned and validated for app publication. Read [the opening research record](research-chapters-1-5.md), [research for chapters 6–10](research-chapters-6-10.md), [research for chapters 11–15](research-chapters-11-15.md), [research for chapters 16–20](research-chapters-16-20.md) and [final continuity through chapter 20](continuity-through-ch20.md) before revising or extending the completed book. New technical procedures still require research. Do not apply the other book's crime-fiction, character or plot rules to this project.
+
+The completed book has received a [whole-book quality review](final-review.md), including a French/English copy-edit, contextual lookup corrections and complete reader-format validation. Read this review after the historical batch continuity documents when making future revisions.

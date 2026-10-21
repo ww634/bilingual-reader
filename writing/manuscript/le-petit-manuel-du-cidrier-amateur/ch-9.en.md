@@ -4,7 +4,7 @@ On the table, three small glasses are waiting for your judgement. One contains a
 
 A blend is not an automatic way to improve everything that goes into the glass. It serves to seek a particular balance using raw materials that you understand. Before blending, say what you want to change. “Less acidic on the palate” is an objective. “More professional” is mainly a vague expression.
 
-Remember the sensations from the second chapter. Sweetness, acidity, bitterness and astringency do not replace one another. A less acidic juice does not necessarily bring the tannins that you are missing. A very fragrant aroma does not guarantee a balanced palate. Listen to each quality before making the sum of your impressions.
+Remember the sensations from the second chapter. Sweetness, acidity, bitterness and astringency do not replace one another. A less acidic juice does not necessarily bring the tannins that you are missing. A very fragrant aroma does not guarantee a balanced palate. Consider each quality before adding up your impressions.
 
 For a first trial, choose two pasteurised juices whose composition you know. Give them simple names, such as A and B. Do not change their serving temperature halfway through the comparison. Prepare clean containers and a measuring tool that is precise enough for small volumes. The tasting trials stay separate from the batch to be fermented.
 
@@ -22,9 +22,9 @@ pH cannot be calculated using a simple average of the values for your two juices
 
 Above all, you are tasting a juice, not yet the future cider. When yeast consume much of the sugar, the perceived balance will change. A mixture that is delicious today does not constitute a guarantee for tomorrow. The comparison prepares a considered choice; it does not remove the learning that will follow.
 
-Do not add sugar simply to make the juice more pleasant to drink. That additional sugar may be fermented and increase potential alcohol. Likewise, an acidity adjustment or a tannin addition requires a method, a suitable product and a measured reason. A small glass should not become an improvised laboratory without a procedure.
+Do not add sugar simply to make the juice more pleasant to drink. That additional sugar may be fermented and increase potential alcohol. Likewise, an acidity adjustment or a tannin addition requires a method, a suitable product and a reason supported by measurements. A small glass should not become an improvised laboratory without a procedure.
 
-Trials can also teach you to change nothing. If your juice suits your objective, you do not have to invent for it a problem to use all your accessories. Keep the notes from rejected trials as well as those from the favourite. They will save you having to repeat the same discovery at every harvest.
+Trials can also teach you to change nothing. If your juice suits your goal, you do not have to invent a problem with it just to use all your accessories. Keep the notes from rejected trials as well as those from the favourite. They will save you having to repeat the same discovery at every harvest.
 
 To check your preference, you can repeat a small comparison using codes that hide the proportions. Ask someone to change the order of the glasses. You may discover that the mixture you expected most from is not your favourite. That is interesting information, not a defeat.
 

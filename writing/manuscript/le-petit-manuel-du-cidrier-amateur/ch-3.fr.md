@@ -6,7 +6,7 @@ Avant de choisir un nom de variété, observez l'emplacement. Quelles parties du
 
 Un pommier apprécie une situation ensoleillée et un sol bien drainé. Bien drainé ne veut pas dire constamment sec. Cela signifie que l'excès d'eau peut s'évacuer. Demandez un avis local si votre terrain présente des conditions difficiles. Une variété célèbre ne transforme pas un mauvais emplacement en bon emplacement.
 
-Sur l'étiquette, cherchez deux informations : la variété et le porte-greffe. La variété désigne ici le pommier choisi pour ses fruits. Le porte-greffe forme les racines et la partie basse du tronc. Les deux parties sont réunies par une greffe. Vous achetez donc une association, même si le magasin ne vous remet qu'un seul arbre.
+Sur l'étiquette, cherchez deux informations : la variété et le porte-greffe. Le nom de variété identifie le type de pommier choisi pour ses fruits. Le porte-greffe forme les racines et la partie basse du tronc. Les deux parties sont réunies par une greffe. Vous achetez donc une association, même si le magasin ne vous remet qu'un seul arbre.
 
 Le porte-greffe influence fortement la vigueur et les dimensions futures. La variété, le sol et les conditions de culture comptent également. Un porte-greffe nanifiant permet un arbre plus petit ; il ne fabrique pas une version miniature de chaque pomme. Le mot nanifiant concerne la croissance de l'arbre, pas la taille de votre goûter.
 

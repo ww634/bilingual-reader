@@ -23,12 +23,6 @@
       "category": "verb"
     }
   },
-  "[\"ils ne disent pas\",\"they do not say\"]": {
-    "4": {
-      "english": "do not say",
-      "category": "verb"
-    }
-  },
   "[\"n'est pas\",\"is not\"]": {
     "0": {
       "english": "is not",
@@ -263,12 +257,6 @@
       "category": "verb"
     }
   },
-  "[\"Ne transposez pas\",\"Do not transfer\"]": {
-    "0": {
-      "english": "do not transfer",
-      "category": "verb"
-    }
-  },
   "[\"ne raconte pas\",\"does not tell\"]": {
     "0": {
       "english": "does not tell",
@@ -399,11 +387,6 @@
     "0": {
       "english": "them",
       "category": "function_word"
-    }
-  },
-  "[\"sa lumière\",\"his daylight\"]": {
-    "0": {
-      "english": "his"
     }
   },
   "[\"attaché à sa lumière\",\"attached to his daylight\"]": {
@@ -547,7 +530,8 @@
   },
   "[\"qui freinent les levures\",\"that inhibit yeast\"]": {
     "17": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"Lisez\",\"Read\"]": {
@@ -823,12 +807,6 @@
   "[\"atteint\",\"reaches\"]": {
     "0": {
       "english": "reaches",
-      "category": "verb"
-    }
-  },
-  "[\"reprenez\",\"repeat\"]": {
-    "0": {
-      "english": "repeat",
       "category": "verb"
     }
   },
@@ -1256,12 +1234,6 @@
       "category": "adjective"
     }
   },
-  "[\"ne permet alors pas\",\"then does not allow you\"]": {
-    "0": {
-      "english": "then does not allow you",
-      "category": "verb"
-    }
-  },
   "[\"décrivent\",\"describe\"]": {
     "0": {
       "english": "describe",
@@ -1424,6 +1396,10 @@
   "[\"comme A et B\",\"such as A and B\"]": {
     "6": {
       "english": "A",
+      "category": "proper_noun"
+    },
+    "11": {
+      "english": "B",
       "category": "proper_noun"
     }
   },
@@ -1593,6 +1569,10 @@
     "8": {
       "english": "A",
       "category": "proper_noun"
+    },
+    "13": {
+      "english": "B",
+      "category": "proper_noun"
     }
   },
   "[\"évite\",\"prevents\"]": {
@@ -1690,12 +1670,6 @@
       "category": "verb"
     }
   },
-  "[\"convient\",\"suits\"]": {
-    "0": {
-      "english": "suits",
-      "category": "verb"
-    }
-  },
   "[\"Demandez\",\"Ask\"]": {
     "0": {
       "english": "Ask",
@@ -1741,12 +1715,6 @@
   "[\"aucune trace collante\",\"no sticky mark\"]": {
     "7": {
       "english": "mark"
-    }
-  },
-  "[\"Profitons\",\"Let us enjoy\"]": {
-    "0": {
-      "english": "Let us enjoy",
-      "category": "verb"
     }
   },
   "[\"mais\",\"but\"]": {
@@ -1875,12 +1843,6 @@
       "category": "verb"
     }
   },
-  "[\"produit\",\"produces\"]": {
-    "0": {
-      "english": "produces",
-      "category": "verb"
-    }
-  },
   "[\"fournit\",\"provides\"]": {
     "0": {
       "english": "provides",
@@ -1905,14 +1867,6 @@
       "category": "verb"
     }
   },
-  "[\"annoncée peu exigeante\",\"described as having low requirements\"]": {
-    "0": {
-      "english": "described"
-    },
-    "13": {
-      "english": "demanding"
-    }
-  },
   "[\"adaptées\",\"suited\"]": {
     "0": {
       "english": "suited",
@@ -1923,15 +1877,6 @@
     "0": {
       "english": "allows",
       "category": "verb"
-    }
-  },
-  "[\"avec mélange doux\",\"with gentle mixing\"]": {
-    "5": {
-      "english": "mixing",
-      "category": "noun"
-    },
-    "13": {
-      "english": "gentle"
     }
   },
   "[\"prévoit\",\"provides for\"]": {
@@ -2136,17 +2081,6 @@
       "english": "vessel"
     }
   },
-  "[\"sans fermeture hermétique\",\"without an improvised\"]": {
-    "5": {
-      "english": "closure"
-    }
-  },
-  "[\"improvisée\",\"airtight closure\"]": {
-    "0": {
-      "english": "airtight closure",
-      "category": "adjective"
-    }
-  },
   "[\"car le gaz peut s'accumuler\",\"because the gas can accumulate\"]": {
     "11": {
       "english": "can",
@@ -2208,7 +2142,8 @@
   },
   "[\"une température idéale pour toutes les levures\",\"an ideal temperature for every yeast\"]": {
     "39": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"et évitez les variations brusques\",\"and avoid sudden changes\"]": {
@@ -2230,16 +2165,6 @@
   "[\"selon le protocole déjà choisi\",\"according to the protocol already chosen\"]": {
     "9": {
       "english": "protocol"
-    }
-  },
-  "[\"Refermez ensuite correctement\",\"Then close the vessel\"]": {
-    "9": {
-      "english": "then"
-    }
-  },
-  "[\"le récipient\",\"properly\"]": {
-    "3": {
-      "english": "vessel"
     }
   },
   "[\"ne retourne pas\",\"does not go back\"]": {
@@ -2326,11 +2251,6 @@
     "7": {
       "english": "does not need",
       "category": "verb"
-    }
-  },
-  "[\"laissez le carnet fermé\",\"leave the notebook closed\"]": {
-    "18": {
-      "english": "closed"
     }
   },
   "[\"c'est aussi savoir\",\"also means knowing\"]": {
@@ -2547,11 +2467,6 @@
       "category": "verb"
     }
   },
-  "[\"demande une autre prudence\",\"calls for a different kind of caution\"]": {
-    "0": {
-      "english": "calls for"
-    }
-  },
   "[\"Ne goûtez pas\",\"Do not taste\"]": {
     "0": {
       "english": "Do not taste",
@@ -2672,12 +2587,14 @@
   },
   "[\"des levures\",\"yeast\"]": {
     "4": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"Toutes ces levures\",\"All this yeast\"]": {
     "11": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"ne sont pas\",\"is not\"]": {
@@ -2702,20 +2619,6 @@
     "0": {
       "english": "does not always behave",
       "category": "verb"
-    }
-  },
-  "[\"ne suffit donc pas\",\"is therefore not enough\"]": {
-    "0": {
-      "english": "is therefore not enough",
-      "category": "verb"
-    }
-  },
-  "[\"à décider seule du moment\",\"to decide the timing alone\"]": {
-    "10": {
-      "english": "alone"
-    },
-    "19": {
-      "english": "timing"
     }
   },
   "[\"Un soutirage peut aider\",\"Racking can help\"]": {
@@ -2764,26 +2667,10 @@
       "english": "acid"
     }
   },
-  "[\"peut avoir\",\"may have\"]": {
-    "0": {
-      "english": "may",
-      "category": "verb"
-    }
-  },
-  "[\"une grande ambition de fuite\",\"a great ambition to leak\"]": {
-    "4": {
-      "english": "great"
-    }
-  },
   "[\"Nettoyez\",\"Clean\"]": {
     "0": {
       "english": "Clean",
       "category": "verb"
-    }
-  },
-  "[\"Respectez les conditions du produit\",\"Follow the product conditions\"]": {
-    "28": {
-      "english": "product"
     }
   },
   "[\"les extrémités du tuyau propres\",\"the hose ends clean\"]": {
@@ -2928,7 +2815,8 @@
   },
   "[\"Cet ajout apporte notamment\",\"That addition brings, among other things\"]": {
     "18": {
-      "english": "among other things"
+      "english": "among other things",
+      "category": "adverb"
     }
   },
   "[\"qui peuvent encore fermenter\",\"that can still ferment\"]": {
@@ -2960,7 +2848,8 @@
       "category": "verb"
     },
     "30": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"ni la conservation\",\"nor the preservation\"]": {
@@ -3043,13 +2932,8 @@
   },
   "[\"Des levures en suspension\",\"Suspended yeast\"]": {
     "4": {
-      "english": "yeast"
-    }
-  },
-  "[\"peuvent finir\",\"may eventually\"]": {
-    "0": {
-      "english": "may",
-      "category": "verb"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"peuvent aussi participer au trouble\",\"may also contribute to haze\"]": {
@@ -3167,12 +3051,6 @@
       "english": "particularly"
     }
   },
-  "[\"ne présentent pas les arômes de la même façon\",\"do not present aromas in the same way\"]": {
-    "0": {
-      "english": "do not present",
-      "category": "verb"
-    }
-  },
   "[\"peut masquer\",\"can conceal\"]": {
     "0": {
       "english": "can",
@@ -3193,12 +3071,6 @@
     "11": {
       "english": "do not prove",
       "category": "verb"
-    }
-  },
-  "[\"qu'une quantité d'acide a diminué\",\"that a quantity of acid has decreased\"]": {
-    "18": {
-      "english": "acid",
-      "category": "noun"
     }
   },
   "[\"peut aussi intervenir\",\"can also occur\"]": {
@@ -3228,12 +3100,6 @@
   "[\"Une sensation moins vive\",\"A less sharp sensation\"]": {
     "20": {
       "english": "sharp"
-    }
-  },
-  "[\"Nous ne l'ajoutons donc pas\",\"We therefore do not add it\"]": {
-    "5": {
-      "english": "therefore do not add it",
-      "category": "verb"
     }
   },
   "[\"Attendre peut permettre\",\"Waiting can allow\"]": {
@@ -3291,11 +3157,6 @@
     "0": {
       "english": "it is better",
       "category": "verb"
-    }
-  },
-  "[\"notamment les sucres\",\"the sugars\"]": {
-    "0": {
-      "english": "among other things"
     }
   },
   "[\"peut donc être\",\"can therefore be\"]": {
@@ -3434,15 +3295,6 @@
       "english": "retain"
     }
   },
-  "[\"peut nourrir les levures restantes\",\"can feed the remaining yeast\"]": {
-    "0": {
-      "english": "can",
-      "category": "verb"
-    },
-    "17": {
-      "english": "yeast"
-    }
-  },
   "[\"peut alors produire\",\"may then produce\"]": {
     "0": {
       "english": "may",
@@ -3473,7 +3325,8 @@
   },
   "[\"freine la multiplication des levures\",\"inhibits yeast multiplication\"]": {
     "29": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"Il ne tue pas\",\"It does not kill\"]": {
@@ -3484,7 +3337,8 @@
   },
   "[\"toutes les levures\",\"all yeast\"]": {
     "11": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"et ne constitue pas un arrêt fiable d'une fermentation active\",\"and is not a reliable way to stop active fermentation\"]": {
@@ -3529,12 +3383,6 @@
       "category": "verb"
     }
   },
-  "[\"peut obtenir son gaz\",\"can obtain its gas\"]": {
-    "0": {
-      "english": "can",
-      "category": "verb"
-    }
-  },
   "[\"avec un équipement prévu pour la pression\",\"with equipment designed for pressure\"]": {
     "19": {
       "english": "designed"
@@ -3548,7 +3396,8 @@
   },
   "[\"par l'activité des levures\",\"through yeast activity\"]": {
     "19": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"ne demandent pas\",\"do not require\"]": {
@@ -3591,18 +3440,14 @@
   },
   "[\"en entraînant une partie des nutriments et des levures\",\"carrying away some nutrients and yeast\"]": {
     "47": {
-      "english": "yeast"
+      "english": "yeast",
+      "category": "noun"
     }
   },
   "[\"une fermentation plus lente\",\"a slower fermentation\"]": {
     "17": {
       "english": "more (comparative)",
       "category": "adverb"
-    }
-  },
-  "[\"C'est une technique\",\"It is\"]": {
-    "10": {
-      "english": "technique"
     }
   },
   "[\"ne devient pas automatiquement\",\"does not automatically become\"]": {
@@ -3634,11 +3479,6 @@
       "english": "vessel"
     }
   },
-  "[\"Faites évaluer le problème\",\"Have the problem assessed\"]": {
-    "0": {
-      "english": "have"
-    }
-  },
   "[\"dix litres garantis à l'arrivée\",\"ten guaranteed litres at the end\"]": {
     "24": {
       "english": "the end"
@@ -3655,15 +3495,9 @@
       "english": "among other things"
     }
   },
-  "[\"C'est une technique exigeante et variable\",\"It is a demanding, variable technique\"]": {
-    "10": {
-      "english": "technique",
-      "category": "noun"
-    }
-  },
   "[\"vaut mieux\",\"is worth more\"]": {
     "0": {
-      "english": "is worth",
+      "english": "is worth more",
       "category": "verb"
     },
     "5": {
@@ -3679,7 +3513,7 @@
   },
   "[\"vaut mieux\",\"is better\"]": {
     "0": {
-      "english": "is worth",
+      "english": "is better",
       "category": "verb"
     },
     "5": {
@@ -3713,12 +3547,6 @@
     "0": {
       "english": "can",
       "category": "verb"
-    }
-  },
-  "[\"Mais avant de mélanger les récipients\",\"But before mixing the vessels\"]": {
-    "27": {
-      "english": "vessels",
-      "category": "noun"
     }
   },
   "[\"Il est toujours destiné\",\"It is still intended\"]": {
@@ -3847,12 +3675,6 @@
       "category": "verb"
     }
   },
-  "[\"se retrouve\",\"appears again\"]": {
-    "0": {
-      "english": "appears again",
-      "category": "verb"
-    }
-  },
   "[\"peut aussi aider\",\"can also help\"]": {
     "0": {
       "english": "can",
@@ -3895,15 +3717,6 @@
       "category": "verb"
     }
   },
-  "[\"en dehors des récipients de réserve\",\"outside the reserve vessels\"]": {
-    "14": {
-      "english": "vessels",
-      "category": "noun"
-    },
-    "28": {
-      "english": "reserve"
-    }
-  },
   "[\"Avant un assemblage réel\",\"Before an actual blend\"]": {
     "20": {
       "english": "actual"
@@ -3943,16 +3756,6 @@
     },
     "31": {
       "english": "use"
-    }
-  },
-  "[\"ont un air\",\"have the look\"]": {
-    "7": {
-      "english": "look"
-    }
-  },
-  "[\"de travail terminé\",\"of a finished job\"]": {
-    "3": {
-      "english": "job"
     }
   },
   "[\"ne termine pas\",\"does not finish\"]": {
@@ -4001,27 +3804,9 @@
       "english": "specific gravity"
     }
   },
-  "[\"ne remplace pas davantage\",\"is no substitute either\"]": {
-    "0": {
-      "english": "is no substitute either",
-      "category": "verb"
-    }
-  },
   "[\"faites examiner les mesures\",\"have the measurements assessed\"]": {
     "0": {
       "english": "have",
-      "category": "verb"
-    }
-  },
-  "[\"Un laboratoire peut analyser\",\"A laboratory can analyse\"]": {
-    "15": {
-      "english": "can",
-      "category": "verb"
-    }
-  },
-  "[\"peut encore être\",\"may still be\"]": {
-    "0": {
-      "english": "may",
       "category": "verb"
     }
   },
@@ -4070,12 +3855,6 @@
   "[\"ne doit pas servir\",\"must not be used\"]": {
     "0": {
       "english": "must not be used",
-      "category": "verb"
-    }
-  },
-  "[\"ne rend pas acceptable\",\"does not make\"]": {
-    "0": {
-      "english": "does not make",
       "category": "verb"
     }
   },
@@ -4151,17 +3930,6 @@
       "english": "incorrectly"
     }
   },
-  "[\"termine une opération\",\"completes an operation\"]": {
-    "0": {
-      "english": "completes"
-    }
-  },
-  "[\"ouvre la porte du rangement et de la table\",\"opens the door to storage and the table\"]": {
-    "9": {
-      "english": "door",
-      "category": "noun"
-    }
-  },
   "[\"pour un endroit plus calme\",\"for a quieter place\"]": {
     "16": {
       "english": "more (comparative)",
@@ -4182,71 +3950,15 @@
       "english": "planned"
     }
   },
-  "[\"Nous ne racontons pas\",\"We are not describing\"]": {
-    "5": {
-      "english": "are not describing",
-      "category": "verb"
-    }
-  },
-  "[\"Les conseils s'appliquent\",\"The advice applies\"]": {
-    "13": {
-      "english": "apply",
-      "category": "verb"
-    }
-  },
-  "[\"selon le produit réel\",\"according to the actual product\"]": {
-    "17": {
-      "english": "actual"
-    }
-  },
-  "[\"sa fermeture et son procédé\",\"its closure and its process\"]": {
-    "3": {
-      "english": "closure",
-      "category": "noun"
-    }
-  },
-  "[\"fait une jolie scène\",\"makes a lovely scene\"]": {
-    "0": {
-      "english": "makes"
-    }
-  },
-  "[\"Un produit nécessitant le froid\",\"A product requiring refrigeration\"]": {
-    "26": {
-      "english": "refrigeration"
-    }
-  },
-  "[\"doit conserver\",\"must remain under\"]": {
-    "5": {
-      "english": "remain under"
-    }
-  },
   "[\"ne corrige pas\",\"does not correct\"]": {
     "0": {
       "english": "does not correct",
       "category": "verb"
     }
   },
-  "[\"Il ne transforme pas non plus\",\"Nor does it turn\"]": {
-    "3": {
-      "english": "nor turns",
-      "category": "verb"
-    }
-  },
   "[\"sans risque de chute\",\"without a risk of falling\"]": {
     "15": {
       "english": "falling"
-    }
-  },
-  "[\"Respectez les recommandations de la fermeture\",\"Follow the closure recommendations\"]": {
-    "36": {
-      "english": "closure",
-      "category": "noun"
-    }
-  },
-  "[\"ne demandent pas le même rangement\",\"require the same storage position\"]": {
-    "0": {
-      "english": "do not require",
-      "category": "verb"
     }
   },
   "[\"Conservez une identification visible et durable\",\"Keep a visible, durable identification\"]": {
@@ -4302,7 +4014,8 @@
   },
   "[\"entre fraîcheur et expression aromatique\",\"between coolness and aromatic expression\"]": {
     "6": {
-      "english": "coolness"
+      "english": "coolness",
+      "category": "noun"
     }
   },
   "[\"pas un examen à réussir\",\"not an examination to pass\"]": {
@@ -4328,13 +4041,13 @@
     }
   },
   "[\"de remettre le dépôt en suspension\",\"putting the sediment back into suspension\"]": {
-    "15": {
-      "english": "sediment",
-      "category": "noun"
-    },
     "3": {
       "english": "put back",
       "category": "verb"
+    },
+    "15": {
+      "english": "sediment",
+      "category": "noun"
     }
   },
   "[\"peut présenter\",\"may have\"]": {
@@ -4355,20 +4068,6 @@
       "category": "noun"
     }
   },
-  "[\"un service plus limpide\",\"a clearer pour\"]": {
-    "11": {
-      "english": "more (comparative)",
-      "category": "adverb"
-    }
-  },
-  "[\"versez doucement sans entraîner le fond\",\"pour gently without drawing out the bottom layer\"]": {
-    "22": {
-      "english": "draw out"
-    },
-    "35": {
-      "english": "bottom layer"
-    }
-  },
   "[\"qui contient le dépôt\",\"containing the sediment\"]": {
     "16": {
       "english": "sediment",
@@ -4384,12 +4083,6 @@
   "[\"suivez les indications propres à ce produit\",\"follow the guidance specific to that product\"]": {
     "23": {
       "english": "specific"
-    }
-  },
-  "[\"on ne démontre pas\",\"rather than demonstrating\"]": {
-    "3": {
-      "english": "does not demonstrate",
-      "category": "verb"
     }
   },
   "[\"le reste d'un produit sain selon les conditions prévues\",\"the remainder of a sound product under the specified conditions\"]": {
@@ -4697,12 +4390,6 @@
       "english": "contribute"
     }
   },
-  "[\"a choisi\",\"chose\"]": {
-    "0": {
-      "english": "chose",
-      "category": "verb"
-    }
-  },
   "[\"Il part\",\"It starts\"]": {
     "3": {
       "english": "starts",
@@ -4741,11 +4428,6 @@
     "5": {
       "english": "nor have observed",
       "category": "verb"
-    }
-  },
-  "[\"à préciser avec ses conditions\",\"to specify with its conditions\"]": {
-    "2": {
-      "english": "specify"
     }
   },
   "[\"tant qu'elle n'est pas étayée\",\"until it is supported\"]": {
@@ -4807,18 +4489,6 @@
       "category": "verb"
     }
   },
-  "[\"Une technique entendue ailleurs\",\"A technique heard of elsewhere\"]": {
-    "4": {
-      "english": "technique",
-      "category": "noun"
-    }
-  },
-  "[\"ne lit pas forcément\",\"does not necessarily read\"]": {
-    "0": {
-      "english": "does not necessarily read",
-      "category": "verb"
-    }
-  },
   "[\"n'empêche pas\",\"does not prevent\"]": {
     "0": {
       "english": "does not prevent",
@@ -4828,12 +4498,6 @@
   "[\"gagne à rester\",\"benefits from remaining\"]": {
     "0": {
       "english": "benefits"
-    }
-  },
-  "[\"à quels produits elles s'appliquent\",\"which products they apply to\"]": {
-    "23": {
-      "english": "apply",
-      "category": "verb"
     }
   },
   "[\"A\",\"A\"]": {
@@ -4860,16 +4524,172 @@
       "category": "adjective"
     }
   },
-  "[\"Les essais prélevés\",\"The samples taken\"]": {
-    "4": {
-      "english": "samples",
-      "category": "noun"
-    }
-  },
   "[\"une sensation aigre ou vive\",\"a sour or sharp sensation\"]": {
     "23": {
       "english": "sharp",
       "category": "adjective"
+    }
+  },
+  "[\"Les levures\",\"Yeasts\"]": {
+    "4": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"« La seconde fait davantage saliver\",\"“The second makes my mouth water more\"]": {
+    "13": {
+      "english": "makes",
+      "category": "verb"
+    }
+  },
+  "[\"peut réduire la récolte à venir\",\"can reduce the future harvest\"]": {
+    "26": {
+      "english": "come",
+      "category": "verb"
+    }
+  },
+  "[\"une règle destinée à obtenir de grosses pommes de table\",\"a rule intended to produce large dessert apples\"]": {
+    "10": {
+      "english": "intended",
+      "category": "adjective"
+    }
+  },
+  "[\"à plusieurs moments\",\"at several moments\"]": {
+    "0": {
+      "english": "at several",
+      "category": "function_word"
+    }
+  },
+  "[\"à un seul\",\"a single one\"]": {
+    "5": {
+      "english": "single",
+      "category": "adjective"
+    }
+  },
+  "[\"à être mangés\",\"to be eaten\"]": {
+    "7": {
+      "english": "eaten",
+      "category": "verb"
+    }
+  },
+  "[\"aux levures\",\"yeast\"]": {
+    "4": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"puis B seul\",\"then B on its own\"]": {
+    "5": {
+      "english": "B",
+      "category": "proper_noun"
+    }
+  },
+  "[\"et vingt-cinq de B\",\"and twenty-five of B\"]": {
+    "17": {
+      "english": "B",
+      "category": "proper_noun"
+    }
+  },
+  "[\"et soixante-quinze de B\",\"and seventy-five of B\"]": {
+    "22": {
+      "english": "B",
+      "category": "proper_noun"
+    }
+  },
+  "[\"et deux litres et demi de B\",\"and two and a half litres of B\"]": {
+    "26": {
+      "english": "B",
+      "category": "proper_noun"
+    }
+  },
+  "[\"Lorsque les levures\",\"When yeast\"]": {
+    "12": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"les levures\",\"yeast\"]": {
+    "4": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"d'autres levures\",\"other yeasts\"]": {
+    "9": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"pas toutes les levures\",\"not all yeasts\"]": {
+    "15": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"Les levures\",\"Yeast\"]": {
+    "4": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"que les levures\",\"that yeast\"]": {
+    "8": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"de leur donner\",\"giving them\"]": {
+    "3": {
+      "english": "them",
+      "category": "function_word"
+    }
+  },
+  "[\"une température ambiante d'environ vingt degrés\",\"an ambient temperature of around twenty degrees\"]": {
+    "16": {
+      "english": "ambient",
+      "category": "adjective"
+    }
+  },
+  "[\"quand retirer ses mains\",\"when to take your hands away\"]": {
+    "14": {
+      "english": "your",
+      "category": "function_word"
+    }
+  },
+  "[\"Modifier tout à la fois\",\"Changing everything at once\"]": {
+    "14": {
+      "english": "at once",
+      "category": "adverb"
+    }
+  },
+  "[\"comme un dépôt constitué surtout de levures\",\"like a deposit made up mainly of yeast\"]": {
+    "36": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"les levures restantes\",\"the remaining yeast\"]": {
+    "4": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"dans les récipients de réserve\",\"into the reserve vessels\"]": {
+    "23": {
+      "english": "reserve",
+      "category": "noun"
+    }
+  },
+  "[\"l'activité réelle des levures\",\"the yeast's actual activity\"]": {
+    "22": {
+      "english": "yeast",
+      "category": "noun"
+    }
+  },
+  "[\"Ils contiennent notamment\",\"They contain, among other things\"]": {
+    "16": {
+      "english": "among other things",
+      "category": "adverb"
     }
   }
 }

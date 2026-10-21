@@ -2,7 +2,7 @@
   "id": "ch-8",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Lire son jus",
     "english": "Understanding Your Juice"
@@ -6000,14 +6000,14 @@
       ]
     },
     {
-      "target": "Une valeur Brix brute ne permet alors pas de lire directement le sucre restant.",
-      "english": "An uncorrected Brix value then does not allow you to read directly the remaining sugar.",
+      "target": "Une valeur Brix brute ne permet alors pas de connaître directement la quantité de sucre restant.",
+      "english": "An uncorrected Brix value then does not directly reveal the amount of remaining sugar.",
       "alignment": [
         {
           "english": "An uncorrected Brix value",
           "target": "Une valeur Brix brute",
           "category": "noun",
-          "frequency_band": "uncommon",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6023,7 +6023,7 @@
               "target": "valeur",
               "english": "value",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
               "end": 10
@@ -6041,7 +6041,7 @@
               "target": "brute",
               "english": "uncorrected",
               "category": "adjective",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 16,
               "end": 21
@@ -6049,68 +6049,59 @@
           ]
         },
         {
-          "english": "then does not allow you",
-          "target": "ne permet alors pas",
+          "english": "then does not directly reveal",
+          "target": "ne permet alors pas de connaître directement",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "ne permet alors pas",
-              "english": "then does not allow you",
+              "english": "then does not allow",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 19
-            }
-          ]
-        },
-        {
-          "english": "to read directly",
-          "target": "de lire directement",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "de",
               "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 20,
+              "end": 22
             },
             {
-              "target": "lire",
-              "english": "read",
+              "target": "connaître",
+              "english": "understand",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 7
+              "start": 23,
+              "end": 32
             },
             {
               "target": "directement",
               "english": "directly",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 8,
-              "end": 19
+              "start": 33,
+              "end": 44
             }
           ]
         },
         {
-          "english": "the remaining sugar",
-          "target": "le sucre restant",
+          "english": "the amount of remaining sugar",
+          "target": "la quantité de sucre restant",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "le",
+              "target": "la",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
@@ -6119,22 +6110,40 @@
               "end": 2
             },
             {
+              "target": "quantité",
+              "english": "quantity",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 11
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 14
+            },
+            {
               "target": "sucre",
               "english": "sugar",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 8
+              "start": 15,
+              "end": 20
             },
             {
               "target": "restant",
               "english": "remaining",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 16
+              "start": 21,
+              "end": 28
             }
           ]
         }
@@ -9249,13 +9258,13 @@
     },
     {
       "target": "La bonne habitude n'est pas de collectionner les chiffres, mais de savoir ce que chacun permet de décider.",
-      "english": "The good habit is not collecting numbers, but knowing what each one allows you to decide.",
+      "english": "A good habit is not to collect numbers, but to know what each one helps you decide.",
       "alignment": [
         {
-          "english": "The good habit",
+          "english": "A good habit",
           "target": "La bonne habitude",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -9271,7 +9280,7 @@
               "target": "bonne",
               "english": "good",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 8
@@ -9280,7 +9289,7 @@
               "target": "habitude",
               "english": "habit",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 9,
               "end": 17
@@ -9288,47 +9297,38 @@
           ]
         },
         {
-          "english": "is not",
-          "target": "n'est pas",
+          "english": "is not to collect numbers",
+          "target": "n'est pas de collectionner les chiffres",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "n'est pas",
               "english": "is not",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 9
-            }
-          ]
-        },
-        {
-          "english": "collecting numbers",
-          "target": "de collectionner les chiffres",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "de",
               "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 10,
+              "end": 12
             },
             {
               "target": "collectionner",
               "english": "collect",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 16
+              "start": 13,
+              "end": 26
             },
             {
               "target": "les",
@@ -9336,25 +9336,25 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 17,
-              "end": 20
+              "start": 27,
+              "end": 30
             },
             {
               "target": "chiffres",
               "english": "numbers",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 21,
-              "end": 29
+              "start": 31,
+              "end": 39
             }
           ]
         },
         {
-          "english": "but knowing",
-          "target": "mais de savoir",
+          "english": "but to know what each one helps you decide",
+          "target": "mais de savoir ce que chacun permet de décider",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -9379,28 +9379,19 @@
               "target": "savoir",
               "english": "know",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 8,
               "end": 14
-            }
-          ]
-        },
-        {
-          "english": "what each one",
-          "target": "ce que chacun",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "ce que",
               "english": "what",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 6
+              "start": 15,
+              "end": 21
             },
             {
               "target": "chacun",
@@ -9408,26 +9399,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 7,
-              "end": 13
-            }
-          ]
-        },
-        {
-          "english": "allows you to decide",
-          "target": "permet de décider",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 22,
+              "end": 28
+            },
             {
               "target": "permet",
               "english": "allows",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 6
+              "start": 29,
+              "end": 35
             },
             {
               "target": "de",
@@ -9435,17 +9417,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 7,
-              "end": 9
+              "start": 36,
+              "end": 38
             },
             {
               "target": "décider",
               "english": "decide",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 10,
-              "end": 17
+              "start": 39,
+              "end": 46
             }
           ]
         }

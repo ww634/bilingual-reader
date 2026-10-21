@@ -18,7 +18,7 @@ Now return to the aromas. As you chew, you perceive smells that contribute to th
 
 Between two fruits, drink a little water and wait a moment. Do not try to compare twelve varieties all at once. Two or three are enough to reveal differences. If possible, taste them under similar conditions. You are looking for a useful comparison, not a competition in which the last apple wins through exhaustion.
 
-Write down a sentence for each fruit. For example: “The first apple is sweet and aromatic, but its flavour fades quickly”. Then: “The second makes my mouth water more and leaves a slightly dry sensation”. These imaginary observations do not rank the apples from best to worst. They suggest different roles.
+Write down a sentence for each fruit. For example: “The first apple is sweet and aromatic, but its flavour fades quickly.” Then: “The second makes my mouth water more and leaves a slightly dry sensation.” These imaginary observations do not rank the apples from best to worst. They suggest different roles.
 
 A blend brings together several juices or ciders to seek a balance. One variety may bring acidity, another tannins. That does not mean that you must always blend or that a magic proportion works everywhere. It means that a pleasant eating apple and an apple useful to a cider maker do not necessarily answer the same question.
 

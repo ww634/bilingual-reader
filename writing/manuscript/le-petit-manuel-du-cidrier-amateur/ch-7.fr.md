@@ -16,7 +16,7 @@ Préparez une quantité que vous pourrez presser sans longue attente. Le jus et 
 
 Installez les toiles ou les sacs de pressage prévus par le fabricant. Ils doivent être propres et adaptés au contact du jus. Répartissez la pulpe selon la méthode de votre pressoir, sans dépasser sa capacité. Le récipient de collecte attend sous la sortie, et non à l'autre bout du jardin.
 
-Appliquez la pression progressivement, en respectant les limites de l'appareil. Laissez au jus le temps de trouver son passage. Sur une presse à vis, une longue rallonge improvisée n'est pas une amélioration de la notice. Ne dépassez pas la force autorisée pour obtenir quelques gouttes supplémentaires. L'objectif est un travail régulier, pas un concours de muscles.
+Appliquez la pression progressivement, en respectant les limites de l'appareil. Laissez au jus le temps de trouver son passage. Sur une presse à vis, une longue rallonge improvisée ne remplace pas les consignes du fabricant. Ne dépassez pas la force autorisée pour obtenir quelques gouttes supplémentaires. L'objectif est un travail régulier, pas un concours de muscles.
 
 Le résidu solide s'appelle le marc. Sa présence vous rappelle que le poids des pommes et le volume du jus sont deux choses différentes. Notez le poids de fruits préparés et le volume recueilli si vous souhaitez comparer vos essais. Un rendement n'a de sens que si l'on sait comment il a été calculé.
 

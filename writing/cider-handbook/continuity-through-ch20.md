@@ -31,3 +31,7 @@ Chapters 1–15 are byte-for-byte preserved. Chapters 16–20 start at version 1
 Before any full rebuild, preserve released chapter JSON and catalogue entries. The generic builder rewrites older chapters and advances catalogue versions. Restore unchanged releases after rebuilding; review and explicitly version any intended revisions. Dictionary and phrase additions can change earlier generated annotations. Older published bands include the legacy `less_common` spelling; new chapters use the app's current `uncommon` spelling. A deliberate future annotation migration should be separately reviewed and versioned rather than silently altering those releases.
 
 Publication uses `/tmp/cider-handbook-publish`, refreshed from current main. Merge only this handbook's catalogue entry and preserve unrelated books, cover art, app work and files in the shared workspace. The complete research trail is indexed in the handbook README.
+
+## Final review supersedes initial publication annotations
+
+The [whole-book review](final-review.md) revises all twenty chapters, retains all chapter IDs and pair counts, and advances the edition to 8. The former `less_common` metadata is now migrated to supported values. The reviewed lookup generator and book-local resources reproduce the final annotations; the earlier advice about preserving manually patched annotations describes the initial release history. Preserve publication versions and original creation dates when rebuilding.

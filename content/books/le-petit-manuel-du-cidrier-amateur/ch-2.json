@@ -2,7 +2,7 @@
   "id": "ch-2",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Apprendre à goûter une pomme",
     "english": "Learning to Taste an Apple"
@@ -109,7 +109,7 @@
           "lookup": [
             {
               "target": "Choisissez",
-              "english": "choose",
+              "english": "Choose",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -1019,7 +1019,7 @@
           "lookup": [
             {
               "target": "Ce sont",
-              "english": "these are",
+              "english": "These are",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -1282,21 +1282,12 @@
           "is_idiom": false,
           "lookup": [
             {
-              "target": "vaut",
-              "english": "is worth",
+              "target": "vaut mieux",
+              "english": "is better",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 4
-            },
-            {
-              "target": "mieux",
-              "english": "better",
-              "category": "adverb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 5,
               "end": 10
             }
           ]
@@ -1361,7 +1352,7 @@
           "lookup": [
             {
               "target": "Prenez",
-              "english": "take",
+              "english": "Take",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -6433,21 +6424,21 @@
       "paragraph_start": true
     },
     {
-      "target": "Par exemple : « La première pomme est douce et parfumée, mais son goût disparaît vite ».",
-      "english": "For example: “The first apple is sweet and aromatic, but its flavour fades quickly”.",
+      "target": "Par exemple: « La première pomme est douce et parfumée, mais son goût disparaît vite. »",
+      "english": "For example: “The first apple is sweet and aromatic, but its flavour fades quickly.”",
       "alignment": [
         {
           "english": "For example",
           "target": "Par exemple",
-          "category": "adverb",
-          "frequency_band": "very_common",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "Par exemple",
-              "english": "for example",
+              "english": "For example",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 11
@@ -6455,10 +6446,10 @@
           ]
         },
         {
-          "english": "“The first apple",
-          "target": "« La première pomme",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "“The first apple is sweet and aromatic",
+          "target": "« La première pomme est douce et parfumée",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6474,7 +6465,7 @@
               "target": "première",
               "english": "first",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 13
@@ -6483,37 +6474,28 @@
               "target": "pomme",
               "english": "apple",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 14,
               "end": 19
-            }
-          ]
-        },
-        {
-          "english": "is sweet and aromatic",
-          "target": "est douce et parfumée",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "est",
               "english": "is",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "start": 20,
+              "end": 23
             },
             {
               "target": "douce",
               "english": "sweet",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 9
+              "start": 24,
+              "end": 29
             },
             {
               "target": "et",
@@ -6521,25 +6503,25 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 10,
-              "end": 12
+              "start": 30,
+              "end": 32
             },
             {
               "target": "parfumée",
               "english": "aromatic",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 13,
-              "end": 21
+              "start": 33,
+              "end": 41
             }
           ]
         },
         {
-          "english": "but",
-          "target": "mais",
-          "category": "function_word",
-          "frequency_band": "very_common",
+          "english": "but its flavour fades quickly.”",
+          "target": "mais son goût disparaît vite. »",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6550,81 +6532,63 @@
               "is_idiom": false,
               "start": 0,
               "end": 4
-            }
-          ]
-        },
-        {
-          "english": "its flavour",
-          "target": "son goût",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "son",
               "english": "its",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "start": 5,
+              "end": 8
             },
             {
               "target": "goût",
               "english": "flavour",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 8
-            }
-          ]
-        },
-        {
-          "english": "fades quickly”",
-          "target": "disparaît vite »",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 9,
+              "end": 13
+            },
             {
               "target": "disparaît",
               "english": "disappears",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 9
+              "start": 14,
+              "end": 23
             },
             {
               "target": "vite",
               "english": "quickly",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 10,
-              "end": 14
+              "start": 24,
+              "end": 28
             }
           ]
         }
       ]
     },
     {
-      "target": "Puis : « La seconde fait davantage saliver et laisse une légère sensation sèche ».",
-      "english": "Then: “The second makes my mouth water more and leaves a slightly dry sensation”.",
+      "target": "Puis: « La seconde fait davantage saliver et laisse une légère sensation sèche. »",
+      "english": "Then: “The second makes my mouth water more and leaves a slightly dry sensation.”",
       "alignment": [
         {
           "english": "Then",
           "target": "Puis",
           "category": "adverb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "Puis",
               "english": "then",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 4
@@ -6632,10 +6596,10 @@
           ]
         },
         {
-          "english": "“The second",
-          "target": "« La seconde",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "“The second makes my mouth water more",
+          "target": "« La seconde fait davantage saliver",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6651,28 +6615,19 @@
               "target": "seconde",
               "english": "second",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 12
-            }
-          ]
-        },
-        {
-          "english": "makes my mouth water more",
-          "target": "fait davantage saliver",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "fait",
-              "english": "done",
+              "english": "makes",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 4
+              "start": 13,
+              "end": 17
             },
             {
               "target": "davantage",
@@ -6680,8 +6635,8 @@
               "category": "adverb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 5,
-              "end": 14
+              "start": 18,
+              "end": 27
             },
             {
               "target": "saliver",
@@ -6689,16 +6644,16 @@
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 15,
-              "end": 22
+              "start": 28,
+              "end": 35
             }
           ]
         },
         {
-          "english": "and",
-          "target": "et",
-          "category": "function_word",
-          "frequency_band": "very_common",
+          "english": "and leaves a slightly dry sensation.”",
+          "target": "et laisse une légère sensation sèche. »",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6709,69 +6664,51 @@
               "is_idiom": false,
               "start": 0,
               "end": 2
-            }
-          ]
-        },
-        {
-          "english": "leaves",
-          "target": "laisse",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "laisse",
               "english": "leaves",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 6
-            }
-          ]
-        },
-        {
-          "english": "a slightly dry sensation”",
-          "target": "une légère sensation sèche »",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 3,
+              "end": 9
+            },
             {
               "target": "une",
               "english": "a",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "start": 10,
+              "end": 13
             },
             {
               "target": "légère",
               "english": "slight",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 10
+              "start": 14,
+              "end": 20
             },
             {
               "target": "sensation",
               "english": "sensation",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 11,
-              "end": 20
+              "start": 21,
+              "end": 30
             },
             {
               "target": "sèche",
               "english": "dry",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 21,
-              "end": 26
+              "start": 31,
+              "end": 36
             }
           ]
         }
@@ -7346,7 +7283,7 @@
             },
             {
               "target": "il faut",
-              "english": "you must",
+              "english": "it is necessary to",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -9112,7 +9049,7 @@
           "lookup": [
             {
               "target": "Enfin",
-              "english": "finally",
+              "english": "Finally",
               "category": "adverb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -9792,7 +9729,7 @@
           "lookup": [
             {
               "target": "Distinguez",
-              "english": "distinguish",
+              "english": "Distinguish",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
@@ -11047,7 +10984,7 @@
           "lookup": [
             {
               "target": "C'est",
-              "english": "that is",
+              "english": "That is",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,

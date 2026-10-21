@@ -16,7 +16,7 @@ In a juice before fermentation, dissolved sugars strongly influence density. How
 
 Suppose that a juice reads a specific gravity of 1.050. That does not mean that it contains five per cent alcohol. Fermentation has not yet begun. A potential-alcohol scale shows an estimate based on assumptions, not the result of an alcohol analysis. Later we will use the change in density to monitor the batch.
 
-A refractometer uses light to provide a different reading. Its scale in degrees Brix is useful for juice, but is not interchangeable with every other scale. After the start of fermentation, alcohol changes the reading. An uncorrected Brix value then does not allow you to read directly the remaining sugar.
+A refractometer uses light to provide a different reading. Its scale in degrees Brix is useful for juice, but is not interchangeable with every other scale. After the start of fermentation, alcohol changes the reading. An uncorrected Brix value then does not directly reveal the amount of remaining sugar.
 
 Let us turn to acidity. pH and titratable acidity describe different aspects of the same juice. pH is related to hydrogen-ion activity. Titratable acidity measures the amount of acid neutralised under a defined procedure. Two juices may have a similar pH and different titratable acidities.
 
@@ -26,6 +26,6 @@ For a titratable-acidity analysis, follow a procedure suited to apple juice or r
 
 In your notebook, separate the raw reading from the corrected value. Add the instrument name and the method used for correction. This will allow you to retrace the path between observation and the result recorded. If two readings seem incompatible to you, repeat sampling and check the equipment before changing all the juice.
 
-A number should answer a precise question. Density helps you to follow a change; pH provides information on another aspect of the medium. Neither replaces knowledge of the juice's origin or its treatment. The good habit is not collecting numbers, but knowing what each one allows you to decide.
+A number should answer a precise question. Density helps you to follow a change; pH provides information on another aspect of the medium. Neither replaces knowledge of the juice's origin or its treatment. A good habit is not to collect numbers, but to know what each one helps you decide.
 
 We now have words for tasting and tools for measuring. No isolated number certifies safety or final quality of the cider. For our example, the suggested readings remain hypothetical; they explain a way of working. The next choice will be to decide what balance we want to prepare.

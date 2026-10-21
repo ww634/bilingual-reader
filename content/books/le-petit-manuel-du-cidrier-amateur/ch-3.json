@@ -2,7 +2,7 @@
   "id": "ch-3",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Choisir son pommier",
     "english": "Choosing an Apple Tree"
@@ -170,13 +170,13 @@
     },
     {
       "target": "Leurs fruits brillent, leurs branches ne gênent personne et le ciel coopère.",
-      "english": "Their fruit shine, their branches bother nobody and the sky cooperates.",
+      "english": "Their apples shine, their branches bother nobody and the sky cooperates.",
       "alignment": [
         {
-          "english": "Their fruit",
-          "target": "Leurs fruits",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "Their apples shine",
+          "target": "Leurs fruits brillent",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -192,36 +192,27 @@
               "target": "fruits",
               "english": "fruit",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
               "end": 12
-            }
-          ]
-        },
-        {
-          "english": "shine",
-          "target": "brillent",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "brillent",
               "english": "shine",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 8
+              "start": 13,
+              "end": 21
             }
           ]
         },
         {
-          "english": "their branches",
-          "target": "leurs branches",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "their branches bother nobody",
+          "target": "leurs branches ne gênent personne",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -237,37 +228,28 @@
               "target": "branches",
               "english": "branches",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
               "end": 14
-            }
-          ]
-        },
-        {
-          "english": "bother nobody",
-          "target": "ne gênent personne",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "ne",
               "english": "negation marker",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 15,
+              "end": 17
             },
             {
               "target": "gênent",
               "english": "bother",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 9
+              "start": 18,
+              "end": 24
             },
             {
               "target": "personne",
@@ -275,16 +257,16 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 10,
-              "end": 18
+              "start": 25,
+              "end": 33
             }
           ]
         },
         {
-          "english": "and",
-          "target": "et",
-          "category": "function_word",
-          "frequency_band": "very_common",
+          "english": "and the sky cooperates",
+          "target": "et le ciel coopère",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -295,51 +277,33 @@
               "is_idiom": false,
               "start": 0,
               "end": 2
-            }
-          ]
-        },
-        {
-          "english": "the sky",
-          "target": "le ciel",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "le",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 3,
+              "end": 5
             },
             {
               "target": "ciel",
               "english": "sky",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 7
-            }
-          ]
-        },
-        {
-          "english": "cooperates",
-          "target": "coopère",
-          "category": "verb",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 6,
+              "end": 10
+            },
             {
               "target": "coopère",
               "english": "cooperates",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 7
+              "start": 11,
+              "end": 18
             }
           ]
         }
@@ -1689,7 +1653,7 @@
           "lookup": [
             {
               "target": "Demandez",
-              "english": "ask",
+              "english": "Ask",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -2119,24 +2083,42 @@
       "paragraph_start": true
     },
     {
-      "target": "La variété désigne ici le pommier choisi pour ses fruits.",
-      "english": "The variety here identifies the chosen apple tree for its fruit.",
+      "target": "Le nom de variété identifie le type de pommier choisi pour ses fruits.",
+      "english": "The variety name identifies the type of apple tree chosen for its fruit.",
       "alignment": [
         {
-          "english": "The variety",
-          "target": "La variété",
+          "english": "The variety name",
+          "target": "Le nom de variété",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "La",
+              "target": "Le",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
               "end": 2
+            },
+            {
+              "target": "nom",
+              "english": "name",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
             },
             {
               "target": "variété",
@@ -2144,53 +2126,53 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 10
+              "start": 10,
+              "end": 17
             }
           ]
         },
         {
-          "english": "here identifies",
-          "target": "désigne ici",
+          "english": "identifies the type of apple tree",
+          "target": "identifie le type de pommier",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "désigne",
+              "target": "identifie",
               "english": "identifies",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 7
+              "end": 9
             },
-            {
-              "target": "ici",
-              "english": "here",
-              "category": "adverb",
-              "frequency_band": "common",
-              "is_idiom": false,
-              "start": 8,
-              "end": 11
-            }
-          ]
-        },
-        {
-          "english": "the chosen apple tree",
-          "target": "le pommier choisi",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
             {
               "target": "le",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 10,
+              "end": 12
+            },
+            {
+              "target": "type",
+              "english": "type",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 17
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 18,
+              "end": 20
             },
             {
               "target": "pommier",
@@ -2198,35 +2180,35 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 10
-            },
+              "start": 21,
+              "end": 28
+            }
+          ]
+        },
+        {
+          "english": "chosen for its fruit",
+          "target": "choisi pour ses fruits",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
             {
               "target": "choisi",
               "english": "chosen",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 11,
-              "end": 17
-            }
-          ]
-        },
-        {
-          "english": "for its fruit",
-          "target": "pour ses fruits",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 0,
+              "end": 6
+            },
             {
               "target": "pour",
               "english": "for",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 4
+              "start": 7,
+              "end": 11
             },
             {
               "target": "ses",
@@ -2234,17 +2216,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 5,
-              "end": 8
+              "start": 12,
+              "end": 15
             },
             {
               "target": "fruits",
               "english": "fruit",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 15
+              "start": 16,
+              "end": 22
             }
           ]
         }
@@ -3528,7 +3510,7 @@
           "lookup": [
             {
               "target": "Cependant",
-              "english": "however",
+              "english": "However",
               "category": "adverb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -3942,7 +3924,7 @@
           "lookup": [
             {
               "target": "Il faut",
-              "english": "you need to",
+              "english": "it is necessary to",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -5222,7 +5204,7 @@
           "lookup": [
             {
               "target": "il faut",
-              "english": "you need to",
+              "english": "it is necessary to",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -6667,7 +6649,7 @@
           "lookup": [
             {
               "target": "Demandez",
-              "english": "ask",
+              "english": "Ask",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -8161,7 +8143,7 @@
           "lookup": [
             {
               "target": "observer",
-              "english": "observe",
+              "english": "to observe",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -9098,7 +9080,7 @@
           "lookup": [
             {
               "target": "À l'inverse",
-              "english": "conversely",
+              "english": "Conversely",
               "category": "adverb",
               "frequency_band": "common",
               "is_idiom": false,
@@ -9693,7 +9675,7 @@
           "lookup": [
             {
               "target": "Demandez",
-              "english": "ask",
+              "english": "Ask",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -10055,30 +10037,12 @@
               "end": 8
             },
             {
-              "target": "ne",
-              "english": "negation marker",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 9,
-              "end": 11
-            },
-            {
-              "target": "peut",
-              "english": "can",
+              "target": "ne peut pas",
+              "english": "cannot",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 12,
-              "end": 16
-            },
-            {
-              "target": "pas",
-              "english": "not",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 17,
+              "start": 9,
               "end": 20
             },
             {
@@ -10107,7 +10071,7 @@
           "lookup": [
             {
               "target": "Gardez",
-              "english": "keep",
+              "english": "Keep",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -10415,13 +10379,13 @@
     },
     {
       "target": "Un nom exact permet de retrouver un conseil et de partager vos observations.",
-      "english": "An exact name allows you to find again advice and to share your observations.",
+      "english": "An exact name helps you find the right guidance and share your observations.",
       "alignment": [
         {
           "english": "An exact name",
           "target": "Un nom exact",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -10437,7 +10401,7 @@
               "target": "nom",
               "english": "name",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 6
@@ -10446,7 +10410,7 @@
               "target": "exact",
               "english": "exact",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 7,
               "end": 12
@@ -10454,82 +10418,64 @@
           ]
         },
         {
-          "english": "allows you",
-          "target": "permet",
+          "english": "helps you find the right guidance",
+          "target": "permet de retrouver un conseil",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "permet",
               "english": "allows",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 6
-            }
-          ]
-        },
-        {
-          "english": "to find again",
-          "target": "de retrouver",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "de",
               "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 7,
+              "end": 9
             },
             {
               "target": "retrouver",
               "english": "find again",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 12
-            }
-          ]
-        },
-        {
-          "english": "advice",
-          "target": "un conseil",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 10,
+              "end": 19
+            },
             {
               "target": "un",
               "english": "a",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 20,
+              "end": 22
             },
             {
               "target": "conseil",
               "english": "advice",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 10
+              "start": 23,
+              "end": 30
             }
           ]
         },
         {
-          "english": "and",
-          "target": "et",
-          "category": "function_word",
-          "frequency_band": "very_common",
+          "english": "and share your observations",
+          "target": "et de partager vos observations",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -10540,60 +10486,42 @@
               "is_idiom": false,
               "start": 0,
               "end": 2
-            }
-          ]
-        },
-        {
-          "english": "to share",
-          "target": "de partager",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "de",
               "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 3,
+              "end": 5
             },
             {
               "target": "partager",
               "english": "share",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 11
-            }
-          ]
-        },
-        {
-          "english": "your observations",
-          "target": "vos observations",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 6,
+              "end": 14
+            },
             {
               "target": "vos",
               "english": "your",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "start": 15,
+              "end": 18
             },
             {
               "target": "observations",
               "english": "observations",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 16
+              "start": 19,
+              "end": 31
             }
           ]
         }

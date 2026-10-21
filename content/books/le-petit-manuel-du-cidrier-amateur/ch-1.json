@@ -2,7 +2,7 @@
   "id": "ch-1",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Une pomme, beaucoup de possibilités",
     "english": "One Apple, Many Possibilities"
@@ -854,7 +854,7 @@
             },
             {
               "target": "levures",
-              "english": "yeasts",
+              "english": "yeast",
               "category": "noun",
               "frequency_band": "uncommon",
               "is_idiom": false,
@@ -3945,7 +3945,7 @@
           "lookup": [
             {
               "target": "il faudra",
-              "english": "we will need to",
+              "english": "it will be necessary to",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -6030,7 +6030,7 @@
           "lookup": [
             {
               "target": "Gardez",
-              "english": "keep",
+              "english": "Keep",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -8936,7 +8936,7 @@
           "lookup": [
             {
               "target": "En revanche",
-              "english": "however",
+              "english": "However",
               "category": "adverb",
               "frequency_band": "common",
               "is_idiom": false,
@@ -9538,10 +9538,10 @@
       "english": "You will encounter “to choose” beside a tree, then beside a vessel.",
       "alignment": [
         {
-          "english": "You will encounter",
-          "target": "Vous rencontrerez",
+          "english": "You will encounter “to choose”",
+          "target": "Vous rencontrerez « choisir »",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -9557,28 +9557,19 @@
               "target": "rencontrerez",
               "english": "will encounter",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 17
-            }
-          ]
-        },
-        {
-          "english": "“to choose”",
-          "target": "« choisir »",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "choisir",
               "english": "choose",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 2,
-              "end": 9
+              "start": 20,
+              "end": 27
             }
           ]
         },
@@ -9586,7 +9577,7 @@
           "english": "beside a tree",
           "target": "devant un arbre",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -9611,7 +9602,7 @@
               "target": "arbre",
               "english": "tree",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
               "end": 15
@@ -9619,38 +9610,29 @@
           ]
         },
         {
-          "english": "then",
-          "target": "puis",
-          "category": "adverb",
-          "frequency_band": "very_common",
+          "english": "then beside a vessel",
+          "target": "puis devant un récipient",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "puis",
               "english": "then",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 4
-            }
-          ]
-        },
-        {
-          "english": "beside a vessel",
-          "target": "devant un récipient",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "devant",
               "english": "beside",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 6
+              "start": 5,
+              "end": 11
             },
             {
               "target": "un",
@@ -9658,8 +9640,8 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 7,
-              "end": 9
+              "start": 12,
+              "end": 14
             },
             {
               "target": "récipient",
@@ -9667,22 +9649,22 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 10,
-              "end": 19
+              "start": 15,
+              "end": 24
             }
           ]
         }
       ]
     },
     {
-      "target": "Vous retrouverez « comparer » dans une bouchée et dans une mesure.",
-      "english": "You will meet again “to compare” in a bite and in a measurement.",
+      "target": "Vous retrouverez « comparer » en goûtant un fruit puis en prenant une mesure.",
+      "english": "You will encounter “to compare” again when tasting a fruit and then when taking a measurement.",
       "alignment": [
         {
-          "english": "You will meet again",
-          "target": "Vous retrouverez",
+          "english": "You will encounter “to compare” again",
+          "target": "Vous retrouverez « comparer »",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -9696,102 +9678,102 @@
             },
             {
               "target": "retrouverez",
-              "english": "will meet again",
+              "english": "will find again",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 16
-            }
-          ]
-        },
-        {
-          "english": "“to compare”",
-          "target": "« comparer »",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "comparer",
               "english": "compare",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 2,
-              "end": 10
+              "start": 19,
+              "end": 27
             }
           ]
         },
         {
-          "english": "in a bite",
-          "target": "dans une bouchée",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "when tasting a fruit",
+          "target": "en goûtant un fruit",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "dans",
-              "english": "in",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 4
-            },
-            {
-              "target": "une",
-              "english": "a",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 5,
-              "end": 8
-            },
-            {
-              "target": "bouchée",
-              "english": "bite",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 9,
-              "end": 16
-            }
-          ]
-        },
-        {
-          "english": "and",
-          "target": "et",
-          "category": "function_word",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "et",
-              "english": "and",
+              "target": "en",
+              "english": "while",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
               "end": 2
+            },
+            {
+              "target": "goûtant",
+              "english": "tasting",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 10
+            },
+            {
+              "target": "un",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 13
+            },
+            {
+              "target": "fruit",
+              "english": "fruit",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 14,
+              "end": 19
             }
           ]
         },
         {
-          "english": "in a measurement",
-          "target": "dans une mesure",
-          "category": "noun",
+          "english": "and then when taking a measurement",
+          "target": "puis en prenant une mesure",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "dans",
-              "english": "in",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "puis",
+              "english": "then",
+              "category": "adverb",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 4
+            },
+            {
+              "target": "en",
+              "english": "while",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "prenant",
+              "english": "taking",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 15
             },
             {
               "target": "une",
@@ -9799,8 +9781,8 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 5,
-              "end": 8
+              "start": 16,
+              "end": 19
             },
             {
               "target": "mesure",
@@ -9808,8 +9790,8 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 15
+              "start": 20,
+              "end": 26
             }
           ]
         }
@@ -11297,7 +11279,7 @@
           "lookup": [
             {
               "target": "Prenons",
-              "english": "let us take",
+              "english": "Let us take",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,

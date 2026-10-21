@@ -2,7 +2,7 @@
   "id": "ch-7",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Broyer et presser",
     "english": "Milling and Pressing"
@@ -3127,21 +3127,12 @@
           "is_idiom": false,
           "lookup": [
             {
-              "target": "n'est pas",
-              "english": "is not",
+              "target": "n'est pas toujours",
+              "english": "is not always",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 9
-            },
-            {
-              "target": "toujours",
-              "english": "always",
-              "category": "adverb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 10,
               "end": 18
             }
           ]
@@ -5457,14 +5448,14 @@
       ]
     },
     {
-      "target": "Sur une presse à vis, une longue rallonge improvisée n'est pas une amélioration de la notice.",
-      "english": "On a screw press, a long improvised extension is not an improvement on the instructions.",
+      "target": "Sur une presse à vis, une longue rallonge improvisée ne remplace pas les consignes du fabricant.",
+      "english": "On a screw press, a long improvised extension is no substitute for the manufacturer's instructions.",
       "alignment": [
         {
           "english": "On a screw press",
           "target": "Sur une presse à vis",
           "category": "noun",
-          "frequency_band": "uncommon",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5489,7 +5480,7 @@
               "target": "presse",
               "english": "press",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 8,
               "end": 14
@@ -5507,7 +5498,7 @@
               "target": "vis",
               "english": "screw",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 17,
               "end": 20
@@ -5560,74 +5551,56 @@
           ]
         },
         {
-          "english": "is not",
-          "target": "n'est pas",
+          "english": "is no substitute for the manufacturer's instructions",
+          "target": "ne remplace pas les consignes du fabricant",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "n'est pas",
-              "english": "is not",
+              "target": "ne remplace pas",
+              "english": "does not replace",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 9
-            }
-          ]
-        },
-        {
-          "english": "an improvement on the instructions",
-          "target": "une amélioration de la notice",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "une",
-              "english": "an",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "end": 15
             },
             {
-              "target": "amélioration",
-              "english": "improvement",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 4,
-              "end": 16
-            },
-            {
-              "target": "de",
-              "english": "of",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 17,
-              "end": 19
-            },
-            {
-              "target": "la",
+              "target": "les",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 20,
-              "end": 22
+              "start": 16,
+              "end": 19
             },
             {
-              "target": "notice",
+              "target": "consignes",
               "english": "instructions",
               "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 20,
+              "end": 29
+            },
+            {
+              "target": "du",
+              "english": "some",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 23,
-              "end": 29
+              "start": 30,
+              "end": 32
+            },
+            {
+              "target": "fabricant",
+              "english": "manufacturer",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 33,
+              "end": 42
             }
           ]
         }
@@ -7005,13 +6978,13 @@
     },
     {
       "target": "Les fruits, leur état et le matériel peuvent modifier le résultat.",
-      "english": "The fruit, their condition and the equipment can change the result.",
+      "english": "The fruit, its condition and the equipment can change the result.",
       "alignment": [
         {
           "english": "The fruit",
           "target": "Les fruits",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -7027,7 +7000,7 @@
               "target": "fruits",
               "english": "fruit",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
               "end": 10
@@ -7035,15 +7008,15 @@
           ]
         },
         {
-          "english": "their condition",
-          "target": "leur état",
+          "english": "its condition and the equipment",
+          "target": "leur état et le matériel",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "leur",
-              "english": "their",
+              "english": "its",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -7054,28 +7027,19 @@
               "target": "état",
               "english": "condition",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 9
-            }
-          ]
-        },
-        {
-          "english": "and the equipment",
-          "target": "et le matériel",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "et",
               "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 10,
+              "end": 12
             },
             {
               "target": "le",
@@ -7083,8 +7047,8 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 3,
-              "end": 5
+              "start": 13,
+              "end": 15
             },
             {
               "target": "matériel",
@@ -7092,23 +7056,23 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 6,
-              "end": 14
+              "start": 16,
+              "end": 24
             }
           ]
         },
         {
-          "english": "can change",
-          "target": "peuvent modifier",
+          "english": "can change the result",
+          "target": "peuvent modifier le résultat",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "peuvent",
               "english": "can",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 7
@@ -7117,37 +7081,28 @@
               "target": "modifier",
               "english": "change",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 8,
               "end": 16
-            }
-          ]
-        },
-        {
-          "english": "the result",
-          "target": "le résultat",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "le",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 17,
+              "end": 19
             },
             {
               "target": "résultat",
               "english": "result",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 11
+              "start": 20,
+              "end": 28
             }
           ]
         }
@@ -10177,7 +10132,7 @@
             },
             {
               "target": "levures",
-              "english": "yeasts",
+              "english": "yeast",
               "category": "noun",
               "frequency_band": "uncommon",
               "is_idiom": false,

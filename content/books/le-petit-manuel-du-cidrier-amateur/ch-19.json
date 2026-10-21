@@ -2,7 +2,7 @@
   "id": "ch-19",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Mettre des mots sur un verre",
     "english": "Finding Words for a Glass"
@@ -1410,14 +1410,14 @@
       ]
     },
     {
-      "target": "Ces mots décrivent le regard, sans identifier à eux seuls un procédé.",
-      "english": "These words describe what you see without identifying a process on their own.",
+      "target": "Ces mots décrivent ce que vous voyez, sans identifier à eux seuls un procédé.",
+      "english": "These words describe what you see, without identifying a process on their own.",
       "alignment": [
         {
-          "english": "These words",
-          "target": "Ces mots",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "These words describe",
+          "target": "Ces mots décrivent",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -1433,46 +1433,55 @@
               "target": "mots",
               "english": "words",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
               "end": 8
-            }
-          ]
-        },
-        {
-          "english": "describe what you see",
-          "target": "décrivent le regard",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "décrivent",
               "english": "describe",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 9
-            },
+              "start": 9,
+              "end": 18
+            }
+          ]
+        },
+        {
+          "english": "what you see",
+          "target": "ce que vous voyez",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
             {
-              "target": "le",
-              "english": "the",
+              "target": "ce que",
+              "english": "what",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 10,
-              "end": 12
+              "start": 0,
+              "end": 6
             },
             {
-              "target": "regard",
-              "english": "eye",
-              "category": "noun",
+              "target": "vous",
+              "english": "you",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 13,
-              "end": 19
+              "start": 7,
+              "end": 11
+            },
+            {
+              "target": "voyez",
+              "english": "see",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 17
             }
           ]
         },
@@ -1480,7 +1489,7 @@
           "english": "without identifying a process on their own",
           "target": "sans identifier à eux seuls un procédé",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -1496,7 +1505,7 @@
               "target": "identifier",
               "english": "identify",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 15
@@ -1505,7 +1514,7 @@
               "target": "à eux seuls",
               "english": "on their own",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 16,
               "end": 27
@@ -1523,7 +1532,7 @@
               "target": "procédé",
               "english": "process",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 31,
               "end": 38
@@ -7335,21 +7344,21 @@
       ]
     },
     {
-      "target": "Ce sont des pistes à explorer, pas des mariages prononcés pour l'éternité.",
-      "english": "These are possibilities to explore, not marriages declared for eternity.",
+      "target": "Ce sont des pistes à explorer, pas des mariages pour la vie.",
+      "english": "These are possibilities to explore, not marriages for life.",
       "alignment": [
         {
           "english": "These are possibilities to explore",
           "target": "Ce sont des pistes à explorer",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "Ce sont",
               "english": "these are",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 7
@@ -7367,7 +7376,7 @@
               "target": "pistes",
               "english": "possibilities",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 12,
               "end": 18
@@ -7385,7 +7394,7 @@
               "target": "explorer",
               "english": "explore",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 21,
               "end": 29
@@ -7396,7 +7405,7 @@
           "english": "not marriages",
           "target": "pas des mariages",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -7421,7 +7430,7 @@
               "target": "mariages",
               "english": "marriages",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 8,
               "end": 16
@@ -7429,47 +7438,38 @@
           ]
         },
         {
-          "english": "declared for eternity",
-          "target": "prononcés pour l'éternité",
+          "english": "for life",
+          "target": "pour la vie",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
-            {
-              "target": "prononcés",
-              "english": "declared",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 9
-            },
             {
               "target": "pour",
               "english": "for",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 10,
-              "end": 14
+              "start": 0,
+              "end": 4
             },
             {
-              "target": "l'",
+              "target": "la",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 15,
-              "end": 17
+              "start": 5,
+              "end": 7
             },
             {
-              "target": "éternité",
-              "english": "eternity",
+              "target": "vie",
+              "english": "life",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 17,
-              "end": 25
+              "start": 8,
+              "end": 11
             }
           ]
         }

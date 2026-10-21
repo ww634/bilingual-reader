@@ -24,7 +24,7 @@ Taps, seals and the inside of hoses deserve as much attention as the large vesse
 
 Before buying, look at what you already own, then check its intended use. A bucket that looks clean is not necessarily intended to hold a drink. Avoid containers whose history or material are unknown. Food-grade plastic and suitable stainless steel are common options, but check each accessory. Compatibility also concerns the products used for cleaning that material.
 
-Make an assembly trial before the big day. Check that the tap closes, that the fittings hold and that the hose reaches the next vessel. Using water, you can spot a leak without losing juice. After that trial, repeat the sanitation preparation before contact with the product.
+Make an assembly trial before the big day. Check that the tap closes, that the fittings hold and that the hose reaches the next vessel. Using water, you can spot a leak without losing juice. After this trial, repeat cleaning and sanitising before any contact with the cider.
 
 Finally think about your hands. Wash them before handling clean equipment, and again after a dirty task. Take the prepared accessories by the parts that will not touch the juice. These small actions preserve the cleaning work instead of undoing it.
 
