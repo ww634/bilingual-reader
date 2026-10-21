@@ -4,7 +4,7 @@ Sur la table, trois petits verres attendent votre jugement. L'un contient un jus
 
 Un assemblage n'est pas un moyen automatique de rendre meilleur tout ce qui entre dans le verre. Il sert à rechercher un équilibre précis avec des matières premières que vous connaissez. Avant de mélanger, dites ce que vous voulez changer. « Moins acide en bouche » est un objectif. « Plus professionnel » est surtout une expression vague.
 
-Souvenez-vous des sensations du deuxième chapitre. La douceur, l'acidité, l'amertume et l'astringence ne se remplacent pas. Un jus moins acide n'apporte pas forcément les tanins qui vous manquent. Une odeur très parfumée ne garantit pas une bouche équilibrée. Écoutez chaque qualité avant de faire la somme de vos impressions.
+Souvenez-vous des sensations du deuxième chapitre. La douceur, l'acidité, l'amertume et l'astringence ne se remplacent pas. Un jus moins acide n'apporte pas forcément les tanins qui vous manquent. Une odeur très parfumée ne garantit pas une bouche équilibrée. Considérez chaque qualité avant de faire la somme de vos impressions.
 
 Pour un premier essai, choisissez deux jus pasteurisés dont vous connaissez la composition. Donnez-leur des noms simples, comme A et B. Ne changez pas leur température de service au milieu de la comparaison. Préparez des récipients propres et un outil de mesure suffisamment précis pour les petits volumes. Les essais gustatifs restent séparés du lot à fermenter.
 
@@ -22,7 +22,7 @@ Le pH ne se calcule pas par une simple moyenne des valeurs de vos deux jus. Mesu
 
 Surtout, vous goûtez un jus, pas encore le futur cidre. Lorsque les levures consommeront une grande partie des sucres, l'équilibre perçu changera. Un mélange délicieux aujourd'hui ne constitue pas une garantie pour demain. La comparaison prépare un choix réfléchi ; elle ne supprime pas l'apprentissage qui suivra.
 
-N'ajoutez pas du sucre simplement pour rendre le jus plus agréable à boire. Ce sucre supplémentaire peut être fermenté et augmenter l'alcool potentiel. De même, une correction d'acidité ou un ajout de tanins demande une méthode, un produit adapté et une raison mesurée. Un petit verre ne doit pas devenir un laboratoire improvisé sans protocole.
+N'ajoutez pas du sucre simplement pour rendre le jus plus agréable à boire. Ce sucre supplémentaire peut être fermenté et augmenter l'alcool potentiel. De même, une correction d'acidité ou un ajout de tanins demande une méthode, un produit adapté et une justification fondée sur des mesures. Un petit verre ne doit pas devenir un laboratoire improvisé sans protocole.
 
 Les essais peuvent aussi vous apprendre à ne rien changer. Si votre jus convient à votre objectif, vous n'avez pas à lui inventer un problème pour utiliser tous vos accessoires. Gardez les notes des essais abandonnés aussi bien que celles du favori. Elles vous éviteront de refaire la même découverte à chaque récolte.
 

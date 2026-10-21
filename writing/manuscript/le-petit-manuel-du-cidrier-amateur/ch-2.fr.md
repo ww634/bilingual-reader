@@ -18,7 +18,7 @@ Revenez maintenant aux arômes. En mâchant, vous percevez des odeurs qui partic
 
 Entre deux fruits, buvez un peu d'eau et attendez un moment. Ne cherchez pas à comparer douze variétés d'un seul coup. Deux ou trois suffisent pour faire apparaître des différences. Si possible, goûtez-les dans des conditions semblables. Vous cherchez une comparaison utile, pas un concours où la dernière pomme gagne par épuisement.
 
-Notez une phrase pour chaque fruit. Par exemple : « La première pomme est douce et parfumée, mais son goût disparaît vite ». Puis : « La seconde fait davantage saliver et laisse une légère sensation sèche ». Ces observations imaginaires ne classent pas les pommes de la meilleure à la pire. Elles suggèrent des rôles différents.
+Notez une phrase pour chaque fruit. Par exemple: « La première pomme est douce et parfumée, mais son goût disparaît vite. » Puis: « La seconde fait davantage saliver et laisse une légère sensation sèche. » Ces observations imaginaires ne classent pas les pommes de la meilleure à la pire. Elles suggèrent des rôles différents.
 
 Un assemblage réunit plusieurs jus ou cidres pour rechercher un équilibre. Une variété peut apporter de l'acidité, une autre des tanins. Cela ne signifie pas qu'il faut toujours mélanger ni qu'une proportion magique convient partout. Cela signifie qu'une pomme agréable à croquer et une pomme utile au cidrier ne répondent pas forcément à la même question.
 

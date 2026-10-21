@@ -2,7 +2,7 @@
   "id": "ch-15",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Sec, doux, tranquille ou pétillant ?",
     "english": "Dry, Sweet, Still or Sparkling?"
@@ -642,7 +642,7 @@
           "english": "dissolved carbon dioxide",
           "target": "le gaz carbonique dissous",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -658,7 +658,7 @@
               "target": "gaz carbonique",
               "english": "carbon dioxide",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 17
@@ -667,7 +667,7 @@
               "target": "dissous",
               "english": "dissolved",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 18,
               "end": 25
@@ -2208,7 +2208,7 @@
           "english": "the presence of fermentable sugar",
           "target": "la présence de sucre fermentescible",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -2224,7 +2224,7 @@
               "target": "présence",
               "english": "presence",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 11
@@ -2242,7 +2242,7 @@
               "target": "sucre",
               "english": "sugar",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 15,
               "end": 20
@@ -2251,7 +2251,7 @@
               "target": "fermentescible",
               "english": "fermentable",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 21,
               "end": 35
@@ -3935,69 +3935,24 @@
       ]
     },
     {
-      "target": "Du jus de pomme ou du miel ajouté peut nourrir les levures restantes.",
-      "english": "Added apple juice or honey can feed the remaining yeast.",
+      "target": "Ajouter du jus de pomme ou du miel peut nourrir les levures restantes.",
+      "english": "Adding apple juice or honey can feed the remaining yeast.",
       "alignment": [
         {
-          "english": "Added apple juice",
-          "target": "Du jus de pomme",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "Adding apple juice or honey",
+          "target": "Ajouter du jus de pomme ou du miel",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Du",
-              "english": "some",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "Ajouter",
+              "english": "add",
+              "category": "verb",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 2
-            },
-            {
-              "target": "jus",
-              "english": "juice",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 3,
-              "end": 6
-            },
-            {
-              "target": "de",
-              "english": "of",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 7,
-              "end": 9
-            },
-            {
-              "target": "pomme",
-              "english": "apple",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 10,
-              "end": 15
-            }
-          ]
-        },
-        {
-          "english": "or honey",
-          "target": "ou du miel ajouté",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "ou",
-              "english": "or",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "end": 7
             },
             {
               "target": "du",
@@ -4005,41 +3960,77 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 3,
-              "end": 5
+              "start": 8,
+              "end": 10
+            },
+            {
+              "target": "jus",
+              "english": "juice",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 14
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 17
+            },
+            {
+              "target": "pomme",
+              "english": "apple",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 18,
+              "end": 23
+            },
+            {
+              "target": "ou",
+              "english": "or",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 24,
+              "end": 26
+            },
+            {
+              "target": "du",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 27,
+              "end": 29
             },
             {
               "target": "miel",
               "english": "honey",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 6,
-              "end": 10
-            },
-            {
-              "target": "ajouté",
-              "english": "added",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 11,
-              "end": 17
+              "start": 30,
+              "end": 34
             }
           ]
         },
         {
-          "english": "can feed the remaining yeast",
-          "target": "peut nourrir les levures restantes",
+          "english": "can feed",
+          "target": "peut nourrir",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "peut",
               "english": "can",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 4
@@ -4048,37 +4039,46 @@
               "target": "nourrir",
               "english": "feed",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 12
-            },
+            }
+          ]
+        },
+        {
+          "english": "the remaining yeast",
+          "target": "les levures restantes",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false,
+          "lookup": [
             {
               "target": "les",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 13,
-              "end": 16
+              "start": 0,
+              "end": 3
             },
             {
               "target": "levures",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
-              "start": 17,
-              "end": 24
+              "start": 4,
+              "end": 11
             },
             {
               "target": "restantes",
               "english": "remaining",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
-              "start": 25,
-              "end": 34
+              "start": 12,
+              "end": 21
             }
           ]
         }
@@ -4138,14 +4138,14 @@
           "english": "does not sterilise",
           "target": "ne stérilise pas",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
               "target": "ne stérilise pas",
               "english": "does not sterilise",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 0,
               "end": 16
@@ -4712,7 +4712,7 @@
           "english": "and different means of microbiological control",
           "target": "et différents moyens de maîtrise microbiologique",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -4728,7 +4728,7 @@
               "target": "différents",
               "english": "different",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 13
@@ -4737,7 +4737,7 @@
               "target": "moyens",
               "english": "means",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 14,
               "end": 20
@@ -4755,7 +4755,7 @@
               "target": "maîtrise",
               "english": "control",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 24,
               "end": 32
@@ -4764,7 +4764,7 @@
               "target": "microbiologique",
               "english": "microbiological",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 33,
               "end": 48
@@ -5009,7 +5009,7 @@
           "english": "Sorbate",
           "target": "Le sorbate",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -5025,7 +5025,7 @@
               "target": "sorbate",
               "english": "sorbate",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 10
@@ -5054,14 +5054,14 @@
           "english": "inhibits yeast multiplication",
           "target": "freine la multiplication des levures",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
               "target": "freine",
               "english": "inhibits",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 0,
               "end": 6
@@ -5079,7 +5079,7 @@
               "target": "multiplication",
               "english": "multiplication",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 10,
               "end": 24
@@ -5097,7 +5097,7 @@
               "target": "levures",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 29,
               "end": 36
@@ -5142,7 +5142,7 @@
           "english": "all yeast",
           "target": "toutes les levures",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -5167,7 +5167,7 @@
               "target": "levures",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 11,
               "end": 18
@@ -5274,7 +5274,7 @@
           "english": "Sulphite effectiveness",
           "target": "L'efficacité des sulfites",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -5290,7 +5290,7 @@
               "target": "efficacité",
               "english": "effectiveness",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 2,
               "end": 12
@@ -5308,7 +5308,7 @@
               "target": "sulfites",
               "english": "sulphites",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 17,
               "end": 25
@@ -5610,7 +5610,7 @@
           "english": "without providing sufficient microbiological control",
           "target": "sans assurer une maîtrise microbiologique suffisante",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -5626,7 +5626,7 @@
               "target": "assurer",
               "english": "provide",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 5,
               "end": 12
@@ -5644,7 +5644,7 @@
               "target": "maîtrise",
               "english": "control",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 17,
               "end": 25
@@ -5653,7 +5653,7 @@
               "target": "microbiologique",
               "english": "microbiological",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 26,
               "end": 41
@@ -5662,7 +5662,7 @@
               "target": "suffisante",
               "english": "sufficient",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 42,
               "end": 52
@@ -5680,7 +5680,7 @@
           "english": "Filtration targeting microorganisms",
           "target": "Une filtration visant les microorganismes",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -5696,7 +5696,7 @@
               "target": "filtration",
               "english": "filtration",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 4,
               "end": 14
@@ -5705,7 +5705,7 @@
               "target": "visant",
               "english": "targeting",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 15,
               "end": 21
@@ -5723,7 +5723,7 @@
               "target": "microorganismes",
               "english": "microorganisms",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 26,
               "end": 41
@@ -6105,14 +6105,14 @@
       ]
     },
     {
-      "target": "Le cidre pétillant peut obtenir son gaz de plusieurs façons.",
-      "english": "Sparkling cider can obtain its gas in several ways.",
+      "target": "Le gaz d'un cidre pétillant peut provenir de plusieurs procédés.",
+      "english": "The gas in a sparkling cider can come from several processes.",
       "alignment": [
         {
-          "english": "Sparkling cider",
-          "target": "Le cidre pétillant",
+          "english": "The gas in a sparkling cider",
+          "target": "Le gaz d'un cidre pétillant",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6125,80 +6125,89 @@
               "end": 2
             },
             {
+              "target": "gaz",
+              "english": "gas",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            },
+            {
+              "target": "d'",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
+            },
+            {
+              "target": "un",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 11
+            },
+            {
               "target": "cidre",
               "english": "cider",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 8
+              "start": 12,
+              "end": 17
             },
             {
               "target": "pétillant",
               "english": "sparkling",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 18
+              "start": 18,
+              "end": 27
             }
           ]
         },
         {
-          "english": "can obtain its gas",
-          "target": "peut obtenir son gaz",
+          "english": "can come",
+          "target": "peut provenir",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "peut",
               "english": "can",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 4
             },
             {
-              "target": "obtenir",
-              "english": "obtain",
+              "target": "provenir",
+              "english": "come",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
-              "end": 12
-            },
-            {
-              "target": "son",
-              "english": "its",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 13,
-              "end": 16
-            },
-            {
-              "target": "gaz",
-              "english": "gas",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 17,
-              "end": 20
+              "end": 13
             }
           ]
         },
         {
-          "english": "in several ways",
-          "target": "de plusieurs façons",
+          "english": "from several processes",
+          "target": "de plusieurs procédés",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "de",
-              "english": "of",
+              "english": "from",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -6215,13 +6224,13 @@
               "end": 12
             },
             {
-              "target": "façons",
-              "english": "ways",
+              "target": "procédés",
+              "english": "processes",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 13,
-              "end": 19
+              "end": 21
             }
           ]
         }
@@ -6236,7 +6245,7 @@
           "english": "Forced carbonation",
           "target": "Une carbonatation forcée",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -6252,7 +6261,7 @@
               "target": "carbonatation",
               "english": "carbonation",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 4,
               "end": 17
@@ -6261,7 +6270,7 @@
               "target": "forcée",
               "english": "forced",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 18,
               "end": 24
@@ -6272,14 +6281,14 @@
           "english": "introduces carbon dioxide",
           "target": "introduit du gaz carbonique",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
               "target": "introduit",
               "english": "introduces",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 0,
               "end": 9
@@ -6297,7 +6306,7 @@
               "target": "gaz carbonique",
               "english": "carbon dioxide",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 13,
               "end": 27
@@ -6467,7 +6476,7 @@
           "english": "through yeast activity",
           "target": "par l'activité des levures",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -6492,7 +6501,7 @@
               "target": "activité",
               "english": "activity",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 6,
               "end": 14
@@ -6510,7 +6519,7 @@
               "target": "levures",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 19,
               "end": 26
@@ -7312,7 +7321,7 @@
           "english": "Clarification of the must",
           "target": "La défécation du moût",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -7328,7 +7337,7 @@
               "target": "défécation",
               "english": "clarification",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 13
@@ -7346,7 +7355,7 @@
               "target": "moût",
               "english": "must",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 17,
               "end": 21
@@ -7357,14 +7366,14 @@
           "english": "often called “keeving” in English",
           "target": "souvent appelée « keeving » en anglais",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
               "target": "souvent",
               "english": "often",
               "category": "adverb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 0,
               "end": 7
@@ -7373,7 +7382,7 @@
               "target": "appelée",
               "english": "called",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 8,
               "end": 15
@@ -7382,7 +7391,7 @@
               "target": "keeving",
               "english": "keeving",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 18,
               "end": 25
@@ -7400,7 +7409,7 @@
               "target": "anglais",
               "english": "English",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 31,
               "end": 38
@@ -7411,14 +7420,14 @@
           "english": "involves pectins",
           "target": "fait intervenir les pectines",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
               "target": "fait intervenir",
               "english": "involves",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 0,
               "end": 15
@@ -7436,7 +7445,7 @@
               "target": "pectines",
               "english": "pectins",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 20,
               "end": 28
@@ -7453,7 +7462,7 @@
           "english": "A brown cap",
           "target": "Un chapeau brun",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -7469,7 +7478,7 @@
               "target": "chapeau",
               "english": "cap",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 10
@@ -7478,7 +7487,7 @@
               "target": "brun",
               "english": "brown",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 11,
               "end": 15
@@ -7516,7 +7525,7 @@
           "english": "carrying away some nutrients and yeast",
           "target": "en entraînant une partie des nutriments et des levures",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -7532,7 +7541,7 @@
               "target": "entraînant",
               "english": "carrying away",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 13
@@ -7550,7 +7559,7 @@
               "target": "partie",
               "english": "part",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 18,
               "end": 24
@@ -7568,7 +7577,7 @@
               "target": "nutriments",
               "english": "nutrients",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 29,
               "end": 39
@@ -7595,7 +7604,7 @@
               "target": "levures",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 47,
               "end": 54
@@ -7710,48 +7719,48 @@
       ]
     },
     {
-      "target": "C'est une technique exigeante et variable, pas un raccourci vers une bouteille douce sans risque.",
-      "english": "It is a demanding, variable technique, not a shortcut to a risk-free sweet bottle.",
+      "target": "Cette technique est exigeante et variable; elle ne garantit pas à elle seule la sécurité d'un cidre doux en bouteille.",
+      "english": "This technique is demanding and variable; on its own, it does not guarantee the safety of bottled sweet cider.",
       "alignment": [
         {
-          "english": "It is a demanding, variable technique",
-          "target": "C'est une technique exigeante et variable",
+          "english": "This technique is demanding and variable",
+          "target": "Cette technique est exigeante et variable",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "C'est",
-              "english": "it is",
-              "category": "verb",
+              "target": "Cette",
+              "english": "this",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
               "end": 5
             },
             {
-              "target": "une",
-              "english": "a",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "technique",
+              "english": "technical",
+              "category": "adjective",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
-              "end": 9
+              "end": 15
             },
             {
-              "target": "technique",
-              "english": "technique",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "target": "est",
+              "english": "is",
+              "category": "verb",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 10,
+              "start": 16,
               "end": 19
             },
             {
               "target": "exigeante",
               "english": "demanding",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 20,
               "end": 29
@@ -7769,7 +7778,7 @@
               "target": "variable",
               "english": "variable",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 33,
               "end": 41
@@ -7777,20 +7786,74 @@
           ]
         },
         {
-          "english": "not a shortcut to a risk-free sweet bottle",
-          "target": "pas un raccourci vers une bouteille douce sans risque",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "on its own, it does not guarantee",
+          "target": "elle ne garantit pas à elle seule",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "pas",
-              "english": "not",
+              "target": "elle",
+              "english": "it",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 3
+              "end": 4
+            },
+            {
+              "target": "ne garantit pas",
+              "english": "does not guarantee",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 20
+            },
+            {
+              "target": "à elle seule",
+              "english": "on its own",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 21,
+              "end": 33
+            }
+          ]
+        },
+        {
+          "english": "the safety of bottled sweet cider",
+          "target": "la sécurité d'un cidre doux en bouteille",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "sécurité",
+              "english": "safety",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 11
+            },
+            {
+              "target": "d'",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 14
             },
             {
               "target": "un",
@@ -7798,71 +7861,44 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 4,
-              "end": 6
-            },
-            {
-              "target": "raccourci",
-              "english": "shortcut",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 7,
+              "start": 14,
               "end": 16
             },
             {
-              "target": "vers",
-              "english": "towards",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "cidre",
+              "english": "cider",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 17,
-              "end": 21
+              "end": 22
             },
             {
-              "target": "une",
-              "english": "a",
+              "target": "doux",
+              "english": "sweet",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 23,
+              "end": 27
+            },
+            {
+              "target": "en",
+              "english": "in",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 22,
-              "end": 25
+              "start": 28,
+              "end": 30
             },
             {
               "target": "bouteille",
               "english": "bottle",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 26,
-              "end": 35
-            },
-            {
-              "target": "douce",
-              "english": "sweet",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 36,
-              "end": 41
-            },
-            {
-              "target": "sans",
-              "english": "without",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 42,
-              "end": 46
-            },
-            {
-              "target": "risque",
-              "english": "risk",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 47,
-              "end": 53
+              "start": 31,
+              "end": 40
             }
           ]
         }

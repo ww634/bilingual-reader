@@ -28,7 +28,7 @@ Now imagine two friends looking at the same juice. The first announces that he w
 
 Sweetness and bubbles are two distinct characteristics. A cider can be dry and sparkling, or sweet and still. However, achieving the desired result requires a coherent method. We will explain the other possibilities without changing our first goal at every discovery.
 
-This way of working will also help you to learn French. A word becomes easier to remember when it answers a real question. You will encounter “to choose” beside a tree, then beside a vessel. You will meet again “to compare” in a bite and in a measurement. Vocabulary will make several journeys, and you with it.
+This way of working will also help you to learn French. A word becomes easier to remember when it answers a real question. You will encounter “to choose” beside a tree, then beside a vessel. You will encounter “to compare” again when tasting a fruit and then when taking a measurement. Vocabulary will make several journeys, and you with it.
 
 One final clarification before setting off: the first chapters prepare the later ones. Do not put juice into a sealed bottle to try fermentation based only on this introduction. The gas produced must be managed with appropriate equipment. We will take the time to explain each stage before carrying it out.
 

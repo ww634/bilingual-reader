@@ -2,7 +2,7 @@
   "id": "ch-20",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "La prochaine récolte",
     "english": "The Next Harvest"
@@ -740,21 +740,21 @@
       ]
     },
     {
-      "target": "Puis nous avons suivi les arbres, la récolte et les gestes de transformation.",
-      "english": "Then we followed the trees, the harvest and the actions of processing.",
+      "target": "Puis nous avons suivi la vie du verger, la récolte et la transformation des fruits.",
+      "english": "Then we followed life in the orchard, the harvest and the processing of the fruit.",
       "alignment": [
         {
           "english": "Then we followed",
           "target": "Puis nous avons suivi",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "Puis",
               "english": "then",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 4
@@ -772,7 +772,7 @@
               "target": "avons suivi",
               "english": "followed",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
               "end": 21
@@ -780,37 +780,10 @@
           ]
         },
         {
-          "english": "the trees",
-          "target": "les arbres",
+          "english": "life in the orchard, the harvest",
+          "target": "la vie du verger, la récolte",
           "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "les",
-              "english": "the",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 3
-            },
-            {
-              "target": "arbres",
-              "english": "trees",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 4,
-              "end": 10
-            }
-          ]
-        },
-        {
-          "english": "the harvest and the actions of processing",
-          "target": "la récolte et les gestes de transformation",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -823,58 +796,103 @@
               "end": 2
             },
             {
+              "target": "vie",
+              "english": "life",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            },
+            {
+              "target": "du",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 9
+            },
+            {
+              "target": "verger",
+              "english": "orchard",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 16
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 18,
+              "end": 20
+            },
+            {
               "target": "récolte",
               "english": "harvest",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 10
-            },
+              "start": 21,
+              "end": 28
+            }
+          ]
+        },
+        {
+          "english": "and the processing of the fruit",
+          "target": "et la transformation des fruits",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
             {
               "target": "et",
               "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 11,
-              "end": 13
+              "start": 0,
+              "end": 2
             },
             {
-              "target": "les",
+              "target": "la",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 14,
-              "end": 17
-            },
-            {
-              "target": "gestes",
-              "english": "actions",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 18,
-              "end": 24
-            },
-            {
-              "target": "de",
-              "english": "of",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 25,
-              "end": 27
+              "start": 3,
+              "end": 5
             },
             {
               "target": "transformation",
               "english": "transformation",
               "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 20
+            },
+            {
+              "target": "des",
+              "english": "some",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 28,
-              "end": 42
+              "start": 21,
+              "end": 24
+            },
+            {
+              "target": "fruits",
+              "english": "fruit",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 25,
+              "end": 31
             }
           ]
         }
@@ -1022,68 +1040,86 @@
       ]
     },
     {
-      "target": "Notre exemple principal a choisi un chemin plus accessible pour débuter.",
-      "english": "Our main example chose a more accessible route for beginning.",
+      "target": "Pour notre exemple principal, nous avons choisi un chemin plus accessible pour débuter.",
+      "english": "For our main example, we chose a more accessible route for a beginner.",
       "alignment": [
         {
-          "english": "Our main example",
-          "target": "Notre exemple principal",
+          "english": "For our main example",
+          "target": "Pour notre exemple principal",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Notre",
-              "english": "our",
+              "target": "Pour",
+              "english": "for",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 5
+              "end": 4
+            },
+            {
+              "target": "notre",
+              "english": "our",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 10
             },
             {
               "target": "exemple",
               "english": "example",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 6,
-              "end": 13
+              "start": 11,
+              "end": 18
             },
             {
               "target": "principal",
               "english": "main",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 14,
-              "end": 23
+              "start": 19,
+              "end": 28
             }
           ]
         },
         {
-          "english": "chose",
-          "target": "a choisi",
+          "english": "we chose",
+          "target": "nous avons choisi",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "a choisi",
-              "english": "chose",
-              "category": "verb",
+              "target": "nous",
+              "english": "we",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 8
+              "end": 4
+            },
+            {
+              "target": "avons choisi",
+              "english": "chose",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 17
             }
           ]
         },
         {
-          "english": "a more accessible route for beginning",
+          "english": "a more accessible route for a beginner",
           "target": "un chemin plus accessible pour débuter",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -1099,7 +1135,7 @@
               "target": "chemin",
               "english": "path",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 9
@@ -1108,7 +1144,7 @@
               "target": "plus",
               "english": "more",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
               "end": 14
@@ -1117,7 +1153,7 @@
               "target": "accessible",
               "english": "accessible",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 15,
               "end": 25
@@ -1135,7 +1171,7 @@
               "target": "débuter",
               "english": "begin",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 31,
               "end": 38
@@ -1822,19 +1858,19 @@
       ]
     },
     {
-      "target": "Le parcours illustre des décisions à prendre, pas une récolte de résultats inventés.",
-      "english": "The journey illustrates decisions to make, not a harvest of invented results.",
+      "target": "Ce parcours vous aide à décider quelles observations et quelles mesures recueillir pour votre propre lot.",
+      "english": "This journey helps you decide which observations and measurements to collect for your own batch.",
       "alignment": [
         {
-          "english": "The journey illustrates",
-          "target": "Le parcours illustre",
+          "english": "This journey helps you decide",
+          "target": "Ce parcours vous aide à décider",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Le",
-              "english": "the",
+              "target": "Ce",
+              "english": "this",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -1845,46 +1881,28 @@
               "target": "parcours",
               "english": "journey",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 11
             },
             {
-              "target": "illustre",
-              "english": "illustrates",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 12,
-              "end": 20
-            }
-          ]
-        },
-        {
-          "english": "decisions to make",
-          "target": "des décisions à prendre",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "des",
-              "english": "some",
+              "target": "vous",
+              "english": "you",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "start": 12,
+              "end": 16
             },
             {
-              "target": "décisions",
-              "english": "decisions",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "target": "aide",
+              "english": "helps",
+              "category": "verb",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 13
+              "start": 17,
+              "end": 21
             },
             {
               "target": "à",
@@ -1892,80 +1910,125 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 14,
-              "end": 15
+              "start": 22,
+              "end": 23
             },
             {
-              "target": "prendre",
-              "english": "take",
+              "target": "décider",
+              "english": "decide",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 16,
-              "end": 23
+              "start": 24,
+              "end": 31
             }
           ]
         },
         {
-          "english": "not a harvest of invented results",
-          "target": "pas une récolte de résultats inventés",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "which observations and measurements to collect",
+          "target": "quelles observations et quelles mesures recueillir",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "pas",
-              "english": "not",
+              "target": "quelles",
+              "english": "which",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 3
-            },
-            {
-              "target": "une",
-              "english": "a",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 4,
               "end": 7
             },
             {
-              "target": "récolte",
-              "english": "harvest",
+              "target": "observations",
+              "english": "observations",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 8,
-              "end": 15
+              "end": 20
             },
             {
-              "target": "de",
-              "english": "of",
+              "target": "et",
+              "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 16,
-              "end": 18
+              "start": 21,
+              "end": 23
             },
             {
-              "target": "résultats",
-              "english": "results",
+              "target": "quelles",
+              "english": "which",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 24,
+              "end": 31
+            },
+            {
+              "target": "mesures",
+              "english": "measurements",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 19,
-              "end": 28
+              "start": 32,
+              "end": 39
             },
             {
-              "target": "inventés",
-              "english": "invented",
-              "category": "adjective",
+              "target": "recueillir",
+              "english": "collect",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 40,
+              "end": 50
+            }
+          ]
+        },
+        {
+          "english": "for your own batch",
+          "target": "pour votre propre lot",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "pour",
+              "english": "for",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 29,
-              "end": 37
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "votre",
+              "english": "your",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 10
+            },
+            {
+              "target": "propre",
+              "english": "own",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 17
+            },
+            {
+              "target": "lot",
+              "english": "batch",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 18,
+              "end": 21
             }
           ]
         }
@@ -2114,19 +2177,151 @@
       "paragraph_start": true
     },
     {
-      "target": "Une date, un volume ou une lecture d'instrument appartient aux observations enregistrées.",
-      "english": "A date, a volume or an instrument reading belongs among recorded observations.",
+      "target": "Dates, volumes et lectures d'instruments sont des données à consigner.",
+      "english": "Dates, volumes and instrument readings are data to record.",
       "alignment": [
         {
-          "english": "A date",
-          "target": "Une date",
+          "english": "Dates, volumes and instrument readings",
+          "target": "Dates, volumes et lectures d'instruments",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "Dates",
+              "english": "dates",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 5
+            },
+            {
+              "target": "volumes",
+              "english": "volumes",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 14
+            },
+            {
+              "target": "et",
+              "english": "and",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 17
+            },
+            {
+              "target": "lectures",
+              "english": "readings",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 18,
+              "end": 26
+            },
+            {
+              "target": "d'",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 27,
+              "end": 29
+            },
+            {
+              "target": "instruments",
+              "english": "instruments",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 29,
+              "end": 40
+            }
+          ]
+        },
+        {
+          "english": "are data",
+          "target": "sont des données",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "sont",
+              "english": "are",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "des",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 8
+            },
+            {
+              "target": "données",
+              "english": "data",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 16
+            }
+          ]
+        },
+        {
+          "english": "to record",
+          "target": "à consigner",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "à",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 1
+            },
+            {
+              "target": "consigner",
+              "english": "record",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "Une impression de fraîcheur est une observation sensorielle; précisez les conditions de dégustation.",
+      "english": "An impression of freshness is a sensory observation; specify the tasting conditions.",
+      "alignment": [
+        {
+          "english": "An impression of freshness",
+          "target": "Une impression de fraîcheur",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "Une",
-              "english": "a",
+              "english": "an",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -2134,79 +2329,16 @@
               "end": 3
             },
             {
-              "target": "date",
-              "english": "date",
+              "target": "impression",
+              "english": "impression",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
-              "end": 8
-            }
-          ]
-        },
-        {
-          "english": "a volume",
-          "target": "un volume",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "un",
-              "english": "a",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 2
-            },
-            {
-              "target": "volume",
-              "english": "volume",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 3,
-              "end": 9
-            }
-          ]
-        },
-        {
-          "english": "or an instrument reading belongs among recorded observations",
-          "target": "ou une lecture d'instrument appartient aux observations enregistrées",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "ou",
-              "english": "or",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 2
-            },
-            {
-              "target": "une",
-              "english": "an",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 3,
-              "end": 6
-            },
-            {
-              "target": "lecture",
-              "english": "reading",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 7,
               "end": 14
             },
             {
-              "target": "d'",
+              "target": "de",
               "english": "of",
               "category": "function_word",
               "frequency_band": "very_common",
@@ -2215,100 +2347,13 @@
               "end": 17
             },
             {
-              "target": "instrument",
-              "english": "instrument",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 17,
-              "end": 27
-            },
-            {
-              "target": "appartient",
-              "english": "belongs",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 28,
-              "end": 38
-            },
-            {
-              "target": "aux",
-              "english": "to the",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 39,
-              "end": 42
-            },
-            {
-              "target": "observations",
-              "english": "observations",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 43,
-              "end": 55
-            },
-            {
-              "target": "enregistrées",
-              "english": "recorded",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 56,
-              "end": 68
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "target": "Une sensation de fraîcheur est une observation sensorielle à préciser avec ses conditions.",
-      "english": "A sensation of freshness is a sensory observation to specify with its conditions.",
-      "alignment": [
-        {
-          "english": "A sensation of freshness",
-          "target": "Une sensation de fraîcheur",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "Une",
-              "english": "a",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 3
-            },
-            {
-              "target": "sensation",
-              "english": "sensation",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 4,
-              "end": 13
-            },
-            {
-              "target": "de",
-              "english": "of",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 14,
-              "end": 16
-            },
-            {
               "target": "fraîcheur",
               "english": "freshness",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 17,
-              "end": 26
+              "start": 18,
+              "end": 27
             }
           ]
         },
@@ -2358,56 +2403,56 @@
           ]
         },
         {
-          "english": "to specify with its conditions",
-          "target": "à préciser avec ses conditions",
+          "english": "specify the tasting conditions",
+          "target": "précisez les conditions de dégustation",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "à",
-              "english": "to",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 1
-            },
-            {
-              "target": "préciser",
+              "target": "précisez",
               "english": "specify",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 2,
-              "end": 10
+              "start": 0,
+              "end": 8
             },
             {
-              "target": "avec",
-              "english": "with",
+              "target": "les",
+              "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 11,
-              "end": 15
-            },
-            {
-              "target": "ses",
-              "english": "its",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 16,
-              "end": 19
+              "start": 9,
+              "end": 12
             },
             {
               "target": "conditions",
               "english": "conditions",
               "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 23
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 20,
-              "end": 30
+              "start": 24,
+              "end": 26
+            },
+            {
+              "target": "dégustation",
+              "english": "tasting",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 27,
+              "end": 38
             }
           ]
         }
@@ -2537,132 +2582,114 @@
       ]
     },
     {
-      "target": "Supposons que vous rédigiez le bilan d'un essai personnel fictif.",
-      "english": "Suppose you are writing the review of an imaginary personal trial.",
+      "target": "Imaginons maintenant quelques lignes dans un carnet d'essai fictif.",
+      "english": "Let us now imagine a few lines in a fictional trial notebook.",
       "alignment": [
         {
-          "english": "Suppose you are writing",
-          "target": "Supposons que vous rédigiez",
+          "english": "Let us now imagine a few lines",
+          "target": "Imaginons maintenant quelques lignes",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Supposons",
-              "english": "suppose",
+              "target": "Imaginons",
+              "english": "let us imagine",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 9
             },
             {
-              "target": "que",
-              "english": "that",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "maintenant",
+              "english": "now",
+              "category": "adverb",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
-              "end": 13
+              "end": 20
             },
             {
-              "target": "vous",
-              "english": "you",
+              "target": "quelques",
+              "english": "a few",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 14,
-              "end": 18
+              "start": 21,
+              "end": 29
             },
             {
-              "target": "rédigiez",
-              "english": "are writing",
-              "category": "verb",
-              "frequency_band": "very_common",
+              "target": "lignes",
+              "english": "lines",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 19,
-              "end": 27
+              "start": 30,
+              "end": 36
             }
           ]
         },
         {
-          "english": "the review",
-          "target": "le bilan",
+          "english": "in a fictional trial notebook",
+          "target": "dans un carnet d'essai fictif",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "le",
-              "english": "the",
+              "target": "dans",
+              "english": "in",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 2
+              "end": 4
             },
             {
-              "target": "bilan",
-              "english": "review",
-              "category": "noun",
+              "target": "un",
+              "english": "a",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 3,
-              "end": 8
-            }
-          ]
-        },
-        {
-          "english": "of an imaginary personal trial",
-          "target": "d'un essai personnel fictif",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "carnet",
+              "english": "notebook",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 14
+            },
             {
               "target": "d'",
               "english": "of",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
-            },
-            {
-              "target": "un",
-              "english": "an",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 2,
-              "end": 4
+              "start": 15,
+              "end": 17
             },
             {
               "target": "essai",
               "english": "trial",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 5,
-              "end": 10
-            },
-            {
-              "target": "personnel",
-              "english": "personal",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 11,
-              "end": 20
+              "start": 17,
+              "end": 22
             },
             {
               "target": "fictif",
               "english": "imaginary",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 21,
-              "end": 27
+              "start": 23,
+              "end": 29
             }
           ]
         }
@@ -5868,14 +5895,14 @@
       ]
     },
     {
-      "target": "Une technique entendue ailleurs demande parfois une adaptation locale.",
-      "english": "A technique heard of elsewhere sometimes requires local adaptation.",
+      "target": "Une méthode découverte ailleurs demande parfois une adaptation locale.",
+      "english": "A method discovered elsewhere sometimes needs local adaptation.",
       "alignment": [
         {
-          "english": "A technique heard of elsewhere",
-          "target": "Une technique entendue ailleurs",
-          "category": "verb",
-          "frequency_band": "very_common",
+          "english": "A method discovered elsewhere",
+          "target": "Une méthode découverte ailleurs",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5888,28 +5915,28 @@
               "end": 3
             },
             {
-              "target": "technique",
-              "english": "technique",
+              "target": "méthode",
+              "english": "method",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
-              "end": 13
+              "end": 11
             },
             {
-              "target": "entendue",
-              "english": "heard",
-              "category": "verb",
-              "frequency_band": "very_common",
+              "target": "découverte",
+              "english": "discovery",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 14,
+              "start": 12,
               "end": 22
             },
             {
               "target": "ailleurs",
               "english": "elsewhere",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 23,
               "end": 31
@@ -5917,17 +5944,17 @@
           ]
         },
         {
-          "english": "sometimes requires",
+          "english": "sometimes needs",
           "target": "demande parfois",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "demande",
               "english": "requires",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 7
@@ -5936,7 +5963,7 @@
               "target": "parfois",
               "english": "sometimes",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 8,
               "end": 15
@@ -5947,7 +5974,7 @@
           "english": "local adaptation",
           "target": "une adaptation locale",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5963,7 +5990,7 @@
               "target": "adaptation",
               "english": "adaptation",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
               "end": 14
@@ -5972,7 +5999,7 @@
               "target": "locale",
               "english": "local",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 15,
               "end": 21
@@ -5982,14 +6009,14 @@
       ]
     },
     {
-      "target": "Le pommier du voisin ne lit pas forcément la même météo que votre livre.",
-      "english": "The neighbour's apple tree does not necessarily read the same weather forecast as your book.",
+      "target": "Le pommier du voisin ne suit pas forcément le calendrier de votre livre.",
+      "english": "The neighbour's apple tree does not necessarily follow your book's calendar.",
       "alignment": [
         {
           "english": "The neighbour's apple tree",
           "target": "Le pommier du voisin",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6005,7 +6032,7 @@
               "target": "pommier",
               "english": "apple tree",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 10
@@ -6023,7 +6050,7 @@
               "target": "voisin",
               "english": "neighbour",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 14,
               "end": 20
@@ -6031,32 +6058,59 @@
           ]
         },
         {
-          "english": "does not necessarily read",
-          "target": "ne lit pas forcément",
+          "english": "does not necessarily follow",
+          "target": "ne suit pas forcément",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "ne lit pas forcément",
-              "english": "does not necessarily read",
-              "category": "verb",
+              "target": "ne",
+              "english": "negation marker",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 20
+              "end": 2
+            },
+            {
+              "target": "suit",
+              "english": "follows",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 7
+            },
+            {
+              "target": "pas",
+              "english": "not",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 11
+            },
+            {
+              "target": "forcément",
+              "english": "necessarily",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 21
             }
           ]
         },
         {
-          "english": "the same weather forecast as your book",
-          "target": "la même météo que votre livre",
+          "english": "your book's calendar",
+          "target": "le calendrier de votre livre",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "la",
+              "target": "le",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
@@ -6065,31 +6119,22 @@
               "end": 2
             },
             {
-              "target": "même",
-              "english": "same",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "calendrier",
+              "english": "calendar",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
-              "end": 7
-            },
-            {
-              "target": "météo",
-              "english": "weather",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 8,
               "end": 13
             },
             {
-              "target": "que",
-              "english": "that",
+              "target": "de",
+              "english": "of",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 14,
-              "end": 17
+              "end": 16
             },
             {
               "target": "votre",
@@ -6097,17 +6142,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 18,
-              "end": 23
+              "start": 17,
+              "end": 22
             },
             {
               "target": "livre",
               "english": "book",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 24,
-              "end": 29
+              "start": 23,
+              "end": 28
             }
           ]
         }
@@ -7410,96 +7455,105 @@
       ]
     },
     {
-      "target": "Écoutez les méthodes différentes en demandant à quels produits elles s'appliquent.",
-      "english": "Listen to different methods while asking which products they apply to.",
+      "target": "Quand on vous présente une autre méthode, demandez à quels produits et à quelles conditions elle s'applique.",
+      "english": "When someone presents another method, ask which products and conditions it applies to.",
       "alignment": [
         {
-          "english": "Listen to different methods",
-          "target": "Écoutez les méthodes différentes",
+          "english": "When someone presents another method",
+          "target": "Quand on vous présente une autre méthode",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Écoutez",
-              "english": "listen to",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 7
-            },
-            {
-              "target": "les",
-              "english": "the",
+              "target": "Quand",
+              "english": "when",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 8,
-              "end": 11
+              "start": 0,
+              "end": 5
             },
             {
-              "target": "méthodes",
-              "english": "methods",
-              "category": "noun",
+              "target": "on",
+              "english": "we",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 12,
-              "end": 20
+              "start": 6,
+              "end": 8
             },
             {
-              "target": "différentes",
-              "english": "different",
-              "category": "adjective",
+              "target": "vous",
+              "english": "you",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 21,
+              "start": 9,
+              "end": 13
+            },
+            {
+              "target": "présente",
+              "english": "has",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 14,
+              "end": 22
+            },
+            {
+              "target": "une",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 23,
+              "end": 26
+            },
+            {
+              "target": "autre",
+              "english": "other",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 27,
               "end": 32
-            }
-          ]
-        },
-        {
-          "english": "while asking",
-          "target": "en demandant",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "en",
-              "english": "while",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 2
             },
             {
-              "target": "demandant",
-              "english": "asking",
-              "category": "verb",
-              "frequency_band": "very_common",
+              "target": "méthode",
+              "english": "method",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 12
+              "start": 33,
+              "end": 40
             }
           ]
         },
         {
-          "english": "which products they apply to",
-          "target": "à quels produits elles s'appliquent",
+          "english": "ask which products and conditions",
+          "target": "demandez à quels produits et à quelles conditions",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
+            {
+              "target": "demandez",
+              "english": "ask",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
+            },
             {
               "target": "à",
               "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 1
+              "start": 9,
+              "end": 10
             },
             {
               "target": "quels",
@@ -7507,35 +7561,89 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 2,
-              "end": 7
+              "start": 11,
+              "end": 16
             },
             {
               "target": "produits",
               "english": "products",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 8,
-              "end": 16
+              "start": 17,
+              "end": 25
             },
             {
-              "target": "elles",
-              "english": "they",
+              "target": "et",
+              "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 17,
-              "end": 22
+              "start": 26,
+              "end": 28
             },
             {
-              "target": "s'appliquent",
-              "english": "apply",
-              "category": "verb",
+              "target": "à",
+              "english": "to",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 23,
-              "end": 35
+              "start": 29,
+              "end": 30
+            },
+            {
+              "target": "quelles",
+              "english": "which",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 31,
+              "end": 38
+            },
+            {
+              "target": "conditions",
+              "english": "conditions",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 39,
+              "end": 49
+            }
+          ]
+        },
+        {
+          "english": "it applies to",
+          "target": "elle s'applique",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "elle",
+              "english": "it",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 4
+            },
+            {
+              "target": "s'",
+              "english": "reflexive pronoun",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "applique",
+              "english": "applies",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 15
             }
           ]
         }

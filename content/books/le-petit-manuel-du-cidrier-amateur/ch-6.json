@@ -2,7 +2,7 @@
   "id": "ch-6",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Un petit atelier bien préparé",
     "english": "Preparing a Small Workspace"
@@ -4237,7 +4237,7 @@
           "lookup": [
             {
               "target": "Il faut",
-              "english": "you need to",
+              "english": "it is necessary to",
               "category": "verb",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -8296,14 +8296,14 @@
       ]
     },
     {
-      "target": "Après cet essai, reprenez la préparation sanitaire avant le contact avec le produit.",
-      "english": "After that trial, repeat the sanitation preparation before contact with the product.",
+      "target": "Après cet essai, répétez le nettoyage et la désinfection avant tout contact avec le cidre.",
+      "english": "After this trial, repeat cleaning and sanitising before any contact with the cider.",
       "alignment": [
         {
-          "english": "After that trial",
+          "english": "After this trial",
           "target": "Après cet essai",
-          "category": "adverb",
-          "frequency_band": "very_common",
+          "category": "noun",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -8317,7 +8317,7 @@
             },
             {
               "target": "cet",
-              "english": "that",
+              "english": "this",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -8328,7 +8328,7 @@
               "target": "essai",
               "english": "trial",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
               "end": 15
@@ -8336,64 +8336,73 @@
           ]
         },
         {
-          "english": "repeat",
-          "target": "reprenez",
+          "english": "repeat cleaning and sanitising",
+          "target": "répétez le nettoyage et la désinfection",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "reprenez",
+              "target": "répétez",
               "english": "repeat",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 8
-            }
-          ]
-        },
-        {
-          "english": "the sanitation preparation",
-          "target": "la préparation sanitaire",
-          "category": "noun",
-          "frequency_band": "uncommon",
-          "is_idiom": false,
-          "lookup": [
+              "end": 7
+            },
+            {
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 10
+            },
+            {
+              "target": "nettoyage",
+              "english": "cleaning",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 20
+            },
+            {
+              "target": "et",
+              "english": "and",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 21,
+              "end": 23
+            },
             {
               "target": "la",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 24,
+              "end": 26
             },
             {
-              "target": "préparation",
-              "english": "preparation",
+              "target": "désinfection",
+              "english": "sanitising",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 14
-            },
-            {
-              "target": "sanitaire",
-              "english": "sanitation",
-              "category": "adjective",
-              "frequency_band": "uncommon",
-              "is_idiom": false,
-              "start": 15,
-              "end": 24
+              "start": 27,
+              "end": 39
             }
           ]
         },
         {
-          "english": "before contact",
-          "target": "avant le contact",
+          "english": "before any contact with the cider",
+          "target": "avant tout contact avec le cidre",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -8406,40 +8415,31 @@
               "end": 5
             },
             {
-              "target": "le",
-              "english": "the",
+              "target": "tout",
+              "english": "all",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 6,
-              "end": 8
+              "end": 10
             },
             {
               "target": "contact",
               "english": "contact",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 16
-            }
-          ]
-        },
-        {
-          "english": "with the product",
-          "target": "avec le produit",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 11,
+              "end": 18
+            },
             {
               "target": "avec",
               "english": "with",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 4
+              "start": 19,
+              "end": 23
             },
             {
               "target": "le",
@@ -8447,17 +8447,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 5,
-              "end": 7
+              "start": 24,
+              "end": 26
             },
             {
-              "target": "produit",
-              "english": "product",
+              "target": "cidre",
+              "english": "cider",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 8,
-              "end": 15
+              "start": 27,
+              "end": 32
             }
           ]
         }

@@ -16,11 +16,11 @@ Prepare an amount that you can press without a long wait. Juice and pulp are exp
 
 Fit the cloths or pressing bags specified by the manufacturer. They must be clean and suitable for contact with juice. Distribute the pulp according to the method for your press, without exceeding its capacity. The collection vessel waits beneath the outlet, rather than at the other end of the garden.
 
-Apply pressure gradually, following the machine's limits. Give the juice time to find its way out. On a screw press, a long improvised extension is not an improvement on the instructions. Do not exceed the permitted force to obtain a few extra drops. The aim is steady work, not a muscle contest.
+Apply pressure gradually, following the machine's limits. Give the juice time to find its way out. On a screw press, a long improvised extension is no substitute for the manufacturer's instructions. Do not exceed the permitted force to obtain a few extra drops. The aim is steady work, not a muscle contest.
 
 The solid residue is called pomace. Its presence reminds you that the weight of apples and the volume of juice are two different things. Record the weight of prepared fruit and the volume collected if you want to compare your trials. A yield only has meaning if we know how it was calculated.
 
-Suppose, for an imaginary calculation, that ten kilograms of apples produce six litres of juice. The volumetric yield is then six tenths of a litre per kilogram. This number illustrates a calculation, not a promise for your press. The fruit, their condition and the equipment can change the result.
+Suppose, for an imaginary calculation, that ten kilograms of apples produce six litres of juice. The volumetric yield is then six tenths of a litre per kilogram. This number illustrates a calculation, not a promise for your press. The fruit, its condition and the equipment can change the result.
 
 The flowing juice may contain small particles. Coarse straining with suitable equipment removes unwanted fragments, but does not sanitise the liquid. Freshly pressed juice is not ready to drink simply because it smells lovely. Its food-safety preparation requires a verified method suited to the intended use.
 

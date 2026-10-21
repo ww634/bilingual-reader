@@ -6,7 +6,7 @@ The seasons described here correspond to a temperate climate in the Northern Hem
 
 For a mature apple tree grown as a free-standing tree, maintenance pruning is generally carried out in winter, during dormancy. Trained forms have different needs, particularly for summer pruning. You therefore need to identify the form and the age of the tree before applying a method.
 
-Pruning aims to organise the branch structure, to let in light and to preserve fruiting wood. This last term describes the wood that bears the structures capable of producing fruit. We are not trying to give the same haircut to every tree. Shortening all the tips without thinking can remove future fruit.
+Pruning aims to organise the branch structure, to let in light and to preserve fruiting wood. This last term describes the wood that bears the structures capable of producing fruit. We are not trying to give the same haircut to every tree. Shortening all the tips without thinking can reduce the future harvest.
 
 Severe pruning can cause strong regrowth. That is not a reason to cut more the following year. For a neglected tree, plan a gradual restoration with appropriate advice. If you are unsure about a large branch, keep the saw idle while you seek information. A cut branch cannot be glued back with good intentions.
 
@@ -16,9 +16,9 @@ Many flowers do not guarantee many apples. Frost can damage the flowers, and pol
 
 In early summer, some of the small fruit may fall naturally. This drop does not necessarily signal a catastrophe. Look at what remains on the branches before worrying. A tree may still carry too much fruit after this drop.
 
-Thinning means removing some of the young fruit when the crop load is too heavy. It can improve their development and reduce the risk of broken branches. The amount to remove depends on the tree, on its vigour and on the production goal. Do not transfer a rule for large dessert apples automatically to all cider apples.
+Thinning means removing some of the young fruit when the crop load is too heavy. It can improve their development and reduce the risk of broken branches. The amount to remove depends on the tree, on its vigour and on the production goal. Do not automatically apply a rule intended to produce large dessert apples to every cider apple.
 
-Some trees produce heavily one year, then very little the next. We speak of biennial bearing. Appropriate management of the crop load can help to limit this phenomenon. Your notebook takes on here a new value: it allows you to compare several years. A lightly laden tree this year does not tell its whole story.
+Some trees produce heavily one year, then very little the next. We speak of biennial bearing. Appropriate management of the crop load can help to limit this phenomenon. Here your notebook takes on new value: it allows you to compare several years. A lightly laden tree this year does not tell its whole story.
 
 In summer, monitor the available water, especially for young trees. A mulch can help to retain soil moisture and to limit competing weeds. Keep it away from the trunk. Also check ties and stakes: the tree grows, and an over-tight tie can injure it.
 

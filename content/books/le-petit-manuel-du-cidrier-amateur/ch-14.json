@@ -2,7 +2,7 @@
   "id": "ch-14",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Laisser le temps travailler",
     "english": "Giving It Time"
@@ -1724,7 +1724,7 @@
           "english": "that no living yeast remains",
           "target": "qu'il ne reste aucune levure vivante",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -1749,7 +1749,7 @@
               "target": "ne reste",
               "english": "remains",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 6,
               "end": 14
@@ -1767,7 +1767,7 @@
               "target": "levure",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 22,
               "end": 28
@@ -1776,7 +1776,7 @@
               "target": "vivante",
               "english": "living",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 29,
               "end": 36
@@ -1883,7 +1883,7 @@
           "english": "a microbiological analysis",
           "target": "une analyse microbiologique",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -1899,7 +1899,7 @@
               "target": "analyse",
               "english": "analysis",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 4,
               "end": 11
@@ -1908,7 +1908,7 @@
               "target": "microbiologique",
               "english": "microbiological",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 12,
               "end": 27
@@ -2016,13 +2016,13 @@
     },
     {
       "target": "Des levures en suspension peuvent finir par former un dépôt.",
-      "english": "Suspended yeast may eventually form a deposit.",
+      "english": "Suspended yeast may end up forming a deposit.",
       "alignment": [
         {
           "english": "Suspended yeast",
           "target": "Des levures en suspension",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -2038,7 +2038,7 @@
               "target": "levures",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 4,
               "end": 11
@@ -2047,7 +2047,7 @@
               "target": "en suspension",
               "english": "suspended",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 12,
               "end": 25
@@ -2055,74 +2055,65 @@
           ]
         },
         {
-          "english": "may eventually",
-          "target": "peuvent finir",
+          "english": "may end up forming",
+          "target": "peuvent finir par former",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "peuvent",
-              "english": "may",
+              "english": "can",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 7
             },
             {
-              "target": "finir",
-              "english": "eventually",
+              "target": "finir par",
+              "english": "end up",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 8,
-              "end": 13
-            }
-          ]
-        },
-        {
-          "english": "form a deposit",
-          "target": "par former un dépôt",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "par",
-              "english": "by",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "end": 17
             },
             {
               "target": "former",
               "english": "form",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 10
-            },
+              "start": 18,
+              "end": 24
+            }
+          ]
+        },
+        {
+          "english": "a deposit",
+          "target": "un dépôt",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
             {
               "target": "un",
               "english": "a",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 11,
-              "end": 13
+              "start": 0,
+              "end": 2
             },
             {
               "target": "dépôt",
               "english": "deposit",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 14,
-              "end": 19
+              "start": 3,
+              "end": 8
             }
           ]
         }
@@ -2136,7 +2127,7 @@
           "english": "Pectins",
           "target": "Des pectines",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -2152,7 +2143,7 @@
               "target": "pectines",
               "english": "pectins",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 4,
               "end": 12
@@ -4005,7 +3996,7 @@
           "english": "microbial activity",
           "target": "l'activité des microorganismes",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -4021,7 +4012,7 @@
               "target": "activité",
               "english": "activity",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 2,
               "end": 10
@@ -4039,7 +4030,7 @@
               "target": "microorganismes",
               "english": "microorganisms",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 15,
               "end": 30
@@ -4147,7 +4138,7 @@
           "english": "sterilisation",
           "target": "une stérilisation",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -4163,7 +4154,7 @@
               "target": "stérilisation",
               "english": "sterilisation",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 4,
               "end": 17
@@ -5222,14 +5213,14 @@
       ]
     },
     {
-      "target": "Un verre très froid et un verre tempéré ne présentent pas les arômes de la même façon.",
-      "english": "A very cold glass and a temperate glass do not present aromas in the same way.",
+      "target": "Un cidre très froid et un cidre servi à température ambiante n'expriment pas leurs arômes de la même façon.",
+      "english": "A very cold cider and one served at room temperature do not express their aromas in the same way.",
       "alignment": [
         {
-          "english": "A very cold glass",
-          "target": "Un verre très froid",
+          "english": "A very cold cider",
+          "target": "Un cidre très froid",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5242,10 +5233,10 @@
               "end": 2
             },
             {
-              "target": "verre",
-              "english": "glass",
+              "target": "cidre",
+              "english": "cider",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 8
@@ -5263,7 +5254,7 @@
               "target": "froid",
               "english": "cold",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 14,
               "end": 19
@@ -5271,10 +5262,10 @@
           ]
         },
         {
-          "english": "and a temperate glass",
-          "target": "et un verre tempéré",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "and one served at room temperature",
+          "target": "et un cidre servi à température ambiante",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5288,7 +5279,7 @@
             },
             {
               "target": "un",
-              "english": "a",
+              "english": "one",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -5296,55 +5287,82 @@
               "end": 5
             },
             {
-              "target": "verre",
-              "english": "glass",
+              "target": "cidre",
+              "english": "cider",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
               "end": 11
             },
             {
-              "target": "tempéré",
-              "english": "temperate",
-              "category": "adjective",
-              "frequency_band": "very_common",
+              "target": "servi",
+              "english": "served",
+              "category": "verb",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 12,
-              "end": 19
-            }
-          ]
-        },
-        {
-          "english": "do not present aromas in the same way",
-          "target": "ne présentent pas les arômes de la même façon",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "ne présentent pas",
-              "english": "do not present",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
               "end": 17
             },
             {
-              "target": "les",
-              "english": "the",
+              "target": "à",
+              "english": "at",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 18,
+              "end": 19
+            },
+            {
+              "target": "température",
+              "english": "temperature",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 20,
+              "end": 31
+            },
+            {
+              "target": "ambiante",
+              "english": "ambient",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 32,
+              "end": 40
+            }
+          ]
+        },
+        {
+          "english": "do not express their aromas in the same way",
+          "target": "n'expriment pas leurs arômes de la même façon",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "n'expriment pas",
+              "english": "do not express",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 15
+            },
+            {
+              "target": "leurs",
+              "english": "their",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 16,
               "end": 21
             },
             {
               "target": "arômes",
               "english": "aromas",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 22,
               "end": 28
@@ -5380,7 +5398,7 @@
               "target": "façon",
               "english": "way",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 40,
               "end": 45
@@ -5646,42 +5664,42 @@
       "paragraph_start": true
     },
     {
-      "target": "Une acidité paraît-elle moins dominante dans l'équilibre du verre ?",
+      "target": "L'acidité paraît-elle moins dominante dans l'équilibre du verre?",
       "english": "Does acidity seem less dominant in the balance of the glass?",
       "alignment": [
         {
           "english": "Does acidity seem",
-          "target": "Une acidité paraît-elle",
+          "target": "L'acidité paraît-elle",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Une",
-              "english": "a",
+              "target": "L'",
+              "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 3
+              "end": 2
             },
             {
               "target": "acidité",
               "english": "acidity",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 11
+              "start": 2,
+              "end": 9
             },
             {
               "target": "paraît-elle",
               "english": "does it seem",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 12,
-              "end": 23
+              "start": 10,
+              "end": 21
             }
           ]
         },
@@ -5689,7 +5707,7 @@
           "english": "less dominant",
           "target": "moins dominante",
           "category": "adjective",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5705,7 +5723,7 @@
               "target": "dominante",
               "english": "dominant",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
               "end": 15
@@ -5716,7 +5734,7 @@
           "english": "in the balance of the glass",
           "target": "dans l'équilibre du verre",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5741,7 +5759,7 @@
               "target": "équilibre",
               "english": "balance",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 7,
               "end": 16
@@ -5759,7 +5777,7 @@
               "target": "verre",
               "english": "glass",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 20,
               "end": 25
@@ -5883,14 +5901,14 @@
       ]
     },
     {
-      "target": "Ces impressions sont utiles, mais elles ne prouvent pas qu'une quantité d'acide a diminué.",
-      "english": "These impressions are useful, but they do not prove that a quantity of acid has decreased.",
+      "target": "Ces impressions sont utiles, mais elles ne prouvent pas que la quantité d'acide a diminué.",
+      "english": "These impressions are useful, but they do not prove that the amount of acid has decreased.",
       "alignment": [
         {
           "english": "These impressions are useful",
           "target": "Ces impressions sont utiles",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5906,7 +5924,7 @@
               "target": "impressions",
               "english": "impressions",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
               "end": 15
@@ -5915,7 +5933,7 @@
               "target": "sont",
               "english": "are",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 16,
               "end": 20
@@ -5924,7 +5942,7 @@
               "target": "utiles",
               "english": "useful",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 21,
               "end": 27
@@ -5935,7 +5953,7 @@
           "english": "but they do not prove",
           "target": "mais elles ne prouvent pas",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5960,7 +5978,7 @@
               "target": "ne prouvent pas",
               "english": "do not prove",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 11,
               "end": 26
@@ -5968,14 +5986,14 @@
           ]
         },
         {
-          "english": "that a quantity of acid has decreased",
-          "target": "qu'une quantité d'acide a diminué",
+          "english": "that the amount of acid has decreased",
+          "target": "que la quantité d'acide a diminué",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "qu'",
+              "target": "que",
               "english": "that",
               "category": "function_word",
               "frequency_band": "very_common",
@@ -5984,19 +6002,19 @@
               "end": 3
             },
             {
-              "target": "une",
-              "english": "a",
+              "target": "la",
+              "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 3,
+              "start": 4,
               "end": 6
             },
             {
               "target": "quantité",
               "english": "quantity",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 7,
               "end": 15
@@ -6012,9 +6030,9 @@
             },
             {
               "target": "acide",
-              "english": "acid",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "english": "sour",
+              "category": "adjective",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 18,
               "end": 23
@@ -6023,7 +6041,7 @@
               "target": "a diminué",
               "english": "decreased",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 24,
               "end": 33
@@ -6155,7 +6173,7 @@
           "english": "Malolactic fermentation",
           "target": "La fermentation malolactique",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -6171,7 +6189,7 @@
               "target": "fermentation malolactique",
               "english": "malolactic fermentation",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 28
@@ -6182,14 +6200,14 @@
           "english": "converts malic acid",
           "target": "convertit de l'acide malique",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
               "target": "convertit",
               "english": "converts",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 0,
               "end": 9
@@ -6216,7 +6234,7 @@
               "target": "acide malique",
               "english": "malic acid",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 15,
               "end": 28
@@ -6227,7 +6245,7 @@
           "english": "into lactic acid, releasing carbon dioxide",
           "target": "en acide lactique, avec dégagement de gaz carbonique",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -6243,7 +6261,7 @@
               "target": "acide lactique",
               "english": "lactic acid",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 17
@@ -6261,7 +6279,7 @@
               "target": "dégagement",
               "english": "release",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 24,
               "end": 34
@@ -6279,7 +6297,7 @@
               "target": "gaz carbonique",
               "english": "carbon dioxide",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 38,
               "end": 52
@@ -6914,46 +6932,19 @@
       ]
     },
     {
-      "target": "Nous ne l'ajoutons donc pas comme une étape accomplie à notre lot imaginaire.",
-      "english": "We therefore do not add it as an accomplished step to our imaginary batch.",
+      "target": "Cette transformation ne fait pas partie des étapes prévues pour notre exemple.",
+      "english": "This transformation is not one of the planned steps in our example.",
       "alignment": [
         {
-          "english": "We therefore do not add it",
-          "target": "Nous ne l'ajoutons donc pas",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "Nous",
-              "english": "we",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 4
-            },
-            {
-              "target": "ne l'ajoutons donc pas",
-              "english": "therefore do not add it",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 5,
-              "end": 27
-            }
-          ]
-        },
-        {
-          "english": "as an accomplished step",
-          "target": "comme une étape accomplie",
+          "english": "This transformation",
+          "target": "Cette transformation",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "comme",
-              "english": "as",
+              "target": "Cette",
+              "english": "this",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -6961,49 +6952,76 @@
               "end": 5
             },
             {
-              "target": "une",
-              "english": "an",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "transformation",
+              "english": "transformation",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
-              "end": 9
-            },
-            {
-              "target": "étape",
-              "english": "stage",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 10,
-              "end": 15
-            },
-            {
-              "target": "accomplie",
-              "english": "accomplished",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 16,
-              "end": 25
+              "end": 20
             }
           ]
         },
         {
-          "english": "to our imaginary batch",
-          "target": "à notre lot imaginaire",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "is not one of",
+          "target": "ne fait pas partie",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "à",
-              "english": "to",
+              "target": "ne fait pas partie",
+              "english": "is not part of",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 18
+            }
+          ]
+        },
+        {
+          "english": "the planned steps in our example",
+          "target": "des étapes prévues pour notre exemple",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "des",
+              "english": "some",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 1
+              "end": 3
+            },
+            {
+              "target": "étapes",
+              "english": "steps",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 10
+            },
+            {
+              "target": "prévues",
+              "english": "specified",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 18
+            },
+            {
+              "target": "pour",
+              "english": "for",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 19,
+              "end": 23
             },
             {
               "target": "notre",
@@ -7011,26 +7029,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 2,
-              "end": 7
+              "start": 24,
+              "end": 29
             },
             {
-              "target": "lot",
-              "english": "batch",
+              "target": "exemple",
+              "english": "example",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 8,
-              "end": 11
-            },
-            {
-              "target": "imaginaire",
-              "english": "imaginary",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 12,
-              "end": 22
+              "start": 30,
+              "end": 37
             }
           ]
         }

@@ -24,7 +24,7 @@ Les robinets, les joints et l'intérieur des tuyaux méritent autant d'attention
 
 Avant d'acheter, regardez ce que vous possédez déjà, puis vérifiez son usage prévu. Un seau qui paraît propre n'est pas forcément destiné à recevoir une boisson. Évitez les contenants dont l'histoire ou le matériau sont inconnus. Le plastique alimentaire et l'acier inoxydable adapté sont des possibilités courantes, mais vérifiez chaque accessoire. La compatibilité concerne aussi les produits utilisés pour nettoyer ce matériau.
 
-Faites un essai de montage avant le grand jour. Vérifiez que le robinet se ferme, que les raccords tiennent et que le tuyau atteint le récipient suivant. Avec de l'eau, vous pouvez repérer une fuite sans perdre de jus. Après cet essai, reprenez la préparation sanitaire avant le contact avec le produit.
+Faites un essai de montage avant le grand jour. Vérifiez que le robinet se ferme, que les raccords tiennent et que le tuyau atteint le récipient suivant. Avec de l'eau, vous pouvez repérer une fuite sans perdre de jus. Après cet essai, répétez le nettoyage et la désinfection avant tout contact avec le cidre.
 
 Pensez enfin à vos mains. Lavez-les avant de manipuler le matériel propre, et de nouveau après une tâche sale. Prenez les accessoires préparés par les parties qui ne toucheront pas le jus. Ces petits gestes prolongent le travail de nettoyage au lieu de l'annuler.
 

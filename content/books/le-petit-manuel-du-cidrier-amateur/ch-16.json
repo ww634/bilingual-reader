@@ -2,7 +2,7 @@
   "id": "ch-16",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "L'art des petits assemblages",
     "english": "The Art of Small Blends"
@@ -334,12 +334,12 @@
       ]
     },
     {
-      "target": "Mais avant de mélanger les récipients, commençons par quelques petits verres.",
-      "english": "But before mixing the vessels, let us begin with a few small glasses.",
+      "target": "Mais avant de réunir le contenu des récipients, commençons par quelques petits verres.",
+      "english": "But before combining the contents of the vessels, let us begin with a few small glasses.",
       "alignment": [
         {
-          "english": "But before mixing the vessels",
-          "target": "Mais avant de mélanger les récipients",
+          "english": "But before combining the contents of the vessels",
+          "target": "Mais avant de réunir le contenu des récipients",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false,
@@ -372,94 +372,112 @@
               "end": 13
             },
             {
-              "target": "mélanger",
-              "english": "blend",
+              "target": "réunir",
+              "english": "bring together",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
               "start": 14,
-              "end": 22
+              "end": 20
             },
             {
-              "target": "les",
+              "target": "le",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 23,
-              "end": 26
+              "start": 21,
+              "end": 23
             },
             {
-              "target": "récipients",
-              "english": "vessels",
+              "target": "contenu",
+              "english": "contents",
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 27,
-              "end": 37
+              "start": 24,
+              "end": 31
+            },
+            {
+              "target": "des",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 32,
+              "end": 35
+            },
+            {
+              "target": "récipients",
+              "english": "containers",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 36,
+              "end": 46
             }
           ]
         },
         {
-          "english": "let us begin with",
-          "target": "commençons par",
+          "english": "let us begin",
+          "target": "commençons",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "commençons",
               "english": "let us begin",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 10
-            },
+            }
+          ]
+        },
+        {
+          "english": "with a few small glasses",
+          "target": "par quelques petits verres",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
             {
               "target": "par",
               "english": "by",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 11,
-              "end": 14
-            }
-          ]
-        },
-        {
-          "english": "a few small glasses",
-          "target": "quelques petits verres",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 0,
+              "end": 3
+            },
             {
               "target": "quelques",
               "english": "a few",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 8
+              "start": 4,
+              "end": 12
             },
             {
               "target": "petits",
               "english": "small",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 15
+              "start": 13,
+              "end": 19
             },
             {
               "target": "verres",
               "english": "glasses",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 16,
-              "end": 22
+              "start": 20,
+              "end": 26
             }
           ]
         }
@@ -2145,7 +2163,7 @@
           "english": "A",
           "target": "A",
           "category": "proper_noun",
-          "frequency_band": "very_common",
+          "frequency_band": null,
           "is_idiom": false,
           "lookup": [
             {
@@ -4362,14 +4380,14 @@
       ]
     },
     {
-      "target": "Pour limiter les attentes, demandez à quelqu'un de coder les verres sans révéler les proportions.",
-      "english": "To limit expectations, ask someone to code the glasses without revealing the proportions.",
+      "target": "Pour limiter l'influence de vos attentes, demandez à quelqu'un de coder les verres sans révéler les proportions.",
+      "english": "To reduce the influence of your expectations, ask someone to code the glasses without revealing the proportions.",
       "alignment": [
         {
-          "english": "To limit expectations",
-          "target": "Pour limiter les attentes",
+          "english": "To reduce the influence of your expectations",
+          "target": "Pour limiter l'influence de vos attentes",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -4385,43 +4403,70 @@
               "target": "limiter",
               "english": "limit",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 12
             },
             {
-              "target": "les",
+              "target": "l'",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 13,
-              "end": 16
+              "end": 15
+            },
+            {
+              "target": "influence",
+              "english": "influences",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 24
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 25,
+              "end": 27
+            },
+            {
+              "target": "vos",
+              "english": "your",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 28,
+              "end": 31
             },
             {
               "target": "attentes",
               "english": "expectations",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 17,
-              "end": 25
+              "start": 32,
+              "end": 40
             }
           ]
         },
         {
-          "english": "ask someone",
-          "target": "demandez à quelqu'un",
+          "english": "ask someone to code the glasses",
+          "target": "demandez à quelqu'un de coder les verres",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "demandez",
               "english": "ask",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 8
@@ -4452,33 +4497,24 @@
               "is_idiom": false,
               "start": 18,
               "end": 20
-            }
-          ]
-        },
-        {
-          "english": "to code the glasses without revealing the proportions",
-          "target": "de coder les verres sans révéler les proportions",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "de",
               "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 21,
+              "end": 23
             },
             {
               "target": "coder",
               "english": "code",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 8
+              "start": 24,
+              "end": 29
             },
             {
               "target": "les",
@@ -4486,35 +4522,44 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 9,
-              "end": 12
+              "start": 30,
+              "end": 33
             },
             {
               "target": "verres",
               "english": "glasses",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 13,
-              "end": 19
-            },
+              "start": 34,
+              "end": 40
+            }
+          ]
+        },
+        {
+          "english": "without revealing the proportions",
+          "target": "sans révéler les proportions",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
             {
               "target": "sans",
               "english": "without",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 20,
-              "end": 24
+              "start": 0,
+              "end": 4
             },
             {
               "target": "révéler",
               "english": "reveal",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 25,
-              "end": 32
+              "start": 5,
+              "end": 12
             },
             {
               "target": "les",
@@ -4522,17 +4567,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 33,
-              "end": 36
+              "start": 13,
+              "end": 16
             },
             {
               "target": "proportions",
               "english": "proportions",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 37,
-              "end": 48
+              "start": 17,
+              "end": 28
             }
           ]
         }
@@ -5083,14 +5128,14 @@
       ]
     },
     {
-      "target": "Si un essai vous plaît, reconstituez-le avec des mesures nouvelles.",
-      "english": "If you like a trial, recreate it with fresh measurements.",
+      "target": "Si un essai vous plaît, reconstituez-le avec de nouveaux prélèvements mesurés.",
+      "english": "If you like a trial, recreate it with freshly measured samples.",
       "alignment": [
         {
           "english": "If you like a trial",
           "target": "Si un essai vous plaît",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5115,7 +5160,7 @@
               "target": "essai",
               "english": "trial",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
               "end": 11
@@ -5133,7 +5178,7 @@
               "target": "plaît",
               "english": "appeals",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 17,
               "end": 22
@@ -5144,14 +5189,14 @@
           "english": "recreate it",
           "target": "reconstituez-le",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "reconstituez-le",
               "english": "recreate it",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 15
@@ -5159,10 +5204,10 @@
           ]
         },
         {
-          "english": "with fresh measurements",
-          "target": "avec des mesures nouvelles",
+          "english": "with freshly measured samples",
+          "target": "avec de nouveaux prélèvements mesurés",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5175,31 +5220,40 @@
               "end": 4
             },
             {
-              "target": "des",
-              "english": "some",
+              "target": "de",
+              "english": "of",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 5,
-              "end": 8
+              "end": 7
             },
             {
-              "target": "mesures",
-              "english": "measurements",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "target": "nouveaux",
+              "english": "new",
+              "category": "adjective",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
+              "start": 8,
               "end": 16
             },
             {
-              "target": "nouvelles",
-              "english": "fresh",
-              "category": "adjective",
-              "frequency_band": "very_common",
+              "target": "prélèvements",
+              "english": "samples",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 17,
-              "end": 26
+              "end": 29
+            },
+            {
+              "target": "mesurés",
+              "english": "measured",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 30,
+              "end": 37
             }
           ]
         }
@@ -5207,21 +5261,21 @@
       "paragraph_start": true
     },
     {
-      "target": "Vérifiez que la préférence se retrouve, au lieu de poursuivre une impression fugitive.",
-      "english": "Check that the preference appears again rather than chasing a fleeting impression.",
+      "target": "Vérifiez que vous retrouvez la même préférence, plutôt que de courir après une impression fugitive.",
+      "english": "Check that you still prefer it, rather than chasing a fleeting impression.",
       "alignment": [
         {
-          "english": "Check that the preference",
-          "target": "Vérifiez que la préférence",
+          "english": "Check that you still prefer it",
+          "target": "Vérifiez que vous retrouvez la même préférence",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "Vérifiez",
               "english": "Check",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 8
@@ -5236,53 +5290,62 @@
               "end": 12
             },
             {
-              "target": "la",
-              "english": "the",
+              "target": "vous",
+              "english": "you",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 13,
-              "end": 15
+              "end": 17
+            },
+            {
+              "target": "retrouvez",
+              "english": "find",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 18,
+              "end": 27
+            },
+            {
+              "target": "la",
+              "english": "it",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 28,
+              "end": 30
+            },
+            {
+              "target": "même",
+              "english": "same",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 31,
+              "end": 35
             },
             {
               "target": "préférence",
               "english": "preference",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 16,
-              "end": 26
+              "start": 36,
+              "end": 46
             }
           ]
         },
         {
-          "english": "appears again",
-          "target": "se retrouve",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "se retrouve",
-              "english": "appears again",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 11
-            }
-          ]
-        },
-        {
-          "english": "rather than chasing a fleeting impression",
-          "target": "au lieu de poursuivre une impression fugitive",
+          "english": "rather than chasing",
+          "target": "plutôt que de courir après",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "au lieu de",
-              "english": "instead of",
+              "target": "plutôt que",
+              "english": "rather than",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -5290,22 +5353,40 @@
               "end": 10
             },
             {
-              "target": "poursuivre",
-              "english": "continue",
+              "target": "de",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 13
+            },
+            {
+              "target": "courir après",
+              "english": "chase",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 11,
-              "end": 21
-            },
+              "start": 14,
+              "end": 26
+            }
+          ]
+        },
+        {
+          "english": "a fleeting impression",
+          "target": "une impression fugitive",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
             {
               "target": "une",
               "english": "a",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 22,
-              "end": 25
+              "start": 0,
+              "end": 3
             },
             {
               "target": "impression",
@@ -5313,8 +5394,8 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 26,
-              "end": 36
+              "start": 4,
+              "end": 14
             },
             {
               "target": "fugitive",
@@ -5322,8 +5403,8 @@
               "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 37,
-              "end": 45
+              "start": 15,
+              "end": 23
             }
           ]
         }
@@ -5919,60 +6000,60 @@
       ]
     },
     {
-      "target": "La somme doit retrouver la totalité du mélange.",
-      "english": "The sum must account for the whole blend.",
+      "target": "Les proportions doivent représenter la totalité du mélange.",
+      "english": "The proportions must account for the whole blend.",
       "alignment": [
         {
-          "english": "The sum",
-          "target": "La somme",
+          "english": "The proportions",
+          "target": "Les proportions",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "La",
+              "target": "Les",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 2
+              "end": 3
             },
             {
-              "target": "somme",
-              "english": "sum",
+              "target": "proportions",
+              "english": "proportions",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 8
+              "start": 4,
+              "end": 15
             }
           ]
         },
         {
           "english": "must account for",
-          "target": "doit retrouver",
+          "target": "doivent représenter",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "doit",
+              "target": "doivent",
               "english": "must",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 4
+              "end": 7
             },
             {
-              "target": "retrouver",
-              "english": "find again",
+              "target": "représenter",
+              "english": "account for",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 5,
-              "end": 14
+              "start": 8,
+              "end": 19
             }
           ]
         },
@@ -5980,7 +6061,7 @@
           "english": "the whole blend",
           "target": "la totalité du mélange",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5996,7 +6077,7 @@
               "target": "totalité",
               "english": "whole",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 11
@@ -6014,7 +6095,7 @@
               "target": "mélange",
               "english": "blend",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 15,
               "end": 22
@@ -6385,14 +6466,14 @@
       ]
     },
     {
-      "target": "Les essais prélevés restent également en dehors des récipients de réserve.",
-      "english": "The samples taken also remain outside the reserve vessels.",
+      "target": "Les échantillons utilisés pour les essais ne retournent pas dans les récipients de réserve.",
+      "english": "The samples used in the trials do not go back into the reserve vessels.",
       "alignment": [
         {
-          "english": "The samples taken",
-          "target": "Les essais prélevés",
+          "english": "The samples used in the trials",
+          "target": "Les échantillons utilisés pour les essais",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6405,76 +6486,103 @@
               "end": 3
             },
             {
-              "target": "essais",
+              "target": "échantillons",
               "english": "samples",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
-              "end": 10
+              "end": 16
             },
             {
-              "target": "prélevés",
-              "english": "taken",
+              "target": "utilisés",
+              "english": "used",
               "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 17,
+              "end": 25
+            },
+            {
+              "target": "pour",
+              "english": "for",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 11,
-              "end": 19
+              "start": 26,
+              "end": 30
+            },
+            {
+              "target": "les",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 31,
+              "end": 34
+            },
+            {
+              "target": "essais",
+              "english": "trials",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 35,
+              "end": 41
             }
           ]
         },
         {
-          "english": "also remain",
-          "target": "restent également",
+          "english": "do not go back",
+          "target": "ne retournent pas",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "restent",
-              "english": "remain",
+              "target": "ne retournent pas",
+              "english": "do not go back",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 7
-            },
-            {
-              "target": "également",
-              "english": "also",
-              "category": "adverb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 8,
               "end": 17
             }
           ]
         },
         {
-          "english": "outside the reserve vessels",
-          "target": "en dehors des récipients de réserve",
+          "english": "into the reserve vessels",
+          "target": "dans les récipients de réserve",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "en dehors des",
-              "english": "outside the",
+              "target": "dans",
+              "english": "in",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 13
+              "end": 4
+            },
+            {
+              "target": "les",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 8
             },
             {
               "target": "récipients",
-              "english": "vessels",
+              "english": "containers",
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 14,
-              "end": 24
+              "start": 9,
+              "end": 19
             },
             {
               "target": "de",
@@ -6482,8 +6590,8 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 25,
-              "end": 27
+              "start": 20,
+              "end": 22
             },
             {
               "target": "réserve",
@@ -6491,8 +6599,8 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 28,
-              "end": 35
+              "start": 23,
+              "end": 30
             }
           ]
         }

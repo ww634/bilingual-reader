@@ -6,7 +6,7 @@ Les saisons décrites ici correspondent à un climat tempéré de l'hémisphère
 
 Pour un pommier adulte de forme libre, la taille d'entretien se pratique généralement en hiver, pendant le repos végétatif. Les formes palissées ont d'autres besoins, notamment pour la taille d'été. Il faut donc identifier la forme et l'âge de l'arbre avant d'appliquer une méthode.
 
-La taille cherche à organiser la ramure, à laisser entrer la lumière et à préserver du bois fructifère. Ce dernier terme désigne le bois qui porte les organes capables de produire des fruits. On ne cherche pas à donner la même coupe à tous les arbres. Raccourcir toutes les extrémités sans réfléchir peut enlever du futur fruit.
+La taille cherche à organiser la ramure, à laisser entrer la lumière et à préserver du bois fructifère. Ce dernier terme désigne le bois qui porte les organes capables de produire des fruits. On ne cherche pas à donner la même coupe à tous les arbres. Raccourcir toutes les extrémités sans réfléchir peut réduire la récolte à venir.
 
 Une taille sévère peut provoquer une forte repousse. Ce n'est pas une raison pour couper davantage l'année suivante. Pour un arbre négligé, prévoyez une remise en état progressive avec un conseil adapté. Si vous hésitez devant une grosse branche, gardez la scie au repos le temps de vous renseigner. Une branche coupée ne se recolle pas avec de bonnes intentions.
 
@@ -16,9 +16,9 @@ Beaucoup de fleurs ne garantissent pas beaucoup de pommes. Le gel peut abîmer l
 
 Au début de l'été, une partie des petits fruits peut tomber naturellement. Cette chute n'annonce pas forcément une catastrophe. Regardez ce qui reste sur les branches avant de vous inquiéter. Un arbre peut encore porter trop de fruits après cette chute.
 
-L'éclaircissage consiste à retirer une partie des jeunes fruits lorsque la charge est trop importante. Il peut améliorer leur développement et réduire le risque de branches cassées. La quantité à retirer dépend de l'arbre, de sa vigueur et de l'objectif de production. Ne transposez pas automatiquement une règle pour grosses pommes de table à toutes les pommes à cidre.
+L'éclaircissage consiste à retirer une partie des jeunes fruits lorsque la charge est trop importante. Il peut améliorer leur développement et réduire le risque de branches cassées. La quantité à retirer dépend de l'arbre, de sa vigueur et de l'objectif de production. Ne transposez pas automatiquement une règle destinée à obtenir de grosses pommes de table à toutes les pommes à cidre.
 
-Certains arbres produisent beaucoup une année, puis très peu la suivante. On parle d'alternance. Une gestion adaptée de la charge peut aider à limiter ce phénomène. Votre carnet prend ici une nouvelle valeur : il vous permet de comparer plusieurs années. Un arbre peu chargé cette année ne raconte pas toute son histoire.
+Certains arbres produisent beaucoup une année, puis très peu la suivante. On parle d'alternance. Une gestion adaptée de la charge peut aider à limiter ce phénomène. Votre carnet prend ici une nouvelle valeur: il vous permet de comparer plusieurs années. Un arbre peu chargé cette année ne raconte pas toute son histoire.
 
 En été, surveillez l'eau disponible, surtout pour les jeunes arbres. Un paillage peut aider à conserver l'humidité du sol et à limiter les herbes concurrentes. Gardez-le à distance du tronc. Vérifiez aussi les liens et les tuteurs : l'arbre grandit, et un lien trop serré peut le blesser.
 

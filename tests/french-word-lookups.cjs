@@ -87,3 +87,24 @@ test('all 41 chapters have complete, ordered, non-overlapping vocabulary coverag
   }
   assert.ok(units>30000);
 });
+
+test('phrase senses survive token heuristics and explicit categories control metadata', async () => {
+  const {frenchLookups} = await import(path.resolve('tools/translate/lib/french-vocabulary.js'));
+  const base = {
+    words: { a:{english:'has',category:'verb'}, pourrait:{english:'might',category:'verb'}, commencer:{english:'start',category:'verb'} },
+    phrases: {
+      "n'est pas":{english:'is not',category:'verb'},
+      'se dégrader':{english:'deteriorate',category:'verb'},
+      'de nouveau':{english:'again',category:'adverb'}
+    }, verbs: {}, overrides: {}
+  };
+  for (const [target,english,expected] of [["n'est pas","isn't",'is not'], ['se dégrader','decay','deteriorate'], ['de nouveau commencer','start once more','again']]) {
+    assert.equal(frenchLookups({target,english,frequency_band:'common'},base)[0].english, expected);
+  }
+  const chunk={target:'A pourrait',english:'A might',frequency_band:'common'};
+  const custom={...base,overrides:{[JSON.stringify([chunk.target,chunk.english])]:{'0':{english:'A',category:'proper_noun'}}}};
+  const units=frenchLookups(chunk,custom);
+  assert.deepEqual(units.map(w => w.target),['A','pourrait']);
+  assert.equal(units[0].category,'proper_noun');
+  assert.equal(units[0].frequency_band,null);
+});

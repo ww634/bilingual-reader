@@ -2,7 +2,7 @@
   "id": "ch-11",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 2,
+  "version": 3,
   "title": {
     "target": "Suivre la fermentation",
     "english": "Following Fermentation"
@@ -440,7 +440,7 @@
           "english": "less talkative than the airlock",
           "target": "moins bavard que le barboteur",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -456,7 +456,7 @@
               "target": "bavard",
               "english": "talkative",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 6,
               "end": 12
@@ -483,7 +483,7 @@
               "target": "barboteur",
               "english": "airlock",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 20,
               "end": 29
@@ -651,7 +651,7 @@
           "english": "The chosen yeast",
           "target": "La levure choisie",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -667,7 +667,7 @@
               "target": "levure",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 9
@@ -676,7 +676,7 @@
               "target": "choisie",
               "english": "chosen",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 10,
               "end": 17
@@ -1276,7 +1276,7 @@
           "english": "The airlock must operate",
           "target": "Le barboteur doit fonctionner",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -1292,7 +1292,7 @@
               "target": "barboteur",
               "english": "airlock",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 12
@@ -1301,7 +1301,7 @@
               "target": "doit",
               "english": "must",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 13,
               "end": 17
@@ -1310,7 +1310,7 @@
               "target": "fonctionner",
               "english": "operate",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 18,
               "end": 29
@@ -1558,7 +1558,7 @@
           "english": "carbon dioxide",
           "target": "du gaz carbonique",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -1574,7 +1574,7 @@
               "target": "gaz carbonique",
               "english": "carbon dioxide",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 17
@@ -2144,7 +2144,7 @@
             },
             {
               "target": "leur",
-              "english": "their",
+              "english": "them",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -2367,7 +2367,7 @@
           "english": "The airlock indicates",
           "target": "Le barboteur indique",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -2383,7 +2383,7 @@
               "target": "barboteur",
               "english": "airlock",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 12
@@ -2392,7 +2392,7 @@
               "target": "indique",
               "english": "indicates",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 13,
               "end": 20
@@ -2589,7 +2589,7 @@
           "english": "the airlock silent",
           "target": "le barboteur silencieux",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -2605,7 +2605,7 @@
               "target": "barboteur",
               "english": "airlock",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 12
@@ -2614,7 +2614,7 @@
               "target": "silencieux",
               "english": "silent",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 13,
               "end": 23
@@ -3568,14 +3568,14 @@
       ]
     },
     {
-      "target": "Dans notre exemple, une ambiance autour de vingt degrés reste un repère de travail.",
-      "english": "In our example, surroundings around twenty degrees remain a working reference.",
+      "target": "Dans notre exemple, une température ambiante d'environ vingt degrés reste un repère de travail.",
+      "english": "In our example, an ambient temperature of around twenty degrees remains a working reference.",
       "alignment": [
         {
           "english": "In our example",
           "target": "Dans notre exemple",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -3600,7 +3600,7 @@
               "target": "exemple",
               "english": "example",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 11,
               "end": 18
@@ -3608,15 +3608,15 @@
           ]
         },
         {
-          "english": "surroundings around twenty degrees",
-          "target": "une ambiance autour de vingt degrés",
+          "english": "an ambient temperature of around twenty degrees",
+          "target": "une température ambiante d'environ vingt degrés",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "une",
-              "english": "a",
+              "english": "an",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -3624,64 +3624,73 @@
               "end": 3
             },
             {
-              "target": "ambiance",
-              "english": "surroundings",
+              "target": "température",
+              "english": "temperature",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
-              "end": 12
+              "end": 15
             },
             {
-              "target": "autour",
-              "english": "around",
-              "category": "adverb",
-              "frequency_band": "very_common",
+              "target": "ambiante",
+              "english": "ambient",
+              "category": "adjective",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 13,
-              "end": 19
+              "start": 16,
+              "end": 24
             },
             {
-              "target": "de",
+              "target": "d'",
               "english": "of",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 20,
-              "end": 22
+              "start": 25,
+              "end": 27
+            },
+            {
+              "target": "environ",
+              "english": "around",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 27,
+              "end": 34
             },
             {
               "target": "vingt",
               "english": "twenty",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 23,
-              "end": 28
+              "start": 35,
+              "end": 40
             },
             {
               "target": "degrés",
               "english": "degrees",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 29,
-              "end": 35
+              "start": 41,
+              "end": 47
             }
           ]
         },
         {
-          "english": "remain a working reference",
+          "english": "remains a working reference",
           "target": "reste un repère de travail",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "reste",
               "english": "remains",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 5
@@ -3699,7 +3708,7 @@
               "target": "repère",
               "english": "reference point",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 9,
               "end": 15
@@ -3717,7 +3726,7 @@
               "target": "travail",
               "english": "work",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 19,
               "end": 26
@@ -3728,19 +3737,19 @@
       "paragraph_start": true
     },
     {
-      "target": "Ce chiffre ne devient pas une température idéale pour toutes les levures.",
-      "english": "This figure does not become an ideal temperature for every yeast.",
+      "target": "Ce chiffre n'est pas pour autant une température idéale pour toutes les levures.",
+      "english": "That figure is not, however, an ideal temperature for every yeast.",
       "alignment": [
         {
-          "english": "This figure",
+          "english": "That figure",
           "target": "Ce chiffre",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "Ce",
-              "english": "this",
+              "english": "that",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -3751,7 +3760,7 @@
               "target": "chiffre",
               "english": "number",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 10
@@ -3759,20 +3768,29 @@
           ]
         },
         {
-          "english": "does not become",
-          "target": "ne devient pas",
+          "english": "is not, however",
+          "target": "n'est pas pour autant",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "ne devient pas",
-              "english": "does not become",
+              "target": "n'est pas",
+              "english": "is not",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 14
+              "end": 9
+            },
+            {
+              "target": "pour autant",
+              "english": "however",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 21
             }
           ]
         },
@@ -3780,7 +3798,7 @@
           "english": "an ideal temperature for every yeast",
           "target": "une température idéale pour toutes les levures",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -3796,7 +3814,7 @@
               "target": "température",
               "english": "temperature",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 4,
               "end": 15
@@ -3805,7 +3823,7 @@
               "target": "idéale",
               "english": "ideal",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 16,
               "end": 22
@@ -3841,7 +3859,7 @@
               "target": "levures",
               "english": "yeast",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 39,
               "end": 46
@@ -4176,14 +4194,14 @@
           "english": "let us return to specific gravity",
           "target": "revenons à la densité relative",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
               "target": "revenons",
               "english": "return",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 0,
               "end": 8
@@ -4210,7 +4228,7 @@
               "target": "densité relative",
               "english": "specific gravity",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 14,
               "end": 30
@@ -4723,7 +4741,7 @@
           "english": "with the hydrometer",
           "target": "au densimètre",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -4739,7 +4757,7 @@
               "target": "densimètre",
               "english": "hydrometer",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 13
@@ -5409,7 +5427,7 @@
           "english": "Specific gravity decreases",
           "target": "La densité diminue",
           "category": "verb",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -5425,7 +5443,7 @@
               "target": "densité",
               "english": "specific gravity",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 10
@@ -5434,7 +5452,7 @@
               "target": "diminue",
               "english": "decreases",
               "category": "verb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 11,
               "end": 18
@@ -6081,60 +6099,42 @@
       ]
     },
     {
-      "target": "Il faut les examiner avec l'historique du lot, pas les transformer seules en permission d'embouteiller.",
-      "english": "They must be examined alongside the batch history, rather than alone becoming permission to bottle.",
+      "target": "Interprétez-les à la lumière de l'historique du lot; à elles seules, elles ne suffisent pas pour décider d'embouteiller.",
+      "english": "Interpret them in light of the batch history; on their own, they are not enough to decide to bottle.",
       "alignment": [
         {
-          "english": "They must be examined",
-          "target": "Il faut les examiner",
+          "english": "Interpret them",
+          "target": "Interprétez-les",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Il faut",
-              "english": "it is necessary to",
+              "target": "Interprétez-les",
+              "english": "interpret them",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 7
-            },
-            {
-              "target": "les",
-              "english": "the",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 8,
-              "end": 11
-            },
-            {
-              "target": "examiner",
-              "english": "examine",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 12,
-              "end": 20
+              "end": 15
             }
           ]
         },
         {
-          "english": "alongside the batch history",
-          "target": "avec l'historique du lot",
+          "english": "in light of the batch history",
+          "target": "à la lumière de l'historique du lot",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "avec",
-              "english": "with",
+              "target": "à la lumière de",
+              "english": "in light of",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 4
+              "end": 15
             },
             {
               "target": "l'",
@@ -6142,98 +6142,89 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 5,
-              "end": 7
+              "start": 16,
+              "end": 18
             },
             {
               "target": "historique",
               "english": "history",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 7,
-              "end": 17
+              "start": 18,
+              "end": 28
             },
             {
               "target": "du",
-              "english": "some",
+              "english": "of the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 18,
-              "end": 20
+              "start": 29,
+              "end": 31
             },
             {
               "target": "lot",
               "english": "batch",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 21,
-              "end": 24
+              "start": 32,
+              "end": 35
             }
           ]
         },
         {
-          "english": "rather than alone becoming permission to bottle",
-          "target": "pas les transformer seules en permission d'embouteiller",
+          "english": "on their own, they are not enough to decide to bottle",
+          "target": "à elles seules, elles ne suffisent pas pour décider d'embouteiller",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "pas",
-              "english": "not",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "à elles seules",
+              "english": "on their own",
+              "category": "adverb",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 3
+              "end": 14
             },
             {
-              "target": "les",
-              "english": "the",
+              "target": "elles",
+              "english": "they",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 4,
-              "end": 7
+              "start": 16,
+              "end": 21
             },
             {
-              "target": "transformer",
-              "english": "transform",
+              "target": "ne suffisent pas",
+              "english": "are not enough",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 8,
-              "end": 19
+              "start": 22,
+              "end": 38
             },
             {
-              "target": "seules",
-              "english": "alone",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 20,
-              "end": 26
-            },
-            {
-              "target": "en",
-              "english": "in",
+              "target": "pour",
+              "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 27,
-              "end": 29
+              "start": 39,
+              "end": 43
             },
             {
-              "target": "permission",
-              "english": "permission",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "target": "décider",
+              "english": "decide",
+              "category": "verb",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 30,
-              "end": 40
+              "start": 44,
+              "end": 51
             },
             {
               "target": "d'",
@@ -6241,17 +6232,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 41,
-              "end": 43
+              "start": 52,
+              "end": 54
             },
             {
               "target": "embouteiller",
               "english": "bottle",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 43,
-              "end": 55
+              "start": 54,
+              "end": 66
             }
           ]
         }
@@ -6452,7 +6443,7 @@
           "english": "to a more yeasty impression",
           "target": "à une impression plus levurée",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -6477,7 +6468,7 @@
               "target": "impression",
               "english": "impression",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 6,
               "end": 16
@@ -6486,7 +6477,7 @@
               "target": "plus",
               "english": "more",
               "category": "adverb",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 17,
               "end": 21
@@ -6495,7 +6486,7 @@
               "target": "levurée",
               "english": "yeasty",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 22,
               "end": 29
@@ -6936,7 +6927,7 @@
           "english": "the measured specific gravity",
           "target": "la densité mesurée",
           "category": "noun",
-          "frequency_band": "less_common",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
@@ -6952,7 +6943,7 @@
               "target": "densité",
               "english": "specific gravity",
               "category": "noun",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 3,
               "end": 10
@@ -6961,7 +6952,7 @@
               "target": "mesurée",
               "english": "measured",
               "category": "adjective",
-              "frequency_band": "less_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
               "start": 11,
               "end": 18
@@ -8110,14 +8101,14 @@
       ]
     },
     {
-      "target": "Entre deux visites, laissez le carnet fermé et le dispositif de gaz fonctionnel.",
-      "english": "Between visits, leave the notebook closed and the gas device working.",
+      "target": "Entre deux visites, le carnet peut rester fermé; le dispositif d'évacuation du gaz doit rester fonctionnel.",
+      "english": "Between visits, the notebook can stay closed; the gas vent must keep working.",
       "alignment": [
         {
           "english": "Between visits",
           "target": "Entre deux visites",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -8133,7 +8124,7 @@
               "target": "deux",
               "english": "two",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
               "end": 10
@@ -8142,7 +8133,7 @@
               "target": "visites",
               "english": "visits",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 11,
               "end": 18
@@ -8150,60 +8141,15 @@
           ]
         },
         {
-          "english": "leave the notebook closed",
-          "target": "laissez le carnet fermé",
+          "english": "the notebook can stay closed",
+          "target": "le carnet peut rester fermé",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
-            {
-              "target": "laissez",
-              "english": "leave",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 7
-            },
             {
               "target": "le",
               "english": "the",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 8,
-              "end": 10
-            },
-            {
-              "target": "carnet",
-              "english": "notebook",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 11,
-              "end": 17
-            },
-            {
-              "target": "fermé",
-              "english": "closed",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 18,
-              "end": 23
-            }
-          ]
-        },
-        {
-          "english": "and the gas device working",
-          "target": "et le dispositif de gaz fonctionnel",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "et",
-              "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -8211,49 +8157,130 @@
               "end": 2
             },
             {
+              "target": "carnet",
+              "english": "notebook",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 9
+            },
+            {
+              "target": "peut",
+              "english": "can",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 10,
+              "end": 14
+            },
+            {
+              "target": "rester",
+              "english": "remain",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 21
+            },
+            {
+              "target": "fermé",
+              "english": "sealed",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 22,
+              "end": 27
+            }
+          ]
+        },
+        {
+          "english": "the gas vent must keep working",
+          "target": "le dispositif d'évacuation du gaz doit rester fonctionnel",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
               "target": "le",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 3,
-              "end": 5
+              "start": 0,
+              "end": 2
             },
             {
               "target": "dispositif",
               "english": "device",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 6,
-              "end": 16
+              "start": 3,
+              "end": 13
             },
             {
-              "target": "de",
+              "target": "d'",
               "english": "of",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 17,
-              "end": 19
+              "start": 14,
+              "end": 16
+            },
+            {
+              "target": "évacuation",
+              "english": "outlet",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 16,
+              "end": 26
+            },
+            {
+              "target": "du",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 27,
+              "end": 29
             },
             {
               "target": "gaz",
               "english": "gas",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 20,
-              "end": 23
+              "start": 30,
+              "end": 33
+            },
+            {
+              "target": "doit",
+              "english": "must",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 34,
+              "end": 38
+            },
+            {
+              "target": "rester",
+              "english": "remain",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 39,
+              "end": 45
             },
             {
               "target": "fonctionnel",
               "english": "working",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 24,
-              "end": 35
+              "start": 46,
+              "end": 57
             }
           ]
         }
@@ -8362,7 +8389,7 @@
             },
             {
               "target": "ses",
-              "english": "its",
+              "english": "your",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,

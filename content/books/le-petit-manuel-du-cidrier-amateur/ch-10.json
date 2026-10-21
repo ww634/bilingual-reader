@@ -2,7 +2,7 @@
   "id": "ch-10",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Les levures entrent en scène",
     "english": "Enter the Yeast"
@@ -265,69 +265,60 @@
       ]
     },
     {
-      "target": "Profitons de cette courte période pour présenter les levures.",
-      "english": "Let us enjoy this short period to introduce yeast.",
+      "target": "Profitons de ce court répit pour présenter les levures.",
+      "english": "Let us use this brief pause to introduce yeast.",
       "alignment": [
         {
-          "english": "Let us enjoy",
-          "target": "Profitons",
+          "english": "Let us use this brief pause",
+          "target": "Profitons de ce court répit",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "Profitons",
-              "english": "Let us enjoy",
+              "english": "let us enjoy",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 9
-            }
-          ]
-        },
-        {
-          "english": "this short period",
-          "target": "de cette courte période",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "de",
               "english": "of",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 10,
+              "end": 12
             },
             {
-              "target": "cette",
+              "target": "ce",
               "english": "this",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 3,
-              "end": 8
-            },
-            {
-              "target": "courte",
-              "english": "short",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 9,
+              "start": 13,
               "end": 15
             },
             {
-              "target": "période",
-              "english": "period",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "target": "court",
+              "english": "brief",
+              "category": "adjective",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 16,
-              "end": 23
+              "end": 21
+            },
+            {
+              "target": "répit",
+              "english": "pause",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 22,
+              "end": 27
             }
           ]
         },
@@ -335,7 +326,7 @@
           "english": "to introduce",
           "target": "pour présenter",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -351,7 +342,7 @@
               "target": "présenter",
               "english": "introduce",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 14
@@ -376,7 +367,7 @@
             },
             {
               "target": "levures",
-              "english": "yeasts",
+              "english": "yeast",
               "category": "noun",
               "frequency_band": "uncommon",
               "is_idiom": false,
@@ -2729,7 +2720,7 @@
             },
             {
               "target": "levures",
-              "english": "yeasts",
+              "english": "yeast",
               "category": "noun",
               "frequency_band": "uncommon",
               "is_idiom": false,
@@ -3516,7 +3507,7 @@
             },
             {
               "target": "levures",
-              "english": "yeasts",
+              "english": "yeast",
               "category": "noun",
               "frequency_band": "uncommon",
               "is_idiom": false,
@@ -5166,14 +5157,14 @@
       "paragraph_start": true
     },
     {
-      "target": "L'activité fermentaire produit de la chaleur, et le récipient peut évoluer différemment de l'air ambiant.",
-      "english": "Fermentation activity produces heat, and the vessel may change differently from the surrounding air.",
+      "target": "L'activité fermentaire produit de la chaleur, et la température du jus peut différer de celle de l'air ambiant.",
+      "english": "Fermentation activity produces heat, and the juice temperature may differ from the surrounding air temperature.",
       "alignment": [
         {
-          "english": "Fermentation activity",
-          "target": "L'activité fermentaire",
+          "english": "Fermentation activity produces heat",
+          "target": "L'activité fermentaire produit de la chaleur",
           "category": "noun",
-          "frequency_band": "uncommon",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -5189,7 +5180,7 @@
               "target": "activité",
               "english": "activity",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 2,
               "end": 10
@@ -5198,41 +5189,59 @@
               "target": "fermentaire",
               "english": "fermentation",
               "category": "adjective",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 11,
               "end": 22
-            }
-          ]
-        },
-        {
-          "english": "produces",
-          "target": "produit",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "produit",
-              "english": "produces",
-              "category": "verb",
-              "frequency_band": "very_common",
+              "english": "product",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 7
-            }
-          ]
-        },
-        {
-          "english": "heat",
-          "target": "de la chaleur",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 23,
+              "end": 30
+            },
             {
               "target": "de",
               "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 31,
+              "end": 33
+            },
+            {
+              "target": "la",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 34,
+              "end": 36
+            },
+            {
+              "target": "chaleur",
+              "english": "heat",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 37,
+              "end": 44
+            }
+          ]
+        },
+        {
+          "english": "and the juice temperature",
+          "target": "et la température du jus",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "et",
+              "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -5249,94 +5258,58 @@
               "end": 5
             },
             {
-              "target": "chaleur",
-              "english": "heat",
+              "target": "température",
+              "english": "temperature",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 6,
-              "end": 13
+              "end": 17
+            },
+            {
+              "target": "du",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 18,
+              "end": 20
+            },
+            {
+              "target": "jus",
+              "english": "juice",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 21,
+              "end": 24
             }
           ]
         },
         {
-          "english": "and the vessel",
-          "target": "et le récipient",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "et",
-              "english": "and",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 2
-            },
-            {
-              "target": "le",
-              "english": "the",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 3,
-              "end": 5
-            },
-            {
-              "target": "récipient",
-              "english": "container",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 6,
-              "end": 15
-            }
-          ]
-        },
-        {
-          "english": "may change",
-          "target": "peut évoluer",
+          "english": "may differ from the surrounding air temperature",
+          "target": "peut différer de celle de l'air ambiant",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "peut",
               "english": "can",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 4
             },
             {
-              "target": "évoluer",
-              "english": "change",
+              "target": "différer",
+              "english": "differ",
               "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 5,
-              "end": 12
-            }
-          ]
-        },
-        {
-          "english": "differently from the surrounding air",
-          "target": "différemment de l'air ambiant",
-          "category": "adverb",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "différemment",
-              "english": "differently",
-              "category": "adverb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 12
+              "start": 5,
+              "end": 13
             },
             {
               "target": "de",
@@ -5344,8 +5317,26 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 13,
-              "end": 15
+              "start": 14,
+              "end": 16
+            },
+            {
+              "target": "celle",
+              "english": "the one",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 17,
+              "end": 22
+            },
+            {
+              "target": "de",
+              "english": "from",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 23,
+              "end": 25
             },
             {
               "target": "l'",
@@ -5353,8 +5344,8 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 16,
-              "end": 18
+              "start": 26,
+              "end": 28
             },
             {
               "target": "air",
@@ -5362,8 +5353,8 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 18,
-              "end": 21
+              "start": 28,
+              "end": 31
             },
             {
               "target": "ambiant",
@@ -5371,8 +5362,8 @@
               "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 22,
-              "end": 29
+              "start": 32,
+              "end": 39
             }
           ]
         }
@@ -5745,7 +5736,7 @@
             },
             {
               "target": "levures",
-              "english": "yeasts",
+              "english": "yeast",
               "category": "noun",
               "frequency_band": "uncommon",
               "is_idiom": false,
@@ -6109,7 +6100,7 @@
             },
             {
               "target": "levures",
-              "english": "yeasts",
+              "english": "yeast",
               "category": "noun",
               "frequency_band": "uncommon",
               "is_idiom": false,
@@ -6370,12 +6361,12 @@
       ]
     },
     {
-      "target": "Une levure annoncée peu exigeante n'est pas une levure sans besoins.",
-      "english": "A yeast described as having low requirements is not a yeast with no requirements.",
+      "target": "Une levure décrite comme peu exigeante a tout de même des besoins nutritifs.",
+      "english": "A yeast described as undemanding still has nutritional requirements.",
       "alignment": [
         {
-          "english": "A yeast",
-          "target": "Une levure",
+          "english": "A yeast described as undemanding",
+          "target": "Une levure décrite comme peu exigeante",
           "category": "noun",
           "frequency_band": "uncommon",
           "is_idiom": false,
@@ -6397,73 +6388,82 @@
               "is_idiom": false,
               "start": 4,
               "end": 10
-            }
-          ]
-        },
-        {
-          "english": "described as having low requirements",
-          "target": "annoncée peu exigeante",
-          "category": "adjective",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
-              "target": "annoncée",
+              "target": "décrite",
               "english": "described",
               "category": "adjective",
-              "frequency_band": "common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
-              "start": 0,
-              "end": 8
+              "start": 11,
+              "end": 18
+            },
+            {
+              "target": "comme",
+              "english": "as",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 19,
+              "end": 24
             },
             {
               "target": "peu",
               "english": "little",
               "category": "adverb",
-              "frequency_band": "common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
-              "start": 9,
-              "end": 12
+              "start": 25,
+              "end": 28
             },
             {
               "target": "exigeante",
               "english": "demanding",
               "category": "adjective",
+              "frequency_band": "uncommon",
+              "is_idiom": false,
+              "start": 29,
+              "end": 38
+            }
+          ]
+        },
+        {
+          "english": "still has",
+          "target": "a tout de même",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "a",
+              "english": "has",
+              "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 13,
-              "end": 22
-            }
-          ]
-        },
-        {
-          "english": "is not",
-          "target": "n'est pas",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "n'est pas",
-              "english": "is not",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
               "start": 0,
-              "end": 9
+              "end": 1
+            },
+            {
+              "target": "tout de même",
+              "english": "still",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 2,
+              "end": 14
             }
           ]
         },
         {
-          "english": "a yeast with no requirements",
-          "target": "une levure sans besoins",
+          "english": "nutritional requirements",
+          "target": "des besoins nutritifs",
           "category": "noun",
-          "frequency_band": "uncommon",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "une",
-              "english": "a",
+              "target": "des",
+              "english": "some",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -6471,31 +6471,22 @@
               "end": 3
             },
             {
-              "target": "levure",
-              "english": "yeast",
-              "category": "noun",
-              "frequency_band": "uncommon",
-              "is_idiom": false,
-              "start": 4,
-              "end": 10
-            },
-            {
-              "target": "sans",
-              "english": "without",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 11,
-              "end": 15
-            },
-            {
               "target": "besoins",
               "english": "requirements",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 16,
-              "end": 23
+              "start": 4,
+              "end": 11
+            },
+            {
+              "target": "nutritifs",
+              "english": "nutritional",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 12,
+              "end": 21
             }
           ]
         }
@@ -6902,14 +6893,14 @@
       ]
     },
     {
-      "target": "Nous ne fixerons pas une dose de nutriment sans ces informations, ni ne remplacerons un produit adapté par un ingrédient de cuisine.",
-      "english": "We will not set a nutrient dose without that information, or substitute a suitable product with a kitchen ingredient.",
+      "target": "Nous ne fixerons pas de dose de nutriment sans ces informations et nous ne remplacerons pas un produit adapté par un ingrédient de cuisine.",
+      "english": "We will not set a nutrient dose without that information and we will not replace a suitable product with a kitchen ingredient.",
       "alignment": [
         {
-          "english": "We will not set",
-          "target": "Nous ne fixerons pas",
+          "english": "We will not set a nutrient dose without that information",
+          "target": "Nous ne fixerons pas de dose de nutriment sans ces informations",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -6925,37 +6916,10 @@
               "target": "ne fixerons pas",
               "english": "will not set",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 5,
               "end": 20
-            }
-          ]
-        },
-        {
-          "english": "a nutrient dose",
-          "target": "une dose de nutriment",
-          "category": "noun",
-          "frequency_band": "uncommon",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "une",
-              "english": "a",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 3
-            },
-            {
-              "target": "dose",
-              "english": "dose",
-              "category": "noun",
-              "frequency_band": "uncommon",
-              "is_idiom": false,
-              "start": 4,
-              "end": 8
             },
             {
               "target": "de",
@@ -6963,35 +6927,44 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 9,
-              "end": 11
+              "start": 21,
+              "end": 23
+            },
+            {
+              "target": "dose",
+              "english": "dose",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 24,
+              "end": 28
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 29,
+              "end": 31
             },
             {
               "target": "nutriment",
               "english": "nutrient",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 12,
-              "end": 21
-            }
-          ]
-        },
-        {
-          "english": "without that information",
-          "target": "sans ces informations",
-          "category": "adverb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 32,
+              "end": 41
+            },
             {
               "target": "sans",
               "english": "without",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 4
+              "start": 42,
+              "end": 46
             },
             {
               "target": "ces",
@@ -6999,30 +6972,30 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 5,
-              "end": 8
+              "start": 47,
+              "end": 50
             },
             {
               "target": "informations",
               "english": "information",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 21
+              "start": 51,
+              "end": 63
             }
           ]
         },
         {
-          "english": "or substitute",
-          "target": "ni ne remplacerons",
+          "english": "and we will not replace a suitable product",
+          "target": "et nous ne remplacerons pas un produit adapté",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "ni",
-              "english": "nor",
+              "target": "et",
+              "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -7030,58 +7003,49 @@
               "end": 2
             },
             {
-              "target": "ne",
-              "english": "negation marker",
+              "target": "nous",
+              "english": "we",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 3,
-              "end": 5
+              "end": 7
             },
             {
-              "target": "remplacerons",
-              "english": "will substitute",
+              "target": "ne remplacerons pas",
+              "english": "will not replace",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 6,
-              "end": 18
-            }
-          ]
-        },
-        {
-          "english": "a suitable product",
-          "target": "un produit adapté",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 8,
+              "end": 27
+            },
             {
               "target": "un",
               "english": "a",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 28,
+              "end": 30
             },
             {
               "target": "produit",
               "english": "product",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 10
+              "start": 31,
+              "end": 38
             },
             {
               "target": "adapté",
               "english": "suitable",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 11,
-              "end": 17
+              "start": 39,
+              "end": 45
             }
           ]
         },
@@ -7089,7 +7053,7 @@
           "english": "with a kitchen ingredient",
           "target": "par un ingrédient de cuisine",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -7114,7 +7078,7 @@
               "target": "ingrédient",
               "english": "ingredient",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 7,
               "end": 17
@@ -7132,7 +7096,7 @@
               "target": "cuisine",
               "english": "kitchen",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 21,
               "end": 28
@@ -7302,14 +7266,14 @@
       "paragraph_start": true
     },
     {
-      "target": "Pour AB-1, la méthode actuelle permet un ajout direct à la surface du moût, avec mélange doux et homogénéisation selon la fiche.",
-      "english": "For AB-1, the current method allows direct addition to the surface of the must, with gentle mixing and homogenisation according to the sheet.",
+      "target": "Pour AB-1, la méthode actuelle permet un ajout direct à la surface du moût, avec un mélange doux et une homogénéisation selon la fiche.",
+      "english": "For AB-1, the current method allows direct addition to the surface of the must, with gentle mixing and homogenisation according to the technical sheet.",
       "alignment": [
         {
-          "english": "For AB-1",
-          "target": "Pour AB-1",
-          "category": "proper_noun",
-          "frequency_band": null,
+          "english": "For AB-1, the current method allows",
+          "target": "Pour AB-1, la méthode actuelle permet",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -7329,66 +7293,48 @@
               "is_idiom": false,
               "start": 5,
               "end": 9
-            }
-          ]
-        },
-        {
-          "english": "the current method",
-          "target": "la méthode actuelle",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "la",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 11,
+              "end": 13
             },
             {
               "target": "méthode",
               "english": "method",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 10
+              "start": 14,
+              "end": 21
             },
             {
               "target": "actuelle",
               "english": "current",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 11,
-              "end": 19
-            }
-          ]
-        },
-        {
-          "english": "allows",
-          "target": "permet",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 22,
+              "end": 30
+            },
             {
               "target": "permet",
               "english": "allows",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 6
+              "start": 31,
+              "end": 37
             }
           ]
         },
         {
-          "english": "direct addition",
-          "target": "un ajout direct",
+          "english": "direct addition to the surface of the must",
+          "target": "un ajout direct à la surface du moût",
           "category": "noun",
           "frequency_band": "common",
           "is_idiom": false,
@@ -7419,24 +7365,15 @@
               "is_idiom": false,
               "start": 9,
               "end": 15
-            }
-          ]
-        },
-        {
-          "english": "to the surface of the must",
-          "target": "à la surface du moût",
-          "category": "noun",
-          "frequency_band": "uncommon",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "à",
               "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 1
+              "start": 16,
+              "end": 17
             },
             {
               "target": "la",
@@ -7444,17 +7381,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 2,
-              "end": 4
+              "start": 18,
+              "end": 20
             },
             {
               "target": "surface",
               "english": "surface",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 5,
-              "end": 12
+              "start": 21,
+              "end": 28
             },
             {
               "target": "du",
@@ -7462,25 +7399,25 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 13,
-              "end": 15
+              "start": 29,
+              "end": 31
             },
             {
               "target": "moût",
               "english": "must",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 16,
-              "end": 20
+              "start": 32,
+              "end": 36
             }
           ]
         },
         {
-          "english": "with gentle mixing",
-          "target": "avec mélange doux",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "with gentle mixing and homogenisation according to the technical sheet",
+          "target": "avec un mélange doux et une homogénéisation selon la fiche",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -7493,67 +7430,67 @@
               "end": 4
             },
             {
-              "target": "mélange",
-              "english": "mixing",
-              "category": "noun",
+              "target": "un",
+              "english": "a",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 5,
-              "end": 12
+              "end": 7
+            },
+            {
+              "target": "mélange",
+              "english": "confuses",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 15
             },
             {
               "target": "doux",
-              "english": "gentle",
+              "english": "sweet",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 13,
-              "end": 17
-            }
-          ]
-        },
-        {
-          "english": "and homogenisation",
-          "target": "et homogénéisation",
-          "category": "noun",
-          "frequency_band": "uncommon",
-          "is_idiom": false,
-          "lookup": [
+              "start": 16,
+              "end": 20
+            },
             {
               "target": "et",
               "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 21,
+              "end": 23
+            },
+            {
+              "target": "une",
+              "english": "a",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 24,
+              "end": 27
             },
             {
               "target": "homogénéisation",
               "english": "homogenisation",
               "category": "noun",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 18
-            }
-          ]
-        },
-        {
-          "english": "according to the sheet",
-          "target": "selon la fiche",
-          "category": "adverb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+              "start": 28,
+              "end": 43
+            },
             {
               "target": "selon",
               "english": "according to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 5
+              "start": 44,
+              "end": 49
             },
             {
               "target": "la",
@@ -7561,17 +7498,17 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 6,
-              "end": 8
+              "start": 50,
+              "end": 52
             },
             {
               "target": "fiche",
               "english": "sheet",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 14
+              "start": 53,
+              "end": 58
             }
           ]
         }
@@ -8790,13 +8727,13 @@
     },
     {
       "target": "Un sachet abîmé ou mal conservé n'est pas un bon point de départ.",
-      "english": "A damaged packet or poorly stored packet is not a good starting point.",
+      "english": "A damaged or poorly stored packet is not a good starting point.",
       "alignment": [
         {
-          "english": "A damaged packet",
-          "target": "Un sachet abîmé",
+          "english": "A damaged or poorly stored packet",
+          "target": "Un sachet abîmé ou mal conservé",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -8812,7 +8749,7 @@
               "target": "sachet",
               "english": "packet",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 9
@@ -8821,46 +8758,37 @@
               "target": "abîmé",
               "english": "damaged",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
               "end": 15
-            }
-          ]
-        },
-        {
-          "english": "or poorly stored",
-          "target": "ou mal conservé",
-          "category": "adjective",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "ou",
               "english": "or",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 16,
+              "end": 18
             },
             {
               "target": "mal",
               "english": "poorly",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 6
+              "start": 19,
+              "end": 22
             },
             {
               "target": "conservé",
               "english": "stored",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 7,
-              "end": 15
+              "start": 23,
+              "end": 31
             }
           ]
         },
@@ -8868,14 +8796,14 @@
           "english": "is not",
           "target": "n'est pas",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "n'est pas",
               "english": "is not",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 9
@@ -8886,7 +8814,7 @@
           "english": "a good starting point",
           "target": "un bon point de départ",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -8902,7 +8830,7 @@
               "target": "bon",
               "english": "good",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 6
@@ -8911,7 +8839,7 @@
               "target": "point de départ",
               "english": "starting point",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 7,
               "end": 22

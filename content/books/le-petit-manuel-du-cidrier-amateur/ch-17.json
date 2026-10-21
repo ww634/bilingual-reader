@@ -2,21 +2,21 @@
   "id": "ch-17",
   "book_id": "le-petit-manuel-du-cidrier-amateur",
   "language": "fr",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "Mettre en bouteille au bon moment",
     "english": "Bottling at the Right Time"
   },
   "pairs": [
     {
-      "target": "Les bouteilles alignées ont un air de travail terminé.",
-      "english": "The bottles lined up have the look of a finished job.",
+      "target": "Les bouteilles alignées donnent déjà l'impression que tout est terminé.",
+      "english": "The bottles lined up already give the impression that everything is finished.",
       "alignment": [
         {
           "english": "The bottles lined up",
           "target": "Les bouteilles alignées",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -32,7 +32,7 @@
               "target": "bouteilles",
               "english": "bottles",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
               "end": 14
@@ -41,7 +41,7 @@
               "target": "alignées",
               "english": "lined up",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 15,
               "end": 23
@@ -49,74 +49,92 @@
           ]
         },
         {
-          "english": "have the look",
-          "target": "ont un air",
+          "english": "already give the impression",
+          "target": "donnent déjà l'impression",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "ont",
-              "english": "have",
+              "target": "donnent",
+              "english": "give",
               "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 7
+            },
+            {
+              "target": "déjà",
+              "english": "already",
+              "category": "adverb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 12
+            },
+            {
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 15
+            },
+            {
+              "target": "impression",
+              "english": "impression",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 25
+            }
+          ]
+        },
+        {
+          "english": "that everything is finished",
+          "target": "que tout est terminé",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "que",
+              "english": "that",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
               "end": 3
             },
             {
-              "target": "un",
-              "english": "a",
+              "target": "tout",
+              "english": "all",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 4,
-              "end": 6
+              "end": 8
             },
             {
-              "target": "air",
-              "english": "look",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "target": "est",
+              "english": "is",
+              "category": "verb",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 7,
-              "end": 10
-            }
-          ]
-        },
-        {
-          "english": "of a finished job",
-          "target": "de travail terminé",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "de",
-              "english": "of",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 2
-            },
-            {
-              "target": "travail",
-              "english": "job",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 3,
-              "end": 10
+              "start": 9,
+              "end": 12
             },
             {
               "target": "terminé",
               "english": "finished",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 11,
-              "end": 18
+              "start": 13,
+              "end": 20
             }
           ]
         }
@@ -818,78 +836,33 @@
       ]
     },
     {
-      "target": "Notre lot reste illustratif, sans date de mise en bouteille annoncée.",
-      "english": "Our batch remains illustrative, with no announced bottling date.",
+      "target": "La date de mise en bouteille dépendra des contrôles, pas du calendrier.",
+      "english": "The bottling date will depend on the checks, not the calendar.",
       "alignment": [
         {
-          "english": "Our batch remains illustrative",
-          "target": "Notre lot reste illustratif",
+          "english": "The bottling date",
+          "target": "La date de mise en bouteille",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Notre",
-              "english": "our",
+              "target": "La",
+              "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 5
-            },
-            {
-              "target": "lot",
-              "english": "batch",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 6,
-              "end": 9
-            },
-            {
-              "target": "reste",
-              "english": "remains",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 10,
-              "end": 15
-            },
-            {
-              "target": "illustratif",
-              "english": "illustrative",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 16,
-              "end": 27
-            }
-          ]
-        },
-        {
-          "english": "with no announced bottling date",
-          "target": "sans date de mise en bouteille annoncée",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "sans",
-              "english": "without",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 4
+              "end": 2
             },
             {
               "target": "date",
               "english": "date",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 5,
-              "end": 9
+              "start": 3,
+              "end": 7
             },
             {
               "target": "de",
@@ -897,26 +870,89 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 10,
-              "end": 12
+              "start": 8,
+              "end": 10
             },
             {
               "target": "mise en bouteille",
               "english": "bottling",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 13,
-              "end": 30
+              "start": 11,
+              "end": 28
+            }
+          ]
+        },
+        {
+          "english": "will depend on the checks",
+          "target": "dépendra des contrôles",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "dépendra",
+              "english": "will depend",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
             },
             {
-              "target": "annoncée",
-              "english": "stated",
-              "category": "adjective",
+              "target": "des",
+              "english": "some",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 31,
-              "end": 39
+              "start": 9,
+              "end": 12
+            },
+            {
+              "target": "contrôles",
+              "english": "checks",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 22
+            }
+          ]
+        },
+        {
+          "english": "not the calendar",
+          "target": "pas du calendrier",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "pas",
+              "english": "not",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 3
+            },
+            {
+              "target": "du",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 6
+            },
+            {
+              "target": "calendrier",
+              "english": "calendar",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 17
             }
           ]
         }
@@ -1744,68 +1780,68 @@
       ]
     },
     {
-      "target": "Le liquide doit avoir été suivi dans des conditions permettant d'interpréter son activité réelle.",
-      "english": "The liquid must have been monitored under conditions allowing its actual activity to be interpreted.",
+      "target": "Les mesures doivent avoir été prises dans des conditions permettant d'interpréter l'activité réelle des levures.",
+      "english": "The measurements must have been taken under conditions that allow us to interpret the yeast's actual activity.",
       "alignment": [
         {
-          "english": "The liquid must have been monitored",
-          "target": "Le liquide doit avoir été suivi",
+          "english": "The measurements must have been taken",
+          "target": "Les mesures doivent avoir été prises",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Le",
+              "target": "Les",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 2
+              "end": 3
             },
             {
-              "target": "liquide",
-              "english": "liquid",
+              "target": "mesures",
+              "english": "measurements",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 3,
-              "end": 10
+              "start": 4,
+              "end": 11
             },
             {
-              "target": "doit",
+              "target": "doivent",
               "english": "must",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 11,
-              "end": 15
+              "start": 12,
+              "end": 19
             },
             {
               "target": "avoir",
               "english": "have",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 16,
-              "end": 21
+              "start": 20,
+              "end": 25
             },
             {
-              "target": "été suivi",
-              "english": "been monitored",
+              "target": "été prises",
+              "english": "been taken",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 22,
-              "end": 31
+              "start": 26,
+              "end": 36
             }
           ]
         },
         {
-          "english": "under conditions allowing",
-          "target": "dans des conditions permettant",
+          "english": "under conditions that allow us to interpret",
+          "target": "dans des conditions permettant d'interpréter",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -1830,7 +1866,7 @@
               "target": "conditions",
               "english": "conditions",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 9,
               "end": 19
@@ -1839,23 +1875,41 @@
               "target": "permettant",
               "english": "allowing",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 20,
               "end": 30
+            },
+            {
+              "target": "d'",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 31,
+              "end": 33
+            },
+            {
+              "target": "interpréter",
+              "english": "interpret",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 33,
+              "end": 44
             }
           ]
         },
         {
-          "english": "its actual activity to be interpreted",
-          "target": "d'interpréter son activité réelle",
-          "category": "verb",
-          "frequency_band": "very_common",
+          "english": "the yeast's actual activity",
+          "target": "l'activité réelle des levures",
+          "category": "noun",
+          "frequency_band": "uncommon",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "d'",
-              "english": "to",
+              "target": "l'",
+              "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -1863,40 +1917,40 @@
               "end": 2
             },
             {
-              "target": "interpréter",
-              "english": "interpret",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 2,
-              "end": 13
-            },
-            {
-              "target": "son",
-              "english": "its",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 14,
-              "end": 17
-            },
-            {
               "target": "activité",
               "english": "activity",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "uncommon",
               "is_idiom": false,
-              "start": 18,
-              "end": 26
+              "start": 2,
+              "end": 10
             },
             {
               "target": "réelle",
               "english": "actual",
               "category": "adjective",
+              "frequency_band": "uncommon",
+              "is_idiom": false,
+              "start": 11,
+              "end": 17
+            },
+            {
+              "target": "des",
+              "english": "some",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 27,
-              "end": 33
+              "start": 18,
+              "end": 21
+            },
+            {
+              "target": "levures",
+              "english": "yeast",
+              "category": "noun",
+              "frequency_band": "uncommon",
+              "is_idiom": false,
+              "start": 22,
+              "end": 29
             }
           ]
         }
@@ -2441,68 +2495,104 @@
       ]
     },
     {
-      "target": "Le goût sec ne remplace pas davantage une vérification de la composition.",
-      "english": "A dry taste is no substitute either for a check of composition.",
+      "target": "Même si le cidre paraît sec, son goût ne remplace pas une vérification de sa composition.",
+      "english": "Even if the cider seems dry, its taste is no substitute for checking its composition.",
       "alignment": [
         {
-          "english": "A dry taste",
-          "target": "Le goût sec",
-          "category": "noun",
-          "frequency_band": "very_common",
+          "english": "Even if the cider seems dry",
+          "target": "Même si le cidre paraît sec",
+          "category": "verb",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Le",
-              "english": "the",
+              "target": "Même si",
+              "english": "even if",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 2
+              "end": 7
             },
             {
-              "target": "goût",
-              "english": "taste",
-              "category": "noun",
+              "target": "le",
+              "english": "the",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 3,
-              "end": 7
+              "start": 8,
+              "end": 10
+            },
+            {
+              "target": "cidre",
+              "english": "cider",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 11,
+              "end": 16
+            },
+            {
+              "target": "paraît",
+              "english": "seems",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 17,
+              "end": 23
             },
             {
               "target": "sec",
               "english": "dry",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 8,
-              "end": 11
+              "start": 24,
+              "end": 27
             }
           ]
         },
         {
-          "english": "is no substitute either",
-          "target": "ne remplace pas davantage",
+          "english": "its taste is no substitute for",
+          "target": "son goût ne remplace pas",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "ne remplace pas davantage",
-              "english": "is no substitute either",
-              "category": "verb",
+              "target": "son",
+              "english": "its",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 25
+              "end": 3
+            },
+            {
+              "target": "goût",
+              "english": "taste",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 4,
+              "end": 8
+            },
+            {
+              "target": "ne remplace pas",
+              "english": "does not replace",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 9,
+              "end": 24
             }
           ]
         },
         {
-          "english": "for a check of composition",
-          "target": "une vérification de la composition",
+          "english": "checking its composition",
+          "target": "une vérification de sa composition",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -2518,7 +2608,7 @@
               "target": "vérification",
               "english": "check",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
               "end": 16
@@ -2533,8 +2623,8 @@
               "end": 19
             },
             {
-              "target": "la",
-              "english": "the",
+              "target": "sa",
+              "english": "its",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
@@ -2545,7 +2635,7 @@
               "target": "composition",
               "english": "composition",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 23,
               "end": 34
@@ -2555,14 +2645,14 @@
       ]
     },
     {
-      "target": "Si l'achèvement reste incertain, faites examiner les mesures par une personne compétente en cidrerie.",
-      "english": "If completion remains uncertain, have the measurements assessed by someone competent in cider making.",
+      "target": "Si la fin de fermentation reste incertaine, faites examiner les mesures par une personne compétente en cidrerie.",
+      "english": "If fermentation completion remains uncertain, have the measurements assessed by someone competent in cider making.",
       "alignment": [
         {
-          "english": "If completion remains uncertain",
-          "target": "Si l'achèvement reste incertain",
+          "english": "If fermentation completion remains uncertain",
+          "target": "Si la fin de fermentation reste incertaine",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -2575,7 +2665,7 @@
               "end": 2
             },
             {
-              "target": "l'",
+              "target": "la",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
@@ -2584,31 +2674,49 @@
               "end": 5
             },
             {
-              "target": "achèvement",
-              "english": "completion",
+              "target": "fin",
+              "english": "end",
               "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 9
+            },
+            {
+              "target": "de",
+              "english": "of",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 5,
-              "end": 15
+              "start": 10,
+              "end": 12
+            },
+            {
+              "target": "fermentation",
+              "english": "fermentation",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 13,
+              "end": 25
             },
             {
               "target": "reste",
               "english": "remains",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 16,
-              "end": 21
+              "start": 26,
+              "end": 31
             },
             {
-              "target": "incertain",
+              "target": "incertaine",
               "english": "uncertain",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 22,
-              "end": 31
+              "start": 32,
+              "end": 42
             }
           ]
         },
@@ -2616,14 +2724,14 @@
           "english": "have the measurements assessed",
           "target": "faites examiner les mesures",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
               "target": "faites",
               "english": "have",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
               "end": 6
@@ -2632,7 +2740,7 @@
               "target": "examiner",
               "english": "examine",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 7,
               "end": 15
@@ -2650,7 +2758,7 @@
               "target": "mesures",
               "english": "measurements",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 20,
               "end": 27
@@ -2661,7 +2769,7 @@
           "english": "by someone competent in cider making",
           "target": "par une personne compétente en cidrerie",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -2695,7 +2803,7 @@
               "target": "compétente",
               "english": "competent",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 17,
               "end": 27
@@ -2713,7 +2821,7 @@
               "target": "cidrerie",
               "english": "cider making",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 31,
               "end": 39
@@ -2724,14 +2832,14 @@
       "paragraph_start": true
     },
     {
-      "target": "Un laboratoire peut analyser les sucres résiduels pertinents et proposer un contrôle microbiologique adapté.",
-      "english": "A laboratory can analyse the relevant residual sugars and suggest an appropriate microbiological check.",
+      "target": "Un laboratoire peut mesurer les sucres résiduels et proposer un contrôle microbiologique adapté.",
+      "english": "A laboratory can measure residual sugars and suggest an appropriate microbiological check.",
       "alignment": [
         {
-          "english": "A laboratory can analyse",
-          "target": "Un laboratoire peut analyser",
+          "english": "A laboratory can measure residual sugars",
+          "target": "Un laboratoire peut mesurer les sucres résiduels",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -2747,7 +2855,7 @@
               "target": "laboratoire",
               "english": "laboratory",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 14
@@ -2756,37 +2864,28 @@
               "target": "peut",
               "english": "can",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 15,
               "end": 19
             },
             {
-              "target": "analyser",
-              "english": "analyse",
+              "target": "mesurer",
+              "english": "measure",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 20,
-              "end": 28
-            }
-          ]
-        },
-        {
-          "english": "the relevant residual sugars",
-          "target": "les sucres résiduels pertinents",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
+              "end": 27
+            },
             {
               "target": "les",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "start": 28,
+              "end": 31
             },
             {
               "target": "sucres",
@@ -2794,8 +2893,8 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 10
+              "start": 32,
+              "end": 38
             },
             {
               "target": "résiduels",
@@ -2803,25 +2902,16 @@
               "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 11,
-              "end": 20
-            },
-            {
-              "target": "pertinents",
-              "english": "relevant",
-              "category": "adjective",
-              "frequency_band": "common",
-              "is_idiom": false,
-              "start": 21,
-              "end": 31
+              "start": 39,
+              "end": 48
             }
           ]
         },
         {
-          "english": "and suggest an appropriate microbiological check",
-          "target": "et proposer un contrôle microbiologique adapté",
+          "english": "and suggest",
+          "target": "et proposer",
           "category": "verb",
-          "frequency_band": "uncommon",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -2837,19 +2927,28 @@
               "target": "proposer",
               "english": "suggest",
               "category": "verb",
-              "frequency_band": "uncommon",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 11
-            },
+            }
+          ]
+        },
+        {
+          "english": "an appropriate microbiological check",
+          "target": "un contrôle microbiologique adapté",
+          "category": "noun",
+          "frequency_band": "uncommon",
+          "is_idiom": false,
+          "lookup": [
             {
               "target": "un",
               "english": "an",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 12,
-              "end": 14
+              "start": 0,
+              "end": 2
             },
             {
               "target": "contrôle",
@@ -2857,8 +2956,8 @@
               "category": "noun",
               "frequency_band": "uncommon",
               "is_idiom": false,
-              "start": 15,
-              "end": 23
+              "start": 3,
+              "end": 11
             },
             {
               "target": "microbiologique",
@@ -2866,8 +2965,8 @@
               "category": "adjective",
               "frequency_band": "uncommon",
               "is_idiom": false,
-              "start": 24,
-              "end": 39
+              "start": 12,
+              "end": 27
             },
             {
               "target": "adapté",
@@ -2875,8 +2974,8 @@
               "category": "adjective",
               "frequency_band": "uncommon",
               "is_idiom": false,
-              "start": 40,
-              "end": 46
+              "start": 28,
+              "end": 34
             }
           ]
         }
@@ -3006,123 +3105,150 @@
       ]
     },
     {
-      "target": "Une transformation bactérienne peut encore être une question à examiner.",
-      "english": "A bacterial transformation may still be a question to examine.",
+      "target": "Il peut aussi être nécessaire de vérifier si des transformations bactériennes restent possibles.",
+      "english": "It may also be necessary to check whether bacterial transformations remain possible.",
       "alignment": [
         {
-          "english": "A bacterial transformation",
-          "target": "Une transformation bactérienne",
-          "category": "noun",
+          "english": "It may also be necessary to check",
+          "target": "Il peut aussi être nécessaire de vérifier",
+          "category": "verb",
           "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Une",
-              "english": "a",
+              "target": "Il",
+              "english": "it",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 3
+              "end": 2
             },
-            {
-              "target": "transformation",
-              "english": "transformation",
-              "category": "noun",
-              "frequency_band": "common",
-              "is_idiom": false,
-              "start": 4,
-              "end": 18
-            },
-            {
-              "target": "bactérienne",
-              "english": "bacterial",
-              "category": "adjective",
-              "frequency_band": "common",
-              "is_idiom": false,
-              "start": 19,
-              "end": 30
-            }
-          ]
-        },
-        {
-          "english": "may still be",
-          "target": "peut encore être",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
             {
               "target": "peut",
-              "english": "may",
+              "english": "can",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 4
+              "start": 3,
+              "end": 7
             },
             {
-              "target": "encore",
-              "english": "still",
+              "target": "aussi",
+              "english": "also",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 5,
-              "end": 11
+              "start": 8,
+              "end": 13
             },
             {
               "target": "être",
               "english": "be",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 12,
-              "end": 16
-            }
-          ]
-        },
-        {
-          "english": "a question to examine",
-          "target": "une question à examiner",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "une",
-              "english": "a",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 3
+              "start": 14,
+              "end": 18
             },
             {
-              "target": "question",
-              "english": "question",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "target": "nécessaire",
+              "english": "necessary",
+              "category": "adjective",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 4,
-              "end": 12
+              "start": 19,
+              "end": 29
             },
             {
-              "target": "à",
+              "target": "de",
               "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 13,
-              "end": 14
+              "start": 30,
+              "end": 32
             },
             {
-              "target": "examiner",
-              "english": "examine",
+              "target": "vérifier",
+              "english": "check",
               "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 33,
+              "end": 41
+            }
+          ]
+        },
+        {
+          "english": "whether bacterial transformations",
+          "target": "si des transformations bactériennes",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "si",
+              "english": "whether",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 15,
-              "end": 23
+              "start": 0,
+              "end": 2
+            },
+            {
+              "target": "des",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 3,
+              "end": 6
+            },
+            {
+              "target": "transformations",
+              "english": "transformations",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 7,
+              "end": 22
+            },
+            {
+              "target": "bactériennes",
+              "english": "bacterial",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 23,
+              "end": 35
+            }
+          ]
+        },
+        {
+          "english": "remain possible",
+          "target": "restent possibles",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "restent",
+              "english": "remain",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 7
+            },
+            {
+              "target": "possibles",
+              "english": "possible",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 17
             }
           ]
         }
@@ -3298,14 +3424,14 @@
       "paragraph_start": true
     },
     {
-      "target": "Tant qu'un doute important demeure, gardez le lot sous une gestion adaptée plutôt que de le conditionner.",
-      "english": "While significant doubt remains, keep the batch under suitable management rather than packaging it.",
+      "target": "Tant qu'un doute important demeure, poursuivez les contrôles et maintenez des conditions de conservation adaptées, sans embouteiller.",
+      "english": "While significant doubt remains, continue checking and maintain appropriate storage conditions, without bottling.",
       "alignment": [
         {
           "english": "While significant doubt remains",
           "target": "Tant qu'un doute important demeure",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -3339,7 +3465,7 @@
               "target": "doute",
               "english": "doubt",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 11,
               "end": 16
@@ -3348,7 +3474,7 @@
               "target": "important",
               "english": "important",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 17,
               "end": 26
@@ -3357,7 +3483,7 @@
               "target": "demeure",
               "english": "remains",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 27,
               "end": 34
@@ -3365,92 +3491,74 @@
           ]
         },
         {
-          "english": "keep the batch",
-          "target": "gardez le lot",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "gardez",
-              "english": "keep",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 6
-            },
-            {
-              "target": "le",
-              "english": "the",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 7,
-              "end": 9
-            },
-            {
-              "target": "lot",
-              "english": "batch",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 10,
-              "end": 13
-            }
-          ]
-        },
-        {
-          "english": "under suitable management rather than packaging it",
-          "target": "sous une gestion adaptée plutôt que de le conditionner",
+          "english": "continue checking and maintain appropriate storage conditions",
+          "target": "poursuivez les contrôles et maintenez des conditions de conservation adaptées",
           "category": "verb",
           "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "sous",
-              "english": "under",
-              "category": "function_word",
-              "frequency_band": "very_common",
+              "target": "poursuivez",
+              "english": "continue",
+              "category": "verb",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 4
+              "end": 10
             },
             {
-              "target": "une",
-              "english": "a",
+              "target": "les",
+              "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 5,
-              "end": 8
+              "start": 11,
+              "end": 14
             },
             {
-              "target": "gestion",
-              "english": "management",
+              "target": "contrôles",
+              "english": "checks",
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 9,
-              "end": 16
-            },
-            {
-              "target": "adaptée",
-              "english": "appropriate",
-              "category": "adjective",
-              "frequency_band": "common",
-              "is_idiom": false,
-              "start": 17,
+              "start": 15,
               "end": 24
             },
             {
-              "target": "plutôt que",
-              "english": "rather than",
+              "target": "et",
+              "english": "and",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 25,
-              "end": 35
+              "end": 27
+            },
+            {
+              "target": "maintenez",
+              "english": "keep",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 28,
+              "end": 37
+            },
+            {
+              "target": "des",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 38,
+              "end": 41
+            },
+            {
+              "target": "conditions",
+              "english": "conditions",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 42,
+              "end": 52
             },
             {
               "target": "de",
@@ -3458,40 +3566,67 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 36,
-              "end": 38
+              "start": 53,
+              "end": 55
             },
             {
-              "target": "le",
-              "english": "it",
+              "target": "conservation",
+              "english": "storage",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 56,
+              "end": 68
+            },
+            {
+              "target": "adaptées",
+              "english": "appropriate",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 69,
+              "end": 77
+            }
+          ]
+        },
+        {
+          "english": "without bottling",
+          "target": "sans embouteiller",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "sans",
+              "english": "without",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 39,
-              "end": 41
+              "start": 0,
+              "end": 4
             },
             {
-              "target": "conditionner",
-              "english": "package",
+              "target": "embouteiller",
+              "english": "bottle",
               "category": "verb",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 42,
-              "end": 54
+              "start": 5,
+              "end": 17
             }
           ]
         }
       ]
     },
     {
-      "target": "Une odeur suspecte ou une contamination possible demande aussi une décision préalable.",
-      "english": "A suspect smell or possible contamination also requires a prior decision.",
+      "target": "Une odeur suspecte ou une contamination possible doit également être examinée avant l'embouteillage.",
+      "english": "A suspect smell or possible contamination must also be assessed before bottling.",
       "alignment": [
         {
-          "english": "A suspect smell",
-          "target": "Une odeur suspecte",
+          "english": "A suspect smell or possible contamination",
+          "target": "Une odeur suspecte ou une contamination possible",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -3507,7 +3642,7 @@
               "target": "odeur",
               "english": "smell",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 4,
               "end": 9
@@ -3516,28 +3651,19 @@
               "target": "suspecte",
               "english": "suspect",
               "category": "adjective",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 10,
               "end": 18
-            }
-          ]
-        },
-        {
-          "english": "or possible contamination",
-          "target": "ou une contamination possible",
-          "category": "noun",
-          "frequency_band": "common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
               "target": "ou",
               "english": "or",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
+              "start": 19,
+              "end": 21
             },
             {
               "target": "une",
@@ -3545,8 +3671,8 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 3,
-              "end": 6
+              "start": 22,
+              "end": 25
             },
             {
               "target": "contamination",
@@ -3554,8 +3680,8 @@
               "category": "noun",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 7,
-              "end": 20
+              "start": 26,
+              "end": 39
             },
             {
               "target": "possible",
@@ -3563,62 +3689,89 @@
               "category": "adjective",
               "frequency_band": "common",
               "is_idiom": false,
-              "start": 21,
-              "end": 29
+              "start": 40,
+              "end": 48
             }
           ]
         },
         {
-          "english": "also requires a prior decision",
-          "target": "demande aussi une décision préalable",
+          "english": "must also be assessed",
+          "target": "doit également être examinée",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "demande",
-              "english": "requires",
+              "target": "doit",
+              "english": "must",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 0,
-              "end": 7
+              "end": 4
             },
             {
-              "target": "aussi",
+              "target": "également",
               "english": "also",
               "category": "adverb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 8,
-              "end": 13
+              "start": 5,
+              "end": 14
             },
             {
-              "target": "une",
-              "english": "a",
+              "target": "être",
+              "english": "be",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 15,
+              "end": 19
+            },
+            {
+              "target": "examinée",
+              "english": "assessed",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 20,
+              "end": 28
+            }
+          ]
+        },
+        {
+          "english": "before bottling",
+          "target": "avant l'embouteillage",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "avant",
+              "english": "before",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 14,
-              "end": 17
+              "start": 0,
+              "end": 5
             },
             {
-              "target": "décision",
-              "english": "decision",
+              "target": "l'",
+              "english": "the",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 6,
+              "end": 8
+            },
+            {
+              "target": "embouteillage",
+              "english": "bottling",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 18,
-              "end": 26
-            },
-            {
-              "target": "préalable",
-              "english": "prior",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 27,
-              "end": 36
+              "start": 8,
+              "end": 21
             }
           ]
         }
@@ -8041,14 +8194,14 @@
       "paragraph_start": true
     },
     {
-      "target": "La mise en bouteille termine une opération, pas toute responsabilité envers le produit.",
-      "english": "Bottling completes an operation, not all responsibility for the product.",
+      "target": "La mise en bouteille achève une étape, mais le suivi du produit continue.",
+      "english": "Bottling completes a stage, but monitoring the product continues.",
       "alignment": [
         {
-          "english": "Bottling",
-          "target": "La mise en bouteille",
+          "english": "Bottling completes a stage",
+          "target": "La mise en bouteille achève une étape",
           "category": "verb",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
@@ -8064,91 +8217,55 @@
               "target": "mise en bouteille",
               "english": "bottling",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 3,
               "end": 20
-            }
-          ]
-        },
-        {
-          "english": "completes an operation",
-          "target": "termine une opération",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
+            },
             {
-              "target": "termine",
+              "target": "achève",
               "english": "completes",
               "category": "verb",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 0,
-              "end": 7
+              "start": 21,
+              "end": 27
             },
             {
               "target": "une",
-              "english": "an",
+              "english": "a",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 8,
-              "end": 11
+              "start": 28,
+              "end": 31
             },
             {
-              "target": "opération",
-              "english": "operation",
+              "target": "étape",
+              "english": "stage",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 12,
-              "end": 21
+              "start": 32,
+              "end": 37
             }
           ]
         },
         {
-          "english": "not all responsibility for the product",
-          "target": "pas toute responsabilité envers le produit",
+          "english": "but monitoring the product",
+          "target": "mais le suivi du produit",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "pas",
-              "english": "not",
+              "target": "mais",
+              "english": "but",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 3
-            },
-            {
-              "target": "toute",
-              "english": "all",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 4,
-              "end": 9
-            },
-            {
-              "target": "responsabilité",
-              "english": "responsibility",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 10,
-              "end": 24
-            },
-            {
-              "target": "envers",
-              "english": "towards",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 25,
-              "end": 31
+              "end": 4
             },
             {
               "target": "le",
@@ -8156,17 +8273,53 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 32,
-              "end": 34
+              "start": 5,
+              "end": 7
+            },
+            {
+              "target": "suivi",
+              "english": "monitoring",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 8,
+              "end": 13
+            },
+            {
+              "target": "du",
+              "english": "some",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 14,
+              "end": 16
             },
             {
               "target": "produit",
               "english": "product",
               "category": "noun",
-              "frequency_band": "very_common",
+              "frequency_band": "common",
               "is_idiom": false,
-              "start": 35,
-              "end": 42
+              "start": 17,
+              "end": 24
+            }
+          ]
+        },
+        {
+          "english": "continues",
+          "target": "continue",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "continue",
+              "english": "continues",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 8
             }
           ]
         }
@@ -8350,150 +8503,60 @@
       ]
     },
     {
-      "target": "Pour les bouteilles conformes, le chapitre suivant ouvre la porte du rangement et de la table.",
-      "english": "For satisfactory bottles, the next chapter opens the door to storage and the table.",
+      "target": "Une fois le cidre conditionné dans de bonnes conditions, passons à sa conservation et à son service.",
+      "english": "Once the cider has been properly packaged, let us turn to storage and serving.",
       "alignment": [
         {
-          "english": "For satisfactory bottles",
-          "target": "Pour les bouteilles conformes",
+          "english": "Once the cider has been properly packaged",
+          "target": "Une fois le cidre conditionné dans de bonnes conditions",
           "category": "noun",
-          "frequency_band": "very_common",
+          "frequency_band": "common",
           "is_idiom": false,
           "lookup": [
             {
-              "target": "Pour",
-              "english": "for",
+              "target": "Une fois",
+              "english": "once",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
               "start": 0,
-              "end": 4
-            },
-            {
-              "target": "les",
-              "english": "the",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 5,
               "end": 8
             },
-            {
-              "target": "bouteilles",
-              "english": "bottles",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 9,
-              "end": 19
-            },
-            {
-              "target": "conformes",
-              "english": "satisfactory",
-              "category": "adjective",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 20,
-              "end": 29
-            }
-          ]
-        },
-        {
-          "english": "the next chapter",
-          "target": "le chapitre suivant",
-          "category": "noun",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
             {
               "target": "le",
               "english": "the",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 0,
-              "end": 2
-            },
-            {
-              "target": "chapitre",
-              "english": "chapter",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 3,
+              "start": 9,
               "end": 11
             },
             {
-              "target": "suivant",
-              "english": "next",
-              "category": "adjective",
-              "frequency_band": "very_common",
+              "target": "cidre",
+              "english": "cider",
+              "category": "noun",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 12,
-              "end": 19
-            }
-          ]
-        },
-        {
-          "english": "opens the door to storage and the table",
-          "target": "ouvre la porte du rangement et de la table",
-          "category": "verb",
-          "frequency_band": "very_common",
-          "is_idiom": false,
-          "lookup": [
-            {
-              "target": "ouvre",
-              "english": "opens",
-              "category": "verb",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 0,
-              "end": 5
-            },
-            {
-              "target": "la",
-              "english": "the",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 6,
-              "end": 8
-            },
-            {
-              "target": "porte",
-              "english": "door",
-              "category": "noun",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 9,
-              "end": 14
-            },
-            {
-              "target": "du",
-              "english": "some",
-              "category": "function_word",
-              "frequency_band": "very_common",
-              "is_idiom": false,
-              "start": 15,
               "end": 17
             },
             {
-              "target": "rangement",
-              "english": "storage place",
-              "category": "noun",
-              "frequency_band": "very_common",
+              "target": "conditionné",
+              "english": "packaged",
+              "category": "adjective",
+              "frequency_band": "common",
               "is_idiom": false,
               "start": 18,
-              "end": 27
+              "end": 29
             },
             {
-              "target": "et",
-              "english": "and",
+              "target": "dans",
+              "english": "in",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 28,
-              "end": 30
+              "start": 30,
+              "end": 34
             },
             {
               "target": "de",
@@ -8501,26 +8564,116 @@
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 31,
-              "end": 33
+              "start": 35,
+              "end": 37
             },
             {
-              "target": "la",
-              "english": "the",
+              "target": "bonnes",
+              "english": "good",
+              "category": "adjective",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 38,
+              "end": 44
+            },
+            {
+              "target": "conditions",
+              "english": "conditions",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 45,
+              "end": 55
+            }
+          ]
+        },
+        {
+          "english": "let us turn",
+          "target": "passons",
+          "category": "verb",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "passons",
+              "english": "let us turn",
+              "category": "verb",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 0,
+              "end": 7
+            }
+          ]
+        },
+        {
+          "english": "to storage and serving",
+          "target": "à sa conservation et à son service",
+          "category": "noun",
+          "frequency_band": "common",
+          "is_idiom": false,
+          "lookup": [
+            {
+              "target": "à",
+              "english": "to",
               "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 34,
-              "end": 36
+              "start": 0,
+              "end": 1
             },
             {
-              "target": "table",
-              "english": "table",
-              "category": "noun",
+              "target": "sa",
+              "english": "its",
+              "category": "function_word",
               "frequency_band": "very_common",
               "is_idiom": false,
-              "start": 37,
-              "end": 42
+              "start": 2,
+              "end": 4
+            },
+            {
+              "target": "conservation",
+              "english": "storage",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 5,
+              "end": 17
+            },
+            {
+              "target": "et",
+              "english": "and",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 18,
+              "end": 20
+            },
+            {
+              "target": "à",
+              "english": "to",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 21,
+              "end": 22
+            },
+            {
+              "target": "son",
+              "english": "its",
+              "category": "function_word",
+              "frequency_band": "very_common",
+              "is_idiom": false,
+              "start": 23,
+              "end": 26
+            },
+            {
+              "target": "service",
+              "english": "serving",
+              "category": "noun",
+              "frequency_band": "common",
+              "is_idiom": false,
+              "start": 27,
+              "end": 34
             }
           ]
         }

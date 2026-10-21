@@ -39,7 +39,7 @@ export function frenchLookups(chunk, vocabulary) {
       const e = phrases[normal(raw)];
       if (e) { count=k; entry=e; break; }
     }
-    if (!entry && AUX.has(w) && i+1 < matches.length) {
+    if (!entry && m[0] !== 'A' && AUX.has(w) && i+1 < matches.length) {
       const next = normal(matches[i+1][0]);
       const compound = `${w} ${next}`;
       const known = verbs[compound];
@@ -77,18 +77,19 @@ export function frenchLookups(chunk, vocabulary) {
     // Prefer authored lexical senses, not the old broad phrase gloss, even
     // when an original alignment happened to contain only one French word.
     // Elision retains the role of the word in this construction.
-    if ((w === "s'" || w==='se') && !present(chunk.english, english)) english = normal(matches[i+1]?.[0] || '') === 'il' ? 'if' : 'reflexive pronoun';
-    if ((w === "l'" || w==='le' || w==='la') && AUX.has(normal(matches[i+1]?.[0] || ''))) english = /\b(it|him|her)\b/i.exec(chunk.english)?.[0].toLowerCase() || 'it';
-    if ((w === 'de' || w === "d'") && following?.category === 'verb') english='to';
-    if (w === "n'" || w === 'ne') english='negation marker';
-    if (w === 'en' && matches[i+1] && /ant$/.test(normal(matches[i+1][0]))) {
+    if (count===1 && (w === "s'" || w==='se') && !present(chunk.english, english)) english = normal(matches[i+1]?.[0] || '') === 'il' ? 'if' : 'reflexive pronoun';
+    if (count===1 && (w === "l'" || w==='le' || w==='la') && AUX.has(normal(matches[i+1]?.[0] || ''))) english = /\b(it|him|her)\b/i.exec(chunk.english)?.[0].toLowerCase() || 'it';
+    if (count===1 && (w === 'de' || w === "d'") && following?.category === 'verb') english='to';
+    if (count===1 && (w === "n'" || w === 'ne')) english='negation marker';
+    if (count===1 && w === 'en' && matches[i+1] && /ant$/.test(normal(matches[i+1][0]))) {
       english=present(chunk.english,'by') ? 'by' : present(chunk.english,'on') ? 'on' : 'while';
     }
     const exact = custom[String(m.index)];
     if (exact) english=exact.english;
-    units.push({target, english, category: exact?.category || entry.category,
-      frequency_band: entry.category==='proper_noun' ? null : entry.category==='function_word' ? 'very_common' : (chunk.frequency_band || 'common'),
-      is_idiom: entry.category==='idiom', start:m.index, end});
+    const category = exact?.category || entry.category;
+    units.push({target, english, category,
+      frequency_band: category==='proper_noun' ? null : category==='function_word' ? 'very_common' : (chunk.frequency_band || 'common'),
+      is_idiom: category==='idiom', start:m.index, end});
     i+=count;
   }
   return units;

@@ -28,7 +28,7 @@ Imaginez maintenant deux amis devant le même jus. Le premier annonce qu'il veut
 
 La douceur et les bulles sont deux caractéristiques distinctes. Un cidre peut être sec et pétillant, ou doux et tranquille. En revanche, obtenir le résultat souhaité demande une méthode cohérente. Nous expliquerons les autres possibilités sans changer notre premier objectif à chaque découverte.
 
-Cette façon de travailler vous aidera aussi à apprendre le français. Un mot devient plus facile à retenir lorsqu'il répond à une vraie question. Vous rencontrerez « choisir » devant un arbre, puis devant un récipient. Vous retrouverez « comparer » dans une bouchée et dans une mesure. Le vocabulaire fera plusieurs voyages, et vous avec lui.
+Cette façon de travailler vous aidera aussi à apprendre le français. Un mot devient plus facile à retenir lorsqu'il répond à une vraie question. Vous rencontrerez « choisir » devant un arbre, puis devant un récipient. Vous retrouverez « comparer » en goûtant un fruit puis en prenant une mesure. Le vocabulaire fera plusieurs voyages, et vous avec lui.
 
 Une dernière précision avant de partir : les premiers chapitres préparent les suivants. Ne mettez pas du jus dans une bouteille fermée pour essayer la fermentation sur la seule base de cette introduction. Le gaz produit doit être géré avec un équipement adapté. Nous prendrons le temps d'expliquer chaque étape avant de la réaliser.
 

@@ -127,8 +127,7 @@ test('new chapters distinguish familiar prose from technical vocabulary', () => 
   for (const c of chapters.slice(10)) {
     const bands = new Set(c.pairs.flatMap(p => p.alignment.map(a => a.frequency_band)));
     assert.ok(bands.has('very_common') && bands.has('common'));
-    assert.ok(bands.has('uncommon') || bands.has('less_common'));
-    if (Number(c.id.slice(3)) >= 16) assert.ok(bands.has('uncommon'));
+    assert.ok(bands.has('uncommon'));
   }
 });
 
@@ -150,8 +149,8 @@ test('finishing chapters keep blending labels and tasting homonyms independently
   assert.ok(!units.some(w => w.target === 'A pourrait'));
 });
 
-test('final five manuscript paragraphs match the bilingual app chapters', () => {
-  for (const c of chapters.slice(15)) {
+test('all manuscript paragraphs match the bilingual app chapters', () => {
+  for (const c of chapters) {
     const groups = [];
     for (const p of c.pairs) {
       if (p.paragraph_start) groups.push([]);
@@ -162,4 +161,52 @@ test('final five manuscript paragraphs match the bilingual app chapters', () => 
       assert.deepEqual(manuscript, groups.map(g => g.map(p => p[key]).join(' ')));
     }
   }
+});
+
+test('all published frequency and category metadata is understood by the app', () => {
+  const bands = new Set(['very_common', 'common', 'uncommon', 'rare']);
+  const categories = new Set(['noun','verb','adjective','adverb','function_word','proper_noun','idiom']);
+  for (const c of chapters) for (const p of c.pairs) for (const a of p.alignment) {
+    assert.ok(categories.has(a.category), `${c.id}: ${a.category}`);
+    assert.ok(a.category === 'proper_noun' ? a.frequency_band === null : bands.has(a.frequency_band));
+    for (const w of a.lookup) {
+      assert.ok(categories.has(w.category));
+      assert.ok(w.category === 'proper_noun' ? w.frequency_band === null : bands.has(w.frequency_band));
+    }
+  }
+});
+
+test('every English word has a reader alignment anchor and French-only paragraphs stay intact', () => {
+  const context = vm.createContext({console, window: {addEventListener(){}}, document: {}});
+  const src = fs.readFileSync('app/js/reader.js', 'utf8').replace(/^import .*?;\n/gm, '').replace(/export /g, '');
+  vm.runInContext(src + '\nglobalThis.api = {buildEnglishCoverage, paragraphStarts};', context);
+  for (const c of chapters) {
+    assert.deepEqual(Array.from(context.api.paragraphStarts(c.pairs)), c.pairs.map(p => !!p.paragraph_start));
+    for (const p of c.pairs) {
+      const coverage = context.api.buildEnglishCoverage(p);
+      for (let i=0;i<p.english.length;i++) if (/[\p{L}\p{N}]/u.test(p.english[i])) {
+        assert.notEqual(coverage[i], null, `${c.id}: ${p.english}`);
+      }
+    }
+  }
+});
+
+test('published word lookups are reproducible from the reviewed authoring resources', async () => {
+  const path = require('node:path');
+  const {frenchLookups} = await import(path.resolve('tools/translate/lib/french-vocabulary.js'));
+  const vocabulary = Object.fromEntries(['words','phrases','verbs','overrides'].map(k => [k, JSON.parse(fs.readFileSync(`${root}/_src/vocabulary/${k}.json`))]));
+  for (const c of chapters) for (const p of c.pairs) for (const a of p.alignment) {
+    assert.deepEqual(a.lookup, frenchLookups(a, vocabulary), `${c.id}: ${a.target}`);
+  }
+});
+
+test('context-sensitive modifiers and indirect pronouns keep the reviewed meaning', () => {
+  const chunks = chapters.flatMap(c => c.pairs.flatMap(p => p.alignment));
+  for (const [target, term, english] of [
+    ['de leur donner', 'leur', 'them'],
+    ['à plusieurs moments', 'à plusieurs', 'at several'],
+    ['Modifier tout à la fois', 'à la fois', 'at once'],
+    ['dans les récipients de réserve', 'réserve', 'reserve'],
+    ['vaut mieux', 'vaut mieux', 'is better']
+  ]) assert.ok(chunks.some(c => c.target === target && c.lookup.some(w => w.target === term && w.english === english)), `${term}: ${english}`);
 });

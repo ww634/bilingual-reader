@@ -16,7 +16,7 @@ Dans un jus avant fermentation, les sucres dissous influencent fortement la dens
 
 Supposons qu'un jus affiche une densité relative de 1,050. Cela ne signifie pas qu'il contient cinq pour cent d'alcool. La fermentation n'a pas encore commencé. Une échelle d'alcool potentiel présente une estimation fondée sur des hypothèses, pas le résultat d'une analyse d'alcool. Nous utiliserons plus tard l'évolution de la densité pour suivre le lot.
 
-Un réfractomètre emploie la lumière pour fournir une autre lecture. Son échelle en degrés Brix est pratique pour le jus, mais n'est pas interchangeable avec toutes les autres échelles. Après le début de la fermentation, l'alcool modifie la lecture. Une valeur Brix brute ne permet alors pas de lire directement le sucre restant.
+Un réfractomètre emploie la lumière pour fournir une autre lecture. Son échelle en degrés Brix est pratique pour le jus, mais n'est pas interchangeable avec toutes les autres échelles. Après le début de la fermentation, l'alcool modifie la lecture. Une valeur Brix brute ne permet alors pas de connaître directement la quantité de sucre restant.
 
 Passons à l'acidité. Le pH et l'acidité titrable décrivent des aspects différents du même jus. Le pH est lié à l'activité des ions hydrogène. L'acidité titrable mesure la quantité d'acides neutralisée selon un protocole défini. Deux jus peuvent avoir un pH semblable et des acidités titrables différentes.
 
