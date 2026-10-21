@@ -29,7 +29,7 @@ function setup() {
     fetch: async url => {
       requests.push(url);
       if (context.fail && url.endsWith('ch-2.json')) throw Error('offline');
-      return { ok: true, json: async () => ({ version: 1, pairs: [{ target: '« Bonjour. »', english: '“Hello.”' }] }) };
+      return { ok: true, blob: async () => "new-cover", json: async () => ({ version: 1, pairs: [{ target: '« Bonjour. »', english: '“Hello.”' }] }) };
     },
   });
   let source = fs.readFileSync('app/js/library.js', 'utf8').replace(/import\s+[\s\S]*?from\s+"[^\"]+";/g, '').replace(/export /g, '');
@@ -76,4 +76,19 @@ test('missing or empty chapters resume and legacy files are stamped with catalog
   await s.downloadBook(s.catalog, s.element());
   assert.equal(s.requests.length, 2);
   assert.equal(s.state.downloadedBooks.get('book').downloadedChapterCount, 2);
+});
+
+ test('book edition updates refresh cached covers and preserve reading progress', async () => {
+  const s = setup();
+  s.books.set('book', { ...s.catalog, coverBlob: 'old-cover' });
+  s.state.downloadedBooks = await s.loadDownloadedIndex();
+  for (const c of s.catalog.chapters) s.chapters.set(`book/${c.id}`, { catalogVersion: c.version, pairs: [{}] });
+  const updated = { ...s.catalog, version: 2, cover: 'books/book/cover.svg' };
+  await s.downloadBook(updated, s.element());
+  assert.equal(s.books.get('book').coverBlob, 'new-cover');
+  assert.match(s.requests[0], /cover.svg\?edition=2$/);
+  assert.equal(s.requests.length, 1);
+  assert.equal(s.progress.get('book/ch-1').lastPage, 4);
+  await s.downloadBook(updated, s.element());
+  assert.equal(s.requests.length, 1);
 });

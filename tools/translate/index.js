@@ -647,7 +647,10 @@ async function main() {
       englishTitle: bookTitle,
       targetTitle: bookTitleResult.target,
     });
-    await fs.writeFile(coverPath, svg, "utf8");
+    const existingCover = await fs.readFile(coverPath, "utf8").catch(() => "");
+    if (!existingCover.includes("custom-generated-cover")) {
+      await fs.writeFile(coverPath, svg, "utf8");
+    }
     coverRel = `books/${bookId}/cover.svg`;
     console.log(dim(`   written: ${path.relative(REPO_ROOT, coverPath)}`));
   }

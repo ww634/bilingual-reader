@@ -172,7 +172,10 @@ async function main() {
 
   // Cover + library entry.
   const coverPath = path.join(bookDir, "cover.svg");
-  await fs.writeFile(coverPath, renderCover({ englishTitle: book.title.english, targetTitle: book.title.target }), "utf8");
+  const existingCover = await fs.readFile(coverPath, "utf8").catch(() => "");
+  if (!existingCover.includes("custom-generated-cover")) {
+    await fs.writeFile(coverPath, renderCover({ englishTitle: book.title.english, targetTitle: book.title.target }), "utf8");
+  }
   const library = await readLibrary(LIBRARY_PATH);
   const r = upsertBook(library, {
     id: book.id, language: book.language,

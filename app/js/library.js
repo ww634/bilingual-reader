@@ -260,12 +260,13 @@ async function downloadBook(catalogEntry, btn) {
   $("browse-status").textContent = `Adding "${catalogEntry.title?.english || catalogEntry.id}"…`;
 
   try {
-    // 1. Cover: reuse existing if we have a local record, otherwise fetch.
+    // 1. Refresh cover artwork when the book edition changes.
     const existingRecord = state.downloadedBooks.get(catalogEntry.id);
     let coverBlob = existingRecord?.coverBlob || null;
-    if (!coverBlob && catalogEntry.cover) {
-      const coverUrl = resolveUrl(settings.libraryUrl, catalogEntry.cover);
-      coverBlob = await fetchBlob(coverUrl);
+    if (catalogEntry.cover && (!coverBlob || existingRecord?.version !== catalogEntry.version)) {
+      const coverUrl = new URL(resolveUrl(settings.libraryUrl, catalogEntry.cover));
+      coverUrl.searchParams.set("edition", catalogEntry.version ?? 1);
+      coverBlob = await fetchBlob(coverUrl.href);
     }
 
     // 2. Save the book record FIRST (with empty/partial state). This makes
@@ -650,7 +651,11 @@ export async function refreshCatalog() {
       }
       if (lib?.books) {
         for (const book of lib.books) {
-          if (book.cover) book._coverResolved = resolveUrl(settings.libraryUrl, book.cover);
+          if (book.cover) {
+            const coverUrl = new URL(resolveUrl(settings.libraryUrl, book.cover));
+            coverUrl.searchParams.set("edition", book.version ?? 1);
+            book._coverResolved = coverUrl.href;
+          }
         }
       }
       state.catalog = lib;
