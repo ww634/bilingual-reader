@@ -122,3 +122,10 @@ test('fermentation and maturation chapters retain their contextual technical voc
   has('1,030', '1.030');
   has('se contredisent', 'contradict one another');
 });
+
+test('new chapters distinguish familiar prose from technical vocabulary', () => {
+  for (const c of chapters.slice(10)) {
+    const bands = new Set(c.pairs.flatMap(p => p.alignment.map(a => a.frequency_band)));
+    assert.ok(bands.has('very_common') && bands.has('common') && bands.has('less_common'));
+  }
+});

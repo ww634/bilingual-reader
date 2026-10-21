@@ -30,8 +30,10 @@ Maintain the French B1–B2 voice: vous/on, precise observation, warm understate
 
 ## Publication/build continuity
 
-Chapters 1–10 are preserved exactly as published. Chapters 11–15 each contain 64 pairs, 16 paragraphs, natural English, meaning-aligned chunks and contextual French lookup units. Their initial chapter version is 1. The handbook's catalogue edition is incremented once for the added batch and expanded synopsis.
+Chapters 1–10 are preserved exactly as published. Chapters 11–15 each contain 64 pairs, 16 paragraphs, natural English, meaning-aligned chunks and contextual French lookup units. Their initial chapter version was 1; the live familiarity-band review advances them to version 2. The handbook's catalogue edition is 5 after adding the batch and reviewing its familiarity bands.
 
 The generic builder rewrites all chapters and advances catalogue versions when rerun. Before future work, back up released JSON and the existing catalogue book entry. Restore unchanged published chapter files and their catalogue entries after a full build; only advance genuinely changed/new content. Global vocabulary expansions can change older annotations, so do not republish older rebuilt JSON without deliberate review and versioning.
 
 Use the clean isolated publishing checkout at `/tmp/cider-handbook-publish` if available, pull current main first, and merge only this handbook's catalogue entry into the latest library. Preserve unrelated books, app files and work in the main shared workspace.
+
+Familiarity-band review: generic prose, descriptive vocabulary and cider-specific vocabulary use distinct editorial frequency bands. This avoids treating every new passage as equally unfamiliar in the learner-level estimate; the bands remain estimates, not a standardized corpus classification.
