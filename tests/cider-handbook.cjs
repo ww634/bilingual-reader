@@ -4,9 +4,9 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const id = 'le-petit-manuel-du-cidrier-amateur';
 const root = `content/books/${id}`;
-const chapters = Array.from({length: 5}, (_, i) => JSON.parse(fs.readFileSync(`${root}/ch-${i+1}.json`)));
+const chapters = Array.from({length: 10}, (_, i) => JSON.parse(fs.readFileSync(`${root}/ch-${i+1}.json`)));
 
-test('five French chapters have matching catalogue entries, source text and paragraphs', () => {
+test('ten French chapters have matching catalogue entries, source text and paragraphs', () => {
   const book = JSON.parse(fs.readFileSync('content/library.json')).books.find(b => b.id === id);
   assert.equal(book.language, 'fr');
   for (const c of chapters) {
@@ -86,4 +86,25 @@ test('reader rendering preserves every French sentence and emits individual tap 
     const text = html.replace(/<[^>]*>/g, '').replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').trim();
     assert.equal(text, p.target);
   }
+});
+
+test('workshop and measurement chapters keep technical senses and blend labels', () => {
+  const chunks = chapters.slice(5).flatMap(c => c.pairs.flatMap(p => p.alignment));
+  const find = (target, term) => {
+    const chunk = chunks.find(c => c.target === target);
+    assert.ok(chunk, target);
+    const word = chunk.lookup.find(w => w.target === term);
+    assert.ok(word, term);
+    return word;
+  };
+  assert.equal(find('Le densimètre', 'densimètre').english, 'hydrometer');
+  assert.equal(find('Le moût', 'moût').english, 'must');
+  assert.equal(find('de densité relative', 'densité relative').english, 'specific gravity');
+  assert.equal(find("n'est plus", "n'est plus").english, 'is no longer');
+  assert.equal(find('ne se calcule pas', 'ne se calcule pas').english, 'cannot be calculated');
+  assert.equal(find('Une odeur de fruit frais', 'frais').english, 'fresh');
+  assert.equal(find('La précision', 'précision').english, 'precision');
+  const blendLabels = chunks.flatMap(c => c.lookup).filter(w => w.target === 'A');
+  assert.ok(blendLabels.length > 2);
+  assert.ok(blendLabels.every(w => w.english === 'A' && w.category === 'proper_noun'));
 });

@@ -3128,7 +3128,7 @@
       ]
     },
     {
-      "version": 1,
+      "version": 2,
       "id": "le-petit-manuel-du-cidrier-amateur",
       "language": "fr",
       "title": {
@@ -3136,7 +3136,7 @@
         "english": "The Amateur Cider Maker’s Handbook"
       },
       "author": "Original nonfiction · AI-assisted",
-      "synopsis": "An approachable French guide to cider making, from the apple tree to the glass. Learn the craft and its vocabulary through careful observation, practical explanations and a little humour, with aligned English translations. Chapters 1–5 cover the journey, tasting apples, choosing trees, orchard care and harvesting.",
+      "synopsis": "An approachable French guide to cider making, from the apple tree to the glass. Learn the craft and its vocabulary through careful observation, practical explanations and a little humour, with aligned English translations. Chapters 1–10 cover the orchard, harvest, workspace, pressing, juice analysis, blending and yeast.",
       "genres": [
         "nonfiction",
         "food and drink",
@@ -3190,6 +3190,51 @@
           },
           "url": "books/le-petit-manuel-du-cidrier-amateur/ch-5.json",
           "version": 1
+        },
+        {
+          "version": 1,
+          "id": "ch-6",
+          "title": {
+            "target": "Un petit atelier bien préparé",
+            "english": "Preparing a Small Workspace"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-6.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-7",
+          "title": {
+            "target": "Broyer et presser",
+            "english": "Milling and Pressing"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-7.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-8",
+          "title": {
+            "target": "Lire son jus",
+            "english": "Understanding Your Juice"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-8.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-9",
+          "title": {
+            "target": "Choisir un équilibre",
+            "english": "Choosing a Balance"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-9.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-10",
+          "title": {
+            "target": "Les levures entrent en scène",
+            "english": "Enter the Yeast"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-10.json"
         }
       ]
     }

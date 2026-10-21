@@ -2,7 +2,7 @@
 
 ## Status and evidence policy
 
-This began as the research plan for the outline. Chapters 1–5 now have a completed scope-specific source review in [research-chapters-1-5.md](research-chapters-1-5.md), with published example continuity in [continuity-through-ch5.md](continuity-through-ch5.md). Later chapters and operating parameters remain unresearched. Do not treat the outline as verified operating instructions.
+This began as the research plan for the outline. Chapters 1–5 now have a completed scope-specific source review in [research-chapters-1-5.md](research-chapters-1-5.md), with published example continuity in [continuity-through-ch5.md](continuity-through-ch5.md). Chapters 6–10 now also have a scope-specific review in [research-chapters-6-10.md](research-chapters-6-10.md), with example decisions in [continuity-through-ch10.md](continuity-through-ch10.md). Later procedures remain subject to research. Do not treat the outline as verified operating instructions.
 
 Before writing each chapter, consult primary or authoritative sources appropriate to its claims: agricultural extension and horticultural research for trees and fruit; cider research organisations and technical publications for production; current manufacturer instructions for specific equipment, yeast and sanitation products; official food-safety guidance where relevant. Search and read the actual source. Do not manufacture a citation from memory.
 
@@ -39,10 +39,10 @@ These are authoring checks. The prose should explain relevant constraints at the
 Working identity: « notre premier lot », an explicitly illustrative example.
 
 - Starting quantity: ten litres of juice; not ten litres guaranteed in bottles.
-- Fruit origin: to be chosen after research; no invented named cultivar blend yet.
+- Current example source: purchased pasteurised juice without fermentation-inhibiting preservatives; the orchard/pressing route is explained separately. No invented named cultivar blend.
 - Intended result: dry, still cider.
-- Fermentation route: selected yeast; exact choice and parameters pending research.
-- Vessel, headspace, temperature, nutrients and other interventions: unspecified until verified.
+- Fermentation route: SafCider AB-1 as a reference selected yeast; illustrative dose/temperature and their limits are recorded in continuity through chapter 10.
+- Vessel, headspace, nutrients and later interventions: actual choices remain conditional on verified equipment/product instructions and juice analysis.
 - Numbers and dates: hypothetical and labelled as such; never represented as actual observations.
 - Later blending demonstrations: separate small hypothetical trials unless deliberately entered into the continuing batch record.
 
