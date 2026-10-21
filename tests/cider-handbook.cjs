@@ -4,9 +4,9 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const id = 'le-petit-manuel-du-cidrier-amateur';
 const root = `content/books/${id}`;
-const chapters = Array.from({length: 10}, (_, i) => JSON.parse(fs.readFileSync(`${root}/ch-${i+1}.json`)));
+const chapters = Array.from({length: 15}, (_, i) => JSON.parse(fs.readFileSync(`${root}/ch-${i+1}.json`)));
 
-test('ten French chapters have matching catalogue entries, source text and paragraphs', () => {
+test('fifteen French chapters have matching catalogue entries, source text and paragraphs', () => {
   const book = JSON.parse(fs.readFileSync('content/library.json')).books.find(b => b.id === id);
   assert.equal(book.language, 'fr');
   for (const c of chapters) {
@@ -107,4 +107,18 @@ test('workshop and measurement chapters keep technical senses and blend labels',
   const blendLabels = chunks.flatMap(c => c.lookup).filter(w => w.target === 'A');
   assert.ok(blendLabels.length > 2);
   assert.ok(blendLabels.every(w => w.english === 'A' && w.category === 'proper_noun'));
+});
+
+test('fermentation and maturation chapters retain their contextual technical vocabulary', () => {
+  const units = chapters.slice(10).flatMap(c => c.pairs.flatMap(p => p.alignment.flatMap(a => a.lookup)));
+  const has = (target, english) => assert.ok(units.some(w => w.target.toLowerCase() === target && w.english === english), `${target}: ${english}`);
+  has('lies', 'lees');
+  has('trouble', 'haze');
+  has('trouble', 'cloudy');
+  has('porte', 'door');
+  has('cuivre', 'copper');
+  has('acide lactique', 'lactic acid');
+  has('reprise de fermentation', 'refermentation');
+  has('1,030', '1.030');
+  has('se contredisent', 'contradict one another');
 });
