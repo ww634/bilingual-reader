@@ -37,6 +37,8 @@ The shared French lookup generator now applies its single-token grammar heuristi
 
 The old `less_common` spelling was removed from this book's published metadata: **234 unsupported band occurrences became supported values**. Current values are `very_common`, `common`, `uncommon` and `rare`; proper nouns have no frequency band. Bands remain editorial estimates. Sixty-one obsolete contextual keys were removed after the copy-edit.
 
+The live app review also removed a Chinese-specific instruction from the reader options and made the English-hiding help text suitable for nonfiction as well as stories. The shell cache/version advances together to make this copy update available to installed PWAs.
+
 All lookup annotations now reproduce from the reviewed source/vocabulary files. No manual patch of the built annotations is required to retain these corrections.
 
 ## Validation
