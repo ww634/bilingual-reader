@@ -3128,7 +3128,7 @@
       ]
     },
     {
-      "version": 5,
+      "version": 6,
       "id": "le-petit-manuel-du-cidrier-amateur",
       "language": "fr",
       "title": {
@@ -3136,7 +3136,7 @@
         "english": "The Amateur Cider Maker’s Handbook"
       },
       "author": "Original nonfiction · AI-assisted",
-      "synopsis": "An approachable French guide to cider making, from the apple tree to the glass. Learn the craft and its vocabulary through careful observation, practical explanations and a little humour, with aligned English translations. Chapters 1–15 cover the orchard, harvest, workspace, pressing, juice analysis, blending, yeast, fermentation monitoring, troubleshooting, racking, maturation and cider styles.",
+      "synopsis": "A complete, approachable French handbook to cider making, from the apple tree to the glass. Twenty chapters explore growing and harvesting apples, pressing, analysis, fermentation, troubleshooting, blending, bottling, storage and tasting. Learn the craft and its vocabulary through practical explanations, careful observation and a little humour, with aligned English translations and contextual word lookups.",
       "genres": [
         "nonfiction",
         "food and drink",
@@ -3280,6 +3280,51 @@
             "english": "Dry, Sweet, Still or Sparkling?"
           },
           "url": "books/le-petit-manuel-du-cidrier-amateur/ch-15.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-16",
+          "title": {
+            "target": "L'art des petits assemblages",
+            "english": "The Art of Small Blends"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-16.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-17",
+          "title": {
+            "target": "Mettre en bouteille au bon moment",
+            "english": "Bottling at the Right Time"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-17.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-18",
+          "title": {
+            "target": "Conserver et servir",
+            "english": "Storing and Serving"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-18.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-19",
+          "title": {
+            "target": "Mettre des mots sur un verre",
+            "english": "Finding Words for a Glass"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-19.json"
+        },
+        {
+          "version": 1,
+          "id": "ch-20",
+          "title": {
+            "target": "La prochaine récolte",
+            "english": "The Next Harvest"
+          },
+          "url": "books/le-petit-manuel-du-cidrier-amateur/ch-20.json"
         }
       ]
     }
