@@ -2,7 +2,7 @@
 
 ## French cider handbook
 
-Planning documents for **Le Petit Manuel du cidrier amateur** are in [cider-handbook/README.md](cider-handbook/README.md). Read that index before drafting chapters. The pack contains the book brief, twenty-chapter outline, French/bilingual editorial guide, technical research and continuity plan, and drafting workflow. This is a language-learning handbook using the existing text-based reader format; chapters 1–10 are now written and validated. Read the linked chapter-10 continuity and research records before continuing.
+Planning documents for **Le Petit Manuel du cidrier amateur** are in [cider-handbook/README.md](cider-handbook/README.md). Read that index before drafting chapters. The pack contains the book brief, twenty-chapter outline, French/bilingual editorial guide, technical research and continuity plan, and drafting workflow. This is a language-learning handbook using the existing text-based reader format; all twenty chapters are now written and validated. Read the linked chapter-20 continuity and research records before continuing.
 
 
 ## The Last Clear Voice

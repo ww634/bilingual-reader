@@ -4,9 +4,9 @@ const fs = require('node:fs');
 const vm = require('node:vm');
 const id = 'le-petit-manuel-du-cidrier-amateur';
 const root = `content/books/${id}`;
-const chapters = Array.from({length: 10}, (_, i) => JSON.parse(fs.readFileSync(`${root}/ch-${i+1}.json`)));
+const chapters = Array.from({length: 20}, (_, i) => JSON.parse(fs.readFileSync(`${root}/ch-${i+1}.json`)));
 
-test('ten French chapters have matching catalogue entries, source text and paragraphs', () => {
+test('twenty French chapters have matching catalogue entries, source text and paragraphs', () => {
   const book = JSON.parse(fs.readFileSync('content/library.json')).books.find(b => b.id === id);
   assert.equal(book.language, 'fr');
   for (const c of chapters) {
@@ -107,4 +107,59 @@ test('workshop and measurement chapters keep technical senses and blend labels',
   const blendLabels = chunks.flatMap(c => c.lookup).filter(w => w.target === 'A');
   assert.ok(blendLabels.length > 2);
   assert.ok(blendLabels.every(w => w.english === 'A' && w.category === 'proper_noun'));
+});
+
+test('fermentation and maturation chapters retain their contextual technical vocabulary', () => {
+  const units = chapters.slice(10).flatMap(c => c.pairs.flatMap(p => p.alignment.flatMap(a => a.lookup)));
+  const has = (target, english) => assert.ok(units.some(w => w.target.toLowerCase() === target && w.english === english), `${target}: ${english}`);
+  has('lies', 'lees');
+  has('trouble', 'haze');
+  has('trouble', 'cloudy');
+  has('porte', 'door');
+  has('cuivre', 'copper');
+  has('acide lactique', 'lactic acid');
+  has('reprise de fermentation', 'refermentation');
+  has('1,030', '1.030');
+  has('se contredisent', 'contradict one another');
+});
+
+test('new chapters distinguish familiar prose from technical vocabulary', () => {
+  for (const c of chapters.slice(10)) {
+    const bands = new Set(c.pairs.flatMap(p => p.alignment.map(a => a.frequency_band)));
+    assert.ok(bands.has('very_common') && bands.has('common'));
+    assert.ok(bands.has('uncommon') || bands.has('less_common'));
+    if (Number(c.id.slice(3)) >= 16) assert.ok(bands.has('uncommon'));
+  }
+});
+
+test('finishing chapters keep blending labels and tasting homonyms independently meaningful', () => {
+  const chunks = chapters.slice(15).flatMap(c => c.pairs.flatMap(p => p.alignment));
+  const units = chunks.flatMap(c => c.lookup);
+  const expected = [
+    ['finale', 'finish', 'noun'],
+    ['nature', 'plain', 'adjective'],
+    ['palais', 'palate', 'noun'],
+    ['feuille', 'sheet', 'noun'],
+    ['part', 'starts', 'verb'],
+    ['A', 'A', 'proper_noun']
+  ];
+  for (const [target, english, category] of expected) {
+    assert.ok(units.some(w => w.target === target && w.english === english && w.category === category), `${target}: ${english} (${category})`);
+  }
+  assert.ok(units.filter(w => w.target === 'A').every(w => w.english === 'A' && w.category === 'proper_noun'));
+  assert.ok(!units.some(w => w.target === 'A pourrait'));
+});
+
+test('final five manuscript paragraphs match the bilingual app chapters', () => {
+  for (const c of chapters.slice(15)) {
+    const groups = [];
+    for (const p of c.pairs) {
+      if (p.paragraph_start) groups.push([]);
+      groups.at(-1).push(p);
+    }
+    for (const [language, key] of [['fr', 'target'], ['en', 'english']]) {
+      const manuscript = fs.readFileSync(`writing/manuscript/${id}/${c.id}.${language}.md`, 'utf8').trim().split(/\n\n/).slice(1);
+      assert.deepEqual(manuscript, groups.map(g => g.map(p => p[key]).join(' ')));
+    }
+  }
 });
