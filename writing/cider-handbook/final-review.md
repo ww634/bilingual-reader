@@ -4,13 +4,15 @@ Completed 21 October 2026. Scope: the existing twenty-chapter handbook, with no 
 
 ## Outcome
 
-The book received a complete prose and translation review, followed by a focused copy-edit affecting **96 bilingual passages**. It retains its warm, observational voice, vous/on address, practical cider vocabulary and light humour. The opening-to-closing progression remains intact. No tables, diagrams, extra lessons or unsupported reader widgets were introduced.
+The book received a complete prose and translation review, followed by a focused copy-edit affecting **97 bilingual passages**. It retains its warm, observational voice, vous/on address, practical cider vocabulary and light humour. The opening-to-closing progression remains intact. No tables, diagrams, extra lessons or unsupported reader widgets were introduced.
 
 Final content: **20 chapters, 1,349 bilingual passages, 321 paragraph starts, 5,151 alignment chunks and 15,022 contextual lookup entries**. The French manuscript is 15,664 whitespace-delimited words. These are content counts, not a standardized reading-level assessment.
 
 ## French and English
 
 The review covered all chapters for idiomatic French, readable rhythm, clear pronouns, technical terminology and equivalents in natural British English. Revisions remove literal or awkward phrasing such as mixing “the vessels” when the intended action is combining their contents, a deposit described as “mainly yeasted,” and storage recommendations attributed to the closure itself rather than its manufacturer.
+
+The live reading pass also corrected the plural agreement after the definition of lees.
 
 The early whole-apple route is now explicitly separate from the bought-pasteurised-juice example established in chapter 6. The ten-litre dry/still example, separate arithmetic demonstrations, strain reference and hypothetical status remain consistent. No observed fermentation, final yield, bottling date or shelf life was invented to complete the narrative.
 
@@ -45,4 +47,4 @@ Executed:
 
 **25 checks passed.** Coverage includes all twenty catalogue entries and versions; complete, ordered French alignment and lookup offsets; unambiguous glosses; supported metadata; exact French rendering through the actual reader; an anchor for every English word; paragraph boundaries used by French-only mode; all forty manuscript reading copies; reproducible lookup generation; chapter-update behaviour preserving progress; and regression cases for the generator/context issues above. Whitespace/error checks also passed.
 
-The review preserves chapter IDs, chapter order and bilingual-pair counts. Each changed chapter receives a version increment and the handbook edition advances from 6 to 7. Other books, their catalogue entries, cover art and unrelated workspace work are excluded from this publication. Live download, representative reading/lookup behaviour and French-only presentation are checked after deployment and reported in the delivery message.
+The review preserves chapter IDs, chapter order and bilingual-pair counts. Each changed chapter receives a version increment and the handbook edition advances from 6 to 8. Other books, their catalogue entries, cover art and unrelated workspace work are excluded from this publication. Live download, representative reading/lookup behaviour and French-only presentation are checked after deployment and reported in the delivery message.

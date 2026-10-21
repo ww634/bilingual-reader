@@ -34,4 +34,4 @@ Publication uses `/tmp/cider-handbook-publish`, refreshed from current main. Mer
 
 ## Final review supersedes initial publication annotations
 
-The [whole-book review](final-review.md) revises all twenty chapters, retains all chapter IDs and pair counts, and advances the edition to 7. The former `less_common` metadata is now migrated to supported values. The reviewed lookup generator and book-local resources reproduce the final annotations; the earlier advice about preserving manually patched annotations describes the initial release history. Preserve publication versions and original creation dates when rebuilding.
+The [whole-book review](final-review.md) revises all twenty chapters, retains all chapter IDs and pair counts, and advances the edition to 8. The former `less_common` metadata is now migrated to supported values. The reviewed lookup generator and book-local resources reproduce the final annotations; the earlier advice about preserving manually patched annotations describes the initial release history. Preserve publication versions and original creation dates when rebuilding.
