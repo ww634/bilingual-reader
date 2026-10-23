@@ -1,0 +1,7 @@
+# Plan series
+
+Read ../AGENTS.md and the handoff §5. Use the human's genre, vibe, setting, tropes, chapter length and optional images; if a demonstration is explicitly authorized, choose a coherent premise and state the assumption without stalling.
+
+Create `content/books/<id>/`, `_arcs/`, `_drafts/`. Never replace an existing bible or checkpoint silently. Write `_series.json` with `title:{english,hanzi}`, premise (2–4 sentences), world, concrete tone_style (POV, register, rhythm, humour), spoiler-free synopsis, genres, characters (`name_english,hanzi,role,description`) and arcs (`index,title,one_liner,est_chapters`). Leave deterministic title target/name pinyin absent. Plan a handful of arcs sized to their narrative scope; use flexible estimates, not a chapter cap. The user’s 2026-09-14 correction supersedes the handoff’s short-arc mandate. A school year needs sustained scenes of learning, ordinary life, changing relationships and consequences. Small writing waves are production batches, not arcs. One-liners describe situations, not resolutions. Initialize `_state.json` with chapters_written:0, empty running_summary/last_ending, characters:[], open_threads:[], seeds:[].
+
+Offer only the spoiler-free bible for review; stop until the human approves/edits it, unless prior explicit authorization already covers the demonstration. Do not expand every future arc or surface hidden outcomes.

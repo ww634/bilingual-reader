@@ -1,0 +1,48 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import { createHash } from 'node:crypto';
+import { splitReadingSentences } from './lib/sentences.js';
+import { finalizeDraft } from './finalize-chapter.js';
+import { repairSentences } from './repair-sentences.js';
+const pair = (hanzi, english) => ({ hanzi, english, alignment: [{hanzi:hanzi.replace(/[。！？]/g,''),english:english.replace('.',''),category:'noun',is_idiom:false}] });
+const draft = pairs => ({ title: {hanzi:'路',english:'Road'}, pairs });
+test('sentence boundaries preserve quotes, punctuation and paragraph whitespace exactly', () => {
+ const prose='“好！”\n他问：“到了吗？”  她点头。\n\n尾声';
+ const parts=splitReadingSentences(prose);
+ assert.deepEqual(parts,['“好！”\n','他问：“到了吗？”  ','她点头。\n\n','尾声']);
+ assert.equal(parts.join(''),prose);
+ assert.deepEqual(splitReadingSentences('未结束的\n一行。'),['未结束的\n一行。']);
+});
+test('finalizer rejects paragraph pairs before romanization; separate sentences remain valid', () => {
+ assert.throws(()=>finalizeDraft(draft([pair('雨。风。','Rain. Wind.')])),/multiple sentences/);
+ assert.doesNotThrow(()=>finalizeDraft(draft([pair('雨。','Rain.'),pair('风。','Wind.')])));
+});
+test('explicit repair preserves prose/checkpoint and other books, versions both chapter and catalog, refuses stale sources',async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'sentence-repair-test-'));
+ t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const dir=path.join(root,'content/books/example');await fs.mkdir(dir,{recursive:true});
+ const result=finalizeDraft(draft([pair('雨。','Rain.'),pair('风。','Wind.')]));
+ const old={id:'ch-1',book_id:'example',language:'zh',version:1,...result,meta:{source:'author-agent'}};
+ old.pairs=[{hanzi:'雨。风。',english:'Rain. Wind.',target:'old',alignment:old.pairs.flatMap(p=>p.alignment)}];
+ const bytes=Buffer.from(JSON.stringify(old)); const output=path.join(dir,'ch-1.json');await fs.writeFile(output,bytes);
+ const statePath=path.join(dir,'_state.json');await fs.writeFile(statePath,'{"chapters_written":1,"last_ending":"雨。风。"}');
+ const originalState=await fs.readFile(statePath);
+ const library={version:2,books:[{id:'untouched',version:7,chapters:[]},{id:'example',version:4,chapters:[{id:'ch-1',version:1,title:result.title,url:'books/example/ch-1.json'}]}]};
+ const libraryPath=path.join(root,'content/library.json');await fs.writeFile(libraryPath,JSON.stringify(library));
+ const plan={book_id:'example',chapters:[{chapter:1,source_sha256:createHash('sha256').update(bytes).digest('hex'),draft:draft([pair('雨。','Rain.'),pair('风。','Wind.')])}]};
+ await repairSentences({root,plan});assert.deepEqual(await fs.readFile(output),bytes);
+ const altered=structuredClone(plan);altered.chapters[0].draft.pairs[1]=pair('雪。','Snow.');
+ await assert.rejects(repairSentences({root,plan:altered,apply:true}),/changed Chinese prose/);
+ assert.deepEqual(await fs.readFile(output),bytes);
+ await repairSentences({root,plan,apply:true});
+ const fixed=JSON.parse(await fs.readFile(output));assert.equal(fixed.version,2);assert.equal(fixed.pairs.length,2);
+ assert.equal(fixed.pairs.map(p=>p.hanzi).join(''),old.pairs[0].hanzi);
+ const lib=JSON.parse(await fs.readFile(libraryPath));assert.equal(lib.books[1].chapters[0].version,2);assert.equal(lib.books[1].version,5);
+ assert.deepEqual(lib.books[0],library.books[0]);assert.deepEqual(await fs.readFile(statePath),originalState);
+ const backups=await fs.readdir(path.join(dir,'_drafts/sentence-repairs'));assert.equal(backups.length,1);
+ assert.deepEqual(await fs.readFile(path.join(dir,'_drafts/sentence-repairs',backups[0])),bytes);
+ await assert.rejects(repairSentences({root,plan,apply:true}),/source changed/);
+});

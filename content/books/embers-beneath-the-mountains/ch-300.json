@@ -2,7 +2,7 @@
   "id": "ch-300",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "yíyè liú zhe de kòngbái",
     "english": "A Page Kept Open",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "yuē hǎo de shíchén zài wǔhòu . tǎ wéi tízǎodào le , gé zhe mén tīngjiàn wéi yī lǎoshī tóng jiǎn lǎoshī shāngliáng nǎ zhāng zhuōzi de tuǐ yòu sōng le . tā niē zhe nà sìháng wèntí , hūrán juéde zìjǐ bǎ shìqíng xiǎng dé tài dà ; děng lǎoshī jiào tā jìnqù , yòu pà shuō dé tàixiǎo , zhī wèn chéng le xià yícì gāi jiāo shénme gōngkè .",
-      "english": "Their appointment was after lunch. Arriving early, Tavi heard Instructor Vey and Instructor Jian through the door discussing which table leg had loosened again. Holding his four questions, he suddenly felt he'd made too much of it; when called inside, he feared making too little, merely asking what homework to submit next.",
-      "hanzi": "约好的时辰在午后。塔维提早到了，隔着门听见维伊老师同简老师商量哪张桌子的腿又松了。他捏着那四行问题，忽然觉得自己把事情想得太大；等老师叫他进去，又怕说得太小，只问成了下一次该交什么功课。\n",
+      "target": "yuē hǎo de shíchén zài wǔhòu .",
+      "english": "Their appointment was after lunch.",
+      "hanzi": "约好的时辰在午后。",
       "alignment": [
         {
           "english": "appointment",
@@ -53,7 +53,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi tízǎodào le , gé zhe mén tīngjiàn wéi yī lǎoshī tóng jiǎn lǎoshī shāngliáng nǎ zhāng zhuōzi de tuǐ yòu sōng le .",
+      "english": "Arriving early, Tavi heard Instructor Vey and Instructor Jian through the door discussing which table leg had loosened again.",
+      "hanzi": "塔维提早到了，隔着门听见维伊老师同简老师商量哪张桌子的腿又松了。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -205,7 +212,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā niē zhe nà sìháng wèntí , hūrán juéde zìjǐ bǎ shìqíng xiǎng dé tài dà ; děng lǎoshī jiào tā jìnqù , yòu pà shuō dé tàixiǎo , zhī wèn chéng le xià yícì gāi jiāo shénme gōngkè .",
+      "english": "Holding his four questions, he suddenly felt he'd made too much of it; when the instructor called him inside, he feared making too little, merely asking what homework to submit next.",
+      "hanzi": "他捏着那四行问题，忽然觉得自己把事情想得太大；等老师叫他进去，又怕说得太小，只问成了下一次该交什么功课。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -457,9 +471,9 @@
       ]
     },
     {
-      "target": "nài lěi yě lái le . tā jiāng bǔguò de bāo fàngzài jiǎo biān , zuòxià xiān shuō , zìjǐ jīnrì dàilái de shì lùshang de huó , búshì tì tǎ wéi qiú yígè míngé . jiǎn lǎoshī ràng tǎ wéi xiān jiǎng . tā bǎ zhǐ tānkāi , shuō xiǎng zhīdào , jiānglái ruò yǒu jīhuì suí rén zǒu yuǎn , yǎnxià zài xué gōnglǐ , chúle bǎ jiè xìng liàn wěn , hái néng kāishǐ xué shénme .",
-      "english": "Nerai came too. Setting her repaired bag at her feet, she sat and said she'd brought the work of the road today, not come to seek a place for Tavi. Jian let him speak first. Spreading his paper, Tavi asked what, besides steady borrowing practice, he could start learning at the academy now, if someday he had a chance to travel far with others.",
-      "hanzi": "奈蕾也来了。她将补过的包放在脚边，坐下先说，自己今日带来的是路上的活，不是替塔维求一个名额。简老师让塔维先讲。他把纸摊开，说想知道，将来若有机会随人走远，眼下在学宫里，除了把借性练稳，还能开始学什么。\n",
+      "target": "nài lěi yě lái le .",
+      "english": "Nerai came too.",
+      "hanzi": "奈蕾也来了。",
       "alignment": [
         {
           "english": "Nerai",
@@ -484,7 +498,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng bǔguò de bāo fàngzài jiǎo biān , zuòxià xiān shuō , zìjǐ jīnrì dàilái de shì lùshang de huó , búshì tì tǎ wéi qiú yígè míngé .",
+      "english": "Setting her repaired bag at her feet, she sat and first said she'd brought the work of the road today, not come to seek a place for Tavi.",
+      "hanzi": "她将补过的包放在脚边，坐下先说，自己今日带来的是路上的活，不是替塔维求一个名额。",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -684,7 +705,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jiǎn lǎoshī ràng tǎ wéi xiān jiǎng .",
+      "english": "Jian let Tavi speak first.",
+      "hanzi": "简老师让塔维先讲。",
+      "alignment": [
         {
           "english": "Jian",
           "target": "jiǎn",
@@ -732,7 +760,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā bǎ zhǐ tānkāi , shuō xiǎng zhīdào , jiānglái ruò yǒu jīhuì suí rén zǒu yuǎn , yǎnxià zài xué gōnglǐ , chúle bǎ jiè xìng liàn wěn , hái néng kāishǐ xué shénme .",
+      "english": "Spreading his paper, Tavi asked what, besides steady borrowing practice, he could start learning at the academy now, if someday he had a chance to travel far with others.",
+      "hanzi": "他把纸摊开，说想知道，将来若有机会随人走远，眼下在学宫里，除了把借性练稳，还能开始学什么。\n",
+      "alignment": [
         {
           "english": "his",
           "target": "tā",
@@ -952,9 +987,9 @@
       ]
     },
     {
-      "target": "wéi yī méiyǒu lìkè dá . tā qǔchū qiánjǐrì nà zhāng zhuāngpèi jìlù , diǎnzháo mǐlā de míngzì , wèn zuìhòu yìquān luódīng wèihé bǐ yùxiǎng màn . tǎ wéi shuō , qǐchū zhī suànle zìjǐ de shǒu gāi zěnyàng fàng , méi suàn lìng yígè rén yào kànqīng kòu kǒu , huàn yícì wòfǎ . tā hòulái méiyǒu jiādà biànhuà , mǐlā yě méi cuī tā . lǎoshī jiāng zhǐ tuīhuí : \" zhè yìtiáo yào liúxià . xiàcì zhǔnbèi shí , xiān tóng zuòhuó de rén bǎ guòchéng zǒuguò . \"",
-      "english": "Vey didn't answer immediately. Taking out the assembly record from a few days earlier, he pointed to Mira's name and asked why the last turn of the screw had taken longer than expected. Tavi said he'd initially considered only his own hand positions, not another person's need to see the catch and shift her grip. He hadn't increased the change afterward; Mira hadn't hurried him. Returning the paper, Vey said, “Keep this point. Next time, walk through the process with the person doing the work while preparing.”",
-      "hanzi": "维伊没有立刻答。他取出前几日那张装配记录，点着米拉的名字，问最后一圈螺钉为何比预想慢。塔维说，起初只算了自己的手该怎样放，没算另一个人要看清扣口、换一次握法。他后来没有加大变化，米拉也没催他。老师将纸推回：“这一条要留下。下次准备时，先同做活的人把过程走过。”\n",
+      "target": "wéi yī méiyǒu lìkè dá .",
+      "english": "Vey didn't answer immediately.",
+      "hanzi": "维伊没有立刻答。",
       "alignment": [
         {
           "english": "Vey",
@@ -987,7 +1022,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā qǔchū qiánjǐrì nà zhāng zhuāngpèi jìlù , diǎnzháo mǐlā de míngzì , wèn zuìhòu yìquān luódīng wèihé bǐ yùxiǎng màn .",
+      "english": "Taking out the assembly record from a few days earlier, he pointed to Mira's name and asked why the last turn of the screw had taken longer than expected.",
+      "hanzi": "他取出前几日那张装配记录，点着米拉的名字，问最后一圈螺钉为何比预想慢。",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -1163,7 +1205,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi shuō , qǐchū zhī suànle zìjǐ de shǒu gāi zěnyàng fàng , méi suàn lìng yígè rén yào kànqīng kòu kǒu , huàn yícì wòfǎ .",
+      "english": "Tavi said he'd initially considered only his own hand positions, not another person's need to see the catch and shift her grip.",
+      "hanzi": "塔维说，起初只算了自己的手该怎样放，没算另一个人要看清扣口、换一次握法。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1339,7 +1388,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā hòulái méiyǒu jiādà biànhuà , mǐlā yě méi cuī tā .",
+      "english": "He hadn't increased the change afterward; Mira hadn't hurried him.",
+      "hanzi": "他后来没有加大变化，米拉也没催他。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -1419,7 +1475,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lǎoshī jiāng zhǐ tuīhuí : \" zhè yìtiáo yào liúxià .",
+      "english": "Returning the paper, Vey said, “Keep this point.",
+      "hanzi": "老师将纸推回：“这一条要留下。",
+      "alignment": [
         {
           "english": "Vey",
           "target": "lǎoshī",
@@ -1483,7 +1546,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "xiàcì zhǔnbèi shí , xiān tóng zuòhuó de rén bǎ guòchéng zǒuguò . \"",
+      "english": "Next time, walk through the process with the person doing the work while preparing.”",
+      "hanzi": "下次准备时，先同做活的人把过程走过。”\n",
+      "alignment": [
         {
           "english": "Next time",
           "target": "xiàcì",
@@ -1575,9 +1645,9 @@
       ]
     },
     {
-      "target": "zhìyú huàn yìzhǒng tiě jiàn , huò bǎ rè de liànxí bān dào lùshang , réng bùnéng cóng zhè zhāng jìlù wǎng wài tuī . tǎ wéi diǎntóu , jiāng zìjǐ zhǐ shàng \" hái quēshénme \" pángbiān tiān le gè xiǎo wènhào . tā yuán xiǎng lǎoshī huì gěi yìchángchuàn yào bǔ de běnshì , rújīn què dé xiān bǎ xiǎng zuò de shì jiǎng dé jùtǐ , cái zhīdào quē de shì nǎyíkuài .",
-      "english": "Changing the iron pieces, or taking thermal practice onto the road, still couldn't be inferred from this record. Tavi nodded, adding a small question mark beside “what was still lacking” on his own paper. He'd expected a long list of abilities to acquire; now he had to explain precisely what he wanted to do first, to know which part was missing.",
-      "hanzi": "至于换一种铁件，或把热的练习搬到路上，仍不能从这张记录往外推。塔维点头，将自己纸上“还缺什么”旁边添了个小问号。他原想老师会给一长串要补的本事，如今却得先把想做的事讲得具体，才知道缺的是哪一块。\n",
+      "target": "zhìyú huàn yìzhǒng tiě jiàn , huò bǎ rè de liànxí bān dào lùshang , réng bùnéng cóng zhè zhāng jìlù wǎng wài tuī .",
+      "english": "Changing the iron pieces, or taking thermal practice onto the road, still couldn't be inferred from this record.",
+      "hanzi": "至于换一种铁件，或把热的练习搬到路上，仍不能从这张记录往外推。",
       "alignment": [
         {
           "english": "or",
@@ -1730,7 +1800,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi diǎntóu , jiāng zìjǐ zhǐ shàng \" hái quēshénme \" pángbiān tiān le gè xiǎo wènhào .",
+      "english": "Tavi nodded, adding a small question mark beside “what was still lacking” on his own paper.",
+      "hanzi": "塔维点头，将自己纸上“还缺什么”旁边添了个小问号。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1842,7 +1919,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yuán xiǎng lǎoshī huì gěi yìchángchuàn yào bǔ de běnshì , rújīn què dé xiān bǎ xiǎng zuò de shì jiǎng dé jùtǐ , cái zhīdào quē de shì nǎyíkuài .",
+      "english": "He'd expected a long list of abilities to acquire; now he had to explain precisely what he wanted to do first, to know which part was missing.",
+      "hanzi": "他原想老师会给一长串要补的本事，如今却得先把想做的事讲得具体，才知道缺的是哪一块。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -2086,9 +2170,9 @@
       ]
     },
     {
-      "target": "jiǎn lǎoshī nálái yìzhāng kòngbái biǎo zhǐ , jiào tā shì zhe xiě yìtiáo cóng xuégōng dào jiù duàn hòuchē péng de lùxiàn . tǎ wéi xiě le pō , chàkǒu hé nàgēn quē jiǎozhù , xiě dào yíbàn , nài lěi wèn , ruò pénglǐ méi rén , děng xiāoxī de rén dào nǎlǐzhǎo tā . tā bǐjiān tíngzhù . hòuchē péng tā yǐ qù le jǐhuí , què yìzhí mòrèn yǒurén huì zài yuándì děng .",
-      "english": "Jian brought a blank form and asked him to try writing a route from the academy to Old Duan's waiting shelter. Tavi wrote the slope, the fork and the chipped post. Halfway through, Nerai asked where someone awaiting news could find him if nobody was at the shelter. His pen stopped. He'd been there several times, yet always assumed someone would wait in the same place.",
-      "hanzi": "简老师拿来一张空白表纸，叫他试着写一条从学宫到旧段候车棚的路线。塔维写了坡、岔口和那根缺角柱，写到一半，奈蕾问，若棚里没人，等消息的人到哪里找他。他笔尖停住。候车棚他已去了几回，却一直默认有人会在原地等。\n",
+      "target": "jiǎn lǎoshī nálái yìzhāng kòngbái biǎo zhǐ , jiào tā shì zhe xiě yìtiáo cóng xuégōng dào jiù duàn hòuchē péng de lùxiàn .",
+      "english": "Jian brought a blank form and asked him to try writing a route from the academy to Old Duan's waiting shelter.",
+      "hanzi": "简老师拿来一张空白表纸，叫他试着写一条从学宫到旧段候车棚的路线。",
       "alignment": [
         {
           "english": "Jian",
@@ -2249,7 +2333,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi xiě le pō , chàkǒu hé nàgēn quē jiǎozhù , xiě dào yíbàn , nài lěi wèn , ruò pénglǐ méi rén , děng xiāoxī de rén dào nǎlǐzhǎo tā .",
+      "english": "Tavi wrote the slope, the fork and the chipped post. Halfway through, Nerai asked where someone awaiting news could find him if nobody was at the shelter.",
+      "hanzi": "塔维写了坡、岔口和那根缺角柱，写到一半，奈蕾问，若棚里没人，等消息的人到哪里找他。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -2441,7 +2532,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā bǐjiān tíngzhù .",
+      "english": "His pen stopped.",
+      "hanzi": "他笔尖停住。",
+      "alignment": [
         {
           "english": "His",
           "target": "tā",
@@ -2465,7 +2563,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "hòuchē péng tā yǐ qù le jǐhuí , què yìzhí mòrèn yǒurén huì zài yuándì děng .",
+      "english": "He'd been to the shelter several times, yet always assumed someone would wait in the same place.",
+      "hanzi": "候车棚他已去了几回，却一直默认有人会在原地等。\n",
+      "alignment": [
         {
           "english": "shelter",
           "target": "hòuchē péng",
@@ -2581,9 +2686,9 @@
       ]
     },
     {
-      "target": "sāngè rén méiyǒu tì tā biān yígè zhōuquán dáàn . tā xiān xiě huí xuégōng , zài xiǎngqǐ ruò rén zài péng qián děng , zhè yíjù bìng bùnéng sòngdào duìfāng shǒulǐ . jiǎn lǎoshī ràng tā bǎ yuēdìng zhīqián , lùshang biàndòng , chíchí wèi huí fēnkāi xiě , xià yícì nálái tán . wàichū de liànxí yě xiānjiāo lùxiàn yǔ liánxì bànfǎ , děng lǎoshī kànguò , cái dìng tóngháng de rén hé fànwéi . jīnrì méiyǒu lǐngdào yìzhāng kěyǐ suíchù zǒu de xǔkě .",
-      "english": "The three didn't invent a complete answer for him. First he wrote “return to the academy,” then realized this wouldn't reach anyone waiting at the shelter. Jian told him to write separately about prior arrangements, changes on the way, and being overdue, and bring it next time to discuss. For outings too, he must first submit the route and contact plan; after teacher review, companions and scope would be decided. Today he'd received no permission to go anywhere he liked.",
-      "hanzi": "三个人没有替他编一个周全答案。他先写回学宫，再想起若人在棚前等，这一句并不能送到对方手里。简老师让他把约定之前、路上变动、迟迟未回分开写，下一次拿来谈。外出的练习也先交路线与联系办法，等老师看过，才定同行的人和范围。今日没有领到一张可以随处走的许可。\n",
+      "target": "sāngè rén méiyǒu tì tā biān yígè zhōuquán dáàn .",
+      "english": "The three didn't invent a complete answer for him.",
+      "hanzi": "三个人没有替他编一个周全答案。",
       "alignment": [
         {
           "english": "three",
@@ -2672,7 +2777,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā xiān xiě huí xuégōng , zài xiǎngqǐ ruò rén zài péng qián děng , zhè yíjù bìng bùnéng sòngdào duìfāng shǒulǐ .",
+      "english": "First he wrote “return to the academy,” then realized this wouldn't reach anyone waiting at the shelter.",
+      "hanzi": "他先写回学宫，再想起若人在棚前等，这一句并不能送到对方手里。",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -2824,7 +2936,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jiǎn lǎoshī ràng tā bǎ yuēdìng zhīqián , lùshang biàndòng , chíchí wèi huí fēnkāi xiě , xià yícì nálái tán .",
+      "english": "Jian told him to write separately about prior arrangements, changes on the way, and being overdue, and bring it next time to discuss.",
+      "hanzi": "简老师让他把约定之前、路上变动、迟迟未回分开写，下一次拿来谈。",
+      "alignment": [
         {
           "english": "Jian",
           "target": "jiǎn",
@@ -2960,7 +3079,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wàichū de liànxí yě xiānjiāo lùxiàn yǔ liánxì bànfǎ , děng lǎoshī kànguò , cái dìng tóngháng de rén hé fànwéi .",
+      "english": "For outings too, he must first submit the route and contact plan; after teacher review, companions and scope would be decided.",
+      "hanzi": "外出的练习也先交路线与联系办法，等老师看过，才定同行的人和范围。",
+      "alignment": [
         {
           "english": "outings",
           "target": "wàichū",
@@ -3120,7 +3246,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jīnrì méiyǒu lǐngdào yìzhāng kěyǐ suíchù zǒu de xǔkě .",
+      "english": "Today he'd received no permission to go anywhere he liked.",
+      "hanzi": "今日没有领到一张可以随处走的许可。\n",
+      "alignment": [
         {
           "english": "Today",
           "target": "jīnrì",
@@ -3204,9 +3337,9 @@
       ]
     },
     {
-      "target": "chūlái shí , tǎ wéi shǒulǐ duō le yíyè zhǐ , què bùzěnme shīwàng . tā zhōngyú yǒu jiàn míngrì néng zuò de shì , búbì zuòzài chuāngqián , jiāng yáoyuǎn de dìfāng xiǎng chéng yígè bìxū lìkè dédào de huídá . nài lěi háiyào qù jiàn chénglǐ de wěituōrén , yuē tā guò liǎngrì chī miàn , jiào tā jìde dàishàng zìjǐ de wèntí , bié zài dàizǒu tā mǎi de dōngxī .",
-      "english": "Coming out, Tavi had an extra sheet, yet wasn't particularly disappointed. He finally had something to do tomorrow, without sitting at the window imagining distant places as an answer he must get immediately. Nerai still had a city client to meet. She arranged noodles with him in two days, telling him to bring his own questions, and not carry off her purchases again.",
-      "hanzi": "出来时，塔维手里多了一页纸，却不怎么失望。他终于有件明日能做的事，不必坐在窗前，将遥远的地方想成一个必须立刻得到的回答。奈蕾还要去见城里的委托人，约他过两日吃面，叫他记得带上自己的问题，别再带走她买的东西。\n",
+      "target": "chūlái shí , tǎ wéi shǒulǐ duō le yíyè zhǐ , què bùzěnme shīwàng .",
+      "english": "Coming out, Tavi had an extra sheet, yet wasn't particularly disappointed.",
+      "hanzi": "出来时，塔维手里多了一页纸，却不怎么失望。",
       "alignment": [
         {
           "english": "Coming out",
@@ -3295,7 +3428,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zhōngyú yǒu jiàn míngrì néng zuò de shì , búbì zuòzài chuāngqián , jiāng yáoyuǎn de dìfāng xiǎng chéng yígè bìxū lìkè dédào de huídá .",
+      "english": "He finally had something to do tomorrow, without sitting at the window imagining distant places as an answer he must get immediately.",
+      "hanzi": "他终于有件明日能做的事，不必坐在窗前，将遥远的地方想成一个必须立刻得到的回答。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -3495,7 +3635,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi háiyào qù jiàn chénglǐ de wěituōrén , yuē tā guò liǎngrì chī miàn , jiào tā jìde dàishàng zìjǐ de wèntí , bié zài dàizǒu tā mǎi de dōngxī .",
+      "english": "Nerai still had a city client to meet. She arranged noodles with him in two days, telling him to bring his own questions, and not carry off her purchases again.",
+      "hanzi": "奈蕾还要去见城里的委托人，约他过两日吃面，叫他记得带上自己的问题，别再带走她买的东西。\n",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -3715,9 +3862,9 @@
       ]
     },
     {
-      "target": "wǎnfàn hòu , tā bǎ nà yè zhǐ gěi mǐlā hé yīwén kàn . mǐlā shuō zìjǐ kě bùxiǎng měicì dōu zài jìlù lǐ fùzé nǐng luódīng . tǎ wéi máng jiěshì nà shì shàngcì de jìlù , tā xiào zhe chōuchū zhǐ xiàyā zhe de lìng yìzhāng cǎotú : \" wǒ zhīdào . wǒ shì shuō , yǐhòu lún dào nǐ tì wǒ ná dōngxī . \" sū yǐ jì lái de xìn réng jiá zài tā běnzi lǐ , dài shì de liǎngzhī chèntào shàngwèi zuò chūlái .",
-      "english": "After dinner he showed the sheet to Mira and Iven. Mira said she didn't want to be responsible for tightening screws in every record. Tavi hurried to explain it was last time's record. Smiling, she drew another sketch from underneath: “I know. I mean next time you'll hold things for me.” Suyi's letter remained in her notebook; the two bushes awaiting tests hadn't yet been made.",
-      "hanzi": "晚饭后，他把那页纸给米拉和伊文看。米拉说自己可不想每次都在记录里负责拧螺钉。塔维忙解释那是上次的记录，她笑着抽出纸下压着的另一张草图：“我知道。我是说，以后轮到你替我拿东西。”苏苡寄来的信仍夹在她本子里，待试的两只衬套尚未做出来。\n",
+      "target": "wǎnfàn hòu , tā bǎ nà yè zhǐ gěi mǐlā hé yīwén kàn .",
+      "english": "After dinner he showed the sheet to Mira and Iven.",
+      "hanzi": "晚饭后，他把那页纸给米拉和伊文看。",
       "alignment": [
         {
           "english": "dinner",
@@ -3814,7 +3961,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā shuō zìjǐ kě bùxiǎng měicì dōu zài jìlù lǐ fùzé nǐng luódīng .",
+      "english": "Mira said she didn't want to be responsible for tightening screws in every record.",
+      "hanzi": "米拉说自己可不想每次都在记录里负责拧螺钉。",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -3918,7 +4072,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi máng jiěshì nà shì shàngcì de jìlù , tā xiào zhe chōuchū zhǐ xiàyā zhe de lìng yìzhāng cǎotú : \" wǒ zhīdào .",
+      "english": "Tavi hurried to explain it was last time's record. Smiling, she drew another sketch from underneath: “I know.",
+      "hanzi": "塔维忙解释那是上次的记录，她笑着抽出纸下压着的另一张草图：“我知道。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4078,7 +4239,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wǒ shì shuō , yǐhòu lún dào nǐ tì wǒ ná dōngxī . \"",
+      "english": "I mean next time you'll hold things for me.”",
+      "hanzi": "我是说，以后轮到你替我拿东西。”",
+      "alignment": [
         {
           "english": "I",
           "target": "wǒ",
@@ -4150,7 +4318,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "sū yǐ jì lái de xìn réng jiá zài tā běnzi lǐ , dài shì de liǎngzhī chèntào shàngwèi zuò chūlái .",
+      "english": "Suyi's letter remained in her notebook; the two bushes awaiting tests hadn't yet been made.",
+      "hanzi": "苏苡寄来的信仍夹在她本子里，待试的两只衬套尚未做出来。\n",
+      "alignment": [
         {
           "english": "Suyi",
           "target": "sū yǐ",
@@ -4290,9 +4465,9 @@
       ]
     },
     {
-      "target": "yīwén bǎ kòngbái biǎo zhǐ zhuǎnxiàng zìjǐ , wèn néngfǒu jièzhe yě xiě yíbiàn . tā jìnrì kàn zhàng , cái fāxiàn yìbǐ qián dào le zhōngjiān de guì kǒu , hé zhēnzhèng jiāodào bànshì de rén shǒushàng , yuánlái búshì tóngyìtiān . tā xiǎng xiě de shì xiāoxī zěnyàng wǎngfǎn , búshì tóngtǎ wéi zhēng yìtiáo yuǎnlù . sān rén de běnzi tān zài zhuōshàng , huà de dōngxī jiànjiàn bùtóng , shuí yě méi jí zhe shōu qǐlái .",
-      "english": "Iven turned the blank form toward himself, asking if he could borrow it to write one too. Recently examining accounts, he'd discovered money reaching an intermediate counter and actually reaching the worker weren't the same day. He wanted to write how messages traveled back and forth, not compete with Tavi for a distant route. The three notebooks lay open on the table; their drawings gradually differed, and nobody hurried to put them away.",
-      "hanzi": "伊文把空白表纸转向自己，问能否借着也写一遍。他近日看账，才发现一笔钱到了中间的柜口，和真正交到办事的人手上，原来不是同一天。他想写的是消息怎样往返，不是同塔维争一条远路。三人的本子摊在桌上，画的东西渐渐不同，谁也没急着收起来。\n",
+      "target": "yīwén bǎ kòngbái biǎo zhǐ zhuǎnxiàng zìjǐ , wèn néngfǒu jièzhe yě xiě yíbiàn .",
+      "english": "Iven turned the blank form toward himself, asking if he could borrow it to write one too.",
+      "hanzi": "伊文把空白表纸转向自己，问能否借着也写一遍。",
       "alignment": [
         {
           "english": "Iven",
@@ -4389,7 +4564,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jìnrì kàn zhàng , cái fāxiàn yìbǐ qián dào le zhōngjiān de guì kǒu , hé zhēnzhèng jiāodào bànshì de rén shǒushàng , yuánlái búshì tóngyìtiān .",
+      "english": "Recently examining accounts, he'd discovered money reaching an intermediate counter and actually reaching the worker weren't the same day.",
+      "hanzi": "他近日看账，才发现一笔钱到了中间的柜口，和真正交到办事的人手上，原来不是同一天。",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -4581,7 +4763,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā xiǎng xiě de shì xiāoxī zěnyàng wǎngfǎn , búshì tóngtǎ wéi zhēng yìtiáo yuǎnlù .",
+      "english": "He wanted to write how messages traveled back and forth, not compete with Tavi for a distant route.",
+      "hanzi": "他想写的是消息怎样往返，不是同塔维争一条远路。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -4701,7 +4890,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "sān rén de běnzi tān zài zhuōshàng , huà de dōngxī jiànjiàn bùtóng , shuí yě méi jí zhe shōu qǐlái .",
+      "english": "The three notebooks lay open on the table; their drawings gradually differed, and nobody hurried to put them away.",
+      "hanzi": "三人的本子摊在桌上，画的东西渐渐不同，谁也没急着收起来。\n",
+      "alignment": [
         {
           "english": "three",
           "target": "sān",
@@ -4833,9 +5029,9 @@
       ]
     },
     {
-      "target": "pà wò duān zhe yìwǎn bāo shèng de dòuzǐ guòlái , shuō yào cānjiā , xiān wèn qù hòuchē péng dàibudài wǎnfàn . mǐlā jiào tā xiān chī wán shǒulǐ zhè wǎn . tā jiāng dòuzǐ wǎng zhuō zhōng yì tuī , rénrén fēn le jǐkē . tǎ wéi luò bǐhuà huí nàgēn quē jiǎozhù shí , zhuōbiān zhèng wèi shuí názǒu le zuìhòu yìkē dàdòu zhēngchǎo , tā méi táitóu , xiān bǎ zhùzi huà wán , cái shēnshǒu qù mō wǎndǐ .",
-      "english": "Pavo came with a bowl of beans he'd been shelling, saying he wanted to join; first he asked if going to the shelter included dinner. Mira told him to finish his bowl first. He pushed the beans into the middle of the table and everyone took a few. As Tavi drew the chipped post, they were arguing over who'd taken the last big bean. Without looking up, he finished the post before reaching for the bottom of the bowl.",
-      "hanzi": "帕沃端着一碗剥剩的豆子过来，说要参加，先问去候车棚带不带晚饭。米拉叫他先吃完手里这碗。他将豆子往桌中一推，人人分了几颗。塔维落笔画回那根缺角柱时，桌边正为谁拿走了最后一颗大豆争吵，他没抬头，先把柱子画完，才伸手去摸碗底。\n",
+      "target": "pà wò duān zhe yìwǎn bāo shèng de dòuzǐ guòlái , shuō yào cānjiā , xiān wèn qù hòuchē péng dàibudài wǎnfàn .",
+      "english": "Pavo came with a bowl of beans he'd been shelling, saying he wanted to join; first he asked if going to the shelter included dinner.",
+      "hanzi": "帕沃端着一碗剥剩的豆子过来，说要参加，先问去候车棚带不带晚饭。",
       "alignment": [
         {
           "english": "Pavo",
@@ -4972,7 +5168,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā jiào tā xiān chī wán shǒulǐ zhè wǎn .",
+      "english": "Mira told him to finish his bowl first.",
+      "hanzi": "米拉叫他先吃完手里这碗。",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -5036,7 +5239,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng dòuzǐ wǎng zhuō zhōng yì tuī , rénrén fēn le jǐkē .",
+      "english": "He pushed the beans into the middle of the table and everyone took a few.",
+      "hanzi": "他将豆子往桌中一推，人人分了几颗。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -5124,7 +5334,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi luò bǐhuà huí nàgēn quē jiǎozhù shí , zhuōbiān zhèng wèi shuí názǒu le zuìhòu yìkē dàdòu zhēngchǎo , tā méi táitóu , xiān bǎ zhùzi huà wán , cái shēnshǒu qù mō wǎndǐ .",
+      "english": "As Tavi drew the chipped post, they were arguing over who'd taken the last big bean. Without looking up, he finished the post before reaching for the bottom of the bowl.",
+      "hanzi": "塔维落笔画回那根缺角柱时，桌边正为谁拿走了最后一颗大豆争吵，他没抬头，先把柱子画完，才伸手去摸碗底。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",

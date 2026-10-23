@@ -2,7 +2,7 @@
   "id": "ch-270",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "búbì dòngshēn de lǚchéng",
     "english": "Not Every Journey Is a Departure",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "liǎng rìhòu , tǎ wéi cái yǒu yígè méi bèi níshuǐ zhàn mǎn de shàngwǔ . shào lǐngbān yǐ chá guò xiàfāng páishuǐgōu , gōukǒu kěyòng , jià mùcáo de liào què yào děng yírì cái qí . ruǎn héng ràng tā xiān liúzài fēng zhàn , jiāng qiánliǎngtiān de tú bǔ shàng rìqī , zìjǐ qù tóng lǐngbān hé zhuǎnwānchù de chǐcùn .",
-      "english": "Only two days later did Tavi get a morning not filled with muddy water. Forewoman Shao had checked the lower drain: its outlet was usable, but the flume timber needed another day. Ruan Heng left him in Wind Trestle to date the previous two days' drawings, going himself to check the bend measurements with her.",
-      "hanzi": "两日后，塔维才有一个没被泥水占满的上午。邵领班已查过下方排水沟，沟口可用，架木槽的料却要等一日才齐。阮衡让他先留在风栈，将前两天的图补上日期，自己去同领班核转弯处的尺寸。\n",
+      "target": "liǎng rìhòu , tǎ wéi cái yǒu yígè méi bèi níshuǐ zhàn mǎn de shàngwǔ .",
+      "english": "Only two days later did Tavi get a morning not filled with muddy water.",
+      "hanzi": "两日后，塔维才有一个没被泥水占满的上午。",
       "alignment": [
         {
           "english": "two days later",
@@ -109,7 +109,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shào lǐngbān yǐ chá guò xiàfāng páishuǐgōu , gōukǒu kěyòng , jià mùcáo de liào què yào děng yírì cái qí .",
+      "english": "Forewoman Shao had checked the lower drain: its outlet was usable, but the flume timber needed another day.",
+      "hanzi": "邵领班已查过下方排水沟，沟口可用，架木槽的料却要等一日才齐。",
+      "alignment": [
         {
           "english": "Forewoman Shao",
           "target": "shào lǐngbān",
@@ -245,7 +252,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng ràng tā xiān liúzài fēng zhàn , jiāng qiánliǎngtiān de tú bǔ shàng rìqī , zìjǐ qù tóng lǐngbān hé zhuǎnwānchù de chǐcùn .",
+      "english": "Ruan Heng left him in Wind Trestle to date the previous two days' drawings, going himself to check the bend measurements with her.",
+      "hanzi": "阮衡让他先留在风栈，将前两天的图补上日期，自己去同领班核转弯处的尺寸。\n",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -417,9 +431,9 @@
       ]
     },
     {
-      "target": "xuégōng zhuǎn lái de xìn fàngzài zhuō jiǎo , yí hòu yì báo . báo de shì mǐlā de , kāitóu biàn shuō , tāmen zǒngsuàn bǎ nàge \" yòng liǎngcì jiù kěn zhuāng hǎorén \" de bǎshǒu chāi le . tǎ wéi xiào chū shēng lái , wǎngxiàdú , cái zhīdào búshì zhěngjiàn huài le , shì fǎnfù kāihé hòu xiāo kǒng mó piān , zuìchū jǐlún kànbùchū de huàngdòng , hòulái yuèfā míngxiǎn .",
-      "english": "Letters forwarded by the academy lay at the table's corner, one thick and one thin. Mira's thin letter began: they'd finally dismantled that handle which “agrees to behave for two uses.” Tavi laughed aloud, then learned it wasn't entirely broken: repeated opening and closing had worn the pinhole off center, creating a wobble invisible in the first few cycles but increasingly obvious later.",
-      "hanzi": "学宫转来的信放在桌角，一厚一薄。薄的是米拉的，开头便说，她们总算把那个“用两次就肯装好人”的把手拆了。塔维笑出声来，往下读，才知道不是整件坏了，是反复开合后销孔磨偏，最初几轮看不出的晃动，后来越发明显。\n",
+      "target": "xuégōng zhuǎn lái de xìn fàngzài zhuō jiǎo , yí hòu yì báo .",
+      "english": "Letters forwarded by the academy lay at the table's corner, one thick and one thin.",
+      "hanzi": "学宫转来的信放在桌角，一厚一薄。",
       "alignment": [
         {
           "english": "academy",
@@ -508,7 +522,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "báo de shì mǐlā de , kāitóu biàn shuō , tāmen zǒngsuàn bǎ nàge \" yòng liǎngcì jiù kěn zhuāng hǎorén \" de bǎshǒu chāi le .",
+      "english": "The thin letter was from Mira: they had finally dismantled that handle which “agrees to behave for two uses.”",
+      "hanzi": "薄的是米拉的，开头便说，她们总算把那个“用两次就肯装好人”的把手拆了。",
+      "alignment": [
         {
           "english": "thin",
           "target": "báo",
@@ -542,7 +563,7 @@
           "frequency_band": null
         },
         {
-          "english": "Mira's",
+          "english": "from",
           "target": "de",
           "hanzi": "的",
           "category": "particle",
@@ -550,7 +571,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "began",
+          "english": "letter",
           "target": "kāitóu",
           "hanzi": "开头",
           "category": "noun",
@@ -558,7 +579,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "began",
+          "english": "letter",
           "target": "biàn",
           "hanzi": "便",
           "category": "adverb",
@@ -566,7 +587,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "began",
+          "english": "letter",
           "target": "shuō",
           "hanzi": "说",
           "category": "verb",
@@ -692,7 +713,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi xiào chū shēng lái , wǎngxiàdú , cái zhīdào búshì zhěngjiàn huài le , shì fǎnfù kāihé hòu xiāo kǒng mó piān , zuìchū jǐlún kànbùchū de huàngdòng , hòulái yuèfā míngxiǎn .",
+      "english": "Tavi laughed aloud, then learned it wasn't entirely broken: repeated opening and closing had worn the pinhole off center, creating a wobble invisible in the first few cycles but increasingly obvious later.",
+      "hanzi": "塔维笑出声来，往下读，才知道不是整件坏了，是反复开合后销孔磨偏，最初几轮看不出的晃动，后来越发明显。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -896,9 +924,9 @@
       ]
     },
     {
-      "target": "sū yǐ xiǎng bǎ zhěngduàn jiāhòu , mǐlā xián nàyàng yòu zhòng yòu fèi liào , gǔ jì méiyǒu tì shuí dìng shūyíng , jiào tāmen gè zuò yíduàn , ná xiāngtóng de kāihé cìshù lái bǐ . tāmen hái méi bǐ wán . mǐlā zài xìn jiǎo huà le liǎngzhī bǐcǐ dèngyǎn de bǎshǒu , pángbiān shuō búshì tā tóng sū yǐ , shì gěi bǎshǒu huà diǎn zhìqì .",
-      "english": "Suyi wanted the entire section thickened; Mira thought it too heavy and wasteful. Guji didn't choose a winner, telling them each to make a section and compare the same number of opening cycles. They weren't finished. In a corner Mira drew two handles glaring at each other: not herself and Suyi, she added, just giving the handles some spirit.",
-      "hanzi": "苏苡想把整段加厚，米拉嫌那样又重又费料，谷霁没有替谁定输赢，叫她们各做一段，拿相同的开合次数来比。她们还没比完。米拉在信角画了两只彼此瞪眼的把手，旁边说不是她同苏苡，是给把手画点志气。\n",
+      "target": "sū yǐ xiǎng bǎ zhěngduàn jiāhòu , mǐlā xián nàyàng yòu zhòng yòu fèi liào , gǔ jì méiyǒu tì shuí dìng shūyíng , jiào tāmen gè zuò yíduàn , ná xiāngtóng de kāihé cìshù lái bǐ .",
+      "english": "Suyi wanted the entire section thickened; Mira thought it too heavy and wasteful. Guji didn't choose a winner, telling them each to make a section and compare the same number of opening cycles.",
+      "hanzi": "苏苡想把整段加厚，米拉嫌那样又重又费料，谷霁没有替谁定输赢，叫她们各做一段，拿相同的开合次数来比。",
       "alignment": [
         {
           "english": "Suyi",
@@ -1147,7 +1175,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tāmen hái méi bǐ wán .",
+      "english": "They weren't finished.",
+      "hanzi": "她们还没比完。",
+      "alignment": [
         {
           "english": "They",
           "target": "tāmen",
@@ -1171,7 +1206,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā zài xìn jiǎo huà le liǎngzhī bǐcǐ dèngyǎn de bǎshǒu , pángbiān shuō búshì tā tóng sū yǐ , shì gěi bǎshǒu huà diǎn zhìqì .",
+      "english": "In a corner Mira drew two handles glaring at each other: not herself and Suyi, she added, just giving the handles some spirit.",
+      "hanzi": "米拉在信角画了两只彼此瞪眼的把手，旁边说不是她同苏苡，是给把手画点志气。\n",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -1359,9 +1401,9 @@
       ]
     },
     {
-      "target": "dìèrzhāng zhǐ shàng xiě dào yíhù yòng le jiù shìjiàn de rén , wèn shénme shíhòu néng děngdào búpà shuǐ de bǎnběn . tā méiyǒu dá xiàgèyuè , zhī dá zìjǐ hái zài zuò . tǎ wéi cóng zhè jǐgè zì lǐ tīngjiàn tā píngrì shuōhuà de jìn , fǎngfú tā zhàn zài zhuō duìmiàn , xián tā bǎ yíkuài zhǐ zhé dé tài suì .",
-      "english": "On the second sheet she mentioned a household using an old trial piece asking when a waterproof version would be ready. She hadn't said next month, only that she was still working. In those words Tavi heard her usual energy, as though she stood across the table complaining he'd folded a sheet into too many little sections.",
-      "hanzi": "第二张纸上写到一户用了旧试件的人，问什么时候能等到不怕水的版本。她没有答下个月，只答自己还在做。塔维从这几个字里听见她平日说话的劲，仿佛她站在桌对面，嫌他把一块纸折得太碎。\n",
+      "target": "dìèrzhāng zhǐ shàng xiě dào yíhù yòng le jiù shìjiàn de rén , wèn shénme shíhòu néng děngdào búpà shuǐ de bǎnběn .",
+      "english": "On the second sheet she mentioned a household using an old trial piece asking when a waterproof version would be ready.",
+      "hanzi": "第二张纸上写到一户用了旧试件的人，问什么时候能等到不怕水的版本。",
       "alignment": [
         {
           "english": "second",
@@ -1530,7 +1572,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méiyǒu dá xiàgèyuè , zhī dá zìjǐ hái zài zuò .",
+      "english": "She hadn't said next month, only that she was still working.",
+      "hanzi": "她没有答下个月，只答自己还在做。",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -1610,7 +1659,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi cóng zhè jǐgè zì lǐ tīngjiàn tā píngrì shuōhuà de jìn , fǎngfú tā zhàn zài zhuō duìmiàn , xián tā bǎ yíkuài zhǐ zhé dé tài suì .",
+      "english": "In those words Tavi heard her usual energy, as though she stood across the table complaining he'd folded a sheet into too many little sections.",
+      "hanzi": "塔维从这几个字里听见她平日说话的劲，仿佛她站在桌对面，嫌他把一块纸折得太碎。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1846,9 +1902,9 @@
       ]
     },
     {
-      "target": "hòu fēng lǐ shì wéi lǎoshī de huíxìn , fùzhuó yuánlái shí zuò jìlù de pīzhù . tā kànguò wēn xiù nàcì zhuāngpèi de shǒu lù , shuō tā yǐ néng jì chū biérén de dòngzuò , què hái cháng bǎ zhǔnbèi , dúshù yǔ chè shǒu fēnchéng gè zuò gè de jǐjiànshì ; huàn dào bùtóng jiājù , sānyàng yào chóngxīn hézàiyìqǐ , bùnéng zhī rèn yígè xiāo de wèizhì .",
-      "english": "The thick envelope held Teacher Vey's reply and annotations on the original practical records. Having seen the hand route for Wenxiu's assembly, she said he could record others' movements but still often treated preparation, readings and hand withdrawal as separate tasks. With a different fixture, the three needed coordinating anew: knowing one pin's location wasn't enough.",
-      "hanzi": "厚封里是维老师的回信，附着原来实作记录的批注。她看过温岫那次装配的手路，说他已能记出别人的动作，却还常把准备、读数与撤手分成各做各的几件事；换到不同夹具，三样要重新合在一起，不能只认一个销的位置。\n",
+      "target": "hòu fēng lǐ shì wéi lǎoshī de huíxìn , fùzhuó yuánlái shí zuò jìlù de pīzhù .",
+      "english": "The thick envelope held Teacher Vey's reply and annotations on the original practical records.",
+      "hanzi": "厚封里是维老师的回信，附着原来实作记录的批注。",
       "alignment": [
         {
           "english": "thick",
@@ -1961,7 +2017,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā kànguò wēn xiù nàcì zhuāngpèi de shǒu lù , shuō tā yǐ néng jì chū biérén de dòngzuò , què hái cháng bǎ zhǔnbèi , dúshù yǔ chè shǒu fēnchéng gè zuò gè de jǐjiànshì ; huàn dào bùtóng jiājù , sānyàng yào chóngxīn hézàiyìqǐ , bùnéng zhī rèn yígè xiāo de wèizhì .",
+      "english": "Having seen the hand route for Wenxiu's assembly, she said he could record others' movements but still often treated preparation, readings and hand withdrawal as separate tasks. With a different fixture, the three needed coordinating anew: knowing one pin's location wasn't enough.",
+      "hanzi": "她看过温岫那次装配的手路，说他已能记出别人的动作，却还常把准备、读数与撤手分成各做各的几件事；换到不同夹具，三样要重新合在一起，不能只认一个销的位置。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -2365,9 +2428,9 @@
       ]
     },
     {
-      "target": "tā yuē tā shí zuò qī jiéshù hòu huí xuégōng zuò yícì wánzhěng fùhé , xiān yòng yuánlái nà duì tiě hé jiājù , bǎ yǐ xué guò de bùtóng gànggǎn wèizhì chóngxīn héqīng . xìn lǐ méiyǒu fàngxíng huàn xīn liào , yě méi jiào tā dài biérén de gōngjù shì . ruǎn héng de míngzì xiě zài pángbiān , yāoqiú tā huíqù shí dàishàng wánzhěng bàogào , bù zhī tiāo zuì chénggōng de jǐyè .",
-      "english": "She invited him for a full review at the academy after the practical placement, first using his original iron pair and fixture to recheck the different lever positions he'd already learned. The letter granted no new materials and didn't tell him to try someone else's tools. Beside Ruan Heng's name she required the complete report on return, not just the most successful pages.",
-      "hanzi": "她约他实作期结束后回学宫做一次完整复核，先用原来那对铁和夹具，把已学过的不同杠杆位置重新核清。信里没有放行换新料，也没叫他带别人的工具试。阮衡的名字写在旁边，要求他回去时带上完整报告，不只挑最成功的几页。\n",
+      "target": "tā yuē tā shí zuò qī jiéshù hòu huí xuégōng zuò yícì wánzhěng fùhé , xiān yòng yuánlái nà duì tiě hé jiājù , bǎ yǐ xué guò de bùtóng gànggǎn wèizhì chóngxīn héqīng .",
+      "english": "She invited him to return for a full review at the academy after the practical placement, first using his original iron pair and fixture to recheck the different lever positions he'd already learned.",
+      "hanzi": "她约他实作期结束后回学宫做一次完整复核，先用原来那对铁和夹具，把已学过的不同杠杆位置重新核清。",
       "alignment": [
         {
           "english": "She",
@@ -2608,7 +2671,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "xìn lǐ méiyǒu fàngxíng huàn xīn liào , yě méi jiào tā dài biérén de gōngjù shì .",
+      "english": "The letter granted no new materials and didn't tell him to try someone else's tools.",
+      "hanzi": "信里没有放行换新料，也没叫他带别人的工具试。",
+      "alignment": [
         {
           "english": "letter",
           "target": "xìn",
@@ -2728,7 +2798,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng de míngzì xiě zài pángbiān , yāoqiú tā huíqù shí dàishàng wánzhěng bàogào , bù zhī tiāo zuì chénggōng de jǐyè .",
+      "english": "Beside Ruan Heng's name she required him to bring the complete report on return, not just the most successful pages.",
+      "hanzi": "阮衡的名字写在旁边，要求他回去时带上完整报告，不只挑最成功的几页。\n",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -2900,9 +2977,9 @@
       ]
     },
     {
-      "target": "tǎ wéi jiāng nà jùdòu le liǎngbiàn , xīnlǐ xiān yǒudiǎn fā chén . tā pàn lái de sìhū réng shì jiù gōngjù , jiù dìfāng , tóng yíwèi huì zhǐchū tā shǒuzhǐ fàngcuò de lǎoshī . tā wàng xiàng chuāngwài , mùliào chē zhèng cóng chǎng kǒu jìnqù , chēshàng de chángtiáo mùtou shēnchū wěibǎn , bǎngshéng suízhe lúnzǐ qīng huàng .",
-      "english": "Tavi read the line twice, his heart sinking a little at first. Had all his hopes brought only the same tools, the same place, the same teacher pointing out misplaced fingers? Out the window a timber cart entered the yard, long pieces projecting past the tailboard, their binding ropes trembling with the wheels.",
-      "hanzi": "塔维将那句读了两遍，心里先有点发沉。他盼来的似乎仍是旧工具，旧地方，同一位会指出他手指放错的老师。他望向窗外，木料车正从场口进去，车上的长条木头伸出尾板，绑绳随着轮子轻晃。\n",
+      "target": "tǎ wéi jiāng nà jùdòu le liǎngbiàn , xīnlǐ xiān yǒudiǎn fā chén .",
+      "english": "Tavi read the line twice, his heart sinking a little at first.",
+      "hanzi": "塔维将那句读了两遍，心里先有点发沉。",
       "alignment": [
         {
           "english": "Tavi",
@@ -2999,7 +3076,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā pàn lái de sìhū réng shì jiù gōngjù , jiù dìfāng , tóng yíwèi huì zhǐchū tā shǒuzhǐ fàngcuò de lǎoshī .",
+      "english": "Had all his hopes brought only the same tools, the same place, the same teacher pointing out misplaced fingers?",
+      "hanzi": "他盼来的似乎仍是旧工具，旧地方，同一位会指出他手指放错的老师。",
+      "alignment": [
         {
           "english": "his",
           "target": "tā",
@@ -3151,9 +3235,16 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā wàng xiàng chuāngwài , mùliào chē zhèng cóng chǎng kǒu jìnqù , chēshàng de chángtiáo mùtou shēnchū wěibǎn , bǎngshéng suízhe lúnzǐ qīng huàng .",
+      "english": "He looked out the window as a timber cart entered the yard, long pieces projecting past the tailboard, their binding ropes trembling with the wheels.",
+      "hanzi": "他望向窗外，木料车正从场口进去，车上的长条木头伸出尾板，绑绳随着轮子轻晃。\n",
+      "alignment": [
         {
-          "english": "his",
+          "english": "He",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -3307,9 +3398,9 @@
       ]
     },
     {
-      "target": "yǒurén zài ménkǒu jiào tā , sònglái yìfēng cóng nánbiān zhuǎn de duǎnxìn . xìnfēng shàng nài lěi de zì bǐ xuégōng de jí , xiān shuō tā jì lái de chí ān yuán xìn chāojiàn yǐ shōudào , dú qīng le , zhǐshì zìjǐ méi jiàn guò dāngnián nàwèi lǐng háizi de nǚrén , bùnéng tì yíduàn tóngnián jìyì jiā yígè lái chù .",
-      "english": "Someone called at the door, delivering a short letter forwarded from the south. Nerai's writing on its envelope was more hurried than the academy's. She first said she'd received and read his copy of Chi An's original letter, but hadn't met the woman who'd escorted the children that year and couldn't add an origin to a childhood memory.",
-      "hanzi": "有人在门口叫他，送来一封从南边转的短信。信封上奈蕾的字比学宫的急，先说他寄来的迟安原信抄件已收到，读清了，只是自己没见过当年那位领孩子的女人，不能替一段童年记忆加一个来处。\n",
+      "target": "yǒurén zài ménkǒu jiào tā , sònglái yìfēng cóng nánbiān zhuǎn de duǎnxìn .",
+      "english": "Someone called him at the door, delivering a short letter forwarded from the south.",
+      "hanzi": "有人在门口叫他，送来一封从南边转的短信。",
       "alignment": [
         {
           "english": "Someone",
@@ -3344,7 +3435,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "his",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -3414,7 +3505,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "xìnfēng shàng nài lěi de zì bǐ xuégōng de jí , xiān shuō tā jì lái de chí ān yuán xìn chāojiàn yǐ shōudào , dú qīng le , zhǐshì zìjǐ méi jiàn guò dāngnián nàwèi lǐng háizi de nǚrén , bùnéng tì yíduàn tóngnián jìyì jiā yígè lái chù .",
+      "english": "Nerai's writing on its envelope was more hurried than the academy's. She first said she'd received and read his copy of Chi An's original letter, but hadn't met the woman who'd escorted the children that year and couldn't add an origin to a childhood memory.",
+      "hanzi": "信封上奈蕾的字比学宫的急，先说他寄来的迟安原信抄件已收到，读清了，只是自己没见过当年那位领孩子的女人，不能替一段童年记忆加一个来处。\n",
+      "alignment": [
         {
           "english": "envelope",
           "target": "xìnfēng",
@@ -3754,9 +3852,9 @@
       ]
     },
     {
-      "target": "tā réng zài shí tīng , shuǐwèi shàng búgòu dī , nàduàn dī lù hái méiyǒu zǒu chéng . lú shí de mǔqīn yuànyì ràng rén liáng yǔpéng néng luòjiǎo de dìfāng , què bùkěn jiāng shài yú nà jǐrì yě suàn chéng kòngdì ; mù guǎnshì sònglái bànjuàn jiù péngbù , yòu xián bù shàng zìjiā pù hào tàixiǎo , zhèng tóng rén zhēng yào buyào tiān dà . nài lěi zài zhǐ wěi huà le gè dà dé lípǔ de zì , mòdiǎn yīn dào le pángbiān , xiàng gěi tā cháng le liùtiáo tuǐ .",
-      "english": "She was still in Shiting; the water wasn't low enough and the dyke walk remained undone. Lushi's mother would allow measuring potential shelter footing space but wouldn't count her fish-drying days as vacant land. Steward Mou had sent half a roll of used awning cloth, then complained his shop name on it was too small and argued for enlarging it. Nerai drew an absurdly large character at the letter's foot; spreading ink dots seemed to give it six legs.",
-      "hanzi": "她仍在石汀，水位尚不够低，那段堤路还没有走成。芦实的母亲愿意让人量雨棚能落脚的地方，却不肯将晒鱼那几日也算成空地；牟管事送来半卷旧篷布，又嫌布上自家铺号太小，正同人争要不要添大。奈蕾在纸尾画了个大得离谱的字，墨点洇到了旁边，像给它长了六条腿。\n",
+      "target": "tā réng zài shí tīng , shuǐwèi shàng búgòu dī , nàduàn dī lù hái méiyǒu zǒu chéng .",
+      "english": "She was still in Shiting; the water wasn't low enough and the dyke walk remained undone.",
+      "hanzi": "她仍在石汀，水位尚不够低，那段堤路还没有走成。",
       "alignment": [
         {
           "english": "She",
@@ -3869,7 +3967,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lú shí de mǔqīn yuànyì ràng rén liáng yǔpéng néng luòjiǎo de dìfāng , què bùkěn jiāng shài yú nà jǐrì yě suàn chéng kòngdì ; mù guǎnshì sònglái bànjuàn jiù péngbù , yòu xián bù shàng zìjiā pù hào tàixiǎo , zhèng tóng rén zhēng yào buyào tiān dà .",
+      "english": "Lushi's mother would allow measuring potential shelter footing space but wouldn't count her fish-drying days as vacant land. Steward Mou had sent half a roll of used awning cloth, then complained his shop name on it was too small and argued for enlarging it.",
+      "hanzi": "芦实的母亲愿意让人量雨棚能落脚的地方，却不肯将晒鱼那几日也算成空地；牟管事送来半卷旧篷布，又嫌布上自家铺号太小，正同人争要不要添大。",
+      "alignment": [
         {
           "english": "Lushi",
           "target": "lú shí",
@@ -4205,7 +4310,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi zài zhǐ wěi huà le gè dà dé lípǔ de zì , mòdiǎn yīn dào le pángbiān , xiàng gěi tā cháng le liùtiáo tuǐ .",
+      "english": "Nerai drew an absurdly large character at the letter's foot; spreading ink dots seemed to give it six legs.",
+      "hanzi": "奈蕾在纸尾画了个大得离谱的字，墨点洇到了旁边，像给它长了六条腿。\n",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -4393,9 +4505,9 @@
       ]
     },
     {
-      "target": "tǎ wéi jiāng nà yè fàngzài mǐlā huà de bǎshǒu pángbiān , kàn le yíhuìer , xiānqián nà gǔ chén yì sàn le xiē . tāmen dōu méi zài xìn lǐ bǎ huó shuō chéng yǐjīng zuò wán , zhǐ què yìdiǎn yě bù kōng .",
-      "english": "Tavi laid that page beside Mira's handles. Looking a while, he felt his heaviness ease. Neither had described their work as finished; yet their paper wasn't empty at all.",
-      "hanzi": "塔维将那页放在米拉画的把手旁边，看了一会儿，先前那股沉意散了些。他们都没在信里把活说成已经做完，纸却一点也不空。\n",
+      "target": "tǎ wéi jiāng nà yè fàngzài mǐlā huà de bǎshǒu pángbiān , kàn le yíhuìer , xiānqián nà gǔ chén yì sàn le xiē .",
+      "english": "Tavi laid that page beside Mira's handles. Looking a while, he felt his heaviness ease.",
+      "hanzi": "塔维将那页放在米拉画的把手旁边，看了一会儿，先前那股沉意散了些。",
       "alignment": [
         {
           "english": "Tavi",
@@ -4564,7 +4676,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tāmen dōu méi zài xìn lǐ bǎ huó shuō chéng yǐjīng zuò wán , zhǐ què yìdiǎn yě bù kōng .",
+      "english": "Neither had described their work as finished; yet their paper wasn't empty at all.",
+      "hanzi": "他们都没在信里把活说成已经做完，纸却一点也不空。\n",
+      "alignment": [
         {
           "english": "Neither",
           "target": "tāmen",
@@ -4704,9 +4823,9 @@
       ]
     },
     {
-      "target": "ruǎn héng huílái shí , tā náchū wéi lǎoshī de pīzhù , wèn wánzhěng bàogào lǐ , zìjǐ huà cuò fāngxiàng nà zhāng shìfǒu yě yào liú . ruǎn héng zhèng dītóu jiě xiédài , shuō yào liú , jiēzhe jiào tā qù ménwài tì zìjǐ tí yìtǒng shuǐ . tā xǐwán shǒu zài tóng tā tán , bùrán zhèfèn wánzhěng bàogào shàng , yòu dé duō yìshuāng ní shǒuyìn .",
-      "english": "When Ruan Heng returned, Tavi showed him Vey's annotations and asked if the sheet with his wrong-way arrow must remain in the complete report. Bent over his laces, Ruan Heng said yes, then asked him to fetch a bucket of water outside. He'd discuss it after washing his hands, or the complete report would acquire another pair of muddy handprints.",
-      "hanzi": "阮衡回来时，他拿出维老师的批注，问完整报告里，自己画错方向那张是否也要留。阮衡正低头解鞋带，说要留，接着叫他去门外替自己提一桶水。他洗完手再同他谈，不然这份完整报告上，又得多一双泥手印。\n",
+      "target": "ruǎn héng huílái shí , tā náchū wéi lǎoshī de pīzhù , wèn wánzhěng bàogào lǐ , zìjǐ huà cuò fāngxiàng nà zhāng shìfǒu yě yào liú .",
+      "english": "When Ruan Heng returned, Tavi showed him Vey's annotations and asked if the sheet with his wrong-way arrow must remain in the complete report.",
+      "hanzi": "阮衡回来时，他拿出维老师的批注，问完整报告里，自己画错方向那张是否也要留。",
       "alignment": [
         {
           "english": "Ruan Heng",
@@ -4875,7 +4994,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng zhèng dītóu jiě xiédài , shuō yào liú , jiēzhe jiào tā qù ménwài tì zìjǐ tí yìtǒng shuǐ .",
+      "english": "Bent over his laces, Ruan Heng said yes, then asked him to fetch a bucket of water outside.",
+      "hanzi": "阮衡正低头解鞋带，说要留，接着叫他去门外替自己提一桶水。",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -5027,7 +5153,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā xǐwán shǒu zài tóng tā tán , bùrán zhèfèn wánzhěng bàogào shàng , yòu dé duō yìshuāng ní shǒuyìn .",
+      "english": "He'd discuss it after washing his hands, or the complete report would acquire another pair of muddy handprints.",
+      "hanzi": "他洗完手再同他谈，不然这份完整报告上，又得多一双泥手印。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",

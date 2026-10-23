@@ -2,7 +2,7 @@
   "id": "ch-271",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "duō chūlái de nà yì jié",
     "english": "The Spare Length",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "mùliào dìèrrì dào qí shí , jì huái zhèng zuòzài chángtiáo shàng xiāo yìgēn zhāshǒu de cì . tā jīnrì bú zài huòchǎng lún zǎobān , shòu yǎnglù duì gù lái bān liào , jiàn tǎ wéi lái , xiān jiāng xiāo xià de xìpiàn chuīkāi , shuō túhuà hǎo le jiù gěi tāmen kànkàn , bié děng táiqǐ lái cái jiào rén wǎng zuǒ wǎngyòu .",
-      "english": "When the timber was all there the next day, Ji Huai was sitting on a long piece, shaving off a sharp splinter. Not on the freight yard's morning rotation today, he'd been hired by the road crew to move timber. Seeing Tavi, he blew the shavings away: show them the finished drawing now, not call left and right once they'd lifted it.",
-      "hanzi": "木料第二日到齐时，纪槐正坐在长条上削一根扎手的刺。他今日不在货场轮早班，受养路队雇来搬料，见塔维来，先将削下的细片吹开，说图画好了就给他们看看，别等抬起来才叫人往左往右。\n",
+      "target": "mùliào dìèrrì dào qí shí , jì huái zhèng zuòzài chángtiáo shàng xiāo yìgēn zhāshǒu de cì .",
+      "english": "When the timber was all there the next day, Ji Huai was sitting on a long piece, shaving off a sharp splinter.",
+      "hanzi": "木料第二日到齐时，纪槐正坐在长条上削一根扎手的刺。",
       "alignment": [
         {
           "english": "timber",
@@ -141,7 +141,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jīnrì bú zài huòchǎng lún zǎobān , shòu yǎnglù duì gù lái bān liào , jiàn tǎ wéi lái , xiān jiāng xiāo xià de xìpiàn chuīkāi , shuō túhuà hǎo le jiù gěi tāmen kànkàn , bié děng táiqǐ lái cái jiào rén wǎng zuǒ wǎngyòu .",
+      "english": "Not on the freight yard's morning rotation today, he'd been hired by the road crew to move timber. Seeing Tavi, he blew the shavings away: show them the finished drawing now, not call left and right once they'd lifted it.",
+      "hanzi": "他今日不在货场轮早班，受养路队雇来搬料，见塔维来，先将削下的细片吹开，说图画好了就给他们看看，别等抬起来才叫人往左往右。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -425,9 +432,9 @@
       ]
     },
     {
-      "target": "tǎ wéi zhǎnkāi zuórì hé guò de tú . jiàkōng cáo yào ràoguò xǐyī chí , shùn pō jiē jìn jiù páishuǐgōu ; kào lùbiān nàgēn cháng liáng xū xiān cóng péng hòu de kòngdì sòng jìn , zài zhuǎn dào yǐ diàn shí de zhīdiǎn shàng . tú shàng de kòngdì gòu kuān , tā yòng chǐ bǐ guò , rùkǒu liǎngbiān yě gè liú le yúchù .",
-      "english": "Tavi opened yesterday's checked drawing. The raised flume would bypass the washing pool down to the old drain. Its long roadside beam must first come in through the space behind the shed, then turn onto the compacted supports. On paper there was room: he'd measured it with his ruler and left clearance on both sides of the entrance.",
-      "hanzi": "塔维展开昨日核过的图。架空槽要绕过洗衣池，顺坡接进旧排水沟；靠路边那根长梁须先从棚后的空地送进，再转到已垫实的支点上。图上的空地够宽，他用尺比过，入口两边也各留了余处。\n",
+      "target": "tǎ wéi zhǎnkāi zuórì hé guò de tú .",
+      "english": "Tavi opened yesterday's checked drawing.",
+      "hanzi": "塔维展开昨日核过的图。",
       "alignment": [
         {
           "english": "Tavi",
@@ -476,7 +483,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jiàkōng cáo yào ràoguò xǐyī chí , shùn pō jiē jìn jiù páishuǐgōu ; kào lùbiān nàgēn cháng liáng xū xiān cóng péng hòu de kòngdì sòng jìn , zài zhuǎn dào yǐ diàn shí de zhīdiǎn shàng .",
+      "english": "The raised flume would bypass the washing pool down to the old drain. Its long roadside beam must first come in through the space behind the shed, then turn onto the compacted supports.",
+      "hanzi": "架空槽要绕过洗衣池，顺坡接进旧排水沟；靠路边那根长梁须先从棚后的空地送进，再转到已垫实的支点上。",
+      "alignment": [
         {
           "english": "raised",
           "target": "jiàkōng",
@@ -700,7 +714,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tú shàng de kòngdì gòu kuān , tā yòng chǐ bǐ guò , rùkǒu liǎngbiān yě gè liú le yúchù .",
+      "english": "On paper there was room: he'd measured it with his ruler and left clearance on both sides of the entrance.",
+      "hanzi": "图上的空地够宽，他用尺比过，入口两边也各留了余处。\n",
+      "alignment": [
         {
           "english": "paper",
           "target": "tú",
@@ -840,9 +861,9 @@
       ]
     },
     {
-      "target": "zhēnzhèng táiqǐ lái , quèshì lìngyìhuíshì . sìgè rén jiāng cháng liáng tuō dào yāo gāo , zǒu dào rùkǒu , qiántou guò le zhuāng , hòutou réng zài péngwài . jì huái jiào yìshēng tíng , liáng duān lí péng zhù zhī shèng yígè quántou . tǎ wéi zhàn zài pángbiān , kànchū zhǐyào qiánduān zài piān yìdiǎn biàn huì zhuàng zhù , máng shuō tuì bànbù , hòutou nà rén tīng chéng wǎng zìjǐ zhè tóu tuì , mùtou yòu xiàng wài nǐng le yíxià . \"",
-      "english": "Actually lifting it was another matter. Four people carried the long beam at waist height to the entrance, its front past the stake but its rear still outside the shed. Ji Huai called a halt; only a fist separated its end from the shed post. Beside it Tavi saw that a slight further turn would hit the post, and hurriedly said to step back half a pace. The rear carrier took this to mean toward himself, twisting the timber outward again.",
-      "hanzi": "真正抬起来，却是另一回事。\n四个人将长梁托到腰高，走到入口，前头过了桩，后头仍在棚外。纪槐叫一声停，梁端离棚柱只剩一个拳头。塔维站在旁边，看出只要前端再偏一点便会撞柱，忙说退半步，后头那人听成往自己这头退，木头又向外拧了一下。\n“",
+      "target": "zhēnzhèng táiqǐ lái , quèshì lìngyìhuíshì .",
+      "english": "Actually lifting it was another matter.",
+      "hanzi": "真正抬起来，却是另一回事。\n",
       "alignment": [
         {
           "english": "Actually",
@@ -891,7 +912,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "sìgè rén jiāng cháng liáng tuō dào yāo gāo , zǒu dào rùkǒu , qiántou guò le zhuāng , hòutou réng zài péngwài .",
+      "english": "Four people carried the long beam at waist height to the entrance, its front past the stake but its rear still outside the shed.",
+      "hanzi": "四个人将长梁托到腰高，走到入口，前头过了桩，后头仍在棚外。",
+      "alignment": [
         {
           "english": "Four",
           "target": "sì",
@@ -1027,7 +1055,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jì huái jiào yìshēng tíng , liáng duān lí péng zhù zhī shèng yígè quántou .",
+      "english": "Ji Huai called a halt; only a fist separated its end from the shed post.",
+      "hanzi": "纪槐叫一声停，梁端离棚柱只剩一个拳头。",
+      "alignment": [
         {
           "english": "Ji Huai",
           "target": "jì huái",
@@ -1131,7 +1166,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi zhàn zài pángbiān , kànchū zhǐyào qiánduān zài piān yìdiǎn biàn huì zhuàng zhù , máng shuō tuì bànbù , hòutou nà rén tīng chéng wǎng zìjǐ zhè tóu tuì , mùtou yòu xiàng wài nǐng le yíxià . \"",
+      "english": "Beside it Tavi saw that a slight further turn of the front would hit the post, and hurriedly said to step back half a pace. The rear carrier took this to mean toward himself, twisting the timber outward again.",
+      "hanzi": "塔维站在旁边，看出只要前端再偏一点便会撞柱，忙说退半步，后头那人听成往自己这头退，木头又向外拧了一下。\n“",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1383,9 +1425,9 @@
       ]
     },
     {
-      "target": "dōu xiān biédòng ! \" jì huái hǎn . tā méi chōng tǎ wéi fāpíqi , xiān jiào tóngbàn jiāng liáng luò huí zǎo diàn hǎo de liǎngkuài mù dūn shàng . mùtou luòxià , tǎ wéi cái sōngkāi zuàn jǐn túzhǐ de shǒu . jǐgè rén shuǎi gēbo , yígè rén shuō zìjǐ ná de shì liáng , búshì néng xiàng bù yíyàng zhé guòqù de dōngxī , shēngyīn bù gāo , tǎ wéi què tīng dé ěrgēn fā tàng .",
-      "english": "“Everyone hold still!” Ji Huai shouted. Rather than rage at Tavi, he first had his companions lower the beam back onto two prepared wooden blocks. Only when it settled did Tavi unclench the drawing in his fist. Shaking out their arms, one man said he was carrying a beam, not cloth that folded round a corner. He wasn't loud, but Tavi's ears burned.",
-      "hanzi": "都先别动！”纪槐喊。\n他没冲塔维发脾气，先叫同伴将梁落回早垫好的两块木墩上。木头落下，塔维才松开攥紧图纸的手。几个人甩胳膊，一个人说自己拿的是梁，不是能像布一样折过去的东西，声音不高，塔维却听得耳根发烫。\n",
+      "target": "dōu xiān biédòng ! \"",
+      "english": "“Everyone hold still!”",
+      "hanzi": "都先别动！”",
       "alignment": [
         {
           "english": "Everyone",
@@ -1410,7 +1452,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jì huái hǎn .",
+      "english": "Ji Huai shouted.",
+      "hanzi": "纪槐喊。\n",
+      "alignment": [
         {
           "english": "Ji Huai",
           "target": "jì huái",
@@ -1426,7 +1475,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méi chōng tǎ wéi fāpíqi , xiān jiào tóngbàn jiāng liáng luò huí zǎo diàn hǎo de liǎngkuài mù dūn shàng .",
+      "english": "Rather than rage at Tavi, he first had his companions lower the beam back onto two prepared wooden blocks.",
+      "hanzi": "他没冲塔维发脾气，先叫同伴将梁落回早垫好的两块木墩上。",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -1570,7 +1626,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mùtou luòxià , tǎ wéi cái sōngkāi zuàn jǐn túzhǐ de shǒu .",
+      "english": "Only when it settled did Tavi unclench the drawing in his fist.",
+      "hanzi": "木头落下，塔维才松开攥紧图纸的手。",
+      "alignment": [
         {
           "english": "it",
           "target": "mùtou",
@@ -1642,7 +1705,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jǐgè rén shuǎi gēbo , yígè rén shuō zìjǐ ná de shì liáng , búshì néng xiàng bù yíyàng zhé guòqù de dōngxī , shēngyīn bù gāo , tǎ wéi què tīng dé ěrgēn fā tàng .",
+      "english": "Shaking out their arms, one man said he was carrying a beam, not cloth that folded round a corner. He wasn't loud, but Tavi's ears burned.",
+      "hanzi": "几个人甩胳膊，一个人说自己拿的是梁，不是能像布一样折过去的东西，声音不高，塔维却听得耳根发烫。\n",
+      "alignment": [
         {
           "english": "their",
           "target": "jǐ",
@@ -1894,9 +1964,9 @@
       ]
     },
     {
-      "target": "jì huái bǎ tā lā dào rùkǒu , yòng jiǎo huàchū cháng liáng zhuǎnwān shí wàitou sǎo guò de nà yì jié . tǎ wéi zhǐ shàng huà de shì liáng zuìhòu fàngzài nǎlǐ , jìnqù de yílù què zhī huà le yìgēn zhíxiàn . tā shuō zuórì liáng rùkǒu shí liǎngbiān dōu gòu , jì huái shuō zhí zhe gòu , guǎi zhe búgòu , jiào tā bié yòu ná nà bǎ chǐ bǎ tóngyígè dìfāng liáng dìsānhuí .",
-      "english": "Ji Huai brought him to the entrance and marked with his foot the sweep of the beam's outer end. Tavi had drawn its final resting place, but only a straight line for its way in. He said yesterday's measurements showed room on both sides; Ji Huai said there was room straight, not turning, and told him not to measure the same place a third time with that ruler.",
-      "hanzi": "纪槐把他拉到入口，用脚划出长梁转弯时外头扫过的那一截。塔维纸上画的是梁最后放在哪里，进去的一路却只画了一根直线。他说昨日量入口时两边都够，纪槐说直着够，拐着不够，叫他别又拿那把尺把同一个地方量第三回。\n",
+      "target": "jì huái bǎ tā lā dào rùkǒu , yòng jiǎo huàchū cháng liáng zhuǎnwān shí wàitou sǎo guò de nà yì jié .",
+      "english": "Ji Huai brought him to the entrance and marked with his foot the sweep of the beam's outer end when turning.",
+      "hanzi": "纪槐把他拉到入口，用脚划出长梁转弯时外头扫过的那一截。",
       "alignment": [
         {
           "english": "Ji Huai",
@@ -2033,7 +2103,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi zhǐ shàng huà de shì liáng zuìhòu fàngzài nǎlǐ , jìnqù de yílù què zhī huà le yìgēn zhíxiàn .",
+      "english": "What Tavi had drawn was the beam at its final resting place, but only a straight line for its way in.",
+      "hanzi": "塔维纸上画的是梁最后放在哪里，进去的一路却只画了一根直线。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -2201,7 +2278,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuō zuórì liáng rùkǒu shí liǎngbiān dōu gòu , jì huái shuō zhí zhe gòu , guǎi zhe búgòu , jiào tā bié yòu ná nà bǎ chǐ bǎ tóngyígè dìfāng liáng dìsānhuí .",
+      "english": "He said yesterday's measurements of the entrance showed room on both sides; Ji Huai said there was room straight, not turning, and told him not to measure the same place a third time with that ruler.",
+      "hanzi": "他说昨日量入口时两边都够，纪槐说直着够，拐着不够，叫他别又拿那把尺把同一个地方量第三回。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -2461,9 +2545,9 @@
       ]
     },
     {
-      "target": "huà dào zhèlǐ yǒudiǎn chōng , tǎ wéi yě yìng qǐlái , shuō zìjǐ búshì zài tuī zérèn . jì huái kànzhe tā , guò le yíhuìer cái shuō , nà jiù xiān bié máng zhe jiǎng zìjǐ , jiǎng zhègēn mùtou zěnmebàn . tā qù jiào lǐngbān , liúxià tǎ wéi zhàn zài tú páng , pángbiān de rén méiyǒu tì shuí jiē huà .",
-      "english": "The words were sharp enough to stiffen Tavi: he wasn't shifting blame. Ji Huai looked at him before saying, then stop explaining yourself and explain what to do with the timber. He went for the forewoman, leaving Tavi by his drawing, the others taking neither side.",
-      "hanzi": "话到这里有点冲，塔维也硬起来，说自己不是在推责任。纪槐看着他，过了一会儿才说，那就先别忙着讲自己，讲这根木头怎么办。他去叫领班，留下塔维站在图旁，旁边的人没有替谁接话。\n",
+      "target": "huà dào zhèlǐ yǒudiǎn chōng , tǎ wéi yě yìng qǐlái , shuō zìjǐ búshì zài tuī zérèn .",
+      "english": "The words were sharp enough to stiffen Tavi: he explained he wasn't shifting blame.",
+      "hanzi": "话到这里有点冲，塔维也硬起来，说自己不是在推责任。",
       "alignment": [
         {
           "english": "words",
@@ -2530,7 +2614,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "explaining",
+          "english": "explained",
           "target": "shuō",
           "hanzi": "说",
           "category": "verb",
@@ -2568,7 +2652,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jì huái kànzhe tā , guò le yíhuìer cái shuō , nà jiù xiān bié máng zhe jiǎng zìjǐ , jiǎng zhègēn mùtou zěnmebàn .",
+      "english": "Ji Huai looked at him before saying, then stop explaining yourself and explain what to do with the timber.",
+      "hanzi": "纪槐看着他，过了一会儿才说，那就先别忙着讲自己，讲这根木头怎么办。",
+      "alignment": [
         {
           "english": "Ji Huai",
           "target": "jì huái",
@@ -2744,7 +2835,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā qù jiào lǐngbān , liúxià tǎ wéi zhàn zài tú páng , pángbiān de rén méiyǒu tì shuí jiē huà .",
+      "english": "He went for the forewoman, leaving Tavi by his drawing, the others taking neither side.",
+      "hanzi": "他去叫领班，留下塔维站在图旁，旁边的人没有替谁接话。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -2876,9 +2974,9 @@
       ]
     },
     {
-      "target": "shào lǐngbān guòlái hòu , xiān kàn zhīdiǎn , méiyǒu ràng rén shì zhe yìng tái . péng biān nà jié huódòng wéilán kěyǐ chāi , dàn xū bǎ mùliào zhuǎn jìnqù , chóngxīn dīnghǎo yǐhòu , cái ràng xíngrén huídào yuánlái de zhǎidào . tā jiào rén lánzhù liǎngtóu , lìng liú yì rén yǐn xíngrén guò péng qián , zìjǐ qùhé chāi lán hòu yǒuméiyǒu sōngtǔ .",
-      "english": "Shao checked the supports first, refusing another forced lift. The movable fence beside the shed could be removed, but pedestrians couldn't return to the narrow path until the timber was turned in and the fence nailed back. She had both ends barred, leaving one worker to guide walkers past the front, while she checked for loose soil beyond the fence.",
-      "hanzi": "邵领班过来后，先看支点，没有让人试着硬抬。棚边那截活动围栏可以拆，但须把木料转进去、重新钉好以后，才让行人回到原来的窄道。她叫人拦住两头，另留一人引行人过棚前，自己去核拆栏后有没有松土。\n",
+      "target": "shào lǐngbān guòlái hòu , xiān kàn zhīdiǎn , méiyǒu ràng rén shì zhe yìng tái .",
+      "english": "Shao checked the supports first, refusing another forced lift.",
+      "hanzi": "邵领班过来后，先看支点，没有让人试着硬抬。",
       "alignment": [
         {
           "english": "Shao",
@@ -2983,7 +3081,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "péng biān nà jié huódòng wéilán kěyǐ chāi , dàn xū bǎ mùliào zhuǎn jìnqù , chóngxīn dīnghǎo yǐhòu , cái ràng xíngrén huídào yuánlái de zhǎidào .",
+      "english": "The movable fence beside the shed could be removed, but pedestrians couldn't return to the narrow path until the timber was turned in and the fence nailed back.",
+      "hanzi": "棚边那截活动围栏可以拆，但须把木料转进去、重新钉好以后，才让行人回到原来的窄道。",
+      "alignment": [
         {
           "english": "beside the shed",
           "target": "péng biān",
@@ -3159,7 +3264,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiào rén lánzhù liǎngtóu , lìng liú yì rén yǐn xíngrén guò péng qián , zìjǐ qùhé chāi lán hòu yǒuméiyǒu sōngtǔ .",
+      "english": "She had both ends barred, leaving one worker to guide walkers past the front, while she checked for loose soil beyond the fence.",
+      "hanzi": "她叫人拦住两头，另留一人引行人过棚前，自己去核拆栏后有没有松土。\n",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -3323,9 +3435,9 @@
       ]
     },
     {
-      "target": "tǎ wéi shōuqǐ chǐ , zǒu dào jì huái shēnbiān , shuō yào buyào xiān yòng duǎnshéng bǐ cháng liáng zhuǎnguò de lù . jì huái shuō shéng huì wān , bié bǎ tā yě dāng yìgēn liáng . tǎ wéi zhèhuí méi dǐnghuíqù , zhǎo lái liǎnggēn qīng xì mùtiáo , jiē chéng xiāngtóng de chángdù , liǎng rén gè ná yìduān , mànmàn shì guòqù .",
-      "english": "Putting away his ruler, Tavi asked Ji Huai whether a short rope could model the beam's turn first. A rope bends, Ji Huai said; don't treat it as a beam too. This time Tavi didn't argue. He joined two light wooden strips to the same length, and they slowly tried the turn holding an end each.",
-      "hanzi": "塔维收起尺，走到纪槐身边，说要不要先用短绳比长梁转过的路。纪槐说绳会弯，别把它也当一根梁。塔维这回没顶回去，找来两根轻细木条，接成相同的长度，两人各拿一端，慢慢试过去。\n",
+      "target": "tǎ wéi shōuqǐ chǐ , zǒu dào jì huái shēnbiān , shuō yào buyào xiān yòng duǎnshéng bǐ cháng liáng zhuǎnguò de lù .",
+      "english": "Putting away his ruler, Tavi asked Ji Huai whether a short rope could model the beam's turn first.",
+      "hanzi": "塔维收起尺，走到纪槐身边，说要不要先用短绳比长梁转过的路。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3454,7 +3566,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jì huái shuō shéng huì wān , bié bǎ tā yě dāng yìgēn liáng .",
+      "english": "A rope bends, Ji Huai said; don't treat it as a beam too.",
+      "hanzi": "纪槐说绳会弯，别把它也当一根梁。",
+      "alignment": [
         {
           "english": "Ji Huai",
           "target": "jì huái",
@@ -3558,7 +3677,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi zhèhuí méi dǐnghuíqù , zhǎo lái liǎnggēn qīng xì mùtiáo , jiē chéng xiāngtóng de chángdù , liǎng rén gè ná yìduān , mànmàn shì guòqù .",
+      "english": "This time Tavi didn't argue. He joined two light wooden strips to the same length, and they slowly tried the turn holding an end each.",
+      "hanzi": "塔维这回没顶回去，找来两根轻细木条，接成相同的长度，两人各拿一端，慢慢试过去。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -3730,9 +3856,9 @@
       ]
     },
     {
-      "target": "wéilán chè kāi hòu , wài duān duōchū le zhuǎnshēn de dìfāng . tǎ wéi zài dìshàng biāochū liǎngchù yào tíng de wèizhì , jì huái què bǎ dìèrchù cā le , xiàng hòu nuó bànbù , shuō zìjǐ zhàn nàlǐ shí jiǎohòugēn zhèng cǎi zhe kēng biān . tǎ wéi dītóu yí kàn , guǒrán , zhǐ shàng nà yípiàn píngdì háiyǒu yígè néng ràng jiǎohuái wāi jìnqù de xiǎo wō .",
-      "english": "Removing the fence gave the outer end room to turn. Tavi marked two stopping points, but Ji Huai erased the second and moved it half a step back: his heel would otherwise sit on a hole's edge. Tavi looked down; indeed, the flat patch on paper had a hollow that could twist an ankle.",
-      "hanzi": "围栏撤开后，外端多出了转身的地方。塔维在地上标出两处要停的位置，纪槐却把第二处擦了，向后挪半步，说自己站那里时脚后跟正踩着坑边。塔维低头一看，果然，纸上那一片平地还有一个能让脚踝歪进去的小窝。\n",
+      "target": "wéilán chè kāi hòu , wài duān duōchū le zhuǎnshēn de dìfāng .",
+      "english": "Removing the fence gave the outer end room to turn.",
+      "hanzi": "围栏撤开后，外端多出了转身的地方。",
       "alignment": [
         {
           "english": "fence",
@@ -3805,7 +3931,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi zài dìshàng biāochū liǎngchù yào tíng de wèizhì , jì huái què bǎ dìèrchù cā le , xiàng hòu nuó bànbù , shuō zìjǐ zhàn nàlǐ shí jiǎohòugēn zhèng cǎi zhe kēng biān .",
+      "english": "Tavi marked two stopping points, but Ji Huai erased the second and moved it half a step back: his heel would otherwise sit on a hole's edge.",
+      "hanzi": "塔维在地上标出两处要停的位置，纪槐却把第二处擦了，向后挪半步，说自己站那里时脚后跟正踩着坑边。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4045,7 +4178,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi dītóu yí kàn , guǒrán , zhǐ shàng nà yípiàn píngdì háiyǒu yígè néng ràng jiǎohuái wāi jìnqù de xiǎo wō .",
+      "english": "Tavi looked down; indeed, the flat patch on paper had a hollow that could twist an ankle.",
+      "hanzi": "塔维低头一看，果然，纸上那一片平地还有一个能让脚踝歪进去的小窝。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4209,9 +4349,9 @@
       ]
     },
     {
-      "target": "děng cháng liáng zhēnde luòdào zhīdiǎn shàng , rìtou yǐ piān guò péngdǐng . mùgōng jiēshǒu cáo bǎn , jì huái tāmen qù bān xià yìgēn , tǎ wéi liúxià zhònghuà nàtiáo wān . zhōngwǔ chīfàn , tā běn xiǎng duānwǎn zuò yuǎn xiē , jì huái yòng jiǎo jiāng shēnbiān de kōng dèng tuīchū lái , shuō zhèlǐ shài zhe , zuò nà tóu fàn dōu yào liáng le .",
-      "english": "By the time the beam rested on its supports, the sun had passed the shed roof. Carpenters took over the channel boards, Ji Huai's team moved the next beam, and Tavi redrew the turn. At lunch he meant to sit away, but Ji Huai pushed out the empty stool beside him: this spot had sun; over there his food would get cold.",
-      "hanzi": "等长梁真的落到支点上，日头已偏过棚顶。木工接手槽板，纪槐他们去搬下一根，塔维留下重画那条弯。中午吃饭，他本想端碗坐远些，纪槐用脚将身边的空凳推出来，说这里晒着，坐那头饭都要凉了。\n",
+      "target": "děng cháng liáng zhēnde luòdào zhīdiǎn shàng , rìtou yǐ piān guò péngdǐng .",
+      "english": "By the time the beam rested on its supports, the sun had passed the shed roof.",
+      "hanzi": "等长梁真的落到支点上，日头已偏过棚顶。",
       "alignment": [
         {
           "english": "By the time",
@@ -4292,7 +4432,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mùgōng jiēshǒu cáo bǎn , jì huái tāmen qù bān xià yìgēn , tǎ wéi liúxià zhònghuà nàtiáo wān .",
+      "english": "Carpenters took over the channel boards, Ji Huai's team moved the next beam, and Tavi redrew the turn.",
+      "hanzi": "木工接手槽板，纪槐他们去搬下一根，塔维留下重画那条弯。",
+      "alignment": [
         {
           "english": "Carpenters",
           "target": "mùgōng",
@@ -4412,7 +4559,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhōngwǔ chīfàn , tā běn xiǎng duānwǎn zuò yuǎn xiē , jì huái yòng jiǎo jiāng shēnbiān de kōng dèng tuīchū lái , shuō zhèlǐ shài zhe , zuò nà tóu fàn dōu yào liáng le .",
+      "english": "At lunch he meant to sit away, but Ji Huai pushed out the empty stool beside him: this spot had sun; over there his food would get cold.",
+      "hanzi": "中午吃饭，他本想端碗坐远些，纪槐用脚将身边的空凳推出来，说这里晒着，坐那头饭都要凉了。\n",
+      "alignment": [
         {
           "english": "lunch",
           "target": "zhōngwǔ",
@@ -4648,9 +4802,9 @@
       ]
     },
     {
-      "target": "tǎ wéi zuòxià , guò le yízhèn cái shuō , gāngcái bèi tā shuō dé hěn nánkān . jì huái yǎoleyìkǒu bǐng , dá zìjǐ yě juéde bān dào yíbàn kǎzhù hěn nánkān , sìgè rén zǒng bùnéng jiù nàyàng guà zhe . tāmen méi zài zhēng shuí xiān nánkān . wǎn lǐ yǒu yíkuài jīn duō de ròu , tǎ wéi jiáo le bàntiān , jì huái wèn nà kuài shìbushì yě méi huà hǎo zhuǎnwān , tā dàodǐ háishì xiào le chūlái .",
-      "english": "Tavi sat, only after a while saying he'd found Ji Huai's words humiliating. Biting his flatbread, Ji Huai said getting stuck mid-carry was humiliating too: four men couldn't stay suspended like that. They stopped arguing over who'd been embarrassed first. Tavi chewed a sinewy piece of meat for ages; Ji Huai asked if that too hadn't had its turn drawn correctly, and Tavi finally laughed.",
-      "hanzi": "塔维坐下，过了一阵才说，刚才被他说得很难堪。纪槐咬了一口饼，答自己也觉得搬到一半卡住很难堪，四个人总不能就那样挂着。他们没再争谁先难堪。碗里有一块筋多的肉，塔维嚼了半天，纪槐问那块是不是也没画好转弯，他到底还是笑了出来。\n",
+      "target": "tǎ wéi zuòxià , guò le yízhèn cái shuō , gāngcái bèi tā shuō dé hěn nánkān .",
+      "english": "Tavi sat, only after a while saying he'd just found Ji Huai's words humiliating.",
+      "hanzi": "塔维坐下，过了一阵才说，刚才被他说得很难堪。",
       "alignment": [
         {
           "english": "Tavi",
@@ -4709,7 +4863,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "had",
+          "english": "just",
           "target": "gāngcái",
           "hanzi": "刚才",
           "category": "noun",
@@ -4763,7 +4917,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jì huái yǎoleyìkǒu bǐng , dá zìjǐ yě juéde bān dào yíbàn kǎzhù hěn nánkān , sìgè rén zǒng bùnéng jiù nàyàng guà zhe .",
+      "english": "Biting his flatbread, Ji Huai said getting stuck mid-carry was humiliating too: four men couldn't stay suspended like that.",
+      "hanzi": "纪槐咬了一口饼，答自己也觉得搬到一半卡住很难堪，四个人总不能就那样挂着。",
+      "alignment": [
         {
           "english": "Ji Huai",
           "target": "jì huái",
@@ -4955,7 +5116,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tāmen méi zài zhēng shuí xiān nánkān .",
+      "english": "They stopped arguing over who'd been embarrassed first.",
+      "hanzi": "他们没再争谁先难堪。",
+      "alignment": [
         {
           "english": "They",
           "target": "tāmen",
@@ -5011,7 +5179,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wǎn lǐ yǒu yíkuài jīn duō de ròu , tǎ wéi jiáo le bàntiān , jì huái wèn nà kuài shìbushì yě méi huà hǎo zhuǎnwān , tā dàodǐ háishì xiào le chūlái .",
+      "english": "Tavi chewed a sinewy piece of meat for ages; Ji Huai asked if that too hadn't had its turn drawn correctly, and Tavi finally laughed.",
+      "hanzi": "碗里有一块筋多的肉，塔维嚼了半天，纪槐问那块是不是也没画好转弯，他到底还是笑了出来。\n",
+      "alignment": [
         {
           "english": "meat",
           "target": "wǎn lǐ",

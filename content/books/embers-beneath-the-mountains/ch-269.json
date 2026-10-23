@@ -2,7 +2,7 @@
   "id": "ch-269",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "shuǐ dàilái de dōngxī",
     "english": "What the Water Carries",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "wǔhòu de liǎngjiā yòngshuǐ rén yìtóng lái le , yígè dài zhe gāng xǐ de yīfu , yígè dài zhe yìshuāng hái zhānní de xiǎoxié . shào lǐngbān méi zài wèn pō xià yǒuméiyǒu tián , ràng tāmen xiān zhàn dào shuǐchí páng , shuō ruò yào lún zhe tíng bànrì shuǐ , gèjiā nǎ duàn shíchén zuì nán nuó .",
-      "english": "The other two water-using households came together that afternoon, one with freshly washed clothes, the other with small muddy shoes. Shao didn't ask about fields again; beside the pool she asked which hours would be hardest if they took turns losing water for half a day.",
-      "hanzi": "午后的两家用水人一同来了，一个带着刚洗的衣服，一个带着一双还沾泥的小鞋。邵领班没再问坡下有没有田，让他们先站到水池旁，说若要轮着停半日水，各家哪段时辰最难挪。\n",
+      "target": "wǔhòu de liǎngjiā yòngshuǐ rén yìtóng lái le , yígè dài zhe gāng xǐ de yīfu , yígè dài zhe yìshuāng hái zhānní de xiǎoxié .",
+      "english": "The other two water-using households came together that afternoon, one with freshly washed clothes, the other with small muddy shoes.",
+      "hanzi": "午后的两家用水人一同来了，一个带着刚洗的衣服，一个带着一双还沾泥的小鞋。",
       "alignment": [
         {
           "english": "that afternoon",
@@ -229,7 +229,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shào lǐngbān méi zài wèn pō xià yǒuméiyǒu tián , ràng tāmen xiān zhàn dào shuǐchí páng , shuō ruò yào lún zhe tíng bànrì shuǐ , gèjiā nǎ duàn shíchén zuì nán nuó .",
+      "english": "Shao didn't ask about fields again; beside the pool she asked which hours would be hardest if they took turns losing water for half a day.",
+      "hanzi": "邵领班没再问坡下有没有田，让他们先站到水池旁，说若要轮着停半日水，各家哪段时辰最难挪。\n",
+      "alignment": [
         {
           "english": "Shao",
           "target": "shào lǐngbān",
@@ -449,9 +456,9 @@
       ]
     },
     {
-      "target": "tǎ wéi jìxiàlái de shíchén bìng bùqí . zuò zǎo gōng de rén wǎnshàng xǐ , wǔhòu huílái de xiǎng chèn tàiyáng shàigān ; dài xiǎoxié de nánrén shuō háizi búhuì zhào tāmen xiě hǎo de shíchén cǎi ní . dàjiā xiào le yíxià , réng méi shuíkěn xiān shuō zìjiā nà bànrì zuì kōng . zuìhòu shào lǐngbān zhī yuēdìng , jīnrì shì gōu yòng tǒng jiē zǒu húnshuǐ , bù wǎng chílǐ fàng , ruò yào duàn yuányǒu qīngshuǐ , xū zài lái qiāomén .",
-      "english": "The hours Tavi recorded didn't match. Early workers washed at night, afternoon returnees wanted sun to dry things, and the man with the little shoes said children wouldn't step in mud by their written schedule. Everyone laughed, but nobody volunteered their freest half-day. Finally Shao agreed today's drain test would catch dirty water in buckets, not discharge into the pool; they'd knock again before interrupting its existing clean supply.",
-      "hanzi": "塔维记下来的时辰并不齐。做早工的人晚上洗，午后回来的想趁太阳晒干；带小鞋的男人说孩子不会照他们写好的时辰踩泥。大家笑了一下，仍没谁肯先说自家那半日最空。最后邵领班只约定，今日试沟用桶接走浑水，不往池里放，若要断原有清水，须再来敲门。\n",
+      "target": "tǎ wéi jìxiàlái de shíchén bìng bùqí .",
+      "english": "The hours Tavi recorded didn't match.",
+      "hanzi": "塔维记下来的时辰并不齐。",
       "alignment": [
         {
           "english": "Tavi",
@@ -500,7 +507,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zuò zǎo gōng de rén wǎnshàng xǐ , wǔhòu huílái de xiǎng chèn tàiyáng shàigān ; dài xiǎoxié de nánrén shuō háizi búhuì zhào tāmen xiě hǎo de shíchén cǎi ní .",
+      "english": "Early workers washed at night, afternoon returnees wanted sun to dry things, and the man with the little shoes said children wouldn't step in mud by their written schedule.",
+      "hanzi": "做早工的人晚上洗，午后回来的想趁太阳晒干；带小鞋的男人说孩子不会照他们写好的时辰踩泥。",
+      "alignment": [
         {
           "english": "workers",
           "target": "zuò",
@@ -708,7 +722,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dàjiā xiào le yíxià , réng méi shuíkěn xiān shuō zìjiā nà bànrì zuì kōng .",
+      "english": "Everyone laughed, but nobody volunteered their freest half-day.",
+      "hanzi": "大家笑了一下，仍没谁肯先说自家那半日最空。",
+      "alignment": [
         {
           "english": "Everyone",
           "target": "dàjiā",
@@ -828,7 +849,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zuìhòu shào lǐngbān zhī yuēdìng , jīnrì shì gōu yòng tǒng jiē zǒu húnshuǐ , bù wǎng chílǐ fàng , ruò yào duàn yuányǒu qīngshuǐ , xū zài lái qiāomén .",
+      "english": "Finally Shao agreed today's drain test would catch dirty water in buckets, not discharge into the pool; they'd knock again before interrupting its existing clean supply.",
+      "hanzi": "最后邵领班只约定，今日试沟用桶接走浑水，不往池里放，若要断原有清水，须再来敲门。\n",
+      "alignment": [
         {
           "english": "Finally",
           "target": "zuìhòu",
@@ -1016,9 +1044,9 @@
       ]
     },
     {
-      "target": "tā dài tāmen shàngqù shí , gōngrén yǐ jiāng lùchū de liǎngkuài shí gài tuō wěn . shífèng lǐ de xì gēn bèi yíshù shù tiāochū , gē zài jiù kuāng lǐ , shī gēn dài zhe tǔxīngwèi . gài xià de shuǐ què bǐ wàitou de ní gōu qīng , yán shíbì shàng záochū de yídào qiǎn cáo wǎng cèmiàn liú , dào le xīn wā duàn de wèizhì , cái sàn dào sōngtǔ lǐ .",
-      "english": "By the time she led them up, workers had supported the two exposed stone covers. Fine roots were picked out in bunches into an old basket, smelling of wet earth. Water beneath the covers was clearer than the muddy ditch outside, flowing sideways in a shallow carved groove before spreading into loose soil where the new excavation cut it.",
-      "hanzi": "她带他们上去时，工人已将露出的两块石盖托稳。石缝里的细根被一束束挑出，搁在旧筐里，湿根带着土腥味。盖下的水却比外头的泥沟清，沿石壁上凿出的一道浅槽往侧面流，到了新挖断的位置，才散到松土里。\n",
+      "target": "tā dài tāmen shàngqù shí , gōngrén yǐ jiāng lùchū de liǎngkuài shí gài tuō wěn .",
+      "english": "By the time she led them up, workers had supported the two exposed stone covers.",
+      "hanzi": "她带他们上去时，工人已将露出的两块石盖托稳。",
       "alignment": [
         {
           "english": "she",
@@ -1131,9 +1159,16 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shífèng lǐ de xì gēn bèi yíshù shù tiāochū , gē zài jiù kuāng lǐ , shī gēn dài zhe tǔxīngwèi .",
+      "english": "Fine roots were picked out in bunches from the stone gaps into an old basket, smelling of wet earth.",
+      "hanzi": "石缝里的细根被一束束挑出，搁在旧筐里，湿根带着土腥味。",
+      "alignment": [
         {
-          "english": "covers",
+          "english": "stone gaps",
           "target": "shífèng",
           "hanzi": "石缝",
           "category": "noun",
@@ -1251,7 +1286,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "gài xià de shuǐ què bǐ wàitou de ní gōu qīng , yán shíbì shàng záochū de yídào qiǎn cáo wǎng cèmiàn liú , dào le xīn wā duàn de wèizhì , cái sàn dào sōngtǔ lǐ .",
+      "english": "Water beneath the covers was clearer than the muddy ditch outside, flowing sideways in a shallow carved groove before spreading into loose soil where the new excavation cut it.",
+      "hanzi": "盖下的水却比外头的泥沟清，沿石壁上凿出的一道浅槽往侧面流，到了新挖断的位置，才散到松土里。\n",
+      "alignment": [
         {
           "english": "beneath the covers",
           "target": "gài xià",
@@ -1495,9 +1537,9 @@
       ]
     },
     {
-      "target": "ruǎn héng ràng rén xiān bié zài xiān xià yíkuài , zìjǐ fǔshēn kàn nà dào cáo . tǎ wéi zhàn zài bǎn shàng , jiàn shuǐ lǐ yǒu yílì báishā láihuí dǎzhuǎn , zǒng guòbúqù quēkǒu biān de yìgēn xì cǎo . tā hūrán hěn xiǎng shēn zhǐ tì tā bō yíxià , dàn nà dìfāng lí jiǎoxià réng yuǎn , biàn zhī jiāng cǎo de wèizhì huà zài biānshàng .",
-      "english": "Ruan Heng asked them not to lift the next cover yet and bent to inspect the groove. From the plank Tavi saw a grain of white sand circling in the water, unable to get past a blade of grass at the broken edge. He wanted to move it with a finger, but it was still far from his feet, so he only drew its position at the side.",
-      "hanzi": "阮衡让人先别再掀下一块，自己俯身看那道槽。塔维站在板上，见水里有一粒白砂来回打转，总过不去缺口边的一根细草。他忽然很想伸指替它拨一下，但那地方离脚下仍远，便只将草的位置画在边上。\n",
+      "target": "ruǎn héng ràng rén xiān bié zài xiān xià yíkuài , zìjǐ fǔshēn kàn nà dào cáo .",
+      "english": "Ruan Heng asked them not to lift the next cover yet and bent to inspect the groove.",
+      "hanzi": "阮衡让人先别再掀下一块，自己俯身看那道槽。",
       "alignment": [
         {
           "english": "Ruan Heng",
@@ -1618,7 +1660,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi zhàn zài bǎn shàng , jiàn shuǐ lǐ yǒu yílì báishā láihuí dǎzhuǎn , zǒng guòbúqù quēkǒu biān de yìgēn xì cǎo .",
+      "english": "From the plank Tavi saw a grain of white sand circling in the water, unable to get past a blade of grass at the broken edge.",
+      "hanzi": "塔维站在板上，见水里有一粒白砂来回打转，总过不去缺口边的一根细草。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1794,7 +1843,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā hūrán hěn xiǎng shēn zhǐ tì tā bō yíxià , dàn nà dìfāng lí jiǎoxià réng yuǎn , biàn zhī jiāng cǎo de wèizhì huà zài biānshàng .",
+      "english": "He wanted to move it with a finger, but it was still far from his feet, so he only drew its position at the side.",
+      "hanzi": "他忽然很想伸指替它拨一下，但那地方离脚下仍远，便只将草的位置画在边上。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -1998,9 +2054,9 @@
       ]
     },
     {
-      "target": "gōngrén bǎ xià tóu néng tuōzhù de yì jié qīng kāi , yòng xiǎo mùcáo jiē zhù liúchū de shuǐ , cáo wěi xuán zài tǒng shàng . dìyītǒng lǐ shì huáng de , dìèrtǒng mànmàn qīng le . shào lǐngbān dīng zhe shuǐxiàn , jiào tǎ wéi jì cóng kāicáo dào huàn tǒng yòng le duōjiǔ , zìjǐ xiàqù kàn chílǐ de nà yìxiǎo gǔ qīngshuǐ yǒuméiyǒu biàn .",
-      "english": "Workers cleared a supported lower section, catching the outflow in a little wooden trough suspended over a bucket. The first bucket was yellow; the second slowly cleared. Watching the waterline, Shao told Tavi to time opening the trough and changing buckets, then went down to see whether the pool's thin clean stream had changed.",
-      "hanzi": "工人把下头能托住的一截清开，用小木槽接住流出的水，槽尾悬在桶上。第一桶里是黄的，第二桶慢慢清了。邵领班盯着水线，叫塔维记从开槽到换桶用了多久，自己下去看池里的那一小股清水有没有变。\n",
+      "target": "gōngrén bǎ xià tóu néng tuōzhù de yì jié qīng kāi , yòng xiǎo mùcáo jiē zhù liúchū de shuǐ , cáo wěi xuán zài tǒng shàng .",
+      "english": "Workers cleared a supported lower section, catching the outflow in a little wooden trough suspended over a bucket.",
+      "hanzi": "工人把下头能托住的一截清开，用小木槽接住流出的水，槽尾悬在桶上。",
       "alignment": [
         {
           "english": "Workers",
@@ -2169,7 +2225,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dìyītǒng lǐ shì huáng de , dìèrtǒng mànmàn qīng le .",
+      "english": "The first bucket was yellow; the second slowly cleared.",
+      "hanzi": "第一桶里是黄的，第二桶慢慢清了。",
+      "alignment": [
         {
           "english": "first",
           "target": "dìyī",
@@ -2257,7 +2320,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shào lǐngbān dīng zhe shuǐxiàn , jiào tǎ wéi jì cóng kāicáo dào huàn tǒng yòng le duōjiǔ , zìjǐ xiàqù kàn chílǐ de nà yìxiǎo gǔ qīngshuǐ yǒuméiyǒu biàn .",
+      "english": "Watching the waterline, Shao told Tavi to time opening the trough and changing buckets, then went down to see whether the pool's thin clean stream had changed.",
+      "hanzi": "邵领班盯着水线，叫塔维记从开槽到换桶用了多久，自己下去看池里的那一小股清水有没有变。\n",
+      "alignment": [
         {
           "english": "Shao",
           "target": "shào lǐngbān",
@@ -2469,9 +2539,9 @@
       ]
     },
     {
-      "target": "tā huílái shíshuō chíshuǐ réng zài . ruǎn héng què méiyǒu jùcǐ shuō liǎngbiān yídìng wúguān : yǎnxià zhī jiē zǒu zhè yìgǔ , hái méi dòng gèngshēn de shí dǐ . lǐngbān diǎntóu , bǎ yuánlái dǎsuàn wǎng xià wā de nà dàokǒu xiān huàdiào . tǎ wéi kànjiàn tā huà dé hěn zhòng , zhǐ xià de mùbǎn yě xiǎng le yìshēng .",
-      "english": "She returned saying the pool still flowed. Ruan Heng wouldn't conclude that the two were unrelated: they'd diverted only this stream without disturbing the deeper stone bed. Shao nodded and crossed out her planned downhill opening, pressing hard enough that the board under her paper clicked.",
-      "hanzi": "她回来时说池水仍在。阮衡却没有据此说两边一定无关：眼下只接走这一股，还没动更深的石底。领班点头，把原来打算往下挖的那道口先划掉。塔维看见她划得很重，纸下的木板也响了一声。\n",
+      "target": "tā huílái shíshuō chíshuǐ réng zài .",
+      "english": "She returned saying the pool still flowed.",
+      "hanzi": "她回来时说池水仍在。",
       "alignment": [
         {
           "english": "She",
@@ -2528,7 +2598,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng què méiyǒu jùcǐ shuō liǎngbiān yídìng wúguān : yǎnxià zhī jiē zǒu zhè yìgǔ , hái méi dòng gèngshēn de shí dǐ .",
+      "english": "Ruan Heng wouldn't conclude that the two were unrelated: they'd diverted only this stream without disturbing the deeper stone bed.",
+      "hanzi": "阮衡却没有据此说两边一定无关：眼下只接走这一股，还没动更深的石底。",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -2680,7 +2757,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lǐngbān diǎntóu , bǎ yuánlái dǎsuàn wǎng xià wā de nà dàokǒu xiān huàdiào .",
+      "english": "Shao nodded and crossed out her planned downhill opening.",
+      "hanzi": "领班点头，把原来打算往下挖的那道口先划掉。",
+      "alignment": [
         {
           "english": "Shao",
           "target": "lǐngbān",
@@ -2784,7 +2868,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi kànjiàn tā huà dé hěn zhòng , zhǐ xià de mùbǎn yě xiǎng le yìshēng .",
+      "english": "Tavi saw her press so hard that the board under her paper clicked.",
+      "hanzi": "塔维看见她划得很重，纸下的木板也响了一声。\n",
+      "alignment": [
         {
           "english": "her",
           "target": "tǎ wéi",
@@ -2794,7 +2885,7 @@
           "frequency_band": null
         },
         {
-          "english": "pressing",
+          "english": "saw",
           "target": "kànjiàn",
           "hanzi": "看见",
           "category": "verb",
@@ -2810,7 +2901,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "pressing",
+          "english": "press",
           "target": "huà",
           "hanzi": "划",
           "category": "verb",
@@ -2818,7 +2909,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "enough",
+          "english": "so",
           "target": "dé",
           "hanzi": "得",
           "category": "particle",
@@ -2908,9 +2999,9 @@
       ]
     },
     {
-      "target": "bàngwǎn qián , qīng chū de shí gài nèicè lùchū yídào kèhén , bú xiàng shuǐchōng de xiàn , pángbiān háiyǒu bàngè jiù zì . tǎ wéi bǎ zhǐ yí jìn , biànchū yígè \" hé \", qíyú dōu zài duàn jiǎo wài , yǐjīng méi le . tā xiǎngqǐ zài jiù túlǐ jiàn guò bùtóng dìfāng gòngtóng xiūlù de jìhào , wèn shìbushì tóng yìzhǒng .",
-      "english": "Before evening, a mark appeared inside a cleared stone cover, unlike a water-worn line, with half an old character beside it. Moving his paper closer, Tavi recognized “joint”; the rest had gone with the broken corner. Remembering old map symbols for roads built by several places together, he asked whether it was the same kind.",
-      "hanzi": "傍晚前，清出的石盖内侧露出一道刻痕，不像水冲的线，旁边还有半个旧字。塔维把纸移近，辨出一个“合”，其余都在断角外，已经没了。他想起在旧图里见过不同地方共同修路的记号，问是不是同一种。\n",
+      "target": "bàngwǎn qián , qīng chū de shí gài nèicè lùchū yídào kèhén , bú xiàng shuǐchōng de xiàn , pángbiān háiyǒu bàngè jiù zì .",
+      "english": "Before evening, a mark appeared inside a cleared stone cover, unlike a water-worn line, with half an old character beside it.",
+      "hanzi": "傍晚前，清出的石盖内侧露出一道刻痕，不像水冲的线，旁边还有半个旧字。",
       "alignment": [
         {
           "english": "Before evening",
@@ -3055,7 +3146,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi bǎ zhǐ yí jìn , biànchū yígè \" hé \", qíyú dōu zài duàn jiǎo wài , yǐjīng méi le .",
+      "english": "Moving his paper closer, Tavi recognized “joint”; the rest had gone with the broken corner.",
+      "hanzi": "塔维把纸移近，辨出一个“合”，其余都在断角外，已经没了。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -3183,7 +3281,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā xiǎngqǐ zài jiù túlǐ jiàn guò bùtóng dìfāng gòngtóng xiūlù de jìhào , wèn shìbushì tóng yìzhǒng .",
+      "english": "Remembering old map symbols for roads built by several places together, he asked whether it was the same kind.",
+      "hanzi": "他想起在旧图里见过不同地方共同修路的记号，问是不是同一种。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -3201,7 +3306,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "on",
+          "english": "for",
           "target": "zài",
           "hanzi": "在",
           "category": "function_word",
@@ -3217,7 +3322,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "on",
+          "english": "for",
           "target": "lǐ",
           "hanzi": "里",
           "category": "function_word",
@@ -3323,9 +3428,9 @@
       ]
     },
     {
-      "target": "ruǎn héng ná zìjǐ zhǐ shàng de xíngzhuàng bǐ le bǐ , shuō zì xiāngtóng , hái bùnéng dàngchéng tóng yìpī rén de shǒu . tā jiào tǎ wéi jiāng kèhén lìng huà , xiě qīng cóng nǎ kuài gài shí nèicè kànjiàn , bié xiān tì tā bǔ chū xià bànjù . shào lǐngbān zài pángbiān shuō , ruò xiānrén zhēnshì jǐjiā hé xiū , zhìshǎo gāi hé zhe liúxià yígè néng zhǎo dédào de chūkǒu . méi rén rěnzhù , lián ruǎn héng yě xiào le .",
-      "english": "Ruan Heng compared the shapes on his paper: the same character didn't establish the same builders. He told Tavi to copy the mark separately, noting exactly which cover's inner face it came from, rather than supplying its missing phrase. Shao said that if several families had truly built it together, they should at least have left an outlet one could find. Nobody kept from laughing, even Ruan Heng.",
-      "hanzi": "阮衡拿自己纸上的形状比了比，说字相同，还不能当成同一批人的手。他叫塔维将刻痕另画，写清从哪块盖石内侧看见，别先替它补出下半句。邵领班在旁边说，若先人真是几家合修，至少该合着留下一个能找得到的出口。没人忍住，连阮衡也笑了。\n",
+      "target": "ruǎn héng ná zìjǐ zhǐ shàng de xíngzhuàng bǐ le bǐ , shuō zì xiāngtóng , hái bùnéng dàngchéng tóng yìpī rén de shǒu .",
+      "english": "Ruan Heng compared the shapes on his paper: the same character didn't establish the same builders.",
+      "hanzi": "阮衡拿自己纸上的形状比了比，说字相同，还不能当成同一批人的手。",
       "alignment": [
         {
           "english": "Ruan Heng",
@@ -3494,7 +3599,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiào tǎ wéi jiāng kèhén lìng huà , xiě qīng cóng nǎ kuài gài shí nèicè kànjiàn , bié xiān tì tā bǔ chū xià bànjù .",
+      "english": "He told Tavi to copy the mark separately, noting exactly which cover's inner face it came from, rather than supplying its missing phrase.",
+      "hanzi": "他叫塔维将刻痕另画，写清从哪块盖石内侧看见，别先替它补出下半句。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -3654,7 +3766,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shào lǐngbān zài pángbiān shuō , ruò xiānrén zhēnshì jǐjiā hé xiū , zhìshǎo gāi hé zhe liúxià yígè néng zhǎo dédào de chūkǒu .",
+      "english": "Shao said that if the earlier builders from several families had truly built it together, they should at least have left an outlet one could find.",
+      "hanzi": "邵领班在旁边说，若先人真是几家合修，至少该合着留下一个能找得到的出口。",
+      "alignment": [
         {
           "english": "Shao",
           "target": "shào lǐngbān",
@@ -3830,7 +3949,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "méi rén rěnzhù , lián ruǎn héng yě xiào le .",
+      "english": "Nobody kept from laughing, even Ruan Heng.",
+      "hanzi": "没人忍住，连阮衡也笑了。\n",
+      "alignment": [
         {
           "english": "Nobody",
           "target": "méi rén",
@@ -3890,9 +4016,9 @@
       ]
     },
     {
-      "target": "mùsè luòxiàlái , wākāi de lùbiān yìtǒng qīngshuǐ yìngzhe zhǎizhǎide tiān . tǎ wéi hūrán juéde , jiǎoxià zhèxiē jiù shí bù zhǐshì dǎngzhù jīntiān chēlún de dōngxī . céng yǒurén pāzài tóngyàng dī de dìfāng , jiāng shuǐ wǎng yìtiáo kànbújiàn de lù lǐ sòng , yě céng xián pángrén bǎ chūkǒu cáng dé tài shēn . nà rén shǒushàng de ní , tā què yìdiǎn yě kànbújiàn .",
-      "english": "Dusk settled; a bucket of clean water by the excavated road reflected a narrow sky. Suddenly Tavi felt these old stones beneath his feet were more than obstacles to today's carts. Someone had crouched this low to send water along an unseen road, and perhaps complained that others hid the outlet too deep. But he could see none of the mud on that person's hands.",
-      "hanzi": "暮色落下来，挖开的路边一桶清水映着窄窄的天。塔维忽然觉得，脚下这些旧石不只是挡住今天车轮的东西。曾有人趴在同样低的地方，将水往一条看不见的路里送，也曾嫌旁人把出口藏得太深。那人手上的泥，他却一点也看不见。\n",
+      "target": "mùsè luòxiàlái , wākāi de lùbiān yìtǒng qīngshuǐ yìngzhe zhǎizhǎide tiān .",
+      "english": "Dusk settled; a bucket of clean water by the excavated road reflected a narrow sky.",
+      "hanzi": "暮色落下来，挖开的路边一桶清水映着窄窄的天。",
       "alignment": [
         {
           "english": "Dusk",
@@ -3997,7 +4123,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi hūrán juéde , jiǎoxià zhèxiē jiù shí bù zhǐshì dǎngzhù jīntiān chēlún de dōngxī .",
+      "english": "Suddenly Tavi felt these old stones beneath his feet were more than obstacles to today's carts.",
+      "hanzi": "塔维忽然觉得，脚下这些旧石不只是挡住今天车轮的东西。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4093,7 +4226,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "céng yǒurén pāzài tóngyàng dī de dìfāng , jiāng shuǐ wǎng yìtiáo kànbújiàn de lù lǐ sòng , yě céng xián pángrén bǎ chūkǒu cáng dé tài shēn .",
+      "english": "Someone had crouched this low to send water along an unseen road, and perhaps complained that others hid the outlet too deep.",
+      "hanzi": "曾有人趴在同样低的地方，将水往一条看不见的路里送，也曾嫌旁人把出口藏得太深。",
+      "alignment": [
         {
           "english": "had",
           "target": "céng",
@@ -4325,7 +4465,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nà rén shǒushàng de ní , tā què yìdiǎn yě kànbújiàn .",
+      "english": "But he could see none of the mud on that person's hands.",
+      "hanzi": "那人手上的泥，他却一点也看不见。\n",
+      "alignment": [
         {
           "english": "that",
           "target": "nà",
@@ -4417,9 +4564,9 @@
       ]
     },
     {
-      "target": "shào lǐngbān juédìng xiān dā yìtiáo jiàkōng mùcáo , ràokāi xǐyī chí , sòngdào xiàfāng yǐ yòng de páishuǐgōu . nà tóu gōukǒu dé míngzǎo zài kàn , mùcáo yě bùnéng dǎngzhù chē zhuǎnwān . tā zài zhǐ shàng zhúxiàng diǎn guò , jiào gōngrén míngrì xiān dài mùliào , bié dài yíduì ná hào jiù xiǎng wǎng xià wā de rén .",
-      "english": "Shao decided on a raised wooden flume bypassing the washing pool to an existing drain below. Its outlet needed checking tomorrow, and the flume mustn't obstruct turning carts. Pointing through the paper item by item, she told workers to bring timber first tomorrow, not a whole crew intent on digging downhill with picks.",
-      "hanzi": "邵领班决定先搭一条架空木槽，绕开洗衣池，送到下方已用的排水沟。那头沟口得明早再看，木槽也不能挡住车转弯。她在纸上逐项点过，叫工人明日先带木料，别带一队拿镐就想往下挖的人。\n",
+      "target": "shào lǐngbān juédìng xiān dā yìtiáo jiàkōng mùcáo , ràokāi xǐyī chí , sòngdào xiàfāng yǐ yòng de páishuǐgōu .",
+      "english": "Shao first decided on a raised wooden flume bypassing the washing pool to an existing drain below.",
+      "hanzi": "邵领班决定先搭一条架空木槽，绕开洗衣池，送到下方已用的排水沟。",
       "alignment": [
         {
           "english": "Shao",
@@ -4540,7 +4687,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nà tóu gōukǒu dé míngzǎo zài kàn , mùcáo yě bùnéng dǎngzhù chē zhuǎnwān .",
+      "english": "Its outlet needed checking tomorrow, and the flume mustn't obstruct turning carts.",
+      "hanzi": "那头沟口得明早再看，木槽也不能挡住车转弯。",
+      "alignment": [
         {
           "english": "Its",
           "target": "nà tóu",
@@ -4636,7 +4790,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zài zhǐ shàng zhúxiàng diǎn guò , jiào gōngrén míngrì xiān dài mùliào , bié dài yíduì ná hào jiù xiǎng wǎng xià wā de rén .",
+      "english": "Pointing through the paper item by item, she told workers to bring timber first tomorrow, not a whole crew intent on digging downhill with picks.",
+      "hanzi": "她在纸上逐项点过，叫工人明日先带木料，别带一队拿镐就想往下挖的人。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -4840,9 +5001,9 @@
       ]
     },
     {
-      "target": "huí fēng zhàn shí , tǎ wéi kùjiǎo yǐjīng gān chéng yìng biān . tā jiāng jiù kèhén de zhǐ dāndú fàng hǎo , shǒu shēnjìn bāo lǐ mō dào nà liǎnggēn xìshéng , biàn nálái xì zhù tú jiǎo , miǎnde fēng xiānqǐ . shéngzi zhōngyú yǒu le yíjiàn jùtǐ de huó , jì bù zhǐlù , yě bù bǎ shuǐchí biànchéng shuí dōu néng yòng de dìfāng , zhī tì tā liúzhù yìzhāng jīnrì kànguò de zhǐ .",
-      "english": "Back at Wind Trestle, Tavi's cuffs had dried into hard edges. He stored the old mark's sketch separately, finding the two fine cords in his bag and using them to tie the map corners against the wind. The cords finally had a particular job: neither showing a route nor making a pool public, only holding a sheet of what he'd seen today.",
-      "hanzi": "回风栈时，塔维裤脚已经干成硬边。他将旧刻痕的纸单独放好，手伸进包里摸到那两根细绳，便拿来系住图角，免得风掀起。绳子终于有了一件具体的活，既不指路，也不把水池变成谁都能用的地方，只替他留住一张今日看过的纸。\n",
+      "target": "huí fēng zhàn shí , tǎ wéi kùjiǎo yǐjīng gān chéng yìng biān .",
+      "english": "Back at Wind Trestle, Tavi's cuffs had dried into hard edges.",
+      "hanzi": "回风栈时，塔维裤脚已经干成硬边。",
       "alignment": [
         {
           "english": "Back",
@@ -4907,7 +5068,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng jiù kèhén de zhǐ dāndú fàng hǎo , shǒu shēnjìn bāo lǐ mō dào nà liǎnggēn xìshéng , biàn nálái xì zhù tú jiǎo , miǎnde fēng xiānqǐ .",
+      "english": "He stored the old mark's sketch separately, finding the two fine cords in his bag and using them to tie the map corners against the wind.",
+      "hanzi": "他将旧刻痕的纸单独放好，手伸进包里摸到那两根细绳，便拿来系住图角，免得风掀起。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -5091,7 +5259,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shéngzi zhōngyú yǒu le yíjiàn jùtǐ de huó , jì bù zhǐlù , yě bù bǎ shuǐchí biànchéng shuí dōu néng yòng de dìfāng , zhī tì tā liúzhù yìzhāng jīnrì kànguò de zhǐ .",
+      "english": "The cords finally had a particular job: neither showing a route nor making a pool public, only holding a sheet of what he'd seen today.",
+      "hanzi": "绳子终于有了一件具体的活，既不指路，也不把水池变成谁都能用的地方，只替他留住一张今日看过的纸。\n",
+      "alignment": [
         {
           "english": "cords",
           "target": "shéngzi",

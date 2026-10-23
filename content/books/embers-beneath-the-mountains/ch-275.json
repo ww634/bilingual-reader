@@ -2,7 +2,7 @@
   "id": "ch-275",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "zhǐ bèishàng de míngzì",
     "english": "The Name on the Back",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "chí ān de dìèr fēngxìn bǐ dìyīfēng duǎn , zhǐbèi què duō huà le yìzhī mùjī . tǎ wéi shōudào shí , zhèngzài jiāng zuórì chēduì hé guò de wùdiǎn dān fēn hǎo ; nà jǐbǐ yóu chǎngnèi dāngē zàochéng de sǔnshī yǐ dānliè chūlái , huòzhǔ háiyào hé huài cài de shù , bìng méiyǒu yīnwèi liǎngbǎ cài jìn le guō jiù yìqǐ xiāodiào .",
-      "english": "Chi An's second letter was shorter than the first, but had a wooden clog drawn on its back. When it arrived, Tavi was sorting delay forms checked with the cart team yesterday. Losses caused inside the yard had been listed separately; the owner still needed to check spoiled vegetables, not cancel everything because two bunches had gone into a pot.",
-      "hanzi": "迟安的第二封信比第一封短，纸背却多画了一只木屐。塔维收到时，正在将昨日车队核过的误点单分好；那几笔由场内耽搁造成的损失已单列出来，货主还要核坏菜的数，并没有因为两把菜进了锅就一起销掉。\n",
+      "target": "chí ān de dìèr fēngxìn bǐ dìyīfēng duǎn , zhǐbèi què duō huà le yìzhī mùjī .",
+      "english": "Chi An's second letter was shorter than the first, but had a wooden clog drawn on its back.",
+      "hanzi": "迟安的第二封信比第一封短，纸背却多画了一只木屐。",
       "alignment": [
         {
           "english": "Chi An",
@@ -149,7 +149,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi shōudào shí , zhèngzài jiāng zuórì chēduì hé guò de wùdiǎn dān fēn hǎo ; nà jǐbǐ yóu chǎngnèi dāngē zàochéng de sǔnshī yǐ dānliè chūlái , huòzhǔ háiyào hé huài cài de shù , bìng méiyǒu yīnwèi liǎngbǎ cài jìn le guō jiù yìqǐ xiāodiào .",
+      "english": "When it arrived, Tavi was sorting delay forms checked with the cart team yesterday. Losses caused inside the yard had been listed separately; the owner still needed to check spoiled vegetables, not cancel everything because two bunches had gone into a pot.",
+      "hanzi": "塔维收到时，正在将昨日车队核过的误点单分好；那几笔由场内耽搁造成的损失已单列出来，货主还要核坏菜的数，并没有因为两把菜进了锅就一起销掉。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -481,9 +488,9 @@
       ]
     },
     {
-      "target": "tā jiāng dānzi yāzhù , xiān kàn xìnfēng . sōng dī dōng shì liángmù chǎng de dìzhǐ hái zài , zhǐshì zhèhuí bù jīng xǔ lián zài zhuǎn , zhíjiē jì dào xuégōng , zài yóu xuégōng sònglái fēng zhàn . chí ān zài kāitóu shuō , qiánjǐrì máng zhe gǎn yìpái ménkuàng , yèlǐ cái yǒu kōngxiǎng , yě zhīxiǎngchū zhèxiē , pà tuō jiǔ le , lián xiǎng chū de zhèdiǎn yě xiě dé bú xiàng yuánlái de le .",
-      "english": "He pressed the forms down and examined the envelope. The Songdi East Market Liang Timber Yard address remained, but this time it bypassed Xu Lian, going straight to the academy and onward to Wind Trestle. Chi An began that he'd spent the past few days rushing a row of door frames, thinking only at night. This was all he'd recalled, and he feared delaying would make even that little unlike the original.",
-      "hanzi": "他将单子压住，先看信封。松堤东市梁木场的地址还在，只是这回不经许莲再转，直接寄到学宫，再由学宫送来风栈。迟安在开头说，前几日忙着赶一排门框，夜里才有空想，也只想出这些，怕拖久了，连想出的这点也写得不像原来的了。\n",
+      "target": "tā jiāng dānzi yāzhù , xiān kàn xìnfēng .",
+      "english": "He pressed the forms down and examined the envelope.",
+      "hanzi": "他将单子压住，先看信封。",
       "alignment": [
         {
           "english": "He",
@@ -540,7 +547,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "sōng dī dōng shì liángmù chǎng de dìzhǐ hái zài , zhǐshì zhèhuí bù jīng xǔ lián zài zhuǎn , zhíjiē jì dào xuégōng , zài yóu xuégōng sònglái fēng zhàn .",
+      "english": "The Songdi East Market Liang Timber Yard address remained, but this time it bypassed Xu Lian, going straight to the academy and onward to Wind Trestle.",
+      "hanzi": "松堤东市梁木场的地址还在，只是这回不经许莲再转，直接寄到学宫，再由学宫送来风栈。",
+      "alignment": [
         {
           "english": "Songdi",
           "target": "sōng dī",
@@ -708,7 +722,14 @@
           "category": "proper_noun",
           "is_idiom": false,
           "frequency_band": null
-        },
+        }
+      ]
+    },
+    {
+      "target": "chí ān zài kāitóu shuō , qiánjǐrì máng zhe gǎn yìpái ménkuàng , yèlǐ cái yǒu kōngxiǎng , yě zhīxiǎngchū zhèxiē , pà tuō jiǔ le , lián xiǎng chū de zhèdiǎn yě xiě dé bú xiàng yuánlái de le .",
+      "english": "Chi An began that he'd spent the past few days rushing a row of door frames, thinking only at night. This was all he'd recalled, and he feared delaying would make even that little unlike the original.",
+      "hanzi": "迟安在开头说，前几日忙着赶一排门框，夜里才有空想，也只想出这些，怕拖久了，连想出的这点也写得不像原来的了。\n",
+      "alignment": [
         {
           "english": "Chi An",
           "target": "chí ān",
@@ -984,9 +1005,9 @@
       ]
     },
     {
-      "target": "ā qiǎo hòulái zhù de nà yìjiā , tā zhī jìde yuànlǐ rén jiào yígè nǚrén ā nán . shìbushì tā shōuliú le ā qiǎo , tā bùnéng kěndìng ; nǚrén cháng tìrén féngbǔ , ménbiān guà liǎngzhī cháng bùdài , háizi ài shēnshǒu mō dài lǐ yǒu méi suìbù , què huì āi shuō . chí ān zìjǐ xiān qù le xǔjiā , líkāi nàtiān bìng méi tóng ā qiǎo shuō shàng huà .",
-      "english": "Of Aqiao's later household, he remembered only people in the courtyard calling a woman A-Nan. He couldn't be certain she had taken Aqiao in. She often mended clothes for people, with two long cloth bags by her door; children liked feeling for scraps inside, and got scolded. Chi An went to the Xu household first, leaving without a chance to speak to Aqiao.",
-      "hanzi": "阿巧后来住的那一家，他只记得院里人叫一个女人阿楠。是不是她收留了阿巧，他不能肯定；女人常替人缝补，门边挂两只长布袋，孩子爱伸手摸袋里有没碎布，却会挨说。迟安自己先去了许家，离开那天并没同阿巧说上话。\n",
+      "target": "ā qiǎo hòulái zhù de nà yìjiā , tā zhī jìde yuànlǐ rén jiào yígè nǚrén ā nán .",
+      "english": "Of the household Aqiao lived with later, he remembered only people in the courtyard calling a woman A-Nan.",
+      "hanzi": "阿巧后来住的那一家，他只记得院里人叫一个女人阿楠。",
       "alignment": [
         {
           "english": "Aqiao",
@@ -1021,7 +1042,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "her",
+          "english": "the",
           "target": "nà",
           "hanzi": "那",
           "category": "function_word",
@@ -1123,7 +1144,14 @@
           "category": "proper_noun",
           "is_idiom": false,
           "frequency_band": null
-        },
+        }
+      ]
+    },
+    {
+      "target": "shìbushì tā shōuliú le ā qiǎo , tā bùnéng kěndìng ; nǚrén cháng tìrén féngbǔ , ménbiān guà liǎngzhī cháng bùdài , háizi ài shēnshǒu mō dài lǐ yǒu méi suìbù , què huì āi shuō .",
+      "english": "He couldn't be certain she had taken Aqiao in. She often mended clothes for people, with two long cloth bags by her door; children liked feeling for scraps inside, and got scolded.",
+      "hanzi": "是不是她收留了阿巧，他不能肯定；女人常替人缝补，门边挂两只长布袋，孩子爱伸手摸袋里有没碎布，却会挨说。",
+      "alignment": [
         {
           "english": "certain",
           "target": "shìbushì",
@@ -1363,7 +1391,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "chí ān zìjǐ xiān qù le xǔjiā , líkāi nàtiān bìng méi tóng ā qiǎo shuō shàng huà .",
+      "english": "Chi An went to the Xu household first, leaving without a chance to speak to Aqiao.",
+      "hanzi": "迟安自己先去了许家，离开那天并没同阿巧说上话。\n",
+      "alignment": [
         {
           "english": "Chi An",
           "target": "chí ān",
@@ -1463,9 +1498,9 @@
       ]
     },
     {
-      "target": "tǎ wéi yòng zhǐ fù yā zhe ā nán èr zì . búshì yígè wánzhěng xìngmíng , yě méiyǒu dìfāng kě tóu xìn , shènzhì nà nǚrén shìfǒu tóng ā qiǎo zhù zài yíchù dōu hái shuō bùzhǔn . tā céng yǐwéi wèn dào míngzì , qiántou biàn néng jiēshàng yíshànmén , rújīn zhè liǎnggè zì zhī ràng jiù yuànlǐ duō zhàn le yígè rén .",
-      "english": "Tavi pressed a fingertip over A-Nan's two characters. No full name, no address for a letter, not even certainty that she and Aqiao had lived together. He had thought a name would lead to a door; these two characters only put another person in the old courtyard.",
-      "hanzi": "塔维用指腹压着阿楠二字。不是一个完整姓名，也没有地方可投信，甚至那女人是否同阿巧住在一处都还说不准。他曾以为问到名字，前头便能接上一扇门，如今这两个字只让旧院里多站了一个人。\n",
+      "target": "tǎ wéi yòng zhǐ fù yā zhe ā nán èr zì .",
+      "english": "Tavi pressed a fingertip over A-Nan's two characters.",
+      "hanzi": "塔维用指腹压着阿楠二字。",
       "alignment": [
         {
           "english": "Tavi",
@@ -1530,7 +1565,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "búshì yígè wánzhěng xìngmíng , yě méiyǒu dìfāng kě tóu xìn , shènzhì nà nǚrén shìfǒu tóng ā qiǎo zhù zài yíchù dōu hái shuō bùzhǔn .",
+      "english": "No full name, no address for a letter, not even certainty that she and Aqiao had lived together.",
+      "hanzi": "不是一个完整姓名，也没有地方可投信，甚至那女人是否同阿巧住在一处都还说不准。",
+      "alignment": [
         {
           "english": "No",
           "target": "búshì",
@@ -1706,7 +1748,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā céng yǐwéi wèn dào míngzì , qiántou biàn néng jiēshàng yíshànmén , rújīn zhè liǎnggè zì zhī ràng jiù yuànlǐ duō zhàn le yígè rén .",
+      "english": "He had thought a name would lead to a door; these two characters only put another person in the old courtyard.",
+      "hanzi": "他曾以为问到名字，前头便能接上一扇门，如今这两个字只让旧院里多站了一个人。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -1926,9 +1975,9 @@
       ]
     },
     {
-      "target": "xìn shàng jiēzhe shuō , nàge gèng xiǎo de nǚhái , tā shízài jì bù qǐ hòulái qù le nǎlǐ . dǎo shì lǐng tāmen de nǚrén huílái xiū mùjī shí , hǎoxiàng jiāng dīngtóu àn jìn mù dǐ , pà zhā dào jiǎo . chí ān huà de mùjī cèmiàn wān dé yǒudiǎn guài , zài pángbiān zhùmíng zhè búshì zhào shíwù huà de , bié ná tā qù zhǎo tóngyàng de yìzhī .",
-      "english": "The letter said he truly couldn't remember where the smaller girl had gone. He did vaguely recall the escort woman pressing nail heads into the clog's wooden sole to protect feet when she returned to repair it. His drawn clog had an odd bend, with a note that it wasn't drawn from the object: don't use it to hunt for a matching one.",
-      "hanzi": "信上接着说，那个更小的女孩，他实在记不起后来去了哪里。倒是领他们的女人回来修木屐时，好像将钉头按进木底，怕扎到脚。迟安画的木屐侧面弯得有点怪，在旁边注明这不是照实物画的，别拿它去找同样的一只。\n",
+      "target": "xìn shàng jiēzhe shuō , nàge gèng xiǎo de nǚhái , tā shízài jì bù qǐ hòulái qù le nǎlǐ .",
+      "english": "The letter said he truly couldn't remember where the smaller girl had gone.",
+      "hanzi": "信上接着说，那个更小的女孩，他实在记不起后来去了哪里。",
       "alignment": [
         {
           "english": "letter",
@@ -2049,7 +2098,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dǎo shì lǐng tāmen de nǚrén huílái xiū mùjī shí , hǎoxiàng jiāng dīngtóu àn jìn mù dǐ , pà zhā dào jiǎo .",
+      "english": "He did vaguely recall the escort woman pressing nail heads into the clog's wooden sole to protect feet when she returned to repair it.",
+      "hanzi": "倒是领他们的女人回来修木屐时，好像将钉头按进木底，怕扎到脚。",
+      "alignment": [
         {
           "english": "did",
           "target": "dǎo shì",
@@ -2185,7 +2241,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "chí ān huà de mùjī cèmiàn wān dé yǒudiǎn guài , zài pángbiān zhùmíng zhè búshì zhào shíwù huà de , bié ná tā qù zhǎo tóngyàng de yìzhī .",
+      "english": "His drawn clog had an odd bend, with a note that it wasn't drawn from the object: don't use it to hunt for a matching one.",
+      "hanzi": "迟安画的木屐侧面弯得有点怪，在旁边注明这不是照实物画的，别拿它去找同样的一只。\n",
+      "alignment": [
         {
           "english": "His",
           "target": "chí ān",
@@ -2405,9 +2468,9 @@
       ]
     },
     {
-      "target": "tǎ wéi kàn le hěn jiǔ , jiànjiàn fājué mùjī tóng tā dìyīyǎn xiǎng de bùtóng . chí ān búshì bǎ yíjiàn jiùwù dìgěi tā , zhǐshì zài zìjǐ hái néng mō dào de dìfāng huàchū yìdiǎn xíngzhuàng . nà shíhòu de háizi xián xié chén , huì hù zhe yìshuāng wèibì hǎokàn de xié zǒuláizǒuqù , yě huì láibùjí tóng lìng yígè háizi dàobié .",
-      "english": "Looking a long time, Tavi gradually saw the clog differently from his first impression. Chi An wasn't handing him an old object, only tracing a shape where he could still reach. Those children could dislike heavy shoes yet cherish an ugly pair, or leave without saying goodbye to another child.",
-      "hanzi": "塔维看了很久，渐渐发觉木屐同他第一眼想的不同。迟安不是把一件旧物递给他，只是在自己还能摸到的地方划出一点形状。那时候的孩子嫌鞋沉，会护着一双未必好看的鞋走来走去，也会来不及同另一个孩子道别。\n",
+      "target": "tǎ wéi kàn le hěn jiǔ , jiànjiàn fājué mùjī tóng tā dìyīyǎn xiǎng de bùtóng .",
+      "english": "Looking a long time, Tavi gradually saw the clog differently from his first impression.",
+      "hanzi": "塔维看了很久，渐渐发觉木屐同他第一眼想的不同。",
       "alignment": [
         {
           "english": "Tavi",
@@ -2512,7 +2575,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "chí ān búshì bǎ yíjiàn jiùwù dìgěi tā , zhǐshì zài zìjǐ hái néng mō dào de dìfāng huàchū yìdiǎn xíngzhuàng .",
+      "english": "Chi An wasn't handing him an old object, only tracing a shape where he could still reach.",
+      "hanzi": "迟安不是把一件旧物递给他，只是在自己还能摸到的地方划出一点形状。",
+      "alignment": [
         {
           "english": "Chi An",
           "target": "chí ān",
@@ -2664,7 +2734,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nà shíhòu de háizi xián xié chén , huì hù zhe yìshuāng wèibì hǎokàn de xié zǒuláizǒuqù , yě huì láibùjí tóng lìng yígè háizi dàobié .",
+      "english": "Those children could dislike heavy shoes yet cherish an ugly pair, or leave without saying goodbye to another child.",
+      "hanzi": "那时候的孩子嫌鞋沉，会护着一双未必好看的鞋走来走去，也会来不及同另一个孩子道别。\n",
+      "alignment": [
         {
           "english": "Those",
           "target": "nà shíhòu",
@@ -2860,9 +2937,9 @@
       ]
     },
     {
-      "target": "tā bǎ xìn fān dào zuìhòu , jiàn chí ān wèn , tǎ wéi huà shuǐbiān fángwū shí , mùtou pào jiǔ le huì buhuì chén ; zìjǐ zuò ménchuāng , zǒng juéde mùtou gāi lí shuǐ yuǎn yìdiǎn . zhǐ wěi hái tiān yíjù , bù jí huí , ruò huà dé hǎokàn , xiàcì kě chāo yìxiǎopiàn gěi tā kàn .",
-      "english": "At the end, Chi An asked whether timber in the waterside houses Tavi drew would sink after soaking a long time: making doors and windows, he always felt wood should stay farther from water. A final line said no hurry replying, but if the drawings were attractive, perhaps copy him a little next time.",
-      "hanzi": "他把信翻到最后，见迟安问，塔维画水边房屋时，木头泡久了会不会沉；自己做门窗，总觉得木头该离水远一点。纸尾还添一句，不急回，若画得好看，下次可抄一小片给他看。\n",
+      "target": "tā bǎ xìn fān dào zuìhòu , jiàn chí ān wèn , tǎ wéi huà shuǐbiān fángwū shí , mùtou pào jiǔ le huì buhuì chén ; zìjǐ zuò ménchuāng , zǒng juéde mùtou gāi lí shuǐ yuǎn yìdiǎn .",
+      "english": "At the end of the letter, Chi An asked whether timber in the waterside houses Tavi drew would sink after soaking a long time: making doors and windows, he always felt wood should stay farther from water.",
+      "hanzi": "他把信翻到最后，见迟安问，塔维画水边房屋时，木头泡久了会不会沉；自己做门窗，总觉得木头该离水远一点。",
       "alignment": [
         {
           "english": "Tavi",
@@ -2881,7 +2958,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "line",
+          "english": "letter",
           "target": "xìn",
           "hanzi": "信",
           "category": "noun",
@@ -3095,7 +3172,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhǐ wěi hái tiān yíjù , bù jí huí , ruò huà dé hǎokàn , xiàcì kě chāo yìxiǎopiàn gěi tā kàn .",
+      "english": "A final line said no hurry replying, but if the drawings were attractive, perhaps copy him a little next time.",
+      "hanzi": "纸尾还添一句，不急回，若画得好看，下次可抄一小片给他看。\n",
+      "alignment": [
         {
           "english": "A final line",
           "target": "zhǐ wěi",
@@ -3251,9 +3335,9 @@
       ]
     },
     {
-      "target": "tǎ wéi xiānqián bēngzhe de jiān mànmàn sōng le . tā yuánlái zhǔnbèi le bànyè jiēzhe wèn de shì , cǐkè fǎn jiāng nà zhāng zhǐ shōuqǐ , cóng shí tīng de cǎotú lǐ zhǎochū yíchù bú dài rénjiā ménpái , yě bú lù sīyòng shuǐlù de xiǎowū cèyǐng . huà gěi chí ān kàn de nà zhāng méiyǒu bǔ shàng zǒu bùtōng de dī , yě méiyǒu jiāng lǎo shígǒng huà chéng tā xiǎngxiàng lǐ de zhěngzuò qiáo .",
-      "english": "Tavi's tense shoulders slowly loosened. He put away the half-page of further questions he had prepared, finding instead a little floating house's side view among his Shiting sketches, without household addresses or private water routes. His drawing for Chi An didn't complete the inaccessible dyke or turn the old stone half-arch into an imagined whole bridge.",
-      "hanzi": "塔维先前绷着的肩慢慢松了。他原来准备了半页接着问的事，此刻反将那张纸收起，从石汀的草图里找出一处不带人家门牌、也不露私用水路的小屋侧影。画给迟安看的那张没有补上走不通的堤，也没有将老石拱画成他想象里的整座桥。\n",
+      "target": "tǎ wéi xiānqián bēngzhe de jiān mànmàn sōng le .",
+      "english": "Tavi's tense shoulders slowly loosened.",
+      "hanzi": "塔维先前绷着的肩慢慢松了。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3326,7 +3410,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yuánlái zhǔnbèi le bànyè jiēzhe wèn de shì , cǐkè fǎn jiāng nà zhāng zhǐ shōuqǐ , cóng shí tīng de cǎotú lǐ zhǎochū yíchù bú dài rénjiā ménpái , yě bú lù sīyòng shuǐlù de xiǎowū cèyǐng .",
+      "english": "He put away the half-page of further questions he had prepared, finding instead a little floating house's side view among his Shiting sketches, without household addresses or private water routes.",
+      "hanzi": "他原来准备了半页接着问的事，此刻反将那张纸收起，从石汀的草图里找出一处不带人家门牌、也不露私用水路的小屋侧影。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -3598,7 +3689,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "huà gěi chí ān kàn de nà zhāng méiyǒu bǔ shàng zǒu bùtōng de dī , yě méiyǒu jiāng lǎo shígǒng huà chéng tā xiǎngxiàng lǐ de zhěngzuò qiáo .",
+      "english": "His drawing for Chi An didn't complete the inaccessible dyke or turn the old stone half-arch into an imagined whole bridge.",
+      "hanzi": "画给迟安看的那张没有补上走不通的堤，也没有将老石拱画成他想象里的整座桥。\n",
+      "alignment": [
         {
           "english": "drawing",
           "target": "huà",
@@ -3794,9 +3892,9 @@
       ]
     },
     {
-      "target": "bàngwǎn , tā jiāng chí ān zhè fēngxìn wánzhěng chāo le liǎngfèn . yífèn jì sè lā , yífèn jì nài lěi , ā nán de míngzì tóng bù kěndìng de jǐchù yíbìng liúxià , méiyòng gèng zhíjiéliǎodàng dehuà tìhuàn . tā yòu gěi chí ān xiě le huíxìn , shuō mùwū bìng búshì dānkào qiángbǎn fú zhe , xiàmiàn lìng yǒu bǎng zài yìqǐ de mùpái , zìjǐ yě zhǐjiàn guò zhè yíchù , biéchù zěnyàng hái bù zhīdào .",
-      "english": "At dusk he copied Chi An's letter in full twice: one for Sela, one for Nerai, retaining both A-Nan's name and every uncertainty without replacing them with more decisive words. He also wrote back to Chi An: the houses didn't float on wallboards alone, but on lashed log rafts underneath. He had only seen this one place, and didn't know about others.",
-      "hanzi": "傍晚，他将迟安这封信完整抄了两份。一份寄瑟拉，一份寄奈蕾，阿楠的名字同不肯定的几处一并留下，没用更直截了当的话替换。他又给迟安写了回信，说木屋并不是单靠墙板浮着，下面另有绑在一起的木排，自己也只见过这一处，别处怎样还不知道。\n",
+      "target": "bàngwǎn , tā jiāng chí ān zhè fēngxìn wánzhěng chāo le liǎngfèn .",
+      "english": "At dusk he copied Chi An's letter in full twice.",
+      "hanzi": "傍晚，他将迟安这封信完整抄了两份。",
       "alignment": [
         {
           "english": "At dusk",
@@ -3893,7 +3991,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yífèn jì sè lā , yífèn jì nài lěi , ā nán de míngzì tóng bù kěndìng de jǐchù yíbìng liúxià , méiyòng gèng zhíjiéliǎodàng dehuà tìhuàn .",
+      "english": "One copy was for Sela, one for Nerai, retaining both A-Nan's name and every uncertainty without replacing them with more decisive words.",
+      "hanzi": "一份寄瑟拉，一份寄奈蕾，阿楠的名字同不肯定的几处一并留下，没用更直截了当的话替换。",
+      "alignment": [
         {
           "english": "one",
           "target": "yí",
@@ -4093,7 +4198,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yòu gěi chí ān xiě le huíxìn , shuō mùwū bìng búshì dānkào qiángbǎn fú zhe , xiàmiàn lìng yǒu bǎng zài yìqǐ de mùpái , zìjǐ yě zhǐjiàn guò zhè yíchù , biéchù zěnyàng hái bù zhīdào .",
+      "english": "He also wrote back to Chi An: the houses didn't float on wallboards alone, but on lashed log rafts underneath. He had only seen this one place, and didn't know about others.",
+      "hanzi": "他又给迟安写了回信，说木屋并不是单靠墙板浮着，下面另有绑在一起的木排，自己也只见过这一处，别处怎样还不知道。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -4353,9 +4465,9 @@
       ]
     },
     {
-      "target": "sānfèn gè fù le yóu qián . gěi chí ān de nà fēng lǐ , jiù yuàn de wèntí zànshí méi zài tiān , dǎo duō xiě le liǎngháng wūdǐng yǎngjī , chuánshàng gǎn é de shì . bànshì de rén tì tā shōuxìn shí xiào le yíxià , shuō mùgōng yě ài tīng jīyā . tǎ wéi shuō xìn lǐ shì é , jiǎngwán zìjǐ yě xiào , juéde zhèhuí jiūzhèng rén sìhū méi nàme nán .",
-      "english": "He paid postage for all three. Chi An's envelope held no more old-courtyard questions for now, but two extra lines about roof chickens and a goose herded aboard a boat. Taking the letters, the clerk smiled: carpenters liked hearing about chickens and ducks too. Geese, Tavi corrected, laughing himself; correcting someone seemed less difficult this time.",
-      "hanzi": "三份各付了邮钱。给迟安的那封里，旧院的问题暂时没再添，倒多写了两行屋顶养鸡、船上赶鹅的事。办事的人替他收信时笑了一下，说木工也爱听鸡鸭。塔维说信里是鹅，讲完自己也笑，觉得这回纠正人似乎没那么难。\n",
+      "target": "sānfèn gè fù le yóu qián .",
+      "english": "He paid postage for all three.",
+      "hanzi": "三份各付了邮钱。",
       "alignment": [
         {
           "english": "three",
@@ -4404,7 +4516,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "gěi chí ān de nà fēng lǐ , jiù yuàn de wèntí zànshí méi zài tiān , dǎo duō xiě le liǎngháng wūdǐng yǎngjī , chuánshàng gǎn é de shì .",
+      "english": "The letter to Chi An held no more old-courtyard questions for now, but two extra lines about roof chickens and a goose herded aboard a boat.",
+      "hanzi": "给迟安的那封里，旧院的问题暂时没再添，倒多写了两行屋顶养鸡、船上赶鹅的事。",
+      "alignment": [
         {
           "english": "Chi An",
           "target": "gěi",
@@ -4422,7 +4541,7 @@
           "frequency_band": null
         },
         {
-          "english": "An's",
+          "english": "to",
           "target": "de",
           "hanzi": "的",
           "category": "particle",
@@ -4438,7 +4557,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "envelope",
+          "english": "letter",
           "target": "fēng",
           "hanzi": "封",
           "category": "measure_word",
@@ -4604,7 +4723,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "bànshì de rén tì tā shōuxìn shí xiào le yíxià , shuō mùgōng yě ài tīng jīyā .",
+      "english": "Taking the letters, the clerk smiled: carpenters liked hearing about chickens and ducks too.",
+      "hanzi": "办事的人替他收信时笑了一下，说木工也爱听鸡鸭。",
+      "alignment": [
         {
           "english": "clerk",
           "target": "bànshì",
@@ -4724,7 +4850,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi shuō xìn lǐ shì é , jiǎngwán zìjǐ yě xiào , juéde zhèhuí jiūzhèng rén sìhū méi nàme nán .",
+      "english": "He had written geese in the letter, Tavi corrected, laughing himself; correcting someone seemed less difficult this time.",
+      "hanzi": "塔维说信里是鹅，讲完自己也笑，觉得这回纠正人似乎没那么难。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4742,7 +4875,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "envelope",
+          "english": "letter",
           "target": "xìn",
           "hanzi": "信",
           "category": "noun",
@@ -4750,7 +4883,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "held",
+          "english": "in",
           "target": "lǐ",
           "hanzi": "里",
           "category": "function_word",

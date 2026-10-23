@@ -1,0 +1,7 @@
+# Plan arc
+
+Read ../AGENTS.md, `_series.json`, `_state.json` and any existing arc file. Expand the selected, authorized one-line premise into as many chapter beats as its dramatic scope warrants, following the approved flexible estimate rather than a fixed cap. The handoff’s 6–12-chapter requirement was superseded by the user. Long arcs may be planned incrementally: retain a private overall progression and append detailed chapter beats ahead of each small writing wave. Never renumber or change already written beats, and do not invent an ending just to fit a batch size. Preserve established events, Chinese names and active seeds. Plan arcs just in time, after the previous arc completes.
+
+Write `_arcs/arc-<index>.json`: arc_index, arc_title, summary (private), _base_global, chapters. Each chapter has title_english, beat (specific dramatizable actions and consequences), hook, seeds_planted, seeds_paid. Set _base_global to the checkpoint's chapters_written only when starting this arc; never reset it on resume. Global chapter number equals _base_global plus the one-based chapter index. Check that no existing chapter will be overwritten. Give each arc a satisfying local progression and consequences for the series; avoid repetitive cliffhangers.
+
+These files contain SPOILERS. Do not quote beats, outcome summaries or payoffs to the human, open them in a panel, or describe them in progress reports unless explicitly asked for spoilers. Report only that the arc is prepared and its chapter count.

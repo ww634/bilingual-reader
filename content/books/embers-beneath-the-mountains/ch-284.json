@@ -2,7 +2,7 @@
   "id": "ch-284",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "shǒu yào zhīdào de shì",
     "english": "What the Hands Must Know",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "fùhé shì de zhuō bǐ fēng zhàn nà zhāng zhǎi , guāng què gèngwěn . wéi lǎoshī dǎkāi bǎoguǎn guì , xiān ràng tǎ wéi kàn fēngtiáo hé jìcún jìlù , zài jiāng tā yuánlái nà duì tiě tóng jiājù bǎi dào zhuōshàng . tiěmiàn méiyǒu yīnwèi jiǔbié biàn xiǎnde mòshēng , zhēnzhèng mòshēng de shì tā shēnshǒu shí , jìng xiān kàn le yìyǎn pángbiān yǒuméiyǒu rén yào zhuǎnshēn jīngguò .",
-      "english": "The review-room table was narrower than Wind Trestle's, but its light steadier. Teacher Vey opened the storage cupboard, showed Tavi the seal and holding record, then set his original iron pair and fixture on the table. The metal hadn't grown unfamiliar in absence; what was strange was that before reaching, he checked whether someone nearby needed to turn past him.",
-      "hanzi": "复核室的桌比风栈那张窄，光却更稳。维老师打开保管柜，先让塔维看封条和寄存记录，再将他原来那对铁同夹具摆到桌上。铁面没有因为久别便显得陌生，真正陌生的是他伸手时，竟先看了一眼旁边有没有人要转身经过。\n",
+      "target": "fùhé shì de zhuō bǐ fēng zhàn nà zhāng zhǎi , guāng què gèngwěn .",
+      "english": "The review-room table was narrower than Wind Trestle's, but its light steadier.",
+      "hanzi": "复核室的桌比风栈那张窄，光却更稳。",
       "alignment": [
         {
           "english": "review-room",
@@ -109,7 +109,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wéi lǎoshī dǎkāi bǎoguǎn guì , xiān ràng tǎ wéi kàn fēngtiáo hé jìcún jìlù , zài jiāng tā yuánlái nà duì tiě tóng jiājù bǎi dào zhuōshàng .",
+      "english": "Teacher Vey opened the storage cupboard, showed Tavi the seal and holding record, then set his original iron pair and fixture on the table.",
+      "hanzi": "维老师打开保管柜，先让塔维看封条和寄存记录，再将他原来那对铁同夹具摆到桌上。",
+      "alignment": [
         {
           "english": "Teacher Vey",
           "target": "wéi lǎoshī",
@@ -293,7 +300,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tiěmiàn méiyǒu yīnwèi jiǔbié biàn xiǎnde mòshēng , zhēnzhèng mòshēng de shì tā shēnshǒu shí , jìng xiān kàn le yìyǎn pángbiān yǒuméiyǒu rén yào zhuǎnshēn jīngguò .",
+      "english": "The metal hadn't grown unfamiliar in absence; what was strange was that before reaching, he checked whether someone nearby needed to turn past him.",
+      "hanzi": "铁面没有因为久别便显得陌生，真正陌生的是他伸手时，竟先看了一眼旁边有没有人要转身经过。\n",
+      "alignment": [
         {
           "english": "metal",
           "target": "tiěmiàn",
@@ -497,9 +511,9 @@
       ]
     },
     {
-      "target": "ruǎn héng zuòzài cèbiān , bàogào yǐ tānkāi . tā búshì lái tì tǎ wéi shuō zhèxiē rìzi zuò dé búcuò , wéi lǎoshī wèn dào cháng liáng nà zhāng tú shí , tā zhī jiāng yuántú tóng gǎitú fàng qí , jiào tǎ wéi zìjǐ jiǎng .",
-      "english": "Ruan Heng sat at the side with the report open. He hadn't come to praise Tavi's recent work for him. When Vey asked about the beam drawing, he only aligned the original and revision, letting Tavi explain.",
-      "hanzi": "阮衡坐在侧边，报告已摊开。他不是来替塔维说这些日子做得不错，维老师问到长梁那张图时，他只将原图同改图放齐，叫塔维自己讲。\n",
+      "target": "ruǎn héng zuòzài cèbiān , bàogào yǐ tānkāi .",
+      "english": "Ruan Heng sat at the side with the report open.",
+      "hanzi": "阮衡坐在侧边，报告已摊开。",
       "alignment": [
         {
           "english": "Ruan Heng",
@@ -556,7 +570,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā búshì lái tì tǎ wéi shuō zhèxiē rìzi zuò dé búcuò , wéi lǎoshī wèn dào cháng liáng nà zhāng tú shí , tā zhī jiāng yuántú tóng gǎitú fàng qí , jiào tǎ wéi zìjǐ jiǎng .",
+      "english": "He hadn't come to praise Tavi's recent work for him. When Vey asked about the beam drawing, he only aligned the original and revision, letting Tavi explain.",
+      "hanzi": "他不是来替塔维说这些日子做得不错，维老师问到长梁那张图时，他只将原图同改图放齐，叫塔维自己讲。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -784,9 +805,9 @@
       ]
     },
     {
-      "target": "tǎ wéi jiǎngwán , lǎoshī ná qǐ wēn xiù gěi de fèi mùtiáo , kànjiàn shàngtóu nà dào sǎo guò wàicè de wān , biàn jiāng tā gē dào jiājù páng . tā wèn tā , ruò jīnrì huàn le qīngzǎi zuòyòng de wèizhì , xiānqián xiāngtóng de zhǐzhēn yídòng hái suànbusuàn xiāngtóng . tā méiyǒu qiǎng zhe dá , xiān jiāng liǎngbiān gànggǎn de chángdù yǔ zuòyòngdiǎn lièchūlái , suàn wán cái shuō , dé xiān huàn dào tóngyì bǎ bǐjiào de chǐ shàng , bùnéng zhuī zhe liǎnggēn zhēn zǒu dé yíyàng yuǎn .",
-      "english": "After his account, she set Wenxiu's scrap strip and its outer-turn sweep beside the fixture. If the light load's point changed today, would equal needle travel still count as equal? Rather than rushing, he listed lever lengths and action points and calculated: first put them on the same comparison scale, not chase equal distances on two needles.",
-      "hanzi": "塔维讲完，老师拿起温岫给的废木条，看见上头那道扫过外侧的弯，便将它搁到夹具旁。她问他，若今日换了轻载作用的位置，先前相同的指针移动还算不算相同。他没有抢着答，先将两边杠杆的长度与作用点列出来，算完才说，得先换到同一把比较的尺上，不能追着两根针走得一样远。\n",
+      "target": "tǎ wéi jiǎngwán , lǎoshī ná qǐ wēn xiù gěi de fèi mùtiáo , kànjiàn shàngtóu nà dào sǎo guò wàicè de wān , biàn jiāng tā gē dào jiājù páng .",
+      "english": "After his account, she set Wenxiu's scrap strip and its outer-turn sweep beside the fixture.",
+      "hanzi": "塔维讲完，老师拿起温岫给的废木条，看见上头那道扫过外侧的弯，便将它搁到夹具旁。",
       "alignment": [
         {
           "english": "his",
@@ -971,7 +992,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā wèn tā , ruò jīnrì huàn le qīngzǎi zuòyòng de wèizhì , xiānqián xiāngtóng de zhǐzhēn yídòng hái suànbusuàn xiāngtóng .",
+      "english": "She asked: if the light load's point of action changed today, would equal needle travel still count as equal?",
+      "hanzi": "她问他，若今日换了轻载作用的位置，先前相同的指针移动还算不算相同。",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -1123,7 +1151,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méiyǒu qiǎng zhe dá , xiān jiāng liǎngbiān gànggǎn de chángdù yǔ zuòyòngdiǎn lièchūlái , suàn wán cái shuō , dé xiān huàn dào tóngyì bǎ bǐjiào de chǐ shàng , bùnéng zhuī zhe liǎnggēn zhēn zǒu dé yíyàng yuǎn .",
+      "english": "Rather than rushing, he listed lever lengths and action points and calculated: first put them on the same comparison scale, not chase equal distances on two needles.",
+      "hanzi": "他没有抢着答，先将两边杠杆的长度与作用点列出来，算完才说，得先换到同一把比较的尺上，不能追着两根针走得一样远。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -1415,9 +1450,9 @@
       ]
     },
     {
-      "target": "zhè shì tā cóngqián zài ruǎn héng nàlǐ àn huíxìn liàn guò de bùjú , jīnrì yòng de réng shì nà duì yǐzhī xiāngróng , zhěngkuài tǐjī hé guò de xiǎo tiěliào . wéi lǎoshī ràng tā chóngxīn liáng , bìng méiyǒu yīnwèi jìlù shàng xiě guò biàn shěngdiào . qiǎn cáo , jiēchùmiàn , zhīdiǎn yǔ zhǐ dǎng zhúxiàng chá guò , qīngzǎi wèi jiè shí de shù yě zài zhǐ shàng gè liú yìlán , tā yòu jiāng liǎngzhīshǒu yào luò , yào shōu de wèizhì zhǐ gěi lǎoshī kàn .",
-      "english": "This was the layout he'd practiced under Ruan Heng's written instruction before, still with his known compatible small iron pair whose whole volumes had been checked. Vey had him measure again, not omit it because records said so. Shallow grooves, contact patches, supports and stops were checked item by item, ordinary light-load readings in separate columns; he showed where both hands would land and withdraw.",
-      "hanzi": "这是他从前在阮衡那里按回信练过的布局，今日用的仍是那对已知相容、整块体积核过的小铁料。维老师让他重新量，并没有因为记录上写过便省掉。浅槽、接触面、支点与止挡逐项查过，轻载未借时的数也在纸上各留一栏，他又将两只手要落、要收的位置指给老师看。\n",
+      "target": "zhè shì tā cóngqián zài ruǎn héng nàlǐ àn huíxìn liàn guò de bùjú , jīnrì yòng de réng shì nà duì yǐzhī xiāngróng , zhěngkuài tǐjī hé guò de xiǎo tiěliào .",
+      "english": "This was the layout he'd practiced under Ruan Heng's written instruction before, still with his known compatible small iron pair whose whole volumes had been checked.",
+      "hanzi": "这是他从前在阮衡那里按回信练过的布局，今日用的仍是那对已知相容、整块体积核过的小铁料。",
       "alignment": [
         {
           "english": "This",
@@ -1634,7 +1669,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wéi lǎoshī ràng tā chóngxīn liáng , bìng méiyǒu yīnwèi jìlù shàng xiě guò biàn shěngdiào .",
+      "english": "Vey had him measure again, not omit it because records said so.",
+      "hanzi": "维老师让他重新量，并没有因为记录上写过便省掉。",
+      "alignment": [
         {
           "english": "Vey",
           "target": "wéi lǎoshī",
@@ -1730,7 +1772,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "qiǎn cáo , jiēchùmiàn , zhīdiǎn yǔ zhǐ dǎng zhúxiàng chá guò , qīngzǎi wèi jiè shí de shù yě zài zhǐ shàng gè liú yìlán , tā yòu jiāng liǎngzhīshǒu yào luò , yào shōu de wèizhì zhǐ gěi lǎoshī kàn .",
+      "english": "Shallow grooves, contact patches, supports and stops were checked item by item, ordinary light-load readings in separate columns; he showed the teacher where both hands would land and withdraw.",
+      "hanzi": "浅槽、接触面、支点与止挡逐项查过，轻载未借时的数也在纸上各留一栏，他又将两只手要落、要收的位置指给老师看。\n",
+      "alignment": [
         {
           "english": "Shallow grooves",
           "target": "qiǎn cáo",
@@ -1996,7 +2045,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "Vey",
+          "english": "teacher",
           "target": "lǎoshī",
           "hanzi": "老师",
           "category": "noun",
@@ -2014,9 +2063,9 @@
       ]
     },
     {
-      "target": "dìyībiàn zhǐshì shùnzhe dòngzuò zǒu , tā méi jiè xìng . zuǒshǒu ruò cóng zuì shěngshì de fāngxiàng tuì , xiùkǒu huì sǎo guò dúshù yòng de xiǎo piàn zhǐ . tā jiāng zhǐ yíkāi , lǎoshī què jiào tā xiān bié yí , wèn ruò nà shì bùnéng nuó de zhīzuò zěnmebàn . tǎ wéi tíng le yíhuìer , jiāng yǐzi zhuǎn le xiǎo bàngè jiǎo , chóngxīn bǎishǒu , zài kàn zhǐzhēn , shìxiàn zhōngyú búbì cóng zìjǐ de shǒuwàn dǐxià zuànguòqù .",
-      "english": "The first run was movement only, no borrowing. His left sleeve would brush a small reading sheet when withdrawing by the easiest route. He moved the paper, but Vey stopped him: what if it were an immovable support? After pausing he rotated his chair a little and reset his hands; his view of the needles finally needn't pass under his own wrist.",
-      "hanzi": "第一遍只是顺着动作走，他没借性。左手若从最省事的方向退，袖口会扫过读数用的小片纸。他将纸移开，老师却叫他先别移，问若那是不能挪的支座怎么办。塔维停了一会儿，将椅子转了小半个角，重新摆手，再看指针，视线终于不必从自己的手腕底下钻过去。\n",
+      "target": "dìyībiàn zhǐshì shùnzhe dòngzuò zǒu , tā méi jiè xìng .",
+      "english": "His first run was movement only, no borrowing.",
+      "hanzi": "第一遍只是顺着动作走，他没借性。",
       "alignment": [
         {
           "english": "first",
@@ -2097,7 +2146,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zuǒshǒu ruò cóng zuì shěngshì de fāngxiàng tuì , xiùkǒu huì sǎo guò dúshù yòng de xiǎo piàn zhǐ .",
+      "english": "His left sleeve would brush a small reading sheet when withdrawing by the easiest route.",
+      "hanzi": "左手若从最省事的方向退，袖口会扫过读数用的小片纸。",
+      "alignment": [
         {
           "english": "left",
           "target": "zuǒshǒu",
@@ -2233,7 +2289,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng zhǐ yíkāi , lǎoshī què jiào tā xiān bié yí , wèn ruò nà shì bùnéng nuó de zhīzuò zěnmebàn .",
+      "english": "He moved the paper, but Vey stopped him: what if it were an immovable support?",
+      "hanzi": "他将纸移开，老师却叫他先别移，问若那是不能挪的支座怎么办。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -2393,7 +2456,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi tíng le yíhuìer , jiāng yǐzi zhuǎn le xiǎo bàngè jiǎo , chóngxīn bǎishǒu , zài kàn zhǐzhēn , shìxiàn zhōngyú búbì cóng zìjǐ de shǒuwàn dǐxià zuànguòqù .",
+      "english": "After pausing he rotated his chair a little and reset his hands; his view of the needles finally needn't pass under his own wrist.",
+      "hanzi": "塔维停了一会儿，将椅子转了小半个角，重新摆手，再看指针，视线终于不必从自己的手腕底下钻过去。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tǎ wéi",
@@ -2597,9 +2667,9 @@
       ]
     },
     {
-      "target": "dédào zhǔnxǔ hòu , tā cái jiāng liǎngshǒu jiēshàng tiěmiàn . shúxī de zǔlì bìng búshì yì shēnshǒu biàn kěn tīnghuà , tā xiān děng zhùyì luò wěn , cái qīngqīng gǎidòng liǎngbiān de tánxìng xiǎngyìng . yìbiān zhēn xiàngwàizǒu , lìngyìbiān xiàng lǐ tuì , jùlí bìng bù xiāngděng , huànsuàn hòu de biànhuà què luò zài xiānqián hé hǎo de xiǎofú lǐ .",
-      "english": "Only with permission did he contact the iron with both hands. Familiar resistance didn't immediately obey; he let his attention settle before gently changing the pair's elastic responses. One needle moved outward, the other inward, unequal distances but normalized changes inside the previously checked small range.",
-      "hanzi": "得到准许后，他才将两手接上铁面。熟悉的阻力并不是一伸手便肯听话，他先等注意落稳，才轻轻改动两边的弹性响应。一边针向外走，另一边向里退，距离并不相等，换算后的变化却落在先前核好的小幅里。\n",
+      "target": "dédào zhǔnxǔ hòu , tā cái jiāng liǎngshǒu jiēshàng tiěmiàn .",
+      "english": "Only with permission did he contact the iron with both hands.",
+      "hanzi": "得到准许后，他才将两手接上铁面。",
       "alignment": [
         {
           "english": "with",
@@ -2672,7 +2742,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shúxī de zǔlì bìng búshì yì shēnshǒu biàn kěn tīnghuà , tā xiān děng zhùyì luò wěn , cái qīngqīng gǎidòng liǎngbiān de tánxìng xiǎngyìng .",
+      "english": "Familiar resistance didn't immediately obey; he let his attention settle before gently changing the pair's elastic responses.",
+      "hanzi": "熟悉的阻力并不是一伸手便肯听话，他先等注意落稳，才轻轻改动两边的弹性响应。",
+      "alignment": [
         {
           "english": "Familiar",
           "target": "shúxī",
@@ -2840,7 +2917,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yìbiān zhēn xiàngwàizǒu , lìngyìbiān xiàng lǐ tuì , jùlí bìng bù xiāngděng , huànsuàn hòu de biànhuà què luò zài xiānqián hé hǎo de xiǎofú lǐ .",
+      "english": "One needle moved outward, the other inward, unequal distances but normalized changes inside the previously checked small range.",
+      "hanzi": "一边针向外走，另一边向里退，距离并不相等，换算后的变化却落在先前核好的小幅里。\n",
+      "alignment": [
         {
           "english": "One",
           "target": "yìbiān",
@@ -3020,9 +3104,9 @@
       ]
     },
     {
-      "target": "tā méiyǒu táishǒu liú yú xìng , yě méiyǒu jiào ruǎn héng gǎnzhe chuān xiāo . liǎngshǒu réng tiēzhe , àn xué guò de bànfǎ shōuhuí jiè xìng , qīngzǎi dúshù gè huí jīxiàn , cái táishǒu , xièzài , zài chá zhèngcháng . zuò wán yíbiàn , yǎn hòu nà gǔ xì jǐn cái bèi tā zhùyì dào , wéi lǎoshī ràng tā zuò kāi xiūxi , búzài jiē dìèrbiàn .",
-      "english": "He didn't lift his hands to leave residue or ask Ruan Heng to rush a pin in. Keeping both hands touching, he canceled borrowing as learned; each light-load reading returned to baseline before he lifted, unloaded and checked normality again. After one trial he noticed the fine tightness behind his eyes. Vey seated him to rest, no second run.",
-      "hanzi": "他没有抬手留余性，也没有叫阮衡赶着穿销。两手仍贴着，按学过的办法收回借性，轻载读数各回基线，才抬手、卸载，再查正常。做完一遍，眼后那股细紧才被他注意到，维老师让他坐开休息，不再接第二遍。\n",
+      "target": "tā méiyǒu táishǒu liú yú xìng , yě méiyǒu jiào ruǎn héng gǎnzhe chuān xiāo .",
+      "english": "He didn't lift his hands to leave residue or ask Ruan Heng to rush a pin in.",
+      "hanzi": "他没有抬手留余性，也没有叫阮衡赶着穿销。",
       "alignment": [
         {
           "english": "He",
@@ -3119,7 +3203,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "liǎngshǒu réng tiēzhe , àn xué guò de bànfǎ shōuhuí jiè xìng , qīngzǎi dúshù gè huí jīxiàn , cái táishǒu , xièzài , zài chá zhèngcháng .",
+      "english": "Keeping both hands touching, he canceled borrowing as learned; each light-load reading returned to baseline before he lifted, unloaded and checked normality again.",
+      "hanzi": "两手仍贴着，按学过的办法收回借性，轻载读数各回基线，才抬手、卸载，再查正常。",
+      "alignment": [
         {
           "english": "both hands",
           "target": "liǎngshǒu",
@@ -3287,7 +3378,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zuò wán yíbiàn , yǎn hòu nà gǔ xì jǐn cái bèi tā zhùyì dào , wéi lǎoshī ràng tā zuò kāi xiūxi , búzài jiē dìèrbiàn .",
+      "english": "After one trial he noticed the fine tightness behind his eyes. Vey seated him to rest, no second run.",
+      "hanzi": "做完一遍，眼后那股细紧才被他注意到，维老师让他坐开休息，不再接第二遍。\n",
+      "alignment": [
         {
           "english": "After",
           "target": "zuò wán",
@@ -3443,9 +3541,9 @@
       ]
     },
     {
-      "target": "tǎ wéi wàng zhe jiājù , méi wèn shìbushì yòu zhǐnéng liàn jiù dōngxī . lǎoshī què zhǔdòng jiāng lìng yìzhāng kōng tú gěi tā , ràng tā xiàhuí xiān zài zhǐ shàng ānpái tóngyí duì cáiliào de bùtóng zhuāngpèi , xiě qīng zěnyàng hé , shuí lái zuò nǎ yíbù , nǎxiēdìfāng hái xū qǐng rén quèrèn . tú jiāo lái , tā huìtóng tā kàn , búshì xiě wán biàn ná qù shì xīn liào .",
-      "english": "Watching the fixture, Tavi didn't ask if it meant old tools again. Vey offered a blank drawing sheet herself: next time first plan a different assembly on paper using the same materials, explaining checks, each person's actions and what needed confirmation. She would review the drawing with him; completing it didn't license trying new material.",
-      "hanzi": "塔维望着夹具，没问是不是又只能练旧东西。老师却主动将另一张空图给他，让他下回先在纸上安排同一对材料的不同装配，写清怎样核、谁来做哪一步，哪些地方还须请人确认。图交来，她会同他看，不是写完便拿去试新料。\n",
+      "target": "tǎ wéi wàng zhe jiājù , méi wèn shìbushì yòu zhǐnéng liàn jiù dōngxī .",
+      "english": "Watching the fixture, Tavi didn't ask if it meant old tools again.",
+      "hanzi": "塔维望着夹具，没问是不是又只能练旧东西。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3542,7 +3640,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lǎoshī què zhǔdòng jiāng lìng yìzhāng kōng tú gěi tā , ràng tā xiàhuí xiān zài zhǐ shàng ānpái tóngyí duì cáiliào de bùtóng zhuāngpèi , xiě qīng zěnyàng hé , shuí lái zuò nǎ yíbù , nǎxiēdìfāng hái xū qǐng rén quèrèn .",
+      "english": "Vey offered him a blank drawing sheet herself: next time he should first plan a different assembly on paper using the same materials, explaining checks, each person's actions and what needed confirmation.",
+      "hanzi": "老师却主动将另一张空图给他，让他下回先在纸上安排同一对材料的不同装配，写清怎样核、谁来做哪一步，哪些地方还须请人确认。",
+      "alignment": [
         {
           "english": "Vey",
           "target": "lǎoshī",
@@ -3624,7 +3729,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "Tavi",
+          "english": "he",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -3830,7 +3935,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tú jiāo lái , tā huìtóng tā kàn , búshì xiě wán biàn ná qù shì xīn liào .",
+      "english": "She would review the drawing with him; completing it didn't license trying new material.",
+      "hanzi": "图交来，她会同他看，不是写完便拿去试新料。\n",
+      "alignment": [
         {
           "english": "drawing",
           "target": "tú",
@@ -3938,9 +4050,9 @@
       ]
     },
     {
-      "target": "ruǎn héng zhèshí cái wèn tā , jīnrì tóng fēng zhàn kàn wēn xiù nà huí , nǎlǐ zuì bùtóng . tǎ wéi yuán xiǎng shuō méiyǒu chuān xiāo , xiǎng le xiǎng , shuō jīnrì zìjǐ méiyǒu kōng bǎ yígè rén de tuì shǒu zhī dàngchéng yígè xiǎoquān . tā shuōwán dītóu , jiàn bàogào lǐ nà yì gé quān hái zài , pángbiān de shù yě hái zài .",
-      "english": "Only then Ruan Heng asked what differed most from watching Wenxiu at Wind Trestle. Tavi started with the missing pin, then thought and said he hadn't had room today to treat another person's withdrawal as a little circle. Looking down, he saw that report circle still there, its readings beside it too.",
-      "hanzi": "阮衡这时才问他，今日同风栈看温岫那回，哪里最不同。塔维原想说没有穿销，想了想，说今日自己没有空把一个人的退手只当成一个小圈。他说完低头，见报告里那一格圈还在，旁边的数也还在。\n",
+      "target": "ruǎn héng zhèshí cái wèn tā , jīnrì tóng fēng zhàn kàn wēn xiù nà huí , nǎlǐ zuì bùtóng .",
+      "english": "Only then Ruan Heng asked him what differed most today from watching Wenxiu at Wind Trestle.",
+      "hanzi": "阮衡这时才问他，今日同风栈看温岫那回，哪里最不同。",
       "alignment": [
         {
           "english": "Ruan Heng",
@@ -3975,7 +4087,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "Tavi",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -4061,7 +4173,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi yuán xiǎng shuō méiyǒu chuān xiāo , xiǎng le xiǎng , shuō jīnrì zìjǐ méiyǒu kōng bǎ yígè rén de tuì shǒu zhī dàngchéng yígè xiǎoquān .",
+      "english": "Tavi started with the missing pin, then thought and said he hadn't had room today to treat another person's withdrawal as a little circle.",
+      "hanzi": "塔维原想说没有穿销，想了想，说今日自己没有空把一个人的退手只当成一个小圈。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4253,7 +4372,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuōwán dītóu , jiàn bàogào lǐ nà yì gé quān hái zài , pángbiān de shù yě hái zài .",
+      "english": "After saying that, he looked down and saw that report circle still there, its readings beside it too.",
+      "hanzi": "他说完低头，见报告里那一格圈还在，旁边的数也还在。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -4263,7 +4389,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "said",
+          "english": "saying",
           "target": "shuōwán",
           "hanzi": "说完",
           "category": "verb",
@@ -4271,7 +4397,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "Looking down",
+          "english": "looked down",
           "target": "dītóu",
           "hanzi": "低头",
           "category": "verb",
@@ -4401,9 +4527,9 @@
       ]
     },
     {
-      "target": "chū ménqián , wéi lǎoshī jiāng cáiliào tóng jiājù hé hǎo , jiāohuí xuégōng liànxí guì bǎoguǎn , méi ràng tā dàidào sùshè chuángbiān . tǎ wéi shōuqǐ mùtiáo yǔ kōng tú , zǒu dào láng shàng , gé chuāng tīngjiàn lǐtou yòu yǒurén zài bào dúshù . tā de shǒu fàngjìn xiùlǐ , zhǎngxīn yǒu yìdiǎn hàn , jiān què bǐ jìnmén shí sōng le .",
-      "english": "Before he left, Vey checked the materials and fixture and returned them to the academy practice cupboard, not his dormitory bedside. Tavi gathered his wooden strip and blank plan, hearing someone else call readings through the corridor window. Hands in his sleeves, palms a little sweaty, his shoulders were easier than on entering.",
-      "hanzi": "出门前，维老师将材料同夹具核好，交回学宫练习柜保管，没让他带到宿舍床边。塔维收起木条与空图，走到廊上，隔窗听见里头又有人在报读数。他的手放进袖里，掌心有一点汗，肩却比进门时松了。\n",
+      "target": "chū ménqián , wéi lǎoshī jiāng cáiliào tóng jiājù hé hǎo , jiāohuí xuégōng liànxí guì bǎoguǎn , méi ràng tā dàidào sùshè chuángbiān .",
+      "english": "Before he left, Vey checked the materials and fixture and returned them to the academy practice cupboard, not his dormitory bedside.",
+      "hanzi": "出门前，维老师将材料同夹具核好，交回学宫练习柜保管，没让他带到宿舍床边。",
       "alignment": [
         {
           "english": "Before he left",
@@ -4540,7 +4666,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi shōuqǐ mùtiáo yǔ kōng tú , zǒu dào láng shàng , gé chuāng tīngjiàn lǐtou yòu yǒurén zài bào dúshù .",
+      "english": "Tavi gathered his wooden strip and blank plan, hearing someone else call readings through the corridor window.",
+      "hanzi": "塔维收起木条与空图，走到廊上，隔窗听见里头又有人在报读数。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4660,7 +4793,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā de shǒu fàngjìn xiùlǐ , zhǎngxīn yǒu yìdiǎn hàn , jiān què bǐ jìnmén shí sōng le .",
+      "english": "Hands in his sleeves, palms a little sweaty, his shoulders were easier than on entering.",
+      "hanzi": "他的手放进袖里，掌心有一点汗，肩却比进门时松了。\n",
+      "alignment": [
         {
           "english": "his",
           "target": "tā",

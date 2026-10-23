@@ -2,7 +2,7 @@
   "id": "ch-282",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "huíqù lùshang de shān",
     "english": "The Mountain on the Way Home",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "gōnggòng chē líkāi fēng zhàn shí , tǎ wéi méiyǒu zuò kàochuāng nà yìbiān . píng tiáo shàng yuán liú le chuāng wèi , zuòxià qián , yígè bào háizi de nǚrén wèn néngfǒu huàn , háizi méi zuò guò zhè duàn lù , zhèng bā zhe chēyán wàng . tā dāying yǐhòu , ruǎn héng zhī wǎng lǐ nuó le nuó , ràng tā bǎ bāo gē wěn , méi wèn shìbushì yòu jiāng hǎokàn de rànggěi biérén .",
-      "english": "When the public cart left Wind Trestle, Tavi wasn't by the window. His voucher reserved that seat, but a woman with a child asked to swap before he sat; the child hadn't traveled this road and was peering over the cart edge. When he agreed, Ruan Heng merely moved inward to make room for his bag, without asking if he'd given the view away again.",
-      "hanzi": "公共车离开风栈时，塔维没有坐靠窗那一边。凭条上原留了窗位，坐下前，一个抱孩子的女人问能否换，孩子没坐过这段路，正扒着车沿望。他答应以后，阮衡只往里挪了挪，让他把包搁稳，没问是不是又将好看的让给别人。\n",
+      "target": "gōnggòng chē líkāi fēng zhàn shí , tǎ wéi méiyǒu zuò kàochuāng nà yìbiān .",
+      "english": "When the public cart left Wind Trestle, Tavi wasn't in the seat by the window.",
+      "hanzi": "公共车离开风栈时，塔维没有坐靠窗那一边。",
       "alignment": [
         {
           "english": "public cart",
@@ -101,7 +101,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "píng tiáo shàng yuán liú le chuāng wèi , zuòxià qián , yígè bào háizi de nǚrén wèn néngfǒu huàn , háizi méi zuò guò zhè duàn lù , zhèng bā zhe chēyán wàng .",
+      "english": "His voucher reserved that seat, but a woman with a child asked to swap before he sat; the child hadn't traveled this road and was peering over the cart edge.",
+      "hanzi": "凭条上原留了窗位，坐下前，一个抱孩子的女人问能否换，孩子没坐过这段路，正扒着车沿望。",
+      "alignment": [
         {
           "english": "voucher",
           "target": "píng tiáo",
@@ -325,7 +332,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā dāying yǐhòu , ruǎn héng zhī wǎng lǐ nuó le nuó , ràng tā bǎ bāo gē wěn , méi wèn shìbushì yòu jiāng hǎokàn de rànggěi biérén .",
+      "english": "When he agreed, Ruan Heng merely moved inward to make room for his bag, without asking if he'd given the view away again.",
+      "hanzi": "他答应以后，阮衡只往里挪了挪，让他把包搁稳，没问是不是又将好看的让给别人。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -513,9 +527,9 @@
       ]
     },
     {
-      "target": "chē guò zhuǎnwān , háizi guǒrán jiào qǐlái , shuō shān zěnme hái zài hòumiàn . tǎ wéi huítóu , zhǐjiàn fēng zhàn wūdǐng yǐ cáng zhù dàbàn , mùcáo nà tóu shǎnguò yì diǎnliàng shuǐ , jiēzhe yě bèi shù dǎngzhù . tā xiǎng gàosù háizi shān bìng méi gēnzhe zǒu , huàdàozuǐbiān què tíng le , zìjǐ cóngqián zuòchē shí yě cháng juéde shānyuè zǒu yuè duō , méi shuí zhàn zài pángbiān yízuòzuò tì tā bānkāi .",
-      "english": "Rounding the bend, the child cried out: why were mountains still behind them? Looking back, Tavi saw most Wind Trestle roofs hidden, a gleam of flume water then trees hiding that too. He started to explain mountains didn't follow, then stopped; he had once felt every journey brought more mountains too, without anyone moving each aside for him.",
-      "hanzi": "车过转弯，孩子果然叫起来，说山怎么还在后面。塔维回头，只见风栈屋顶已藏住大半，木槽那头闪过一点亮水，接着也被树挡住。他想告诉孩子山并没跟着走，话到嘴边却停了，自己从前坐车时也常觉得山越走越多，没谁站在旁边一座座替他搬开。\n",
+      "target": "chē guò zhuǎnwān , háizi guǒrán jiào qǐlái , shuō shān zěnme hái zài hòumiàn .",
+      "english": "Rounding the bend, the child cried out: why were mountains still behind them?",
+      "hanzi": "车过转弯，孩子果然叫起来，说山怎么还在后面。",
       "alignment": [
         {
           "english": "Rounding",
@@ -612,7 +626,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi huítóu , zhǐjiàn fēng zhàn wūdǐng yǐ cáng zhù dàbàn , mùcáo nà tóu shǎnguò yì diǎnliàng shuǐ , jiēzhe yě bèi shù dǎngzhù .",
+      "english": "Looking back, Tavi saw most Wind Trestle roofs hidden, a gleam of flume water then trees hiding that too.",
+      "hanzi": "塔维回头，只见风栈屋顶已藏住大半，木槽那头闪过一点亮水，接着也被树挡住。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -764,7 +785,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā xiǎng gàosù háizi shān bìng méi gēnzhe zǒu , huàdàozuǐbiān què tíng le , zìjǐ cóngqián zuòchē shí yě cháng juéde shānyuè zǒu yuè duō , méi shuí zhàn zài pángbiān yízuòzuò tì tā bānkāi .",
+      "english": "He started to explain to the child that mountains didn't follow, then stopped; he had once felt every journey brought more mountains too, without anyone moving each aside for him.",
+      "hanzi": "他想告诉孩子山并没跟着走，话到嘴边却停了，自己从前坐车时也常觉得山越走越多，没谁站在旁边一座座替他搬开。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -1040,9 +1068,9 @@
       ]
     },
     {
-      "target": "ruǎn héng shàngchē méiduōjiǔ biàn shuìzháo le , tóu wǎngqián yì zāi , zìjǐ jīngxǐng yíxià , yòu shuì . nà tà bàogào bào zài huáilǐ , shǒubèi de jiùshāng xiàng yìtiáo dàn xiàn . tǎ wéi dìyīcì méi chèn tā xǐng shí zài wèn yìhuí wéi lǎoshī huì wèn shénme , zhī shēnshǒu jiāngyào huá xià de zhǐ jiǎo tuīhuíqù .",
-      "english": "Ruan Heng fell asleep soon after boarding, head dipping forward, briefly waking, then sleeping again. The report rested in his arms, an old hand scar a pale line. For once Tavi didn't ask again what Vey might ask while he was awake, only tucked the slipping paper corner back.",
-      "hanzi": "阮衡上车没多久便睡着了，头往前一栽，自己惊醒一下，又睡。那沓报告抱在怀里，手背的旧伤像一条淡线。塔维第一次没趁他醒时再问一回维老师会问什么，只伸手将要滑下的纸角推回去。\n",
+      "target": "ruǎn héng shàngchē méiduōjiǔ biàn shuìzháo le , tóu wǎngqián yì zāi , zìjǐ jīngxǐng yíxià , yòu shuì .",
+      "english": "Ruan Heng fell asleep soon after boarding, head dipping forward, briefly waking, then sleeping again.",
+      "hanzi": "阮衡上车没多久便睡着了，头往前一栽，自己惊醒一下，又睡。",
       "alignment": [
         {
           "english": "Ruan Heng",
@@ -1163,7 +1191,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nà tà bàogào bào zài huáilǐ , shǒubèi de jiùshāng xiàng yìtiáo dàn xiàn .",
+      "english": "The report rested in his arms, an old hand scar a pale line.",
+      "hanzi": "那沓报告抱在怀里，手背的旧伤像一条淡线。",
+      "alignment": [
         {
           "english": "The",
           "target": "nà",
@@ -1267,7 +1302,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi dìyīcì méi chèn tā xǐng shí zài wèn yìhuí wéi lǎoshī huì wèn shénme , zhī shēnshǒu jiāngyào huá xià de zhǐ jiǎo tuīhuíqù .",
+      "english": "For once Tavi didn't ask again what Vey might ask while he was awake, only tucked the slipping paper corner back.",
+      "hanzi": "塔维第一次没趁他醒时再问一回维老师会问什么，只伸手将要滑下的纸角推回去。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1447,9 +1489,9 @@
       ]
     },
     {
-      "target": "wǔqián tíng zài yíchù huàn mǎpéng , chēfū shuō zhǐnéng xiē dào xià yìkǒu shuǐ hēwán , bié qù yuǎnchù mǎi rèfàn . tǎ wéi cóng bāo lǐ náchū zǎo bèi de bǐng , fēngěi ruǎn héng . bǐng bèi mùtiáo yāliè yìjiǎo , xiè luò zài kù shàng , tā suǒxìng bāikāi chī , fāxiàn lǐtou jìng hái jiá zhe yìdiǎn suāncài , shì fànpù lǎobǎn zǎochén bāo de .",
-      "english": "Before noon they stopped at a horse-changing shed. The driver said rest only until he had drunk his next water: no distant hot-food shopping. Tavi shared the prepared flatbread from his bag with Ruan Heng. His wooden strip had crushed a corner; crumbs fell on his trousers. Breaking it to eat, he found sour greens inside, packed by the eatery owner that morning.",
-      "hanzi": "午前停在一处换马棚，车夫说只能歇到下一口水喝完，别去远处买热饭。塔维从包里拿出早备的饼，分给阮衡。饼被木条压裂一角，屑落在裤上，他索性掰开吃，发现里头竟还夹着一点酸菜，是饭铺老板早晨包的。\n",
+      "target": "wǔqián tíng zài yíchù huàn mǎpéng , chēfū shuō zhǐnéng xiē dào xià yìkǒu shuǐ hēwán , bié qù yuǎnchù mǎi rèfàn .",
+      "english": "Before noon they stopped at a horse-changing shed. The driver said rest only until he had drunk his next water: no distant hot-food shopping.",
+      "hanzi": "午前停在一处换马棚，车夫说只能歇到下一口水喝完，别去远处买热饭。",
       "alignment": [
         {
           "english": "Before noon",
@@ -1610,7 +1652,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi cóng bāo lǐ náchū zǎo bèi de bǐng , fēngěi ruǎn héng .",
+      "english": "Tavi shared the prepared flatbread from his bag with Ruan Heng.",
+      "hanzi": "塔维从包里拿出早备的饼，分给阮衡。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1690,7 +1739,14 @@
           "category": "proper_noun",
           "is_idiom": false,
           "frequency_band": null
-        },
+        }
+      ]
+    },
+    {
+      "target": "bǐng bèi mùtiáo yāliè yìjiǎo , xiè luò zài kù shàng , tā suǒxìng bāikāi chī , fāxiàn lǐtou jìng hái jiá zhe yìdiǎn suāncài , shì fànpù lǎobǎn zǎochén bāo de .",
+      "english": "The flatbread had been crushed at one corner by his wooden strip; crumbs fell on his trousers. Breaking it to eat, he found sour greens inside, packed by the eatery owner that morning.",
+      "hanzi": "饼被木条压裂一角，屑落在裤上，他索性掰开吃，发现里头竟还夹着一点酸菜，是饭铺老板早晨包的。\n",
+      "alignment": [
         {
           "english": "flatbread",
           "target": "bǐng",
@@ -1918,9 +1974,9 @@
       ]
     },
     {
-      "target": "pángbiān yígè nánrén wèn tāmen cóng nǎ tóu lái , yòu wèn xuégōng shìbushì rújīn yě jiào zěnyàng gěi méi pái xiānhòu . ruǎn héng tīng chū tā dài diǎn cì , méiyǒu duān zhe lǎoshī de yàngzi , zhī shuō xuégōng jiào dé le bùshǎo , zhēn dào lùshang , méi hái dé yìchē chē kàn . nánrén biàn jiǎng zìjǐ líncūn bèi nuó guò bān , méi shuō quán shì nǎbiān de cuò , zhī shuō huíqù tóng qīzǐ jiěshì shí , tā zuìxiān wèn de shì wèishénme biérén dōu néng zǎo zhīdào .",
-      "english": "A man nearby asked their starting point, then whether the academy now taught assigning coal priority. Hearing the barb, Ruan Heng didn't adopt a teacher's manner: the academy taught plenty, but on roads coal still needed checking cart by cart. The man described his neighboring village's rescheduled slot, not blaming one side entirely; his wife's first question had been why everyone else could know sooner.",
-      "hanzi": "旁边一个男人问他们从哪头来，又问学宫是不是如今也教怎样给煤排先后。阮衡听出他带点刺，没有端着老师的样子，只说学宫教得了不少，真到路上，煤还得一车车看。男人便讲自己邻村被挪过班，没说全是哪边的错，只说回去同妻子解释时，她最先问的是为什么别人都能早知道。\n",
+      "target": "pángbiān yígè nánrén wèn tāmen cóng nǎ tóu lái , yòu wèn xuégōng shìbushì rújīn yě jiào zěnyàng gěi méi pái xiānhòu .",
+      "english": "A man nearby asked their starting point, then whether the academy now taught assigning coal priority.",
+      "hanzi": "旁边一个男人问他们从哪头来，又问学宫是不是如今也教怎样给煤排先后。",
       "alignment": [
         {
           "english": "nearby",
@@ -2089,7 +2145,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng tīng chū tā dài diǎn cì , méiyǒu duān zhe lǎoshī de yàngzi , zhī shuō xuégōng jiào dé le bùshǎo , zhēn dào lùshang , méi hái dé yìchē chē kàn .",
+      "english": "Hearing the barb, Ruan Heng didn't adopt a teacher's manner in answering him: the academy taught plenty, but on roads coal still needed checking cart by cart.",
+      "hanzi": "阮衡听出他带点刺，没有端着老师的样子，只说学宫教得了不少，真到路上，煤还得一车车看。",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -2107,7 +2170,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "the man",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -2273,7 +2336,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nánrén biàn jiǎng zìjǐ líncūn bèi nuó guò bān , méi shuō quán shì nǎbiān de cuò , zhī shuō huíqù tóng qīzǐ jiěshì shí , tā zuìxiān wèn de shì wèishénme biérén dōu néng zǎo zhīdào .",
+      "english": "The man described his neighboring village's rescheduled slot, not blaming one side entirely; his wife's first question had been why everyone else could know sooner.",
+      "hanzi": "男人便讲自己邻村被挪过班，没说全是哪边的错，只说回去同妻子解释时，她最先问的是为什么别人都能早知道。\n",
+      "alignment": [
         {
           "english": "man",
           "target": "nánrén",
@@ -2541,9 +2611,9 @@
       ]
     },
     {
-      "target": "tǎ wéi tīng zhe , méi jiāng fēng zhàn nà zhāng xīn biǎo ná chūlái zuòdá . nánrén shuō de shì lìng yíchù zhuǎn huò diǎn , méi rén zhīdào tāmen nàlǐ shíjì tiē guò shénme . tā wènqīng shì nǎ duàn lù , jiāng míngzì jì zài bàogào wài de yì xiǎozhāng zhǐ shàng ; ruǎn héng shuō huí suǒ lǐ kě dìguòqù wèn , bù xǔnuò jīnrì biàn tì shuí gǎi huí .",
-      "english": "Tavi listened without producing Wind Trestle's new chart as an answer. The man meant another transfer point; none knew what it actually posted. Tavi clarified the road and noted its name outside the report; Ruan Heng said he could pass an inquiry on at the office, not promise to reverse it today.",
-      "hanzi": "塔维听着，没将风栈那张新表拿出来作答。男人说的是另一处转货点，没人知道他们那里实际贴过什么。他问清是哪段路，将名字记在报告外的一小张纸上；阮衡说回所里可递过去问，不许诺今日便替谁改回。\n",
+      "target": "tǎ wéi tīng zhe , méi jiāng fēng zhàn nà zhāng xīn biǎo ná chūlái zuòdá .",
+      "english": "Tavi listened without producing Wind Trestle's new chart as an answer.",
+      "hanzi": "塔维听着，没将风栈那张新表拿出来作答。",
       "alignment": [
         {
           "english": "Tavi",
@@ -2594,7 +2664,7 @@
           "frequency_band": null
         },
         {
-          "english": "the",
+          "english": "Trestle's",
           "target": "nà",
           "hanzi": "那",
           "category": "function_word",
@@ -2632,7 +2702,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nánrén shuō de shì lìng yíchù zhuǎn huò diǎn , méi rén zhīdào tāmen nàlǐ shíjì tiē guò shénme .",
+      "english": "The man meant another transfer point; none knew what it actually posted.",
+      "hanzi": "男人说的是另一处转货点，没人知道他们那里实际贴过什么。",
+      "alignment": [
         {
           "english": "man",
           "target": "nánrén",
@@ -2744,7 +2821,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā wènqīng shì nǎ duàn lù , jiāng míngzì jì zài bàogào wài de yì xiǎozhāng zhǐ shàng ; ruǎn héng shuō huí suǒ lǐ kě dìguòqù wèn , bù xǔnuò jīnrì biàn tì shuí gǎi huí .",
+      "english": "Tavi clarified the road and noted its name outside the report; Ruan Heng said he could pass an inquiry on at the office, not promise to reverse it today.",
+      "hanzi": "他问清是哪段路，将名字记在报告外的一小张纸上；阮衡说回所里可递过去问，不许诺今日便替谁改回。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tā",
@@ -2996,9 +3080,9 @@
       ]
     },
     {
-      "target": "chē zàiqǐ xíng , shānshì jiànjiàn kāichū yìtiáo cháng fèng , yuǎnchù yíliè báiqiáng guà zài pō shàng , xiàmiàn de tītián fàn zhe qiǎn huīlǜ . tǎ wéi bìngbùzhīdào nà shì nǎ zuò chéng , zhǐjiàn yìtiáo jí xì de lù shēn dào qiángbiān , zài gèng gāochù duàn jìn yún lǐ . tā xiǎngqǐ shí tīng shuǐmiàn shàng de wūdǐng , tóngyàng shì rén zhù zhe de dìfāng , què bùnéng ná tóngyì bǎ chǐ qù liáng tāmen lí shìjiè yǒu duō yuǎn .",
-      "english": "Moving again, the mountains opened a long gap: distant white walls hung on a slope over pale gray-green terraces. Tavi didn't know which city it was; a fine road reached the wall and disappeared higher in cloud. He recalled Shiting's roofs over water: both inhabited places, their distance from the world impossible to measure with one ruler.",
-      "hanzi": "车再起行，山势渐渐开出一条长缝，远处一列白墙挂在坡上，下面的梯田泛着浅灰绿。塔维并不知道那是哪座城，只见一条极细的路伸到墙边，在更高处断进云里。他想起石汀水面上的屋顶，同样是人住着的地方，却不能拿同一把尺去量它们离世界有多远。\n",
+      "target": "chē zàiqǐ xíng , shānshì jiànjiàn kāichū yìtiáo cháng fèng , yuǎnchù yíliè báiqiáng guà zài pō shàng , xiàmiàn de tītián fàn zhe qiǎn huīlǜ .",
+      "english": "Moving again, the mountains opened a long gap: distant white walls hung on a slope over pale gray-green terraces.",
+      "hanzi": "车再起行，山势渐渐开出一条长缝，远处一列白墙挂在坡上，下面的梯田泛着浅灰绿。",
       "alignment": [
         {
           "english": "Moving",
@@ -3191,7 +3275,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi bìngbùzhīdào nà shì nǎ zuò chéng , zhǐjiàn yìtiáo jí xì de lù shēn dào qiángbiān , zài gèng gāochù duàn jìn yún lǐ .",
+      "english": "Tavi didn't know which city it was; a fine road reached the wall and disappeared higher in cloud.",
+      "hanzi": "塔维并不知道那是哪座城，只见一条极细的路伸到墙边，在更高处断进云里。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -3359,7 +3450,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā xiǎngqǐ shí tīng shuǐmiàn shàng de wūdǐng , tóngyàng shì rén zhù zhe de dìfāng , què bùnéng ná tóngyì bǎ chǐ qù liáng tāmen lí shìjiè yǒu duō yuǎn .",
+      "english": "He recalled Shiting's roofs over water: both inhabited places, their distance from the world impossible to measure with one ruler.",
+      "hanzi": "他想起石汀水面上的屋顶，同样是人住着的地方，却不能拿同一把尺去量它们离世界有多远。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -3579,9 +3677,9 @@
       ]
     },
     {
-      "target": "bàngwǎn dǐdá dìnghǎo de kèdiàn , zhǔrén xiān kàn píng tiáo , zài jiào rén lǐng tāmen dào hòuyuàn . búshì fēng zhàn nà jiān chuáng , yě méiyǒu xuégōng chuāng biān nàgēn jiù shéng , wūlǐ liǎngzhāng zhǎi chuáng zhōngjiān bǎi yìzhāng xiǎozhuō . tǎ wéi jiāng bāo dǎkāi , zhī qǔ xǐshù de dōngxī , méi bǎ suǒyǒu xìn zài tān yíbiàn .",
-      "english": "At dusk they reached the booked inn. Checking the voucher, the host sent them to the rear courtyard. Not Wind Trestle's bed or the academy window's old cord: two narrow beds with a small table between. Tavi opened his bag for washing things only, not spreading every letter again.",
-      "hanzi": "傍晚抵达订好的客店，主人先看凭条，再叫人领他们到后院。不是风栈那间床，也没有学宫窗边那根旧绳，屋里两张窄床中间摆一张小桌。塔维将包打开，只取洗漱的东西，没把所有信再摊一遍。\n",
+      "target": "bàngwǎn dǐdá dìnghǎo de kèdiàn , zhǔrén xiān kàn píng tiáo , zài jiào rén lǐng tāmen dào hòuyuàn .",
+      "english": "At dusk they reached the booked inn. Checking the voucher, the host sent them to the rear courtyard.",
+      "hanzi": "傍晚抵达订好的客店，主人先看凭条，再叫人领他们到后院。",
       "alignment": [
         {
           "english": "At dusk",
@@ -3710,7 +3808,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "búshì fēng zhàn nà jiān chuáng , yě méiyǒu xuégōng chuāng biān nàgēn jiù shéng , wūlǐ liǎngzhāng zhǎi chuáng zhōngjiān bǎi yìzhāng xiǎozhuō .",
+      "english": "Not Wind Trestle's bed or the academy window's old cord: two narrow beds with a small table between.",
+      "hanzi": "不是风栈那间床，也没有学宫窗边那根旧绳，屋里两张窄床中间摆一张小桌。",
+      "alignment": [
         {
           "english": "Not",
           "target": "búshì",
@@ -3878,7 +3983,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi jiāng bāo dǎkāi , zhī qǔ xǐshù de dōngxī , méi bǎ suǒyǒu xìn zài tān yíbiàn .",
+      "english": "Tavi opened his bag for washing things only, not spreading every letter again.",
+      "hanzi": "塔维将包打开，只取洗漱的东西，没把所有信再摊一遍。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4010,9 +4122,9 @@
       ]
     },
     {
-      "target": "ruǎn héng xiàlóu wèn míngzǎo kāichē de shíchén , huílái shí duōduān yìwǎn rètāng , shuō diànlǐ jīnrì zhī shèng zhège , bié dīng zhe tā děng chū yíkuài ròu . tǎ wéi jiēguò lái , jìng zài wǎndǐ lāo dào bànkuài luóbo , dìgěi tā kàn . ruǎn héng shuō nà shì tā yǎnjīng hǎo , zìjǐ nà wǎn méi kànjiàn , biàn shēn kuàizi lái fēn .",
-      "english": "Ruan Heng went downstairs to ask tomorrow's departure time and returned with an extra bowl of hot soup: it was all the inn had left, don't stare expecting meat to appear. Tavi found half a radish at the bottom and showed him. Good eyes, Ruan Heng said: he hadn't seen one in his bowl, reaching with his chopsticks to share.",
-      "hanzi": "阮衡下楼问明早开车的时辰，回来时多端一碗热汤，说店里今日只剩这个，别盯着它等出一块肉。塔维接过来，竟在碗底捞到半块萝卜，递给他看。阮衡说那是他眼睛好，自己那碗没看见，便伸筷子来分。\n",
+      "target": "ruǎn héng xiàlóu wèn míngzǎo kāichē de shíchén , huílái shí duōduān yìwǎn rètāng , shuō diànlǐ jīnrì zhī shèng zhège , bié dīng zhe tā děng chū yíkuài ròu .",
+      "english": "Ruan Heng went downstairs to ask tomorrow's departure time and returned with an extra bowl of hot soup: it was all the inn had left, don't stare expecting meat to appear.",
+      "hanzi": "阮衡下楼问明早开车的时辰，回来时多端一碗热汤，说店里今日只剩这个，别盯着它等出一块肉。",
       "alignment": [
         {
           "english": "Ruan Heng",
@@ -4229,7 +4341,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi jiēguò lái , jìng zài wǎndǐ lāo dào bànkuài luóbo , dìgěi tā kàn .",
+      "english": "Tavi found half a radish at the bottom and showed him.",
+      "hanzi": "塔维接过来，竟在碗底捞到半块萝卜，递给他看。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4325,7 +4444,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng shuō nà shì tā yǎnjīng hǎo , zìjǐ nà wǎn méi kànjiàn , biàn shēn kuàizi lái fēn .",
+      "english": "Good eyes, Ruan Heng said: he hadn't seen one in his bowl, reaching with his chopsticks to share.",
+      "hanzi": "阮衡说那是他眼睛好，自己那碗没看见，便伸筷子来分。\n",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -4465,9 +4591,9 @@
       ]
     },
     {
-      "target": "chuāngwài yǒurén xièxià chēlún biān guà de kōng shuǐtǒng , tǒng dǐ pèng dì , shēngxiǎng tóng xià róng nàwǎn jìnmén shí hěn xiàng . tǎ wéi hēwán tāng , qǐshēn jiāng liǎngzhī wǎn dōu sòng xiàlóu , fàngdào lǎobǎn yǎnqián cái huílái . ruǎn héng wèn zěnme qù nàme jiǔ , tā shuō shù le yíbiàn , wūlǐ xiān jìng le yíxià , jiēzhe liǎng rén dōu xiào le .",
-      "english": "Outside, someone lowered an empty bucket hung by a cart wheel. Its thump sounded like Xiarong coming in that evening. Finishing his soup, Tavi took both bowls downstairs and put them before the host before returning. Asked why so long, he said he had counted. After a moment's quiet, both laughed.",
-      "hanzi": "窗外有人卸下车轮边挂的空水桶，桶底碰地，声响同夏绒那晚进门时很像。塔维喝完汤，起身将两只碗都送下楼，放到老板眼前才回来。阮衡问怎么去那么久，他说数了一遍，屋里先静了一下，接着两人都笑了。\n",
+      "target": "chuāngwài yǒurén xièxià chēlún biān guà de kōng shuǐtǒng , tǒng dǐ pèng dì , shēngxiǎng tóng xià róng nàwǎn jìnmén shí hěn xiàng .",
+      "english": "Outside, someone lowered an empty bucket hung by a cart wheel. Its thump sounded like Xiarong coming in that evening.",
+      "hanzi": "窗外有人卸下车轮边挂的空水桶，桶底碰地，声响同夏绒那晚进门时很像。",
       "alignment": [
         {
           "english": "Outside",
@@ -4620,7 +4746,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi hēwán tāng , qǐshēn jiāng liǎngzhī wǎn dōu sòng xiàlóu , fàngdào lǎobǎn yǎnqián cái huílái .",
+      "english": "Finishing his soup, Tavi took both bowls downstairs and put them before the host before returning.",
+      "hanzi": "塔维喝完汤，起身将两只碗都送下楼，放到老板眼前才回来。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4740,7 +4873,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng wèn zěnme qù nàme jiǔ , tā shuō shù le yíbiàn , wūlǐ xiān jìng le yíxià , jiēzhe liǎng rén dōu xiào le .",
+      "english": "Asked why so long, he said he had counted. After a moment's quiet, both laughed.",
+      "hanzi": "阮衡问怎么去那么久，他说数了一遍，屋里先静了一下，接着两人都笑了。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "ruǎn héng",

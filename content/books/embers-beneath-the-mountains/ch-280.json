@@ -2,7 +2,7 @@
   "id": "ch-280",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "bāo lǐ zhuāng dé xià de dōngxī",
     "english": "What Fits in a Bag",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "zài guò sānrì , tǎ wéi kāishǐ shōu bāo , dìyījiàn shōujìnqù de quèshì liǎngzhī xǐjìng de wǎn . dù chéng lùguò ménkǒu , kàn le yìyǎn , wèn tā yào bǎ fànpù yě dàihuí xuégōng me . tǎ wéi cái fājué nà búshì zìjǐ de , gǎnjǐn ná chūlái , wǎndǐ hái tiēzhe yípiàn méi pào diào de cōng pí .",
-      "english": "Three days later Tavi began packing, first putting two washed bowls in his bag. Passing the door, Du Cheng asked whether he meant to take the eatery back to the academy too. Realizing they weren't his, Tavi hurriedly removed them, an unsoaked onion skin still stuck to one bowl's bottom.",
-      "hanzi": "再过三日，塔维开始收包，第一件收进去的却是两只洗净的碗。杜澄路过门口，看了一眼，问他要把饭铺也带回学宫么。塔维才发觉那不是自己的，赶紧拿出来，碗底还贴着一片没泡掉的葱皮。\n",
+      "target": "zài guò sānrì , tǎ wéi kāishǐ shōu bāo , dìyījiàn shōujìnqù de quèshì liǎngzhī xǐjìng de wǎn .",
+      "english": "Three days later Tavi began packing, first putting two washed bowls in his bag.",
+      "hanzi": "再过三日，塔维开始收包，第一件收进去的却是两只洗净的碗。",
       "alignment": [
         {
           "english": "later",
@@ -141,7 +141,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dù chéng lùguò ménkǒu , kàn le yìyǎn , wèn tā yào bǎ fànpù yě dàihuí xuégōng me .",
+      "english": "Passing the door, Du Cheng asked whether he meant to take the eatery back to the academy too.",
+      "hanzi": "杜澄路过门口，看了一眼，问他要把饭铺也带回学宫么。",
+      "alignment": [
         {
           "english": "Du Cheng",
           "target": "dù chéng",
@@ -261,7 +268,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi cái fājué nà búshì zìjǐ de , gǎnjǐn ná chūlái , wǎndǐ hái tiēzhe yípiàn méi pào diào de cōng pí .",
+      "english": "Realizing they weren't his, Tavi hurriedly removed them, an unsoaked onion skin still stuck to one bowl's bottom.",
+      "hanzi": "塔维才发觉那不是自己的，赶紧拿出来，碗底还贴着一片没泡掉的葱皮。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -417,9 +431,9 @@
       ]
     },
     {
-      "target": "tā yuánlái juéde bāo lǐ dōu shì suíshǒu fàngjìn de dōngxī , tāndào chuángshàng cái fāxiàn , měi yíyàng dōu dé zài xiǎng yìhuí . zìjǐ de zhéchǐ , luò dí gěi de duǎnshéng , mǐlā nà kuài jiù yóubù , huà lán yú de bànzhāng zhǐ ; ā líng gěi de xìshéng réng xì zài tú jiǎo , dé lián tú yìqǐ shōu , bùnéng gé zhe juànzhǐ yìng zhuài .",
-      "english": "He had thought his bag held things put in without thinking. Spread on the bed, each needed another thought: his folding ruler, Luodi's short rope, Mira's old oilcloth and the half-sheet blue fish. A-Ling's fine cords still tied map corners; pack them with the drawing rather than tug them through rolled paper.",
-      "hanzi": "他原来觉得包里都是随手放进的东西，摊到床上才发现，每一样都得再想一回。自己的折尺，洛荻给的短绳，米拉那块旧油布，画蓝鱼的半张纸；阿绫给的细绳仍系在图角，得连图一起收，不能隔着卷纸硬拽。\n",
+      "target": "tā yuánlái juéde bāo lǐ dōu shì suíshǒu fàngjìn de dōngxī , tāndào chuángshàng cái fāxiàn , měi yíyàng dōu dé zài xiǎng yìhuí .",
+      "english": "He had thought his bag held things put in without thinking. Spread on the bed, each needed another thought.",
+      "hanzi": "他原来觉得包里都是随手放进的东西，摊到床上才发现，每一样都得再想一回。",
       "alignment": [
         {
           "english": "He",
@@ -588,7 +602,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zìjǐ de zhéchǐ , luò dí gěi de duǎnshéng , mǐlā nà kuài jiù yóubù , huà lán yú de bànzhāng zhǐ ; ā líng gěi de xìshéng réng xì zài tú jiǎo , dé lián tú yìqǐ shōu , bùnéng gé zhe juànzhǐ yìng zhuài .",
+      "english": "His folding ruler, Luodi's short rope, Mira's old oilcloth and the half-sheet blue fish were there; A-Ling's fine cords still tied map corners, to pack with the drawing rather than tug through rolled paper.",
+      "hanzi": "自己的折尺，洛荻给的短绳，米拉那块旧油布，画蓝鱼的半张纸；阿绫给的细绳仍系在图角，得连图一起收，不能隔着卷纸硬拽。\n",
+      "alignment": [
         {
           "english": "his",
           "target": "zìjǐ",
@@ -880,9 +901,9 @@
       ]
     },
     {
-      "target": "jiè guò huòchǎng de jìlùbǎn yǐjīng liúgěi chéng lù , huòchǎng nà bǎ mù huá chǐ yě zài dù chéng guì lǐ , bù guī tā shōu . nà duì tiě hé jiājù zài xuégōng , tā jiāng wéi lǎoshī dìng fùhé de xìn jiá dào zuì shàngmiàn , miǎnde huíqù hòu yòu cóng wàzi dǐxià fānzhǎo .",
-      "english": "The recording board borrowed from the yard stayed with Cheng Lu, and the yard's wooden sliding gauge remained in Du Cheng's cupboard, neither his to pack. His iron pair and fixture were at the academy. He put Vey's review appointment letter on top, so he wouldn't have to hunt beneath socks on return.",
-      "hanzi": "借过货场的记录板已经留给成路，货场那把木滑尺也在杜澄柜里，不归他收。那对铁和夹具在学宫，他将维老师定复核的信夹到最上面，免得回去后又从袜子底下翻找。\n",
+      "target": "jiè guò huòchǎng de jìlùbǎn yǐjīng liúgěi chéng lù , huòchǎng nà bǎ mù huá chǐ yě zài dù chéng guì lǐ , bù guī tā shōu .",
+      "english": "The recording board borrowed from the yard stayed with Cheng Lu, and the yard's wooden sliding gauge remained in Du Cheng's cupboard, neither his to pack.",
+      "hanzi": "借过货场的记录板已经留给成路，货场那把木滑尺也在杜澄柜里，不归他收。",
       "alignment": [
         {
           "english": "borrowed",
@@ -1043,7 +1064,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nà duì tiě hé jiājù zài xuégōng , tā jiāng wéi lǎoshī dìng fùhé de xìn jiá dào zuì shàngmiàn , miǎnde huíqù hòu yòu cóng wàzi dǐxià fānzhǎo .",
+      "english": "His iron pair and fixture were at the academy. He put Vey's review appointment letter on top, so he wouldn't have to hunt beneath socks on return.",
+      "hanzi": "那对铁和夹具在学宫，他将维老师定复核的信夹到最上面，免得回去后又从袜子底下翻找。\n",
+      "alignment": [
         {
           "english": "His",
           "target": "nà",
@@ -1239,9 +1267,9 @@
       ]
     },
     {
-      "target": "xià róng láishí , jiàn chuángshàng pù dé xiàng xiǎo huòtān , xiān ná qǐ nà zhāng lán yú , wèn shìbushì mùxiāng hòumiàn méi bízi de rén yǎng de . tǎ wéi shuō yú bǐ mù rén láidezǎo , tā biàn hěn rènzhēn dì diǎntóu , shuō nà dé jiào tā yìshēng qiánbèi . tā zìjǐ huà de mù rén shōu zài xìn dān hòutou , méi dàilái gěi tā gǎi bízi .",
-      "english": "Xiarong found the bed laid out like a stall, picked up the blue fish and asked if it belonged to the noseless figure behind the crates. Tavi said the fish had come first. Solemnly she said she must call it an elder. Her own wooden-figure drawing stayed behind her mail sheets; she hadn't brought it for him to correct its nose.",
-      "hanzi": "夏绒来时，见床上铺得像小货摊，先拿起那张蓝鱼，问是不是木箱后面没鼻子的人养的。塔维说鱼比木人来得早，她便很认真地点头，说那得叫它一声前辈。她自己画的木人收在信单后头，没带来给他改鼻子。\n",
+      "target": "xià róng láishí , jiàn chuángshàng pù dé xiàng xiǎo huòtān , xiān ná qǐ nà zhāng lán yú , wèn shìbushì mùxiāng hòumiàn méi bízi de rén yǎng de .",
+      "english": "Xiarong found the bed laid out like a stall, picked up the blue fish and asked if it belonged to the noseless figure behind the crates.",
+      "hanzi": "夏绒来时，见床上铺得像小货摊，先拿起那张蓝鱼，问是不是木箱后面没鼻子的人养的。",
       "alignment": [
         {
           "english": "Xiarong",
@@ -1450,7 +1478,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi shuō yú bǐ mù rén láidezǎo , tā biàn hěn rènzhēn dì diǎntóu , shuō nà dé jiào tā yìshēng qiánbèi .",
+      "english": "Tavi said the fish had come before the figure. Solemnly she said she must call it an elder.",
+      "hanzi": "塔维说鱼比木人来得早，她便很认真地点头，说那得叫它一声前辈。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1476,7 +1511,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "first",
+          "english": "before",
           "target": "bǐ",
           "hanzi": "比",
           "category": "function_word",
@@ -1500,7 +1535,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "first",
+          "english": "before",
           "target": "de",
           "hanzi": "得",
           "category": "particle",
@@ -1508,7 +1543,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "first",
+          "english": "before",
           "target": "zǎo",
           "hanzi": "早",
           "category": "adjective",
@@ -1626,7 +1661,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zìjǐ huà de mù rén shōu zài xìn dān hòutou , méi dàilái gěi tā gǎi bízi .",
+      "english": "Her own wooden-figure drawing stayed behind her mail sheets; she hadn't brought it for him to correct its nose.",
+      "hanzi": "她自己画的木人收在信单后头，没带来给他改鼻子。\n",
+      "alignment": [
         {
           "english": "Her",
           "target": "tā",
@@ -1750,9 +1792,9 @@
       ]
     },
     {
-      "target": "tā wèn tā jiēxiàlái de rìzi zěnme pǎo , cái zhīdào nà yígèyuè de shì yuē hái méi dàotóu , tā xiàhuí liǎng rìzhào zǒu , lìngwài jiē le yítàng tìbǔ de duǎnlù , jiàqián dān suàn . búshì yīn tā yào zǒu , tā jiù yě dé yǒu yíjiàn líkāi de shì . tǎ wéi běn xiǎng wèn tā yǐhòu huì buhuì jìnchéng , huà dào yíbàn gǎichéng ruò jìnchéng , kě wǎng xuégōng liúzì , bié zài ménkǒu yǐwéi tā zhènghǎo děng zhe .",
-      "english": "He asked her next routes and learned the month's trial wasn't over yet. Her two fixed days continued next time, plus a separately priced short substitute route. His departure didn't mean she needed one too. He began asking whether she would go into the city, changing midway: leave him word at the academy if she did, don't assume he'd be waiting by the gate.",
-      "hanzi": "他问她接下来的日子怎么跑，才知道那一个月的试约还没到头，她下回两日照走，另外接了一趟替补的短路，价钱单算。不是因他要走，她就也得有一件离开的事。塔维本想问她以后会不会进城，话到一半改成若进城，可往学宫留字，别在门口以为他正好等着。\n",
+      "target": "tā wèn tā jiēxiàlái de rìzi zěnme pǎo , cái zhīdào nà yígèyuè de shì yuē hái méi dàotóu , tā xiàhuí liǎng rìzhào zǒu , lìngwài jiē le yítàng tìbǔ de duǎnlù , jiàqián dān suàn .",
+      "english": "He asked her next routes and learned the month's trial wasn't over yet. Her two fixed days continued next time, plus a separately priced short substitute route.",
+      "hanzi": "他问她接下来的日子怎么跑，才知道那一个月的试约还没到头，她下回两日照走，另外接了一趟替补的短路，价钱单算。",
       "alignment": [
         {
           "english": "He",
@@ -2009,7 +2051,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "búshì yīn tā yào zǒu , tā jiù yě dé yǒu yíjiàn líkāi de shì .",
+      "english": "His departure didn't mean she needed one too.",
+      "hanzi": "不是因他要走，她就也得有一件离开的事。",
+      "alignment": [
         {
           "english": "didn't mean",
           "target": "búshì",
@@ -2129,7 +2178,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi běn xiǎng wèn tā yǐhòu huì buhuì jìnchéng , huà dào yíbàn gǎichéng ruò jìnchéng , kě wǎng xuégōng liúzì , bié zài ménkǒu yǐwéi tā zhènghǎo děng zhe .",
+      "english": "He began asking whether she would go into the city, changing midway: leave him word at the academy if she did, don't assume he'd be waiting by the gate.",
+      "hanzi": "塔维本想问她以后会不会进城，话到一半改成若进城，可往学宫留字，别在门口以为他正好等着。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tǎ wéi",
@@ -2333,9 +2389,9 @@
       ]
     },
     {
-      "target": "xià róng shuō zìjǐ méi nàme shǎ , jiēzhe wèn tā huì buhuì zhēn jiāng huà liúzài ménkǒu jiù zhǎo dédào rén . tǎ wéi yě shuō bùzhǔn , biàn bǎ xuéshēng shōuxìn chù zěnme zhuǎn , zìjǐ zhù nǎ jiān xiěgěi tā , zài tiān yíjù ruò gǎi zhùchù huì jìxìn . tā ná zhǐ chuīgān mò , zhé qǐ shí jiàng ménpái lù zài wàitou , méiyǒu gēn nàxiē shēngyì dānzi xì chéng yíshù .",
-      "english": "Not that foolish, Xiarong said, then asked whether a message left at the gate could really reach him. Uncertain too, Tavi wrote the student mail forwarding instructions and his room, adding he would write if he moved. She blew the ink dry and folded it with the room number outward, not tied among business orders.",
-      "hanzi": "夏绒说自己没那么傻，接着问他会不会真将话留在门口就找得到人。塔维也说不准，便把学生收信处怎么转、自己住哪间写给她，再添一句若改住处会寄信。她拿纸吹干墨，折起时将门牌露在外头，没有跟那些生意单子系成一束。\n",
+      "target": "xià róng shuō zìjǐ méi nàme shǎ , jiēzhe wèn tā huì buhuì zhēn jiāng huà liúzài ménkǒu jiù zhǎo dédào rén .",
+      "english": "Not that foolish, Xiarong said, then asked whether a message left at the gate could really reach him.",
+      "hanzi": "夏绒说自己没那么傻，接着问他会不会真将话留在门口就找得到人。",
       "alignment": [
         {
           "english": "Xiarong",
@@ -2488,7 +2544,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi yě shuō bùzhǔn , biàn bǎ xuéshēng shōuxìn chù zěnme zhuǎn , zìjǐ zhù nǎ jiān xiěgěi tā , zài tiān yíjù ruò gǎi zhùchù huì jìxìn .",
+      "english": "Uncertain too, Tavi wrote her the student mail forwarding instructions and his room, adding he would write if he moved.",
+      "hanzi": "塔维也说不准，便把学生收信处怎么转、自己住哪间写给她，再添一句若改住处会寄信。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -2594,7 +2657,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "She",
+          "english": "her",
           "target": "tā",
           "hanzi": "她",
           "category": "function_word",
@@ -2664,7 +2727,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā ná zhǐ chuīgān mò , zhé qǐ shí jiàng ménpái lù zài wàitou , méiyǒu gēn nàxiē shēngyì dānzi xì chéng yíshù .",
+      "english": "She blew the ink dry and folded it with the room number outward, not tied among business orders.",
+      "hanzi": "她拿纸吹干墨，折起时将门牌露在外头，没有跟那些生意单子系成一束。\n",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -2828,9 +2898,9 @@
       ]
     },
     {
-      "target": "wǔhòu , ruǎn héng jiāng huíchéng zuòchē de píng tiáo jiāogěi tā , lǚtú shísù zhàoshí zuò yuánlái de yuēdìng , bù cóng tǎ wéi zuìhòu jǐrì de gōngqián lǐ kòu . liǎng rén yǐ dìnghǎo mòbān zuò wán hòu zài zǒu , lùshang zhù de diàn yě yǒu míngzì , búshì dào nàrì zài kàn nǎ jiān háiyǒu kòngdì .",
-      "english": "That afternoon Ruan Heng gave him the return travel voucher. Food and lodging followed the original placement agreement, not deducted from his final days' pay. They had arranged to leave after the last shift; the overnight inn had a name, not whatever floor space was available that day.",
-      "hanzi": "午后，阮衡将回程坐车的凭条交给他，旅途食宿照实作原来的约定，不从塔维最后几日的工钱里扣。两人已订好末班做完后再走，路上住的店也有名字，不是到那日再看哪间还有空地。\n",
+      "target": "wǔhòu , ruǎn héng jiāng huíchéng zuòchē de píng tiáo jiāogěi tā , lǚtú shísù zhàoshí zuò yuánlái de yuēdìng , bù cóng tǎ wéi zuìhòu jǐrì de gōngqián lǐ kòu .",
+      "english": "That afternoon Ruan Heng gave him the return travel voucher. Food and lodging followed the original placement agreement, not deducted from his final days' pay.",
+      "hanzi": "午后，阮衡将回程坐车的凭条交给他，旅途食宿照实作原来的约定，不从塔维最后几日的工钱里扣。",
       "alignment": [
         {
           "english": "That afternoon",
@@ -3039,7 +3109,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "liǎng rén yǐ dìnghǎo mòbān zuò wán hòu zài zǒu , lùshang zhù de diàn yě yǒu míngzì , búshì dào nàrì zài kàn nǎ jiān háiyǒu kòngdì .",
+      "english": "They had arranged to leave after the last shift; the overnight inn had a name, not whatever floor space was available that day.",
+      "hanzi": "两人已订好末班做完后再走，路上住的店也有名字，不是到那日再看哪间还有空地。\n",
+      "alignment": [
         {
           "english": "They",
           "target": "liǎng",
@@ -3243,9 +3320,9 @@
       ]
     },
     {
-      "target": "tǎ wéi ná zhe píng tiáo , wèn ruǎn héng shìbushì tóng zìjǐ huíqù biàn búzài dào fēng zhàn . ruǎn héng shuō háiyào huílái , xuégōng de fùhé zhī zhàn yírì , hé lù suǒ de huó méi suízhe xuéshēng de kèbiǎo yìtóng jiéshù . tā shuō zhèhuà shí zài chāi yìbāo jiālǐ jì lái de gān bǐng , tiāochū yāsuì de nà kuài dìgěi tǎ wéi , zìjǐ ná le wánzhěng de yíkuài .",
-      "english": "Holding the voucher, Tavi asked if Ruan Heng would stop coming to Wind Trestle after going back with him. He would return, Ruan Heng said: the academy review took one day, and Joint Routes Office work didn't end with students' timetables. Unwrapping dry flatbread from home, he gave Tavi the crushed piece and kept a whole one himself.",
-      "hanzi": "塔维拿着凭条，问阮衡是不是同自己回去便不再到风栈。阮衡说还要回来，学宫的复核只占一日，合路所的活没随着学生的课表一同结束。他说这话时在拆一包家里寄来的干饼，挑出压碎的那块递给塔维，自己拿了完整的一块。\n",
+      "target": "tǎ wéi ná zhe píng tiáo , wèn ruǎn héng shìbushì tóng zìjǐ huíqù biàn búzài dào fēng zhàn .",
+      "english": "Holding the voucher, Tavi asked if Ruan Heng would stop coming to Wind Trestle after going back with him.",
+      "hanzi": "塔维拿着凭条，问阮衡是不是同自己回去便不再到风栈。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3358,7 +3435,14 @@
           "category": "proper_noun",
           "is_idiom": false,
           "frequency_band": null
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng shuō háiyào huílái , xuégōng de fùhé zhī zhàn yírì , hé lù suǒ de huó méi suízhe xuéshēng de kèbiǎo yìtóng jiéshù .",
+      "english": "He would return, Ruan Heng said: the academy review took one day, and Joint Routes Office work didn't end with students' timetables.",
+      "hanzi": "阮衡说还要回来，学宫的复核只占一日，合路所的活没随着学生的课表一同结束。",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -3518,7 +3602,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuō zhèhuà shí zài chāi yìbāo jiālǐ jì lái de gān bǐng , tiāochū yāsuì de nà kuài dìgěi tǎ wéi , zìjǐ ná le wánzhěng de yíkuài .",
+      "english": "He said he had brought dry flatbread from home; unwrapping it, he gave Tavi the crushed piece and kept a whole one himself.",
+      "hanzi": "他说这话时在拆一包家里寄来的干饼，挑出压碎的那块递给塔维，自己拿了完整的一块。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -3738,9 +3829,9 @@
       ]
     },
     {
-      "target": "bàngwǎn dù chéng jiào tāmen qù chīfàn , shuō suàn tízǎo yídùn , zuìhòu nàtiān shuō bùzhǔn máng , bié fēi děng rén bēibāo zhàn ménkǒu cái xiǎng qǐlái . zhuōshàng duō yìpán suāncài dùn dòu , wēn xiù zuòxià biàn jiāng dù chéng jiá gěi tā de dàkuài féiròu bōhuíqù , shuō tā zìjǐ ài chī búyào jiè sòng rén zuò rénqíng .",
-      "english": "At dusk Du Cheng called them to dinner, an early farewell meal: the last day might be busy; don't wait for a backpack at the door to remember. An extra dish of sour greens and stewed beans stood on the table. Sitting, Wenxiu pushed his offered fat pork back: loving it himself was no excuse to turn giving it away into a favor.",
-      "hanzi": "傍晚杜澄叫他们去吃饭，说算提早一顿，最后那天说不准忙，别非等人背包站门口才想起来。桌上多一盘酸菜炖豆，温岫坐下便将杜澄夹给她的大块肥肉拨回去，说他自己爱吃不要借送人作人情。\n",
+      "target": "bàngwǎn dù chéng jiào tāmen qù chīfàn , shuō suàn tízǎo yídùn , zuìhòu nàtiān shuō bùzhǔn máng , bié fēi děng rén bēibāo zhàn ménkǒu cái xiǎng qǐlái .",
+      "english": "At dusk Du Cheng called them to dinner, an early farewell meal: the last day might be busy; don't wait for a backpack at the door to remember.",
+      "hanzi": "傍晚杜澄叫他们去吃饭，说算提早一顿，最后那天说不准忙，别非等人背包站门口才想起来。",
       "alignment": [
         {
           "english": "At dusk",
@@ -3941,7 +4032,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhuōshàng duō yìpán suāncài dùn dòu , wēn xiù zuòxià biàn jiāng dù chéng jiá gěi tā de dàkuài féiròu bōhuíqù , shuō tā zìjǐ ài chī búyào jiè sòng rén zuò rénqíng .",
+      "english": "An extra dish of sour greens and stewed beans stood on the table. Sitting, Wenxiu pushed his offered fat pork back: loving it himself was no excuse to turn giving it away into a favor.",
+      "hanzi": "桌上多一盘酸菜炖豆，温岫坐下便将杜澄夹给她的大块肥肉拨回去，说他自己爱吃不要借送人作人情。\n",
+      "alignment": [
         {
           "english": "table",
           "target": "zhuō",
@@ -4169,9 +4267,9 @@
       ]
     },
     {
-      "target": "tǎ wéi xiào zhe duānwǎn , kuàizi hái méi dòng , dù chéng hūrán wèn xǐ hǎo de nà liǎngzhī wǎn sònghuí méiyǒu . tā shuō sòng le , fànpù lǎobǎn què cóng ménwài tàntóu , shuō zhǐjiàn yìzhī . mǎnzhuō dōu kàn tā , tǎ wéi zhǐhǎo qǐshēn huíwū zhǎo , línzǒuqián hái jiāng wǎn biān de dòu wǎng lǐ tuī le tuī , pà huílái zhī shèng tāng .",
-      "english": "Laughing, Tavi raised his bowl. Before he ate, Du Cheng asked if he'd returned both washed bowls. Yes, he said, but the eatery owner leaned through the door: she'd seen only one. With everyone looking at him, he had to go back to search, first pushing his beans toward the bowl's center lest only soup remain when he returned.",
-      "hanzi": "塔维笑着端碗，筷子还没动，杜澄忽然问洗好的那两只碗送回没有。他说送了，饭铺老板却从门外探头，说只见一只。满桌都看他，塔维只好起身回屋找，临走前还将碗边的豆往里推了推，怕回来只剩汤。\n",
+      "target": "tǎ wéi xiào zhe duānwǎn , kuàizi hái méi dòng , dù chéng hūrán wèn xǐ hǎo de nà liǎngzhī wǎn sònghuí méiyǒu .",
+      "english": "Laughing, Tavi raised his bowl. Before he ate, Du Cheng asked if he'd returned both washed bowls.",
+      "hanzi": "塔维笑着端碗，筷子还没动，杜澄忽然问洗好的那两只碗送回没有。",
       "alignment": [
         {
           "english": "Tavi",
@@ -4316,7 +4414,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuō sòng le , fànpù lǎobǎn què cóng ménwài tàntóu , shuō zhǐjiàn yìzhī .",
+      "english": "Yes, he said, but the eatery owner leaned through the door: she'd seen only one.",
+      "hanzi": "他说送了，饭铺老板却从门外探头，说只见一只。",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -4436,7 +4541,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǎnzhuō dōu kàn tā , tǎ wéi zhǐhǎo qǐshēn huíwū zhǎo , línzǒuqián hái jiāng wǎn biān de dòu wǎng lǐ tuī le tuī , pà huílái zhī shèng tāng .",
+      "english": "With everyone looking at him, he had to go back to search, first pushing his beans toward the bowl's center lest only soup remain when he returned.",
+      "hanzi": "满桌都看他，塔维只好起身回屋找，临走前还将碗边的豆往里推了推，怕回来只剩汤。\n",
+      "alignment": [
         {
           "english": "everyone",
           "target": "mǎnzhuō",

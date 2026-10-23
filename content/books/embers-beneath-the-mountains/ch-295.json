@@ -2,7 +2,7 @@
   "id": "ch-295",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "qiánláng shàng de tú",
     "english": "The Map on the Front Wall",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "xuégōng jiāng shí zuò huílái de tú guà shàngqián láng nàrì , tǎ wéi xiān zhǎo zìjǐ de cuò jiàntóu . tā méi jiāng yuántú guà zài zuì qián , gǎitú yě méi dāndú zhuāng dé xiàng cónglái méicuò guò , liǎngzhāng bìng zhe fàng , xiàmiàn xiě gèzì kànguò de rìqī . pángbiān sān rén hé zuò de zhǐpái réng shì cǎoàn , yǔtiān nà zhāng mò yūn kāi de jìlù jiá zài hòutou , bù gěi rén dàngzuò jiù péng yǐjīng huàn guò de xīn pái .",
-      "english": "When the academy hung returned placement drawings in the front gallery, Tavi first sought his wrong arrow. He displayed original and correction together, dated, neither hanging the first at the front nor making the revision seem always right. Beside them the three friends' signs remained drafts, ink-blurred rainy notes behind them, not replacement signs already installed at the shelter.",
-      "hanzi": "学宫将实作回来的图挂上前廊那日，塔维先找自己的错箭头。他没将原图挂在最前，改图也没单独装得像从来没错过，两张并着放，下面写各自看过的日期。旁边三人合做的纸牌仍是草案，雨天那张墨晕开的记录夹在后头，不给人当作旧棚已经换过的新牌。\n",
+      "target": "xuégōng jiāng shí zuò huílái de tú guà shàngqián láng nàrì , tǎ wéi xiān zhǎo zìjǐ de cuò jiàntóu .",
+      "english": "When the academy hung returned placement drawings in the front gallery, Tavi first sought his wrong arrow.",
+      "hanzi": "学宫将实作回来的图挂上前廊那日，塔维先找自己的错箭头。",
       "alignment": [
         {
           "english": "academy",
@@ -141,7 +141,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méi jiāng yuántú guà zài zuì qián , gǎitú yě méi dāndú zhuāng dé xiàng cónglái méicuò guò , liǎngzhāng bìng zhe fàng , xiàmiàn xiě gèzì kànguò de rìqī .",
+      "english": "He displayed original and correction together, dated, neither hanging the first at the front nor making the revision seem always right.",
+      "hanzi": "他没将原图挂在最前，改图也没单独装得像从来没错过，两张并着放，下面写各自看过的日期。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -183,7 +190,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "behind",
+          "english": "at",
           "target": "zài",
           "hanzi": "在",
           "category": "function_word",
@@ -357,7 +364,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "pángbiān sān rén hé zuò de zhǐpái réng shì cǎoàn , yǔtiān nà zhāng mò yūn kāi de jìlù jiá zài hòutou , bù gěi rén dàngzuò jiù péng yǐjīng huàn guò de xīn pái .",
+      "english": "Beside them the three friends' signs remained drafts, ink-blurred rainy notes behind them, not replacement signs already installed at the shelter.",
+      "hanzi": "旁边三人合做的纸牌仍是草案，雨天那张墨晕开的记录夹在后头，不给人当作旧棚已经换过的新牌。\n",
+      "alignment": [
         {
           "english": "Beside",
           "target": "pángbiān",
@@ -577,9 +591,9 @@
       ]
     },
     {
-      "target": "lái de rén bùquánshì xuéshēng . yǒu xiūzào zuōfang lái tiāo hòuxù néng jiē de xiǎo tí , yǒu jǐchù lù zhàn pài rén kàn , yě yǒurén zhī yīn láng xià nuǎn , zǒujìn lái bì yíhuìer fēng . mǐlā de xiāo tào tú shàng liú zhe sū yǐ de míngzì , lái wèn de rén xiān xiàng tǎ wéi kāikǒu , tā biàn zhǐzhe zhàn zài lìngyìbiān de mǐlā , jiào rén qù wèn zhēnde zuò guò nà yíduàn de rén .",
-      "english": "Visitors weren't all students: workshops seeking follow-up projects, station representatives, or people sheltering from wind in the warm gallery. Suyi's name stayed on Mira's pin-bushing drawing. When someone asked Tavi about it first, he pointed them toward Mira, the person who'd actually done that work.",
-      "hanzi": "来的人不全是学生。有修造作坊来挑后续能接的小题，有几处路站派人看，也有人只因廊下暖，走进来避一会儿风。米拉的销套图上留着苏苡的名字，来问的人先向塔维开口，他便指着站在另一边的米拉，叫人去问真的做过那一段的人。\n",
+      "target": "lái de rén bùquánshì xuéshēng .",
+      "english": "Visitors weren't all students.",
+      "hanzi": "来的人不全是学生。",
       "alignment": [
         {
           "english": "Visitors",
@@ -628,7 +642,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yǒu xiūzào zuōfang lái tiāo hòuxù néng jiē de xiǎo tí , yǒu jǐchù lù zhàn pài rén kàn , yě yǒurén zhī yīn láng xià nuǎn , zǒujìn lái bì yíhuìer fēng .",
+      "english": "Some workshops came seeking follow-up projects, some stations sent representatives, and some people came merely to shelter from wind in the warm gallery.",
+      "hanzi": "有修造作坊来挑后续能接的小题，有几处路站派人看，也有人只因廊下暖，走进来避一会儿风。",
+      "alignment": [
         {
           "english": "workshops",
           "target": "yǒu",
@@ -782,7 +803,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "sheltering",
+          "english": "merely",
           "target": "zhī yīn",
           "hanzi": "只因",
           "category": "function_word",
@@ -806,7 +827,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "sheltering",
+          "english": "came",
           "target": "zǒujìn lái",
           "hanzi": "走进来",
           "category": "verb",
@@ -814,7 +835,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "sheltering",
+          "english": "shelter",
           "target": "bì",
           "hanzi": "避",
           "category": "verb",
@@ -822,7 +843,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "sheltering",
+          "english": "shelter",
           "target": "yíhuìer",
           "hanzi": "一会儿",
           "category": "noun",
@@ -836,7 +857,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā de xiāo tào tú shàng liú zhe sū yǐ de míngzì , lái wèn de rén xiān xiàng tǎ wéi kāikǒu , tā biàn zhǐzhe zhàn zài lìngyìbiān de mǐlā , jiào rén qù wèn zhēnde zuò guò nà yíduàn de rén .",
+      "english": "Suyi's name stayed on Mira's pin-bushing drawing. When someone asked Tavi about it first, he pointed them toward Mira, the person who'd actually done that work.",
+      "hanzi": "米拉的销套图上留着苏苡的名字，来问的人先向塔维开口，他便指着站在另一边的米拉，叫人去问真的做过那一段的人。\n",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -1152,9 +1180,9 @@
       ]
     },
     {
-      "target": "yīwén jiāng fēnzhàng dǐgǎo guà dé bǐ tāmen zǎo , zìjǐ què gé le bànrì cái lái . tā zài láng kǒu tóngyígè chuān shēnhuī wàiyī de zhōngniánnánrén shuōhuà , jiào duìfāng jiùfù . nà rén méiyǒu dàshēng jiào rén kàn zìjǐ jiā háizi , xiān jiāng wàiyī shàng de chén fú jìng , wèn yīwén nǎ yìzhāng shì tā zìjǐ xiě guò , búshì chāo zhěngqí de .",
-      "english": "Iven hung his account draft earlier but arrived half a day later, speaking at the entrance to a middle-aged man in dark gray whom he called maternal uncle. The man didn't announce the family child to everyone; brushing dust off his coat, he first asked which sheet Iven had written himself rather than copied neatly.",
-      "hanzi": "伊文将分账底稿挂得比他们早，自己却隔了半日才来。他在廊口同一个穿深灰外衣的中年男人说话，叫对方舅父。那人没有大声叫人看自己家孩子，先将外衣上的尘拂净，问伊文哪一张是他自己写过、不是抄整齐的。\n",
+      "target": "yīwén jiāng fēnzhàng dǐgǎo guà dé bǐ tāmen zǎo , zìjǐ què gé le bànrì cái lái .",
+      "english": "Iven hung his account draft earlier but arrived half a day later.",
+      "hanzi": "伊文将分账底稿挂得比他们早，自己却隔了半日才来。",
       "alignment": [
         {
           "english": "Iven",
@@ -1283,9 +1311,16 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zài láng kǒu tóngyígè chuān shēnhuī wàiyī de zhōngniánnánrén shuōhuà , jiào duìfāng jiùfù .",
+      "english": "He was speaking at the entrance to a middle-aged man in a dark gray coat whom he called maternal uncle.",
+      "hanzi": "他在廊口同一个穿深灰外衣的中年男人说话，叫对方舅父。",
+      "alignment": [
         {
-          "english": "Iven",
+          "english": "He",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -1411,7 +1446,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nà rén méiyǒu dàshēng jiào rén kàn zìjǐ jiā háizi , xiān jiāng wàiyī shàng de chén fú jìng , wèn yīwén nǎ yìzhāng shì tā zìjǐ xiě guò , búshì chāo zhěngqí de .",
+      "english": "The man didn't announce the family child to everyone; brushing dust off his coat, he first asked which sheet Iven had written himself rather than copied neatly.",
+      "hanzi": "那人没有大声叫人看自己家孩子，先将外衣上的尘拂净，问伊文哪一张是他自己写过、不是抄整齐的。\n",
+      "alignment": [
         {
           "english": "The",
           "target": "nà",
@@ -1647,9 +1689,9 @@
       ]
     },
     {
-      "target": "tǎ wéi běn yǐ zhǔnbèi zhāoshǒu , jiàn liǎng rén zǒu dào tú qián biàn tíng le . nàwèi jiùfù kàn de shì lìngyìzǔ yuǎnlù tú , biānshàng liú le yípiàn shàngwèi hé guò de kòngbái . yíwèi lù zhàn lái de nǚrén zhèng wèn , wèihé huà dào tāmen nàduàn biàn zhī shèng xūxiàn , ruò kèrén yīncǐ dōu qù lìngyìbiān huànchē , zhàn lǐ kào shénme liúrén .",
-      "english": "Tavi had meant to wave, then paused as they reached another group's distant-road map. Its unverified portion remained blank. A woman from a station asked why her stretch got only dashed lines: if travelers all changed carts elsewhere because of that, how would her station keep anyone?",
-      "hanzi": "塔维本已准备招手，见两人走到图前便停了。那位舅父看的是另一组远路图，边上留了一片尚未核过的空白。一位路站来的女人正问，为何画到她们那段便只剩虚线，若客人因此都去另一边换车，站里靠什么留人。\n",
+      "target": "tǎ wéi běn yǐ zhǔnbèi zhāoshǒu , jiàn liǎng rén zǒu dào tú qián biàn tíng le .",
+      "english": "Tavi had been about to wave, but stopped when they reached the maps.",
+      "hanzi": "塔维本已准备招手，见两人走到图前便停了。",
       "alignment": [
         {
           "english": "Tavi",
@@ -1676,7 +1718,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "meant",
+          "english": "about to",
           "target": "zhǔnbèi",
           "hanzi": "准备",
           "category": "verb",
@@ -1692,7 +1734,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "as",
+          "english": "when",
           "target": "jiàn",
           "hanzi": "见",
           "category": "verb",
@@ -1740,7 +1782,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "then",
+          "english": "when",
           "target": "biàn",
           "hanzi": "便",
           "category": "adverb",
@@ -1748,7 +1790,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "paused",
+          "english": "stopped",
           "target": "tíng",
           "hanzi": "停",
           "category": "verb",
@@ -1756,15 +1798,22 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "paused",
+          "english": "stopped",
           "target": "le",
           "hanzi": "了",
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nàwèi jiùfù kàn de shì lìngyìzǔ yuǎnlù tú , biānshàng liú le yípiàn shàngwèi hé guò de kòngbái .",
+      "english": "That uncle was looking at another group's distant-road map, its unverified portion left blank.",
+      "hanzi": "那位舅父看的是另一组远路图，边上留了一片尚未核过的空白。",
+      "alignment": [
         {
-          "english": "another",
+          "english": "That",
           "target": "nà",
           "hanzi": "那",
           "category": "function_word",
@@ -1772,7 +1821,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "another",
+          "english": "That",
           "target": "wèi",
           "hanzi": "位",
           "category": "measure_word",
@@ -1780,7 +1829,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "they",
+          "english": "uncle",
           "target": "jiùfù",
           "hanzi": "舅父",
           "category": "noun",
@@ -1788,7 +1837,7 @@
           "frequency_band": "rare"
         },
         {
-          "english": "reached",
+          "english": "looking",
           "target": "kàn",
           "hanzi": "看",
           "category": "verb",
@@ -1796,7 +1845,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "reached",
+          "english": "looking",
           "target": "de",
           "hanzi": "的",
           "category": "particle",
@@ -1804,7 +1853,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "another",
+          "english": "was",
           "target": "shì",
           "hanzi": "是",
           "category": "verb",
@@ -1844,7 +1893,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "remained",
+          "english": "left",
           "target": "liú",
           "hanzi": "留",
           "category": "verb",
@@ -1852,7 +1901,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "remained",
+          "english": "left",
           "target": "le",
           "hanzi": "了",
           "category": "particle",
@@ -1906,7 +1955,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yíwèi lù zhàn lái de nǚrén zhèng wèn , wèihé huà dào tāmen nàduàn biàn zhī shèng xūxiàn , ruò kèrén yīncǐ dōu qù lìngyìbiān huànchē , zhàn lǐ kào shénme liúrén .",
+      "english": "A woman from a station asked why her stretch got only dashed lines: if travelers all changed carts elsewhere because of that, how would her station keep anyone?",
+      "hanzi": "一位路站来的女人正问，为何画到她们那段便只剩虚线，若客人因此都去另一边换车，站里靠什么留人。\n",
+      "alignment": [
         {
           "english": "A",
           "target": "yí",
@@ -2134,9 +2190,9 @@
       ]
     },
     {
-      "target": "fùzé de xuéshēng méi dá chū , lǎoshī guòlái shuōmíng jīngfèi zhī fù le qiánduàn chá lù , bùkěn ná méi qùguò de dìfāng zhuāngmǎn . nǚrén shuō zìjǐ yě bú jiào rén biān , wèn de shì nǎ yíduàn xiān yǒuqián qù , yòu shì shuí dìng de xiānhòu . zhōuwéi yuánlái zhī kàn zìhuà de rén jiànjiàn jìng le , tǎ wéi jiāng zìjǐ zhèngyào fú de tú jiǎo ànzhù , tīngjiàn zhǐ zài zhǐ xià qīngqīng xiǎng .",
-      "english": "The student couldn't answer. A teacher explained funding paid only for the earlier survey, refusing to fill places they hadn't visited. She wasn't asking fabrication, the woman said, but which section got money first and who chose. Around them people stopped merely admiring the drawings and grew quiet; paper softly crackled under Tavi's fingers as he held its corner.",
-      "hanzi": "负责的学生没答出，老师过来说明经费只付了前段查路，不肯拿没去过的地方装满。女人说自己也不叫人编，问的是哪一段先有钱去，又是谁定的先后。周围原来只看字画的人渐渐静了，塔维将自己正要扶的图角按住，听见纸在指下轻轻响。\n",
+      "target": "fùzé de xuéshēng méi dá chū , lǎoshī guòlái shuōmíng jīngfèi zhī fù le qiánduàn chá lù , bùkěn ná méi qùguò de dìfāng zhuāngmǎn .",
+      "english": "The student couldn't answer. A teacher explained funding paid only for the earlier survey, refusing to fill places they hadn't visited.",
+      "hanzi": "负责的学生没答出，老师过来说明经费只付了前段查路，不肯拿没去过的地方装满。",
       "alignment": [
         {
           "english": "student",
@@ -2305,7 +2361,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nǚrén shuō zìjǐ yě bú jiào rén biān , wèn de shì nǎ yíduàn xiān yǒuqián qù , yòu shì shuí dìng de xiānhòu .",
+      "english": "She wasn't asking fabrication, the woman said, but which section got money first and who chose.",
+      "hanzi": "女人说自己也不叫人编，问的是哪一段先有钱去，又是谁定的先后。",
+      "alignment": [
         {
           "english": "woman",
           "target": "nǚrén",
@@ -2489,7 +2552,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhōuwéi yuánlái zhī kàn zìhuà de rén jiànjiàn jìng le , tǎ wéi jiāng zìjǐ zhèngyào fú de tú jiǎo ànzhù , tīngjiàn zhǐ zài zhǐ xià qīngqīng xiǎng .",
+      "english": "Around them people stopped merely admiring the drawings and grew quiet; paper softly crackled under Tavi's fingers as he held its corner.",
+      "hanzi": "周围原来只看字画的人渐渐静了，塔维将自己正要扶的图角按住，听见纸在指下轻轻响。\n",
+      "alignment": [
         {
           "english": "Around them",
           "target": "zhōuwéi",
@@ -2685,9 +2755,9 @@
       ]
     },
     {
-      "target": "yīwén jiùfù shuō chūqián de rén zìrán xiān wèn néng bunéng yòng , yě yǒurén mǎi le lù tú , xián shàngtóu quán shì \" hái méi chá \". lù zhàn nǚrén lìkè huítóu , wèn ruò chūqián de rén zhī zǒu dà zhàn , xiǎozhàn jiù yìzhí děngdào yǒurén qiàhǎo jīngguò me . jiùfù bìng méiyǒu jīfěng tā , zhī shuō ruò jiào mǎi tú de tì zhěngtiáo gǔdì fùqián , duìfāng yě huì wèn píng shénme .",
-      "english": "Iven's uncle said funders naturally first asked whether a map was usable; some buyers disliked pages full of “not yet checked.” The woman asked if small stations must wait forever when funders used only large ones. Without mocking, the uncle replied that buyers asked why they should pay for an entire valley too.",
-      "hanzi": "伊文舅父说出钱的人自然先问能不能用，也有人买了路图，嫌上头全是“还没查”。路站女人立刻回头，问若出钱的人只走大站，小站就一直等到有人恰好经过么。舅父并没有讥讽她，只说若叫买图的替整条谷地付钱，对方也会问凭什么。\n",
+      "target": "yīwén jiùfù shuō chūqián de rén zìrán xiān wèn néng bunéng yòng , yě yǒurén mǎi le lù tú , xián shàngtóu quán shì \" hái méi chá \".",
+      "english": "Iven's uncle said funders naturally first asked whether a map was usable; some buyers disliked pages full of “not yet checked.”",
+      "hanzi": "伊文舅父说出钱的人自然先问能不能用，也有人买了路图，嫌上头全是“还没查”。",
       "alignment": [
         {
           "english": "Iven",
@@ -2864,7 +2934,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lù zhàn nǚrén lìkè huítóu , wèn ruò chūqián de rén zhī zǒu dà zhàn , xiǎozhàn jiù yìzhí děngdào yǒurén qiàhǎo jīngguò me .",
+      "english": "The woman asked if small stations must wait forever when funders used only large ones.",
+      "hanzi": "路站女人立刻回头，问若出钱的人只走大站，小站就一直等到有人恰好经过么。",
+      "alignment": [
         {
           "english": "station",
           "target": "lù zhàn",
@@ -3024,7 +3101,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jiùfù bìng méiyǒu jīfěng tā , zhī shuō ruò jiào mǎi tú de tì zhěngtiáo gǔdì fùqián , duìfāng yě huì wèn píng shénme .",
+      "english": "Without mocking her, the uncle replied that buyers asked why they should pay for an entire valley too.",
+      "hanzi": "舅父并没有讥讽她，只说若叫买图的替整条谷地付钱，对方也会问凭什么。\n",
+      "alignment": [
         {
           "english": "uncle",
           "target": "jiùfù",
@@ -3050,7 +3134,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "woman",
+          "english": "her",
           "target": "tā",
           "hanzi": "她",
           "category": "function_word",
@@ -3180,9 +3264,9 @@
       ]
     },
     {
-      "target": "tǎ wéi xiǎngqǐ shí tīng nà liǎngtiáo kàoàn lù . mù guǎnshì xiǎng jiāng zìjiāmén huà dé xiǎnyǎn , lú shí què yào liúchū bú jìn huòzhàn yě néng zǒu dào chuánbiān de lù . tā rěn le yíhuìer , háishì kāikǒu , shuō tóng yìzhāng tú shàng , yěxǔ xiān xiě qīng shì shuí chūqián , chá dào nǎlǐ , bié ràng kèrén yǐwéi xì de nàtiáo xiàn biàn búsuàn lù . nǚrén wèn nà méi qù de dìfāng , xiě qīng yǐhòu huì buhuì jiù yǒurén qù . tǎ wéi zhāng le zhāngzuǐ , dá búhuì . tā zhīdào zìjǐ néng shuō qīng yìzhāng tú zěnyàng huà , hái bùnéng shuō qīng shuí gāi bǎ qián ná chūlái . yīwén kàn le tā yìyǎn , méi tì tā bǎ zhè jù duǎn dá jiē chéng gèng dà de bǎozhèng .",
-      "english": "Remembering Shiting's two shore routes, Mou wanting his gate prominent and Lushi preserving access without the warehouse, Tavi finally spoke: perhaps the same map should state who paid and what was surveyed, not imply a thin line wasn't a road. Would stating that send someone to unvisited places, the woman asked. Tavi opened his mouth, then answered no. He could explain mapmaking, not who should provide the money. Iven didn't enlarge his short answer into a promise.",
-      "hanzi": "塔维想起石汀那两条靠岸路。牟管事想将自家门画得显眼，芦实却要留出不进货栈也能走到船边的路。他忍了一会儿，还是开口，说同一张图上，也许先写清是谁出钱、查到哪里，别让客人以为细的那条线便不算路。\n女人问那没去的地方，写清以后会不会就有人去。塔维张了张嘴，答不会。他知道自己能说清一张图怎样画，还不能说清谁该把钱拿出来。伊文看了他一眼，没替他把这句短答接成更大的保证。\n",
+      "target": "tǎ wéi xiǎngqǐ shí tīng nà liǎngtiáo kàoàn lù .",
+      "english": "Tavi remembered Shiting's two shore routes.",
+      "hanzi": "塔维想起石汀那两条靠岸路。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3193,7 +3277,7 @@
           "frequency_band": null
         },
         {
-          "english": "Remembering",
+          "english": "remembered",
           "target": "xiǎngqǐ",
           "hanzi": "想起",
           "category": "verb",
@@ -3239,7 +3323,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mù guǎnshì xiǎng jiāng zìjiāmén huà dé xiǎnyǎn , lú shí què yào liúchū bú jìn huòzhàn yě néng zǒu dào chuánbiān de lù .",
+      "english": "Mou wanted his gate prominent, while Lushi wanted to preserve a route to the boat without entering the warehouse.",
+      "hanzi": "牟管事想将自家门画得显眼，芦实却要留出不进货栈也能走到船边的路。",
+      "alignment": [
         {
           "english": "Mou",
           "target": "mù guǎnshì",
@@ -3249,7 +3340,7 @@
           "frequency_band": null
         },
         {
-          "english": "wanting",
+          "english": "wanted",
           "target": "xiǎng",
           "hanzi": "想",
           "category": "verb",
@@ -3257,7 +3348,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "wanting",
+          "english": "wanted",
           "target": "jiāng",
           "hanzi": "将",
           "category": "function_word",
@@ -3305,7 +3396,7 @@
           "frequency_band": null
         },
         {
-          "english": "and",
+          "english": "while",
           "target": "què",
           "hanzi": "却",
           "category": "adverb",
@@ -3313,7 +3404,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "preserving",
+          "english": "wanted",
           "target": "yào",
           "hanzi": "要",
           "category": "function_word",
@@ -3321,7 +3412,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "preserving",
+          "english": "preserve",
           "target": "liúchū",
           "hanzi": "留出",
           "category": "verb",
@@ -3337,7 +3428,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "access",
+          "english": "entering",
           "target": "jìn",
           "hanzi": "进",
           "category": "verb",
@@ -3361,7 +3452,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "access",
+          "english": "to",
           "target": "néng",
           "hanzi": "能",
           "category": "function_word",
@@ -3369,7 +3460,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "access",
+          "english": "to",
           "target": "zǒu dào",
           "hanzi": "走到",
           "category": "verb",
@@ -3377,7 +3468,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "access",
+          "english": "boat",
           "target": "chuánbiān",
           "hanzi": "船边",
           "category": "noun",
@@ -3385,7 +3476,7 @@
           "frequency_band": "rare"
         },
         {
-          "english": "access",
+          "english": "route",
           "target": "de",
           "hanzi": "的",
           "category": "particle",
@@ -3393,13 +3484,20 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "access",
+          "english": "route",
           "target": "lù",
           "hanzi": "路",
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā rěn le yíhuìer , háishì kāikǒu , shuō tóng yìzhāng tú shàng , yěxǔ xiān xiě qīng shì shuí chūqián , chá dào nǎlǐ , bié ràng kèrén yǐwéi xì de nàtiáo xiàn biàn búsuàn lù .",
+      "english": "Tavi finally spoke: perhaps the same map should state who paid and what was surveyed, not let visitors think a thin line wasn't a road.",
+      "hanzi": "他忍了一会儿，还是开口，说同一张图上，也许先写清是谁出钱、查到哪里，别让客人以为细的那条线便不算路。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tā",
@@ -3561,7 +3659,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "imply",
+          "english": "let",
           "target": "ràng",
           "hanzi": "让",
           "category": "verb",
@@ -3569,7 +3667,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "someone",
+          "english": "visitors",
           "target": "kèrén",
           "hanzi": "客人",
           "category": "noun",
@@ -3577,7 +3675,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "imply",
+          "english": "think",
           "target": "yǐwéi",
           "hanzi": "以为",
           "category": "verb",
@@ -3647,7 +3745,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nǚrén wèn nà méi qù de dìfāng , xiě qīng yǐhòu huì buhuì jiù yǒurén qù .",
+      "english": "Would stating that send someone to unvisited places, the woman asked.",
+      "hanzi": "女人问那没去的地方，写清以后会不会就有人去。",
+      "alignment": [
         {
           "english": "woman",
           "target": "nǚrén",
@@ -3751,7 +3856,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi zhāng le zhāngzuǐ , dá búhuì .",
+      "english": "Tavi opened his mouth, then answered no.",
+      "hanzi": "塔维张了张嘴，答不会。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -3807,7 +3919,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zhīdào zìjǐ néng shuō qīng yìzhāng tú zěnyàng huà , hái bùnéng shuō qīng shuí gāi bǎ qián ná chūlái .",
+      "english": "He could explain mapmaking, not who should provide the money.",
+      "hanzi": "他知道自己能说清一张图怎样画，还不能说清谁该把钱拿出来。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -3951,7 +4070,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yīwén kàn le tā yìyǎn , méi tì tā bǎ zhè jù duǎn dá jiē chéng gèng dà de bǎozhèng .",
+      "english": "Iven didn't enlarge his short answer into a promise.",
+      "hanzi": "伊文看了他一眼，没替他把这句短答接成更大的保证。\n",
+      "alignment": [
         {
           "english": "Iven",
           "target": "yīwén",
@@ -4083,9 +4209,9 @@
       ]
     },
     {
-      "target": "lǎoshī tīng wán , jiāng chá lù chūzī yǔ yǐ chá fànwéi lìng xiě zài tú páng , méi bǎ xūxiàn gǎi shí . jiùfù yě kàn guòlái , shuō zhè jù búbì bùhǎoyìsi , yǒuxiē huìshàng de rén jiǎng bàntiān hái bùkěn dá . nǚrén què méi xiào , shuō tā búshì lái tīng tāmen chéngrèn nán , huíqù réng dé xiàng zhàn lǐ jiāodài . tā jiāng xiǎng bǔ chá de lùduàn xiě zài lǎoshī liú de zhǐ shàng , zì yā dé hěn zhòng , jiāowán biàn qù kàn xià yìzhāng tú .",
-      "english": "The teacher wrote survey funding and checked scope beside the map without filling the dashed line. Looking over, the uncle said not to be ashamed: some meeting-goers talked ages without answering that. The woman didn't smile; she hadn't come for admissions of difficulty, but must report back to her station. She firmly wrote the requested additional section on the teacher's sheet and moved to the next map.",
-      "hanzi": "老师听完，将查路出资与已查范围另写在图旁，没把虚线改实。舅父也看过来，说这句不必不好意思，有些会上的人讲半天还不肯答。女人却没笑，说她不是来听他们承认难，回去仍得向站里交代。她将想补查的路段写在老师留的纸上，字压得很重，交完便去看下一张图。\n",
+      "target": "lǎoshī tīng wán , jiāng chá lù chūzī yǔ yǐ chá fànwéi lìng xiě zài tú páng , méi bǎ xūxiàn gǎi shí .",
+      "english": "The teacher wrote survey funding and checked scope beside the map without filling the dashed line.",
+      "hanzi": "老师听完，将查路出资与已查范围另写在图旁，没把虚线改实。",
       "alignment": [
         {
           "english": "teacher",
@@ -4222,7 +4348,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jiùfù yě kàn guòlái , shuō zhè jù búbì bùhǎoyìsi , yǒuxiē huìshàng de rén jiǎng bàntiān hái bùkěn dá .",
+      "english": "Looking over, the uncle said not to be ashamed: some meeting-goers talked ages without answering that.",
+      "hanzi": "舅父也看过来，说这句不必不好意思，有些会上的人讲半天还不肯答。",
+      "alignment": [
         {
           "english": "uncle",
           "target": "jiùfù",
@@ -4358,7 +4491,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nǚrén què méi xiào , shuō tā búshì lái tīng tāmen chéngrèn nán , huíqù réng dé xiàng zhàn lǐ jiāodài .",
+      "english": "The woman didn't smile; she hadn't come for admissions of difficulty, but must report back to her station.",
+      "hanzi": "女人却没笑，说她不是来听他们承认难，回去仍得向站里交代。",
+      "alignment": [
         {
           "english": "woman",
           "target": "nǚrén",
@@ -4494,7 +4634,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng xiǎng bǔ chá de lùduàn xiě zài lǎoshī liú de zhǐ shàng , zì yā dé hěn zhòng , jiāowán biàn qù kàn xià yìzhāng tú .",
+      "english": "She firmly wrote the requested additional section on the teacher's sheet and moved to the next map.",
+      "hanzi": "她将想补查的路段写在老师留的纸上，字压得很重，交完便去看下一张图。\n",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -4698,9 +4845,9 @@
       ]
     },
     {
-      "target": "bàngwǎn chè xià zuì pà cháo de zhǐ , yīwén shuō zìjǐ míngrì yào péi jiùfù dào yíchù lù zhàn huìmiàn , bùnéng tóng qù jiù péng . tǎ wéi xīnlǐ xiān yì chén , huà hái méi chūkǒu , yīwén biàn shuō búshì shuí jiào tā qù zuò zhe , tā xiǎng tīng nà zhāng fēnzhàng zhēnzhèng yào fàngdào nǎ yìduī dānzi lǐ . mǐlā shuō nà biàn bǎ shíjiān xiěgěi tāmen , bié zhī liú yígè kòngwèi , jiào rén cāi nǐ jiūjìng lái bu lái . yīwén dāying , zhuǎnshēn tì tāmen tái tú jià . jiàzi bǐ kànzhe chén , sāngè rén nuó dào ménbiān cái fàngxià , méi shuí zàishuō chū yíjù néng jiāng zhěngtiáo gǔdì dōu ānzhì hǎo dehuà . tǎ wéi jiāng xūxiàn páng nà zhāng chūzī shuōmíng yòu yāpíng le yícì , láng wài de dēng yǐjīng liàng le .",
-      "english": "Removing the damp-sensitive sheets at dusk, Iven said tomorrow he would accompany his uncle to a station meeting, not the old shelter. Tavi's heart sank before Iven explained: he wasn't going just to sit, he wanted to hear where his account draft fitted among real orders. Mira asked him to write down the timing, not leave an empty seat for them to guess about. He agreed and helped lift their surprisingly heavy display stand to the door. No one had words to settle the whole valley. Tavi smoothed the funding note beside the dashed line once more; lamps outside were lit.",
-      "hanzi": "傍晚撤下最怕潮的纸，伊文说自己明日要陪舅父到一处路站会面，不能同去旧棚。塔维心里先一沉，话还没出口，伊文便说不是谁叫他去坐着，他想听那张分账真正要放到哪一堆单子里。米拉说那便把时间写给他们，别只留一个空位，叫人猜你究竟来不来。\n伊文答应，转身替他们抬图架。架子比看着沉，三个人挪到门边才放下，没谁再说出一句能将整条谷地都安置好的话。塔维将虚线旁那张出资说明又压平了一次，廊外的灯已经亮了。\n",
+      "target": "bàngwǎn chè xià zuì pà cháo de zhǐ , yīwén shuō zìjǐ míngrì yào péi jiùfù dào yíchù lù zhàn huìmiàn , bùnéng tóng qù jiù péng .",
+      "english": "Removing the damp-sensitive sheets at dusk, Iven said tomorrow he would accompany his uncle to a station meeting, not the old shelter.",
+      "hanzi": "傍晚撤下最怕潮的纸，伊文说自己明日要陪舅父到一处路站会面，不能同去旧棚。",
       "alignment": [
         {
           "english": "at dusk",
@@ -4869,7 +5016,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi xīnlǐ xiān yì chén , huà hái méi chūkǒu , yīwén biàn shuō búshì shuí jiào tā qù zuò zhe , tā xiǎng tīng nà zhāng fēnzhàng zhēnzhèng yào fàngdào nǎ yìduī dānzi lǐ .",
+      "english": "Tavi's heart sank before Iven explained: he wasn't going just to sit, he wanted to hear where his account draft fitted among real orders.",
+      "hanzi": "塔维心里先一沉，话还没出口，伊文便说不是谁叫他去坐着，他想听那张分账真正要放到哪一堆单子里。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -5109,7 +5263,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā shuō nà biàn bǎ shíjiān xiěgěi tāmen , bié zhī liú yígè kòngwèi , jiào rén cāi nǐ jiūjìng lái bu lái .",
+      "english": "Mira asked him to write down the timing, not leave an empty seat for them to guess about.",
+      "hanzi": "米拉说那便把时间写给他们，别只留一个空位，叫人猜你究竟来不来。\n",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -5269,7 +5430,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yīwén dāying , zhuǎnshēn tì tāmen tái tú jià .",
+      "english": "Iven agreed, then turned to help them lift the stand.",
+      "hanzi": "伊文答应，转身替他们抬图架。",
+      "alignment": [
         {
           "english": "He",
           "target": "yīwén",
@@ -5295,7 +5463,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "helped",
+          "english": "help",
           "target": "tì",
           "hanzi": "替",
           "category": "function_word",
@@ -5303,7 +5471,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "their",
+          "english": "them",
           "target": "tāmen",
           "hanzi": "他们",
           "category": "function_word",
@@ -5319,13 +5487,20 @@
           "frequency_band": "common"
         },
         {
-          "english": "display stand",
+          "english": "stand",
           "target": "tú jià",
           "hanzi": "图架",
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jiàzi bǐ kànzhe chén , sāngè rén nuó dào ménbiān cái fàngxià , méi shuí zàishuō chū yíjù néng jiāng zhěngtiáo gǔdì dōu ānzhì hǎo dehuà .",
+      "english": "The stand was surprisingly heavy; the three moved it to the door and set it down. No one had words to settle the whole valley.",
+      "hanzi": "架子比看着沉，三个人挪到门边才放下，没谁再说出一句能将整条谷地都安置好的话。",
+      "alignment": [
         {
           "english": "stand",
           "target": "jiàzi",
@@ -5367,7 +5542,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "them",
+          "english": "three",
           "target": "sān",
           "hanzi": "三",
           "category": "measure_word",
@@ -5375,7 +5550,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "them",
+          "english": "three",
           "target": "gè",
           "hanzi": "个",
           "category": "measure_word",
@@ -5383,7 +5558,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "them",
+          "english": "three",
           "target": "rén",
           "hanzi": "人",
           "category": "noun",
@@ -5407,7 +5582,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "helped",
+          "english": "and",
           "target": "cái",
           "hanzi": "才",
           "category": "adverb",
@@ -5415,7 +5590,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "lift",
+          "english": "set it down",
           "target": "fàngxià",
           "hanzi": "放下",
           "category": "verb",
@@ -5517,7 +5692,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi jiāng xūxiàn páng nà zhāng chūzī shuōmíng yòu yāpíng le yícì , láng wài de dēng yǐjīng liàng le .",
+      "english": "Tavi smoothed the funding note beside the dashed line once more; lamps outside were lit.",
+      "hanzi": "塔维将虚线旁那张出资说明又压平了一次，廊外的灯已经亮了。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",

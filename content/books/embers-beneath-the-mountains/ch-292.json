@@ -2,7 +2,7 @@
   "id": "ch-292",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "yǔ zhàn zhe de dìfāng",
     "english": "Where the Rain Stands",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "yǔ luòxià láishí , mǐlā xiān kàn le tǎ wéi yìyǎn , xiàng pà tā lìkè bào zhe zhǐpái chōngchūqù . tǎ wéi jiāng chuāng biān de tú yāzhù , shuō zhīdào , jīnrì qù kàn yǔ , búshì qù jiào yǔ zhào tú zǒu . yīwén zhèng zhǎo yóubù , tīngjiàn biàn táitóu , shuō zhè jù huà kě bié yě xiěshàngqù , duàn yí méikòng tì tāmen jiěshì xiàohuà .",
-      "english": "As rain began, Mira glanced at Tavi as if afraid he'd rush out with the signs. Tavi pressed down the drawing by the window: he knew, today they were observing rain, not telling rain to follow the map. Looking for oilcloth, Iven looked up: don't write that sentence on it too; Duan had no time to explain their jokes.",
-      "hanzi": "雨落下来时，米拉先看了塔维一眼，像怕他立刻抱着纸牌冲出去。塔维将窗边的图压住，说知道，今日去看雨，不是去叫雨照图走。伊文正找油布，听见便抬头，说这句话可别也写上去，段姨没空替他们解释笑话。\n",
+      "target": "yǔ luòxià láishí , mǐlā xiān kàn le tǎ wéi yìyǎn , xiàng pà tā lìkè bào zhe zhǐpái chōngchūqù .",
+      "english": "As rain began, Mira glanced at Tavi as if afraid he'd rush out with the signs.",
+      "hanzi": "雨落下来时，米拉先看了塔维一眼，像怕他立刻抱着纸牌冲出去。",
       "alignment": [
         {
           "english": "rain",
@@ -149,7 +149,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi jiāng chuāng biān de tú yāzhù , shuō zhīdào , jīnrì qù kàn yǔ , búshì qù jiào yǔ zhào tú zǒu .",
+      "english": "Tavi pressed down the drawing by the window: he knew, today they were observing rain, not telling rain to follow the map.",
+      "hanzi": "塔维将窗边的图压住，说知道，今日去看雨，不是去叫雨照图走。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -301,7 +308,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yīwén zhèng zhǎo yóubù , tīngjiàn biàn táitóu , shuō zhè jù huà kě bié yě xiěshàngqù , duàn yí méikòng tì tāmen jiěshì xiàohuà .",
+      "english": "Looking for oilcloth, Iven looked up: don't write that sentence on it too; Duan had no time to explain their jokes.",
+      "hanzi": "伊文正找油布，听见便抬头，说这句话可别也写上去，段姨没空替他们解释笑话。\n",
+      "alignment": [
         {
           "english": "Iven",
           "target": "yīwén",
@@ -473,9 +487,9 @@
       ]
     },
     {
-      "target": "tāmen xiān dào jiǎn lǎoshī nàlǐ liú le qùxiàng , zhào xiānqián zhǔnxǔ de fànwéi , zhī kàn zhēnshí lái chē zěnyàng děng , bú guà xīn pái , búràng lǚkè zhào tāmen dehuà shì lù . dào jiù péng shí , duàn yí yǐ jiāng cè ménwài de kōng kuāng shōu jìn yánxià , yuánlái qíngtiān liú dé kuān de dìfāng , yíbàn bèi shī kuāng zhàn le .",
-      "english": "They first left their destination with Instructor Jian: within the earlier permission, only observe actual arrivals waiting, no new signs or passenger trials. At the old shelter Duan had moved the empty baskets beneath the eaves; half the generous dry-weather space was filled with wet baskets.",
-      "hanzi": "他们先到简老师那里留了去向，照先前准许的范围，只看真实来车怎样等，不挂新牌，不让旅客照他们的话试路。到旧棚时，段姨已将侧门外的空筐收进檐下，原来晴天留得宽的地方，一半被湿筐占了。\n",
+      "target": "tāmen xiān dào jiǎn lǎoshī nàlǐ liú le qùxiàng , zhào xiānqián zhǔnxǔ de fànwéi , zhī kàn zhēnshí lái chē zěnyàng děng , bú guà xīn pái , búràng lǚkè zhào tāmen dehuà shì lù .",
+      "english": "They first left their destination with Instructor Jian: within the earlier permission, only observe actual arrivals waiting, no new signs or passenger trials.",
+      "hanzi": "他们先到简老师那里留了去向，照先前准许的范围，只看真实来车怎样等，不挂新牌，不让旅客照他们的话试路。",
       "alignment": [
         {
           "english": "They",
@@ -700,7 +714,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dào jiù péng shí , duàn yí yǐ jiāng cè ménwài de kōng kuāng shōu jìn yánxià , yuánlái qíngtiān liú dé kuān de dìfāng , yíbàn bèi shī kuāng zhàn le .",
+      "english": "At the old shelter Duan had moved the empty baskets beneath the eaves; half the generous dry-weather space was filled with wet baskets.",
+      "hanzi": "到旧棚时，段姨已将侧门外的空筐收进檐下，原来晴天留得宽的地方，一半被湿筐占了。\n",
+      "alignment": [
         {
           "english": "At",
           "target": "dào",
@@ -896,9 +917,9 @@
       ]
     },
     {
-      "target": "tǎ wéi méi qù nuó . tā xiān wèn kuāng fàng biéchù huì zěnyàng , duàn yí zhǐzhǐ kuāng dǐ , shuō nà jǐzhī hái méi jiāohuò , ruò zài guàn yìhuí shuǐ , tí de rén shǒushàng biàn bùzhǐ duōyìdiǎn ní . tā jiào tāmen kàoqiáng zhàn , yòu shuō jīnrì kě bié jiāng yīfu liàng dào xíngrén tóushàng , pénglǐ yǐjīng yǒu qī bǎ sǎn zài dī .",
-      "english": "Tavi didn't move them, first asking what would happen elsewhere. Pointing to their bottoms, Duan said those baskets weren't delivered yet; another soaking would give carriers more than a little mud on their hands. Stay by the wall, she told them, and don't hang clothes over people's heads: seven umbrellas were already dripping inside.",
-      "hanzi": "塔维没去挪。他先问筐放别处会怎样，段姨指指筐底，说那几只还没交货，若再灌一回水，提的人手上便不止多一点泥。她叫他们靠墙站，又说今日可别将衣服晾到行人头上，棚里已经有七把伞在滴。\n",
+      "target": "tǎ wéi méi qù nuó .",
+      "english": "Tavi didn't move them.",
+      "hanzi": "塔维没去挪。",
       "alignment": [
         {
           "english": "Tavi",
@@ -931,9 +952,16 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā xiān wèn kuāng fàng biéchù huì zěnyàng , duàn yí zhǐzhǐ kuāng dǐ , shuō nà jǐzhī hái méi jiāohuò , ruò zài guàn yìhuí shuǐ , tí de rén shǒushàng biàn bùzhǐ duōyìdiǎn ní .",
+      "english": "He first asked what would happen elsewhere. Pointing to their bottoms, Duan said those baskets weren't delivered yet; another soaking would give carriers more than a little mud on their hands.",
+      "hanzi": "他先问筐放别处会怎样，段姨指指筐底，说那几只还没交货，若再灌一回水，提的人手上便不止多一点泥。",
+      "alignment": [
         {
-          "english": "Tavi",
+          "english": "He",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -949,7 +977,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "asking",
+          "english": "asked",
           "target": "wèn",
           "hanzi": "问",
           "category": "verb",
@@ -1187,7 +1215,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiào tāmen kàoqiáng zhàn , yòu shuō jīnrì kě bié jiāng yīfu liàng dào xíngrén tóushàng , pénglǐ yǐjīng yǒu qī bǎ sǎn zài dī .",
+      "english": "Stay by the wall, she told them, and don't hang clothes over people's heads: seven umbrellas were already dripping inside.",
+      "hanzi": "她叫他们靠墙站，又说今日可别将衣服晾到行人头上，棚里已经有七把伞在滴。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -1383,9 +1418,9 @@
       ]
     },
     {
-      "target": "lái chē de rén xià dé hěn màn . yígè nánrén xiān bǎ bāo wǎng lǐ dì , zìjǐ tuìhuí chē biān jiē háizi ; bào zhe háizi de rén yòu yào zhǎo sǎn , pángbiān rén hǎoxīn tì tā ràng , tuìguòqù cái fāxiàn shēnhòu háiyǒu yìzhī mǎn lán . méiyǒu rén àn nàgēn tāmen zuórì huà hǎo de xiàn zǒu , yīnwèi zuìxiān yào zhǎo de búshì pái , shì yíkuài néng fàngxià bāo de gān dì .",
-      "english": "People disembarked slowly. A man passed his bag inside before returning for a child; someone holding the child searched for an umbrella, while others stepping kindly aside found a full basket behind them. Nobody followed yesterday's drawn line: they first wanted dry ground for a bag, not a sign.",
-      "hanzi": "来车的人下得很慢。一个男人先把包往里递，自己退回车边接孩子；抱着孩子的人又要找伞，旁边人好心替他让，退过去才发现身后还有一只满篮。没有人按那根他们昨日画好的线走，因为最先要找的不是牌，是一块能放下包的干地。\n",
+      "target": "lái chē de rén xià dé hěn màn .",
+      "english": "People disembarked slowly.",
+      "hanzi": "来车的人下得很慢。",
       "alignment": [
         {
           "english": "People",
@@ -1442,7 +1477,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yígè nánrén xiān bǎ bāo wǎng lǐ dì , zìjǐ tuìhuí chē biān jiē háizi ; bào zhe háizi de rén yòu yào zhǎo sǎn , pángbiān rén hǎoxīn tì tā ràng , tuìguòqù cái fāxiàn shēnhòu háiyǒu yìzhī mǎn lán .",
+      "english": "A man passed his bag inside before returning for a child; someone holding the child searched for an umbrella, while others stepping kindly aside found a full basket behind them.",
+      "hanzi": "一个男人先把包往里递，自己退回车边接孩子；抱着孩子的人又要找伞，旁边人好心替他让，退过去才发现身后还有一只满篮。",
+      "alignment": [
         {
           "english": "A",
           "target": "yí",
@@ -1730,7 +1772,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "méiyǒu rén àn nàgēn tāmen zuórì huà hǎo de xiàn zǒu , yīnwèi zuìxiān yào zhǎo de búshì pái , shì yíkuài néng fàngxià bāo de gān dì .",
+      "english": "Nobody followed yesterday's drawn line: they first wanted dry ground for a bag, not a sign.",
+      "hanzi": "没有人按那根他们昨日画好的线走，因为最先要找的不是牌，是一块能放下包的干地。\n",
+      "alignment": [
         {
           "english": "Nobody",
           "target": "méiyǒu",
@@ -1942,9 +1991,9 @@
       ]
     },
     {
-      "target": "mǐlā zài zhǐ shàng jì dào yíbàn , mò yūn kāi le . tā dītóu mà yìshēng , jiāng zhǐ sāijìn yóubù dǐxià , jiào yīwén tì zìjǐ jìzhù dìsānliàng chē hòu nà yìxiǎo tuán rén . yīwén wèn dìsānliàng háishì dìsāngè xiàchē de rén , tā dèng tā , guò le yíhuìer zìjǐ yě xiào , shuō dōu dé chóngxīn wèn , bié kào liǎng rén jì chéng yì huíshì .",
-      "english": "Halfway through Mira's notes, ink spread. Muttering a curse, she slipped the sheet under oilcloth and asked Iven to remember the cluster after the third cart. Third cart or third passenger, he asked. She glared, then laughed herself: ask again, don't let two people's memories pretend to be one account.",
-      "hanzi": "米拉在纸上记到一半，墨晕开了。她低头骂一声，将纸塞进油布底下，叫伊文替自己记住第三辆车后那一小团人。伊文问第三辆还是第三个下车的人，她瞪他，过了一会儿自己也笑，说都得重新问，别靠两人记成一回事。\n",
+      "target": "mǐlā zài zhǐ shàng jì dào yíbàn , mò yūn kāi le .",
+      "english": "Halfway through Mira's notes, ink spread.",
+      "hanzi": "米拉在纸上记到一半，墨晕开了。",
       "alignment": [
         {
           "english": "Mira",
@@ -2017,7 +2066,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā dītóu mà yìshēng , jiāng zhǐ sāijìn yóubù dǐxià , jiào yīwén tì zìjǐ jìzhù dìsānliàng chē hòu nà yìxiǎo tuán rén .",
+      "english": "Muttering a curse, she slipped the sheet under oilcloth and asked Iven to remember for her the cluster after the third cart.",
+      "hanzi": "她低头骂一声，将纸塞进油布底下，叫伊文替自己记住第三辆车后那一小团人。",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -2115,7 +2171,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "Mira",
+          "english": "her",
           "target": "zìjǐ",
           "hanzi": "自己",
           "category": "function_word",
@@ -2201,7 +2257,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yīwén wèn dìsānliàng háishì dìsāngè xiàchē de rén , tā dèng tā , guò le yíhuìer zìjǐ yě xiào , shuō dōu dé chóngxīn wèn , bié kào liǎng rén jì chéng yì huíshì .",
+      "english": "Third cart or third passenger, he asked. She glared, then laughed herself: ask again, don't let two people's memories pretend to be one account.",
+      "hanzi": "伊文问第三辆还是第三个下车的人，她瞪他，过了一会儿自己也笑，说都得重新问，别靠两人记成一回事。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "yīwén",
@@ -2445,9 +2508,9 @@
       ]
     },
     {
-      "target": "tǎ wéi qù kàn qíngtiān děng jiārén de nàduàn qiáng . nàlǐ quèshí bù jǐ zhuǎnshēn de lù , yǔ què yán yíchù mù jiēfèng luòxiàlái , yìdī yidī , gānghǎo dǎ zài fàng lánzi de jiǎo biān . tā dūnxià kàn , méi shuō péng yòuhuàile . duàn yí guòlái , jiàn tā shēnshǒu jiē yǔ , xiān shuō zhè dào fèng dé děng mùgōng kōngxiàlái bǔ , jīnrì búhuì yīnwèi tā kànjiàn jiù hūrán bú lòu . \"",
-      "english": "Tavi examined the wall space chosen for family waiting on sunny days. It cleared turning traffic, but rain dripped through a timber joint exactly by a basket's place. He crouched without declaring the shelter broken again. Duan saw him catch a drop: the carpenter must repair that seam when available; his seeing it wouldn't stop today's leak.",
-      "hanzi": "塔维去看晴天等家人的那段墙。那里确实不挤转身的路，雨却沿一处木接缝落下来，一滴一滴，刚好打在放篮子的脚边。他蹲下看，没说棚又坏了。段姨过来，见他伸手接雨，先说这道缝得等木工空下来补，今日不会因为他看见就忽然不漏。\n“",
+      "target": "tǎ wéi qù kàn qíngtiān děng jiārén de nàduàn qiáng .",
+      "english": "Tavi examined the wall space chosen for family waiting on sunny days.",
+      "hanzi": "塔维去看晴天等家人的那段墙。",
       "alignment": [
         {
           "english": "Tavi",
@@ -2528,7 +2591,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nàlǐ quèshí bù jǐ zhuǎnshēn de lù , yǔ què yán yíchù mù jiēfèng luòxiàlái , yìdī yidī , gānghǎo dǎ zài fàng lánzi de jiǎo biān .",
+      "english": "It cleared turning traffic, but rain dripped through a timber joint exactly by a basket's place.",
+      "hanzi": "那里确实不挤转身的路，雨却沿一处木接缝落下来，一滴一滴，刚好打在放篮子的脚边。",
+      "alignment": [
         {
           "english": "It",
           "target": "nàlǐ",
@@ -2704,7 +2774,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā dūnxià kàn , méi shuō péng yòuhuàile .",
+      "english": "He crouched and examined it without declaring the shelter broken again.",
+      "hanzi": "他蹲下看，没说棚又坏了。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -2776,7 +2853,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "duàn yí guòlái , jiàn tā shēnshǒu jiē yǔ , xiān shuō zhè dào fèng dé děng mùgōng kōngxiàlái bǔ , jīnrì búhuì yīnwèi tā kànjiàn jiù hūrán bú lòu . \"",
+      "english": "Duan saw him catch a drop: the carpenter must repair that seam when available; his seeing it wouldn't stop today's leak.",
+      "hanzi": "段姨过来，见他伸手接雨，先说这道缝得等木工空下来补，今日不会因为他看见就忽然不漏。\n“",
+      "alignment": [
         {
           "english": "Duan",
           "target": "duàn yí",
@@ -2980,9 +3064,9 @@
       ]
     },
     {
-      "target": "nà děng jiālǐrén de , jīnrì zhàn nǎlǐ ? \" tā wèn . duàn yí wǎng chángdèng nà tóu zhǐ . nàlǐ yígè lǎorén zhèng tì qīzǐ ná bāo , qīzǐ zuòxià yǐhòu , yòu gěi pángbiān de háizi ràng le bànbiān dèng . rén méiyǒu shǎo , wèizhì què suí shuí xiān dào , shuí néng zuò ér huàn . tǎ wéi wàng le yíhuìer , cái fājué zìjǐ de tú shàng hái shǎo le \" xiān jiāng dōngxī fàngxià , zài wèn yào qù nǎér \" zhè yíduàn .",
-      "english": "“Where do people waiting for family stand today?” he asked. Duan pointed to the bench, where an old man held his wife's bag; she sat and made half a seat for a child. No fewer people, but places changed with arrival and who could sit. Tavi realized his map lacked the step of putting things down before asking where to go.",
-      "hanzi": "那等家里人的，今日站哪里？”他问。\n段姨往长凳那头指。那里一个老人正替妻子拿包，妻子坐下以后，又给旁边的孩子让了半边凳。人没有少，位置却随谁先到、谁能坐而换。塔维望了一会儿，才发觉自己的图上还少了“先将东西放下，再问要去哪儿”这一段。\n",
+      "target": "nà děng jiālǐrén de , jīnrì zhàn nǎlǐ ? \"",
+      "english": "“Where do people waiting for family stand today?”",
+      "hanzi": "那等家里人的，今日站哪里？”",
       "alignment": [
         {
           "english": "today",
@@ -3039,7 +3123,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā wèn .",
+      "english": "He asked.",
+      "hanzi": "他问。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -3055,7 +3146,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "duàn yí wǎng chángdèng nà tóu zhǐ .",
+      "english": "Duan pointed to the far end of the bench.",
+      "hanzi": "段姨往长凳那头指。",
+      "alignment": [
         {
           "english": "Duan",
           "target": "duàn yí",
@@ -3095,9 +3193,16 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nàlǐ yígè lǎorén zhèng tì qīzǐ ná bāo , qīzǐ zuòxià yǐhòu , yòu gěi pángbiān de háizi ràng le bànbiān dèng .",
+      "english": "An old man there held his wife's bag; after she sat, she made half a seat for the child beside her.",
+      "hanzi": "那里一个老人正替妻子拿包，妻子坐下以后，又给旁边的孩子让了半边凳。",
+      "alignment": [
         {
-          "english": "where",
+          "english": "there",
           "target": "nàlǐ",
           "hanzi": "那里",
           "category": "function_word",
@@ -3185,7 +3290,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "and",
+          "english": "after",
           "target": "yǐhòu",
           "hanzi": "以后",
           "category": "function_word",
@@ -3193,7 +3298,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "and",
+          "english": "made",
           "target": "yòu",
           "hanzi": "又",
           "category": "adverb",
@@ -3263,7 +3368,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "rén méiyǒu shǎo , wèizhì què suí shuí xiān dào , shuí néng zuò ér huàn .",
+      "english": "No fewer people, but places changed with arrival and who could sit.",
+      "hanzi": "人没有少，位置却随谁先到、谁能坐而换。",
+      "alignment": [
         {
           "english": "people",
           "target": "rén",
@@ -3375,7 +3487,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi wàng le yíhuìer , cái fājué zìjǐ de tú shàng hái shǎo le \" xiān jiāng dōngxī fàngxià , zài wèn yào qù nǎér \" zhè yíduàn .",
+      "english": "Tavi realized his map lacked the step of putting things down before asking where to go.",
+      "hanzi": "塔维望了一会儿，才发觉自己的图上还少了“先将东西放下，再问要去哪儿”这一段。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -3571,9 +3690,9 @@
       ]
     },
     {
-      "target": "yízhènfēng jiàng ménbiān de yǔ chuījìnlái , duàn yí jiào rén bǎ yìzhī ǎi mùjià zhuǎn dào zhù nèi , gěi láikè fàng shī sǎn , bié ràng sǎn jiān dōu cháozhe rén tuǐ . tǎ wéi wèn néngfǒu bāng bān , děng tā diǎntóu , cái tóng yīwén yì rén tái yìbiān . mǐlā zài pángbiān jiàotíng , xiān jiāng jià dǐ guà zhù de pòbù qǔ kāi , liǎng rén zhè cái bǎ tā bǎi wěn .",
-      "english": "A gust blew rain through the door. Duan ordered a low wooden rack turned inside the post for wet umbrellas, not their tips toward people's legs. Tavi asked to help; only at her nod did he and Iven lift an end each. Mira stopped them to free a rag caught underneath, then they set it firmly down.",
-      "hanzi": "一阵风将门边的雨吹进来，段姨叫人把一只矮木架转到柱内，给来客放湿伞，别让伞尖都朝着人腿。塔维问能否帮搬，等她点头，才同伊文一人抬一边。米拉在旁边叫停，先将架底挂住的破布取开，两人这才把它摆稳。\n",
+      "target": "yízhènfēng jiàng ménbiān de yǔ chuījìnlái , duàn yí jiào rén bǎ yìzhī ǎi mùjià zhuǎn dào zhù nèi , gěi láikè fàng shī sǎn , bié ràng sǎn jiān dōu cháozhe rén tuǐ .",
+      "english": "A gust blew rain through the door. Duan ordered a low wooden rack turned inside the post for wet umbrellas, not their tips toward people's legs.",
+      "hanzi": "一阵风将门边的雨吹进来，段姨叫人把一只矮木架转到柱内，给来客放湿伞，别让伞尖都朝着人腿。",
       "alignment": [
         {
           "english": "A",
@@ -3814,7 +3933,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi wèn néngfǒu bāng bān , děng tā diǎntóu , cái tóng yīwén yì rén tái yìbiān .",
+      "english": "Tavi asked to help; only at her nod did he and Iven lift an end each.",
+      "hanzi": "塔维问能否帮搬，等她点头，才同伊文一人抬一边。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -3942,7 +4068,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā zài pángbiān jiàotíng , xiān jiāng jià dǐ guà zhù de pòbù qǔ kāi , liǎng rén zhè cái bǎ tā bǎi wěn .",
+      "english": "Mira stopped them to free a rag caught underneath, then they set it firmly down.",
+      "hanzi": "米拉在旁边叫停，先将架底挂住的破布取开，两人这才把它摆稳。\n",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -4082,9 +4215,9 @@
       ]
     },
     {
-      "target": "mùjià fàng hǎo , yǔ méiyǒu xiǎo , péng yě méiyǒu kuān chū yícùn , què zhōngyú yǒurén téngchū yìzhī shǒu qù jiē zìjǐ de bāo . yígè xiàchē de nǚrén liánshēng dàoxiè , xiè de shì tì tā fú jià de mǐlā , bìngbùzhīdào tāmen zài zuò shénme tí . mǐlā dá wán , zhuǎnshēn qù jiāng yūn mò de zhǐ chóngxīn fàng píng , bíjiān shàng hái guà zhe yìdīshuǐ .",
-      "english": "The rack in place, neither rain eased nor shelter grew an inch, but someone finally freed a hand to take a bag. A woman thanked Mira, who'd steadied it, without knowing their project. Mira answered, then flattened the ink-blurred sheet, a drop still on her nose.",
-      "hanzi": "木架放好，雨没有小，棚也没有宽出一寸，却终于有人腾出一只手去接自己的包。一个下车的女人连声道谢，谢的是替她扶架的米拉，并不知道他们在做什么题。米拉答完，转身去将晕墨的纸重新放平，鼻尖上还挂着一滴水。\n",
+      "target": "mùjià fàng hǎo , yǔ méiyǒu xiǎo , péng yě méiyǒu kuān chū yícùn , què zhōngyú yǒurén téngchū yìzhī shǒu qù jiē zìjǐ de bāo .",
+      "english": "The rack in place, neither rain eased nor shelter grew an inch, but someone finally freed a hand to take a bag.",
+      "hanzi": "木架放好，雨没有小，棚也没有宽出一寸，却终于有人腾出一只手去接自己的包。",
       "alignment": [
         {
           "english": "rack",
@@ -4261,7 +4394,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yígè xiàchē de nǚrén liánshēng dàoxiè , xiè de shì tì tā fú jià de mǐlā , bìngbùzhīdào tāmen zài zuò shénme tí .",
+      "english": "A woman thanked Mira, who'd steadied it, without knowing their project.",
+      "hanzi": "一个下车的女人连声道谢，谢的是替她扶架的米拉，并不知道他们在做什么题。",
+      "alignment": [
         {
           "english": "A",
           "target": "yí",
@@ -4429,7 +4569,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā dá wán , zhuǎnshēn qù jiāng yūn mò de zhǐ chóngxīn fàng píng , bíjiān shàng hái guà zhe yìdīshuǐ .",
+      "english": "Mira answered, then flattened the ink-blurred sheet, a drop still on her nose.",
+      "hanzi": "米拉答完，转身去将晕墨的纸重新放平，鼻尖上还挂着一滴水。\n",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -4577,9 +4724,9 @@
       ]
     },
     {
-      "target": "huíqù lùshang , yīwén wèn tāmen shìfǒu hái gāi zuòpái . tǎ wéi xiǎng le yízhèn , shuō gāi zuò , dàn jīnrì bùnéng zhī jiāo liǎngzhāngpái , shuō děnghòu yě guī tāmen guǎn . mǐlā diǎntóu , jiāng nà yè zuì nánkàn de yǔ zhǐ gěi tā kàn , sān rén de zì jǐ zài yìqǐ , réng yǒu jǐchù biàn bù qīng . tā shuō xiàhuí dé dài qiānbǐ , yīwén shuō xiān jì zài zhǐ shàng , miǎnde xiàhuí yòu zhī jìde dài sāngè rén .",
-      "english": "On the way back Iven asked whether they should still make signs. Thinking a while, Tavi said yes, but today's answer couldn't be just two signs claiming to manage waiting too. Mira showed their ugliest rain sheet, three hands crowded together and partly illegible. Next time bring a pencil, she said. Write that down first, Iven said, or next time they'll only remember to bring three people again.",
-      "hanzi": "回去路上，伊文问他们是否还该做牌。塔维想了一阵，说该做，但今日不能只交两张牌，说等候也归它们管。米拉点头，将那页最难看的雨纸给他看，三人的字挤在一起，仍有几处辨不清。她说下回得带铅笔，伊文说先记在纸上，免得下回又只记得带三个人。\n",
+      "target": "huíqù lùshang , yīwén wèn tāmen shìfǒu hái gāi zuòpái .",
+      "english": "On the way back Iven asked whether they should still make signs.",
+      "hanzi": "回去路上，伊文问他们是否还该做牌。",
       "alignment": [
         {
           "english": "back",
@@ -4660,7 +4807,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi xiǎng le yízhèn , shuō gāi zuò , dàn jīnrì bùnéng zhī jiāo liǎngzhāngpái , shuō děnghòu yě guī tāmen guǎn .",
+      "english": "Thinking a while, Tavi said yes, but today's answer couldn't be just two signs claiming to manage waiting too.",
+      "hanzi": "塔维想了一阵，说该做，但今日不能只交两张牌，说等候也归它们管。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4828,7 +4982,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā diǎntóu , jiāng nà yè zuì nánkàn de yǔ zhǐ gěi tā kàn , sān rén de zì jǐ zài yìqǐ , réng yǒu jǐchù biàn bù qīng .",
+      "english": "Mira nodded and showed him their ugliest rain sheet, three hands crowded together and partly illegible.",
+      "hanzi": "米拉点头，将那页最难看的雨纸给他看，三人的字挤在一起，仍有几处辨不清。",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -4918,7 +5079,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "Tavi",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -5028,7 +5189,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuō xiàhuí dé dài qiānbǐ , yīwén shuō xiān jì zài zhǐ shàng , miǎnde xiàhuí yòu zhī jìde dài sāngè rén .",
+      "english": "Next time bring a pencil, she said. Write that down first, Iven said, or next time they'll only remember to bring three people again.",
+      "hanzi": "她说下回得带铅笔，伊文说先记在纸上，免得下回又只记得带三个人。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",

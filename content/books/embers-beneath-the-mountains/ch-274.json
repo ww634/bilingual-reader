@@ -2,7 +2,7 @@
   "id": "ch-274",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "shuí de zǎochén",
     "english": "Whose Morning Is It",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "tiānliàng shí , tǎ wéi bèi guōgài pèng xiǎng de shēngyīn jīngxǐng , cái fājué zìjǐ fú zài zhuōshàng shuìguòletóu . ruǎn héng liú de zìtiáo yā zài wǎndǐ , shuō xiān chīfàn , wǔqián dào huòchǎng , búbì zài gǎnshàng pō qù kàn biérén zěnyàng shù miètiáo .",
-      "english": "At dawn a clattering pot lid woke Tavi; he had overslept, fallen asleep over his desk. Under his bowl Ruan Heng's note told him to eat first and reach the freight yard before noon, not rush uphill to watch others count bamboo strips.",
-      "hanzi": "天亮时，塔维被锅盖碰响的声音惊醒，才发觉自己伏在桌上睡过了头。阮衡留的字条压在碗底，说先吃饭，午前到货场，不必再赶上坡去看别人怎样数篾条。\n",
+      "target": "tiānliàng shí , tǎ wéi bèi guōgài pèng xiǎng de shēngyīn jīngxǐng , cái fājué zìjǐ fú zài zhuōshàng shuìguòletóu .",
+      "english": "At dawn a clattering pot lid woke Tavi; he had overslept, fallen asleep over his desk.",
+      "hanzi": "天亮时，塔维被锅盖碰响的声音惊醒，才发觉自己伏在桌上睡过了头。",
       "alignment": [
         {
           "english": "At dawn",
@@ -165,7 +165,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng liú de zìtiáo yā zài wǎndǐ , shuō xiān chīfàn , wǔqián dào huòchǎng , búbì zài gǎnshàng pō qù kàn biérén zěnyàng shù miètiáo .",
+      "english": "Under his bowl Ruan Heng's note told him to eat first and reach the freight yard before noon, not rush uphill to watch others count bamboo strips.",
+      "hanzi": "阮衡留的字条压在碗底，说先吃饭，午前到货场，不必再赶上坡去看别人怎样数篾条。\n",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -353,9 +360,9 @@
       ]
     },
     {
-      "target": "tā dào huòchǎng shí , dù chéng zhèng tóng màicài de nánrén chǎo . nà rén jiùshì huìshàng fānguò kuāng dǐ de huòzhǔ , jīnrì kuāng lǐ què zhī shèng liǎngbǎ yè cài , pángbiān tānzhe yìzhāng qīngdān . wǔqián nà tàng jiēbó zuórì děng běilù mànchē , wǎn dào yǐhòu , yǒu yíhù pùzi yǐjīng xiānmǎi le biéjiā de cài , tā méi quán màichūqù .",
-      "english": "When he arrived, Du Cheng was arguing with a vegetable seller, the cargo owner who had shown his basket bottom at the hearing. Today only two bunches of greens remained, a list beside them. Yesterday's late-morning connection waited for slow northern-road carts; by arrival one shop had bought elsewhere, leaving his produce unsold.",
-      "hanzi": "他到货场时，杜澄正同卖菜的男人吵。那人就是会上翻过筐底的货主，今日筐里却只剩两把叶菜，旁边摊着一张清单。午前那趟接驳昨日等北路慢车，晚到以后，有一户铺子已经先买了别家的菜，他没全卖出去。\n",
+      "target": "tā dào huòchǎng shí , dù chéng zhèng tóng màicài de nánrén chǎo .",
+      "english": "When he arrived at the cargo yard, Du Cheng was arguing with a vegetable seller.",
+      "hanzi": "他到货场时，杜澄正同卖菜的男人吵。",
       "alignment": [
         {
           "english": "he",
@@ -444,7 +451,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nà rén jiùshì huìshàng fānguò kuāng dǐ de huòzhǔ , jīnrì kuāng lǐ què zhī shèng liǎngbǎ yè cài , pángbiān tānzhe yìzhāng qīngdān .",
+      "english": "The man was the cargo owner who had shown his basket bottom at the hearing. Today only two bunches of greens remained, a list beside them.",
+      "hanzi": "那人就是会上翻过筐底的货主，今日筐里却只剩两把叶菜，旁边摊着一张清单。",
+      "alignment": [
         {
           "english": "the",
           "target": "nà",
@@ -628,7 +642,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wǔqián nà tàng jiēbó zuórì děng běilù mànchē , wǎn dào yǐhòu , yǒu yíhù pùzi yǐjīng xiānmǎi le biéjiā de cài , tā méi quán màichūqù .",
+      "english": "Yesterday's late-morning connection waited for slow northern-road carts; by arrival one shop had bought elsewhere, leaving his produce unsold.",
+      "hanzi": "午前那趟接驳昨日等北路慢车，晚到以后，有一户铺子已经先买了别家的菜，他没全卖出去。\n",
+      "alignment": [
         {
           "english": "late-morning",
           "target": "wǔqián",
@@ -832,9 +853,9 @@
       ]
     },
     {
-      "target": "dù chéng shuō chē màn shì lùbiān yǒu shuǐ , búshì bǎ chē cáng qǐlái yùnméi . nánrén shuō zìjǐ méi shuō cáng chē , zhī wèn wèihé měi huí yǒurén shuō lìng yǒu ānpái , zhēn děngdào huài le , biàn dōu chéng le tiān bùhǎo . tā jiāng liǎngbǎ cài wǎngqián yì tuī , ràng dù chéng zìjǐ wén , wài yè yǐyǒu yìgǔ mēn wèi , lǐtou hái méi huài .",
-      "english": "Du Cheng said carts were slow because of roadside water, not secretly hauling coal. The man hadn't accused anyone of hiding carts, only asked why every promised alternative arrangement became bad weather once things spoiled. He pushed the greens forward for Du Cheng to smell: outer leaves were musty, the inside not yet rotten.",
-      "hanzi": "杜澄说车慢是路边有水，不是把车藏起来运煤。男人说自己没说藏车，只问为何每回有人说另有安排，真等到坏了，便都成了天不好。他将两把菜往前一推，让杜澄自己闻，外叶已有一股闷味，里头还没坏。\n",
+      "target": "dù chéng shuō chē màn shì lùbiān yǒu shuǐ , búshì bǎ chē cáng qǐlái yùnméi .",
+      "english": "Du Cheng said carts were slow because of roadside water, not secretly hauling coal.",
+      "hanzi": "杜澄说车慢是路边有水，不是把车藏起来运煤。",
       "alignment": [
         {
           "english": "Du Cheng",
@@ -939,7 +960,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nánrén shuō zìjǐ méi shuō cáng chē , zhī wèn wèihé měi huí yǒurén shuō lìng yǒu ānpái , zhēn děngdào huài le , biàn dōu chéng le tiān bùhǎo .",
+      "english": "The man hadn't accused anyone of hiding carts, only asked why every promised alternative arrangement became bad weather once things spoiled.",
+      "hanzi": "男人说自己没说藏车，只问为何每回有人说另有安排，真等到坏了，便都成了天不好。",
+      "alignment": [
         {
           "english": "man",
           "target": "nánrén",
@@ -1131,7 +1159,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng liǎngbǎ cài wǎngqián yì tuī , ràng dù chéng zìjǐ wén , wài yè yǐyǒu yìgǔ mēn wèi , lǐtou hái méi huài .",
+      "english": "He pushed the greens forward for Du Cheng to smell: outer leaves were musty, the inside not yet rotten.",
+      "hanzi": "他将两把菜往前一推，让杜澄自己闻，外叶已有一股闷味，里头还没坏。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -1295,9 +1330,9 @@
       ]
     },
     {
-      "target": "tǎ wéi zhàn zài ménbiān , hūrán bùgǎn náchū zìjǐ nà zhāng tú . ruǎn héng què jiào tā bǎ zuóyè jì de shíchén nálái , yòu wèn huòzhǔ , děng de shì nǎ yíliàngchē , nǎ shí sòngdào , nǎ hù tuì le . tā méiyǒu yào rén xiān chéngrèn lùshang fēi màn bùkě , yě méi shuō yìkuāng cài zǒng bǐ dōngtiān quēliáng qīng .",
-      "english": "At the door, Tavi suddenly dreaded showing his drawing. Ruan Heng asked for last night's times anyway, and asked the owner which cart he had waited for, when it arrived and which shop had refused the goods. He demanded neither agreement that delay was inevitable nor acceptance that a basket of vegetables mattered less than winter hunger.",
-      "hanzi": "塔维站在门边，忽然不敢拿出自己那张图。阮衡却叫他把昨夜记的时辰拿来，又问货主，等的是哪一辆车，哪时送到，哪户退了。他没有要人先承认路上非慢不可，也没说一筐菜总比冬天缺粮轻。\n",
+      "target": "tǎ wéi zhàn zài ménbiān , hūrán bùgǎn náchū zìjǐ nà zhāng tú .",
+      "english": "At the door, Tavi suddenly dreaded showing his drawing.",
+      "hanzi": "塔维站在门边，忽然不敢拿出自己那张图。",
       "alignment": [
         {
           "english": "Tavi",
@@ -1386,7 +1421,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng què jiào tā bǎ zuóyè jì de shíchén nálái , yòu wèn huòzhǔ , děng de shì nǎ yíliàngchē , nǎ shí sòngdào , nǎ hù tuì le .",
+      "english": "Ruan Heng asked for last night's times anyway, and asked the owner which cart he had waited for, when it arrived and which shop had refused the goods.",
+      "hanzi": "阮衡却叫他把昨夜记的时辰拿来，又问货主，等的是哪一辆车，哪时送到，哪户退了。",
+      "alignment": [
         {
           "english": "Ruan Heng",
           "target": "ruǎn héng",
@@ -1594,7 +1636,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méiyǒu yào rén xiān chéngrèn lùshang fēi màn bùkě , yě méi shuō yìkuāng cài zǒng bǐ dōngtiān quēliáng qīng .",
+      "english": "He demanded neither agreement that delay was inevitable nor acceptance that a basket of vegetables mattered less than winter hunger.",
+      "hanzi": "他没有要人先承认路上非慢不可，也没说一筐菜总比冬天缺粮轻。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -1758,9 +1807,9 @@
       ]
     },
     {
-      "target": "hé dào hòulái , cái zhīdào wǎn dào de chē zài xiūlù chù děng guò yìhuí , jìnchǎng yòu cuò guòfèn huòwèi , děng qián yìpī xièwán cái jìnlái . qiántou nàduàn mànxíng shì yǔ zhōng bìyào de , hòutou shíjǐ kè què búshì ; xīn biǎo gěi xiānhuò liú le jiēbó , chǎngnèi de xiè wèi què réng zhàojiù zǎobān de huò jǐ zhe yòng .",
-      "english": "Checking established that the late cart had waited once at the roadworks, then missed its unloading bay and waited for the previous load at the yard. Rain precautions required the first delay, but not the following dozen-plus quarter-hours. The new timetable reserved a produce connection, while yard bays still followed the old morning loads.",
-      "hanzi": "核到后来，才知道晚到的车在修路处等过一回，进场又错过分货位，等前一批卸完才进来。前头那段慢行是雨中必要的，后头十几刻却不是；新表给鲜货留了接驳，场内的卸位却仍照旧早班的货挤着用。\n",
+      "target": "hé dào hòulái , cái zhīdào wǎn dào de chē zài xiūlù chù děng guò yìhuí , jìnchǎng yòu cuò guòfèn huòwèi , děng qián yìpī xièwán cái jìnlái .",
+      "english": "Checking established that the late cart had waited once at the roadworks, then missed its unloading bay and waited for the previous load at the yard.",
+      "hanzi": "核到后来，才知道晚到的车在修路处等过一回，进场又错过分货位，等前一批卸完才进来。",
       "alignment": [
         {
           "english": "Checking",
@@ -1929,7 +1978,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "qiántou nàduàn mànxíng shì yǔ zhōng bìyào de , hòutou shíjǐ kè què búshì ; xīn biǎo gěi xiānhuò liú le jiēbó , chǎngnèi de xiè wèi què réng zhàojiù zǎobān de huò jǐ zhe yòng .",
+      "english": "Rain precautions required the first delay, but not the following dozen-plus quarter-hours. The new timetable reserved a produce connection, while yard bays still followed the old morning loads.",
+      "hanzi": "前头那段慢行是雨中必要的，后头十几刻却不是；新表给鲜货留了接驳，场内的卸位却仍照旧早班的货挤着用。\n",
+      "alignment": [
         {
           "english": "first",
           "target": "qiántou",
@@ -2189,9 +2245,9 @@
       ]
     },
     {
-      "target": "dù chéng kàn le hěn jiǔ , jiāng zìjǐ de xiè wèi xiǎo biǎo fānguòqù , liǎnsè chénxiàlái . tā yuányǐwéi zhǐyào lái chē búbiàn , jiù búbì zài huà lìng yítào . nánrén dīng zhe tā wèn , zhǐ fānguòqù , cài néng fānxīn me . dù chéng shuō bùnéng , jiēzhe jiào huǒjì bǎ liǎngbǎ shàng néng yòng de nèi yè sòng fànpù , xiān àn yuánlái tán hǎo de shōu jià jì , huàidiào duōshǎo lìng hé , búyào zhěng kuāng dàngchéng méi rén yào de dōngxī yā gěi rén .",
-      "english": "Du Cheng studied this for a long time and turned over his bay chart, face darkening: he had thought unchanged cart departures needed no different chart. Could turning the paper over freshen vegetables, the man asked. No, Du Cheng said, then sent the usable inner leaves to the eatery at the previously agreed purchase price. Spoilage must be checked separately, not used to force the whole basket onto someone as worthless.",
-      "hanzi": "杜澄看了很久，将自己的卸位小表翻过去，脸色沉下来。他原以为只要来车不变，就不必再画另一套。男人盯着他问，纸翻过去，菜能翻新么。杜澄说不能，接着叫伙计把两把尚能用的内叶送饭铺，先按原来谈好的收价记，坏掉多少另核，不要整筐当成没人要的东西压给人。\n",
+      "target": "dù chéng kàn le hěn jiǔ , jiāng zìjǐ de xiè wèi xiǎo biǎo fānguòqù , liǎnsè chénxiàlái .",
+      "english": "Du Cheng studied this for a long time and turned over his bay chart, face darkening.",
+      "hanzi": "杜澄看了很久，将自己的卸位小表翻过去，脸色沉下来。",
       "alignment": [
         {
           "english": "Du Cheng",
@@ -2288,7 +2344,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yuányǐwéi zhǐyào lái chē búbiàn , jiù búbì zài huà lìng yítào .",
+      "english": "He had thought unchanged cart departures needed no different chart.",
+      "hanzi": "他原以为只要来车不变，就不必再画另一套。",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -2384,7 +2447,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nánrén dīng zhe tā wèn , zhǐ fānguòqù , cài néng fānxīn me .",
+      "english": "Staring at him, the man asked if turning the paper over could freshen vegetables.",
+      "hanzi": "男人盯着他问，纸翻过去，菜能翻新么。",
+      "alignment": [
         {
           "english": "man",
           "target": "nánrén",
@@ -2410,7 +2480,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "Du Cheng",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -2472,7 +2542,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dù chéng shuō bùnéng , jiēzhe jiào huǒjì bǎ liǎngbǎ shàng néng yòng de nèi yè sòng fànpù , xiān àn yuánlái tán hǎo de shōu jià jì , huàidiào duōshǎo lìng hé , búyào zhěng kuāng dàngchéng méi rén yào de dōngxī yā gěi rén .",
+      "english": "No, Du Cheng said, then sent the usable inner leaves to the eatery at the previously agreed purchase price. Spoilage must be checked separately, not used to force the whole basket onto someone as worthless.",
+      "hanzi": "杜澄说不能，接着叫伙计把两把尚能用的内叶送饭铺，先按原来谈好的收价记，坏掉多少另核，不要整筐当成没人要的东西压给人。\n",
+      "alignment": [
         {
           "english": "Du Cheng",
           "target": "dù chéng",
@@ -2748,9 +2825,9 @@
       ]
     },
     {
-      "target": "ruǎn héng méiyǒu ràng zhèbǐ mǎicài qián suànzuò wùdiǎn yǐjīng péi wán . tā yuē huòzhǔ míngrì dài màichū de shù lái , zhǎo jiēbó chēduì tóng kàn gèduàn dàodǐ wù zài nǎlǐ ; jīntiān xiān jiāng wǔqián xiānhuò xiè wèi kōng chūlái , qián yìbān ruò méi xièwán , yòng gékāi de línshí wèi , xū yóu wēn xiù xiān kàn bān xíng de kōng chù , bùnéng ràng gōngrén píng yíjù \" xiān ràng cài zǒu \" qù jǐ .",
-      "english": "Ruan Heng didn't count the vegetable payment as full compensation for delays. He asked the owner to bring tomorrow's sales figures to review each delay with the connection cart team. Today the late-morning produce bay would be cleared; any unfinished earlier load must use a separated temporary bay after Wenxiu checked carrying clearance, not force workers to squeeze past at the mere order “vegetables first.”",
-      "hanzi": "阮衡没有让这笔买菜钱算作误点已经赔完。他约货主明日带卖出的数来，找接驳车队同看各段到底误在哪里；今天先将午前鲜货卸位空出来，前一班若没卸完，用隔开的临时位，须由温岫先看搬行的空处，不能让工人凭一句“先让菜走”去挤。\n",
+      "target": "ruǎn héng méiyǒu ràng zhèbǐ mǎicài qián suànzuò wùdiǎn yǐjīng péi wán .",
+      "english": "Ruan Heng didn't count the vegetable payment as full compensation for delays.",
+      "hanzi": "阮衡没有让这笔买菜钱算作误点已经赔完。",
       "alignment": [
         {
           "english": "Ruan Heng",
@@ -2839,7 +2916,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yuē huòzhǔ míngrì dài màichū de shù lái , zhǎo jiēbó chēduì tóng kàn gèduàn dàodǐ wù zài nǎlǐ ; jīntiān xiān jiāng wǔqián xiānhuò xiè wèi kōng chūlái , qián yìbān ruò méi xièwán , yòng gékāi de línshí wèi , xū yóu wēn xiù xiān kàn bān xíng de kōng chù , bùnéng ràng gōngrén píng yíjù \" xiān ràng cài zǒu \" qù jǐ .",
+      "english": "He asked the owner to bring tomorrow's sales figures to review each delay with the connection cart team. Today the late-morning produce bay would be cleared; any unfinished earlier load must use a separated temporary bay after Wenxiu checked carrying clearance, not force workers to squeeze past at the mere order “vegetables first.”",
+      "hanzi": "他约货主明日带卖出的数来，找接驳车队同看各段到底误在哪里；今天先将午前鲜货卸位空出来，前一班若没卸完，用隔开的临时位，须由温岫先看搬行的空处，不能让工人凭一句“先让菜走”去挤。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -3275,9 +3359,9 @@
       ]
     },
     {
-      "target": "xiàwǔ tǎ wéi gēn wēn xiù liáng nà yìxiǎokuài dì . tā yào de shì liǎng rén táikuāng hái néng zhuǎnshēn de kuāndù , tā biàn xiān wèn kōng kuāng háishì mǎn kuāng . wēn xiù kàn tā yìyǎn , shuō zhōngyú jìde kuāng lǐ huì zhuāng dōngxī , suíjí jiào tā zìjǐ zhàn dào rén yào zǒu de dìfāng qù , bié zhàn dào chǐ tóu hòumiàn duǒ zhe .",
-      "english": "That afternoon Tavi measured the small patch with Wenxiu. She wanted room for two people to turn while carrying a basket; he first asked whether it was empty or full. She glanced at him: he'd finally remembered baskets contained things. Then she told him to stand where the carrier would walk, not hide behind the ruler's tip.",
-      "hanzi": "下午塔维跟温岫量那一小块地。她要的是两人抬筐还能转身的宽度，他便先问空筐还是满筐。温岫看他一眼，说终于记得筐里会装东西，随即叫他自己站到人要走的地方去，别站到尺头后面躲着。\n",
+      "target": "xiàwǔ tǎ wéi gēn wēn xiù liáng nà yìxiǎokuài dì .",
+      "english": "That afternoon Tavi measured the small patch with Wenxiu.",
+      "hanzi": "下午塔维跟温岫量那一小块地。",
       "alignment": [
         {
           "english": "That afternoon",
@@ -3358,7 +3442,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yào de shì liǎng rén táikuāng hái néng zhuǎnshēn de kuāndù , tā biàn xiān wèn kōng kuāng háishì mǎn kuāng .",
+      "english": "She wanted room for two people to turn while carrying a basket; he first asked whether it was empty or full.",
+      "hanzi": "她要的是两人抬筐还能转身的宽度，他便先问空筐还是满筐。",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -3518,7 +3609,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wēn xiù kàn tā yìyǎn , shuō zhōngyú jìde kuāng lǐ huì zhuāng dōngxī , suíjí jiào tā zìjǐ zhàn dào rén yào zǒu de dìfāng qù , bié zhàn dào chǐ tóu hòumiàn duǒ zhe .",
+      "english": "She glanced at him: he'd finally remembered baskets contained things. Then she told him to stand where the carrier would walk, not hide behind the ruler's tip.",
+      "hanzi": "温岫看他一眼，说终于记得筐里会装东西，随即叫他自己站到人要走的地方去，别站到尺头后面躲着。\n",
+      "alignment": [
         {
           "english": "She",
           "target": "wēn xiù",
@@ -3754,9 +3852,9 @@
       ]
     },
     {
-      "target": "shōugōng qián , liǎngchù gāo cūn de liáng lǐngdān yě huí le . zhǐ shàng búshì yípiàn bàoyuàn , yǒu yífèn xiě yǐjīng rùcāng , yǒu yífèn wèn xiàhuí néng bunéng bǎ pò dài lìng zhā , yīnwèi sàn liáng luòdào shífèng lǐ , sǎo le yě yǒu shā . tǎ wéi jiāng tā tóng xiānhuò wùdiǎn de dānzi bìng páifàng hǎo , shuí dōu bùnéng tì shuí gàizhù .",
-      "english": "Before closing, grain receipts returned from both high villages too. Not all complaints: one confirmed warehousing; another asked to retie broken sacks next time, since grain scattered into stone gaps swept up with sand. Tavi laid them beside the produce delay sheet, neither covering the other.",
-      "hanzi": "收工前，两处高村的粮领单也回了。纸上不是一片抱怨，有一份写已经入仓，有一份问下回能不能把破袋另扎，因为散粮落到石缝里，扫了也有沙。塔维将它同鲜货误点的单子并排放好，谁都不能替谁盖住。\n",
+      "target": "shōugōng qián , liǎngchù gāo cūn de liáng lǐngdān yě huí le .",
+      "english": "Before closing, grain receipts returned from both high villages too.",
+      "hanzi": "收工前，两处高村的粮领单也回了。",
       "alignment": [
         {
           "english": "Before closing",
@@ -3837,9 +3935,16 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhǐ shàng búshì yípiàn bàoyuàn , yǒu yífèn xiě yǐjīng rùcāng , yǒu yífèn wèn xiàhuí néng bunéng bǎ pò dài lìng zhā , yīnwèi sàn liáng luòdào shífèng lǐ , sǎo le yě yǒu shā .",
+      "english": "The paper did not hold only complaints: one confirmed warehousing; another asked to retie broken sacks next time, since grain scattered into stone gaps swept up with sand.",
+      "hanzi": "纸上不是一片抱怨，有一份写已经入仓，有一份问下回能不能把破袋另扎，因为散粮落到石缝里，扫了也有沙。",
+      "alignment": [
         {
-          "english": "receipts",
+          "english": "paper",
           "target": "zhǐ",
           "hanzi": "纸",
           "category": "noun",
@@ -3847,7 +3952,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "receipts",
+          "english": "paper",
           "target": "shàng",
           "hanzi": "上",
           "category": "function_word",
@@ -3863,7 +3968,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "all",
+          "english": "only",
           "target": "yí",
           "hanzi": "一",
           "category": "measure_word",
@@ -3871,7 +3976,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "all",
+          "english": "only",
           "target": "piàn",
           "hanzi": "片",
           "category": "measure_word",
@@ -4093,7 +4198,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi jiāng tā tóng xiānhuò wùdiǎn de dānzi bìng páifàng hǎo , shuí dōu bùnéng tì shuí gàizhù .",
+      "english": "Tavi laid them beside the produce delay sheet, neither covering the other.",
+      "hanzi": "塔维将它同鲜货误点的单子并排放好，谁都不能替谁盖住。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4225,9 +4337,9 @@
       ]
     },
     {
-      "target": "tā qù hái jìlùbǎn , jiàn dù chéng zuòzài ménkǎn shàng bāo yìgēn càigěng . lǐngbān táitóu , shuō fànpù zhǔ le , méi mēn wèi , jiào tā qù chī . tǎ wéi wèn shìbushì liǎngbǎ dōu mǎixià le , dù chéng shuō mǎixià le , zìjǐ ài chī yě bú dàibiǎo biérén bùnéng suàn sǔnshī . tā jiāng gěng zhé chéng liǎngduàn , diū jìn tǒng lǐ , shǒushàng zhān zhe yìdiǎn qīng zhī .",
-      "english": "Returning the board, he found Du Cheng peeling a vegetable stem on the threshold. The foreman looked up: the eatery had cooked it, no mustiness; go eat. Tavi asked if he had bought both bunches. Yes, Du Cheng said: liking them himself didn't mean others couldn't count their losses. He snapped the stem in two and dropped it in a bucket, a little green juice on his hands.",
-      "hanzi": "他去还记录板，见杜澄坐在门槛上剥一根菜梗。领班抬头，说饭铺煮了，没闷味，叫他去吃。塔维问是不是两把都买下了，杜澄说买下了，自己爱吃也不代表别人不能算损失。他将梗折成两段，丢进桶里，手上沾着一点青汁。\n",
+      "target": "tā qù hái jìlùbǎn , jiàn dù chéng zuòzài ménkǎn shàng bāo yìgēn càigěng .",
+      "english": "Returning the board, he found Du Cheng peeling a vegetable stem on the threshold.",
+      "hanzi": "他去还记录板，见杜澄坐在门槛上剥一根菜梗。",
       "alignment": [
         {
           "english": "he",
@@ -4340,7 +4452,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lǐngbān táitóu , shuō fànpù zhǔ le , méi mēn wèi , jiào tā qù chī .",
+      "english": "The foreman looked up: the eatery had cooked it, no mustiness; go eat.",
+      "hanzi": "领班抬头，说饭铺煮了，没闷味，叫他去吃。",
+      "alignment": [
         {
           "english": "foreman",
           "target": "lǐngbān",
@@ -4436,7 +4555,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi wèn shìbushì liǎngbǎ dōu mǎixià le , dù chéng shuō mǎixià le , zìjǐ ài chī yě bú dàibiǎo biérén bùnéng suàn sǔnshī .",
+      "english": "Tavi asked if he had bought both bunches. Yes, Du Cheng said: liking them himself didn't mean others couldn't count their losses.",
+      "hanzi": "塔维问是不是两把都买下了，杜澄说买下了，自己爱吃也不代表别人不能算损失。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4596,7 +4722,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng gěng zhé chéng liǎngduàn , diū jìn tǒng lǐ , shǒushàng zhān zhe yìdiǎn qīng zhī .",
+      "english": "He snapped the stem in two and dropped it in a bucket, a little green juice on his hands.",
+      "hanzi": "他将梗折成两段，丢进桶里，手上沾着一点青汁。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",

@@ -120,3 +120,12 @@ export function chunkPinyinFromPair(pairHanzi, chunkHanzi, map) {
 export function hasHan(text) {
   return HAN_CHAR.test(String(text || ""));
 }
+
+/**
+ * Segment a string into words using the SHARED jieba instance (same dictionary
+ * romanization uses). Exposed so the frequency module can band words without
+ * loading a second 5 MB copy of the dict.
+ */
+export function segment(text) {
+  return jieba.cut(String(text || ""));
+}

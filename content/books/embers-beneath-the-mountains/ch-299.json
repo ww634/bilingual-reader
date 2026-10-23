@@ -2,7 +2,7 @@
   "id": "ch-299",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "dòngshēn yǐqián xiān wèn shénme",
     "english": "What to Ask Before Leaving",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "cìrì tǎ wéi péi nài lěi qù mǎi bǔ bāo de xiàn . tā búyào pù lǐ pèi hǎo de liàngsè , tiāo yíshù tóng jiù pí biān chàbùduō àn de , jiào lǎobǎn jiǎnduǎn , zìjǐ nádào guāng xià shì guò cái shōu . tǎ wéi zhàn zài pángbiān , yílù zǎnzhe dehuà hūrán xiǎnde bùgāi jiá zài wèn xiàn jià zhījiān , què yě bùxiǎng zài děngdào tā bēibāo yào zǒu cái shuō .",
-      "english": "Next day Tavi accompanied Nerai to buy thread for her bag. Rejecting the shop's bright matched colors, she chose dark thread like the old leather edge, had it cut short, tested it in light before accepting it. His stored-up question seemed ill-placed among prices, yet he didn't want to wait until her departure again.",
-      "hanzi": "次日塔维陪奈蕾去买补包的线。她不要铺里配好的亮色，挑一束同旧皮边差不多暗的，叫老板剪短，自己拿到光下试过才收。塔维站在旁边，一路攒着的话忽然显得不该夹在问线价之间，却也不想再等到她背包要走才说。\n",
+      "target": "cìrì tǎ wéi péi nài lěi qù mǎi bǔ bāo de xiàn .",
+      "english": "Next day Tavi accompanied Nerai to buy thread for her bag.",
+      "hanzi": "次日塔维陪奈蕾去买补包的线。",
       "alignment": [
         {
           "english": "Next day",
@@ -85,7 +85,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā búyào pù lǐ pèi hǎo de liàngsè , tiāo yíshù tóng jiù pí biān chàbùduō àn de , jiào lǎobǎn jiǎnduǎn , zìjǐ nádào guāng xià shì guò cái shōu .",
+      "english": "Rejecting the shop's bright matched colors, she chose dark thread like the old leather edge, had it cut short, tested it in light before accepting it.",
+      "hanzi": "她不要铺里配好的亮色，挑一束同旧皮边差不多暗的，叫老板剪短，自己拿到光下试过才收。",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -277,7 +284,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi zhàn zài pángbiān , yílù zǎnzhe dehuà hūrán xiǎnde bùgāi jiá zài wèn xiàn jià zhījiān , què yě bùxiǎng zài děngdào tā bēibāo yào zǒu cái shuō .",
+      "english": "His stored-up question seemed ill-placed among prices, yet he didn't want to wait until her departure again.",
+      "hanzi": "塔维站在旁边，一路攒着的话忽然显得不该夹在问线价之间，却也不想再等到她背包要走才说。\n",
+      "alignment": [
         {
           "english": "His",
           "target": "tǎ wéi",
@@ -497,9 +511,9 @@
       ]
     },
     {
-      "target": "chū le pù , tā wèn ruò yǐhòu zhēn xiǎng suí tā qù gèng yuǎn de dìfāng , zìjǐ yǎnxià gāi xué shénme . nài lěi méi xiān wèn tā yǒu duō xiǎng , fǎnwèn tā xiǎng zuò nǎ yíbùfen de huó . tā dá dé tài kuài , shuō huàtú , jiēzhuó xiǎngqǐ tā zhuōshàng nà liǎngzhāng bùtóng niánfèn de shuǐ tú , yòu bǔ , bù zhǐshì bǎ kànjiàn de miáo xiàlái .",
-      "english": "Outside he asked what he should learn now if he genuinely wanted to travel farther with her someday. Rather than how much he wanted it, she asked which work he meant. Mapping, he answered too quickly, then remembered two water maps of different years: not just tracing what he saw.",
-      "hanzi": "出了铺，他问若以后真想随她去更远的地方，自己眼下该学什么。奈蕾没先问他有多想，反问他想做哪一部分的活。他答得太快，说画图，接着想起她桌上那两张不同年份的水图，又补，不只是把看见的描下来。\n",
+      "target": "chū le pù , tā wèn ruò yǐhòu zhēn xiǎng suí tā qù gèng yuǎn de dìfāng , zìjǐ yǎnxià gāi xué shénme .",
+      "english": "Outside he asked what he should learn now if he genuinely wanted to travel farther with her someday.",
+      "hanzi": "出了铺，他问若以后真想随她去更远的地方，自己眼下该学什么。",
       "alignment": [
         {
           "english": "Outside",
@@ -652,7 +666,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi méi xiān wèn tā yǒu duō xiǎng , fǎnwèn tā xiǎng zuò nǎ yíbùfen de huó .",
+      "english": "Rather than how much he wanted it, she asked which work he meant.",
+      "hanzi": "奈蕾没先问他有多想，反问他想做哪一部分的活。",
+      "alignment": [
         {
           "english": "she",
           "target": "nài lěi",
@@ -780,7 +801,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā dá dé tài kuài , shuō huàtú , jiēzhuó xiǎngqǐ tā zhuōshàng nà liǎngzhāng bùtóng niánfèn de shuǐ tú , yòu bǔ , bù zhǐshì bǎ kànjiàn de miáo xiàlái .",
+      "english": "Mapping, he answered too quickly, then remembered two water maps of different years: not just tracing what he saw.",
+      "hanzi": "他答得太快，说画图，接着想起她桌上那两张不同年份的水图，又补，不只是把看见的描下来。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -992,12 +1020,12 @@
       ]
     },
     {
-      "target": "jiēkǒu yǒurén xiè cháng zhú , nài lěi lā tā tíng zài ménzhù biān , děng zhú wěi zhuǎnguò qù , cái jìxù zǒu . tā shuō huì huà shì qízhōng yíjiàn , huì wèn yě shì ; dào le bú rènshi de rén jiāménkǒu , néng bunéng fēnqīng duìfāng shì zài dá tā de wèn , háishì zhī xiǎng ràng mòshēngrén gǎnjǐn zǒukāi , yě shì huó . tā hái dé zhīdào zìjǐ yírì néng zǒu dào nǎlǐ , yǔ lǐ ná shénme liú jìlù , búkào pángrén cāi chū tā tuǐ yǐ fāsuān .",
-      "english": "A long bamboo delivery made Nerai pull him beside a post until the trailing end had turned. Mapping and asking were parts of it, she said. At a stranger's door, distinguish a real answer from wanting strangers gone. Know a day's walking range and how to record in rain, not depend on others to guess his aching legs.",
-      "hanzi": "街口有人卸长竹，奈蕾拉他停在门柱边，等竹尾转过去，才继续走。她说会画是其中一件，会问也是；到了不认识的人家门口，能不能分清对方是在答他的问，还是只想让陌生人赶紧走开，也是活。他还得知道自己一日能走到哪里，雨里拿什么留记录，不靠旁人猜出他腿已发酸。\n",
+      "target": "jiēkǒu yǒurén xiè cháng zhú , nài lěi lā tā tíng zài ménzhù biān , děng zhú wěi zhuǎnguò qù , cái jìxù zǒu .",
+      "english": "Someone was unloading long bamboo at the street corner. Nerai pulled him beside a post until the trailing end had turned, before they continued walking.",
+      "hanzi": "街口有人卸长竹，奈蕾拉他停在门柱边，等竹尾转过去，才继续走。",
       "alignment": [
         {
-          "english": "delivery",
+          "english": "street corner",
           "target": "jiēkǒu",
           "hanzi": "街口",
           "category": "noun",
@@ -1005,7 +1033,7 @@
           "frequency_band": "rare"
         },
         {
-          "english": "delivery",
+          "english": "Someone",
           "target": "yǒurén",
           "hanzi": "有人",
           "category": "noun",
@@ -1013,7 +1041,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "delivery",
+          "english": "unloading",
           "target": "xiè",
           "hanzi": "卸",
           "category": "verb",
@@ -1117,7 +1145,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "said",
+          "english": "continued",
           "target": "jìxù",
           "hanzi": "继续",
           "category": "verb",
@@ -1125,13 +1153,20 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "said",
+          "english": "walking",
           "target": "zǒu",
           "hanzi": "走",
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuō huì huà shì qízhōng yíjiàn , huì wèn yě shì ; dào le bú rènshi de rén jiāménkǒu , néng bunéng fēnqīng duìfāng shì zài dá tā de wèn , háishì zhī xiǎng ràng mòshēngrén gǎnjǐn zǒukāi , yě shì huó .",
+      "english": "Mapping and asking were parts of it, she said. At a stranger's door, distinguish a real answer to his question from wanting strangers gone.",
+      "hanzi": "她说会画是其中一件，会问也是；到了不认识的人家门口，能不能分清对方是在答他的问，还是只想让陌生人赶紧走开，也是活。",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -1395,7 +1430,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā hái dé zhīdào zìjǐ yírì néng zǒu dào nǎlǐ , yǔ lǐ ná shénme liú jìlù , búkào pángrén cāi chū tā tuǐ yǐ fāsuān .",
+      "english": "Know a day's walking range and how to record in rain, not depend on others to guess his aching legs.",
+      "hanzi": "他还得知道自己一日能走到哪里，雨里拿什么留记录，不靠旁人猜出他腿已发酸。\n",
+      "alignment": [
         {
           "english": "his",
           "target": "tā",
@@ -1559,9 +1601,9 @@
       ]
     },
     {
-      "target": "tǎ wéi tīng dé yǒudiǎn jí , wèn jiè xìng ne . nài lěi huítóu kàn tā , shuō dāngrán yào xué , kěbúshì bǎ yìshuāng huì jiè de shǒu dài qù , lù biàn qiàn tā yígè néng zuò de dìfāng . zài shí tīng nàhuìer , tā bìng méiyǒu shì guòrè ; wǎnghòu ruò yùjiàn bùmíng yòngtú de jiù tiě , yě bùnéng yīn jiàn guò shígōu , jiù dāng zìjǐ zhīdào tā xiānglián dào nǎér . wǎnghòu yě búhuì xiān dāying , zài zhǐwàng dàoshíhòu zǒngnéng xiǎng chū bànfǎ .",
-      "english": "Impatient, Tavi asked about borrowing. Of course learn it, Nerai said, but skilled hands didn't make a route owe him somewhere to use them. He hadn't practiced thermal work in Shiting; unknown old iron ahead wouldn't become understood connections because he'd seen a stone drain. She wouldn't promise first and rely on finding a solution later.",
-      "hanzi": "塔维听得有点急，问借性呢。奈蕾回头看他，说当然要学，可不是把一双会借的手带去，路便欠他一个能做的地方。在石汀那会儿，他并没有试过热；往后若遇见不明用途的旧铁，也不能因见过石沟，就当自己知道它相连到哪儿。往后也不会先答应，再指望到时候总能想出办法。\n",
+      "target": "tǎ wéi tīng dé yǒudiǎn jí , wèn jiè xìng ne .",
+      "english": "Impatient, Tavi asked about borrowing.",
+      "hanzi": "塔维听得有点急，问借性呢。",
       "alignment": [
         {
           "english": "Tavi",
@@ -1626,7 +1668,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi huítóu kàn tā , shuō dāngrán yào xué , kěbúshì bǎ yìshuāng huì jiè de shǒu dài qù , lù biàn qiàn tā yígè néng zuò de dìfāng .",
+      "english": "Of course learn it, Nerai said, but skilled hands didn't make a route owe him somewhere to use them.",
+      "hanzi": "奈蕾回头看他，说当然要学，可不是把一双会借的手带去，路便欠他一个能做的地方。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -1842,7 +1891,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zài shí tīng nàhuìer , tā bìng méiyǒu shì guòrè ; wǎnghòu ruò yùjiàn bùmíng yòngtú de jiù tiě , yě bùnéng yīn jiàn guò shígōu , jiù dāng zìjǐ zhīdào tā xiānglián dào nǎér .",
+      "english": "He hadn't practiced thermal work in Shiting; unknown old iron ahead wouldn't become understood connections because he'd seen a stone drain.",
+      "hanzi": "在石汀那会儿，他并没有试过热；往后若遇见不明用途的旧铁，也不能因见过石沟，就当自己知道它相连到哪儿。",
+      "alignment": [
         {
           "english": "in",
           "target": "zài",
@@ -2058,7 +2114,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wǎnghòu yě búhuì xiān dāying , zài zhǐwàng dàoshíhòu zǒngnéng xiǎng chū bànfǎ .",
+      "english": "She wouldn't promise first and rely on finding a solution later.",
+      "hanzi": "往后也不会先答应，再指望到时候总能想出办法。\n",
+      "alignment": [
         {
           "english": "later",
           "target": "wǎnghòu",
@@ -2158,9 +2221,9 @@
       ]
     },
     {
-      "target": "tā dītóu kàn zìjǐ shǒushàng tí de xiàn bāo , guò le yíhuìer cái shuō , zìjǐ pà yì jiǎng zhèxiē , lǎoshī biàn zhī tīng chéng xiǎng shǎo shàng jǐtiān kè . nài lěi shuō nà jiù jiǎng tā jiūjìng yào xué nǎ jiàn shì , búbì xiān bǎ \" yào zǒu \" liǎnggè zì bǎi dào zuì qián . tā kěyǐ tóng lǎoshī shuō zìjǐ shíjì zuò shénme , bùnéng tì tāmen dá tā yǎnxià yǐjīng huì shénme .",
-      "english": "After looking at the thread parcel he carried, Tavi said he feared teachers would hear only a wish to miss classes. Then say exactly what he wanted to learn, Nerai answered, without putting “leave” first. She could explain her actual work, not answer for teachers what he could already do.",
-      "hanzi": "他低头看自己手上提的线包，过了一会儿才说，自己怕一讲这些，老师便只听成想少上几天课。奈蕾说那就讲他究竟要学哪件事，不必先把“要走”两个字摆到最前。她可以同老师说自己实际做什么，不能替他们答他眼下已经会什么。\n",
+      "target": "tā dītóu kàn zìjǐ shǒushàng tí de xiàn bāo , guò le yíhuìer cái shuō , zìjǐ pà yì jiǎng zhèxiē , lǎoshī biàn zhī tīng chéng xiǎng shǎo shàng jǐtiān kè .",
+      "english": "After looking at the thread parcel he carried, Tavi said he feared teachers would hear only a wish to miss classes.",
+      "hanzi": "他低头看自己手上提的线包，过了一会儿才说，自己怕一讲这些，老师便只听成想少上几天课。",
       "alignment": [
         {
           "english": "he",
@@ -2385,7 +2448,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi shuō nà jiù jiǎng tā jiūjìng yào xué nǎ jiàn shì , búbì xiān bǎ \" yào zǒu \" liǎnggè zì bǎi dào zuì qián .",
+      "english": "Then say exactly what he wanted to learn, Nerai answered, without putting “leave” first.",
+      "hanzi": "奈蕾说那就讲他究竟要学哪件事，不必先把“要走”两个字摆到最前。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -2561,7 +2631,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā kěyǐ tóng lǎoshī shuō zìjǐ shíjì zuò shénme , bùnéng tì tāmen dá tā yǎnxià yǐjīng huì shénme .",
+      "english": "She could explain her actual work, not answer for teachers what he could already do.",
+      "hanzi": "她可以同老师说自己实际做什么，不能替他们答他眼下已经会什么。\n",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -2709,9 +2786,9 @@
       ]
     },
     {
-      "target": "liǎng rén zǒu dào pō shàng , chénglǐ de wūdǐng yìcéngcéng lùchū lái . tǎ wéi xiàngxià wàng , hūrán xiǎngqǐ chì píng lǎorén nà jù bǎ liáng bān dào tiānshàng . zìjǐ xiǎoshíhòu wàng zhè zuò chéng , zhī juéde gāochù yàngyàng dōu jìn ; rújīn zhàn zài gāochù , què néng xiǎngjiàn lìng yígè rén cóng píngdì wàng guòlái , juéde tāmen zhèng fèilì jiāng suǒyǒu dōngxī bān xiàng yuǎnchù .",
-      "english": "As they walked uphill the city's roofs opened in layers. Looking down, Tavi recalled the Red Flats elder's grain carried into sky. As a child the high city had made everything seem near; from here he imagined someone on flat land seeing all their effort carrying everything farther away.",
-      "hanzi": "两人走到坡上，城里的屋顶一层层露出来。塔维向下望，忽然想起赤坪老人那句把粮搬到天上。自己小时候望这座城，只觉得高处样样都近；如今站在高处，却能想见另一个人从平地望过来，觉得他们正费力将所有东西搬向远处。\n",
+      "target": "liǎng rén zǒu dào pō shàng , chénglǐ de wūdǐng yìcéngcéng lùchū lái .",
+      "english": "As they walked uphill the city's roofs opened in layers.",
+      "hanzi": "两人走到坡上，城里的屋顶一层层露出来。",
       "alignment": [
         {
           "english": "they",
@@ -2784,7 +2861,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi xiàngxià wàng , hūrán xiǎngqǐ chì píng lǎorén nà jù bǎ liáng bān dào tiānshàng .",
+      "english": "Looking down, Tavi recalled the Red Flats elder's grain carried into sky.",
+      "hanzi": "塔维向下望，忽然想起赤坪老人那句把粮搬到天上。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -2888,7 +2972,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zìjǐ xiǎoshíhòu wàng zhè zuò chéng , zhī juéde gāochù yàngyàng dōu jìn ; rújīn zhàn zài gāochù , què néng xiǎngjiàn lìng yígè rén cóng píngdì wàng guòlái , juéde tāmen zhèng fèilì jiāng suǒyǒu dōngxī bān xiàng yuǎnchù .",
+      "english": "As a child the high city had made everything seem near; from here he imagined someone on flat land seeing all their effort carrying everything farther away.",
+      "hanzi": "自己小时候望这座城，只觉得高处样样都近；如今站在高处，却能想见另一个人从平地望过来，觉得他们正费力将所有东西搬向远处。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "zìjǐ",
@@ -3164,9 +3255,9 @@
       ]
     },
     {
-      "target": "tā jiāng zhèhuà shuō gěi nài lěi tīng , tā méiyǒu jiēzhe jiǎng shānlǐrén wéihé yídìng yào zhù zhèlǐ . tā zhǐ le zhǐ gèng dī de yìcéng lù , shuō yǒurén hái huì wèn , jìrán shàngmiàn zhème hǎo , wèihé zìjǐ de chē zǒngděi tíng zài nà yìcéng . tāmen kàn le piànkè , qià yǒu yíliàng kōngchē cóng wān hòu chūlái , chēshàng rén pī zhe jiù suōyī , wǎng shàng wàng le yìyǎn , méi kànjiàn zhàn zài gāochù de liǎng rén .",
-      "english": "Tavi told Nerai this. Nerai didn't turn this into an explanation of why everyone must live in mountains. Pointing lower, she said someone might ask why, if above was so good, their carts always stopped on that level. An empty cart emerged after a while, its driver in an old rain cape looking up without seeing the two people above.",
-      "hanzi": "他将这话说给奈蕾听，她没有接着讲山里人为何一定要住这里。她指了指更低的一层路，说有人还会问，既然上面这么好，为何自己的车总得停在那一层。他们看了片刻，恰有一辆空车从弯后出来，车上人披着旧蓑衣，往上望了一眼，没看见站在高处的两人。\n",
+      "target": "tā jiāng zhèhuà shuō gěi nài lěi tīng , tā méiyǒu jiēzhe jiǎng shānlǐrén wéihé yídìng yào zhù zhèlǐ .",
+      "english": "Tavi told Nerai this. Nerai didn't turn this into an explanation of why everyone must live in mountains.",
+      "hanzi": "他将这话说给奈蕾听，她没有接着讲山里人为何一定要住这里。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3303,7 +3394,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zhǐ le zhǐ gèng dī de yìcéng lù , shuō yǒurén hái huì wèn , jìrán shàngmiàn zhème hǎo , wèihé zìjǐ de chē zǒngděi tíng zài nà yìcéng .",
+      "english": "Pointing lower, she said someone might ask why, if above was so good, their carts always stopped on that level.",
+      "hanzi": "她指了指更低的一层路，说有人还会问，既然上面这么好，为何自己的车总得停在那一层。",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -3519,7 +3617,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tāmen kàn le piànkè , qià yǒu yíliàng kōngchē cóng wān hòu chūlái , chēshàng rén pī zhe jiù suōyī , wǎng shàng wàng le yìyǎn , méi kànjiàn zhàn zài gāochù de liǎng rén .",
+      "english": "An empty cart emerged after a while, its driver in an old rain cape looking up without seeing the two people above.",
+      "hanzi": "他们看了片刻，恰有一辆空车从弯后出来，车上人披着旧蓑衣，往上望了一眼，没看见站在高处的两人。\n",
+      "alignment": [
         {
           "english": "people",
           "target": "tāmen",
@@ -3763,9 +3868,9 @@
       ]
     },
     {
-      "target": "tǎ wéi yòu tí chí ān nà fēngxìn , shuō zìjǐ yídù juéde ruò qù sōng dī , biàn gāi néng jiāng zhǐ shàng jǐgè rén dōu wèn chéng zhēn . nài lěi wèn tā shìbushì chí ān qǐng tā qù . tā yáotóu , shuō duìfāng zhī wèn mùwū zěnyàng fú zhe , zìjǐ yǐ huà le xiǎo tú huíqù . tā diǎntóu , shuō nà yě shì yìfēng kěyǐ jìxù xiě de xìn , búyòng měi huí dōu bī tā kāichū yìtiáo lù .",
-      "english": "Tavi mentioned Chi An's letter, once thinking Songdi could make all its people real. Had Chi An invited him? He shook his head: only asked how houses floated; he'd sent a sketch. Nerai nodded: that was still a letter he could keep writing, not force it to open a road every time.",
-      "hanzi": "塔维又提迟安那封信，说自己一度觉得若去松堤，便该能将纸上几个人都问成真。奈蕾问他是不是迟安请他去。他摇头，说对方只问木屋怎样浮着，自己已画了小图回去。她点头，说那也是一封可以继续写的信，不用每回都逼它开出一条路。\n",
+      "target": "tǎ wéi yòu tí chí ān nà fēngxìn , shuō zìjǐ yídù juéde ruò qù sōng dī , biàn gāi néng jiāng zhǐ shàng jǐgè rén dōu wèn chéng zhēn .",
+      "english": "Tavi mentioned Chi An's letter, saying he had once thought a visit to Songdi could make all its people real.",
+      "hanzi": "塔维又提迟安那封信，说自己一度觉得若去松堤，便该能将纸上几个人都问成真。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3824,7 +3929,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "thinking",
+          "english": "saying",
           "target": "shuō",
           "hanzi": "说",
           "category": "verb",
@@ -3848,7 +3953,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "thinking",
+          "english": "thought",
           "target": "juéde",
           "hanzi": "觉得",
           "category": "verb",
@@ -3974,7 +4079,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi wèn tā shìbushì chí ān qǐng tā qù .",
+      "english": "Nerai asked: had Chi An invited him?",
+      "hanzi": "奈蕾问他是不是迟安请他去。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -4038,7 +4150,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yáotóu , shuō duìfāng zhī wèn mùwū zěnyàng fú zhe , zìjǐ yǐ huà le xiǎo tú huíqù .",
+      "english": "He shook his head: Chi An had only asked how houses floated; he had sent a sketch back.",
+      "hanzi": "他摇头，说对方只问木屋怎样浮着，自己已画了小图回去。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -4166,7 +4285,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā diǎntóu , shuō nà yě shì yìfēng kěyǐ jìxù xiě de xìn , búyòng měi huí dōu bī tā kāichū yìtiáo lù .",
+      "english": "Nerai nodded: that was still a letter he could keep writing, not force it to open a road every time.",
+      "hanzi": "她点头，说那也是一封可以继续写的信，不用每回都逼它开出一条路。\n",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "tā",
@@ -4338,9 +4464,9 @@
       ]
     },
     {
-      "target": "tā méiyǒu yīncǐ bùxiǎng zhīdào fú lán hòulái qù le nǎlǐ , zhǐshì xiǎngqǐ sè lā zhēnxiànhé lǐ de nàxiē zhǐ , réng yuànyì jiāng tāmen gèzì fàng hǎo . tā wèn ruò wǎnghòu zhēn yǒu yícì xūyào zǒu yuǎn , shìbushì gāi xiān gàosù jiālǐ . nài lěi shuō dāngrán , jiǎngqīng rìqī , qùchù hé shuí néng chuánhuà , bié ná yìzhāng zìjǐ yě kàn bù quán de tú , zhī ràng sè lā tì tā kàn hǎokàn .",
-      "english": "He still wanted to know Fulan's later fate, but thought of Sela's sewing-box papers and would keep them separately. Should he tell home first if he really traveled far one day? Of course, Nerai said: dates, destinations and a contact, not an incomplete map left for Sela merely to admire.",
-      "hanzi": "他没有因此不想知道芙兰后来去了哪里，只是想起瑟拉针线盒里的那些纸，仍愿意将它们各自放好。他问若往后真有一次需要走远，是不是该先告诉家里。奈蕾说当然，讲清日期、去处和谁能传话，别拿一张自己也看不全的图，只让瑟拉替他看好看。\n",
+      "target": "tā méiyǒu yīncǐ bùxiǎng zhīdào fú lán hòulái qù le nǎlǐ , zhǐshì xiǎngqǐ sè lā zhēnxiànhé lǐ de nàxiē zhǐ , réng yuànyì jiāng tāmen gèzì fàng hǎo .",
+      "english": "He still wanted to know Fulan's later fate, but thought of Sela's sewing-box papers and would keep them separately.",
+      "hanzi": "他没有因此不想知道芙兰后来去了哪里，只是想起瑟拉针线盒里的那些纸，仍愿意将它们各自放好。",
       "alignment": [
         {
           "english": "He",
@@ -4533,7 +4659,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā wèn ruò wǎnghòu zhēn yǒu yícì xūyào zǒu yuǎn , shìbushì gāi xiān gàosù jiālǐ .",
+      "english": "Should he tell home first if he really traveled far one day?",
+      "hanzi": "他问若往后真有一次需要走远，是不是该先告诉家里。",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -4645,7 +4778,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi shuō dāngrán , jiǎngqīng rìqī , qùchù hé shuí néng chuánhuà , bié ná yìzhāng zìjǐ yě kàn bù quán de tú , zhī ràng sè lā tì tā kàn hǎokàn .",
+      "english": "Of course, Nerai said: dates, destinations and a contact, not an incomplete map left for Sela merely to admire for him.",
+      "hanzi": "奈蕾说当然，讲清日期、去处和谁能传话，别拿一张自己也看不全的图，只让瑟拉替他看好看。\n",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -4831,7 +4971,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "he",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -4849,9 +4989,9 @@
       ]
     },
     {
-      "target": "xiàpō shí , tǎ wéi yǐ jiāng xiǎng wèn lǎoshī de shì xiěchéng sānháng : wàilù jìlù zěnyàng liú , zìjǐ néng jiē nǎ yíduàn , jiè xìng liànxí hái quēshénme . nài lěi kàn wán , tiān le dìsìháng , ruò zuìhòu nà yíduàn zǒu bùchéng , zěnyàng jiào děng xìn de rén zhīdào . tā jiāng zhǐ zhé qǐ , méi jiāng zhè sìháng dàngchéng shuí yǐjīng dāying dài tā dòngshēn .",
-      "english": "Downhill Tavi wrote three questions for teachers: how to keep outside-route records, which part he could take on, what his borrowing practice still lacked. Nerai added a fourth: if the final leg failed, how would those awaiting letters know? He folded them without treating four lines as an agreement to take him away.",
-      "hanzi": "下坡时，塔维已将想问老师的事写成三行：外路记录怎样留，自己能接哪一段，借性练习还缺什么。奈蕾看完，添了第四行，若最后那一段走不成，怎样叫等信的人知道。他将纸折起，没将这四行当成谁已经答应带他动身。\n",
+      "target": "xiàpō shí , tǎ wéi yǐ jiāng xiǎng wèn lǎoshī de shì xiěchéng sānháng : wàilù jìlù zěnyàng liú , zìjǐ néng jiē nǎ yíduàn , jiè xìng liànxí hái quēshénme .",
+      "english": "Downhill Tavi wrote three questions for teachers: how to keep outside-route records, which part he could take on, what his borrowing practice still lacked.",
+      "hanzi": "下坡时，塔维已将想问老师的事写成三行：外路记录怎样留，自己能接哪一段，借性练习还缺什么。",
       "alignment": [
         {
           "english": "Downhill",
@@ -5068,7 +5208,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi kàn wán , tiān le dìsìháng , ruò zuìhòu nà yíduàn zǒu bùchéng , zěnyàng jiào děng xìn de rén zhīdào .",
+      "english": "Nerai added a fourth: if the final leg failed, how would those awaiting letters know?",
+      "hanzi": "奈蕾看完，添了第四行，若最后那一段走不成，怎样叫等信的人知道。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -5212,7 +5359,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng zhǐ zhé qǐ , méi jiāng zhè sìháng dàngchéng shuí yǐjīng dāying dài tā dòngshēn .",
+      "english": "He folded them without treating four lines as an agreement to take him away.",
+      "hanzi": "他将纸折起，没将这四行当成谁已经答应带他动身。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -5344,9 +5498,9 @@
       ]
     },
     {
-      "target": "huídào xuégōng ménkǒu , nài lěi wǎng chéngzhōng zhùchù qù , tā zhuǎn jìn láng lǐ , xiān zhǎo cìrì néng jiàn lǎoshī de shíchén . pà wò cóng hòutou jiàozhù tā , wèn nà bāo xiàn nándào yě yào ná qù jiāo zuòyè . tā dītóu , cái fājué zìjǐ yílù tì nài lěi tídào zhèlǐ , gǎnjǐn zhuī chūmén qù , fāngcái xiǎng dé zài yuǎn , yǎnqián zhè yíjiàn háishì dé xiān háigěi rén .",
-      "english": "At the academy gate Nerai turned toward her city lodging; he entered the corridor to find tomorrow's teacher appointment time. Pavo called behind: was that parcel of thread homework too? Looking down, Tavi realized he'd carried it all the way, and ran back to return it. However far his thoughts went, this thing in front of him still had to go back first.",
-      "hanzi": "回到学宫门口，奈蕾往城中住处去，他转进廊里，先找次日能见老师的时辰。帕沃从后头叫住他，问那包线难道也要拿去交作业。他低头，才发觉自己一路替奈蕾提到这里，赶紧追出门去，方才想得再远，眼前这一件还是得先还给人。\n",
+      "target": "huídào xuégōng ménkǒu , nài lěi wǎng chéngzhōng zhùchù qù , tā zhuǎn jìn láng lǐ , xiān zhǎo cìrì néng jiàn lǎoshī de shíchén .",
+      "english": "At the academy gate Nerai turned toward her city lodging; he entered the corridor to find tomorrow's teacher appointment time.",
+      "hanzi": "回到学宫门口，奈蕾往城中住处去，他转进廊里，先找次日能见老师的时辰。",
       "alignment": [
         {
           "english": "At",
@@ -5499,7 +5653,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "pà wò cóng hòutou jiàozhù tā , wèn nà bāo xiàn nándào yě yào ná qù jiāo zuòyè .",
+      "english": "Pavo called to him from behind: was that parcel of thread homework too?",
+      "hanzi": "帕沃从后头叫住他，问那包线难道也要拿去交作业。",
+      "alignment": [
         {
           "english": "Pavo",
           "target": "pà wò",
@@ -5533,7 +5694,7 @@
           "frequency_band": "rare"
         },
         {
-          "english": "he",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -5611,7 +5772,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā dītóu , cái fājué zìjǐ yílù tì nài lěi tídào zhèlǐ , gǎnjǐn zhuī chūmén qù , fāngcái xiǎng dé zài yuǎn , yǎnqián zhè yíjiàn háishì dé xiān háigěi rén .",
+      "english": "Looking down, Tavi realized he'd carried it for Nerai all the way, and ran back to return it. However far his thoughts went, this thing in front of him still had to go back first.",
+      "hanzi": "他低头，才发觉自己一路替奈蕾提到这里，赶紧追出门去，方才想得再远，眼前这一件还是得先还给人。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tā",
@@ -5669,7 +5837,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "her",
+          "english": "Nerai",
           "target": "nài lěi",
           "hanzi": "奈蕾",
           "category": "proper_noun",

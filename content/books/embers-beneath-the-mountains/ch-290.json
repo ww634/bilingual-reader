@@ -2,7 +2,7 @@
   "id": "ch-290",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "yǔ méiyǒu gàosù tāmen de shì",
     "english": "What the Rain Has Not Shown",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "nài lěi de xìn dào shí , tǎ wéi zhèng tóng yìgēn huà huài de jiàntóu jiàojìn . yīwén qù jiè xì bǐ , mǐlā zài lìngyìtóu ná zhǐ shì cóng cèmiàn néng kànjiàn duō dà de zì , xìn biàn cóng ménwài zhuàndào tā shǒulǐ . tā rènchū zì , xiān méi chāi , pà zìjǐ yìkāi biàn gùbúshàng zhè yìzhuō .",
-      "english": "Nerai's letter arrived while Tavi struggled with a badly drawn arrow. Iven had gone to borrow a fine pen, Mira was testing side-view lettering at the table's other end, and the letter came through the door. Recognizing the hand, he waited to open it, fearing the whole table would leave his attention.",
-      "hanzi": "奈蕾的信到时，塔维正同一根画坏的箭头较劲。伊文去借细笔，米拉在另一头拿纸试从侧面能看见多大的字，信便从门外传到他手里。他认出字，先没拆，怕自己一开便顾不上这一桌。\n",
+      "target": "nài lěi de xìn dào shí , tǎ wéi zhèng tóng yìgēn huà huài de jiàntóu jiàojìn .",
+      "english": "Nerai's letter arrived while Tavi struggled with a badly drawn arrow.",
+      "hanzi": "奈蕾的信到时，塔维正同一根画坏的箭头较劲。",
       "alignment": [
         {
           "english": "Nerai",
@@ -125,7 +125,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yīwén qù jiè xì bǐ , mǐlā zài lìngyìtóu ná zhǐ shì cóng cèmiàn néng kànjiàn duō dà de zì , xìn biàn cóng ménwài zhuàndào tā shǒulǐ .",
+      "english": "Iven had gone to borrow a fine pen, Mira was testing side-view lettering at the table's other end, and the letter came through the door.",
+      "hanzi": "伊文去借细笔，米拉在另一头拿纸试从侧面能看见多大的字，信便从门外传到他手里。",
+      "alignment": [
         {
           "english": "Iven",
           "target": "yīwén",
@@ -325,7 +332,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā rènchū zì , xiān méi chāi , pà zìjǐ yìkāi biàn gùbúshàng zhè yìzhuō .",
+      "english": "Recognizing the hand, he waited to open it, fearing the whole table would leave his attention.",
+      "hanzi": "他认出字，先没拆，怕自己一开便顾不上这一桌。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -449,9 +463,9 @@
       ]
     },
     {
-      "target": "mǐlā kànjiàn le , jiào tā dú , zìjǐ búhuì yīn tā kàn fēngxìn biàn jiāng zhěngzuò péng tuīdǎo zhònghuà . tǎ wéi bǎ bǐ gē dào bǐjià shàng , ná gānjìng de shǒu chāikāi . xìn shàng rìqī shì sì rìqián . nài lěi xiě , shí tīng de shuǐ zhōngyú tuì dào néng zǒu nàduàn dī de gāodù , tā tóng lú shí hé yíwèi běndì xiūchuán rén yǐjīng zǒuguò , méi dài bù shí lù de rén qù shì .",
-      "english": "Mira told him to read: she wouldn't knock down and redraw the whole shelter because he opened a letter. He put his pen on its rest and opened it with clean hands. Dated four days earlier, Nerai wrote that Shiting's water was finally low enough for the dyke. She, Lushi and a local boat repairer had walked it, without taking untrained strangers to test the way.",
-      "hanzi": "米拉看见了，叫他读，自己不会因他看封信便将整座棚推倒重画。塔维把笔搁到笔架上，拿干净的手拆开。信上日期是四日前。奈蕾写，石汀的水终于退到能走那段堤的高度，她同芦实和一位本地修船人已经走过，没带不识路的人去试。\n",
+      "target": "mǐlā kànjiàn le , jiào tā dú , zìjǐ búhuì yīn tā kàn fēngxìn biàn jiāng zhěngzuò péng tuīdǎo zhònghuà .",
+      "english": "Mira told him to read: she wouldn't knock down and redraw the whole shelter because he opened a letter.",
+      "hanzi": "米拉看见了，叫他读，自己不会因他看封信便将整座棚推倒重画。",
       "alignment": [
         {
           "english": "Mira",
@@ -604,7 +618,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi bǎ bǐ gē dào bǐjià shàng , ná gānjìng de shǒu chāikāi .",
+      "english": "He put his pen on its rest and opened it with clean hands.",
+      "hanzi": "塔维把笔搁到笔架上，拿干净的手拆开。",
+      "alignment": [
         {
           "english": "He",
           "target": "tǎ wéi",
@@ -692,7 +713,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "xìn shàng rìqī shì sì rìqián .",
+      "english": "The letter was dated four days earlier.",
+      "hanzi": "信上日期是四日前。",
+      "alignment": [
         {
           "english": "letter",
           "target": "xìn",
@@ -740,7 +768,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi xiě , shí tīng de shuǐ zhōngyú tuì dào néng zǒu nàduàn dī de gāodù , tā tóng lú shí hé yíwèi běndì xiūchuán rén yǐjīng zǒuguò , méi dài bù shí lù de rén qù shì .",
+      "english": "Nerai wrote that Shiting's water was finally low enough for the dyke. She, Lushi and a local boat repairer had walked it, without taking untrained strangers to test the way.",
+      "hanzi": "奈蕾写，石汀的水终于退到能走那段堤的高度，她同芦实和一位本地修船人已经走过，没带不识路的人去试。\n",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -992,9 +1027,9 @@
       ]
     },
     {
-      "target": "dī bìngfēi tú shàng yìtiáo wánzhěng de zhíxiàn . yuánlái yǐwéi néng jiēdào shí lù de dìfāng , zhōngjiān quē le liǎng xiǎo duàn , jìnchù nàduàn kě jiè yǐyǒu de gāoàn rào , yuǎnchù yídào jiù gōu què háiyào guò xiàn yòng mùbǎn ; bǎn shì dāngdìrén shōufàng de , bùnéng jiāng jīnrì fàng zhe biàn huà chéng yǒngyuǎn zài nàlǐ . tā tiān le rìqī , shuǐxiàn hé wèn shuí quèrèn , tú réng bú tì biéde jìjié dá .",
-      "english": "The dyke wasn't an unbroken straight map line. Two short sections were missing before the stone road: one could detour on existing high bank, the farther old ditch still needed a currently used plank. Locals put it down and took it away, so today's presence couldn't become forever on paper. She had added date, waterline and whom to ask; the map didn't answer for other seasons.",
-      "hanzi": "堤并非图上一条完整的直线。原来以为能接到石路的地方，中间缺了两小段，近处那段可借已有的高岸绕，远处一道旧沟却还要过现用木板；板是当地人收放的，不能将今日放着便画成永远在那里。她添了日期、水线和问谁确认，图仍不替别的季节答。\n",
+      "target": "dī bìngfēi tú shàng yìtiáo wánzhěng de zhíxiàn .",
+      "english": "The dyke wasn't an unbroken straight map line.",
+      "hanzi": "堤并非图上一条完整的直线。",
       "alignment": [
         {
           "english": "dyke",
@@ -1067,7 +1102,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yuánlái yǐwéi néng jiēdào shí lù de dìfāng , zhōngjiān quē le liǎng xiǎo duàn , jìnchù nàduàn kě jiè yǐyǒu de gāoàn rào , yuǎnchù yídào jiù gōu què háiyào guò xiàn yòng mùbǎn ; bǎn shì dāngdìrén shōufàng de , bùnéng jiāng jīnrì fàng zhe biàn huà chéng yǒngyuǎn zài nàlǐ .",
+      "english": "Two short sections were missing before the stone road: one could detour on existing high bank, the farther old ditch still needed a currently used plank. The plank was put down and taken away by locals, so today's presence couldn't become forever on paper.",
+      "hanzi": "原来以为能接到石路的地方，中间缺了两小段，近处那段可借已有的高岸绕，远处一道旧沟却还要过现用木板；板是当地人收放的，不能将今日放着便画成永远在那里。",
+      "alignment": [
         {
           "english": "before",
           "target": "yuánlái",
@@ -1341,7 +1383,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "put it down and took it away",
+          "english": "put down and taken away",
           "target": "shōufàng",
           "hanzi": "收放",
           "category": "verb",
@@ -1435,7 +1477,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā tiān le rìqī , shuǐxiàn hé wèn shuí quèrèn , tú réng bú tì biéde jìjié dá .",
+      "english": "She had added date, waterline and whom to ask; the map didn't answer for other seasons.",
+      "hanzi": "她添了日期、水线和问谁确认，图仍不替别的季节答。\n",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -1575,9 +1624,9 @@
       ]
     },
     {
-      "target": "tǎ wéi dú dào zhèlǐ , yǎnqián yòu kànjiàn shuǐshàng nà dào dīdīde shí jǐ . tā rújīn quèshí ràng rén zǒuguò le , búshì kào tā bǎ cǎotú bǔ wánzhěng cái lùchū lái . tā yǒudiǎn yíhàn méi zài nàlǐ , jiēzhe yòu juéde nà dìfāng bìngwèi yīncǐ biànchéng tā cuòguò de yíjiàn huó , ā líng hé lǎorén hái zhù zhe , shuǐ yě háiyào zhǎnghuíqù .",
-      "english": "Reading, Tavi saw the low stone spine over water again. People really had walked it now; his completing the sketch hadn't exposed it. He regretted missing it, then felt it wasn't simply a missed job: A-Ling and her grandfather still lived there, and water would rise again.",
-      "hanzi": "塔维读到这里，眼前又看见水上那道低低的石脊。它如今确实让人走过了，不是靠他把草图补完整才露出来。他有点遗憾没在那里，接着又觉得那地方并未因此变成他错过的一件活，阿绫和老人还住着，水也还要涨回去。\n",
+      "target": "tǎ wéi dú dào zhèlǐ , yǎnqián yòu kànjiàn shuǐshàng nà dào dīdīde shí jǐ .",
+      "english": "Reading, Tavi saw the low stone spine over water again.",
+      "hanzi": "塔维读到这里，眼前又看见水上那道低低的石脊。",
       "alignment": [
         {
           "english": "Tavi",
@@ -1682,7 +1731,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā rújīn quèshí ràng rén zǒuguò le , búshì kào tā bǎ cǎotú bǔ wánzhěng cái lùchū lái .",
+      "english": "People really had walked it now; his completing the sketch hadn't exposed it.",
+      "hanzi": "它如今确实让人走过了，不是靠他把草图补完整才露出来。",
+      "alignment": [
         {
           "english": "it",
           "target": "tā",
@@ -1802,7 +1858,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yǒudiǎn yíhàn méi zài nàlǐ , jiēzhe yòu juéde nà dìfāng bìngwèi yīncǐ biànchéng tā cuòguò de yíjiàn huó , ā líng hé lǎorén hái zhù zhe , shuǐ yě háiyào zhǎnghuíqù .",
+      "english": "He regretted missing it, then felt it wasn't simply his missed job: A-Ling and her grandfather still lived there, and water would rise again.",
+      "hanzi": "他有点遗憾没在那里，接着又觉得那地方并未因此变成他错过的一件活，阿绫和老人还住着，水也还要涨回去。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -2046,9 +2109,9 @@
       ]
     },
     {
-      "target": "xìn de xià yíyè xiān shuō shōudào tā hòulái chāo lái de chí ān dìèrfēng , ā nán tóng jǐchù bù kěndìng dū kànqīng . tā bú rènshi nà nǚrén , yě méi tīngjiàn yígè kěyǐ nálái jiēshàng de qùchù ; ruò wǎnghòu yù zhe quèyǒu láiwǎng de rén huì wèn , dàn bù jiāng yígè chángjiàn de xiǎomíng dàngchéng yántú jiào rén rènlǐng de zhěngtiáo xiàn .",
-      "english": "The next page acknowledged his full copy of Chi An's second letter, A-Nan and every uncertainty understood. Nerai didn't know her or a destination to connect to it. She would ask someone with real dealings if encountered, but wouldn't turn a common familiar name into a trail everyone along the road must claim.",
-      "hanzi": "信的下一页先说收到他后来抄来的迟安第二封，阿楠同几处不肯定都看清。她不认识那女人，也没听见一个可以拿来接上的去处；若往后遇着确有来往的人会问，但不将一个常见的小名当成沿途叫人认领的整条线。\n",
+      "target": "xìn de xià yíyè xiān shuō shōudào tā hòulái chāo lái de chí ān dìèrfēng , ā nán tóng jǐchù bù kěndìng dū kànqīng .",
+      "english": "The next page acknowledged his full copy of Chi An's second letter, A-Nan and every uncertainty understood.",
+      "hanzi": "信的下一页先说收到他后来抄来的迟安第二封，阿楠同几处不肯定都看清。",
       "alignment": [
         {
           "english": "page",
@@ -2217,7 +2280,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā bú rènshi nà nǚrén , yě méi tīngjiàn yígè kěyǐ nálái jiēshàng de qùchù ; ruò wǎnghòu yù zhe quèyǒu láiwǎng de rén huì wèn , dàn bù jiāng yígè chángjiàn de xiǎomíng dàngchéng yántú jiào rén rènlǐng de zhěngtiáo xiàn .",
+      "english": "Nerai didn't know her or a destination to connect to it. She would ask someone with real dealings if encountered, but wouldn't turn a common familiar name into a trail everyone along the road must claim.",
+      "hanzi": "她不认识那女人，也没听见一个可以拿来接上的去处；若往后遇着确有来往的人会问，但不将一个常见的小名当成沿途叫人认领的整条线。\n",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "tā",
@@ -2533,9 +2603,9 @@
       ]
     },
     {
-      "target": "zài wǎng xià shì yǔpéng . liáng dìfāng de rén yǔ shài yú de rén yǐ jiāng gèzì kěyòng de rìzi xiě zài yìzhāng zhǐ shàng , shàng méi tándìng qián ; mù guǎnshì nà juàn jiù bù búgòu gài quán , dǎo zúgòu ràng dàjiā zhēng sāntiān pù hào gāi fàng nǎbiān . nài lěi shuō zìjǐ yǐ jiāng zìhuà xiǎo , miǎnde zài cháng liùtiáo tuǐ pǎodiào .",
-      "english": "Then the rain shelter: measurers and fish-driers had put available days on one sheet, funding still undecided. Mou's used cloth wouldn't cover it all, but had supported three days arguing about which side his shop name should face. Nerai had drawn the lettering smaller so it wouldn't sprout six legs and run away again.",
-      "hanzi": "再往下是雨棚。量地方的人与晒鱼的人已将各自可用的日子写在一张纸上，尚没谈定钱；牟管事那卷旧布不够盖全，倒足够让大家争三天铺号该放哪边。奈蕾说自己已将字画小，免得再长六条腿跑掉。\n",
+      "target": "zài wǎng xià shì yǔpéng .",
+      "english": "Then came the rain shelter.",
+      "hanzi": "再往下是雨棚。",
       "alignment": [
         {
           "english": "Then",
@@ -2560,7 +2630,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "liáng dìfāng de rén yǔ shài yú de rén yǐ jiāng gèzì kěyòng de rìzi xiě zài yìzhāng zhǐ shàng , shàng méi tándìng qián ; mù guǎnshì nà juàn jiù bù búgòu gài quán , dǎo zúgòu ràng dàjiā zhēng sāntiān pù hào gāi fàng nǎbiān .",
+      "english": "Measurers and fish-driers had put available days on one sheet, funding still undecided. Mou's used cloth wouldn't cover it all, but had supported three days arguing about which side his shop name should face.",
+      "hanzi": "量地方的人与晒鱼的人已将各自可用的日子写在一张纸上，尚没谈定钱；牟管事那卷旧布不够盖全，倒足够让大家争三天铺号该放哪边。",
+      "alignment": [
         {
           "english": "measurers",
           "target": "liáng",
@@ -2880,7 +2957,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi shuō zìjǐ yǐ jiāng zìhuà xiǎo , miǎnde zài cháng liùtiáo tuǐ pǎodiào .",
+      "english": "Nerai had drawn the lettering smaller so it wouldn't sprout six legs and run away again.",
+      "hanzi": "奈蕾说自己已将字画小，免得再长六条腿跑掉。\n",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -2996,9 +3080,9 @@
       ]
     },
     {
-      "target": "zhǐ wěi lìng yǒu yíjiàn shì . dài zhèfèn shuǐlù tú jiāo tuǒ , tā dǎsuàn huí tóng jiē chéng tíng jǐrì , xuégōng ruò kěn ràng tā jiè yìzhāng zhuō , biàn xiǎng tīng jǐgè wàilù huílái de xuéshēng shuō shuō , méiyǒu jiào tāmen dāngchǎng bàomíng xià yítàng . yǐhòu ruò zài dài zhùshǒu , xū xiān yǒu héshì de xuéxí ānpái , lùxiàn yǔ tóngyì , búshì xiǎng zǒu biàn néng suàn tā duìlǐ de rén .",
-      "english": "At the foot was another matter. After delivering this water-route map she would spend a few days in Copperstep, hoping to borrow an academy table to hear students back from outside routes, not recruit them on the spot. Future assistants needed suitable study plans, routes and consent; wishing to go alone didn't make someone her team member.",
-      "hanzi": "纸尾另有一件事。待这份水路图交妥，她打算回铜阶城停几日，学宫若肯让她借一张桌，便想听几个外路回来的学生说说，没有叫他们当场报名下一趟。以后若再带助手，须先有合适的学习安排、路线与同意，不是想走便能算她队里的人。\n",
+      "target": "zhǐ wěi lìng yǒu yíjiàn shì .",
+      "english": "At the foot was another matter.",
+      "hanzi": "纸尾另有一件事。",
       "alignment": [
         {
           "english": "At the foot",
@@ -3039,7 +3123,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dài zhèfèn shuǐlù tú jiāo tuǒ , tā dǎsuàn huí tóng jiē chéng tíng jǐrì , xuégōng ruò kěn ràng tā jiè yìzhāng zhuō , biàn xiǎng tīng jǐgè wàilù huílái de xuéshēng shuō shuō , méiyǒu jiào tāmen dāngchǎng bàomíng xià yítàng .",
+      "english": "After delivering this water-route map she would spend a few days in Copperstep, hoping the academy would lend her a table to hear students back from outside routes, not recruit them for the next journey on the spot.",
+      "hanzi": "待这份水路图交妥，她打算回铜阶城停几日，学宫若肯让她借一张桌，便想听几个外路回来的学生说说，没有叫他们当场报名下一趟。",
+      "alignment": [
         {
           "english": "After",
           "target": "dài",
@@ -3153,7 +3244,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "borrow",
+          "english": "lend",
           "target": "ràng",
           "hanzi": "让",
           "category": "verb",
@@ -3169,7 +3260,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "borrow",
+          "english": "lend",
           "target": "jiè",
           "hanzi": "借",
           "category": "verb",
@@ -3177,7 +3268,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "an",
+          "english": "a",
           "target": "yì",
           "hanzi": "一",
           "category": "measure_word",
@@ -3321,7 +3412,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "Future",
+          "english": "next",
           "target": "xià yí",
           "hanzi": "下一",
           "category": "adjective",
@@ -3329,13 +3420,20 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "assistants",
+          "english": "journey",
           "target": "tàng",
           "hanzi": "趟",
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yǐhòu ruò zài dài zhùshǒu , xū xiān yǒu héshì de xuéxí ānpái , lùxiàn yǔ tóngyì , búshì xiǎng zǒu biàn néng suàn tā duìlǐ de rén .",
+      "english": "Future assistants needed suitable study plans, routes and consent; wishing to go alone didn't make someone her team member.",
+      "hanzi": "以后若再带助手，须先有合适的学习安排、路线与同意，不是想走便能算她队里的人。\n",
+      "alignment": [
         {
           "english": "Future",
           "target": "yǐhòu",
@@ -3539,9 +3637,9 @@
       ]
     },
     {
-      "target": "tǎ wéi bǎ zhè duàn niàn gěi liǎng rén tīng . yīwén xiān wèn néng bunéng wèn tā biéchù de zhànmíng zěnyàng xiě , mǐlā shuō zìjǐ xiǎng kàn chuánbiān xiǎowū de mùpái zěnme xiū , jiēzhe yòu shuō ruò tā zhī dài jǐrì , bié ná sāngè rén yìdié tú bǎ rén kòu zài wūlǐ . tǎ wéi xiào , shuō nài lěi dàgài huì zìjǐ xiān pǎo qù chīfàn .",
-      "english": "Tavi read that part to his friends. Iven wanted to ask how other stations named things; Mira wanted to see repairs to the house rafts, then warned not to imprison a short-stay visitor beneath three stacks of drawings. Nerai would probably run off to eat first, Tavi laughed.",
-      "hanzi": "塔维把这段念给两人听。伊文先问能不能问她别处的站名怎样写，米拉说自己想看船边小屋的木排怎么修，接着又说若她只待几日，别拿三个人一叠图把人扣在屋里。塔维笑，说奈蕾大概会自己先跑去吃饭。\n",
+      "target": "tǎ wéi bǎ zhè duàn niàn gěi liǎng rén tīng .",
+      "english": "Tavi read that part to his friends.",
+      "hanzi": "塔维把这段念给两人听。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3606,7 +3704,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yīwén xiān wèn néng bunéng wèn tā biéchù de zhànmíng zěnyàng xiě , mǐlā shuō zìjǐ xiǎng kàn chuánbiān xiǎowū de mùpái zěnme xiū , jiēzhe yòu shuō ruò tā zhī dài jǐrì , bié ná sāngè rén yìdié tú bǎ rén kòu zài wūlǐ .",
+      "english": "Iven wanted to ask her how other stations named things; Mira wanted to see repairs to the house rafts, then warned not to imprison a short-stay visitor beneath three stacks of drawings.",
+      "hanzi": "伊文先问能不能问她别处的站名怎样写，米拉说自己想看船边小屋的木排怎么修，接着又说若她只待几日，别拿三个人一叠图把人扣在屋里。",
+      "alignment": [
         {
           "english": "Iven",
           "target": "yīwén",
@@ -3648,7 +3753,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "Nerai",
+          "english": "her",
           "target": "tā",
           "hanzi": "她",
           "category": "function_word",
@@ -3950,7 +4055,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi xiào , shuō nài lěi dàgài huì zìjǐ xiān pǎo qù chīfàn .",
+      "english": "Nerai would probably run off to eat first, Tavi laughed.",
+      "hanzi": "塔维笑，说奈蕾大概会自己先跑去吃饭。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4034,9 +4146,9 @@
       ]
     },
     {
-      "target": "tā huíxìn shí , xiān dáfù hé yǐjīng zuò guò , réng yòng yuánlái de tiě , lǎoshī gěi de shì zhǐ shàng ānpái de zuòyè , búshì wǎnghòu shénme dōu néng jiè ; yòu shuō sāngè rén zài gǎi yíkuài ràng rén kàn míngbái de zhǐpái , dìyīhuí zhǐyǒu yíbàn zhēnràngrén zǒu duì . tā wèn ruò tā zhēn huíchéng , zìjǐ kěfǒu dài zhècì méi zǒu duì de tú qù , yě tīng tā jiǎng dīshàng de nà liǎngchù quēkǒu .",
-      "english": "Replying, he first reported his review was done, still on the original iron. The teacher had assigned paper planning, not permission to borrow anything henceforth. Three friends were revising a comprehensible sign; only half the first trial had led users correctly. If she came back, could he bring the failed drawing and hear about the dyke's two gaps too?",
-      "hanzi": "他回信时，先答复核已经做过，仍用原来的铁，老师给的是纸上安排的作业，不是往后什么都能借；又说三个人在改一块让人看明白的纸牌，第一回只有一半真让人走对。他问若她真回城，自己可否带这次没走对的图去，也听她讲堤上的那两处缺口。\n",
+      "target": "tā huíxìn shí , xiān dáfù hé yǐjīng zuò guò , réng yòng yuánlái de tiě , lǎoshī gěi de shì zhǐ shàng ānpái de zuòyè , búshì wǎnghòu shénme dōu néng jiè ; yòu shuō sāngè rén zài gǎi yíkuài ràng rén kàn míngbái de zhǐpái , dìyīhuí zhǐyǒu yíbàn zhēnràngrén zǒu duì .",
+      "english": "Replying, he first reported his review was done, still on the original iron. The teacher had assigned paper planning, not permission to borrow anything henceforth. Three friends were revising a comprehensible sign; only half the first trial had led users correctly.",
+      "hanzi": "他回信时，先答复核已经做过，仍用原来的铁，老师给的是纸上安排的作业，不是往后什么都能借；又说三个人在改一块让人看明白的纸牌，第一回只有一半真让人走对。",
       "alignment": [
         {
           "english": "he",
@@ -4437,7 +4549,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā wèn ruò tā zhēn huíchéng , zìjǐ kěfǒu dài zhècì méi zǒu duì de tú qù , yě tīng tā jiǎng dīshàng de nà liǎngchù quēkǒu .",
+      "english": "If she came back, could he bring the failed drawing and hear about the dyke's two gaps too?",
+      "hanzi": "他问若她真回城，自己可否带这次没走对的图去，也听她讲堤上的那两处缺口。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -4649,9 +4768,9 @@
       ]
     },
     {
-      "target": "xìn fù le yóu qián , zhào shí tīng xiànyǒu de zhuǎnjì chù sòng , méi zhuī zhe yígè hái méi shànglù de rén gǎi dìzhǐ . huílái hòu , tǎ wéi jiāng cèmén nàgēn jiàntóu chóngxīn huà guò , méi zhào nài lěi xìn lǐ de dī lù miáo . yīwén yǐ jièhuí bǐ , sān rén gè zhàn yìjiǎo , mòjì zài dēng xià mànmàn gān .",
-      "english": "He paid postage and sent it to Shiting's existing forwarding counter, not changing addresses to chase someone who hadn't left yet. Back at the table, he redrew the side-door arrow without tracing Nerai's dyke. Iven had returned with the pen; each took a corner as ink slowly dried in the lamplight.",
-      "hanzi": "信付了邮钱，照石汀现有的转寄处送，没追着一个还没上路的人改地址。回来后，塔维将侧门那根箭头重新画过，没照奈蕾信里的堤路描。伊文已借回笔，三人各占一角，墨迹在灯下慢慢干。\n",
+      "target": "xìn fù le yóu qián , zhào shí tīng xiànyǒu de zhuǎnjì chù sòng , méi zhuī zhe yígè hái méi shànglù de rén gǎi dìzhǐ .",
+      "english": "He paid postage and sent it to Shiting's existing forwarding counter, not changing addresses to chase someone who hadn't left yet.",
+      "hanzi": "信付了邮钱，照石汀现有的转寄处送，没追着一个还没上路的人改地址。",
       "alignment": [
         {
           "english": "it",
@@ -4820,7 +4939,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "huílái hòu , tǎ wéi jiāng cèmén nàgēn jiàntóu chóngxīn huà guò , méi zhào nài lěi xìn lǐ de dī lù miáo .",
+      "english": "Back at the table, he redrew the side-door arrow without tracing Nerai's dyke.",
+      "hanzi": "回来后，塔维将侧门那根箭头重新画过，没照奈蕾信里的堤路描。",
+      "alignment": [
         {
           "english": "Back",
           "target": "huílái",
@@ -4964,7 +5090,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yīwén yǐ jièhuí bǐ , sān rén gè zhàn yìjiǎo , mòjì zài dēng xià mànmàn gān .",
+      "english": "Iven had returned with the pen; each took a corner as ink slowly dried in the lamplight.",
+      "hanzi": "伊文已借回笔，三人各占一角，墨迹在灯下慢慢干。\n",
+      "alignment": [
         {
           "english": "Iven",
           "target": "yīwén",

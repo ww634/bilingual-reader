@@ -2,7 +2,7 @@
   "id": "ch-187",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "liǎng pō zhījiān",
     "english": "Between Two Slopes",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "luó dí zuò dào chē lǐbiān yǐhòu , búdào bàngè shíchén jiù zìjǐ nuó le chūlái . lǐbiān kào xiāng , zhuǎnwān shí xiāng jiǎo dǐng yāo ; wàibiān chī fēng , tuǐ què néng shēn . tǎ wéi kàn tā huàn wèizhì , méi shuō yuánlái zhè yě jiào fàngxīn , zhī jiāng zìjǐ de bāo wǎng zhōngjiān nuó , gěi tā ràngchū yíkuài .",
-      "english": "Within an hour Luodi abandoned the inside seat: crate corners jabbed his waist on bends; outside was windy but had legroom. Tavi watched without commenting on his assurances, just shifting his bag to make space.",
-      "hanzi": "罗荻坐到车里边以后，不到半个时辰就自己挪了出来。\n里边靠箱，转弯时箱角顶腰；外边吃风，腿却能伸。塔维看他换位置，没说原来这也叫放心，只将自己的包往中间挪，给他让出一块。\n",
+      "target": "luó dí zuò dào chē lǐbiān yǐhòu , búdào bàngè shíchén jiù zìjǐ nuó le chūlái .",
+      "english": "Within half an hour Luodi abandoned the inside seat.",
+      "hanzi": "罗荻坐到车里边以后，不到半个时辰就自己挪了出来。\n",
       "alignment": [
         {
           "english": "Luodi",
@@ -125,7 +125,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lǐbiān kào xiāng , zhuǎnwān shí xiāng jiǎo dǐng yāo ; wàibiān chī fēng , tuǐ què néng shēn .",
+      "english": "Inside, crate corners jabbed his waist on bends; outside was windy but had legroom.",
+      "hanzi": "里边靠箱，转弯时箱角顶腰；外边吃风，腿却能伸。",
+      "alignment": [
         {
           "english": "inside",
           "target": "lǐbiān",
@@ -237,7 +244,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi kàn tā huàn wèizhì , méi shuō yuánlái zhè yě jiào fàngxīn , zhī jiāng zìjǐ de bāo wǎng zhōngjiān nuó , gěi tā ràngchū yíkuài .",
+      "english": "Tavi watched him change his seat without commenting on his assurances, just shifting his bag to make space.",
+      "hanzi": "塔维看他换位置，没说原来这也叫放心，只将自己的包往中间挪，给他让出一块。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -441,9 +455,9 @@
       ]
     },
     {
-      "target": "gǎnchē de nǚrén huítóu kàn le yìyǎn , jiào liǎng rén bié bǎ jiǎo chuí dào lún biān , shānlù búshì jiāménkǒu de chángdèng . luó dí lìkè jiāng tuǐ shōu hǎo , shénqì bǐ zài suǒ lǐ bèi yù hé jiàozhù shí hái lǎoshí .",
-      "english": "The woman driving looked back: keep feet from the wheels; a mountain road wasn't a doorstep bench. Luodi tucked his legs in at once, more obedient than with Yuhe at the office.",
-      "hanzi": "赶车的女人回头看了一眼，叫两人别把脚垂到轮边，山路不是家门口的长凳。罗荻立刻将腿收好，神气比在所里被郁禾叫住时还老实。\n",
+      "target": "gǎnchē de nǚrén huítóu kàn le yìyǎn , jiào liǎng rén bié bǎ jiǎo chuí dào lún biān , shānlù búshì jiāménkǒu de chángdèng .",
+      "english": "The woman driving looked back: keep feet from the wheels; a mountain road wasn't a doorstep bench.",
+      "hanzi": "赶车的女人回头看了一眼，叫两人别把脚垂到轮边，山路不是家门口的长凳。",
       "alignment": [
         {
           "english": "driving",
@@ -612,7 +626,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "luó dí lìkè jiāng tuǐ shōu hǎo , shénqì bǐ zài suǒ lǐ bèi yù hé jiàozhù shí hái lǎoshí .",
+      "english": "Luodi tucked his legs in at once, more obedient than with Yuhe at the office.",
+      "hanzi": "罗荻立刻将腿收好，神气比在所里被郁禾叫住时还老实。\n",
+      "alignment": [
         {
           "english": "Luodi",
           "target": "luó dí",
@@ -736,9 +757,9 @@
       ]
     },
     {
-      "target": "tāmen qīngzǎo líkāi tóng jiē , yán xiàngdōng de gōnglù xiàxíng . chēshàng liǎngzhī qìjù xiāng , lìng yǒu liáng gān , zhǐjuàn hé jǐbāo zhùchù yào yòng de rìcháng dōngxī . yù hé zuò qiántou jì shíchén , ruǎn héng niē zhe bànkuài bǐng , kànzhe lùbiān xīn xiū de páishuǐkǒu , jǐcì xiǎng jiào chē tíng , yòu jǐcì méi kāikǒu .",
-      "english": "They left Copperstep early, descending east along the public road, carrying two apparatus cases, rods, paper rolls and household supplies. Yuhe recorded times up front; Ruanheng held bread, watching new drains and repeatedly almost asking to stop.",
-      "hanzi": "他们清早离开铜阶，沿向东的公路下行。车上两只器具箱，另有量杆、纸卷和几包住处要用的日常东西。郁禾坐前头记时辰，阮衡捏着半块饼，看着路边新修的排水口，几次想叫车停，又几次没开口。\n",
+      "target": "tāmen qīngzǎo líkāi tóng jiē , yán xiàngdōng de gōnglù xiàxíng .",
+      "english": "They left Copperstep early, descending east along the public road.",
+      "hanzi": "他们清早离开铜阶，沿向东的公路下行。",
       "alignment": [
         {
           "english": "They",
@@ -811,9 +832,16 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "chēshàng liǎngzhī qìjù xiāng , lìng yǒu liáng gān , zhǐjuàn hé jǐbāo zhùchù yào yòng de rìcháng dōngxī .",
+      "english": "The cart carried two apparatus cases, rods, paper rolls and household supplies.",
+      "hanzi": "车上两只器具箱，另有量杆、纸卷和几包住处要用的日常东西。",
+      "alignment": [
         {
-          "english": "carrying",
+          "english": "cart carried",
           "target": "chēshàng",
           "hanzi": "车上",
           "category": "noun",
@@ -939,7 +967,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yù hé zuò qiántou jì shíchén , ruǎn héng niē zhe bànkuài bǐng , kànzhe lùbiān xīn xiū de páishuǐkǒu , jǐcì xiǎng jiào chē tíng , yòu jǐcì méi kāikǒu .",
+      "english": "Yuhe recorded times up front; Ruanheng held bread, watching new drains and repeatedly almost asking to stop.",
+      "hanzi": "郁禾坐前头记时辰，阮衡捏着半块饼，看着路边新修的排水口，几次想叫车停，又几次没开口。\n",
+      "alignment": [
         {
           "english": "Yuhe",
           "target": "yù hé",
@@ -1175,9 +1210,9 @@
       ]
     },
     {
-      "target": "zuìhòu tā háishì wèn gǎnchē de rén , qiánbiān néng bunéng děng yíkè , zìjǐ qù kànkàn yíduàn jiù biānqiáng . \" bú zài jīntiān yuē de lùshang . \" tā shuō , \" yào qù , wǒ bǎ chēfèi chóngxīn suàn ; wǎn le guò lǐng , yèsù nàbiān de fàn yě bié ràng rén děng zhe . \"",
-      "english": "Finally he asked the driver to wait while he looked at an old retaining wall ahead. “Not on today's agreed route,” she said. “Go, and I'll recalculate the fare. Cross the ridge late and don't keep the inn waiting with dinner.”",
-      "hanzi": "最后他还是问赶车的人，前边能不能等一刻，自己去看看一段旧边墙。\n“不在今天约的路上。”她说，“要去，我把车费重新算；晚了过岭，夜宿那边的饭也别让人等着。”\n",
+      "target": "zuìhòu tā háishì wèn gǎnchē de rén , qiánbiān néng bunéng děng yíkè , zìjǐ qù kànkàn yíduàn jiù biānqiáng .",
+      "english": "Finally he asked the driver to wait while he looked at an old retaining wall ahead.",
+      "hanzi": "最后他还是问赶车的人，前边能不能等一刻，自己去看看一段旧边墙。\n",
       "alignment": [
         {
           "english": "Finally",
@@ -1330,7 +1365,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "\" bú zài jīntiān yuē de lùshang . \"",
+      "english": "“Not on today's agreed route,”",
+      "hanzi": "“不在今天约的路上。”",
+      "alignment": [
         {
           "english": "Not",
           "target": "bú",
@@ -1386,7 +1428,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuō , \" yào qù , wǒ bǎ chēfèi chóngxīn suàn ; wǎn le guò lǐng , yèsù nàbiān de fàn yě bié ràng rén děng zhe . \"",
+      "english": "She said, “Go, and I'll recalculate the fare. Cross the ridge late and don't keep the inn waiting with dinner.”",
+      "hanzi": "她说，“要去，我把车费重新算；晚了过岭，夜宿那边的饭也别让人等着。”\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -1566,9 +1615,9 @@
       ]
     },
     {
-      "target": "yù hé méiyǒu tì tā shuōqíng , zhī bǎ xíngchéng zhǐ fān gěi tā kàn . ruǎn héng kàn wán , rèn le , shuō huíchéng ruò yǒukōng zài lái . tǎ wéi běnlái yǐjīng zhǔnbèi xiàchē , tīngjiàn zhè jù , cái zhīdào gēnzhe zuòhuó , búshì kànjiàn měijiàn yǒuyìsī de shì , dōu néng dàngchéng zìjǐ de chāishì .",
-      "english": "Yuhe didn't intercede, just showed the itinerary. Ruanheng accepted it: perhaps on return, time permitting. Tavi had been ready to climb down; working didn't make every interesting sight their assignment.",
-      "hanzi": "郁禾没有替他说情，只把行程纸翻给他看。阮衡看完，认了，说回程若有空再来。塔维本来已经准备下车，听见这句，才知道跟着做活，不是看见每件有意思的事，都能当成自己的差事。\n",
+      "target": "yù hé méiyǒu tì tā shuōqíng , zhī bǎ xíngchéng zhǐ fān gěi tā kàn .",
+      "english": "Yuhe didn't intercede for him, just showed him the itinerary.",
+      "hanzi": "郁禾没有替他说情，只把行程纸翻给他看。",
       "alignment": [
         {
           "english": "Yuhe",
@@ -1595,7 +1644,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "their",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -1643,7 +1692,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "their",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -1657,7 +1706,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng kàn wán , rèn le , shuō huíchéng ruò yǒukōng zài lái .",
+      "english": "Ruanheng accepted it: perhaps on return, time permitting.",
+      "hanzi": "阮衡看完，认了，说回程若有空再来。",
+      "alignment": [
         {
           "english": "Ruanheng",
           "target": "ruǎn héng",
@@ -1737,7 +1793,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi běnlái yǐjīng zhǔnbèi xiàchē , tīngjiàn zhè jù , cái zhīdào gēnzhe zuòhuó , búshì kànjiàn měijiàn yǒuyìsī de shì , dōu néng dàngchéng zìjǐ de chāishì .",
+      "english": "Tavi had been ready to climb down; working didn't make every interesting sight their assignment.",
+      "hanzi": "塔维本来已经准备下车，听见这句，才知道跟着做活，不是看见每件有意思的事，都能当成自己的差事。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -1949,9 +2012,9 @@
       ]
     },
     {
-      "target": "guò le wǔshí , lùbiān de shípái huàn le yàng . qiántou xiěgěi chēlún liú de wèizhì , hòutou lìng xiě shānhuò bēilǒu kě zǒu de xiǎodào , zì bǐ tóng jiē de dà , yě shǎo jǐjù ràowān dehuà .",
-      "english": "After noon the roadside markers changed: wheel space on the front, paths for mountain-produce carriers behind, larger lettering and fewer roundabout words than Copperstep's.",
-      "hanzi": "过了午时，路边的石牌换了样。前头写给车轮留的位置，后头另写山货背篓可走的小道，字比铜阶的大，也少几句绕弯的话。",
+      "target": "guò le wǔshí , lùbiān de shípái huàn le yàng .",
+      "english": "After noon the roadside markers changed.",
+      "hanzi": "过了午时，路边的石牌换了样。",
       "alignment": [
         {
           "english": "After",
@@ -2024,7 +2087,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "qiántou xiěgěi chēlún liú de wèizhì , hòutou lìng xiě shānhuò bēilǒu kě zǒu de xiǎodào , zì bǐ tóng jiē de dà , yě shǎo jǐjù ràowān dehuà .",
+      "english": "The front described wheel space, the back paths for mountain-produce carriers, with larger lettering and fewer roundabout words than Copperstep's.",
+      "hanzi": "前头写给车轮留的位置，后头另写山货背篓可走的小道，字比铜阶的大，也少几句绕弯的话。",
+      "alignment": [
         {
           "english": "front",
           "target": "qiántou",
@@ -2082,7 +2152,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "behind",
+          "english": "back",
           "target": "hòutou",
           "hanzi": "后头",
           "category": "noun",
@@ -2252,9 +2322,9 @@
       ]
     },
     {
-      "target": "luó dí zhǐ gěi tā kàn , shuō zǒu xiàmiàn yào fù guò chē de qián , bèi huò de rén zǒu shàngmiàn , bùnéng jiào gǎnchē de tì suǒyǒurén zuànguòqù . tǎ wéi wèn wèishénme bù bǎ lù xiū kuān . luó dí xiào , shuō nǐ dǎo gēn zìjǐ diē wèn dào yíkuàiér qù le , qián hái méi còuqí , shítou dǎo yǒudeshì .",
-      "english": "Luodi explained: carts paid below, carriers took the upper path; a driver couldn't squeeze through for everyone. Tavi asked why not widen the road. Luodi laughed: his father asked the same. Plenty of stone, not enough money yet.",
-      "hanzi": "罗荻指给他看，说走下面要付过车的钱，背货的人走上面，不能叫赶车的替所有人钻过去。\n塔维问为什么不把路修宽。罗荻笑，说你倒跟自己爹问到一块儿去了，钱还没凑齐，石头倒有的是。\n",
+      "target": "luó dí zhǐ gěi tā kàn , shuō zǒu xiàmiàn yào fù guò chē de qián , bèi huò de rén zǒu shàngmiàn , bùnéng jiào gǎnchē de tì suǒyǒurén zuànguòqù .",
+      "english": "Luodi explained to him: carts paid below, carriers took the upper path; a driver couldn't squeeze through for everyone.",
+      "hanzi": "罗荻指给他看，说走下面要付过车的钱，背货的人走上面，不能叫赶车的替所有人钻过去。\n",
       "alignment": [
         {
           "english": "Luodi",
@@ -2273,7 +2343,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "his",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -2447,7 +2517,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi wèn wèishénme bù bǎ lù xiū kuān .",
+      "english": "Tavi asked why not widen the road.",
+      "hanzi": "塔维问为什么不把路修宽。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -2503,7 +2580,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "luó dí xiào , shuō nǐ dǎo gēn zìjǐ diē wèn dào yíkuàiér qù le , qián hái méi còuqí , shítou dǎo yǒudeshì .",
+      "english": "Luodi laughed: his father asked the same. Plenty of stone, not enough money yet.",
+      "hanzi": "罗荻笑，说你倒跟自己爹问到一块儿去了，钱还没凑齐，石头倒有的是。\n",
+      "alignment": [
         {
           "english": "Luodi",
           "target": "luó dí",
@@ -2659,9 +2743,9 @@
       ]
     },
     {
-      "target": "tā búshì bùxiǎng dá , táishǒu zhǐzhe yuǎnchù yípiàn dīdīde gǔdì , shuō nàbiān yào xiān jiē yíduànlù , zuò wán cái lún dédào zhèlǐ . yù hé tīngjiàn , shuō nà shì qùnián de ānpái , jīnnián huàn méi huàn , dào le zhènlǐ cáinéng zhīdào . luó dí huítóu kàn tā , méi zài bǎ zìjǐ jìde de dōngxī jiǎng chéng yǐjīng dìng de .",
-      "english": "He pointed toward a low valley: another road connection came first. Yuhe said that was last year's plan; this year's needed checking in town. Luodi looked back, no longer presenting memory as settled fact.",
-      "hanzi": "他不是不想答，抬手指着远处一片低低的谷地，说那边要先接一段路，做完才轮得到这里。郁禾听见，说那是去年的安排，今年换没换，到了镇里才能知道。罗荻回头看她，没再把自己记得的东西讲成已经定的。\n",
+      "target": "tā búshì bùxiǎng dá , táishǒu zhǐzhe yuǎnchù yípiàn dīdīde gǔdì , shuō nàbiān yào xiān jiē yíduànlù , zuò wán cái lún dédào zhèlǐ .",
+      "english": "It wasn't that he didn't want to answer. He pointed toward a low valley: another road connection came first, and only after that would it be this place's turn.",
+      "hanzi": "他不是不想答，抬手指着远处一片低低的谷地，说那边要先接一段路，做完才轮得到这里。",
       "alignment": [
         {
           "english": "He",
@@ -2672,7 +2756,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "no longer",
+          "english": "wasn't",
           "target": "búshì",
           "hanzi": "不是",
           "category": "verb",
@@ -2680,7 +2764,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "presenting",
+          "english": "didn't want",
           "target": "bùxiǎng",
           "hanzi": "不想",
           "category": "verb",
@@ -2688,7 +2772,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "fact",
+          "english": "answer",
           "target": "dá",
           "hanzi": "答",
           "category": "verb",
@@ -2856,13 +2940,20 @@
           "frequency_band": "common"
         },
         {
-          "english": "town",
+          "english": "this place",
           "target": "zhèlǐ",
           "hanzi": "这里",
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yù hé tīngjiàn , shuō nà shì qùnián de ānpái , jīnnián huàn méi huàn , dào le zhènlǐ cáinéng zhīdào .",
+      "english": "Yuhe said that was last year's plan; this year's needed checking in town.",
+      "hanzi": "郁禾听见，说那是去年的安排，今年换没换，到了镇里才能知道。",
+      "alignment": [
         {
           "english": "Yuhe",
           "target": "yù hé",
@@ -2990,7 +3081,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "luó dí huítóu kàn tā , méi zài bǎ zìjǐ jìde de dōngxī jiǎng chéng yǐjīng dìng de .",
+      "english": "Luodi looked back, no longer presenting memory as settled fact.",
+      "hanzi": "罗荻回头看她，没再把自己记得的东西讲成已经定的。\n",
+      "alignment": [
         {
           "english": "Luodi",
           "target": "luó dí",
@@ -3114,9 +3212,9 @@
       ]
     },
     {
-      "target": "xiàwǔ de fēng nuǎn qǐlái . shānpō yícè cháng zhe dàpiàn huībái shùgàn , zhītóu de nènyè jiāng yángguāng shāi dé xìsuì . yuèguò lǐng kǒu , yuǎnchù hūrán chūxiàn yídào lì zài liǎng pō zhījiān de àn hú , xiàng yǒurén bǎ yìzhī jùdà de shǒubì liúzài tiānbiān .",
-      "english": "The afternoon wind warmed. Pale tree trunks covered a slope, new leaves sifting sunlight. Over the ridge appeared a dark arc between two slopes, like a gigantic arm left against the sky.",
-      "hanzi": "下午的风暖起来。山坡一侧长着大片灰白树干，枝头的嫩叶将阳光筛得细碎。越过岭口，远处忽然出现一道立在两坡之间的暗弧，像有人把一只巨大的手臂留在天边。\n",
+      "target": "xiàwǔ de fēng nuǎn qǐlái .",
+      "english": "The afternoon wind warmed.",
+      "hanzi": "下午的风暖起来。",
       "alignment": [
         {
           "english": "afternoon",
@@ -3157,7 +3255,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shānpō yícè cháng zhe dàpiàn huībái shùgàn , zhītóu de nènyè jiāng yángguāng shāi dé xìsuì .",
+      "english": "Pale tree trunks covered a slope, new leaves sifting sunlight.",
+      "hanzi": "山坡一侧长着大片灰白树干，枝头的嫩叶将阳光筛得细碎。",
+      "alignment": [
         {
           "english": "slope",
           "target": "shānpō",
@@ -3285,7 +3390,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yuèguò lǐng kǒu , yuǎnchù hūrán chūxiàn yídào lì zài liǎng pō zhījiān de àn hú , xiàng yǒurén bǎ yìzhī jùdà de shǒubì liúzài tiānbiān .",
+      "english": "Over the ridge appeared a dark arc between two slopes, like a gigantic arm left against the sky.",
+      "hanzi": "越过岭口，远处忽然出现一道立在两坡之间的暗弧，像有人把一只巨大的手臂留在天边。\n",
+      "alignment": [
         {
           "english": "Over",
           "target": "yuèguò",
@@ -3497,9 +3609,9 @@
       ]
     },
     {
-      "target": "tǎ wéi zhí qǐshēn , wèn nà shìbushì zhé tóng . ruǎn héng shuō hái yuǎn , jīntiān zhī zǒu dào qiánmiàn de yìshè , míngtiān shùn gǔ wǎng xià , cáinéng kànchū nà dōngxī duō dà . luó dí shuō zìjǐ xiǎoshíhòu yǐwéi biéchù de zhènzǐ yě dōu dé cóng jiàzi xià jìnqù , chūqù yǐhòu cái zhīdào búshì .",
-      "english": "Tavi sat upright: Zhetong? Still distant, said Ruanheng; tonight the waystation, tomorrow down the valley to see its size. Luodi had thought as a child that every town was entered beneath a structure, until traveling taught him otherwise.",
-      "hanzi": "塔维直起身，问那是不是折桐。阮衡说还远，今天只走到前面的驿舍，明天顺谷往下，才能看出那东西多大。罗荻说自己小时候以为别处的镇子也都得从架子下进去，出去以后才知道不是。\n",
+      "target": "tǎ wéi zhí qǐshēn , wèn nà shìbushì zhé tóng .",
+      "english": "Tavi sat upright: Zhetong?",
+      "hanzi": "塔维直起身，问那是不是折桐。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3548,7 +3660,14 @@
           "category": "proper_noun",
           "is_idiom": false,
           "frequency_band": null
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng shuō hái yuǎn , jīntiān zhī zǒu dào qiánmiàn de yìshè , míngtiān shùn gǔ wǎng xià , cáinéng kànchū nà dōngxī duō dà .",
+      "english": "Still distant, said Ruanheng; tonight the waystation, tomorrow down the valley to see its size.",
+      "hanzi": "阮衡说还远，今天只走到前面的驿舍，明天顺谷往下，才能看出那东西多大。",
+      "alignment": [
         {
           "english": "Ruanheng",
           "target": "ruǎn héng",
@@ -3724,7 +3843,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "luó dí shuō zìjǐ xiǎoshíhòu yǐwéi biéchù de zhènzǐ yě dōu dé cóng jiàzi xià jìnqù , chūqù yǐhòu cái zhīdào búshì .",
+      "english": "Luodi had thought as a child that every town was entered beneath a structure, until traveling taught him otherwise.",
+      "hanzi": "罗荻说自己小时候以为别处的镇子也都得从架子下进去，出去以后才知道不是。\n",
+      "alignment": [
         {
           "english": "Luodi",
           "target": "luó dí",
@@ -3888,9 +4014,9 @@
       ]
     },
     {
-      "target": "tǎ wéi wàng le hěn jiǔ . tú shàng de hú biān zhǐyǒu yìbǐ , yǎnqián de yǐngzi què bǎ shāngǔ hòutou de yún dōu qièkāi le .",
-      "english": "Tavi watched a long while. One stroke on the map; this shadow split even the clouds behind the valley.",
-      "hanzi": "塔维望了很久。图上的弧边只有一笔，眼前的影子却把山谷后头的云都切开了。\n",
+      "target": "tǎ wéi wàng le hěn jiǔ .",
+      "english": "Tavi watched a long while.",
+      "hanzi": "塔维望了很久。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3931,7 +4057,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tú shàng de hú biān zhǐyǒu yìbǐ , yǎnqián de yǐngzi què bǎ shāngǔ hòutou de yún dōu qièkāi le .",
+      "english": "One stroke on the map; this shadow split even the clouds behind the valley.",
+      "hanzi": "图上的弧边只有一笔，眼前的影子却把山谷后头的云都切开了。\n",
+      "alignment": [
         {
           "english": "map",
           "target": "tú",
@@ -4087,9 +4220,9 @@
       ]
     },
     {
-      "target": "dào le guòyè de yìshè , tiān hái méi hēi . gǎnchē de nǚrén xiān qù ān shēngkǒu , yù hé diǎn guò xiāng shù , cái ràng tǎ wéi xiè zìjǐ de bāo . luó dí shúménshúlù qù zhǎo rèshuǐ , què bèi zhǎngguì jiàozhù , wèn shàng huí jiè de záozǐ hái bu hái . tā cóng bāo dǐ mōchūlái , bāo dé bǐ yīfu hái yán , shuāngshǒu dìguòqù .",
-      "english": "They reached the waystation before dark. The driver tended the animals, Yuhe counted cases, then Tavi could unload his bag. Luodi confidently sought hot water, but the keeper asked for his borrowed chisel. He fished it out, wrapped more carefully than his clothes, and handed it over.",
-      "hanzi": "到了过夜的驿舍，天还没黑。赶车的女人先去安牲口，郁禾点过箱数，才让塔维卸自己的包。罗荻熟门熟路去找热水，却被掌柜叫住，问上回借的凿子还不还。他从包底摸出来，包得比衣服还严，双手递过去。\n",
+      "target": "dào le guòyè de yìshè , tiān hái méi hēi .",
+      "english": "They reached the waystation before dark.",
+      "hanzi": "到了过夜的驿舍，天还没黑。",
       "alignment": [
         {
           "english": "reached",
@@ -4162,7 +4295,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "gǎnchē de nǚrén xiān qù ān shēngkǒu , yù hé diǎn guò xiāng shù , cái ràng tǎ wéi xiè zìjǐ de bāo .",
+      "english": "The driver tended the animals, Yuhe counted cases, then Tavi could unload his bag.",
+      "hanzi": "赶车的女人先去安牲口，郁禾点过箱数，才让塔维卸自己的包。",
+      "alignment": [
         {
           "english": "driver",
           "target": "gǎnchē",
@@ -4306,7 +4446,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "luó dí shúménshúlù qù zhǎo rèshuǐ , què bèi zhǎngguì jiàozhù , wèn shàng huí jiè de záozǐ hái bu hái .",
+      "english": "Luodi confidently sought hot water, but the keeper asked for his borrowed chisel.",
+      "hanzi": "罗荻熟门熟路去找热水，却被掌柜叫住，问上回借的凿子还不还。",
+      "alignment": [
         {
           "english": "Luodi",
           "target": "luó dí",
@@ -4426,7 +4573,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā cóng bāo dǐ mōchūlái , bāo dé bǐ yīfu hái yán , shuāngshǒu dìguòqù .",
+      "english": "He fished it out, wrapped more carefully than his clothes, and handed it over.",
+      "hanzi": "他从包底摸出来，包得比衣服还严，双手递过去。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -4534,9 +4688,9 @@
       ]
     },
     {
-      "target": "\" búshì měijiàn dōu néngdài huíjiā . \" zhǎngguì shuō . \" zhège wǒ jì zhe ne . \" tǎ wéi kànzhe , méi xiào . zìjǐ yě céng jiāng yìzhī shítáng de wǎnzhuāng jìnxíng li , nàzhǒng yǐwéi fàng hǎo le jiù děngyú bànwán le de xīnxū , dǎo hěn rènde .",
-      "english": "“Not everything goes home,” the keeper said. “I remembered this one.” Tavi didn't laugh; he'd once packed a dining-hall bowl. He knew the guilty mistake of thinking stowed meant settled.",
-      "hanzi": "“不是每件都能带回家。”掌柜说。\n“这个我记着呢。”\n塔维看着，没笑。自己也曾将一只食堂的碗装进行李，那种以为放好了就等于办完了的心虚，倒很认得。\n",
+      "target": "\" búshì měijiàn dōu néngdài huíjiā . \"",
+      "english": "“Not everything goes home,”",
+      "hanzi": "“不是每件都能带回家。”",
       "alignment": [
         {
           "english": "Not",
@@ -4585,7 +4739,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhǎngguì shuō .",
+      "english": "The keeper said.",
+      "hanzi": "掌柜说。\n",
+      "alignment": [
         {
           "english": "keeper",
           "target": "zhǎngguì",
@@ -4601,7 +4762,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "\" zhège wǒ jì zhe ne . \"",
+      "english": "“I remembered this one.”",
+      "hanzi": "“这个我记着呢。”\n",
+      "alignment": [
         {
           "english": "this",
           "target": "zhè",
@@ -4649,7 +4817,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi kànzhe , méi xiào .",
+      "english": "Tavi watched without laughing.",
+      "hanzi": "塔维看着，没笑。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4659,7 +4834,7 @@
           "frequency_band": null
         },
         {
-          "english": "knew",
+          "english": "watched",
           "target": "kàn",
           "hanzi": "看",
           "category": "verb",
@@ -4667,7 +4842,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "knew",
+          "english": "watched",
           "target": "zhe",
           "hanzi": "着",
           "category": "particle",
@@ -4675,7 +4850,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "didn't",
+          "english": "without",
           "target": "méi",
           "hanzi": "没",
           "category": "adverb",
@@ -4689,7 +4864,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zìjǐ yě céng jiāng yìzhī shítáng de wǎnzhuāng jìnxíng li , nàzhǒng yǐwéi fàng hǎo le jiù děngyú bànwán le de xīnxū , dǎo hěn rènde .",
+      "english": "He'd once packed a dining-hall bowl. He knew the guilty mistake of thinking stowed meant settled.",
+      "hanzi": "自己也曾将一只食堂的碗装进行李，那种以为放好了就等于办完了的心虚，倒很认得。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "zìjǐ",
@@ -4893,9 +5075,9 @@
       ]
     },
     {
-      "target": "fànhòu , luó dí náchū liǎngjié shéng , yào bǐ shuí xiān jiāng jié jiěkāi yòu zhào yuányàng zhā huíqù . tǎ wéi xiǎngqǐ mǐlā jiào guò de bànfǎ , juéde zìjǐ wèibì huì shū , jiéguǒ gāng jiěkāi yíbàn , luó dí yǐ bǎ zìjǐ de fàngdào zhuōshàng .",
-      "english": "After dinner Luodi produced two ropes to race at untying and retying the same knot. Remembering Mira's teaching, Tavi thought he might not lose, but was halfway through when Luodi laid his finished rope down.",
-      "hanzi": "饭后，罗荻拿出两截绳，要比谁先将结解开又照原样扎回去。塔维想起米拉教过的办法，觉得自己未必会输，结果刚解开一半，罗荻已把自己的放到桌上。\n",
+      "target": "fànhòu , luó dí náchū liǎngjié shéng , yào bǐ shuí xiān jiāng jié jiěkāi yòu zhào yuányàng zhā huíqù .",
+      "english": "After dinner Luodi produced two ropes to race at untying and retying the same knot.",
+      "hanzi": "饭后，罗荻拿出两截绳，要比谁先将结解开又照原样扎回去。",
       "alignment": [
         {
           "english": "After dinner",
@@ -5032,7 +5214,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi xiǎngqǐ mǐlā jiào guò de bànfǎ , juéde zìjǐ wèibì huì shū , jiéguǒ gāng jiěkāi yíbàn , luó dí yǐ bǎ zìjǐ de fàngdào zhuōshàng .",
+      "english": "Remembering Mira's teaching, Tavi thought he might not lose, but was halfway through when Luodi laid his finished rope down.",
+      "hanzi": "塔维想起米拉教过的办法，觉得自己未必会输，结果刚解开一半，罗荻已把自己的放到桌上。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -5228,9 +5417,9 @@
       ]
     },
     {
-      "target": "\" nǐ zhè shì tiāntiān liàn ? \" \" chēshàng de dōngxī tiāntiān yào bǎng . nǐ cái tiāntiān xiě míngzì ne . \" tǎ wéi bùfú , jiào tā zài lái yìhuí .",
-      "english": "“You practice daily?” “Cart loads need tying daily. You write names daily.” Tavi wouldn't concede and demanded another round.",
-      "hanzi": "“你这是天天练？”\n“车上的东西天天要绑。你才天天写名字呢。”\n塔维不服，叫他再来一回。",
+      "target": "\" nǐ zhè shì tiāntiān liàn ? \"",
+      "english": "“You practice daily?”",
+      "hanzi": "“你这是天天练？”\n",
       "alignment": [
         {
           "english": "You",
@@ -5271,7 +5460,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "\" chēshàng de dōngxī tiāntiān yào bǎng .",
+      "english": "“Cart loads need tying daily.",
+      "hanzi": "“车上的东西天天要绑。",
+      "alignment": [
         {
           "english": "Cart",
           "target": "chēshàng",
@@ -5319,7 +5515,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nǐ cái tiāntiān xiě míngzì ne . \"",
+      "english": "You write names daily.”",
+      "hanzi": "你才天天写名字呢。”\n",
+      "alignment": [
         {
           "english": "You",
           "target": "nǐ",
@@ -5367,7 +5570,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi bùfú , jiào tā zài lái yìhuí .",
+      "english": "Tavi wouldn't concede and demanded another round.",
+      "hanzi": "塔维不服，叫他再来一回。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -5435,9 +5645,9 @@
       ]
     },
     {
-      "target": "yù hé lùguò , jiāng liǎng rén zhàn de zhuō jiǎo shōuzǒu yíbàn , yào gěi gǎnchē de rén fàng fàn . yúshì tāmen jǐ dào tóngyì tiáodèng shàng , dītóu duì zhe liǎngjié shéng , chuāngwài nà dào jùdà de àn hú zǎoyǐ kànbújiàn le , míngtiān què hái zài nàlǐ děng zhe .",
-      "english": "Yuhe reclaimed half their table for the driver's dinner. They squeezed onto one bench over their ropes. The giant arc outside was invisible now, but would still wait tomorrow.",
-      "hanzi": "郁禾路过，将两人占的桌角收走一半，要给赶车的人放饭。于是他们挤到同一条凳上，低头对着两截绳，窗外那道巨大的暗弧早已看不见了，明天却还在那里等着。\n",
+      "target": "yù hé lùguò , jiāng liǎng rén zhàn de zhuō jiǎo shōuzǒu yíbàn , yào gěi gǎnchē de rén fàng fàn .",
+      "english": "Yuhe reclaimed half their table for the driver's dinner.",
+      "hanzi": "郁禾路过，将两人占的桌角收走一半，要给赶车的人放饭。",
       "alignment": [
         {
           "english": "Yuhe",
@@ -5566,7 +5776,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yúshì tāmen jǐ dào tóngyì tiáodèng shàng , dītóu duì zhe liǎngjié shéng , chuāngwài nà dào jùdà de àn hú zǎoyǐ kànbújiàn le , míngtiān què hái zài nàlǐ děng zhe .",
+      "english": "They squeezed onto one bench over their ropes. The giant arc outside was invisible now, but would still wait tomorrow.",
+      "hanzi": "于是他们挤到同一条凳上，低头对着两截绳，窗外那道巨大的暗弧早已看不见了，明天却还在那里等着。\n",
+      "alignment": [
         {
           "english": "They",
           "target": "yúshì",

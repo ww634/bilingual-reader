@@ -2,7 +2,7 @@
   "id": "ch-298",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "wūdǐng yǐwài",
     "english": "Beyond the Line of Roofs",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "cìrì xiàwǔ , nài lěi jièlái de zhuōshàng xiān bǎi le yìzhī pǔtōng de bēizi . yǒurén zǎozǎo dào le , yǐwéi bēi lǐ zhuāng de shì wàilù dàihuí de shuǐ , còu guòqù wén . tā kànjiàn , shuō fāngcái cóng xuégōng zàojiān yào de , ruò wén chū shénme guài , xiān qù wèn zhǔshuǐ de rén .",
-      "english": "The next afternoon an ordinary cup stood first on Nerai's borrowed table. An early student leaned close to smell it, imagining water from outside routes. She said it came from the academy kitchen just now: any strange smell, ask whoever boiled it first.",
-      "hanzi": "次日下午，奈蕾借来的桌上先摆了一只普通的杯子。有人早早到了，以为杯里装的是外路带回的水，凑过去闻。她看见，说方才从学宫灶间要的，若闻出什么怪，先去问煮水的人。\n",
+      "target": "cìrì xiàwǔ , nài lěi jièlái de zhuōshàng xiān bǎi le yìzhī pǔtōng de bēizi .",
+      "english": "The next afternoon an ordinary cup stood first on Nerai's borrowed table.",
+      "hanzi": "次日下午，奈蕾借来的桌上先摆了一只普通的杯子。",
       "alignment": [
         {
           "english": "next",
@@ -133,7 +133,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yǒurén zǎozǎo dào le , yǐwéi bēi lǐ zhuāng de shì wàilù dàihuí de shuǐ , còu guòqù wén .",
+      "english": "An early student leaned close to smell the cup, imagining water from outside routes.",
+      "hanzi": "有人早早到了，以为杯里装的是外路带回的水，凑过去闻。",
+      "alignment": [
         {
           "english": "student",
           "target": "yǒurén",
@@ -253,7 +260,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā kànjiàn , shuō fāngcái cóng xuégōng zàojiān yào de , ruò wén chū shénme guài , xiān qù wèn zhǔshuǐ de rén .",
+      "english": "She said it came from the academy kitchen just now: any strange smell, ask whoever boiled it first.",
+      "hanzi": "她看见，说方才从学宫灶间要的，若闻出什么怪，先去问煮水的人。\n",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -409,9 +423,9 @@
       ]
     },
     {
-      "target": "wūlǐ xiào kāi , jiǎn lǎoshī jiāng chuāng tuī kuān yìdiǎn , ràng hòupái yě néng kànjiàn zhuō . nài lěi zhè cái tānkāi liǎngzhāng bùtóng niántóu de tú , yìzhāng biānjiǎo mó bái , lìng yìzhāng liú zhe gǎiguò de qiǎn hén . tā méi xiān shuō zìjǐ zǒuguò duō yuǎn , zhǐzhe tú biān yìtiáoxiàn , jiào rén kàn nàlǐ xiě de niánfèn , bié jiāng liǎnghuí kànjiàn de shuǐ còuchéng tóngyìtiān .",
-      "english": "Laughter filled the room. Jian opened the window wider so the back row could see. Nerai spread two maps from different years, one worn white at the corners, one bearing faint corrections. Rather than boast of distance, she pointed to a date beside a line: don't combine water seen on two visits into one day.",
-      "hanzi": "屋里笑开，简老师将窗推宽一点，让后排也能看见桌。奈蕾这才摊开两张不同年头的图，一张边角磨白，另一张留着改过的浅痕。她没先说自己走过多远，指着图边一条线，叫人看那里写的年份，别将两回看见的水凑成同一天。\n",
+      "target": "wūlǐ xiào kāi , jiǎn lǎoshī jiāng chuāng tuī kuān yìdiǎn , ràng hòupái yě néng kànjiàn zhuō .",
+      "english": "Laughter filled the room. Jian opened the window wider so the back row could see.",
+      "hanzi": "屋里笑开，简老师将窗推宽一点，让后排也能看见桌。",
       "alignment": [
         {
           "english": "room",
@@ -516,7 +530,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi zhè cái tānkāi liǎngzhāng bùtóng niántóu de tú , yìzhāng biānjiǎo mó bái , lìng yìzhāng liú zhe gǎiguò de qiǎn hén .",
+      "english": "Nerai spread two maps from different years, one worn white at the corners, one bearing faint corrections.",
+      "hanzi": "奈蕾这才摊开两张不同年头的图，一张边角磨白，另一张留着改过的浅痕。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -676,7 +697,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méi xiān shuō zìjǐ zǒuguò duō yuǎn , zhǐzhe tú biān yìtiáoxiàn , jiào rén kàn nàlǐ xiě de niánfèn , bié jiāng liǎnghuí kànjiàn de shuǐ còuchéng tóngyìtiān .",
+      "english": "Rather than boast of distance, she pointed to a date beside a line: don't combine water seen on two visits into one day.",
+      "hanzi": "她没先说自己走过多远，指着图边一条线，叫人看那里写的年份，别将两回看见的水凑成同一天。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -920,9 +948,9 @@
       ]
     },
     {
-      "target": "tǎ wéi zuòzài mǐlā yǔ yīwén zhījiān , hūrán juéde tāmen xiānqián dàilái de wèntí dōu tàixiǎo , yòu shèbùdé shōuqǐ . nài lěi jiǎng de chì píng zài jǐchù shúxī yìzhàn yǐwài , guò le zuìhòu yíduàn shí jǐ , dìmiàn huì pūkāi dào rén wàng bújiàn lìngyìtóu de shān . tā dìyīyè xǐnglái , tīngbújiàn shuǐ yán shānbì wǎng xiàluò , jìng yǐwéi zìjǐ ěrduo chū liǎo shì .",
-      "english": "Between Mira and Iven, Tavi suddenly felt their prepared questions too small, yet couldn't put them away. Beyond several familiar stations lay Red Flats. Past the last stone ridge the ground spread until the far mountains vanished. On her first night there, waking without water falling along mountain walls, she'd feared something wrong with her ears.",
-      "hanzi": "塔维坐在米拉与伊文之间，忽然觉得他们先前带来的问题都太小，又舍不得收起。奈蕾讲的赤坪在几处熟悉驿站以外，过了最后一段石脊，地面会铺开到人望不见另一头的山。她第一夜醒来，听不见水沿山壁往下落，竟以为自己耳朵出了事。\n",
+      "target": "tǎ wéi zuòzài mǐlā yǔ yīwén zhījiān , hūrán juéde tāmen xiānqián dàilái de wèntí dōu tàixiǎo , yòu shèbùdé shōuqǐ .",
+      "english": "Between Mira and Iven, Tavi suddenly felt their prepared questions too small, yet couldn't put them away.",
+      "hanzi": "塔维坐在米拉与伊文之间，忽然觉得他们先前带来的问题都太小，又舍不得收起。",
       "alignment": [
         {
           "english": "Tavi",
@@ -1083,9 +1111,16 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi jiǎng de chì píng zài jǐchù shúxī yìzhàn yǐwài , guò le zuìhòu yíduàn shí jǐ , dìmiàn huì pūkāi dào rén wàng bújiàn lìngyìtóu de shān .",
+      "english": "Nerai described Red Flats, beyond several familiar stations. Past the last stone ridge the ground spread until the far mountains vanished.",
+      "hanzi": "奈蕾讲的赤坪在几处熟悉驿站以外，过了最后一段石脊，地面会铺开到人望不见另一头的山。",
+      "alignment": [
         {
-          "english": "her",
+          "english": "Nerai",
           "target": "nài lěi",
           "hanzi": "奈蕾",
           "category": "proper_noun",
@@ -1093,7 +1128,7 @@
           "frequency_band": null
         },
         {
-          "english": "lay",
+          "english": "described",
           "target": "jiǎng",
           "hanzi": "讲",
           "category": "verb",
@@ -1101,7 +1136,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "lay",
+          "english": "described",
           "target": "de",
           "hanzi": "的",
           "category": "particle",
@@ -1291,7 +1326,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā dìyīyè xǐnglái , tīngbújiàn shuǐ yán shānbì wǎng xiàluò , jìng yǐwéi zìjǐ ěrduo chū liǎo shì .",
+      "english": "On her first night there, waking without water falling along mountain walls, she'd feared something wrong with her ears.",
+      "hanzi": "她第一夜醒来，听不见水沿山壁往下落，竟以为自己耳朵出了事。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -1431,9 +1473,9 @@
       ]
     },
     {
-      "target": "chì píng de rén què pà tā zǒu dé tài zhí . yǔqián dī chù de cǎo huì bèi shuǐyā píng , yuǎn kàn xiàng hǎo lù , děng zhēn cǎixiàqù , ní xià lìng yìgǔ shuǐ yǐjīng huàn le fāngxiàng . dāngdìrén zuò qiǎn chuán chūmén , wūqián liúgěi chuán tíng de mùzhuāng bǐ liúgěi rén zhàn de táijiē duō , què tóngyàng yǒu pùzi , yǒurén jiè yán bù hái , yǒu mǔqīn zài ménkǒu jiào háizi bié jiāng xié diū jìnshuǐ lǐ .",
-      "english": "Red Flats people feared she'd walk too straight. Before rain, water pressed low grass flat into what looked like a road; beneath mud another current had already changed direction. Locals used shallow boats, more boat posts than human steps before houses, yet also shops, salt borrowed and not repaid, mothers telling children not to drop shoes in the water.",
-      "hanzi": "赤坪的人却怕她走得太直。雨前低处的草会被水压平，远看像好路，等真踩下去，泥下另一股水已经换了方向。当地人坐浅船出门，屋前留给船停的木桩比留给人站的台阶多，却同样有铺子，有人借盐不还，有母亲在门口叫孩子别将鞋丢进水里。\n",
+      "target": "chì píng de rén què pà tā zǒu dé tài zhí .",
+      "english": "Red Flats people feared she'd walk too straight.",
+      "hanzi": "赤坪的人却怕她走得太直。",
       "alignment": [
         {
           "english": "Red Flats",
@@ -1514,7 +1556,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yǔqián dī chù de cǎo huì bèi shuǐyā píng , yuǎn kàn xiàng hǎo lù , děng zhēn cǎixiàqù , ní xià lìng yìgǔ shuǐ yǐjīng huàn le fāngxiàng .",
+      "english": "Before rain, water pressed low grass flat into what looked like a road; beneath mud another current had already changed direction.",
+      "hanzi": "雨前低处的草会被水压平，远看像好路，等真踩下去，泥下另一股水已经换了方向。",
+      "alignment": [
         {
           "english": "Before rain",
           "target": "yǔqián",
@@ -1690,7 +1739,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dāngdìrén zuò qiǎn chuán chūmén , wūqián liúgěi chuán tíng de mùzhuāng bǐ liúgěi rén zhàn de táijiē duō , què tóngyàng yǒu pùzi , yǒurén jiè yán bù hái , yǒu mǔqīn zài ménkǒu jiào háizi bié jiāng xié diū jìnshuǐ lǐ .",
+      "english": "Locals used shallow boats, more boat posts than human steps before houses, yet also shops, salt borrowed and not repaid, mothers telling children not to drop shoes in the water.",
+      "hanzi": "当地人坐浅船出门，屋前留给船停的木桩比留给人站的台阶多，却同样有铺子，有人借盐不还，有母亲在门口叫孩子别将鞋丢进水里。\n",
+      "alignment": [
         {
           "english": "Locals",
           "target": "dāngdìrén",
@@ -1990,9 +2046,9 @@
       ]
     },
     {
-      "target": "tā náchū yìzhāng xiǎo huà , búshì hóngdà de xīnchéng , zhǐshì yíhù rénjiā chuāngwài shài de bù , xiàmiàn yìpái gèbùxiāngtóng de shuǐ hén . mǐlā xiān kàn wū xià zhīchéng , wèn shìbushì yě xiàng shí tīng nàyàng yòng mùpái . nài lěi shuō zhè hù bù fú , dī shuǐ shí néng zǒu dào zhù biān , yǒu yìpái ǎi zhuāng lì zài ní lǐ ; tā zhī huà guò chuāngqián zhè yìjiǎo , bùnéng nálái tì mǐlā dìng zhěngzuò wū zěnyàng xiū .",
-      "english": "Her small sketch showed not a grand new city, but cloth drying at a household window above varied water marks. Mira asked about supports: log rafts like Shiting? This house didn't float, Nerai said; at low water you could reach its posts, low stakes in mud. She'd drawn only that window corner, not enough to decide repairs for the whole house.",
-      "hanzi": "她拿出一张小画，不是宏大的新城，只是一户人家窗外晒的布，下面一排各不相同的水痕。米拉先看屋下支承，问是不是也像石汀那样用木排。奈蕾说这户不浮，低水时能走到柱边，有一排矮桩立在泥里；她只画过窗前这一角，不能拿来替米拉定整座屋怎样修。\n",
+      "target": "tā náchū yìzhāng xiǎo huà , búshì hóngdà de xīnchéng , zhǐshì yíhù rénjiā chuāngwài shài de bù , xiàmiàn yìpái gèbùxiāngtóng de shuǐ hén .",
+      "english": "Her small sketch showed not a grand new city, but cloth drying at a household window above varied water marks.",
+      "hanzi": "她拿出一张小画，不是宏大的新城，只是一户人家窗外晒的布，下面一排各不相同的水痕。",
       "alignment": [
         {
           "english": "Her",
@@ -2185,7 +2241,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā xiān kàn wū xià zhīchéng , wèn shìbushì yě xiàng shí tīng nàyàng yòng mùpái .",
+      "english": "Mira asked about supports: log rafts like Shiting?",
+      "hanzi": "米拉先看屋下支承，问是不是也像石汀那样用木排。",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -2289,7 +2352,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi shuō zhè hù bù fú , dī shuǐ shí néng zǒu dào zhù biān , yǒu yìpái ǎi zhuāng lì zài ní lǐ ; tā zhī huà guò chuāngqián zhè yìjiǎo , bùnéng nálái tì mǐlā dìng zhěngzuò wū zěnyàng xiū .",
+      "english": "This house didn't float, Nerai said; at low water you could reach its posts, low stakes in mud. She'd drawn only that window corner, not enough to decide for Mira repairs to the whole house.",
+      "hanzi": "奈蕾说这户不浮，低水时能走到柱边，有一排矮桩立在泥里；她只画过窗前这一角，不能拿来替米拉定整座屋怎样修。\n",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -2565,9 +2635,9 @@
       ]
     },
     {
-      "target": "hòupái yígè xuéshēng wèn , nàxiē rén wèishénme bù bānjìn ānquán de shānlǐ . nài lěi tíng le yíxià , shuō tā wèn guò lèishì dehuà , chì píng de lǎorén fǎnwèn , shānshàng de rén wéihé yào bǎ liáng yìzhí bān dào tiānshàng . tāmen xiào wán , tā cái shuō gèchù pà de dōngxī bìng bù yíyàng , dàn zhè yě bù děngyú tā kěyǐ dài dìyīcì qù de rén , zhào dāngdì háizi pǎo guò de dìfāng suíbiàn zǒu .",
-      "english": "A student at the back asked why they didn't move into safe mountains. After a pause, Nerai said she'd asked similarly; an old Red Flats man asked back why mountain people carried grain all the way into the sky. After laughter she said places feared different things, but that didn't let her take first-time visitors anywhere local children ran.",
-      "hanzi": "后排一个学生问，那些人为什么不搬进安全的山里。奈蕾停了一下，说她问过类似的话，赤坪的老人反问，山上的人为何要把粮一直搬到天上。他们笑完，她才说各处怕的东西并不一样，但这也不等于她可以带第一次去的人，照当地孩子跑过的地方随便走。\n",
+      "target": "hòupái yígè xuéshēng wèn , nàxiē rén wèishénme bù bānjìn ānquán de shānlǐ .",
+      "english": "A student at the back asked why they didn't move into safe mountains.",
+      "hanzi": "后排一个学生问，那些人为什么不搬进安全的山里。",
       "alignment": [
         {
           "english": "at the back",
@@ -2680,7 +2750,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi tíng le yíxià , shuō tā wèn guò lèishì dehuà , chì píng de lǎorén fǎnwèn , shānshàng de rén wéihé yào bǎ liáng yìzhí bān dào tiānshàng .",
+      "english": "After a pause, Nerai said she'd asked similarly; an old Red Flats man asked back why mountain people carried grain all the way into the sky.",
+      "hanzi": "奈蕾停了一下，说她问过类似的话，赤坪的老人反问，山上的人为何要把粮一直搬到天上。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -2864,7 +2941,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tāmen xiào wán , tā cái shuō gèchù pà de dōngxī bìng bù yíyàng , dàn zhè yě bù děngyú tā kěyǐ dài dìyīcì qù de rén , zhào dāngdì háizi pǎo guò de dìfāng suíbiàn zǒu .",
+      "english": "After laughter she said places feared different things, but that didn't let her take first-time visitors anywhere local children ran.",
+      "hanzi": "他们笑完，她才说各处怕的东西并不一样，但这也不等于她可以带第一次去的人，照当地孩子跑过的地方随便走。\n",
+      "alignment": [
         {
           "english": "laughter",
           "target": "tāmen",
@@ -3108,9 +3192,9 @@
       ]
     },
     {
-      "target": "jiǎn lǎoshī wèn tú shàng nàtiáo bèi huàdiào de lù shì shuí huà de . nài lěi shuō zìjǐ . dìyīhuí gēn yígè shōu yán de rén zǒu , duìfāng shuō kūshuǐ néng guò , tā biàn huà dé tài xiàng rénrén kě guò ; dìèrhuí huànjì huílái , cái jiàn zhōngjiān liǎngchù xū jiè rénjiā de chuán , búshì dìshàng hái lián zhe biàn suàn tóng yìtiáo lù .",
-      "english": "Jian asked who'd crossed out a route. Herself, Nerai said. On her first visit a salt collector led her through at low water; she'd drawn it too much like anyone's passage. Back in another season she found two stretches needed borrowing people's boats: connected ground didn't make one unchanged route.",
-      "hanzi": "简老师问图上那条被划掉的路是谁划的。奈蕾说自己。第一回跟一个收盐的人走，对方说枯水能过，她便画得太像人人可过；第二回换季回来，才见中间两处须借人家的船，不是地上还连着便算同一条路。\n",
+      "target": "jiǎn lǎoshī wèn tú shàng nàtiáo bèi huàdiào de lù shì shuí huà de .",
+      "english": "Jian asked who'd crossed out a route.",
+      "hanzi": "简老师问图上那条被划掉的路是谁划的。",
       "alignment": [
         {
           "english": "Jian",
@@ -3223,7 +3307,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi shuō zìjǐ .",
+      "english": "Herself, Nerai said.",
+      "hanzi": "奈蕾说自己。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -3247,7 +3338,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dìyīhuí gēn yígè shōu yán de rén zǒu , duìfāng shuō kūshuǐ néng guò , tā biàn huà dé tài xiàng rénrén kě guò ; dìèrhuí huànjì huílái , cái jiàn zhōngjiān liǎngchù xū jiè rénjiā de chuán , búshì dìshàng hái lián zhe biàn suàn tóng yìtiáo lù .",
+      "english": "On her first visit a salt collector led her through at low water; she'd drawn it too much like anyone's passage. Back in another season she found two stretches needed borrowing people's boats: connected ground didn't make one unchanged route.",
+      "hanzi": "第一回跟一个收盐的人走，对方说枯水能过，她便画得太像人人可过；第二回换季回来，才见中间两处须借人家的船，不是地上还连着便算同一条路。\n",
+      "alignment": [
         {
           "english": "first",
           "target": "dìyī",
@@ -3627,9 +3725,9 @@
       ]
     },
     {
-      "target": "yīwén wèn , ruò chūqián mǎi tú de rén zhī xiǎng kàn néng zǒu de , tā huì buhuì bǎ nàxiē bù kěndìng liú dào lìng yìzhāng qù . nài lěi kàn xiàng tā , xiàngshì zài xiǎng tā wèn de shì nǎ yìbǐ jiùshì , jiēzhe shuō yǒushí mǎi tú de rén quèshí huì zhèyàng yào . tā zuò guòfèn tú , què xū jiāng zhè zhāng guǎn nǎ shí , gěi shuí yòng xiě zài yǎnqián , bùnéng cáng qǐlái , jiào nádào dìyīzhāng de rén tì zìjǐ dān wùjiě .",
-      "english": "Iven asked if funders wanting only passable routes would make her put uncertainties on a separate map. Nerai looked toward him as if considering what old incident he meant, then said buyers sometimes did ask that. She'd made separate maps, but had to state visibly when and for whom each worked, not hide it and make holders of the first bear the misunderstanding.",
-      "hanzi": "伊文问，若出钱买图的人只想看能走的，她会不会把那些不肯定留到另一张去。奈蕾看向他，像是在想他问的是哪一笔旧事，接着说有时买图的人确实会这样要。她做过分图，却须将这张管哪时、给谁用写在眼前，不能藏起来，叫拿到第一张的人替自己担误解。\n",
+      "target": "yīwén wèn , ruò chūqián mǎi tú de rén zhī xiǎng kàn néng zǒu de , tā huì buhuì bǎ nàxiē bù kěndìng liú dào lìng yìzhāng qù .",
+      "english": "Iven asked if funders wanting only passable routes would make her put uncertainties on a separate map.",
+      "hanzi": "伊文问，若出钱买图的人只想看能走的，她会不会把那些不肯定留到另一张去。",
       "alignment": [
         {
           "english": "Iven",
@@ -3760,7 +3858,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "the",
+          "english": "uncertainties",
           "target": "nàxiē",
           "hanzi": "那些",
           "category": "function_word",
@@ -3806,7 +3904,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi kàn xiàng tā , xiàngshì zài xiǎng tā wèn de shì nǎ yìbǐ jiùshì , jiēzhe shuō yǒushí mǎi tú de rén quèshí huì zhèyàng yào .",
+      "english": "Nerai looked toward him as if considering what old incident he meant, then said buyers sometimes did ask that.",
+      "hanzi": "奈蕾看向他，像是在想他问的是哪一笔旧事，接着说有时买图的人确实会这样要。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -3990,7 +4095,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zuò guòfèn tú , què xū jiāng zhè zhāng guǎn nǎ shí , gěi shuí yòng xiě zài yǎnqián , bùnéng cáng qǐlái , jiào nádào dìyīzhāng de rén tì zìjǐ dān wùjiě .",
+      "english": "She'd made separate maps, but had to state visibly when and for whom each worked, not hide it and make holders of the first bear the misunderstanding.",
+      "hanzi": "她做过分图，却须将这张管哪时、给谁用写在眼前，不能藏起来，叫拿到第一张的人替自己担误解。\n",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -4218,9 +4330,9 @@
       ]
     },
     {
-      "target": "zhuōbiān yíwèi lái pángtīng de lù wù jiàoyuán shuō , xiě dé tài duō , yě huì ràng pǔtōng lǚkè bùgǎn yòng . nài lěi dá , shì , huì , suǒyǐ bùnéng zhī kào yìzhāng tú bǎ suǒyǒu shì shuōwán . liǎng rén bìng méi zhēng chū yíjù dōu mǎnyì dehuà , jiǎn lǎoshī bǎ hòutou xuéshēng jǐ dào yìqǐ de shǒuyā xià , jiào tāmen yìhuí wèn yíjiàn , bié jiāng yì wū rén de lù dōu dǎo dào tā bēi lǐ .",
-      "english": "A visiting route-affairs teacher said too much writing frightened ordinary travelers from using it. Yes, Nerai said, so a single map couldn't say everything. Neither found wording both liked. Jian lowered the crowded hands behind them: one question at a time, don't pour a roomful of routes into her cup.",
-      "hanzi": "桌边一位来旁听的路务教员说，写得太多，也会让普通旅客不敢用。奈蕾答，是，会，所以不能只靠一张图把所有事说完。两人并没争出一句都满意的话，简老师把后头学生挤到一起的手压下，叫他们一回问一件，别将一屋人的路都倒到她杯里。\n",
+      "target": "zhuōbiān yíwèi lái pángtīng de lù wù jiàoyuán shuō , xiě dé tài duō , yě huì ràng pǔtōng lǚkè bùgǎn yòng .",
+      "english": "A visiting route-affairs teacher said too much writing frightened ordinary travelers from using it.",
+      "hanzi": "桌边一位来旁听的路务教员说，写得太多，也会让普通旅客不敢用。",
       "alignment": [
         {
           "english": "visiting",
@@ -4381,7 +4493,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi dá , shì , huì , suǒyǐ bùnéng zhī kào yìzhāng tú bǎ suǒyǒu shì shuōwán .",
+      "english": "Yes, Nerai said, so a single map couldn't say everything.",
+      "hanzi": "奈蕾答，是，会，所以不能只靠一张图把所有事说完。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -4501,7 +4620,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "liǎng rén bìng méi zhēng chū yíjù dōu mǎnyì dehuà , jiǎn lǎoshī bǎ hòutou xuéshēng jǐ dào yìqǐ de shǒuyā xià , jiào tāmen yìhuí wèn yíjiàn , bié jiāng yì wū rén de lù dōu dǎo dào tā bēi lǐ .",
+      "english": "Neither found wording both liked. Jian lowered the crowded hands behind them: one question at a time, don't pour a roomful of routes into her cup.",
+      "hanzi": "两人并没争出一句都满意的话，简老师把后头学生挤到一起的手压下，叫他们一回问一件，别将一屋人的路都倒到她杯里。\n",
+      "alignment": [
         {
           "english": "Neither",
           "target": "liǎng",
@@ -4769,9 +4895,9 @@
       ]
     },
     {
-      "target": "tǎ wéi zhōngyú náchū zìjǐ nà zhāng méi ràng rén zǒu duì de zhǐ . nài lěi méi xiánxiǎo , xiān wèn tā zhàn zài huà lǐ de nǎ yìbiān . tā běn xiǎng zhǐ jiàntóu , shǒu dào bànkōng , què jiāng zhǐ zhuǎngěi zuò lìngyícè de mǐlā . chuāngwài de shānyǐng bèi fēng chuīdòng de yèzi qièchéng xǔduōkuài , tú shàng nà yìxiǎo duàn lù , yě hūrán yǒu le bùzhǐ yígè rén zhàn zhe de wèizhì .",
-      "english": "Tavi finally produced his sign that hadn't guided people correctly. Nerai didn't dismiss its smallness, first asking which side he stood on. He meant to point at the arrow, but mid-reach turned the paper to Mira on the other side. Leaves moving in wind broke the mountain shadow outside into many pieces; the small route on the page suddenly had places for more than one person to stand.",
-      "hanzi": "塔维终于拿出自己那张没让人走对的纸。奈蕾没嫌小，先问他站在画里的哪一边。他本想指箭头，手到半空，却将纸转给坐另一侧的米拉。窗外的山影被风吹动的叶子切成许多块，图上那一小段路，也忽然有了不止一个人站着的位置。\n",
+      "target": "tǎ wéi zhōngyú náchū zìjǐ nà zhāng méi ràng rén zǒu duì de zhǐ .",
+      "english": "Tavi finally produced his sign that hadn't guided people correctly.",
+      "hanzi": "塔维终于拿出自己那张没让人走对的纸。",
       "alignment": [
         {
           "english": "Tavi",
@@ -4868,7 +4994,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nài lěi méi xiánxiǎo , xiān wèn tā zhàn zài huà lǐ de nǎ yìbiān .",
+      "english": "Nerai didn't dismiss its smallness, first asking which side of the drawing he stood on.",
+      "hanzi": "奈蕾没嫌小，先问他站在画里的哪一边。",
+      "alignment": [
         {
           "english": "Nerai",
           "target": "nài lěi",
@@ -4942,7 +5075,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "page",
+          "english": "drawing",
           "target": "huà",
           "hanzi": "画",
           "category": "noun",
@@ -4950,7 +5083,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "page",
+          "english": "of the drawing",
           "target": "lǐ",
           "hanzi": "里",
           "category": "function_word",
@@ -4958,7 +5091,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "page",
+          "english": "of the drawing",
           "target": "de",
           "hanzi": "的",
           "category": "particle",
@@ -4980,7 +5113,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā běn xiǎng zhǐ jiàntóu , shǒu dào bànkōng , què jiāng zhǐ zhuǎngěi zuò lìngyícè de mǐlā .",
+      "english": "He meant to point at the arrow, but mid-reach turned the paper to Mira on the other side.",
+      "hanzi": "他本想指箭头，手到半空，却将纸转给坐另一侧的米拉。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -5116,7 +5256,14 @@
           "category": "proper_noun",
           "is_idiom": false,
           "frequency_band": null
-        },
+        }
+      ]
+    },
+    {
+      "target": "chuāngwài de shānyǐng bèi fēng chuīdòng de yèzi qièchéng xǔduōkuài , tú shàng nà yìxiǎo duàn lù , yě hūrán yǒu le bùzhǐ yígè rén zhàn zhe de wèizhì .",
+      "english": "Leaves moving in wind broke the mountain shadow outside into many pieces; the small route on the page suddenly had places for more than one person to stand.",
+      "hanzi": "窗外的山影被风吹动的叶子切成许多块，图上那一小段路，也忽然有了不止一个人站着的位置。\n",
+      "alignment": [
         {
           "english": "outside",
           "target": "chuāngwài",

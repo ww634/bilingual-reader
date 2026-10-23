@@ -2,7 +2,7 @@
   "id": "ch-293",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "liǎngshuāngshǒu zhījiān",
     "english": "Between Two Pairs of Hands",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "wéi lǎoshī bǎ tǎ wéi jiāo de tú fàngdào zhuōshàng , xiān wèn túlǐ nàge nǐng luógǎn de rén shì shuí . tǎ wéi shuō ruò zhǔnxǔ , xiǎng qǐng mǐlā . lǎoshī jiāng bǐ gēxià , ràng tā qù wèn rén , bié zài zhǐ shàng xiān tì biérén liú yì shuāngshǒu .",
-      "english": "Vey laid Tavi's submitted drawing on the table and asked who would turn the screw in it. Mira, if allowed, he said. Putting down her pen, the teacher told him to ask her first, not reserve another person's hands on paper.",
-      "hanzi": "维老师把塔维交的图放到桌上，先问图里那个拧螺杆的人是谁。塔维说若准许，想请米拉。老师将笔搁下，让他去问人，别在纸上先替别人留一双手。\n",
+      "target": "wéi lǎoshī bǎ tǎ wéi jiāo de tú fàngdào zhuōshàng , xiān wèn túlǐ nàge nǐng luógǎn de rén shì shuí .",
+      "english": "Vey laid Tavi's submitted drawing on the table and first asked who the person turning the screw in the drawing was.",
+      "hanzi": "维老师把塔维交的图放到桌上，先问图里那个拧螺杆的人是谁。",
       "alignment": [
         {
           "english": "Vey",
@@ -103,7 +103,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "paper",
+          "english": "drawing",
           "target": "tú",
           "hanzi": "图",
           "category": "noun",
@@ -159,7 +159,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "would",
+          "english": "was",
           "target": "shì",
           "hanzi": "是",
           "category": "verb",
@@ -173,7 +173,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi shuō ruò zhǔnxǔ , xiǎng qǐng mǐlā .",
+      "english": "Tavi said he would ask Mira if allowed.",
+      "hanzi": "塔维说若准许，想请米拉。",
+      "alignment": [
         {
           "english": "he",
           "target": "tǎ wéi",
@@ -229,7 +236,14 @@
           "category": "proper_noun",
           "is_idiom": false,
           "frequency_band": null
-        },
+        }
+      ]
+    },
+    {
+      "target": "lǎoshī jiāng bǐ gēxià , ràng tā qù wèn rén , bié zài zhǐ shàng xiān tì biérén liú yì shuāngshǒu .",
+      "english": "Putting down her pen, the teacher told him to ask her first, not reserve another person's hands on paper.",
+      "hanzi": "老师将笔搁下，让他去问人，别在纸上先替别人留一双手。\n",
+      "alignment": [
         {
           "english": "teacher",
           "target": "lǎoshī",
@@ -393,9 +407,9 @@
       ]
     },
     {
-      "target": "mǐlā láide bǐ tā yùxiǎng de kuài , shǒulǐ què méikòng zhe . tā bào zhe zìjǐ tóng sū yǐ de shìjiàn tú , wèn jīnrì jiūjìng shì qǐng tā kàn tú , háishì yòu jiào tā fàngxià zìjǐ de huó lái tì tā shì yìhuí . tǎ wéi tīng chū tā yǒudiǎn bù gāoxìng , máng shuō xiān kàn tú , shì yào děng lǎoshī jiāng liǎngbiān dōu kàn míngbái , shíjiān yě dé tā kěn .",
-      "english": "Mira came sooner than expected, but carrying her and Suyi's prototype drawings. Was she being asked to inspect a drawing today or put aside her own work for his trial again? Hearing her annoyance, Tavi said inspect first; a trial required the teacher's assessment of both sides and her agreement to the time.",
-      "hanzi": "米拉来得比他预想的快，手里却没空着。她抱着自己同苏苡的试件图，问今日究竟是请她看图，还是又叫她放下自己的活来替他试一回。塔维听出她有点不高兴，忙说先看图，试要等老师将两边都看明白，时间也得她肯。\n",
+      "target": "mǐlā láide bǐ tā yùxiǎng de kuài , shǒulǐ què méikòng zhe .",
+      "english": "Mira came sooner than he expected, but her hands weren't empty.",
+      "hanzi": "米拉来得比他预想的快，手里却没空着。",
       "alignment": [
         {
           "english": "Mira",
@@ -430,7 +444,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "his",
+          "english": "he",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -462,7 +476,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "carrying",
+          "english": "hands",
           "target": "shǒulǐ",
           "hanzi": "手里",
           "category": "noun",
@@ -478,7 +492,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "carrying",
+          "english": "weren't",
           "target": "méi",
           "hanzi": "没",
           "category": "adverb",
@@ -486,7 +500,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "carrying",
+          "english": "empty",
           "target": "kòng",
           "hanzi": "空",
           "category": "adjective",
@@ -494,15 +508,22 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "carrying",
+          "english": "empty",
           "target": "zhe",
           "hanzi": "着",
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā bào zhe zìjǐ tóng sū yǐ de shìjiàn tú , wèn jīnrì jiūjìng shì qǐng tā kàn tú , háishì yòu jiào tā fàngxià zìjǐ de huó lái tì tā shì yìhuí .",
+      "english": "She was carrying her and Suyi's prototype drawings. Was she being asked to inspect a drawing today or put aside her own work for his trial again?",
+      "hanzi": "她抱着自己同苏苡的试件图，问今日究竟是请她看图，还是又叫她放下自己的活来替他试一回。",
+      "alignment": [
         {
-          "english": "Mira",
+          "english": "She",
           "target": "tā",
           "hanzi": "她",
           "category": "function_word",
@@ -732,7 +753,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi tīng chū tā yǒudiǎn bù gāoxìng , máng shuō xiān kàn tú , shì yào děng lǎoshī jiāng liǎngbiān dōu kàn míngbái , shíjiān yě dé tā kěn .",
+      "english": "Hearing her annoyance, Tavi said inspect first; a trial required the teacher's assessment of both sides and her agreement to the time.",
+      "hanzi": "塔维听出她有点不高兴，忙说先看图，试要等老师将两边都看明白，时间也得她肯。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -912,9 +940,9 @@
       ]
     },
     {
-      "target": "tú shàng réng shì yuánlái nà duì xiǎo tiěliào , zhěngkuài tǐjī tóng xiāngróngxìng yǐyǒu jìlù , jīnrì bìng bù yīncǐ miǎn chá . yào zhuāng de shì yíjiàn pǔtōng mù múxíng de jiāchí zuò , tiěliào yǔ jiājù zhī zuò zhuāngpèi shí de gōngjù ; luógǎn suǒzhù yǐhòu , mù jiàn kào jīxiè kǎkǒu liúxià wèizhì , búshì yào jiè xìng liúzài mùtou lǐ . liǎngkuài tiě gèzì shòu qīngzǎi , yán xiānqián zhǔnxǔ guò de gànggǎn bùjú dú xiǎngyìng , shuāngshǒu cóng jiēshàng dào shōuhuí dōu bù líkāi .",
-      "english": "The drawing still used the original small iron pair. Compatibility and whole volumes were recorded, not exempted from rechecking. The job was an ordinary wooden model's clamping seat; iron and fixture were assembly tools only. Once the screw locked, a mechanical catch held the wood, not borrowing left inside it. Each iron piece took a light load, readings using the previously approved lever layout, both hands touching throughout cancellation.",
-      "hanzi": "图上仍是原来那对小铁料，整块体积同相容性已有记录，今日并不因此免查。要装的是一件普通木模型的夹持座，铁料与夹具只作装配时的工具；螺杆锁住以后，木件靠机械卡口留下位置，不是要借性留在木头里。两块铁各自受轻载，沿先前准许过的杠杆布局读响应，双手从接上到收回都不离开。\n",
+      "target": "tú shàng réng shì yuánlái nà duì xiǎo tiěliào , zhěngkuài tǐjī tóng xiāngróngxìng yǐyǒu jìlù , jīnrì bìng bù yīncǐ miǎn chá .",
+      "english": "The drawing still used the original small iron pair. Compatibility and whole volumes were recorded, not exempted from rechecking.",
+      "hanzi": "图上仍是原来那对小铁料，整块体积同相容性已有记录，今日并不因此免查。",
       "alignment": [
         {
           "english": "drawing",
@@ -1067,7 +1095,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yào zhuāng de shì yíjiàn pǔtōng mù múxíng de jiāchí zuò , tiěliào yǔ jiājù zhī zuò zhuāngpèi shí de gōngjù ; luógǎn suǒzhù yǐhòu , mù jiàn kào jīxiè kǎkǒu liúxià wèizhì , búshì yào jiè xìng liúzài mùtou lǐ .",
+      "english": "The job was an ordinary wooden model's clamping seat; iron and fixture were assembly tools only. Once the screw locked, a mechanical catch held the wood, not borrowing left inside it.",
+      "hanzi": "要装的是一件普通木模型的夹持座，铁料与夹具只作装配时的工具；螺杆锁住以后，木件靠机械卡口留下位置，不是要借性留在木头里。",
+      "alignment": [
         {
           "english": "job",
           "target": "yào",
@@ -1355,7 +1390,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "liǎngkuài tiě gèzì shòu qīngzǎi , yán xiānqián zhǔnxǔ guò de gànggǎn bùjú dú xiǎngyìng , shuāngshǒu cóng jiēshàng dào shōuhuí dōu bù líkāi .",
+      "english": "Each iron piece took a light load, readings using the previously approved lever layout, both hands touching throughout cancellation.",
+      "hanzi": "两块铁各自受轻载，沿先前准许过的杠杆布局读响应，双手从接上到收回都不离开。\n",
+      "alignment": [
         {
           "english": "Each",
           "target": "liǎng",
@@ -1527,9 +1569,9 @@
       ]
     },
     {
-      "target": "zhècì bùliú yú xìng , mǐlā yě búyòng qiǎng zài bǎichuí dìyīshēng qián chuān xiāo . tā yào zuò de shì zài tǎ wéi wéichí nà yìdiǎn xiǎo biànhuà shí , jiāng yǐ duì zhèng de luógǎn nǐng dào dìngwèi ; quèrèn kǎkǒu hòu , tā liǎngshǒu réng tiēzhe shōuhuí jiè xìng , děng qīngzǎi dúshù huíqù , zài táishǒu , xièzài .",
-      "english": "No residue this time, no need for Mira to rush a pin before the first pendulum click. While Tavi maintained a small change she would turn an aligned screw into position; once the catch was confirmed he would cancel with both hands still touching, wait for light-load baselines, then lift and unload.",
-      "hanzi": "这次不留余性，米拉也不用抢在摆锤第一声前穿销。她要做的是在塔维维持那一点小变化时，将已对正的螺杆拧到定位；确认卡口后，他两手仍贴着收回借性，等轻载读数回去，再抬手、卸载。\n",
+      "target": "zhècì bùliú yú xìng , mǐlā yě búyòng qiǎng zài bǎichuí dìyīshēng qián chuān xiāo .",
+      "english": "No residue this time, no need for Mira to rush a pin before the first pendulum click.",
+      "hanzi": "这次不留余性，米拉也不用抢在摆锤第一声前穿销。",
       "alignment": [
         {
           "english": "this time",
@@ -1642,7 +1684,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā yào zuò de shì zài tǎ wéi wéichí nà yìdiǎn xiǎo biànhuà shí , jiāng yǐ duì zhèng de luógǎn nǐng dào dìngwèi ; quèrèn kǎkǒu hòu , tā liǎngshǒu réng tiēzhe shōuhuí jiè xìng , děng qīngzǎi dúshù huíqù , zài táishǒu , xièzài .",
+      "english": "While Tavi maintained a small change she would turn an aligned screw into position; once the catch was confirmed he would cancel with both hands still touching, wait for light-load baselines, then lift and unload.",
+      "hanzi": "她要做的是在塔维维持那一点小变化时，将已对正的螺杆拧到定位；确认卡口后，他两手仍贴着收回借性，等轻载读数回去，再抬手、卸载。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -1942,9 +1991,9 @@
       ]
     },
     {
-      "target": "mǐlā tīng wán , méi xiān diǎntóu , shēnshǒu jiāng tú zhuǎn dào zìjǐ miànqián . tǎ wéi huà gěi tā liú de dìfāng zhènghǎo tiēzhe zhuōbiān , rén ruò yào kànqīng luógǎn mòduān , zuǒ zhǒu biàn méiyǒu dìfāng fàng . tā jiāng yǐzi tuō jìn , yǎn gěi tā kàn , shǒu hái méi shēn dàodǐ , jiān yǐjīng dǐng zhe tā de shǒubì . \" nǐ kànguò wēn xiù zuò . \" tā shuō , \" wǒ kě méi chángchéng nàwèi shīfu . \"",
-      "english": "Mira didn't agree immediately, turning the drawing toward herself. Her assigned place pressed against the table edge; to see the screw tip her left elbow had nowhere to go. Pulling up a chair to demonstrate, she hadn't reached all the way before her shoulder touched his arm. “You've watched Wenxiu,” she said. “I'm not built like that craftsman.”",
-      "hanzi": "米拉听完，没先点头，伸手将图转到自己面前。塔维画给她留的地方正好贴着桌边，人若要看清螺杆末端，左肘便没有地方放。她将椅子拖近，演给他看，手还没伸到底，肩已经顶着他的手臂。\n“你看过温岫做。”她说，“我可没长成那位师傅。”\n",
+      "target": "mǐlā tīng wán , méi xiān diǎntóu , shēnshǒu jiāng tú zhuǎn dào zìjǐ miànqián .",
+      "english": "Mira didn't agree immediately, turning the drawing toward herself.",
+      "hanzi": "米拉听完，没先点头，伸手将图转到自己面前。",
       "alignment": [
         {
           "english": "Mira",
@@ -2033,7 +2082,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi huà gěi tā liú de dìfāng zhènghǎo tiēzhe zhuōbiān , rén ruò yào kànqīng luógǎn mòduān , zuǒ zhǒu biàn méiyǒu dìfāng fàng .",
+      "english": "Her assigned place pressed against the table edge; to see the screw tip her left elbow had nowhere to go.",
+      "hanzi": "塔维画给她留的地方正好贴着桌边，人若要看清螺杆末端，左肘便没有地方放。",
+      "alignment": [
         {
           "english": "assigned",
           "target": "tǎ wéi",
@@ -2201,7 +2257,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng yǐzi tuō jìn , yǎn gěi tā kàn , shǒu hái méi shēn dàodǐ , jiān yǐjīng dǐng zhe tā de shǒubì .",
+      "english": "Pulling up a chair to demonstrate, she hadn't reached all the way before her shoulder touched his arm.",
+      "hanzi": "她将椅子拖近，演给他看，手还没伸到底，肩已经顶着他的手臂。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -2337,7 +2400,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "\" nǐ kànguò wēn xiù zuò . \"",
+      "english": "“You've watched Wenxiu,”",
+      "hanzi": "“你看过温岫做。”",
+      "alignment": [
         {
           "english": "You",
           "target": "nǐ",
@@ -2369,7 +2439,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuō , \" wǒ kě méi chángchéng nàwèi shīfu . \"",
+      "english": "She said, “I'm not built like that craftsman.”",
+      "hanzi": "她说，“我可没长成那位师傅。”\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -2437,9 +2514,9 @@
       ]
     },
     {
-      "target": "tǎ wéi liǎnshàng fārè , xiǎngqǐ zìjǐ zài fēng zhàn huà guò tóngyàng yìtiáo tàibáo de shǒu lù . wéi lǎoshī méi tì tā jiē huà , zhī jiào liǎng rén jiāng hái méi jiè xìng de jiājù bǎihǎo , kànkàn jiūjìng nǎ chù bùnéng nuó . luógǎn de jìn xiàng bùnéng zhī wèi ràng rén zuò dé shūfú biàn huàn , qīngzǎi zhījià yě bùnéng gěi tā gēbo yāzhù , néng xiān gǎi de shì liǎng rén xiāngduì de wèizhì .",
-      "english": "Flushing, Tavi remembered the too-thin hand route he'd drawn at Wind Trestle. Vey didn't answer for him, only had them set up the unaltered fixture without borrowing and identify what couldn't move. Neither the screw's entry direction nor a support pressed by her arm could change merely for comfortable seating; their relative positions were what could change first.",
-      "hanzi": "塔维脸上发热，想起自己在风栈画过同样一条太薄的手路。维老师没替他接话，只叫两人将还没借性的夹具摆好，看看究竟哪处不能挪。螺杆的进向不能只为让人坐得舒服便换，轻载支架也不能给她胳膊压住，能先改的是两人相对的位置。\n",
+      "target": "tǎ wéi liǎnshàng fārè , xiǎngqǐ zìjǐ zài fēng zhàn huà guò tóngyàng yìtiáo tàibáo de shǒu lù .",
+      "english": "Flushing, Tavi remembered the too-thin hand route he'd drawn at Wind Trestle.",
+      "hanzi": "塔维脸上发热，想起自己在风栈画过同样一条太薄的手路。",
       "alignment": [
         {
           "english": "Tavi",
@@ -2560,7 +2637,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wéi lǎoshī méi tì tā jiē huà , zhī jiào liǎng rén jiāng hái méi jiè xìng de jiājù bǎihǎo , kànkàn jiūjìng nǎ chù bùnéng nuó .",
+      "english": "Vey didn't answer for him, only had them set up the unaltered fixture without borrowing and identify what couldn't move.",
+      "hanzi": "维老师没替他接话，只叫两人将还没借性的夹具摆好，看看究竟哪处不能挪。",
+      "alignment": [
         {
           "english": "Vey",
           "target": "wéi lǎoshī",
@@ -2720,7 +2804,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "luógǎn de jìn xiàng bùnéng zhī wèi ràng rén zuò dé shūfú biàn huàn , qīngzǎi zhījià yě bùnéng gěi tā gēbo yāzhù , néng xiān gǎi de shì liǎng rén xiāngduì de wèizhì .",
+      "english": "Neither the screw's entry direction nor a support pressed by her arm could change merely for comfortable seating; their relative positions were what could change first.",
+      "hanzi": "螺杆的进向不能只为让人坐得舒服便换，轻载支架也不能给她胳膊压住，能先改的是两人相对的位置。\n",
+      "alignment": [
         {
           "english": "screw",
           "target": "luógǎn",
@@ -2964,9 +3055,9 @@
       ]
     },
     {
-      "target": "tāmen cóng zhuō jiǎo huàn dào cháng biān . tǎ wéi réng néng kànjiàn liǎnggēn zhēn , mǐlā què dé cóng tā yǎnqián qǔ luógǎn . tā zìjǐ tíngxià , jiào tā biéyǐwéi zhèhuí bù qiǎng shíchén , jiù néng zài tā dīng shù shí huàng yìzhī shǒu guòqù . zuìhòu luógǎn fàngdào tā yòucè de qiǎn mù dié lǐ , qǔyòng de lù yǔ tǎ wéi de shìxiàn cuòkāi , zhǒu xià lìng liú yíchù bú pèng jiājù de shí zhuōmiàn .",
-      "english": "They moved from the table corner to its long side. Tavi could still see both needles, but Mira's reach for the screw crossed his sight. Stopping herself, she said having no deadline didn't permit a hand waving past his readings. Finally the screw went in a shallow wooden dish on her right, its route clear of his view, her elbow on firm table away from the fixture.",
-      "hanzi": "他们从桌角换到长边。塔维仍能看见两根针，米拉却得从他眼前取螺杆。她自己停下，叫他别以为这回不抢时辰，就能在他盯数时晃一只手过去。最后螺杆放到她右侧的浅木碟里，取用的路与塔维的视线错开，肘下另留一处不碰夹具的实桌面。\n",
+      "target": "tāmen cóng zhuō jiǎo huàn dào cháng biān .",
+      "english": "They moved from the table corner to its long side.",
+      "hanzi": "他们从桌角换到长边。",
       "alignment": [
         {
           "english": "They",
@@ -3007,7 +3098,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi réng néng kànjiàn liǎnggēn zhēn , mǐlā què dé cóng tā yǎnqián qǔ luógǎn .",
+      "english": "Tavi could still see both needles, but Mira's reach for the screw crossed his sight.",
+      "hanzi": "塔维仍能看见两根针，米拉却得从他眼前取螺杆。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -3127,7 +3225,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zìjǐ tíngxià , jiào tā biéyǐwéi zhèhuí bù qiǎng shíchén , jiù néng zài tā dīng shù shí huàng yìzhī shǒu guòqù .",
+      "english": "Stopping herself, she told him having no deadline didn't permit a hand waving past his readings.",
+      "hanzi": "她自己停下，叫他别以为这回不抢时辰，就能在他盯数时晃一只手过去。",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -3153,7 +3258,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "said",
+          "english": "told",
           "target": "jiào",
           "hanzi": "叫",
           "category": "verb",
@@ -3161,7 +3266,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "Tavi",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -3303,7 +3408,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zuìhòu luógǎn fàngdào tā yòucè de qiǎn mù dié lǐ , qǔyòng de lù yǔ tǎ wéi de shìxiàn cuòkāi , zhǒu xià lìng liú yíchù bú pèng jiājù de shí zhuōmiàn .",
+      "english": "Finally the screw went in a shallow wooden dish on her right, its route clear of his view, her elbow on firm table away from the fixture.",
+      "hanzi": "最后螺杆放到她右侧的浅木碟里，取用的路与塔维的视线错开，肘下另留一处不碰夹具的实桌面。\n",
+      "alignment": [
         {
           "english": "Finally",
           "target": "zuìhòu",
@@ -3523,9 +3635,9 @@
       ]
     },
     {
-      "target": "lǎoshī ràng tāmen zhī zǒu dòngzuò . dìyīcì , tǎ wéi bào dào \" kě suǒ \" tài zǎo , mǐlā hái méi quèrèn kǎkǒu . tā gǎnjǐn gǎikǒu , tā què méi zhàozhe yìng nǐng , děng liǎng rén dōu kànqīng , cái bǎ luógǎn sòng jìn yuánwèi . dìèrcì tā shuō děng quèrèn zài bào , mǐlā dá yíjù tīngjiàn le , shēngyīn bǐ fāngcái píng .",
-      "english": "Vey had them rehearse movements only. First Tavi called “ready to lock” too early; Mira hadn't confirmed the catch. He corrected himself, but she hadn't forced the screw; only when both saw clearly did she advance it. Second time he said wait for confirmation before calling; her answering “heard” was calmer than before.",
-      "hanzi": "老师让他们只走动作。第一次，塔维报到“可锁”太早，米拉还没确认卡口。他赶紧改口，她却没照着硬拧，等两人都看清，才把螺杆送进原位。第二次他说等确认再报，米拉答一句听见了，声音比方才平。\n",
+      "target": "lǎoshī ràng tāmen zhī zǒu dòngzuò .",
+      "english": "Vey had them rehearse movements only.",
+      "hanzi": "老师让他们只走动作。",
       "alignment": [
         {
           "english": "Vey",
@@ -3574,7 +3686,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dìyīcì , tǎ wéi bào dào \" kě suǒ \" tài zǎo , mǐlā hái méi quèrèn kǎkǒu .",
+      "english": "First Tavi called “ready to lock” too early; Mira hadn't confirmed the catch.",
+      "hanzi": "第一次，塔维报到“可锁”太早，米拉还没确认卡口。",
+      "alignment": [
         {
           "english": "First",
           "target": "dìyīcì",
@@ -3654,7 +3773,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā gǎnjǐn gǎikǒu , tā què méi zhàozhe yìng nǐng , děng liǎng rén dōu kànqīng , cái bǎ luógǎn sòng jìn yuánwèi .",
+      "english": "He corrected himself, but she hadn't forced the screw; only when both saw clearly did she advance it.",
+      "hanzi": "他赶紧改口，她却没照着硬拧，等两人都看清，才把螺杆送进原位。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -3806,7 +3932,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dìèrcì tā shuō děng quèrèn zài bào , mǐlā dá yíjù tīngjiàn le , shēngyīn bǐ fāngcái píng .",
+      "english": "Second time he said wait for confirmation before calling; her answering “heard” was calmer than before.",
+      "hanzi": "第二次他说等确认再报，米拉答一句听见了，声音比方才平。\n",
+      "alignment": [
         {
           "english": "Second time",
           "target": "dìèrcì",
@@ -3930,9 +4063,9 @@
       ]
     },
     {
-      "target": "jīnrì dào zhèlǐ , méiyǒu jiè xìng . wéi lǎoshī bǎ gǎi hòu de tú qiān shàng , zhǔnxǔ cìrì zài tā kànzhe shí , yòng tóngyí duì yǐ hé cáiliào , tóngyí dàng qīngzǎi zuò yícì jiēchù zhōng de zhuāngpèi ; bù yīncǐ fàngxíng huànliào , yě bù zēngjiā yú xìng de shí cháng . cáiliào yǔ jiājù réng shōuhuí liànxí guì , mǐlā bào lái de nà dié tú què méi zài bèi yā zài zuì dǐxià .",
-      "english": "No borrowing today. Vey signed the revised plan, permitting one contact-only assembly tomorrow under her supervision, using the same checked pair and light load. No new material or longer residue. The iron and fixture returned to the practice cupboard; Mira's drawings no longer lay crushed underneath.",
-      "hanzi": "今日到这里，没有借性。维老师把改后的图签上，准许次日在她看着时，用同一对已核材料、同一档轻载做一次接触中的装配；不因此放行换料，也不增加余性的时长。材料与夹具仍收回练习柜，米拉抱来的那叠图却没再被压在最底下。\n",
+      "target": "jīnrì dào zhèlǐ , méiyǒu jiè xìng .",
+      "english": "No borrowing today.",
+      "hanzi": "今日到这里，没有借性。",
       "alignment": [
         {
           "english": "today",
@@ -3973,7 +4106,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "wéi lǎoshī bǎ gǎi hòu de tú qiān shàng , zhǔnxǔ cìrì zài tā kànzhe shí , yòng tóngyí duì yǐ hé cáiliào , tóngyí dàng qīngzǎi zuò yícì jiēchù zhōng de zhuāngpèi ; bù yīncǐ fàngxíng huànliào , yě bù zēngjiā yú xìng de shí cháng .",
+      "english": "Vey signed the revised plan, permitting one contact-only assembly tomorrow under her supervision, using the same checked pair and light load. No new material or longer residue.",
+      "hanzi": "维老师把改后的图签上，准许次日在她看着时，用同一对已核材料、同一档轻载做一次接触中的装配；不因此放行换料，也不增加余性的时长。",
+      "alignment": [
         {
           "english": "Vey",
           "target": "wéi lǎoshī",
@@ -4277,7 +4417,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "cáiliào yǔ jiājù réng shōuhuí liànxí guì , mǐlā bào lái de nà dié tú què méi zài bèi yā zài zuì dǐxià .",
+      "english": "The iron and fixture returned to the practice cupboard; Mira's drawings no longer lay crushed underneath.",
+      "hanzi": "材料与夹具仍收回练习柜，米拉抱来的那叠图却没再被压在最底下。\n",
+      "alignment": [
         {
           "english": "iron",
           "target": "cáiliào",
@@ -4433,9 +4580,9 @@
       ]
     },
     {
-      "target": "zǒuchū mén , tǎ wéi wèn míngrì nǎ shí tā yǒukōng . mǐlā shuō wǔqián , zuò wán yào qù jìgěi sū yǐ de tú , ruò tā xiǎng bāng , kěyǐ tì zìjǐ zài dēng xià kànkàn yíchù mó hén , dàn biéshànglái jiù tì liǎng rén huà dìsāngè míngzì . tǎ wéi dāying , xiǎng le xiǎng , yòu wèn tā shìbushì yě yào gěi jīnrì de shǒu lù shǔmíng . tā shuō dāngrán , zìjǐ nà zhī gēbo zǒng bùnéng suàn tā huà chūlái de .",
-      "english": "Outside Tavi asked when she was free tomorrow. Before noon, Mira said, then she must post her drawings to Suyi. He could help inspect a wear mark under the lamp, but shouldn't draw a third author's name on their work first. He agreed, then asked whether she wanted credit for today's hand route too. Of course: that arm of hers wasn't his drawing.",
-      "hanzi": "走出门，塔维问明日哪时她有空。米拉说午前，做完要去寄给苏苡的图，若他想帮，可以替自己在灯下看看一处磨痕，但别上来就替两人画第三个名字。塔维答应，想了想，又问她是不是也要给今日的手路署名。她说当然，自己那只胳膊总不能算他画出来的。\n",
+      "target": "zǒuchū mén , tǎ wéi wèn míngrì nǎ shí tā yǒukōng .",
+      "english": "Outside Tavi asked when she was free tomorrow.",
+      "hanzi": "走出门，塔维问明日哪时她有空。",
       "alignment": [
         {
           "english": "Outside",
@@ -4492,7 +4639,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "mǐlā shuō wǔqián , zuò wán yào qù jìgěi sū yǐ de tú , ruò tā xiǎng bāng , kěyǐ tì zìjǐ zài dēng xià kànkàn yíchù mó hén , dàn biéshànglái jiù tì liǎng rén huà dìsāngè míngzì .",
+      "english": "Before noon, Mira said, then she must post her drawings to Suyi. He could help inspect a wear mark under the lamp, but shouldn't draw a third author's name on their work first.",
+      "hanzi": "米拉说午前，做完要去寄给苏苡的图，若他想帮，可以替自己在灯下看看一处磨痕，但别上来就替两人画第三个名字。",
+      "alignment": [
         {
           "english": "Mira",
           "target": "mǐlā",
@@ -4764,7 +4918,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi dāying , xiǎng le xiǎng , yòu wèn tā shìbushì yě yào gěi jīnrì de shǒu lù shǔmíng .",
+      "english": "He agreed, then asked whether she wanted credit for today's hand route too.",
+      "hanzi": "塔维答应，想了想，又问她是不是也要给今日的手路署名。",
+      "alignment": [
         {
           "english": "He",
           "target": "tǎ wéi",
@@ -4892,7 +5053,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā shuō dāngrán , zìjǐ nà zhī gēbo zǒng bùnéng suàn tā huà chūlái de .",
+      "english": "Of course, she said: that arm of hers wasn't his drawing.",
+      "hanzi": "她说当然，自己那只胳膊总不能算他画出来的。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",

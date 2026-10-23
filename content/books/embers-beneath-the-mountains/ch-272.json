@@ -2,7 +2,7 @@
   "id": "ch-272",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "guìtái shàng de liǎngdào xiàn",
     "english": "Two Lines at the Counter",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "tǎ wéi dāying tì xià róng ná yíduàn lùshang de kōng kuāng , shì zài chūmén yǐhòu cái zhīdào , kōng kuāng yě néng yuè ná yuè chén . tái jǐng de shíjiē bǐ fēng zhàn zhǎi , tā jiāng kuāng huàn dào lìngyìzhī shǒu , xià róng huítóu kàn tā , wèn shìbushì hòuhuǐ méi xiān wènqīng yǒu jǐcéng táijiē .",
-      "english": "Tavi agreed to carry Xiarong's empty basket partway, only discovering after they left that even an empty basket could grow heavier. Moss Well's stone steps were narrower than Wind Trestle's; switching hands, he heard her ask if he regretted not asking how many flights there were first.",
-      "hanzi": "塔维答应替夏绒拿一段路上的空筐，是在出门以后才知道，空筐也能越拿越沉。苔井的石阶比风栈窄，他将筐换到另一只手，夏绒回头看他，问是不是后悔没先问清有几层台阶。\n",
+      "target": "tǎ wéi dāying tì xià róng ná yíduàn lùshang de kōng kuāng , shì zài chūmén yǐhòu cái zhīdào , kōng kuāng yě néng yuè ná yuè chén .",
+      "english": "Tavi agreed to carry Xiarong's empty basket partway, only discovering after they left that even an empty basket could grow heavier.",
+      "hanzi": "塔维答应替夏绒拿一段路上的空筐，是在出门以后才知道，空筐也能越拿越沉。",
       "alignment": [
         {
           "english": "Tavi",
@@ -197,7 +197,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tái jǐng de shíjiē bǐ fēng zhàn zhǎi , tā jiāng kuāng huàn dào lìngyìzhī shǒu , xià róng huítóu kàn tā , wèn shìbushì hòuhuǐ méi xiān wènqīng yǒu jǐcéng táijiē .",
+      "english": "Moss Well's stone steps were narrower than Wind Trestle's; switching the basket to his other hand, he heard her ask if he regretted not asking how many flights there were first.",
+      "hanzi": "苔井的石阶比风栈窄，他将筐换到另一只手，夏绒回头看他，问是不是后悔没先问清有几层台阶。\n",
+      "alignment": [
         {
           "english": "Moss Well",
           "target": "tái jǐng",
@@ -287,7 +294,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "hands",
+          "english": "hand",
           "target": "zhī",
           "hanzi": "只",
           "category": "measure_word",
@@ -295,7 +302,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "hands",
+          "english": "hand",
           "target": "shǒu",
           "hanzi": "手",
           "category": "noun",
@@ -417,9 +424,9 @@
       ]
     },
     {
-      "target": "jīnrì shì tā yuē hǎo de lìng yítàng sòngxìn rì , tǎ wéi wǔhòu xiēbān , gēn tā zǒu zhè yíduàn . búshì tì tā sòngxìn , dào le xiàngkǒu biàn bǎ kuāng háigěi shōuhuò pù , jiēzhe dào dìsānjiā wèn shàngwèi dáfù de shíchén . qián liǎngjiā de xīnyuē yǐ xiě zài zhǐ shàng , zhè yìjiā liú zhe kòngbái , tā yílù dōu méi tìrén tián .",
-      "english": "Today was her other scheduled mail day; off duty that afternoon, Tavi joined this stretch. He wasn't delivering for her: he'd return the basket to the receiving shop at the alley entrance, then visit the third household about its unanswered time. The first two shops' new appointments were written down; this one's blank remained unfilled along the way.",
-      "hanzi": "今日是她约好的另一趟送信日，塔维午后歇班，跟她走这一段。不是替她送信，到了巷口便把筐还给收货铺，接着到第三家问尚未答复的时辰。前两家的新约已写在纸上，这一家留着空白，她一路都没替人填。\n",
+      "target": "jīnrì shì tā yuē hǎo de lìng yítàng sòngxìn rì , tǎ wéi wǔhòu xiēbān , gēn tā zǒu zhè yíduàn .",
+      "english": "Today was her other scheduled mail day; off duty that afternoon, Tavi joined this stretch.",
+      "hanzi": "今日是她约好的另一趟送信日，塔维午后歇班，跟她走这一段。",
       "alignment": [
         {
           "english": "Today",
@@ -556,7 +563,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "búshì tì tā sòngxìn , dào le xiàngkǒu biàn bǎ kuāng háigěi shōuhuò pù , jiēzhe dào dìsānjiā wèn shàngwèi dáfù de shíchén .",
+      "english": "He wasn't delivering for her: he'd return the basket to the receiving shop at the alley entrance, then visit the third household about its unanswered time.",
+      "hanzi": "不是替她送信，到了巷口便把筐还给收货铺，接着到第三家问尚未答复的时辰。",
+      "alignment": [
         {
           "english": "wasn't",
           "target": "búshì",
@@ -724,7 +738,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "qián liǎngjiā de xīnyuē yǐ xiě zài zhǐ shàng , zhè yìjiā liú zhe kòngbái , tā yílù dōu méi tìrén tián .",
+      "english": "The first two shops' new appointments were written down; this one's blank remained unfilled by her along the way.",
+      "hanzi": "前两家的新约已写在纸上，这一家留着空白，她一路都没替人填。\n",
+      "alignment": [
         {
           "english": "first two shops",
           "target": "qián liǎngjiā",
@@ -896,9 +917,9 @@
       ]
     },
     {
-      "target": "pù mén bú dà , jìnqù xiān wénjiàn zhǔ dòu de xiāng . yíwèi ěr páng chán zhe xìbù de lǎorén zuòzài guì hòu , jiàn xià róng dì zhǐ biàn yáotóu , zhǐzhe hòu wū . tā méiyǒu gé zhe guìtái dàshēng zài wèn , děng liánzǐ xiānkāi , cái tóng chūlái de zhōngnián nǚrén shuōmíng láiyì .",
-      "english": "The shop's small door led to the smell of simmering beans. An old man with fine cloth round his ears sat behind the counter; when Xiarong handed him the paper he shook his head and pointed toward the back room. Instead of asking again loudly across the counter, she waited until a middle-aged woman emerged through the curtain and explained her visit.",
-      "hanzi": "铺门不大，进去先闻见煮豆的香。一位耳旁缠着细布的老人坐在柜后，见夏绒递纸便摇头，指着后屋。她没有隔着柜台大声再问，等帘子掀开，才同出来的中年女人说明来意。\n",
+      "target": "pù mén bú dà , jìnqù xiān wénjiàn zhǔ dòu de xiāng .",
+      "english": "The shop's small door led to the smell of simmering beans.",
+      "hanzi": "铺门不大，进去先闻见煮豆的香。",
       "alignment": [
         {
           "english": "shop's small door",
@@ -963,7 +984,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yíwèi ěr páng chán zhe xìbù de lǎorén zuòzài guì hòu , jiàn xià róng dì zhǐ biàn yáotóu , zhǐzhe hòu wū .",
+      "english": "An old man with fine cloth round his ears sat behind the counter; when Xiarong handed him the paper he shook his head and pointed toward the back room.",
+      "hanzi": "一位耳旁缠着细布的老人坐在柜后，见夏绒递纸便摇头，指着后屋。",
+      "alignment": [
         {
           "english": "An",
           "target": "yí",
@@ -1123,7 +1151,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méiyǒu gé zhe guìtái dàshēng zài wèn , děng liánzǐ xiānkāi , cái tóng chūlái de zhōngnián nǚrén shuōmíng láiyì .",
+      "english": "Instead of asking again loudly across the counter, she waited until a middle-aged woman emerged through the curtain and explained her visit.",
+      "hanzi": "她没有隔着柜台大声再问，等帘子掀开，才同出来的中年女人说明来意。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -1279,9 +1314,9 @@
       ]
     },
     {
-      "target": "nà nǚrén xìng mèng , jiēshōu fùjìn jǐjiā de huòdān . tā tīng wán xīn shíchén , xiān wèn néngfǒu réng zhàojiù rìzi lái , zhī wǎn bàn kè , bié lián rìzi yě nuó . xià róng shuō rìzi wèi dòng , jīnhòu ruò biàn hái dé chóngxīn shuō , búhuì jiào yìzhāng zǒngbiǎo tì tā yìng xià .",
-      "english": "The woman, surnamed Meng, received cargo orders for several nearby households. Hearing the new time, she first asked if the same day could remain, only a little later, without moving the day as well. Xiarong said the day was unchanged; any future change must be discussed afresh, not accepted on her behalf by a master timetable.",
-      "hanzi": "那女人姓孟，接收附近几家的货单。她听完新时辰，先问能否仍照旧日子来，只晚半刻，别连日子也挪。夏绒说日子未动，今后若变还得重新说，不会叫一张总表替她应下。\n",
+      "target": "nà nǚrén xìng mèng , jiēshōu fùjìn jǐjiā de huòdān .",
+      "english": "The woman, surnamed Meng, received cargo orders for several nearby households.",
+      "hanzi": "那女人姓孟，接收附近几家的货单。",
       "alignment": [
         {
           "english": "The",
@@ -1362,7 +1397,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā tīng wán xīn shíchén , xiān wèn néngfǒu réng zhàojiù rìzi lái , zhī wǎn bàn kè , bié lián rìzi yě nuó .",
+      "english": "Hearing the new time, she first asked if the same day could remain, only a little later, without moving the day as well.",
+      "hanzi": "她听完新时辰，先问能否仍照旧日子来，只晚半刻，别连日子也挪。",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -1522,7 +1564,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "xià róng shuō rìzi wèi dòng , jīnhòu ruò biàn hái dé chóngxīn shuō , búhuì jiào yìzhāng zǒngbiǎo tì tā yìng xià .",
+      "english": "Xiarong said the day was unchanged; any future change must be discussed afresh, not accepted on her behalf by a master timetable.",
+      "hanzi": "夏绒说日子未动，今后若变还得重新说，不会叫一张总表替她应下。\n",
+      "alignment": [
         {
           "english": "Xiarong",
           "target": "xià róng",
@@ -1662,9 +1711,9 @@
       ]
     },
     {
-      "target": "mèng niángzǐ zhè cái wǎng lǎorén nàbiān kàn , shuō zìjǐ wǔhòu yào sòng dòuzǐ shàngpō , fùqīn ěrduo bùhǎo , píngcháng shúrén dào ménbiān qīngqiāo liǎngxià , tā kànjiàn biàn zhīdào ná nǎ gé de dānzi . ruò sòngxìn de rén yě huàn , tā huíjiā yòu dé cāi yìhuí zhǐ zěnme shǎo le .",
-      "english": "Only then did Mistress Meng glance toward the old man. She delivered beans uphill in the afternoon; her father was hard of hearing. Familiar visitors knocked twice lightly at the door, and on seeing them he would know which compartment's orders to take. If the courier changed too, she would come home guessing why papers were missing.",
-      "hanzi": "孟娘子这才往老人那边看，说自己午后要送豆子上坡，父亲耳朵不好，平常熟人到门边轻敲两下，他看见便知道拿哪格的单子。若送信的人也换，她回家又得猜一回纸怎么少了。\n",
+      "target": "mèng niángzǐ zhè cái wǎng lǎorén nàbiān kàn , shuō zìjǐ wǔhòu yào sòng dòuzǐ shàngpō , fùqīn ěrduo bùhǎo , píngcháng shúrén dào ménbiān qīngqiāo liǎngxià , tā kànjiàn biàn zhīdào ná nǎ gé de dānzi .",
+      "english": "Only then did Mistress Meng glance toward the old man. She delivered beans uphill in the afternoon; her father was hard of hearing. Familiar visitors knocked twice lightly at the door, and on seeing them he would know which compartment's orders to take.",
+      "hanzi": "孟娘子这才往老人那边看，说自己午后要送豆子上坡，父亲耳朵不好，平常熟人到门边轻敲两下，他看见便知道拿哪格的单子。",
       "alignment": [
         {
           "english": "Mistress Meng",
@@ -1921,7 +1970,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruò sòngxìn de rén yě huàn , tā huíjiā yòu dé cāi yìhuí zhǐ zěnme shǎo le .",
+      "english": "If the courier changed too, she would come home guessing why papers were missing.",
+      "hanzi": "若送信的人也换，她回家又得猜一回纸怎么少了。\n",
+      "alignment": [
         {
           "english": "If",
           "target": "ruò",
@@ -2053,9 +2109,9 @@
       ]
     },
     {
-      "target": "tǎ wéi xiǎng shuō zài guìshàng xiě gè dàzì biàn xíng , zuǐ yǐ zhāngkāi , yòu jiāng huà yàn huíqù . lǎorén zhèng dītóu mō guì gé , búshì kànbújiàn zì , zhǐshì tīngbùqīng mòshēngrén cóng lián wài hǎn shénme . tā jiāng zhǐ dì dào lǎorén yǎnqián , duìfāng yì táishǒu , jìng zhǔnquè zhǐzhe kòngbái nà lán , wèn shìbushì zhèlǐ yào zìjǐ xiě .",
-      "english": "Tavi started to suggest large writing on the counter, then swallowed the words. The man was feeling the compartments, not unable to read, only unable to hear strangers calling beyond the curtain. Tavi held the paper before his eyes; he promptly pointed at the blank column and asked if this was where he must write.",
-      "hanzi": "塔维想说在柜上写个大字便行，嘴已张开，又将话咽回去。老人正低头摸柜格，不是看不见字，只是听不清陌生人从帘外喊什么。他将纸递到老人眼前，对方一抬手，竟准确指着空白那栏，问是不是这里要自己写。\n",
+      "target": "tǎ wéi xiǎng shuō zài guìshàng xiě gè dàzì biàn xíng , zuǐ yǐ zhāngkāi , yòu jiāng huà yàn huíqù .",
+      "english": "Tavi started to suggest large writing on the counter, then swallowed the words.",
+      "hanzi": "塔维想说在柜上写个大字便行，嘴已张开，又将话咽回去。",
       "alignment": [
         {
           "english": "Tavi",
@@ -2208,7 +2264,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lǎorén zhèng dītóu mō guì gé , búshì kànbújiàn zì , zhǐshì tīngbùqīng mòshēngrén cóng lián wài hǎn shénme .",
+      "english": "The man was feeling the compartments, not unable to read, only unable to hear strangers calling beyond the curtain.",
+      "hanzi": "老人正低头摸柜格，不是看不见字，只是听不清陌生人从帘外喊什么。",
+      "alignment": [
         {
           "english": "man",
           "target": "lǎorén",
@@ -2328,7 +2391,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā jiāng zhǐ dì dào lǎorén yǎnqián , duìfāng yì táishǒu , jìng zhǔnquè zhǐzhe kòngbái nà lán , wèn shìbushì zhèlǐ yào zìjǐ xiě .",
+      "english": "Tavi held the paper before his eyes; he promptly pointed at the blank column and asked if this was where he must write.",
+      "hanzi": "他将纸递到老人眼前，对方一抬手，竟准确指着空白那栏，问是不是这里要自己写。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tā",
@@ -2508,9 +2578,9 @@
       ]
     },
     {
-      "target": "xià róng dūn dào guì biān , zhǐ gěi tā kàn xīn shíchén , yòu wèn mèng niángzǐ , zìjǐ ruò ǒuěr bìng le , qǐng shuí tì lái cái suàn shú . nǚrén shuō gébì bǔguō de nǚér rènde fùqīn , dàn rénjiā yě yǒu zìjǐ de huó , bùnéng yìkǒu yìngchéng . tā chūqù jiào rén , tǎ wéi biàn péi lǎorén zuò le yízhèn , jiàn tā jiāng dòuzǐ fēnchéng xiǎodié , shù dào yíbàn wèn zìjǐ shù dào nǎér le .",
-      "english": "Xiarong crouched by the counter, showing him the new time and asking Mistress Meng who would count as familiar if she were ever ill and needed a substitute. The potsmith's daughter next door knew him, Meng said, but had her own work; she couldn't promise for her. While Meng went to fetch her, Tavi sat with the man, watching him divide beans into little dishes and ask midway where he'd reached.",
-      "hanzi": "夏绒蹲到柜边，指给他看新时辰，又问孟娘子，自己若偶尔病了，请谁替来才算熟。女人说隔壁补锅的女儿认得父亲，但人家也有自己的活，不能一口应承。她出去叫人，塔维便陪老人坐了一阵，见他将豆子分成小碟，数到一半问自己数到哪儿了。\n",
+      "target": "xià róng dūn dào guì biān , zhǐ gěi tā kàn xīn shíchén , yòu wèn mèng niángzǐ , zìjǐ ruò ǒuěr bìng le , qǐng shuí tì lái cái suàn shú .",
+      "english": "Xiarong crouched by the counter, showing him the new time and asking Mistress Meng who would count as familiar if she were ever ill and needed a substitute.",
+      "hanzi": "夏绒蹲到柜边，指给他看新时辰，又问孟娘子，自己若偶尔病了，请谁替来才算熟。",
       "alignment": [
         {
           "english": "Xiarong",
@@ -2687,7 +2757,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "nǚrén shuō gébì bǔguō de nǚér rènde fùqīn , dàn rénjiā yě yǒu zìjǐ de huó , bùnéng yìkǒu yìngchéng .",
+      "english": "The potsmith's daughter next door knew him, Meng said, but had her own work; she couldn't promise for her.",
+      "hanzi": "女人说隔壁补锅的女儿认得父亲，但人家也有自己的活，不能一口应承。",
+      "alignment": [
         {
           "english": "Meng",
           "target": "nǚrén",
@@ -2831,7 +2908,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā chūqù jiào rén , tǎ wéi biàn péi lǎorén zuò le yízhèn , jiàn tā jiāng dòuzǐ fēnchéng xiǎodié , shù dào yíbàn wèn zìjǐ shù dào nǎér le .",
+      "english": "While Meng went to fetch her, Tavi sat with the man, watching him divide beans into little dishes and ask midway where he'd reached.",
+      "hanzi": "她出去叫人，塔维便陪老人坐了一阵，见他将豆子分成小碟，数到一半问自己数到哪儿了。\n",
+      "alignment": [
         {
           "english": "Meng",
           "target": "tā",
@@ -3009,7 +3093,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "had",
+          "english": "he'd",
           "target": "le",
           "hanzi": "了",
           "category": "particle",
@@ -3019,9 +3103,9 @@
       ]
     },
     {
-      "target": "tǎ wéi shuō shíyī . lǎorén wèn shì dòuzǐ háishì tā gāngcái shù shíjiē shù dào shíyī , tǎ wéi bèi wèn zhù , lǎorén xiào zhe bǎ yìdié tuī gěi tā , yuánlái zǎojiù fēn hǎo le , zhǐshì xián tāmen zhàn dé xiàng lái cházhàng .",
-      "english": "Eleven, Tavi said. Beans, the man asked, or eleven steps counted just now? Tavi faltered; laughing, the man pushed a dish to him. They'd already been divided: he just thought they were standing like account inspectors.",
-      "hanzi": "塔维说十一。老人问是豆子还是他刚才数石阶数到十一，塔维被问住，老人笑着把一碟推给他，原来早就分好了，只是嫌他们站得像来查账。\n",
+      "target": "tǎ wéi shuō shíyī .",
+      "english": "Eleven, Tavi said.",
+      "hanzi": "塔维说十一。",
       "alignment": [
         {
           "english": "Tavi",
@@ -3046,7 +3130,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "lǎorén wèn shì dòuzǐ háishì tā gāngcái shù shíjiē shù dào shíyī , tǎ wéi bèi wèn zhù , lǎorén xiào zhe bǎ yìdié tuī gěi tā , yuánlái zǎojiù fēn hǎo le , zhǐshì xián tāmen zhàn dé xiàng lái cházhàng .",
+      "english": "Beans, the man asked, or eleven steps counted just now? Tavi faltered; laughing, the man pushed a dish to him. They'd already been divided: he just thought they were standing like account inspectors.",
+      "hanzi": "老人问是豆子还是他刚才数石阶数到十一，塔维被问住，老人笑着把一碟推给他，原来早就分好了，只是嫌他们站得像来查账。\n",
+      "alignment": [
         {
           "english": "man",
           "target": "lǎorén",
@@ -3322,9 +3413,9 @@
       ]
     },
     {
-      "target": "gébì gūniáng lái le , tīng qīng shìqíng hòu tóngyì ǒuěr dàishōu , ruò yào tì xià róng pǎo dào biéchù , zé xū lìng yuē , mèng niángzǐ yě méi zài wǎng lǐ tiān . sān rén jiāng qǔ nǎ gé , liúzài nǎlǐ hé zěnme huíhuà shuō qīng , lǎorén qīnshǒu zài zhǐ shàng huà le liǎngdào duǎnxiàn , shuō yǐhòu xiān kàn zhè jìhào , zài kàn xiě de zì .",
-      "english": "The girl next door came and agreed, after hearing the details, to receive things occasionally; substituting on Xiarong's other deliveries would require a separate arrangement, and Meng added nothing further. They clarified the compartment, where to leave papers and how to reply. The man drew two short lines on the sheet himself: look for this mark first, then the writing.",
-      "hanzi": "隔壁姑娘来了，听清事情后同意偶尔代收，若要替夏绒跑到别处，则须另约，孟娘子也没再往里添。三人将取哪格、留在哪里和怎么回话说清，老人亲手在纸上画了两道短线，说以后先看这记号，再看写的字。\n",
+      "target": "gébì gūniáng lái le , tīng qīng shìqíng hòu tóngyì ǒuěr dàishōu , ruò yào tì xià róng pǎo dào biéchù , zé xū lìng yuē , mèng niángzǐ yě méi zài wǎng lǐ tiān .",
+      "english": "The girl next door came and agreed, after hearing the details, to receive things occasionally; substituting on Xiarong's other deliveries would require a separate arrangement, and Meng added nothing further.",
+      "hanzi": "隔壁姑娘来了，听清事情后同意偶尔代收，若要替夏绒跑到别处，则须另约，孟娘子也没再往里添。",
       "alignment": [
         {
           "english": "next door",
@@ -3517,7 +3608,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "sān rén jiāng qǔ nǎ gé , liúzài nǎlǐ hé zěnme huíhuà shuō qīng , lǎorén qīnshǒu zài zhǐ shàng huà le liǎngdào duǎnxiàn , shuō yǐhòu xiān kàn zhè jìhào , zài kàn xiě de zì .",
+      "english": "They clarified the compartment, where to leave papers and how to reply. The man drew two short lines on the sheet himself: look for this mark first, then the writing.",
+      "hanzi": "三人将取哪格、留在哪里和怎么回话说清，老人亲手在纸上画了两道短线，说以后先看这记号，再看写的字。\n",
+      "alignment": [
         {
           "english": "They",
           "target": "sān",
@@ -3793,9 +3891,9 @@
       ]
     },
     {
-      "target": "líkāi pùzi shí , tàiyáng yǐjīng piān dào xiàngzi de lìngyímiàn . xià róng bǎ dìsānjiā de shíchén tián shàng , yòng xiàn tóng jiù dānxì zài yìqǐ . tǎ wéi wèn dāngē zhè bàntiān zhídé bù zhídé , tā méi lìkè dá , xiān suàn jīnrì hái néngfǒu gǎnshàng zuìhòu yìjiā , jiēzhe shuō zhídé , búguò ruò měijiā dōu zhèyàng tán , tā de jiǎo biàn búgòu yòng le .",
-      "english": "On leaving, the sun had moved to the alley's other side. Xiarong filled in the third shop's time, tying it with the old sheet. Tavi asked if half a day's delay had been worth it. She first calculated whether she could still reach today's last household, then said yes, but if every shop needed this much talking, her feet wouldn't be enough.",
-      "hanzi": "离开铺子时，太阳已经偏到巷子的另一面。夏绒把第三家的时辰填上，用线同旧单系在一起。塔维问耽搁这半天值得不值得，她没立刻答，先算今日还能否赶上最后一家，接着说值得，不过若每家都这样谈，她的脚便不够用了。\n",
+      "target": "líkāi pùzi shí , tàiyáng yǐjīng piān dào xiàngzi de lìngyímiàn .",
+      "english": "On leaving the shop, the sun had moved to the alley's other side.",
+      "hanzi": "离开铺子时，太阳已经偏到巷子的另一面。",
       "alignment": [
         {
           "english": "On leaving",
@@ -3876,7 +3974,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "xià róng bǎ dìsānjiā de shíchén tián shàng , yòng xiàn tóng jiù dānxì zài yìqǐ .",
+      "english": "Xiarong filled in the third shop's time, tying it with the old sheet.",
+      "hanzi": "夏绒把第三家的时辰填上，用线同旧单系在一起。",
+      "alignment": [
         {
           "english": "Xiarong",
           "target": "xià róng",
@@ -3988,7 +4093,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi wèn dāngē zhè bàntiān zhídé bù zhídé , tā méi lìkè dá , xiān suàn jīnrì hái néngfǒu gǎnshàng zuìhòu yìjiā , jiēzhe shuō zhídé , búguò ruò měijiā dōu zhèyàng tán , tā de jiǎo biàn búgòu yòng le .",
+      "english": "Tavi asked if half a day's delay had been worth it. She first calculated whether she could still reach today's last household, then said yes, but if every shop needed this much talking, her feet wouldn't be enough.",
+      "hanzi": "塔维问耽搁这半天值得不值得，她没立刻答，先算今日还能否赶上最后一家，接着说值得，不过若每家都这样谈，她的脚便不够用了。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4264,9 +4376,9 @@
       ]
     },
     {
-      "target": "liǎng rén zài shíjiē kǒu fēnkāi . tǎ wéi wǎngxiàzǒu le jǐjí , tīngjiàn shàngtóu qīngqiāo liǎngxià , huítóu kàn , xià róng yǐ zhàn huí pù ménbiān , lǎorén cóng guì hòu táiqǐ tóu , jiāng zhǐ fàngdào shuōhǎo de nà yì gélǐ . tā méi zài jiǎng yíbiàn , zhī cháo tā huīhuīshǒu , biàn qù pǎo zìjǐ shèngxià de lù .",
-      "english": "They parted at the steps. A few steps down, Tavi heard two light knocks and looked back: Xiarong was at the shop door again. The man looked up from behind the counter and placed the paper in the agreed compartment. Without explaining again, she waved and left to finish her own route.",
-      "hanzi": "两人在石阶口分开。塔维往下走了几级，听见上头轻敲两下，回头看，夏绒已站回铺门边，老人从柜后抬起头，将纸放到说好的那一格里。她没再讲一遍，只朝他挥挥手，便去跑自己剩下的路。\n",
+      "target": "liǎng rén zài shíjiē kǒu fēnkāi .",
+      "english": "They parted at the steps.",
+      "hanzi": "两人在石阶口分开。",
       "alignment": [
         {
           "english": "They",
@@ -4307,7 +4419,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi wǎngxiàzǒu le jǐjí , tīngjiàn shàngtóu qīngqiāo liǎngxià , huítóu kàn , xià róng yǐ zhàn huí pù ménbiān , lǎorén cóng guì hòu táiqǐ tóu , jiāng zhǐ fàngdào shuōhǎo de nà yì gélǐ .",
+      "english": "A few steps down, Tavi heard two light knocks and looked back: Xiarong was at the shop door again. The man looked up from behind the counter and placed the paper in the agreed compartment.",
+      "hanzi": "塔维往下走了几级，听见上头轻敲两下，回头看，夏绒已站回铺门边，老人从柜后抬起头，将纸放到说好的那一格里。",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -4547,7 +4666,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méi zài jiǎng yíbiàn , zhī cháo tā huīhuīshǒu , biàn qù pǎo zìjǐ shèngxià de lù .",
+      "english": "Without explaining again, she waved to him and left to finish her own route.",
+      "hanzi": "她没再讲一遍，只朝他挥挥手，便去跑自己剩下的路。\n",
+      "alignment": [
         {
           "english": "she",
           "target": "tā",
@@ -4605,7 +4731,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "man",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",

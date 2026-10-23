@@ -2,7 +2,7 @@
   "id": "ch-190",
   "book_id": "embers-beneath-the-mountains",
   "language": "zh",
-  "version": 1,
+  "version": 2,
   "title": {
     "target": "yíliàng kōngchē de zhòngliàng",
     "english": "The Weight of an Empty Cart",
@@ -10,9 +10,9 @@
   },
   "pairs": [
     {
-      "target": "nàtiān zǎoshàng , luó dí méiyǒu cuī tǎ wéi . tā bǎ duǎn xiāo fàngzài zìjǐ shùnshǒu de wèizhì , xiān jiāng xiùkǒu wǎnqǐ , yòu tì tǎ wéi bǎ zhuōbiān chuí xià de yì jié wéi bù shōu hǎo . zuórì lún dào ruǎn héng shí , tā hái gǎn yìbiān gànhuó yìbiān wènhuà , jīntiān ānjìng dé tǎ wéi fǎndǎo yǒuxiē jǐnzhāng .",
-      "english": "That morning Luodi didn't hurry Tavi. He placed the short pin within reach, rolled his sleeves and tucked up Tavi's hanging workcloth. Yesterday he'd chatted while helping Ruanheng; today's silence made Tavi nervous.",
-      "hanzi": "那天早上，罗荻没有催塔维。\n他把短销放在自己顺手的位置，先将袖口挽起，又替塔维把桌边垂下的一截围布收好。昨日轮到阮衡时，他还敢一边干活一边问话，今天安静得塔维反倒有些紧张。\n",
+      "target": "nàtiān zǎoshàng , luó dí méiyǒu cuī tǎ wéi .",
+      "english": "That morning Luodi didn't hurry Tavi.",
+      "hanzi": "那天早上，罗荻没有催塔维。\n",
       "alignment": [
         {
           "english": "That",
@@ -61,7 +61,14 @@
           "category": "proper_noun",
           "is_idiom": false,
           "frequency_band": null
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā bǎ duǎn xiāo fàngzài zìjǐ shùnshǒu de wèizhì , xiān jiāng xiùkǒu wǎnqǐ , yòu tì tǎ wéi bǎ zhuōbiān chuí xià de yì jié wéi bù shōu hǎo .",
+      "english": "He placed the short pin within reach, rolled his sleeves and tucked up Tavi's hanging workcloth.",
+      "hanzi": "他把短销放在自己顺手的位置，先将袖口挽起，又替塔维把桌边垂下的一截围布收好。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -253,7 +260,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zuórì lún dào ruǎn héng shí , tā hái gǎn yìbiān gànhuó yìbiān wènhuà , jīntiān ānjìng dé tǎ wéi fǎndǎo yǒuxiē jǐnzhāng .",
+      "english": "Yesterday he'd chatted while helping Ruanheng; today's silence made Tavi nervous.",
+      "hanzi": "昨日轮到阮衡时，他还敢一边干活一边问话，今天安静得塔维反倒有些紧张。\n",
+      "alignment": [
         {
           "english": "Yesterday",
           "target": "zuórì",
@@ -401,9 +415,9 @@
       ]
     },
     {
-      "target": "\" nǐ zhào píngcháng lái . \" tǎ wéi shuō . luó dí kàn tā yìyǎn , xiàolexiào . \" píngcháng yě bú luànshuō . \"",
-      "english": "“Act as usual,” Tavi said. Luodi glanced at him and smiled. “I don't chatter nonsense usually either.”",
-      "hanzi": "“你照平常来。”塔维说。\n罗荻看他一眼，笑了笑。“平常也不乱说。”\n",
+      "target": "\" nǐ zhào píngcháng lái . \"",
+      "english": "“Act as usual,”",
+      "hanzi": "“你照平常来。”",
       "alignment": [
         {
           "english": "Act",
@@ -436,7 +450,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi shuō .",
+      "english": "Tavi said.",
+      "hanzi": "塔维说。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -452,7 +473,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "luó dí kàn tā yìyǎn , xiàolexiào .",
+      "english": "Luodi glanced at him and smiled.",
+      "hanzi": "罗荻看他一眼，笑了笑。",
+      "alignment": [
         {
           "english": "Luodi",
           "target": "luó dí",
@@ -516,7 +544,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "\" píngcháng yě bú luànshuō . \"",
+      "english": "“I don't chatter nonsense usually either.”",
+      "hanzi": "“平常也不乱说。”\n",
+      "alignment": [
         {
           "english": "usually",
           "target": "píngcháng",
@@ -552,9 +587,9 @@
       ]
     },
     {
-      "target": "tāmen yòng de réng shì zuórì nà tào pèi hǎo de xiǎo tiě hé jiājù , zhěngjiàn tǐjī , jiēchùmiàn , qiǎn wén hé qīngzǎi dōu chóngxīn chá guò . ruǎn héng zhàn zài néng tóngshí kànqīng liǎngbiān de wèizhì , xiān ràng tǎ wéi jiāng zhèngcháng wèiyí bào yíbiàn , xièzài hé huí , zài wèn tā yào buyào shì . búshì wèn gǎnbugǎn .",
-      "english": "They used yesterday's matched iron and fixture, rechecking whole volumes, contact surfaces, shallow grooves and light loads. Ruanheng could see both sides, asked Tavi to report baseline movement and unloaded return checks, then asked whether he wanted to try, not whether he dared.",
-      "hanzi": "他们用的仍是昨日那套配好的小铁和夹具，整件体积、接触面、浅纹和轻载都重新查过。阮衡站在能同时看清两边的位置，先让塔维将正常位移报一遍，卸载核回，再问他要不要试。不是问敢不敢。\n",
+      "target": "tāmen yòng de réng shì zuórì nà tào pèi hǎo de xiǎo tiě hé jiājù , zhěngjiàn tǐjī , jiēchùmiàn , qiǎn wén hé qīngzǎi dōu chóngxīn chá guò .",
+      "english": "They used yesterday's matched iron and fixture, rechecking whole volumes, contact surfaces, shallow grooves and light loads.",
+      "hanzi": "他们用的仍是昨日那套配好的小铁和夹具，整件体积、接触面、浅纹和轻载都重新查过。",
       "alignment": [
         {
           "english": "They",
@@ -739,7 +774,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "ruǎn héng zhàn zài néng tóngshí kànqīng liǎngbiān de wèizhì , xiān ràng tǎ wéi jiāng zhèngcháng wèiyí bào yíbiàn , xièzài hé huí , zài wèn tā yào buyào shì .",
+      "english": "Ruanheng stood where he could see both sides, asked Tavi to report baseline movement and unloaded return checks, then asked whether he wanted to try.",
+      "hanzi": "阮衡站在能同时看清两边的位置，先让塔维将正常位移报一遍，卸载核回，再问他要不要试。",
+      "alignment": [
         {
           "english": "Ruanheng",
           "target": "ruǎn héng",
@@ -939,7 +981,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "búshì wèn gǎnbugǎn .",
+      "english": "He was not asking whether he dared.",
+      "hanzi": "不是问敢不敢。\n",
+      "alignment": [
         {
           "english": "not",
           "target": "búshì",
@@ -949,7 +998,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "asked",
+          "english": "asking",
           "target": "wèn",
           "hanzi": "问",
           "category": "verb",
@@ -967,9 +1016,9 @@
       ]
     },
     {
-      "target": "tǎ wéi kàn le kàn xiāo de wèizhì , cái diǎntóu . zhǐ xià de tiě yǒu shúxī de huíyìng . tā méiyǒu bǎ yǎnqián de mùliào hé yuǎnchù de dà gǒng yíkuàiér xiǎng jìnqù , zhī shǒuzhù nà liǎngjiàn xiǎoxiǎode zhěngjiàn . xiǎngyìng yìbiān sōng yìdiǎn , lìngyìbiān bǔ huí , jiá kǒu ràngkāi .",
-      "english": "Tavi checked the pin's position before nodding. The iron felt familiar beneath his fingers. He didn't include the wood or distant arch in his attention, only the two small whole pieces. One response eased, the other compensated, and the fixture opened.",
-      "hanzi": "塔维看了看销的位置，才点头。\n指下的铁有熟悉的回应。他没有把眼前的木料和远处的大拱一块儿想进去，只守住那两件小小的整件。响应一边松一点，另一边补回，夹口让开。",
+      "target": "tǎ wéi kàn le kàn xiāo de wèizhì , cái diǎntóu .",
+      "english": "Tavi checked the pin's position before nodding.",
+      "hanzi": "塔维看了看销的位置，才点头。\n",
       "alignment": [
         {
           "english": "Tavi",
@@ -1042,7 +1091,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhǐ xià de tiě yǒu shúxī de huíyìng .",
+      "english": "The iron felt familiar beneath his fingers.",
+      "hanzi": "指下的铁有熟悉的回应。",
+      "alignment": [
         {
           "english": "beneath his fingers",
           "target": "zhǐ xià",
@@ -1098,7 +1154,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méiyǒu bǎ yǎnqián de mùliào hé yuǎnchù de dà gǒng yíkuàiér xiǎng jìnqù , zhī shǒuzhù nà liǎngjiàn xiǎoxiǎode zhěngjiàn .",
+      "english": "He didn't include the wood or distant arch in his attention, only the two small whole pieces.",
+      "hanzi": "他没有把眼前的木料和远处的大拱一块儿想进去，只守住那两件小小的整件。",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -1258,7 +1321,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "xiǎngyìng yìbiān sōng yìdiǎn , lìngyìbiān bǔ huí , jiá kǒu ràngkāi .",
+      "english": "One response eased, the other compensated, and the fixture opened.",
+      "hanzi": "响应一边松一点，另一边补回，夹口让开。",
+      "alignment": [
         {
           "english": "response",
           "target": "xiǎngyìng",
@@ -1334,9 +1404,9 @@
       ]
     },
     {
-      "target": "tā wěnzhù , shuāngshǒu yìtóng líkāi , luó dí bǎ xiāo sòngrù . dìyīshēng bǎizhēn hái méi dào , tā biàn chóngxīn jiēchù , shōuhuí biànhuà . kòutóu zài pǔtōng jiégòu lǐ liúzhù , yuánlái xūyào nà yìdiǎn kòngxì de dìfāng , rújīn yǐjīng hé hǎo .",
-      "english": "He stabilized and lifted both hands together; Luodi inserted the pin. Before the first pendulum click he recontacted and canceled. The head held mechanically, the joint now closed where a little clearance had been needed.",
-      "hanzi": "他稳住，双手一同离开，罗荻把销送入。\n第一声摆针还没到，他便重新接触，收回变化。扣头在普通结构里留住，原来需要那一点空隙的地方，如今已经合好。\n",
+      "target": "tā wěnzhù , shuāngshǒu yìtóng líkāi , luó dí bǎ xiāo sòngrù .",
+      "english": "He stabilized and lifted both hands together; Luodi inserted the pin.",
+      "hanzi": "他稳住，双手一同离开，罗荻把销送入。\n",
       "alignment": [
         {
           "english": "He",
@@ -1409,7 +1479,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "dìyīshēng bǎizhēn hái méi dào , tā biàn chóngxīn jiēchù , shōuhuí biànhuà .",
+      "english": "Before the first pendulum click he recontacted and canceled.",
+      "hanzi": "第一声摆针还没到，他便重新接触，收回变化。",
+      "alignment": [
         {
           "english": "first",
           "target": "dìyī",
@@ -1505,7 +1582,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "kòutóu zài pǔtōng jiégòu lǐ liúzhù , yuánlái xūyào nà yìdiǎn kòngxì de dìfāng , rújīn yǐjīng hé hǎo .",
+      "english": "The head held mechanically, the joint now closed where a little clearance had been needed.",
+      "hanzi": "扣头在普通结构里留住，原来需要那一点空隙的地方，如今已经合好。\n",
+      "alignment": [
         {
           "english": "head",
           "target": "kòutóu",
@@ -1637,9 +1721,9 @@
       ]
     },
     {
-      "target": "ruǎn héng méi lìkè shuō chéng le . tā ràng luó dí sōngkāi shǒu , tǎ wéi xièzài , zhòngdú zhèngcháng xiàn . liǎngbiān dōu huídào yuánxiān , cái bǎ nà yìzhī kòujiàn fàngjìn wánchéng de qiǎnpán . \" jīntiān zhè zhī jì nǐ zuò de . shèngxià xiān xiē . \"",
-      "english": "Ruanheng didn't pronounce success immediately. Luodi released it, Tavi unloaded and reread baseline lines. Only after both sides returned did the clasp enter the finished tray. “This one's yours today. Rest before anything else.”",
-      "hanzi": "阮衡没立刻说成了。他让罗荻松开手，塔维卸载，重读正常线。两边都回到原先，才把那一只扣件放进完成的浅盘。\n“今天这只记你做的。剩下先歇。”\n",
+      "target": "ruǎn héng méi lìkè shuō chéng le .",
+      "english": "Ruanheng didn't pronounce success immediately.",
+      "hanzi": "阮衡没立刻说成了。",
       "alignment": [
         {
           "english": "Ruanheng",
@@ -1688,9 +1772,16 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā ràng luó dí sōngkāi shǒu , tǎ wéi xièzài , zhòngdú zhèngcháng xiàn .",
+      "english": "He told Luodi to release his hand; Tavi unloaded and reread baseline lines.",
+      "hanzi": "他让罗荻松开手，塔维卸载，重读正常线。",
+      "alignment": [
         {
-          "english": "Ruanheng",
+          "english": "He",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -1698,7 +1789,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "released",
+          "english": "told",
           "target": "ràng",
           "hanzi": "让",
           "category": "verb",
@@ -1714,7 +1805,7 @@
           "frequency_band": null
         },
         {
-          "english": "released",
+          "english": "release",
           "target": "sōngkāi",
           "hanzi": "松开",
           "category": "verb",
@@ -1722,7 +1813,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "released",
+          "english": "hand",
           "target": "shǒu",
           "hanzi": "手",
           "category": "noun",
@@ -1760,7 +1851,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "liǎngbiān dōu huídào yuánxiān , cái bǎ nà yìzhī kòujiàn fàngjìn wánchéng de qiǎnpán .",
+      "english": "Only after both sides returned did the clasp enter the finished tray.",
+      "hanzi": "两边都回到原先，才把那一只扣件放进完成的浅盘。\n",
+      "alignment": [
         {
           "english": "both sides",
           "target": "liǎngbiān",
@@ -1872,7 +1970,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "\" jīntiān zhè zhī jì nǐ zuò de .",
+      "english": "“This one's yours today.",
+      "hanzi": "“今天这只记你做的。",
+      "alignment": [
         {
           "english": "today",
           "target": "jīntiān",
@@ -1928,7 +2033,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "shèngxià xiān xiē . \"",
+      "english": "Rest before anything else.”",
+      "hanzi": "剩下先歇。”\n",
+      "alignment": [
         {
           "english": "anything else",
           "target": "shèngxià",
@@ -1956,9 +2068,9 @@
       ]
     },
     {
-      "target": "tǎ wéi zuò dào pángbiān , xīnlǐ hěn rè , shǒu què méiyǒu xiǎng zài shēnguòqù . jǐndīng xìxiàn nà yízhèn yǐjīng hào le shén , yǎnjīng hái xiǎng wǎng xiǎoxiǎo yìdiǎn shàng jù . tā hēshuǐ , děng zhùyì mànmàn sànkāi , cái qù zuò bù shīshù de shùjiàn hé bāozā .",
-      "english": "Tavi sat aside, inwardly glowing but not reaching for another try. Concentrating on fine lines had tired him; his eyes still wanted one tiny focus. He drank water until attention relaxed, then counted and packed without casting.",
-      "hanzi": "塔维坐到旁边，心里很热，手却没有想再伸过去。紧盯细线那一阵已经耗了神，眼睛还想往小小一点上聚。他喝水，等注意慢慢散开，才去做不施术的数件和包扎。\n",
+      "target": "tǎ wéi zuò dào pángbiān , xīnlǐ hěn rè , shǒu què méiyǒu xiǎng zài shēnguòqù .",
+      "english": "Tavi sat aside, inwardly glowing but not reaching for another try.",
+      "hanzi": "塔维坐到旁边，心里很热，手却没有想再伸过去。",
       "alignment": [
         {
           "english": "Tavi",
@@ -2055,7 +2167,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "jǐndīng xìxiàn nà yízhèn yǐjīng hào le shén , yǎnjīng hái xiǎng wǎng xiǎoxiǎo yìdiǎn shàng jù .",
+      "english": "Concentrating on fine lines had tired him; his eyes still wanted one tiny focus.",
+      "hanzi": "紧盯细线那一阵已经耗了神，眼睛还想往小小一点上聚。",
+      "alignment": [
         {
           "english": "Concentrating",
           "target": "jǐndīng",
@@ -2191,7 +2310,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā hēshuǐ , děng zhùyì mànmàn sànkāi , cái qù zuò bù shīshù de shùjiàn hé bāozā .",
+      "english": "He drank water until attention relaxed, then counted and packed without casting.",
+      "hanzi": "他喝水，等注意慢慢散开，才去做不施术的数件和包扎。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -2315,9 +2441,9 @@
       ]
     },
     {
-      "target": "luó dí zǒu guòlái , ná qǐ qiǎnpán , shuō tā zhōngyú kěyǐ huíjiā jiǎng , zìjǐ tì yígè bái jiē xuéshēng sòng guò xiāo , bù zhī yíng guò shéngjié . tǎ wéi xiǎng jiào tā shǎo jiǎng yìdiǎn , zìjǐ xiān xiào le .",
-      "english": "Luodi lifted the tray: finally he could tell home he had inserted a pin for a White Steps student, not only beaten him at knots. Tavi wanted him to say less, but laughed first.",
-      "hanzi": "罗荻走过来，拿起浅盘，说他终于可以回家讲，自己替一个白阶学生送过销，不只赢过绳结。塔维想叫他少讲一点，自己先笑了。\n",
+      "target": "luó dí zǒu guòlái , ná qǐ qiǎnpán , shuō tā zhōngyú kěyǐ huíjiā jiǎng , zìjǐ tì yígè bái jiē xuéshēng sòng guò xiāo , bù zhī yíng guò shéngjié .",
+      "english": "Luodi lifted the tray: finally he could tell home he had inserted a pin for a White Steps student, not only beaten him at knots.",
+      "hanzi": "罗荻走过来，拿起浅盘，说他终于可以回家讲，自己替一个白阶学生送过销，不只赢过绳结。",
       "alignment": [
         {
           "english": "Luodi",
@@ -2502,7 +2628,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi xiǎng jiào tā shǎo jiǎng yìdiǎn , zìjǐ xiān xiào le .",
+      "english": "Tavi wanted him to say less, but laughed first.",
+      "hanzi": "塔维想叫他少讲一点，自己先笑了。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -2594,9 +2727,9 @@
       ]
     },
     {
-      "target": "wǔhòu tāmen qù zhuǎnjiē chù kàn chēng guò de chē zhòng . chūn shì hái méi zhèngshì kāi , yǐjīng yǒurén lái wèn xīn pái zěnme yòng . yíliàng kànzhe jīhū kōng de chē tíngxià , chēfū jiānchí zìjǐ méiyǒu yùnhuò , méilǐyóu qù děng zhuāngmǎn huò de chē xiān guò .",
-      "english": "That afternoon they checked weighed carts at the transfer point. The market wasn't open yet, but people asked about the sign. A nearly empty-looking cart stopped; its driver insisted he carried no freight and shouldn't wait behind laden carts.",
-      "hanzi": "午后他们去转接处看称过的车重。春市还没正式开，已经有人来问新牌怎么用。一辆看着几乎空的车停下，车夫坚持自己没有运货，没理由去等装满货的车先过。\n",
+      "target": "wǔhòu tāmen qù zhuǎnjiē chù kàn chēng guò de chē zhòng .",
+      "english": "That afternoon they checked weighed carts at the transfer point.",
+      "hanzi": "午后他们去转接处看称过的车重。",
       "alignment": [
         {
           "english": "That afternoon",
@@ -2669,7 +2802,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "chūn shì hái méi zhèngshì kāi , yǐjīng yǒurén lái wèn xīn pái zěnme yòng .",
+      "english": "The market wasn't open yet, but people asked about the sign.",
+      "hanzi": "春市还没正式开，已经有人来问新牌怎么用。",
+      "alignment": [
         {
           "english": "market",
           "target": "chūn shì",
@@ -2773,7 +2913,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "yíliàng kànzhe jīhū kōng de chē tíngxià , chēfū jiānchí zìjǐ méiyǒu yùnhuò , méilǐyóu qù děng zhuāngmǎn huò de chē xiān guò .",
+      "english": "A nearly empty-looking cart stopped; its driver insisted he carried no freight and shouldn't wait behind laden carts.",
+      "hanzi": "一辆看着几乎空的车停下，车夫坚持自己没有运货，没理由去等装满货的车先过。\n",
+      "alignment": [
         {
           "english": "A",
           "target": "yí",
@@ -2969,9 +3116,9 @@
       ]
     },
     {
-      "target": "yù hé ràng tā zhàocháng bǎ chēshàng liǎngzhī tǒng yě suànjìnqù . tǒnggài yì xiān , lǐmiàn quán shì shuǐ , lìngwài háiyǒu jǐkǔn shībù , bǐ yuǎn kànzhòng dé duō . chēfū liǎn chénxiàlái , shuō hòu jiē xǐ bù de shuǐ jīntiān láide màn , zìjǐ shì tì jiālǐ sòng , búshì chènjī duō jiē yìchē huò .",
-      "english": "Yuhe included the two barrels as usual. Opened, they held water; wet cloth bundles added more weight. The driver scowled: water for washing cloth in the back street was late today; he was delivering for home, not taking extra freight.",
-      "hanzi": "郁禾让他照常把车上两只桶也算进去。桶盖一掀，里面全是水，另外还有几捆湿布，比远看重得多。车夫脸沉下来，说后街洗布的水今天来得慢，自己是替家里送，不是趁机多接一车货。\n",
+      "target": "yù hé ràng tā zhàocháng bǎ chēshàng liǎngzhī tǒng yě suànjìnqù .",
+      "english": "Yuhe told him to include the two barrels on the cart as usual.",
+      "hanzi": "郁禾让他照常把车上两只桶也算进去。",
       "alignment": [
         {
           "english": "Yuhe",
@@ -2982,7 +3129,7 @@
           "frequency_band": null
         },
         {
-          "english": "included",
+          "english": "told",
           "target": "ràng",
           "hanzi": "让",
           "category": "verb",
@@ -2990,7 +3137,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "driver",
+          "english": "him",
           "target": "tā",
           "hanzi": "他",
           "category": "function_word",
@@ -3046,7 +3193,7 @@
           "frequency_band": "uncommon"
         },
         {
-          "english": "included",
+          "english": "include",
           "target": "yě",
           "hanzi": "也",
           "category": "adverb",
@@ -3054,13 +3201,20 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "included",
+          "english": "include",
           "target": "suànjìnqù",
           "hanzi": "算进去",
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "rare"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǒnggài yì xiān , lǐmiàn quán shì shuǐ , lìngwài háiyǒu jǐkǔn shībù , bǐ yuǎn kànzhòng dé duō .",
+      "english": "Opened, they held water; wet cloth bundles added more weight.",
+      "hanzi": "桶盖一掀，里面全是水，另外还有几捆湿布，比远看重得多。",
+      "alignment": [
         {
           "english": "Opened",
           "target": "tǒnggài",
@@ -3204,7 +3358,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "chēfū liǎn chénxiàlái , shuō hòu jiē xǐ bù de shuǐ jīntiān láide màn , zìjǐ shì tì jiālǐ sòng , búshì chènjī duō jiē yìchē huò .",
+      "english": "The driver scowled: water for washing cloth in the back street was late today; he was delivering for home, not taking extra freight.",
+      "hanzi": "车夫脸沉下来，说后街洗布的水今天来得慢，自己是替家里送，不是趁机多接一车货。\n",
+      "alignment": [
         {
           "english": "driver",
           "target": "chēfū",
@@ -3400,9 +3561,9 @@
       ]
     },
     {
-      "target": "shū yàn rènde tā , méi shuō tā sāhuǎng . tā wèn nà liǎngtǒng zài nǎér qǔ , shénme shíhòu yào sòng huíqù , jì qīng hòu , réng ràng yù hé àn shíjì zhòngliàng kàn . zìjiā de shuǐ yǒuyòng , búhuì yīnwèi yǒuyòng , jiù zài qiáo shàng hūrán qīng yìdiǎn .",
-      "english": "Shuyan knew him and didn't call him a liar. She noted where he had fetched the barrels and when they were needed, but still had Yuhe use actual weight. Useful household water didn't become lighter on a bridge because it was useful.",
-      "hanzi": "舒砚认得他，没说他撒谎。她问那两桶在哪儿取，什么时候要送回去，记清后，仍让郁禾按实际重量看。自家的水有用，不会因为有用，就在桥上忽然轻一点。\n",
+      "target": "shū yàn rènde tā , méi shuō tā sāhuǎng .",
+      "english": "Shuyan knew him and didn't call him a liar.",
+      "hanzi": "舒砚认得他，没说他撒谎。",
       "alignment": [
         {
           "english": "Shuyan",
@@ -3459,7 +3620,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "uncommon"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā wèn nà liǎngtǒng zài nǎér qǔ , shénme shíhòu yào sòng huíqù , jì qīng hòu , réng ràng yù hé àn shíjì zhòngliàng kàn .",
+      "english": "She noted where he had fetched the barrels and when they were needed, but still had Yuhe use actual weight.",
+      "hanzi": "她问那两桶在哪儿取，什么时候要送回去，记清后，仍让郁禾按实际重量看。",
+      "alignment": [
         {
           "english": "She",
           "target": "tā",
@@ -3627,7 +3795,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zìjiā de shuǐ yǒuyòng , búhuì yīnwèi yǒuyòng , jiù zài qiáo shàng hūrán qīng yìdiǎn .",
+      "english": "Useful household water didn't become lighter on a bridge because it was useful.",
+      "hanzi": "自家的水有用，不会因为有用，就在桥上忽然轻一点。\n",
+      "alignment": [
         {
           "english": "household",
           "target": "zìjiā",
@@ -3743,9 +3918,9 @@
       ]
     },
     {
-      "target": "chēfū mà le yíjù , dàn méi zài jiào shuí bǎtǒng dàngchéng kōng de . tā zuò dào lùbiān , shuō yào děng kěyǐ , bié ràng pángbiān nà liàng dàchē hòulái yòu chājìnqù .",
-      "english": "The driver swore, but stopped asking for empty-barrel treatment. Sitting by the road, he agreed to wait, provided the big cart beside him didn't cut ahead later.",
-      "hanzi": "车夫骂了一句，但没再叫谁把桶当成空的。他坐到路边，说要等可以，别让旁边那辆大车后来又插进去。\n",
+      "target": "chēfū mà le yíjù , dàn méi zài jiào shuí bǎtǒng dàngchéng kōng de .",
+      "english": "The driver swore, but stopped asking for empty-barrel treatment.",
+      "hanzi": "车夫骂了一句，但没再叫谁把桶当成空的。",
       "alignment": [
         {
           "english": "driver",
@@ -3866,7 +4041,14 @@
           "category": "particle",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā zuò dào lùbiān , shuō yào děng kěyǐ , bié ràng pángbiān nà liàng dàchē hòulái yòu chājìnqù .",
+      "english": "Sitting by the road, he agreed to wait, provided the big cart beside him didn't cut ahead later.",
+      "hanzi": "他坐到路边，说要等可以，别让旁边那辆大车后来又插进去。\n",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -3998,9 +4180,9 @@
       ]
     },
     {
-      "target": "tǎ wéi yuánxiān yǐwéi , liáng qīng duōshǎo dōngxī , hòumiàn de shì jiù huì gēnzhe qīng . rújīn yíchuàn shù xiě wán , chēfū de zháojí hái zài , bēilǒu fùrén měitiān yào zǒu de shí yán yě hái zài . tāmen búshì shuí suàncuò yícì biàn néng quán gǎi hǎo de dōngxī .",
-      "english": "Tavi had thought clear measurements would clarify what followed. Now, numbers complete, the driver's urgency remained, as did the basket woman's daily stone path. These weren't things one corrected calculation could settle.",
-      "hanzi": "塔维原先以为，量清多少东西，后面的事就会跟着清。如今一串数写完，车夫的着急还在，背篓妇人每天要走的石沿也还在。它们不是谁算错一次便能全改好的东西。\n",
+      "target": "tǎ wéi yuánxiān yǐwéi , liáng qīng duōshǎo dōngxī , hòumiàn de shì jiù huì gēnzhe qīng .",
+      "english": "Tavi had thought clear measurements would clarify what followed.",
+      "hanzi": "塔维原先以为，量清多少东西，后面的事就会跟着清。",
       "alignment": [
         {
           "english": "Tavi",
@@ -4113,7 +4295,14 @@
           "category": "adjective",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "rújīn yíchuàn shù xiě wán , chēfū de zháojí hái zài , bēilǒu fùrén měitiān yào zǒu de shí yán yě hái zài .",
+      "english": "Now, numbers complete, the driver's urgency remained, as did the basket woman's daily stone path.",
+      "hanzi": "如今一串数写完，车夫的着急还在，背篓妇人每天要走的石沿也还在。",
+      "alignment": [
         {
           "english": "Now",
           "target": "rújīn",
@@ -4273,7 +4462,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tāmen búshì shuí suàncuò yícì biàn néng quán gǎi hǎo de dōngxī .",
+      "english": "These weren't things one corrected calculation could settle.",
+      "hanzi": "它们不是谁算错一次便能全改好的东西。\n",
+      "alignment": [
         {
           "english": "These",
           "target": "tāmen",
@@ -4373,9 +4569,9 @@
       ]
     },
     {
-      "target": "ruǎn héng ràng xièhuò de rén zài kòngdì shàng nuóchū yìtiáo duǎnlù , gěi búbì děng zhuǎnchē de xíngrén guò , zhòng chē réng zhào yuán xiàn zǎi ānpái xiānhòu . zhège xiàwǔ méi ràng suǒyǒurén dōu mǎnyì , dàn zhìshǎo méi jiào bào zhe háizi de rén wéile rào yíliàngchē zǒu dào lúnxiàqù .",
-      "english": "Ruanheng cleared a short pedestrian passage through the unloading area, heavy carts still sequenced by existing limits. Not everyone was satisfied that afternoon, but people carrying children didn't have to dodge beneath wheels.",
-      "hanzi": "阮衡让卸货的人在空地上挪出一条短路，给不必等转车的行人过，重车仍照原限载安排先后。这个下午没让所有人都满意，但至少没叫抱着孩子的人为了绕一辆车走到轮下去。\n",
+      "target": "ruǎn héng ràng xièhuò de rén zài kòngdì shàng nuóchū yìtiáo duǎnlù , gěi búbì děng zhuǎnchē de xíngrén guò , zhòng chē réng zhào yuán xiàn zǎi ānpái xiānhòu .",
+      "english": "Ruanheng had the unloaders clear a short pedestrian passage through the open area for people who didn't have to wait for a transfer, heavy carts still sequenced by existing limits.",
+      "hanzi": "阮衡让卸货的人在空地上挪出一条短路，给不必等转车的行人过，重车仍照原限载安排先后。",
       "alignment": [
         {
           "english": "Ruanheng",
@@ -4386,7 +4582,7 @@
           "frequency_band": null
         },
         {
-          "english": "cleared",
+          "english": "had",
           "target": "ràng",
           "hanzi": "让",
           "category": "verb",
@@ -4394,7 +4590,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "unloading",
+          "english": "unloaders",
           "target": "xièhuò",
           "hanzi": "卸货",
           "category": "verb",
@@ -4402,7 +4598,7 @@
           "frequency_band": "rare"
         },
         {
-          "english": "unloading",
+          "english": "unloaders",
           "target": "de",
           "hanzi": "的",
           "category": "particle",
@@ -4442,7 +4638,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "cleared",
+          "english": "clear",
           "target": "nuóchū",
           "hanzi": "挪出",
           "category": "verb",
@@ -4490,7 +4686,7 @@
           "frequency_band": "common"
         },
         {
-          "english": "dodge",
+          "english": "wait",
           "target": "děng",
           "hanzi": "等",
           "category": "verb",
@@ -4498,7 +4694,7 @@
           "frequency_band": "very_common"
         },
         {
-          "english": "dodge",
+          "english": "transfer",
           "target": "zhuǎnchē",
           "hanzi": "转车",
           "category": "verb",
@@ -4584,7 +4780,14 @@
           "category": "noun",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhège xiàwǔ méi ràng suǒyǒurén dōu mǎnyì , dàn zhìshǎo méi jiào bào zhe háizi de rén wéile rào yíliàngchē zǒu dào lúnxiàqù .",
+      "english": "Not everyone was satisfied that afternoon, but people carrying children didn't have to dodge beneath wheels.",
+      "hanzi": "这个下午没让所有人都满意，但至少没叫抱着孩子的人为了绕一辆车走到轮下去。\n",
+      "alignment": [
         {
           "english": "Not everyone",
           "target": "zhè",
@@ -4788,9 +4991,9 @@
       ]
     },
     {
-      "target": "bàngwǎn shōu dōngxī shí , nà chēfū chóngxīn jīngguò , tǒng yǐjīng kōng le yìzhī . tā méiyǒu dàoqiàn , zhǐzhe xīn pái wèn míngtiān hái zài bu zài , ruǎn héng shuō zài , ruò gǎi dìfāng huì liúrén shuō . tā biàn diǎntóu zǒu le , xiàng yǐjīng jìxià , yòu bú xiàng zhēn kěn rènshū .",
-      "english": "At dusk the driver passed again, one barrel empty. Without apologizing he asked if the sign would stay tomorrow. Yes, Ruanheng said; any move would be explained by someone there. He nodded and left, seeming informed without conceding defeat.",
-      "hanzi": "傍晚收东西时，那车夫重新经过，桶已经空了一只。他没有道歉，指着新牌问明天还在不在，阮衡说在，若改地方会留人说。他便点头走了，像已经记下，又不像真肯认输。\n",
+      "target": "bàngwǎn shōu dōngxī shí , nà chēfū chóngxīn jīngguò , tǒng yǐjīng kōng le yìzhī .",
+      "english": "At dusk the driver passed again, one barrel empty.",
+      "hanzi": "傍晚收东西时，那车夫重新经过，桶已经空了一只。",
       "alignment": [
         {
           "english": "At dusk",
@@ -4903,7 +5106,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā méiyǒu dàoqiàn , zhǐzhe xīn pái wèn míngtiān hái zài bu zài , ruǎn héng shuō zài , ruò gǎi dìfāng huì liúrén shuō .",
+      "english": "Without apologizing he asked if the sign would stay tomorrow. Yes, Ruanheng said; any move would be explained by someone there.",
+      "hanzi": "他没有道歉，指着新牌问明天还在不在，阮衡说在，若改地方会留人说。",
+      "alignment": [
         {
           "english": "he",
           "target": "tā",
@@ -5055,7 +5265,14 @@
           "category": "verb",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tā biàn diǎntóu zǒu le , xiàng yǐjīng jìxià , yòu bú xiàng zhēn kěn rènshū .",
+      "english": "He nodded and left, seeming informed without conceding defeat.",
+      "hanzi": "他便点头走了，像已经记下，又不像真肯认输。\n",
+      "alignment": [
         {
           "english": "He",
           "target": "tā",
@@ -5163,9 +5380,9 @@
       ]
     },
     {
-      "target": "tǎ wéi huí yuànlǐ , bǎ zìjǐ nà zhī kòujiàn de wánchéng jìlù xiě hǎo , pángbiān lìng liúchū chē zhòng nà yíyè . luó dí tàntóu kàn , wèn sòng xiāo de rén néng bunéng yě suàn bàngè . tǎ wéi jiāng tā de míngzì tiān zài xiézuò nà lán , xiǎng le xiǎng , yòu zài bèimiàn huà le yìzhī kōngtǒng .",
-      "english": "Back in the yard, Tavi recorded his completed clasp, leaving the cart-weight page beside it. Luodi peered over: did the pin helper get half credit? Tavi added his name under collaboration, then drew an empty barrel on the back.",
-      "hanzi": "塔维回院里，把自己那只扣件的完成记录写好，旁边另留出车重那一页。罗荻探头看，问送销的人能不能也算半个。塔维将他的名字添在协作那栏，想了想，又在背面画了一只空桶。\n",
+      "target": "tǎ wéi huí yuànlǐ , bǎ zìjǐ nà zhī kòujiàn de wánchéng jìlù xiě hǎo , pángbiān lìng liúchū chē zhòng nà yíyè .",
+      "english": "Back in the yard, Tavi recorded his completed clasp, leaving the cart-weight page beside it.",
+      "hanzi": "塔维回院里，把自己那只扣件的完成记录写好，旁边另留出车重那一页。",
       "alignment": [
         {
           "english": "Tavi",
@@ -5318,7 +5535,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "luó dí tàntóu kàn , wèn sòng xiāo de rén néng bunéng yě suàn bàngè .",
+      "english": "Luodi peered over: did the pin helper get half credit?",
+      "hanzi": "罗荻探头看，问送销的人能不能也算半个。",
+      "alignment": [
         {
           "english": "Luodi",
           "target": "luó dí",
@@ -5414,7 +5638,14 @@
           "category": "measure_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi jiāng tā de míngzì tiān zài xiézuò nà lán , xiǎng le xiǎng , yòu zài bèimiàn huà le yìzhī kōngtǒng .",
+      "english": "Tavi added his name under collaboration, then drew an empty barrel on the back.",
+      "hanzi": "塔维将他的名字添在协作那栏，想了想，又在背面画了一只空桶。\n",
+      "alignment": [
         {
           "english": "Tavi",
           "target": "tǎ wéi",
@@ -5586,9 +5817,9 @@
       ]
     },
     {
-      "target": "luó dí shuō tǒng dōu bǐ zìjǐ huà dé xiàng , tǎ wéi biàn bǎ bǐ dìgěi tā . zhǐ zhēng le liǎnghuí cái ná huílái , tā zhōngyú yǒukōng bǎ jīntiān nà yìdiǎn gāoxìng , dāndú jì zài zìjǐ de xiǎo běn shàng .",
-      "english": "Luodi said the barrel was better drawn than he was; Tavi handed him the pen. Two tussles later he got the paper back, finally free to record today's small happiness in his own notebook.",
-      "hanzi": "罗荻说桶都比自己画得像，塔维便把笔递给他。纸争了两回才拿回来，他终于有空把今天那一点高兴，单独记在自己的小本上。\n",
+      "target": "luó dí shuō tǒng dōu bǐ zìjǐ huà dé xiàng , tǎ wéi biàn bǎ bǐ dìgěi tā .",
+      "english": "Luodi said the barrel was better drawn than he was; Tavi handed him the pen.",
+      "hanzi": "罗荻说桶都比自己画得像，塔维便把笔递给他。",
       "alignment": [
         {
           "english": "Luodi",
@@ -5709,7 +5940,14 @@
           "category": "function_word",
           "is_idiom": false,
           "frequency_band": "very_common"
-        },
+        }
+      ]
+    },
+    {
+      "target": "zhǐ zhēng le liǎnghuí cái ná huílái , tā zhōngyú yǒukōng bǎ jīntiān nà yìdiǎn gāoxìng , dāndú jì zài zìjǐ de xiǎo běn shàng .",
+      "english": "Two tussles later he got the paper back, finally free to record today's small happiness in his own notebook.",
+      "hanzi": "纸争了两回才拿回来，他终于有空把今天那一点高兴，单独记在自己的小本上。\n",
+      "alignment": [
         {
           "english": "paper",
           "target": "zhǐ",
