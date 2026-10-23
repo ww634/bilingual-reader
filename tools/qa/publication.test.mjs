@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {sentenceCount,inspectChapter,validateReceipt,sha} from './publication.mjs';
-const chapter=()=>({id:'ch-1',book_id:'test',language:'fr',version:1,title:{target:'Le retour',english:'The Return'},pairs:[{target:'Elle revient.',english:'She returns.',alignment:[{target:'Elle',english:'She',category:'function_word',frequency_band:'very_common',is_idiom:false,lookup:[{target:'Elle',english:'she',category:'function_word',frequency_band:'very_common',is_idiom:false,start:0,end:4}]},{target:'revient',english:'returns',category:'verb',frequency_band:'common',is_idiom:false,lookup:[{target:'revient',english:'returns',category:'verb',frequency_band:'common',is_idiom:false,start:0,end:7}]}]}]});
+const chapter=()=>({id:'ch-1',book_id:'test',language:'fr',version:1,meta:{source:'qa-fixture',createdAt:'2026-10-23',has_alignment:true,alignment_complete:true},title:{target:'Le retour',english:'The Return'},pairs:[{target:'Elle revient.',english:'She returns.',alignment:[{target:'Elle',english:'She',category:'function_word',frequency_band:'very_common',is_idiom:false,lookup:[{target:'Elle',english:'she',category:'function_word',frequency_band:'very_common',is_idiom:false,start:0,end:4}]},{target:'revient',english:'returns',category:'verb',frequency_band:'common',is_idiom:false,lookup:[{target:'revient',english:'returns',category:'verb',frequency_band:'common',is_idiom:false,start:0,end:7}]}]}]});
 const entry=c=>({id:c.id,version:c.version,title:c.title,url:`books/${c.book_id}/${c.id}.json`});
 test('Chinese and French sentence ends, titles, decimals and quotations',()=>{
  assert.equal(sentenceCount('风停了。雨还在下。','zh'),2);
@@ -12,7 +12,7 @@ test('Chinese and French sentence ends, titles, decimals and quotations',()=>{
 });
 test('French alignment passes without Chinese rules; paragraph, own-gloss and lookup defects fail',async()=>{
  const c=chapter();assert.deepEqual(await inspectChapter(c,entry(c),{id:'test',language:'fr'}),[]);
- for(const change of [c=>c.pairs[0].target+=' Elle repart.',c=>c.pairs[0].alignment[0].english='elsewhere',c=>c.pairs[0].alignment[1].lookup[0].start=1,c=>c.pairs[0].alignment.pop()]){
+ for(const change of [c=>c.meta.alignment_complete=false,c=>c.pairs[0].target+=' Elle repart.',c=>c.pairs[0].alignment[0].english='elsewhere',c=>c.pairs[0].alignment[1].lookup[0].start=1,c=>c.pairs[0].alignment.pop()]){
   const bad=chapter();change(bad);await assert.rejects(inspectChapter(bad,entry(bad),{id:'test',language:'fr'}));
  }
 });

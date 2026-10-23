@@ -26,6 +26,7 @@ export async function inspectChapter(c, entry, book) {
   fail(entry?.id === c.id && entry.version === c.version && isDeepStrictEqual(entry.title,c.title) && entry.url === `books/${book.id}/${c.id}.json`, 'Chapter/catalog mismatch');
   for (const k of ['target','english']) fail(typeof c.title?.[k] === 'string' && c.title[k].trim(), `Missing title.${k}`);
   fail(Array.isArray(c.pairs) && c.pairs.length, 'No pairs');
+  fail(c.meta?.has_alignment===true&&c.meta.alignment_complete===true&&typeof c.meta.source==='string'&&c.meta.source.trim()&&/^\d{4}-\d{2}-\d{2}$/.test(c.meta.createdAt??''),'Missing/incomplete chapter metadata');
   const warnings=[];
   c.pairs.forEach((p,i)=>{
     const label=`pair ${i+1}`, source=c.language==='zh'?p.hanzi:p.target;
