@@ -9,3 +9,5 @@ Write `_drafts/ch-N.prose.txt` with the completed prose and `_drafts/ch-N.title.
 ## Scene pacing: reader feedback, 2026-09-22
 
 Give each important scene enough space to establish place, task, tools and motivation before consequences. Bridge changes of location and time explicitly. Connect recurring symptoms to the last observed incident and the character’s limited understanding; mystery about the underlying cause must not obscure what physically happens. Show information being shared before another character acts on it. Prefer fewer developed scenes over compressed sequences of plot beats; extend chapters or move remaining beats forward when needed. Do not treat 1200 Han characters as a target to hit and stop. Preserve natural Chinese and avoid exposition dumps. Reader specifically found chapter 2’s home/work/water-delivery sequence too abrupt. Apply prospectively; do not rewrite published chapters without authorization.
+
+Before encoding, perform the separate editorial review in `../QUALITY.md`: reread recent canon and this chapter, revise causal gaps, pacing and voices, then reread the changed scenes. Batch length never replaces chapter review.

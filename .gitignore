@@ -29,3 +29,7 @@ books_for_processing/
 **/.env
 **/.env.local
 **/.env.*.local
+
+# Ephemeral QA release build output (never commit).
+_site/
+.qa-checked.json

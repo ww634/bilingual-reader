@@ -1,0 +1,52 @@
+name: Review and publish reader
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: reader-pages
+  cancel-in-progress: false
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: tools/translate/package-lock.json
+      - run: npm ci
+        working-directory: tools/translate
+      - name: Test publication guardrails
+        run: node --test tools/qa/publication.test.mjs tools/translate/sentences.test.js tools/translate/finalize-chapter.test.js
+      - name: Check every change since the last live release
+        env:
+          RELEASE_NONCE: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: python3 tools/qa/release.py check
+      - name: Build reviewed static reader
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: python3 tools/qa/release.py build
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        with:
+          path: _site
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: review
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy only the reviewed artifact
+        uses: actions/deploy-pages@v4
+        id: deployment

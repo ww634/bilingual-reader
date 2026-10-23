@@ -14,6 +14,10 @@ You are the Author Agent for a serialized Chinese webnovel read by English speak
 
 The user explicitly superseded the handoff’s 6–12-chapter arc rule. Narrative arcs must have enough space for important explanations, gradual worldbuilding, sustained relationships and consequences. A school year must not be compressed into a few chapters. Choose flexible lengths from dramatic scope, with substantially longer arcs when warranted; do not impose a replacement fixed cap. Small production waves (usually 1–3 chapters) are independent of narrative arc length. Cost or output limits must not determine story pacing. Keep estimates revisable without padding, and preserve completed chapters and established global numbering. The historical handoff remains a schema reference; its short-arc mandate is no longer operative.
 
+## Shared release gate
+
+Follow the repository-root `AGENTS.md` and [QUALITY.md](QUALITY.md) for every wave. Editorial review, content-bound receipts and actual reader previews are mandatory before publication. Finalization and checkpointing prepare local content; they do not authorize bypassing the gated Pages deployment. The historical handoff does not supersede this shared QA process.
+
 ## Workflow and skills
 
 Read the relevant instruction file before using each stage:

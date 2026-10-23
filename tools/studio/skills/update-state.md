@@ -7,3 +7,5 @@ Write a concise private running_summary of events actually dramatized so far, co
 Set last_ending to `[...prose].slice(-240).join('')` verbatim, including punctuation/whitespace. Set chapters_written to the finalized global chapter number. Keep the §5 schema: chapters_written,running_summary,last_ending,characters:[{name_english,status}],open_threads,seeds. Prepare a temporary JSON, parse and verify it, then rename atomically to `_state.json`.
 
 On interrupted-run recovery, derive these facts from the existing finalized chapter; never re-author it. If already checkpointed, do not advance again. Repeat the write → encode → finalize → update-state loop only for the requested wave length. Report counts and reader artifact links without future spoilers.
+
+Checkpointing is not release approval. Before committing/pushing the wave for publication, complete the shared `../QUALITY.md` batch review and publication check; include current receipts/evidence. Use the gated Pages workflow, then verify the live release.

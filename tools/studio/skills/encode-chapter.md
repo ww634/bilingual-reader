@@ -10,3 +10,5 @@ Review every pair for faithful translation and fine-grained alignment, then run 
 `node finalize-chapter.js --book-id <id> --chapter <N> --draft ../../content/books/<id>/_drafts/ch-<N>.draft.json`
 
 The finalizer reuses all four deterministic helpers, validates text/coverage, produces pinyin and bands, creates a cover if missing, and registers the chapter. If validation fails, fix the draft only while no finalized chapter exists. Verify the final chapter/catalog and reader before update-state. Never manually patch generated pinyin or bands.
+
+Finalization prepares local content only. Before publishing, follow `../QUALITY.md`: shared validator, actual reader previews, and a fresh chapter/catalog/renderer-bound QA receipt with screenshot evidence. Do not treat successful finalization as publication approval.
