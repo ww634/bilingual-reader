@@ -1,3 +1,5 @@
+import { requestAI, friendlyError } from "./ai-request.js";
+import { addKeyButton } from "./ui.js";
 // Language Assistant: a slide-up chat panel, always reachable from a button in
 // the reader. It answers ONLY Chinese-language / language-learning questions
 // (the system prompt refuses anything else). Uses the same OpenAI key as the
@@ -67,6 +69,10 @@ function buildSystemPrompt(code) {
 // the conversation survives closing the panel, switching chapters, and even
 // relaunching the app — restored when the same book is reopened.
 let transcript = [];
+let sessions = [];
+let currentSessionId = null;
+let requestVersion = 0;
+let requestController = null;
 let pendingContext = [];       // book snippets the user attached for the NEXT message
 let busy = false;
 let greeted = false;
@@ -84,24 +90,44 @@ function escape(s) {
 
 // ── Persistence (per book) ──
 
+function resetRequest() {
+  requestController?.abort(); requestVersion++; busy = false;
+  $("assistant-send").disabled = false; $("assistant-cancel").hidden = true;
+}
+function sessionId() { return crypto.randomUUID(); }
+function renderSessions() {
+  const select = $("assistant-sessions"); select.replaceChildren();
+  const empty=document.createElement("option");empty.value="";empty.textContent="Past conversations";select.append(empty);
+  for (const session of sessions.slice().reverse()) { const option=document.createElement("option");option.value=session.id;option.textContent=session.title;select.append(option); }
+  select.value=currentSessionId || "";
+}
 function saveConversation() {
   if (!currentBookId) return;
-  try {
-    localStorage.setItem(STORE_PREFIX + currentBookId, JSON.stringify(transcript.slice(-MAX_STORED)));
-  } catch { /* storage full / unavailable — non-fatal */ }
+  const session=sessions.find(s=>s.id===currentSessionId);
+  if(session) { session.turns=transcript.slice(-MAX_STORED); const first=transcript.find(m=>m.role==='user');if(first)session.title=first.text.slice(0,54); }
+  sessions=sessions.slice(-20);
+  try { localStorage.setItem(STORE_PREFIX+currentBookId,JSON.stringify({schema:2,sessions})); } catch {}
+  renderSessions();
 }
-
+function startSession() {
+  resetRequest();
+  if(currentSessionId)saveConversation();
+  currentSessionId=sessionId();transcript=[];pendingContext=[];greeted=false;
+  sessions.push({id:currentSessionId,title:'New conversation',createdAt:new Date().toISOString(),turns:[]});
+  saveConversation();renderTranscript();renderContextChips();
+}
 function loadConversation(bookId) {
-  transcript = [];
+  resetRequest();transcript=[];sessions=[];currentSessionId=null;
   try {
-    const raw = localStorage.getItem(STORE_PREFIX + bookId);
-    const parsed = raw ? JSON.parse(raw) : null;
-    if (Array.isArray(parsed)) transcript = parsed;
-  } catch { /* ignore corrupt / unavailable storage */ }
-  greeted = transcript.length > 0;   // don't greet over a restored conversation
-  pendingContext = [];
-  renderTranscript();
-  renderContextChips();
+    const data=JSON.parse(localStorage.getItem(STORE_PREFIX+bookId)||'null');
+    if(Array.isArray(data)&&data.length)sessions=[{id:sessionId(),title:'Earlier conversation',turns:data.slice(-MAX_STORED)}];
+    else if(data?.schema===2&&Array.isArray(data.sessions))sessions=data.sessions.filter(s=>typeof s.id==='string'&&Array.isArray(s.turns)).slice(-20).map(s=>({...s,turns:s.turns.filter(m=>['user','assistant'].includes(m.role)&&typeof m.text==='string').slice(-MAX_STORED)}));
+  } catch {}
+  pendingContext=[];greeted=false;renderTranscript();renderContextChips();renderSessions();
+}
+function reopenSession(id) {
+  const session=sessions.find(s=>s.id===id);if(!session)return;
+  resetRequest();if(currentSessionId)saveConversation();currentSessionId=id;transcript=session.turns.slice();pendingContext=[];greeted=transcript.length>0;renderTranscript();renderContextChips();renderSessions();
 }
 
 function renderTranscript() {
@@ -118,11 +144,11 @@ function apiMessages() {
   for (const m of transcript.slice(-16)) {
     if (m.role === "user") {
       const content = (m.contexts && m.contexts.length)
-        ? `The reader highlighted this from the book they're reading:\n"""\n${m.contexts.join("\n---\n")}\n"""\n\nQuestion: ${m.text}`
-        : m.text;
+        ? `The reader highlighted this from the book they're reading:\n"""\n${m.contexts.slice(-4).map(c=>String(c).slice(0,1000)).join("\n---\n")}\n"""\n\nQuestion: ${m.text.slice(0,4000)}`
+        : m.text.slice(0,4000);
       msgs.push({ role: "user", content });
     } else {
-      msgs.push({ role: "assistant", content: m.text });
+      msgs.push({ role: "assistant", content: m.text.slice(0,4000) });
     }
   }
   return msgs;
@@ -130,7 +156,9 @@ function apiMessages() {
 
 // ── Panel open/close ──
 
+let closeTimer;
 function openPanel() {
+  clearTimeout(closeTimer);
   hideToolbar();
   $("assistant-backdrop").hidden = false;
   const panel = $("assistant-panel");
@@ -148,9 +176,11 @@ function openPanel() {
 }
 
 function closePanel() {
+  requestController?.abort();
   const panel = $("assistant-panel");
   panel.classList.remove("open");
-  setTimeout(() => {
+  clearTimeout(closeTimer);
+  closeTimer = setTimeout(() => {
     panel.hidden = true;
     $("assistant-backdrop").hidden = true;
   }, 240);
@@ -212,66 +242,36 @@ function renderMessage(role, text, contexts) {
   return body;
 }
 
-async function send(text, { auto = false } = {}) {
-  const question = (text || "").trim();
-  if (!question || busy) return;
-
-  const contexts = pendingContext.slice();
-  pendingContext = [];
-  renderContextChips();
-
-  if (!auto) $("assistant-text").value = "";
-  // Record + render the user turn, and persist immediately.
-  transcript.push({ role: "user", text: question, contexts });
-  renderMessage("user", question, contexts);
-  saveConversation();
-
-  const settings = await getSettings();
-  if (!settings.openaiKey) {
-    renderMessage("assistant", "Add your OpenAI API key in Settings to use the assistant. (It's stored only on this device.)");
-    return;
-  }
-  if (!navigator.onLine) {
-    renderMessage("assistant", "Offline — connect to the internet to ask the assistant.");
-    return;
-  }
-
-  busy = true;
-  $("assistant-send").disabled = true;
-  const bodyEl = renderMessage("assistant", "…");
-  bodyEl.parentElement.classList.add("loading");
-
-  const isNewFamily = /^gpt-5|^o1|^o3/i.test(ASSISTANT_MODEL);
-  const payload = {
-    model: ASSISTANT_MODEL,
-    messages: apiMessages(),                 // full transcript → continuity
-    [isNewFamily ? "max_completion_tokens" : "max_tokens"]: 900,
-  };
-  if (!isNewFamily) payload.temperature = 0.4;
-
+async function send(text, { auto = false, retry = false } = {}) {
+  const question=(text||'').trim().slice(0,4000);
+  if(!question||busy)return;
+  if(!currentSessionId)startSession();
+  const token=++requestVersion, session=currentSessionId;
+  const current=()=>token===requestVersion&&session===currentSessionId;
+  const contexts=retry?[]:pendingContext.slice(-4);if(!retry)pendingContext=[];renderContextChips();
+  if(!auto)$("assistant-text").value='';
+  if(!retry){transcript.push({role:'user',text:question,contexts});renderMessage('user',question,contexts);saveConversation()}
+  busy=true;requestController=new AbortController();const controller=requestController;
+  $("assistant-send").disabled=true;$("assistant-cancel").hidden=false;
+  let bodyEl;
   try {
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${settings.openaiKey}` },
-      body: JSON.stringify(payload),
-    });
-    if (!res.ok) {
-      const errBody = await res.text().catch(() => "");
-      throw new Error(`HTTP ${res.status}: ${errBody.slice(0, 200)}`);
-    }
-    const data = await res.json();
-    const answer = data.choices?.[0]?.message?.content?.trim() || "(no response)";
-    transcript.push({ role: "assistant", text: answer });
-    saveConversation();
-    bodyEl.textContent = answer;
-  } catch (err) {
-    bodyEl.textContent = `Couldn't reach the assistant:\n${err.message}`;
-    // Keep the user turn (persisted) so it's still visible and retryable; the
-    // error bubble itself isn't stored, so it won't reappear on reload.
+    const settings=await getSettings();if(!current())return;
+    if(!settings.openaiKey){bodyEl=renderMessage('assistant','Add your OpenAI key to use the assistant. It is sent directly to OpenAI for AI requests.');addKeyButton(bodyEl);return}
+    if(!navigator.onLine)throw new TypeError('Offline');
+    bodyEl=renderMessage('assistant','Thinking…');bodyEl.parentElement.classList.add('loading');
+    const isNewFamily=/^gpt-5|^o1|^o3/i.test(ASSISTANT_MODEL);
+    const payload={model:ASSISTANT_MODEL,messages:apiMessages(),[isNewFamily?'max_completion_tokens':'max_tokens']:900};if(!isNewFamily)payload.temperature=.4;
+    const data=await requestAI('https://api.openai.com/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json',Authorization:`Bearer ${settings.openaiKey}`},body:JSON.stringify(payload)},{signal:controller.signal});
+    if(!current())return;
+    const answer=data.choices?.[0]?.message?.content?.trim();if(!answer)throw new Error('No answer came back. Please try again.');
+    transcript.push({role:'assistant',text:answer});saveConversation();bodyEl.textContent=answer;
+  } catch(error) {
+    if(!current())return;
+    if(!bodyEl)bodyEl=renderMessage('assistant','');bodyEl.textContent=friendlyError(error);
+    const button=document.createElement('button');button.className='pop-act';button.textContent='Retry';button.onclick=()=>send(question,{auto:true,retry:true});bodyEl.append(button);
   } finally {
-    bodyEl.parentElement.classList.remove("loading");
-    busy = false;
-    $("assistant-send").disabled = false;
+    bodyEl?.parentElement.classList.remove('loading');
+    if(current()){busy=false;$("assistant-send").disabled=false;$("assistant-cancel").hidden=true}
   }
 }
 
@@ -286,9 +286,16 @@ const joinsWithoutSpaces = () => !currentLang || currentLang === "zh";
 
 // The HANZI (target-script text) of the selection — what text-to-speech reads.
 // Only target-line words are selectable, so the English gloss can never leak in.
+function selectedDOMText() {
+  const spans=getSelectedSpans();if(!spans.length)return '';
+  const range=document.createRange();range.setStartBefore(spans[0]);range.setEndAfter(spans[spans.length-1]);
+  const fragment=range.cloneContents();
+  for(const el of fragment.querySelectorAll('.english,rt,.sel-hl,.listen-hl,.sel-knob'))el.remove();
+  return (fragment.textContent||'').replace(/\s+/g,' ').trim();
+}
 function selectionHanzi() {
-  const parts = getSelectedSpans().map(wordHanzi);
-  return parts.join(joinsWithoutSpaces() ? "" : " ").replace(/\s+/g, " ").trim();
+  if(currentLang&&currentLang!=='zh')return selectedDOMText();
+  return getSelectedSpans().map(wordHanzi).join('');
 }
 
 // The pinyin of the selection (Chinese only), tidied: words spaced, no gap
@@ -327,12 +334,13 @@ function positionToolbar(g) {
   // Clear the end handle's dot (~14px below the last line) as well as the gloss.
   let top = Math.max(g.last.bottom + 22, g.blockBottom + 10);
   let above = false;
-  if (top + bh > window.innerHeight - 8) { top = g.first.top - bh - 22; above = true; }
+  const safeBottom = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--selection-safe-bottom")) || 0;
+  if (top + bh > window.innerHeight - safeBottom - 8) { top = g.first.top - bh - 22; above = true; }
 
   bar.classList.toggle("above", above);
   bar.style.setProperty("--caret-x", `${Math.round(Math.max(20, Math.min(anchorX - left, bw - 20)))}px`);
   bar.style.left = `${Math.round(left)}px`;
-  bar.style.top = `${Math.round(Math.max(8, top))}px`;
+  bar.style.top = `${Math.round(Math.max(8, Math.min(top,window.innerHeight-safeBottom-bh-8)))}px`;
 }
 
 // Save the whole sentence(s) the highlight touches to the Memory Vault, as one
@@ -408,6 +416,7 @@ function onSelectionEvent(e) {
 // The selection as it appears on screen (pinyin or characters for Chinese,
 // the words themselves otherwise) — what Copy puts on the clipboard.
 function selectionDisplayText() {
+  if(currentLang&&currentLang!=="zh")return selectedDOMText();
   // Words shown with pinyin above (ruby) copy as their characters only.
   const parts = getSelectedSpans()
     .map((el) => (el.querySelector("rt") ? wordHanzi(el) : el.textContent || "").trim())
@@ -449,6 +458,7 @@ async function copyToClipboard(text) {
  * the attached context rides along with it.
  */
 export function askWithContext(text) {
+  startSession();
   addContext(text);
   openPanel();
 }
@@ -466,7 +476,11 @@ export function initAssistant() {
     }
   });
 
-  $("assistant-btn")?.addEventListener("click", openPanel);
+  $("assistant-btn")?.addEventListener("click", () => { startSession(); openPanel(); });
+  $("assistant-new").addEventListener("click", () => { startSession(); openPanel(); });
+  $("assistant-sessions").addEventListener("change", e => reopenSession(e.target.value));
+  $("assistant-cancel").addEventListener("click", () => requestController?.abort());
+  window.addEventListener("ui:close-overlays", closePanel);
   $("assistant-close")?.addEventListener("click", closePanel);
   $("assistant-backdrop")?.addEventListener("click", closePanel);
 
@@ -516,6 +530,7 @@ export function initAssistant() {
     clearSelection();            // dismiss the highlight + bar
     hideToolbar();
     if (!text) return;
+    startSession();
     addContext(text);
     openPanel();
     if (act === "explain") {
@@ -523,7 +538,7 @@ export function initAssistant() {
       const ask = currentLang === "zh"
         ? "Explain this: pronunciation (pinyin + tones), meaning, and any grammar notes."
         : "Explain this: pronunciation, meaning, and any grammar notes.";
-      setTimeout(() => send(ask, { auto: true }), 300);
+      send(ask, { auto: true });
     }
   });
 

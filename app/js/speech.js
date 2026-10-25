@@ -1,3 +1,4 @@
+import { requestAI } from "./ai-request.js";
 // Word/sentence pronunciation.
 //
 // Primary: OpenAI's text-to-speech (natural, human-like), using the same API
@@ -215,16 +216,12 @@ function playBuffer(ctx, buffer) {
 async function fetchTtsBytes(text, code, variant, apiKey) {
   const payload = { model: TTS_MODEL, voice: TTS_VOICE, input: text, response_format: "mp3" };
   if (modelSupportsInstructions) payload.instructions = ttsInstructions(code, variant);
-  const res = await fetch("https://api.openai.com/v1/audio/speech", {
+  return requestAI("https://api.openai.com/v1/audio/speech", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
     body: JSON.stringify(payload),
-  });
-  if (!res.ok) {
-    const msg = await res.text().catch(() => "");
-    throw new Error(`HTTP ${res.status} ${msg.slice(0, 160)}`);
-  }
-  return res.arrayBuffer();
+  }, { audio: true, label: "AI voice", retry: () => speakWord(text, code) });
+
 }
 
 const _inflight = new Map();   // key -> Promise<AudioBuffer|null>, so prefetch + play share one request
@@ -296,7 +293,7 @@ export function playSpeech(text, code, { slow = false, onEnded, onState } = {}) 
     if (ctx) {
       onState && onState("loading");
       try { buffer = await getBuffer(ctx, t, code, slow ? "slow" : "normal", true); }
-      catch (err) { console.warn("TTS failed, using system voice:", err.message); }
+      catch (err) { if(err.code === "cancelled") return finish(); console.warn("TTS failed, using system voice:", err.message); }
     }
     if (ctl.stopped) return;
     if (buffer) {
@@ -348,6 +345,7 @@ export async function speakWord(text, code, { onState } = {}) {
       speak(t, code);
     }
   } catch (err) {
+    if(err.code === "cancelled") return;
     console.warn("TTS failed, using system voice:", err.message);
     if (onState) onState("fallback");
     speak(t, code); // graceful fallback

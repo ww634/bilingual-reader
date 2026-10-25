@@ -1,3 +1,4 @@
+import { confirmAction } from "./ui.js";
 import { audioCacheInfo, clearAudioCache } from "./speech.js";
 import { getSettings, updateSettings, clearAll, getAllVaultItems } from "./db.js";
 import { APP_VERSION } from "./version.js";
@@ -23,7 +24,6 @@ const $ = (id) => document.getElementById(id);
 const els = {
   libUrl: () => document.getElementById("lib-url"),
   fontSize: () => document.getElementById("font-size"),
-  pairsPerPage: () => document.getElementById("pairs-per-page"),
   openaiKey: () => document.getElementById("openai-key"),
   clearBtn: () => document.getElementById("clear-cache"),
   onlineStatus: () => document.getElementById("online-status"),
@@ -37,7 +37,6 @@ export async function loadSettingsIntoUI() {
   const s = await getSettings();
   els.libUrl().value = s.libraryUrl;
   els.fontSize().value = s.fontSize;
-  els.pairsPerPage().value = String(s.pairsPerPage);
   if (els.openaiKey()) els.openaiKey().value = s.openaiKey || "";
   const lvl = $("my-level");
   lvl.innerHTML = LEVELS.map((l) => `<option value="${l.n}">${l.name}</option>`).join("");
@@ -73,7 +72,7 @@ async function refreshFeedbackStatus() {
   $("feedback-list").innerHTML = all.slice(0, 6).map((f) => `
     <li>
       <span class="fb-words">${esc((f.selection?.hanzi || f.selection?.shown || "").slice(0, 24))}</span>
-      <span class="fb-kind">${esc(kind(f.kind))} · ${esc(f.message.slice(0, 60))}</span>
+      <span class="fb-kind">${esc(kind(f.kind))} · ${esc((f.message || "").slice(0, 60))}</span>
       <span class="fb-state ${f.status === "sent" ? "sent" : "waiting"}">${f.status === "sent" ? `✓ #${f.issue?.number ?? ""}` : "waiting"}</span>
     </li>`).join("");
 }
@@ -95,7 +94,7 @@ function timeAgo(iso) {
 async function refreshDataStatus(s) {
   s = s || (await getSettings());
   const count = (await getAllVaultItems()).length;
-  const words = `${count} saved word${count === 1 ? "" : "s"}`;
+  const words = `${count} saved item${count === 1 ? "" : "s"}`;
   $("backup-status").textContent = s.lastBackupAt
     ? `${words} · last backup ${timeAgo(s.lastBackupAt)}`
     : s.lastBackupDownloadAt ? `${words} · backup file exported ${timeAgo(s.lastBackupDownloadAt)} (save not confirmed)` : `${words} · no confirmed backup yet`;
@@ -140,12 +139,10 @@ export function initSettings() {
   els.fontSize().addEventListener("change", async (e) => {
     const next = await save({ fontSize: e.target.value });
     applyFontSize(next.fontSize);
+    window.dispatchEvent(new CustomEvent("reader:layout"));
   });
 
-  els.pairsPerPage().addEventListener("change", async (e) => {
-    await save({ pairsPerPage: parseInt(e.target.value, 10) });
-    window.dispatchEvent(new CustomEvent("settings:pairsPerPage"));
-  });
+
 
   if (els.openaiKey()) {
     els.openaiKey().addEventListener("change", async (e) => {
@@ -222,11 +219,7 @@ export function initSettings() {
 
   els.clearBtn().addEventListener("click", async () => {
     const count = (await getAllVaultItems()).length;
-    const vaultLine = count
-      ? `This also deletes your Memory Vault: ${count} saved word${count === 1 ? "" : "s"} and all quiz history.`
-      : "";
-    if (!confirm(`Erase everything on this device?\n\nBooks, reading progress and settings will be deleted. ${vaultLine}\n\nTo just update the app, use “Refresh app” instead.`)) return;
-    if (count && !confirm(`Last check: permanently delete ${count} saved word${count === 1 ? "" : "s"}? This can't be undone without a backup.`)) return;
+    if (!await confirmAction({ title: "Erase this device’s data?", message: `Books, progress, settings and ${count} saved items will be permanently deleted. Restore requires a backup. To update the app without deleting data, use Refresh app.`, confirmLabel: "Erase everything" })) return;
     await clearAll();
     clearAppLocalStorage();
     await dropAppCaches({ all: true });

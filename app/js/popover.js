@@ -1,3 +1,5 @@
+import { requestAI, friendlyError } from "./ai-request.js";
+import { addKeyButton, confirmAction } from "./ui.js";
 // Tap-to-learn popover: opens when the user taps a colored chunk in the
 // reader. Shows pre-baked info (pinyin, English, POS, frequency, context
 // sentence) instantly. The "See explanation" button calls OpenAI with the
@@ -34,6 +36,9 @@ const FREQUENCY_LABELS = {
 // Cache explanations in memory so a repeat tap is instant.
 const explanationCache = new Map();
 
+let explanationController = null;
+let generation = 0;
+const active = token => token === generation && !!_state.chunk && !$("popover").hidden;
 let _state = {
   chunk: null,      // current chunk data { target, english, category, frequency_band, is_idiom, pairIdx, chunkIdx }
   chapter: null,    // reference to chapter object for context
@@ -46,7 +51,7 @@ function escape(s) {
 }
 
 function cacheKey(c) {
-  return `${c.target}|${c.english}`;
+  return `${_state.chapter?.language}/${_state.chapter?.book_id}/${_state.chapter?.id}/${c.pairIdx}/${c.target}|${c.english}`;
 }
 
 /**
@@ -54,6 +59,10 @@ function cacheKey(c) {
  * the surrounding chapter context.
  */
 export function openPopover(chunkData, chapter) {
+  generation++; explanationController?.abort();
+  $("pop-act-hear").disabled=false;$("pop-act-hear").textContent="Hear pronunciation";
+  $("pop-act-explain").disabled = false; $("pop-act-explain").textContent = "See explanation";
+  $("pop-explain-cancel").hidden = true;
   _state.chunk = chunkData;
   _state.chapter = chapter;
 
@@ -118,6 +127,7 @@ export function openPopover(chunkData, chapter) {
         const btn = e.currentTarget;
         const [lo, hi] = sentenceRange(chapter.pairs, chunkData.pairIdx, chunkData.pairIdx);
         const res = await saveSentence(chapter.pairs.slice(lo, hi + 1), chapter);
+        if (_state.chunk !== chunkData) return;
         btn.textContent = res.already ? "✓ Already saved" : res.ok ? "✓ Saved" : "Couldn't save";
         btn.disabled = true;
       });
@@ -146,6 +156,7 @@ export function openPopover(chunkData, chapter) {
 }
 
 export function closePopover() {
+  generation++; explanationController?.abort();
   $("popover").hidden = true;
   $("popover-backdrop").hidden = true;
   _state.chunk = null;
@@ -158,6 +169,7 @@ export function closePopover() {
  */
 async function fetchExplanation() {
   const chunk = _state.chunk;
+  const token = generation;
   if (!chunk) return;
 
   const expEl = $("popover-explanation");
@@ -173,11 +185,13 @@ async function fetchExplanation() {
   }
 
   const settings = await getSettings();
+  if (!active(token)) return;
   if (!settings.openaiKey) {
     expEl.hidden = false;
     expEl.classList.remove("loading");
     expEl.textContent =
-      "Add your OpenAI API key in Settings to enable explanations.\n\n(The key is stored only on this device.)";
+      "Add your OpenAI key to enable explanations. It is stored on this device and sent directly to OpenAI for AI requests.";
+    addKeyButton(expEl);
     return;
   }
 
@@ -193,6 +207,9 @@ async function fetchExplanation() {
   expEl.classList.add("loading");
   expEl.textContent = "Fetching explanation…";
   btn.disabled = true;
+  explanationController = new AbortController();
+  const controller = explanationController;
+  $("pop-explain-cancel").hidden = false;
 
   const pair = _state.chapter?.pairs?.[chunk.pairIdx];
   const contextPinyin = pair ? pair.target : "";
@@ -276,28 +293,20 @@ async function fetchExplanation() {
   if (!isNewFamily) body.temperature = 0.3;
 
   try {
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${settings.openaiKey}`,
-      },
-      body: JSON.stringify(body),
-    });
-    if (!res.ok) {
-      const errBody = await res.text().catch(() => "");
-      throw new Error(`HTTP ${res.status}: ${errBody.slice(0, 200)}`);
-    }
-    const data = await res.json();
+    const data = await requestAI("https://api.openai.com/v1/chat/completions", {
+      method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${settings.openaiKey}` }, body: JSON.stringify(body),
+    }, { signal: controller.signal });
+    if (!active(token)) return;
     const text = data.choices?.[0]?.message?.content?.trim() || "(no content)";
     explanationCache.set(key, text);
     expEl.classList.remove("loading");
     expEl.textContent = text;
   } catch (err) {
-    expEl.classList.remove("loading");
-    expEl.textContent = `Couldn't fetch explanation:\n${err.message}`;
+    if (!active(token)) return;
+    expEl.classList.remove("loading"); expEl.textContent = friendlyError(err);
+    btn.textContent = "Retry explanation";
   } finally {
-    btn.disabled = false;
+    if (active(token)) { btn.disabled = false; $("pop-explain-cancel").hidden = true; }
   }
 }
 
@@ -342,6 +351,7 @@ function askAssistantFromPopover() {
  * language, so tones are correct — never the pinyin.
  */
 async function hearPronunciation() {
+  const token = generation;
   const chunk = _state.chunk;
   if (!chunk) return;
   const pair = _state.chapter?.pairs?.[chunk.pairIdx];
@@ -364,13 +374,14 @@ async function hearPronunciation() {
     // voice automatically if that's unavailable.
     await speakWord(text, lang, {
       onState: (state) => {
+        if (!active(token)) return;
         if (state === "loading") btn.textContent = "Loading…";
         else if (state === "playing") btn.textContent = "▶ Playing…";
         else if (state === "fallback") btn.textContent = "▶ Playing (basic)…";
       },
     });
   } finally {
-    setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 600);
+    setTimeout(() => { if(active(token)) { btn.textContent = original; btn.disabled = false; } }, 600);
   }
 }
 
@@ -395,34 +406,40 @@ function setSaveButton(state) {
 
 // Reflect the saved/not-saved state whenever the popover opens.
 async function refreshSaveButton(chunk) {
+  const token = generation;
   const btn = $("pop-act-save");
   if (!isSaveable(chunk)) { setSaveButton("default"); btn.disabled = false; return; }
   btn.disabled = false;
-  setSaveButton((await isWordSaved(wordOf(chunk))) ? "saved" : "default");
+  const saved = await isWordSaved(wordOf(chunk));
+  if (token !== generation) return;
+  setSaveButton(saved ? "saved" : "default");
 }
 
 /** Toggle the current word in the Memory Vault: save if new, or remove (with a
  *  confirm) if already saved. */
 async function toggleSaveVault() {
-  const chunk = _state.chunk;
+  const chunk = _state.chunk, chapter = _state.chapter, token = generation;
   if (!chunk) return;
   const btn = $("pop-act-save");
   if (!isSaveable(chunk)) {
     setSaveButton("default");
     btn.textContent = "Tap a highlighted word to save";
-    setTimeout(() => setSaveButton("default"), 1400);
+    setTimeout(() => { if (active(token)) setSaveButton("default"); }, 1400);
     return;
   }
   const word = wordOf(chunk);
   const already = await isWordSaved(word);
+  if (!active(token)) return;
   if (already) {
-    if (!confirm(`Remove “${word}” from your Memory Vault?`)) return;
+    if (!await confirmAction({title:"Remove saved word?",message:`Remove “${word}” and its review history from your Memory Vault?`,confirmLabel:"Remove"}) || !active(token)) return;
     await removeWord(word);
+    if (!active(token)) return;
     setSaveButton("default");
   } else {
     btn.disabled = true;
     setSaveButton("saving");
-    await saveWord(chunk, _state.chapter);
+    await saveWord(chunk, chapter);
+    if (!active(token)) return;
     btn.disabled = false;
     setSaveButton("saved");
   }
@@ -432,6 +449,7 @@ export function initPopover() {
   $("popover-close").addEventListener("click", closePopover);
   $("popover-backdrop").addEventListener("click", closePopover);
   $("pop-act-explain").addEventListener("click", fetchExplanation);
+  $("pop-explain-cancel").addEventListener("click", () => explanationController?.abort());
   $("pop-act-ask").addEventListener("click", askAssistantFromPopover);
   $("pop-act-save").addEventListener("click", toggleSaveVault);
   $("pop-act-hear").addEventListener("click", hearPronunciation);

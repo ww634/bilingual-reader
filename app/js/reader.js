@@ -73,14 +73,6 @@ function escape(s) {
   }[c]));
 }
 
-function chunkPairs(pairs, perPage) {
-  const out = [];
-  for (let i = 0; i < pairs.length; i += perPage) {
-    out.push(pairs.slice(i, i + perPage));
-  }
-  return out;
-}
-
 /* ───────────────────────── chunk positioning ───────────────────────── */
 
 /**
@@ -770,7 +762,7 @@ function renderPageInto(pageEl, pairs, pageStartIdx) {
 
 /* ───────────────────────── chapter / navigation ───────────────────────── */
 
-function renderChapter(chapter, perPage) {
+function renderChapter(chapter) {
   const container = pagesEl();
   container.innerHTML = "";
 
@@ -788,16 +780,8 @@ function renderChapter(chapter, perPage) {
   if (_state.targetOnly) {
     renderFlowPages(container, chapter);
   } else {
-    // Content pages — append first so renderPageInto can measure real width.
-    const chunks = chunkPairs(chapter.pairs, perPage);
-    let globalStart = 0;
-    for (const pageChunk of chunks) {
-      const page = document.createElement("section");
-      page.className = "reader-page";
-      container.appendChild(page);
-      renderPageInto(page, pageChunk, globalStart);
-      globalStart += pageChunk.length;
-    }
+    renderBilingualPages(container, chapter);
+
   }
 
   // End-of-chapter page. Shows the next chapter's title with a "Read" button,
@@ -834,6 +818,26 @@ function renderChapter(chapter, perPage) {
 
   _state.pagesCount = container.children.length;
   buildPairPageMap();
+}
+
+// Measure the complete bilingual stream once, then move its visual blocks to
+// pages that fit the viewport. A sentence can continue across pages without
+// losing its global pair id, alignment colours or Listen position.
+function renderBilingualPages(container, chapter) {
+  let page = document.createElement("section");
+  page.className = "reader-page";
+  container.appendChild(page);
+  renderPageInto(page, chapter.pairs, 0);
+  const blocks = [...page.children];
+  page.replaceChildren();
+  for (const block of blocks) {
+    page.appendChild(block);
+    if (page.children.length > 1 && page.scrollHeight > page.clientHeight + 1) {
+      block.remove();
+      page = document.createElement("section"); page.className = "reader-page";
+      container.appendChild(page); page.appendChild(block);
+    }
+  }
 }
 
 /* ───────────────────────── target language only (book layout) ───────────────────────── */
@@ -941,18 +945,28 @@ function pageForAnchor(anchor, fallbackPage) {
 /** Re-render the open chapter (English on/off, or a script change in book layout), keeping the place. */
 async function relayout() {
   if (!_state.chapter) return;
+  const chapter = _state.chapter;
   const settings = await getSettings();
-  const anchor = anchorPair(_state.currentPage);
+  if (_state.chapter !== chapter || document.body.dataset.view !== "reader") return;
+  const activePage = pagesEl().children[_state.currentPage];
+  const visible = activePage && [...activePage.querySelectorAll(".target [data-pair]")]
+    .find(el => el.getBoundingClientRect().bottom >= activePage.getBoundingClientRect().top + 8);
+  const anchor = visible ? Number(visible.dataset.pair) : anchorPair(_state.currentPage);
+  const wordKey = visible?.dataset.lineKey || visible?.dataset.uid;
   const fromPage = _state.currentPage;
   _state.targetOnly = isTargetOnly(settings);
   document.body.classList.toggle("target-only", _state.targetOnly);
-  renderChapter(_state.chapter, settings.pairsPerPage);
+  renderChapter(_state.chapter);
   setReaderScript(_state.script);
   applyMasteredHiding();
   renderChapterWatch();
   renderKnownLine();
   renderEndQuiz();
-  const page = fromPage === 0 ? 0 : pageForAnchor(anchor, fromPage);
+  let page = fromPage === 0 ? 0 : pageForAnchor(anchor, fromPage);
+  if (fromPage > 0 && wordKey) {
+    const found = [...pagesEl().children].findIndex(p => [...p.querySelectorAll(".target [data-pair]")].some(el => (el.dataset.lineKey || el.dataset.uid) === wordKey));
+    if (found >= 0) page = found;
+  }
   _state.currentPage = page;
   scrollToPage(pagesEl(), page);
   updateIndicator();
@@ -1000,7 +1014,7 @@ function handleNextChapterTap(event) {
   const nextId = btn.dataset.nextId;
   if (!nextId || !_state.bookId) return;
   // Open the next chapter — openReader will replace this reader's content.
-  openReader(_state.bookId, nextId);
+  window.dispatchEvent(new CustomEvent("nav:reader", { detail: { bookId: _state.bookId, chapterId: nextId } }));
 }
 
 /**
@@ -1116,7 +1130,7 @@ export async function openReader(bookId, chapterId) {
   document.body.dataset.script = _state.script;   // (with its styles applied)
   _state.targetOnly = isTargetOnly(settings);
   document.body.classList.toggle("target-only", _state.targetOnly);
-  renderChapter(chapter, settings.pairsPerPage);
+  renderChapter(chapter);
   setReaderScript(script);
 
   // Mastered-word English hiding: refresh the set, apply the body flag, and mark
@@ -1129,6 +1143,7 @@ export async function openReader(bookId, chapterId) {
   renderEndQuiz();
 
   document.getElementById("title").textContent = chapter.title.english;
+  if (!settings.readerHintsSeen) showReaderTip();
 
   const container = pagesEl();
   // Prefer the saved sentence: page numbers differ between layouts. Position now
@@ -1287,12 +1302,27 @@ export function closeReader() {
 
 window.addEventListener("reader:script", (event) => {
   setReaderScript(event.detail);
-  if (_state.targetOnly) relayout();   // re-paginate: characters take less room than pinyin
+  relayout();   // Re-measure height as well as width (ruby needs more vertical space).
 });
 window.addEventListener("reader:layout", () => relayout());
 
 window.addEventListener("view:changed", e => {
   if (e.detail !== "reader" || !_state.chapter) return;
+  relayout();
   const chapter = _state.chapter;
   ensureMastered().then(() => { if (_state.chapter !== chapter) return; applyMasteredHiding(); renderChapterWatch(); renderKnownLine(); renderEndQuiz(); });
 });
+
+let resizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => { if (document.body.dataset.view === "reader") relayout(); }, 180);
+});
+
+function showReaderTip() {
+  if(document.getElementById('reader-tip'))return;
+  const tip=document.createElement('aside');tip.id='reader-tip';tip.className='reader-tip';tip.setAttribute('aria-label','Reading tip');
+  const text=document.createElement('p');text.textContent='Tap a word for its meaning. Long-press and drag to select text; tap › for Copy and Feedback. Use Listen to hear the chapter. Swipe sideways to turn pages.';
+  const button=document.createElement('button');button.textContent='Got it';button.onclick=async()=>{await updateSettings({readerHintsSeen:true});tip.remove()};tip.append(text,button);document.body.append(tip);
+}
+window.addEventListener('view:changed', e=>{if(e.detail!=='reader')document.getElementById('reader-tip')?.remove()});

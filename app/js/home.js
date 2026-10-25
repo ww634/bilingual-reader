@@ -4,7 +4,7 @@
 // progress (reader), the activity record (pages turned / answers given per day),
 // and the Memory Vault (due words). Re-rendered whenever Home is shown.
 
-import { getAllBooks, getAllProgress, getActivity, dayKey } from "./db.js";
+import { getAllBooks, getAllChapterMetadata, getAllProgress, getActivity, dayKey } from "./db.js";
 import { getLearningLanguage } from "./languages.js";
 import { vaultStats, startDailyReview } from "./vault.js";
 
@@ -25,6 +25,13 @@ async function lastRead(lang) {
     if (!book || !value?.updatedAt) continue;
     if (!best || value.updatedAt > best.updatedAt) best = { book, chapterId, updatedAt: value.updatedAt };
   }
+  if (!best) {
+    const downloaded = new Set((await getAllChapterMetadata()).filter(m=>m.pairs>0).map(m=>m.key));
+    for (const book of books.values()) {
+      const chapter=book.chapters?.find(ch=>downloaded.has(book.id+"/"+ch.id));
+      if(chapter){best={book,chapterId:chapter.id,updatedAt:null};break}
+    }
+  }
   if (!best) return null;
   const idx = best.book.chapters.findIndex((c) => c.id === best.chapterId);
   return { ...best, chapterIndex: idx, chapter: best.book.chapters[idx] };
@@ -34,13 +41,14 @@ async function renderContinue(lang) {
   const card = $("home-continue");
   const r = await lastRead(lang);
   if (_coverUrl) { URL.revokeObjectURL(_coverUrl); _coverUrl = null; }
+  $("home-empty").hidden = !!r;
   if (!r || r.chapterIndex < 0) { card.hidden = true; return; }
   if (r.book.coverBlob) _coverUrl = URL.createObjectURL(r.book.coverBlob);
   const chTitle = r.chapter?.title?.english || r.chapterId;
   card.innerHTML = `
     <div class="continue-cover">${_coverUrl ? `<img src="${_coverUrl}" alt="" />` : ""}</div>
     <div class="continue-text">
-      <span class="continue-label">Continue reading</span>
+      <span class="continue-label">${r.updatedAt ? "Continue reading" : "Start reading"}</span>
       <span class="continue-title">${escape(r.book.title?.english || r.book.id)}</span>
       <span class="continue-sub">Chapter ${r.chapterIndex + 1} · ${escape(chTitle)}</span>
     </div>

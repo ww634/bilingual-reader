@@ -1,4 +1,6 @@
+import { confirmAction } from "./ui.js";
 import {
+  getBook,
   getSettings,
   getLibrary,
   putLibrary,
@@ -37,20 +39,30 @@ function resolveUrl(libraryUrl, relativeOrAbsolute) {
 }
 
 async function fetchJson(url) {
-  const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`HTTP ${res.status} on ${url}`);
-  return res.json();
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 40000);
+  try {
+    const res = await fetch(url, { cache: "no-store", signal: controller.signal });
+    if (!res.ok) throw new Error(res.status === 404 ? "This file is no longer available. Refresh Browse and try again." : "The book server could not complete the download. Please try again.");
+    return await res.json();
+  } catch (error) {
+    if (!navigator.onLine) throw new Error("You’re offline. Reconnect to download books.");
+    if (controller.signal.aborted) throw new Error("The download took too long. Check your connection and try again.");
+    if (error instanceof TypeError || error instanceof SyntaxError) throw new Error("We couldn’t load this book file. Check your connection and try again.");
+    throw error;
+  } finally { clearTimeout(timer); }
 }
 
 async function fetchBlob(url) {
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
   try {
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url, { cache: "no-store", signal:controller.signal });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.blob();
   } catch (err) {
     console.warn("Blob fetch failed:", url, err);
     return null;
-  }
+  } finally { clearTimeout(timer); }
 }
 
 function escape(s) {
@@ -252,6 +264,9 @@ export function renderBrowse() {
       actions.appendChild(btn);
     }
 
+    li.tabIndex = 0; li.setAttribute("role", "button"); li.setAttribute("aria-label", `Preview ${entry.title?.english || entry.id}`);
+    li.addEventListener("click", event => { if (!event.target.closest("button")) openBookDetail(entry.id); });
+    li.addEventListener("keydown", event => { if (event.target === li && ["Enter", " "].includes(event.key)) { event.preventDefault(); openBookDetail(entry.id); } });
     list.appendChild(li);
   }
 }
@@ -346,13 +361,42 @@ export async function downloadBook(catalogEntry, btn) {
     renderBrowse();
     renderLibrary();
     renderHomeCounts();
+    if ($("book-add-status")) $("book-add-status").textContent="";
+    return true;
   } catch (err) {
     console.error(err);
     btn.disabled = false;
     btn.textContent = "Retry";
     $("browse-status").textContent = `Could not add: ${err.message}`;
     $("browse-status").classList.add("error");
+    if (state.selectedBookId === catalogEntry.id && $("book-add-status")) $("book-add-status").textContent = err.message;
+    return false;
   } finally { _downloading.delete(catalogEntry.id); }
+}
+
+// A missing next chapter can be fetched without deleting or downloading any
+// other chapters. Existing progress and saved vocabulary are separate stores.
+const chapterDownloads = new Map();
+export function downloadChapter(bookId, chapterId) {
+  const key = bookId + "/" + chapterId;
+  if (chapterDownloads.has(key)) return chapterDownloads.get(key);
+  const job = (async () => {
+    const existing = await getChapter(bookId, chapterId);
+    if (existing?.pairs?.length) return; // Missing-chapter fetches never overwrite an existing edition.
+    const book = state.catalog?.books?.find(b => b.id === bookId) || await getBook(bookId);
+    const entry = book?.chapters?.find(c => c.id === chapterId);
+    if (!entry?.url) throw new Error("This chapter is no longer in the catalogue. Refresh Browse to check for an update.");
+    const settings = await getSettings();
+    const chapter = await fetchJson(resolveUrl(settings.libraryUrl, entry.url));
+    if (chapter.book_id !== bookId || chapter.id !== chapterId || !chapter.pairs?.length) throw new Error("The downloaded chapter was incomplete. Please try again.");
+    chapter.catalogVersion = entry.version ?? 1;
+    const local = await getBook(bookId);
+    const coverBlob = local?.coverBlob || (book.cover ? await fetchBlob(resolveUrl(settings.libraryUrl, book.cover)) : null);
+    await putBook({ ...book, ...local, chapters: book.chapters, coverBlob });
+    await putChapter(bookId, chapterId, chapter);
+    state.downloadedBooks = await loadDownloadedIndex(); renderLibrary(); renderBrowse(); renderHomeCounts();
+  })().finally(() => chapterDownloads.delete(key));
+  chapterDownloads.set(key, job); return job;
 }
 
 /* ============ BOOK DETAIL helpers ============ */
@@ -361,78 +405,32 @@ export async function downloadBook(catalogEntry, btn) {
  * For a downloaded book, compute reading progress aggregated across chapters.
  * Returns:
  *   {
- *     totalPages, currentPosition, pct,
+ *     totalUnits, currentPosition, pct,
  *     totalChapters, currentChapterIndex,
  *     lastReadChapterId, lastReadPage, lastReadTime,
- *     chapterProgress: Map<chapterId, { lastPage, totalPages, updatedAt }>
+ *     chapterProgress: Map<chapterId, { lastPage, finished, pct, updatedAt }>
  *   }
  *
  * Returns null if the book isn't downloaded.
  */
 async function computeBookProgress(book) {
-  if (!book || !book.chapters) return null;
-  const [settings, progress] = await Promise.all([getSettings(), getAllProgress()]);
-  const progressByKey = new Map(progress.map(p => [p.key, p.value]));
-  const perPage = settings.pairsPerPage || 7;
-  let totalPages = 0;
-  let lastReadChapterId = null;
-  let lastReadPage = 0;
-  let lastReadTime = "";
-  const chapterProgress = new Map();
-  const chapterPagesById = new Map();
-
-  for (const chMeta of book.chapters) {
-    const chapter = book.chapterIndex?.[chMeta.id];
-    if (!chapter?.pairs) { chapterPagesById.set(chMeta.id, 0); continue; }
-    // Pages = 1 (title page) + ceil(pairs / perPage)
-    const chPages = 1 + Math.max(1, Math.ceil(chapter.pairs / perPage));
-    chapterPagesById.set(chMeta.id, chPages);
-    totalPages += chPages;
-
-    const prog = progressByKey.get(chapterKey(book.id, chMeta.id));
-    if (prog) {
-      chapterProgress.set(chMeta.id, {
-        lastPage: prog.lastPage,
-        totalPages: chPages,
-        updatedAt: prog.updatedAt,
-      });
-      if (!lastReadTime || prog.updatedAt > lastReadTime) {
-        lastReadTime = prog.updatedAt;
-        lastReadChapterId = chMeta.id;
-        lastReadPage = prog.lastPage;
-      }
-    }
+  if (!book?.chapters) return null;
+  const progressByKey = new Map((await getAllProgress()).map(p => [p.key,p.value]));
+  const chapterProgress=new Map();let totalUnits=0,lastReadChapterId=null,lastReadPage=0,lastReadTime='',lastReadPair=null;
+  for(const meta of book.chapters){
+    const count=book.chapterIndex?.[meta.id]?.pairs||0;totalUnits+=count;
+    const progress=progressByKey.get(chapterKey(book.id,meta.id));
+    if(!progress)continue;
+    chapterProgress.set(meta.id,{lastPage:progress.lastPage,finished:progress.pair===-1,pct:count&&Number.isInteger(progress.pair)&&progress.pair>=0?Math.min(100,Math.round(100*(progress.pair+1)/count)):0,updatedAt:progress.updatedAt});
+    if(!lastReadTime||progress.updatedAt>lastReadTime){lastReadTime=progress.updatedAt;lastReadChapterId=meta.id;lastReadPage=progress.lastPage;lastReadPair=progress.pair}
   }
-
-  // Find the position in the book at the user's furthest-read chapter.
-  // We compute "currentPosition" as pages-before-active-chapter + lastReadPage + 1.
-  let currentPosition = 1;
-  let currentChapterIndex = 0;
-  if (lastReadChapterId) {
-    for (let i = 0; i < book.chapters.length; i++) {
-      const ch = book.chapters[i];
-      if (ch.id === lastReadChapterId) {
-        currentChapterIndex = i;
-        currentPosition += lastReadPage;
-        break;
-      }
-      currentPosition += chapterPagesById.get(ch.id) || 0;
-    }
+  let currentPosition=0,currentChapterIndex=0;
+  if(lastReadChapterId)for(let i=0;i<book.chapters.length;i++){
+    const chapter=book.chapters[i],count=book.chapterIndex?.[chapter.id]?.pairs||0;
+    if(chapter.id===lastReadChapterId){currentChapterIndex=i;currentPosition+=lastReadPair===-1?count:Math.min(count,Math.max(0,(lastReadPair??-1)+1));break}
+    currentPosition+=count;
   }
-
-  const pct = totalPages > 0 ? Math.min(100, Math.round((currentPosition / totalPages) * 100)) : 0;
-
-  return {
-    totalPages,
-    currentPosition,
-    pct,
-    totalChapters: book.chapters.length,
-    currentChapterIndex,
-    lastReadChapterId,
-    lastReadPage,
-    lastReadTime,
-    chapterProgress,
-  };
+  return {totalUnits,currentPosition,pct:totalUnits?Math.min(100,Math.round(100*currentPosition/totalUnits)):0,totalChapters:book.chapters.length,currentChapterIndex,lastReadChapterId,lastReadPage,lastReadTime,chapterProgress};
 }
 
 /* ============ BOOK DETAIL (chapter picker) ============ */
@@ -522,12 +520,11 @@ export async function renderBookDetail() {
   if (isDownloaded) {
     const p = bookProgress;
     const hasStarted = !!p?.lastReadChapterId;
-    if (hasStarted && p.totalPages > 0) {
+    if (hasStarted && p.totalUnits > 0) {
       progressEl.hidden = false;
       progressFill.style.width = `${p.pct}%`;
       const chLabel = `Chapter ${p.currentChapterIndex + 1} of ${p.totalChapters}`;
-      const pgLabel = `· Page ${p.currentPosition} of ${p.totalPages}`;
-      progressSummary.textContent = `${chLabel} ${pgLabel}`;
+      progressSummary.textContent = chLabel;
       progressPct.textContent = `${p.pct}%`;
       resumeChapterId = p.lastReadChapterId;
     } else {
@@ -547,7 +544,11 @@ export async function renderBookDetail() {
     }
   } else {
     progressEl.hidden = true;
-    if (continueBtn) continueBtn.parentElement.hidden = true;
+    if (continueBtn) {
+      continueBtn.parentElement.hidden = false; continueBtn.textContent = state.online ? "Add to library" : "Connect to add this book";
+      continueBtn.disabled = !state.online;
+      continueBtn.onclick = async () => { if(await downloadBook(book, continueBtn)) await renderBookDetail(); };
+    }
   }
 
   // End-of-chapter quiz preferences for this book.
@@ -574,10 +575,10 @@ export async function renderBookDetail() {
     let statusHtml = "";
     if (perChapterProgress && perChapterProgress.has(ch.id)) {
       const cp = perChapterProgress.get(ch.id);
-      if (cp.lastPage + 1 >= cp.totalPages) {
+      if (cp.finished) {
         statusHtml = `<span class="chapter-status done">finished</span>`;
       } else {
-        statusHtml = `<span class="chapter-status reading">page ${cp.lastPage + 1} / ${cp.totalPages}</span>`;
+        statusHtml = `<span class="chapter-status reading">${cp.pct ? `${cp.pct}% read` : "in progress"}</span>`;
       }
     }
 
@@ -599,7 +600,7 @@ export async function renderBookDetail() {
     }
     li.querySelector(".chapter-del")?.addEventListener("click", async (e) => {
       e.stopPropagation();
-      if (!confirm(`Delete the story “${ch.title?.english || ch.id}”?`)) return;
+      if (!await confirmAction({ title: "Delete this practice story?", message: `“${ch.title?.english || ch.id}” will be removed from this device. Saved vocabulary stays in your vault.`, confirmLabel: "Delete story" })) return;
       await deletePracticeStory(book.id, ch.id);
       if (state.downloadedBooks.has(book.id)) renderBookDetail();
       else window.dispatchEvent(new CustomEvent("app:back"));
@@ -696,7 +697,7 @@ export async function refreshCatalog() {
     try {
       const lib = await fetchJson(settings.libraryUrl);
       if (lib?.version && lib.version !== 2) {
-        throw new Error(`Library schema v${lib.version} not supported (need v2)`);
+        throw new Error("This catalogue needs a newer app version. Use Refresh app in Settings.");
       }
       if (lib?.books) {
         for (const book of lib.books) {
@@ -715,14 +716,15 @@ export async function refreshCatalog() {
       const cached = await getLibrary();
       state.catalog = cached || { books: [] };
       $("browse-status").textContent = cached
-        ? `Showing cached catalog (refresh failed: ${err.message}).`
+        ? `Showing saved catalogue. ${err.message}`
         : `Could not load catalog: ${err.message}`;
-      if (!cached) $("browse-status").classList.add("error");
+      $("browse-status").classList.add("error");
     }
   } else {
     const cached = await getLibrary();
     state.catalog = cached || { books: [] };
     $("browse-status").textContent = "Offline — showing cached catalog.";
+    $("browse-status").classList.add("error");
   }
 
   populateLangSwitchers();

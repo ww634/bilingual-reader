@@ -100,6 +100,7 @@ async function openSheet(preset = {}) {
   updateWordHint();
   setStatus("");
   $("story-generate").disabled = false;
+  $("story-generate").textContent = "Write my story";
   $("story-backdrop").hidden = false;
   const sheet = $("story-sheet");
   sheet.hidden = false;
@@ -413,7 +414,7 @@ async function practiceWords(lang) {
 async function generate() {
   if (S.busy) return;
   const s = await getSettings();
-  if (!s.openaiKey) { setStatus("Add your OpenAI key in Settings first.", "error"); return; }
+  if (!s.openaiKey) { $("story-key-note").hidden=false; setStatus("Add your OpenAI key in Settings first.", "error"); return; }
   if (!navigator.onLine) { setStatus("You're offline. Stories need an internet connection.", "error"); return; }
   const lang = getLearningLanguage();
   const level = clampLevel($("story-level").value);
@@ -457,6 +458,7 @@ async function generate() {
     S.busy = false; S.controller = null;
     $("story-cancel").hidden = true;
     $("story-generate").disabled = false;
+    $("story-generate").textContent = "Try again";
   }
 }
 
@@ -468,5 +470,6 @@ export function initStories() {
   $("story-generate")?.addEventListener("click", generate);
   $("story-cancel")?.addEventListener("click", () => S.controller?.abort());
   $("story-level")?.addEventListener("change", updateWordHint);
+  window.addEventListener("ui:close-overlays", closeSheet);
   window.addEventListener("stories:new", (e) => openSheet(e.detail || {}));
 }

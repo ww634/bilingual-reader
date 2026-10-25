@@ -257,7 +257,6 @@ const DEFAULT_SETTINGS = {
   libraryUrl: "../content/library.json",
   learningLanguage: "zh",   // which language the user is currently learning
   fontSize: "medium",
-  pairsPerPage: 7,
   openaiKey: "", // user-pasted via Settings; used only for tap-to-learn explanations
   // Memory Vault quiz preferences.
   reviewAnswerMode: "mix",           // "choice" | "type" | "mix"

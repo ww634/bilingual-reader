@@ -12,16 +12,17 @@ function setup() {
   const elements = new Map();
   function element() {
     return { textContent: '', innerHTML: '', children: [], classList: { contains: () => false, add() {}, remove() {} },
-      appendChild(child) { this.children.push(child); }, addEventListener() {},
+      appendChild(child) { this.children.push(child); }, addEventListener() {}, setAttribute() {},
       querySelector() { return this.actions ||= element(); } };
   }
   const catalog = { id: 'book', language: 'fr', version: 1, title: { english: 'Book' },
     chapters: [{ id: 'ch-1', version: 3, url: 'ch-1.json' }, { id: 'ch-2', version: 2, url: 'ch-2.json' }] };
-  const context = vm.createContext({ URL, console: { ...console, error() {} }, navigator: { onLine: true },
+  const context = vm.createContext({ URL, AbortController, setTimeout, clearTimeout, console: { ...console, error() {} }, navigator: { onLine: true },
     window: { addEventListener() {}, location: { href: 'https://reader.test/app/' } },
     document: { getElementById(id) { if (!elements.has(id)) elements.set(id, element()); return elements.get(id); }, createElement: element },
     getLearningLanguage: () => 'fr', languageName: () => 'French',
     getSettings: async () => ({ libraryUrl: 'https://reader.test/content/library.json' }),
+    getBook: async id => books.get(id),
     getAllBooks: async () => [...books.values()].map(b => structuredClone(b)),
     getAllChapterKeys: async () => [...chapters.keys()],
     getAllChapterMetadata: async () => [...chapters].map(([key,c]) => ({key,bookId:key.split('/')[0],chapterId:key.split('/')[1],version:c.catalogVersion??c.version??1,pairs:c.pairs?.length||0})),
@@ -40,7 +41,7 @@ function setup() {
     },
   });
   let source = fs.readFileSync('app/js/library.js', 'utf8').replace(/import\s+[\s\S]*?from\s+"[^\"]+";/g, '').replace(/export /g, '');
-  source += '\nrenderLibrary = () => {}; renderHomeCounts = () => {}; globalThis.api = { state, loadDownloadedIndex, renderBrowse, downloadBook, computeBookProgress };';
+  source += '\nrenderLibrary = () => {}; renderHomeCounts = () => {}; globalThis.api = { state, loadDownloadedIndex, renderBrowse, downloadBook, downloadChapter, computeBookProgress };';
   vm.runInContext(source, context);
   return { ...context.api, context, books, chapters, progress, requests, elements, catalog, element, reads: () => ({chapterReads,progressReads}) };
 }
@@ -104,7 +105,7 @@ test('missing or empty chapters resume and legacy files are stamped with catalog
   const s=setup();const book={...s.catalog,chapters:Array.from({length:300},(_,i)=>({id:`ch-${i+1}`}))};s.books.set('book',book);
   for(const ch of book.chapters)s.chapters.set(`book/${ch.id}`,{version:1,pairs:Array(150).fill({})});
   const index=await s.loadDownloadedIndex();assert.equal(index.get('book').downloadedChapterCount,300);assert.equal(s.reads().chapterReads,0);
-  const progress=await s.computeBookProgress(index.get('book'));assert.ok(progress.totalPages>300);assert.equal(s.reads().chapterReads,0);assert.equal(s.reads().progressReads,1);
+  const progress=await s.computeBookProgress(index.get('book'));assert.ok(progress.totalUnits>300);assert.equal(s.reads().chapterReads,0);assert.equal(s.reads().progressReads,1);
  });
  test('duplicate Add clicks share one download and dropped chapters retain study progress', async () => {
   const s=setup();await Promise.all([s.downloadBook(s.catalog,s.element()),s.downloadBook(s.catalog,s.element())]);
@@ -116,4 +117,12 @@ test('missing or empty chapters resume and legacy files are stamped with catalog
 test('sentence-unit updates map the saved pair without changing its read time',async()=>{
  const s=setup();const catalog={...s.catalog,chapters:[s.catalog.chapters[0]]};s.chapters.set('book/ch-1',{version:2,pairs:[{},{}]});s.progress.set('book/ch-1',{lastPage:2,pair:1,updatedAt:'2026-10-01T00:00:00Z'});
  s.context.fetch=async()=>({ok:true,json:async()=>({version:3,pairs:[{},{},{},{}],meta:{sentence_unit_repair:{from_version:2,pair_index_map:[0,2]}}})});await s.downloadBook(catalog,s.element());assert.equal(s.progress.get('book/ch-1').pair,2);assert.equal(s.progress.get('book/ch-1').updatedAt,'2026-10-01T00:00:00Z');
+});
+test('single missing chapter download leaves other downloads and progress intact',async()=>{
+ const s=setup();s.books.set('book',s.catalog);s.chapters.set('book/ch-1',{version:3,pairs:[{target:'kept'}]});s.state.catalog={books:[s.catalog]};
+ s.context.fetch=async()=>({ok:true,json:async()=>({book_id:'book',id:'ch-2',language:'fr',version:2,pairs:[{target:'Bonjour.'}]})});
+ await Promise.all([s.downloadChapter('book','ch-2'),s.downloadChapter('book','ch-2')]);assert.equal(s.chapters.size,2);assert.equal(s.chapters.get('book/ch-1').pairs[0].target,'kept');assert.equal(s.progress.get('book/ch-1').lastPage,4);
+});
+test('book progress uses saved sentence anchors rather than retired page-size estimates',async()=>{
+ const s=setup();const book={...s.catalog,chapterIndex:{'ch-1':{pairs:100},'ch-2':{pairs:100}}};s.progress.set('book/ch-1',{lastPage:77,pair:49,updatedAt:'2026-10-25T12:00:00Z'});const report=await s.computeBookProgress(book);assert.equal(report.pct,25);assert.equal(report.chapterProgress.get('ch-1').finished,false);s.progress.set('book/ch-1',{lastPage:99,pair:-1,updatedAt:'2026-10-25T12:00:00Z'});assert.equal((await s.computeBookProgress(book)).pct,50);
 });

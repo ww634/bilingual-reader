@@ -1,4 +1,6 @@
-import { initCatalog, refreshCatalog, openBookDetail, renderBookDetail } from "./library.js";
+import { showWelcome } from "./welcome.js";
+import { confirmAction } from "./ui.js";
+import { initCatalog, refreshCatalog, openBookDetail, renderBookDetail, downloadChapter } from "./library.js";
 import { openReader, closeReader, getReaderContext } from "./reader.js";
 import { initSettings, loadSettingsIntoUI } from "./settings.js";
 import { initPopover, closePopover } from "./popover.js";
@@ -16,7 +18,7 @@ import { initFeedback } from "./feedback.js";
 
 const VIEWS = ["home", "library", "browse", "book-detail", "vault", "review", "reader", "settings"];
 const TITLES = {
-  home: "Reader",
+  home: "Today",
   library: "Library",
   browse: "Browse",
   "book-detail": "",   // set per-book
@@ -48,7 +50,7 @@ function setView(name, { push = true } = {}) {
   if (TITLES[name]) titleEl.textContent = TITLES[name];
 
   backBtn.hidden = name === "home";
-  settingsBtn.hidden = name !== "home";
+  settingsBtn.hidden = name === "settings";
   // The reader-options (sliders) and assistant icons only make sense in the reader.
   if (readerOptionsBtn) readerOptionsBtn.hidden = name !== "reader";
   if (assistantBtn) assistantBtn.hidden = name !== "reader";
@@ -83,10 +85,14 @@ document.querySelectorAll("[data-nav]").forEach((el) => {
 
 backBtn.addEventListener("click", goBack);
 
-settingsBtn.addEventListener("click", () => {
-  loadSettingsIntoUI();
-  setView("settings");
-});
+async function openSettings(section) {
+  closePopover(); window.dispatchEvent(new CustomEvent("ui:close-overlays"));
+  setView("settings"); await loadSettingsIntoUI();
+  if (section === "ai") { document.getElementById("ai-settings-heading").scrollIntoView({block:"start"}); document.getElementById("openai-key").focus(); }
+}
+settingsBtn.addEventListener("click", () => openSettings());
+window.addEventListener("app:settings", e => openSettings(e.detail));
+document.addEventListener("click", e => { if(e.target.closest("[data-ai-settings]"))openSettings("ai") });
 
 window.addEventListener("nav:bookDetail", (e) => {
   // Title is set inside renderBookDetail; here we just transition views.
@@ -98,6 +104,7 @@ window.addEventListener("nav:bookDetail", (e) => {
 
 window.addEventListener("nav:reader", async (e) => {
   const { bookId, chapterId } = e.detail;
+  const previousView = currentView;
   // Show the reader view FIRST so it has a real layout/width. The reader
   // measures rendered pinyin to decide visual-line block boundaries; this
   // measurement requires the view to be visible (display:none gives 0
@@ -107,11 +114,18 @@ window.addEventListener("nav:reader", async (e) => {
   const ok = await openReader(bookId, chapterId);
   if (!ok) {
     // Chapter not downloaded — return to wherever we came from.
-    if (navStack.length > 0) {
+    if (previousView === "reader") {
+      setView("reader", { push: false });
+    } else if (navStack.length > 0) {
       const prev = navStack.pop();
       setView(prev, { push: false });
     } else {
       setView("home", { push: false });
+    }
+    let message = "This chapter isn’t downloaded yet. Download it to keep reading. Your current place is kept.";
+    while (await confirmAction({ title: "Chapter not downloaded", message, confirmLabel: "Download", destructive: false })) {
+      try { await downloadChapter(bookId, chapterId); window.dispatchEvent(new CustomEvent("nav:reader", {detail:{bookId,chapterId}})); break; }
+      catch (error) { message = error.message + " You can retry the download."; }
     }
   }
 });
@@ -152,6 +166,11 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   await initVault();
   setView("home", { push: false });
   initCatalog().catch(err => console.warn("Catalog refresh failed:", err));
+  showWelcome();
   // Ask iOS to keep this app's data even when the phone is short of space.
   requestPersistence();
 })();
+
+document.getElementById("show-welcome").addEventListener("click", () => showWelcome({force:true}));
+
+window.addEventListener("welcome:complete", () => { if(getReaderContext())closeReader();navStack.length=0;setView("home",{push:false}); });

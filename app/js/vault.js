@@ -1,3 +1,5 @@
+import { requestAI } from "./ai-request.js";
+import { confirmAction } from "./ui.js";
 import { normalizePinyin, normalizedWords, englishAnswer, clozeRange, vocabularyKey, vocabularyUnits, distinctOptions, sentenceAnswer } from "./learning-utils.js";
 // Memory Vault: save words from the reader and quiz them.
 //
@@ -239,9 +241,7 @@ async function fetchMeaning(item, key) {
   const usr = `Word: ${item.hanzi}\n${item.pinyin ? `Pronunciation: ${item.pinyin}\n` : ""}In-sentence translation used: ${item.storyGloss || item.english}\nSentence: ${item.context?.hanzi || ""}`;
   const body = { model: MEANING_MODEL, messages: [{ role: "system", content: sys }, { role: "user", content: usr }], [isNew ? "max_completion_tokens" : "max_tokens"]: 200 };
   if (!isNew) body.temperature = 0.2;
-  const res = await fetch("https://api.openai.com/v1/chat/completions", { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` }, body: JSON.stringify(body) });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = await res.json();
+  const data = await requestAI("https://api.openai.com/v1/chat/completions", { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` }, body: JSON.stringify(body) }, { label: "Word meaning", retry: () => refineMeaning(item.id) });
   return (data.choices?.[0]?.message?.content || "").trim().replace(/^["']|["']$/g, "").trim();
 }
 async function refineMeaning(id) {
@@ -316,7 +316,7 @@ export async function openVault() {
     li.querySelector(".vault-write")?.addEventListener("click", () => openWriter(it.hanzi, it.pinyin));
     li.querySelector(".vault-del").addEventListener("click", async () => {
       const label = sentence ? "this sentence" : `“${it.hanzi}”`;
-      if (!confirm(`Remove ${label} from your Memory Vault?`)) return;
+      if (!await confirmAction({ title: "Remove saved item?", message: `Remove ${label} and its review history from your Memory Vault?`, confirmLabel: "Remove" })) return;
       await removeWord(it.id);
       openVault();
     });
