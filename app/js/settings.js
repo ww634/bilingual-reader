@@ -1,9 +1,22 @@
+import { audioCacheInfo, clearAudioCache } from "./speech.js";
 import { getSettings, updateSettings, clearAll, getAllVaultItems } from "./db.js";
 import { APP_VERSION } from "./version.js";
-import { exportBackup, importBackup, isPersisted } from "./backup.js";
+import { exportBackup, prepareBackup, importBackup, isPersisted } from "./backup.js";
 import { LEVELS, levelHint, clampLevel } from "./levels.js";
 import { getLearningLanguage } from "./languages.js";
 import { flushFeedback, feedbackSummary, KINDS } from "./feedback.js";
+
+let _preparedBackup = null;
+let _backupPreparation = 0;
+async function refreshPreparedBackup() {
+  const run = ++_backupPreparation;
+  _preparedBackup = null;
+  const button = document.getElementById("backup-export");
+  button.disabled = true;
+  try { const ready = await prepareBackup(); if (run === _backupPreparation) _preparedBackup = ready; }
+  catch { $("backup-status").textContent = "Could not prepare the backup file. Please try again."; }
+  finally { if (run === _backupPreparation) button.disabled = false; }
+}
 
 const $ = (id) => document.getElementById(id);
 
@@ -35,9 +48,16 @@ export async function loadSettingsIntoUI() {
   const ver = document.getElementById("app-version");
   if (ver) ver.textContent = `Version v${APP_VERSION}`;
   refreshDataStatus(s);
+  refreshPreparedBackup();
   $("feedback-repo").value = s.feedbackRepo || "";
   $("feedback-token").value = s.feedbackToken || "";
   refreshFeedbackStatus();
+  refreshAudioCacheStatus();
+}
+
+async function refreshAudioCacheStatus() {
+  const info = await audioCacheInfo();
+  $("audio-cache-status").textContent = `${info.entries} audio clips · ${(info.bytes / 1024 / 1024).toFixed(1)} MB. Limited to ${info.maxEntries} clips or 12 MB; least-played clips are removed first.`;
 }
 
 async function refreshFeedbackStatus() {
@@ -78,7 +98,7 @@ async function refreshDataStatus(s) {
   const words = `${count} saved word${count === 1 ? "" : "s"}`;
   $("backup-status").textContent = s.lastBackupAt
     ? `${words} · last backup ${timeAgo(s.lastBackupAt)}`
-    : `${words} · never backed up`;
+    : s.lastBackupDownloadAt ? `${words} · backup file exported ${timeAgo(s.lastBackupDownloadAt)} (save not confirmed)` : `${words} · no confirmed backup yet`;
   const persisted = await isPersisted();
   $("storage-status").textContent = persisted === true
     ? "Storage is protected: iOS won't clear it to free up space."
@@ -92,7 +112,7 @@ async function refreshDataStatus(s) {
 async function dropAppCaches({ all = false } = {}) {
   if (window.caches) {
     const keys = await caches.keys();
-    await Promise.all(keys.filter((k) => all || !k.startsWith("tts-audio")).map((k) => caches.delete(k)));
+    await Promise.all(keys.filter((k) => all || k.startsWith("reader-shell-")).map((k) => caches.delete(k)));
   }
   if (navigator.serviceWorker) {
     const regs = await navigator.serviceWorker.getRegistrations();
@@ -100,11 +120,16 @@ async function dropAppCaches({ all = false } = {}) {
   }
 }
 
-function updateOnlineStatus() {
-  els.onlineStatus().textContent = navigator.onLine ? "Online" : "Offline";
+export function clearAppLocalStorage() {
+  for (const key of Object.keys(localStorage)) if (key.startsWith("bilingual-reader.")) localStorage.removeItem(key);
 }
 
-const save = (partial) => updateSettings(partial);
+function updateOnlineStatus() {
+  els.onlineStatus().textContent = navigator.onLine ? "Online" : "Offline";
+  $("refresh-app").disabled = !navigator.onLine;
+}
+
+const save = async partial => { const next = await updateSettings(partial); refreshPreparedBackup(); return next; };
 
 export function initSettings() {
   els.libUrl().addEventListener("change", async (e) => {
@@ -154,8 +179,12 @@ export function initSettings() {
     const btn = e.currentTarget;
     btn.disabled = true;
     try {
-      const r = await exportBackup();
-      if (r.how !== "cancelled") $("backup-status").textContent = `Backed up ${r.count} word${r.count === 1 ? "" : "s"}.`;
+      const r = await exportBackup(_preparedBackup);
+      if (r.how === "not-ready") refreshPreparedBackup();
+      $("backup-status").textContent = r.how === "shared" ? `Backup shared: ${r.count} saved items.`
+        : r.how === "downloaded" ? "Backup file downloaded. Save it somewhere safe; saving has not been confirmed."
+        : r.how === "cancelled" ? "Backup cancelled. No confirmed backup was recorded."
+        : "The backup could not be shared. Please try again.";
       setTimeout(() => refreshDataStatus(), 2500);
     } catch (err) {
       $("backup-status").textContent = `Backup failed: ${err.message}`;
@@ -173,14 +202,19 @@ export function initSettings() {
       const r = await importBackup(file);
       const parts = [`${r.added} new word${r.added === 1 ? "" : "s"} added`];
       if (r.updated) parts.push(`${r.updated} updated`);
+      if (r.stories) parts.push(`${r.stories} practice stories restored`);
       if (r.kept) parts.push(`${r.kept} already up to date`);
       $("backup-status").textContent = `Restored: ${parts.join(", ")}.`;
+      refreshPreparedBackup();
     } catch (err) {
       $("backup-status").textContent = err.message;
     }
   });
 
+  $("clear-audio-cache").addEventListener("click", async () => { await clearAudioCache(); await refreshAudioCacheStatus(); });
+
   $("refresh-app").addEventListener("click", async () => {
+    if (!navigator.onLine) return;
     await dropAppCaches();
     location.reload();
   });
@@ -193,13 +227,14 @@ export function initSettings() {
     if (!confirm(`Erase everything on this device?\n\nBooks, reading progress and settings will be deleted. ${vaultLine}\n\nTo just update the app, use “Refresh app” instead.`)) return;
     if (count && !confirm(`Last check: permanently delete ${count} saved word${count === 1 ? "" : "s"}? This can't be undone without a backup.`)) return;
     await clearAll();
+    clearAppLocalStorage();
     await dropAppCaches({ all: true });
     location.reload();
   });
 
   // A restore (or any vault change) changes the counts shown here.
   window.addEventListener("vault:changed", () => {
-    if (document.body.getAttribute("data-view") === "settings") refreshDataStatus();
+    if (document.body.getAttribute("data-view") === "settings") { refreshDataStatus(); refreshPreparedBackup(); }
   });
 
   window.addEventListener("online", updateOnlineStatus);

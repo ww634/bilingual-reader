@@ -9,10 +9,11 @@
 //   settings — single record at key "current". App settings.
 
 const DB_NAME = "bilingual-reader";
-const DB_VERSION = 4;
+const DB_VERSION = 5;
 
 const STORE_BOOKS = "books";
 const STORE_CHAPTERS = "chapters";
+const STORE_CHAPTER_META = "chapterMeta";
 const STORE_PROGRESS = "progress";
 const STORE_LIBRARY = "library";
 const STORE_SETTINGS = "settings";
@@ -54,6 +55,7 @@ function openDB() {
       if (!db.objectStoreNames.contains(STORE_SETTINGS)) {
         db.createObjectStore(STORE_SETTINGS);
       }
+      if (!db.objectStoreNames.contains(STORE_CHAPTER_META)) db.createObjectStore(STORE_CHAPTER_META);
       // v2 -> v3: add the Memory Vault store (keyed by the word's id). Additive
       // — existing books/chapters/progress/settings are untouched.
       if (!db.objectStoreNames.contains(STORE_VAULT)) {
@@ -64,7 +66,11 @@ function openDB() {
         db.createObjectStore(STORE_FEEDBACK, { keyPath: "id" });
       }
     };
-    req.onsuccess = () => resolve(req.result);
+    req.onsuccess = () => {
+      const db = req.result;
+      db.onversionchange = () => { db.close(); _dbPromise = null; };
+      resolve(db);
+    };
     req.onerror = () => reject(req.error);
   });
   return _dbPromise;
@@ -104,17 +110,54 @@ export async function deleteBook(id) {
 }
 
 // ---------- chapters ----------
-export async function putChapter(bookId, chapterId, chapterJson) {
-  const store = await tx(STORE_CHAPTERS, "readwrite");
-  return asPromise(store.put(chapterJson, chapterKey(bookId, chapterId)));
+function chapterSummary(bookId, chapterId, chapter) {
+  return { key: chapterKey(bookId, chapterId), bookId, chapterId,
+    version: chapter.catalogVersion ?? chapter.version ?? 1, pairs: chapter.pairs?.length || 0 };
 }
+export async function putChapter(bookId, chapterId, chapterJson) {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const t = db.transaction([STORE_CHAPTERS, STORE_CHAPTER_META], "readwrite");
+    t.objectStore(STORE_CHAPTERS).put(chapterJson, chapterKey(bookId, chapterId));
+    t.objectStore(STORE_CHAPTER_META).put(chapterSummary(bookId, chapterId, chapterJson), chapterKey(bookId, chapterId));
+    t.oncomplete = resolve; t.onerror = () => reject(t.error); t.onabort = () => reject(t.error);
+  });
+}
+let _indexMigration = null;
+async function migrateChapterIndex() {
+  if (_indexMigration) return _indexMigration;
+  _indexMigration = (async () => {
+    const settings = await tx(STORE_SETTINGS);
+    if (await asPromise(settings.get("chapter-index-ready"))) return;
+    const meta = await tx(STORE_CHAPTER_META), existing = new Set(await asPromise(meta.getAllKeys()));
+    // One chapter at a time: a first-run migration must not hold an entire
+    // large book's prose in memory. Interrupted migrations resume missing keys.
+    for (const key of await getAllChapterKeys()) {
+      if (existing.has(key)) continue;
+      const split = String(key).indexOf("/"), book = String(key).slice(0, split), chapter = String(key).slice(split + 1);
+      const value = await getChapter(book, chapter);
+      if (value) { const store = await tx(STORE_CHAPTER_META, "readwrite"); await asPromise(store.put(chapterSummary(book, chapter, value), key)); }
+    }
+    const store = await tx(STORE_SETTINGS, "readwrite"); await asPromise(store.put(true, "chapter-index-ready"));
+  })().catch(error => { _indexMigration = null; throw error; });
+  return _indexMigration;
+}
+export async function getAllChapterMetadata() {
+  await migrateChapterIndex();
+  const store = await tx(STORE_CHAPTER_META); return asPromise(store.getAll());
+}
+
 export async function getChapter(bookId, chapterId) {
   const store = await tx(STORE_CHAPTERS);
   return asPromise(store.get(chapterKey(bookId, chapterId)));
 }
 export async function deleteChapter(bookId, chapterId) {
-  const store = await tx(STORE_CHAPTERS, "readwrite");
-  return asPromise(store.delete(chapterKey(bookId, chapterId)));
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const t = db.transaction([STORE_CHAPTERS, STORE_CHAPTER_META], "readwrite"), key = chapterKey(bookId, chapterId);
+    t.objectStore(STORE_CHAPTERS).delete(key); t.objectStore(STORE_CHAPTER_META).delete(key);
+    t.oncomplete = resolve; t.onerror = () => reject(t.error); t.onabort = () => reject(t.error);
+  });
 }
 export async function getAllChapterKeys() {
   const store = await tx(STORE_CHAPTERS);
@@ -176,6 +219,20 @@ export async function deleteVaultItem(id) {
 export async function putFeedback(item) {
   const store = await tx(STORE_FEEDBACK, "readwrite");
   return asPromise(store.put(item));
+}
+export async function claimFeedback(id) {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const t = db.transaction(STORE_FEEDBACK, "readwrite"), store = t.objectStore(STORE_FEEDBACK);
+    let claimed = false;
+    const request = store.get(id);
+    request.onsuccess = () => {
+      const item = request.result;
+      if (!item || item.status === "sent" || (item.status === "sending" && Date.now() - (item.sendingAt || 0) < 120000)) return;
+      item.status = "sending"; item.sendingAt = Date.now(); store.put(item); claimed = true;
+    };
+    t.oncomplete = () => resolve(claimed); t.onerror = () => reject(t.error);
+  });
 }
 export async function getAllFeedback() {
   const store = await tx(STORE_FEEDBACK);
@@ -241,7 +298,8 @@ export async function updateSettings(patch) {
     let next = null;
     const req = store.get("current");
     req.onsuccess = () => {
-      next = { ...DEFAULT_SETTINGS, ...(req.result || {}), ...patch };
+      const current = { ...DEFAULT_SETTINGS, ...(req.result || {}) };
+      next = { ...current, ...(typeof patch === "function" ? patch(current) : patch) };
       store.put(next, "current");
     };
     t.oncomplete = () => resolve(next);
@@ -296,7 +354,7 @@ export async function putActivity(rec) {
 export async function clearAll() {
   const db = await openDB();
   return new Promise((resolve, reject) => {
-    const stores = [STORE_BOOKS, STORE_CHAPTERS, STORE_PROGRESS, STORE_LIBRARY, STORE_SETTINGS, STORE_VAULT, STORE_FEEDBACK];
+    const stores = [STORE_BOOKS, STORE_CHAPTER_META, STORE_CHAPTERS, STORE_PROGRESS, STORE_LIBRARY, STORE_SETTINGS, STORE_VAULT, STORE_FEEDBACK];
     const t = db.transaction(stores, "readwrite");
     for (const name of stores) {
       t.objectStore(name).clear();

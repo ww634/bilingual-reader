@@ -2,7 +2,7 @@
 //
 // Primary: OpenAI's text-to-speech (natural, human-like), using the same API
 // key as the rest of the app. Fetched audio is cached persistently (Cache API)
-// AND in memory, so each unique word is paid for at most once, ever.
+// AND in a bounded memory cache. Evicted clips may need fetching again.
 //
 // Fallback: the browser's built-in SpeechSynthesis (free, offline, robotic) —
 // used when there's no key, no network, or the TTS request fails.
@@ -132,19 +132,75 @@ function cacheKey(text, code, variant = "normal") {
   return `tts-cache/${rev}/${TTS_MODEL}/${TTS_VOICE}/${encodeURIComponent(code)}/${encodeURIComponent(text)}`;
 }
 
+const AUDIO_LIMIT_ENTRIES = 64;
+const AUDIO_LIMIT_BYTES = 12 * 1024 * 1024;
+const AUDIO_INDEX = new URL("../tts-cache/index.json", import.meta.url).href;
+let _audioQueue = Promise.resolve();
+let _audioEpoch = 0;
+
+async function readAudioIndex(cache) {
+  const saved = await cache.match(AUDIO_INDEX);
+  if (saved) { try { const entries = await saved.json(); if (Array.isArray(entries)) return entries; } catch {} }
+  const entries = [];
+  for (const request of await cache.keys()) {
+    if (request.url === AUDIO_INDEX) continue;
+    const response = await cache.match(request);
+    entries.push({ key: request.url, bytes: Number(response.headers.get("content-length")) || (await response.arrayBuffer()).byteLength, plays: 0, used: 0 });
+  }
+  return entries;
+}
+function withAudioCache(action) {
+  const execute = async () => {
+    const cache = await caches.open(TTS_CACHE), entries = await readAudioIndex(cache);
+    const result = await action(cache, entries);
+    entries.sort((a, b) => a.plays - b.plays || a.used - b.used);
+    let bytes = entries.reduce((n, e) => n + e.bytes, 0);
+    while (entries.length > AUDIO_LIMIT_ENTRIES || bytes > AUDIO_LIMIT_BYTES) {
+      const victim = entries.shift(); await cache.delete(victim.key); bytes -= victim.bytes;
+    }
+    await cache.put(AUDIO_INDEX, new Response(JSON.stringify(entries), { headers: { "Content-Type": "application/json" } }));
+    return result ?? { entries: entries.length, bytes, maxEntries: AUDIO_LIMIT_ENTRIES, maxBytes: AUDIO_LIMIT_BYTES, decoded: _bufferCache.size };
+  };
+  const run = () => navigator.locks?.request ? navigator.locks.request("reader-audio-cache", execute) : execute();
+  const job = _audioQueue.then(run, run); _audioQueue = job.catch(() => {}); return job;
+}
+async function noteAudioUse(key, bytes = null, played = false) {
+  const url = new URL(key, new URL("../", import.meta.url)).href;
+  return withAudioCache(async (cache, entries) => {
+    let entry = entries.find(e => e.key === url);
+    if (!entry && bytes != null) { entry = { key: url, bytes, plays: 0, used: 0 }; entries.push(entry); }
+    if (entry) { entry.used = Date.now(); if (played) entry.plays++; }
+  }).catch(() => {});
+}
 async function getCachedBytes(key) {
   try {
-    const cache = await caches.open(TTS_CACHE);
-    const res = await cache.match(key);
-    if (res) return await res.arrayBuffer();
+    const cache = await caches.open(TTS_CACHE), response = await cache.match(key);
+    if (response) { const bytes = await response.arrayBuffer(); await noteAudioUse(key, bytes.byteLength); return bytes; }
   } catch { /* Cache API unavailable */ }
   return null;
 }
-async function putCachedBytes(key, bytes) {
+async function putCachedBytes(key, bytes, epoch) {
+  if (epoch !== _audioEpoch || bytes.byteLength > AUDIO_LIMIT_BYTES) return;
   try {
-    const cache = await caches.open(TTS_CACHE);
-    await cache.put(key, new Response(bytes, { headers: { "Content-Type": "audio/mpeg" } }));
-  } catch { /* ignore */ }
+    const url = new URL(key, new URL("../", import.meta.url)).href;
+    await withAudioCache(async (cache, entries) => {
+      if (epoch !== _audioEpoch) return;
+      await cache.put(url, new Response(bytes, { headers: { "Content-Type": "audio/mpeg", "Content-Length": String(bytes.byteLength) } }));
+      const prior = entries.find(e => e.key === url);
+      if (prior) { prior.bytes = bytes.byteLength; prior.used = Date.now(); }
+      else entries.push({ key: url, bytes: bytes.byteLength, plays: 0, used: Date.now() });
+    });
+  } catch { /* Playback can continue without persistent storage. */ }
+}
+export async function audioCacheInfo() {
+  try { return await withAudioCache(async () => {}); }
+  catch { return { entries: 0, bytes: 0, maxEntries: AUDIO_LIMIT_ENTRIES, maxBytes: AUDIO_LIMIT_BYTES, decoded: _bufferCache.size }; }
+}
+export async function clearAudioCache() {
+  _audioEpoch++; _bufferCache.clear(); _inflight.clear(); stopSpeaking();
+  await _audioQueue;
+  const clear = async () => { for (const name of await caches.keys()) if (name.startsWith("tts-audio")) await caches.delete(name); };
+  if (navigator.locks?.request) await navigator.locks.request("reader-audio-cache", clear); else await clear();
 }
 
 function playBuffer(ctx, buffer) {
@@ -178,30 +234,32 @@ const _inflight = new Map();   // key -> Promise<AudioBuffer|null>, so prefetch 
  * when OpenAI isn't usable (no key / offline), so the caller can fall back to
  * the system voice. Rejects if the request itself fails.
  */
-async function getBuffer(ctx, text, code, variant = "normal") {
+async function getBuffer(ctx, text, code, variant = "normal", played = false) {
+  const epoch = _audioEpoch;
   const key = cacheKey(text, code, variant);
   if (_bufferCache.has(key)) {
     const buffer = _bufferCache.get(key);
     _bufferCache.delete(key); _bufferCache.set(key, buffer);
+    if (played) noteAudioUse(key, null, true);
     return buffer;
   }
-  if (_inflight.has(key)) return _inflight.get(key);
+  if (_inflight.has(key)) { const buffer = await _inflight.get(key); if (played && buffer) noteAudioUse(key, null, true); return buffer; }
   const job = (async () => {
     let bytes = await getCachedBytes(key);
     if (!bytes) {
       const settings = await getSettings().catch(() => ({}));
       if (!settings.openaiKey || !navigator.onLine) return null;
       bytes = await fetchTtsBytes(text, code, variant, settings.openaiKey);
-      await putCachedBytes(key, bytes);
+      await putCachedBytes(key, bytes, epoch);
     }
     // decodeAudioData detaches the ArrayBuffer, so decode a copy.
     const buffer = await ctx.decodeAudioData(bytes.slice(0));
-    _bufferCache.set(key, buffer);
+    if (epoch === _audioEpoch) _bufferCache.set(key, buffer);
     while (_bufferCache.size > 24) _bufferCache.delete(_bufferCache.keys().next().value);
     return buffer;
   })();
   _inflight.set(key, job);
-  try { return await job; } finally { _inflight.delete(key); }
+  try { const buffer = await job; if (played && buffer) noteAudioUse(key, null, true); return buffer; } finally { _inflight.delete(key); }
 }
 
 /** Fetch + cache a sentence ahead of time (no playback). Safe to call freely. */
@@ -237,7 +295,7 @@ export function playSpeech(text, code, { slow = false, onEnded, onState } = {}) 
     let buffer = null;
     if (ctx) {
       onState && onState("loading");
-      try { buffer = await getBuffer(ctx, t, code, slow ? "slow" : "normal"); }
+      try { buffer = await getBuffer(ctx, t, code, slow ? "slow" : "normal", true); }
       catch (err) { console.warn("TTS failed, using system voice:", err.message); }
     }
     if (ctl.stopped) return;
@@ -281,7 +339,7 @@ export async function speakWord(text, code, { onState } = {}) {
   const key = cacheKey(t, code);
   if (!_bufferCache.has(key) && onState) onState("loading");
   try {
-    const buffer = await getBuffer(ctx, t, code);
+    const buffer = await getBuffer(ctx, t, code, "normal", true);
     if (buffer) {
       if (onState) onState("playing");
       playBuffer(ctx, buffer);

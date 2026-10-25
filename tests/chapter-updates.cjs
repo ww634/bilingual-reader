@@ -8,6 +8,7 @@ function setup() {
   const chapters = new Map();
   const progress = new Map([['book/ch-1', { lastPage: 4 }]]);
   const requests = [];
+  let chapterReads = 0, progressReads = 0;
   const elements = new Map();
   function element() {
     return { textContent: '', innerHTML: '', children: [], classList: { contains: () => false, add() {}, remove() {} },
@@ -17,13 +18,17 @@ function setup() {
   const catalog = { id: 'book', language: 'fr', version: 1, title: { english: 'Book' },
     chapters: [{ id: 'ch-1', version: 3, url: 'ch-1.json' }, { id: 'ch-2', version: 2, url: 'ch-2.json' }] };
   const context = vm.createContext({ URL, console: { ...console, error() {} }, navigator: { onLine: true },
-    window: { location: { href: 'https://reader.test/app/' } },
+    window: { addEventListener() {}, location: { href: 'https://reader.test/app/' } },
     document: { getElementById(id) { if (!elements.has(id)) elements.set(id, element()); return elements.get(id); }, createElement: element },
     getLearningLanguage: () => 'fr', languageName: () => 'French',
     getSettings: async () => ({ libraryUrl: 'https://reader.test/content/library.json' }),
     getAllBooks: async () => [...books.values()].map(b => structuredClone(b)),
     getAllChapterKeys: async () => [...chapters.keys()],
-    getChapter: async (b, c) => chapters.get(`${b}/${c}`),
+    getAllChapterMetadata: async () => [...chapters].map(([key,c]) => ({key,bookId:key.split('/')[0],chapterId:key.split('/')[1],version:c.catalogVersion??c.version??1,pairs:c.pairs?.length||0})),
+    deleteChapter: async (b,c) => chapters.delete(`${b}/${c}`),
+    chapterKey: (b,c) => `${b}/${c}`,
+    getAllProgress: async () => { progressReads++; return [...progress].map(([key,value]) => ({key,value})); },
+    getChapter: async (b, c) => { chapterReads++; return chapters.get(`${b}/${c}`); },
     putBook: async b => books.set(b.id, structuredClone(b)),
     putChapter: async (b, c, data) => chapters.set(`${b}/${c}`, structuredClone(data)),
     fetch: async url => {
@@ -33,9 +38,9 @@ function setup() {
     },
   });
   let source = fs.readFileSync('app/js/library.js', 'utf8').replace(/import\s+[\s\S]*?from\s+"[^\"]+";/g, '').replace(/export /g, '');
-  source += '\nrenderLibrary = () => {}; renderHomeCounts = () => {}; globalThis.api = { state, loadDownloadedIndex, renderBrowse, downloadBook };';
+  source += '\nrenderLibrary = () => {}; renderHomeCounts = () => {}; globalThis.api = { state, loadDownloadedIndex, renderBrowse, downloadBook, computeBookProgress };';
   vm.runInContext(source, context);
-  return { ...context.api, context, books, chapters, progress, requests, elements, catalog, element };
+  return { ...context.api, context, books, chapters, progress, requests, elements, catalog, element, reads: () => ({chapterReads,progressReads}) };
 }
 
 test('chapter-only revisions show Update and replace old text without removing progress', async () => {
@@ -92,3 +97,16 @@ test('missing or empty chapters resume and legacy files are stamped with catalog
   await s.downloadBook(updated, s.element());
   assert.equal(s.requests.length, 1);
 });
+
+ test('startup and progress use chapter summaries without reading book prose', async () => {
+  const s=setup();const book={...s.catalog,chapters:Array.from({length:300},(_,i)=>({id:`ch-${i+1}`}))};s.books.set('book',book);
+  for(const ch of book.chapters)s.chapters.set(`book/${ch.id}`,{version:1,pairs:Array(150).fill({})});
+  const index=await s.loadDownloadedIndex();assert.equal(index.get('book').downloadedChapterCount,300);assert.equal(s.reads().chapterReads,0);
+  const progress=await s.computeBookProgress(index.get('book'));assert.ok(progress.totalPages>300);assert.equal(s.reads().chapterReads,0);assert.equal(s.reads().progressReads,1);
+ });
+ test('duplicate Add clicks share one download and dropped chapters retain study progress', async () => {
+  const s=setup();await Promise.all([s.downloadBook(s.catalog,s.element()),s.downloadBook(s.catalog,s.element())]);
+  assert.equal(s.requests.length,2);s.progress.set('book/ch-2',{lastPage:3});
+  await s.downloadBook({...s.catalog,version:2,chapters:[s.catalog.chapters[0]]},s.element());
+  assert.equal(s.chapters.has('book/ch-2'),false);assert.equal(s.progress.get('book/ch-2').lastPage,3);
+ });

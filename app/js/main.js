@@ -149,8 +149,8 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
   initStories();
   initFeedback();
   await initVault();
-  await initCatalog();
   setView("home", { push: false });
+  initCatalog().catch(err => console.warn("Catalog refresh failed:", err));
   // Ask iOS to keep this app's data even when the phone is short of space.
   requestPersistence();
 })();

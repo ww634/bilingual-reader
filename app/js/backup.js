@@ -1,9 +1,9 @@
 // Backup / restore of the learner's own data, plus storage protection.
 //
 // What's in a backup: every Memory Vault word (all languages, with quiz history),
-// reading progress, and the daily activity record (streak). NOT included: books
-// and chapters (re-downloadable from Browse), cached audio, and the OpenAI key
-// (a backup file may end up in iCloud/Files — keep the secret out of it).
+// reading progress, daily activity, safe settings and locally generated practice
+// stories. Catalogue chapters can be downloaded again. Audio, the OpenAI key
+// and the feedback token are excluded from the backup.
 //
 // Restore MERGES rather than replaces: words missing locally are added, words on
 // both sides keep whichever copy was studied more recently, and progress keeps
@@ -11,15 +11,26 @@
 
 import {
   getAllVaultItems, getVaultItem, putVaultItem,
+  getAllBooks, getBook, putBook, getChapter, putChapter, getSettings,
   getAllProgress, putProgressRecord, getActivity, putActivity, updateSettings, dayKey,
 } from "./db.js";
 import { APP_VERSION } from "./version.js";
 
 const KIND = "bilingual-reader-backup";
-const FORMAT = 1;
+const FORMAT = 2;
+const safeSettings = settings => { const { openaiKey, feedbackToken, ...safe } = settings || {}; return safe; };
 
-async function buildBackup() {
+export async function buildBackup() {
   const [vault, progress, activity] = await Promise.all([getAllVaultItems(), getAllProgress(), getActivity()]);
+  const settings = safeSettings(await getSettings());
+  const stories = [];
+  for (const book of await getAllBooks()) {
+    if (!book.id.startsWith("practice-")) continue;
+    const chapters = [];
+    for (const entry of book.chapters || []) { const chapter = await getChapter(book.id, entry.id); if (chapter) chapters.push(chapter); }
+    const { coverBlob, chapterIndex, downloadedChapterVersions, downloadedChapterCount, ...metadata } = book;
+    stories.push({ book: metadata, chapters });
+  }
   return {
     kind: KIND,
     format: FORMAT,
@@ -27,7 +38,7 @@ async function buildBackup() {
     exportedAt: new Date().toISOString(),
     vault,
     progress,
-    activity,
+    activity, settings, stories,
   };
 }
 
@@ -36,26 +47,26 @@ async function buildBackup() {
  * AirDrop, iCloud Drive…); elsewhere it downloads the file.
  * Returns { ok, count, how } — how: "shared" | "downloaded" | "cancelled".
  */
-export async function exportBackup() {
+export async function prepareBackup() {
   const data = await buildBackup();
-  const name = `reader-backup-${dayKey()}.json`;
-  const json = JSON.stringify(data, null, 1);
-  const file = new File([json], name, { type: "application/json" });
+  const file = new File([JSON.stringify(data, null, 1)], `reader-backup-${dayKey()}.json`, { type: "application/json" });
+  return { data, file };
+}
 
-  let how = "downloaded";
-  if (navigator.canShare && navigator.canShare({ files: [file] })) {
-    try {
-      await navigator.share({ files: [file], title: "Reader backup" });
-      how = "shared";
-    } catch (err) {
-      if (err && err.name === "AbortError") return { ok: false, count: data.vault.length, how: "cancelled" };
-      downloadFile(file);   // share refused (e.g. no user gesture) — fall back
-    }
-  } else {
-    downloadFile(file);
+// Prepared before the tap: share() is invoked before any await so the gesture
+// survives on iOS. A download is an export, not confirmation of a saved backup.
+export async function exportBackup(prepared) {
+  if (!prepared) return { ok: false, how: "not-ready", count: 0 };
+  const { data, file } = prepared;
+  if (navigator.canShare?.({ files: [file] })) {
+    try { await navigator.share({ files: [file], title: "Reader backup" }); }
+    catch (error) { return { ok: false, count: data.vault.length, how: error?.name === "AbortError" ? "cancelled" : "failed" }; }
+    await updateSettings({ lastBackupAt: new Date().toISOString() });
+    return { ok: true, count: data.vault.length, how: "shared" };
   }
-  await updateSettings({ lastBackupAt: new Date().toISOString() });
-  return { ok: true, count: data.vault.length, how };
+  downloadFile(file);
+  await updateSettings({ lastBackupDownloadAt: new Date().toISOString() });
+  return { ok: true, count: data.vault.length, how: "downloaded" };
 }
 
 function downloadFile(file) {
@@ -84,6 +95,7 @@ export async function importBackup(file) {
     throw new Error("That file isn't a Reader backup.");
   }
 
+  if (![1, 2].includes(data.format)) throw new Error("This backup format is not supported by this app version.");
   let added = 0, updated = 0, kept = 0;
   for (const item of data.vault) {
     if (!item || !item.id) continue;
@@ -119,8 +131,25 @@ export async function importBackup(file) {
     await putActivity(mine);
   }
 
+  let stories = 0;
+  for (const entry of data.stories || []) {
+    const incoming = entry?.book;
+    if (!incoming?.id?.startsWith("practice-") || !Array.isArray(entry.chapters)) continue;
+    const existing = await getBook(incoming.id);
+    const merged = { ...incoming, ...existing, coverBlob: existing?.coverBlob || null, chapters: [...(existing?.chapters || [])] };
+    for (const chapter of entry.chapters) {
+      if (!chapter?.id || chapter.book_id !== incoming.id || !Array.isArray(chapter.pairs) || !chapter.pairs.length) continue;
+      const meta = incoming.chapters?.find(c => c.id === chapter.id);
+      if (!meta) continue;
+      if (!await getChapter(incoming.id, chapter.id)) { await putChapter(incoming.id, chapter.id, chapter); stories++; }
+      if (!merged.chapters.some(c => c.id === chapter.id)) merged.chapters.push(meta);
+    }
+    await putBook(merged);
+  }
+  if (data.settings && typeof data.settings === "object" && !Array.isArray(data.settings)) await updateSettings(safeSettings(data.settings));
   window.dispatchEvent(new CustomEvent("vault:changed"));
-  return { added, updated, kept, progress };
+  window.dispatchEvent(new CustomEvent("settings:libraryUrl"));
+  return { added, updated, kept, progress, stories };
 }
 
 // ── Storage protection ──

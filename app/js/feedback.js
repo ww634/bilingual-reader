@@ -11,7 +11,7 @@
 // to Issues on that one repository. The token never leaves this device except
 // to api.github.com, and isn't included in backups.
 
-import { getSettings, putFeedback, getAllFeedback } from "./db.js";
+import { getSettings, putFeedback, getAllFeedback, claimFeedback } from "./db.js";
 import { APP_VERSION } from "./version.js";
 import { languageName } from "./languages.js";
 
@@ -131,12 +131,18 @@ function issueBody(item) {
 }
 
 /** Try to send one report. Returns "sent" | "no-setup" | "offline" | "failed". */
+const _sending = new Set();
 async function send(item) {
+  if (_sending.has(item.id)) return "busy";
+  _sending.add(item.id);
+  try {
   const s = await getSettings();
   const repo = (s.feedbackRepo || "").trim();
   const token = (s.feedbackToken || "").trim();
   if (!repo || !token || !/^[\w.-]+\/[\w.-]+$/.test(repo)) return "no-setup";
   if (!navigator.onLine) return "offline";
+  if (!await claimFeedback(item.id)) return "busy";
+  item.status = "sending"; item.sendingAt = Date.now();
   const post = (labels) => fetch(`https://api.github.com/repos/${repo}/issues`, {
     method: "POST",
     headers: {
@@ -151,6 +157,7 @@ async function send(item) {
     let res = await post(["feedback", item.kind]);
     if (res.status === 422) res = await post(null);   // labels refused — send without them
     if (!res.ok) {
+      item.status = "pending";
       item.lastError = `HTTP ${res.status}`;
       await putFeedback(item);
       return "failed";
@@ -163,10 +170,12 @@ async function send(item) {
     await putFeedback(item);
     return "sent";
   } catch (err) {
+    item.status = "pending";
     item.lastError = err.message;
     await putFeedback(item);
     return "failed";
   }
+  } finally { _sending.delete(item.id); }
 }
 
 let _flushing = false;
@@ -175,7 +184,7 @@ export async function flushFeedback() {
   if (_flushing) return null;
   _flushing = true;
   try {
-    const pending = (await getAllFeedback()).filter((f) => f.status !== "sent");
+    const pending = (await getAllFeedback()).filter(f => f.status !== "sent" && (f.status !== "sending" || Date.now() - (f.sendingAt || 0) >= 120000));
     let sent = 0, setup = true;
     for (const item of pending) {
       const r = await send(item);

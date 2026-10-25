@@ -1208,8 +1208,7 @@ async function renderEndQuiz() {
       const lvl = clampLevel(e.target.value);
       draw(lvl);
       // Remember the choice for this book, like the book page's level picker.
-      const s = await getSettings();
-      await updateSettings({ bookQuiz: { ...(s.bookQuiz || {}), [bookId]: { ...bookQuizPrefs(s, bookId), level: lvl } } });
+      await updateSettings(s => ({ bookQuiz: { ...(s.bookQuiz || {}), [bookId]: { ...bookQuizPrefs(s, bookId), level: lvl } } }));
     });
   };
   draw(prefs.level);

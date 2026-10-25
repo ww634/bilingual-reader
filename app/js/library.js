@@ -9,6 +9,8 @@ import {
   deleteChapter,
   getChapter,
   getAllChapterKeys,
+  getAllChapterMetadata,
+  getAllProgress,
   getProgress,
   chapterKey,
   updateSettings,
@@ -61,22 +63,17 @@ async function loadDownloadedIndex() {
   const map = new Map();
   for (const b of all) map.set(b.id, b);
 
-  // Inspect stored content, not the book metadata saved before a download.
-  // This also detects an interrupted update when all chapter keys still exist.
   for (const book of map.values()) {
-    book.downloadedChapterCount = 0;
-    book.downloadedChapterVersions = {};
+    book.downloadedChapterCount = 0; book.downloadedChapterVersions = {}; book.chapterIndex = {};
   }
-  const chapterKeys = await getAllChapterKeys();
-  await Promise.all(chapterKeys.map(async (key) => {
-    const [bookId, chapterId] = String(key).split("/");
-    const book = map.get(bookId);
-    if (!book) return;
-    const chapter = await getChapter(bookId, chapterId);
-    if (!chapter?.pairs?.length) return;
+  for (const meta of await getAllChapterMetadata()) {
+    const book = map.get(meta.bookId);
+    if (!book || !book.chapters?.some(c => c.id === meta.chapterId)) continue;
+    book.chapterIndex[meta.chapterId] = meta;
+    if (!meta.pairs) continue;
     book.downloadedChapterCount++;
-    book.downloadedChapterVersions[chapterId] = chapter.catalogVersion ?? chapter.version ?? 1;
-  }));
+    book.downloadedChapterVersions[meta.chapterId] = meta.version;
+  }
   return map;
 }
 
@@ -114,7 +111,12 @@ export function populateLangSwitchers() {
 
 /* ============ LIBRARY VIEW (downloaded books grid) ============ */
 
+let _libraryCoverUrls = [];
+let _detailCoverUrl = null;
+
 export function renderLibrary() {
+  for (const url of _libraryCoverUrls) URL.revokeObjectURL(url);
+  _libraryCoverUrls = [];
   const grid = $("library-grid");
   const empty = $("library-empty");
   grid.innerHTML = "";
@@ -135,6 +137,7 @@ export function renderLibrary() {
     card.setAttribute("data-book-id", book.id);
 
     const coverObjUrl = book.coverBlob ? URL.createObjectURL(book.coverBlob) : null;
+    if (coverObjUrl) _libraryCoverUrls.push(coverObjUrl);
     const hasCover = !!coverObjUrl;
     const coverInner = hasCover
       ? `<img src="${escape(coverObjUrl)}" alt="" loading="lazy" />`
@@ -252,14 +255,17 @@ export function renderBrowse() {
   }
 }
 
-async function downloadBook(catalogEntry, btn) {
-  const settings = await getSettings();
+const _downloading = new Set();
+export async function downloadBook(catalogEntry, btn) {
+  if (_downloading.has(catalogEntry.id)) return;
+  _downloading.add(catalogEntry.id);
   btn.disabled = true;
   btn.textContent = "Adding…";
   $("browse-status").classList.remove("error");
   $("browse-status").textContent = `Adding "${catalogEntry.title?.english || catalogEntry.id}"…`;
 
   try {
+    const settings = await getSettings();
     // 1. Refresh cover artwork when the book edition changes.
     const existingRecord = state.downloadedBooks.get(catalogEntry.id);
     let coverBlob = existingRecord?.coverBlob || null;
@@ -317,6 +323,10 @@ async function downloadBook(catalogEntry, btn) {
       downloadedCount++;
     }
 
+    const wanted = new Set(catalogEntry.chapters.map(c => chapterKey(catalogEntry.id, c.id)));
+    for (const key of await getAllChapterKeys()) {
+      if (String(key).startsWith(catalogEntry.id + "/") && !wanted.has(key)) await deleteChapter(catalogEntry.id, String(key).slice(catalogEntry.id.length + 1));
+    }
     $("browse-status").textContent = "";
     if (skippedCount > 0 && downloadedCount === 0) {
       // Nothing new — must have been called when book was already complete.
@@ -334,7 +344,7 @@ async function downloadBook(catalogEntry, btn) {
     btn.textContent = "Retry";
     $("browse-status").textContent = `Could not add: ${err.message}`;
     $("browse-status").classList.add("error");
-  }
+  } finally { _downloading.delete(catalogEntry.id); }
 }
 
 /* ============ BOOK DETAIL helpers ============ */
@@ -353,7 +363,8 @@ async function downloadBook(catalogEntry, btn) {
  */
 async function computeBookProgress(book) {
   if (!book || !book.chapters) return null;
-  const settings = await getSettings();
+  const [settings, progress] = await Promise.all([getSettings(), getAllProgress()]);
+  const progressByKey = new Map(progress.map(p => [p.key, p.value]));
   const perPage = settings.pairsPerPage || 7;
   let totalPages = 0;
   let lastReadChapterId = null;
@@ -363,14 +374,14 @@ async function computeBookProgress(book) {
   const chapterPagesById = new Map();
 
   for (const chMeta of book.chapters) {
-    const chapter = await getChapter(book.id, chMeta.id);
-    if (!chapter) { chapterPagesById.set(chMeta.id, 0); continue; }
+    const chapter = book.chapterIndex?.[chMeta.id];
+    if (!chapter?.pairs) { chapterPagesById.set(chMeta.id, 0); continue; }
     // Pages = 1 (title page) + ceil(pairs / perPage)
-    const chPages = 1 + Math.max(1, Math.ceil(chapter.pairs.length / perPage));
+    const chPages = 1 + Math.max(1, Math.ceil(chapter.pairs / perPage));
     chapterPagesById.set(chMeta.id, chPages);
     totalPages += chPages;
 
-    const prog = await getProgress(book.id, chMeta.id);
+    const prog = progressByKey.get(chapterKey(book.id, chMeta.id));
     if (prog) {
       chapterProgress.set(chMeta.id, {
         lastPage: prog.lastPage,
@@ -448,10 +459,13 @@ export async function renderBookDetail() {
 
   // Cover
   const coverContainer = $("book-detail-cover");
+  if (_detailCoverUrl) URL.revokeObjectURL(_detailCoverUrl);
+  _detailCoverUrl = null;
   coverContainer.innerHTML = "";
   if (isDownloaded && book.coverBlob) {
     const img = document.createElement("img");
-    img.src = URL.createObjectURL(book.coverBlob);
+    _detailCoverUrl = URL.createObjectURL(book.coverBlob);
+    img.src = _detailCoverUrl;
     coverContainer.appendChild(img);
     coverContainer.classList.remove("placeholder");
   } else if (book._coverResolved || book.cover) {
@@ -485,6 +499,8 @@ export async function renderBookDetail() {
     genresEl.appendChild(pill);
   }
 
+  const bookProgress = isDownloaded ? await computeBookProgress(book) : null;
+
   // Progress + Continue button. Only meaningful if the book is downloaded.
   const progressEl = $("book-detail-progress");
   const progressFill = $("book-detail-progress-fill");
@@ -496,7 +512,7 @@ export async function renderBookDetail() {
   let resumeChapterId = firstChapterId;
 
   if (isDownloaded) {
-    const p = await computeBookProgress(book);
+    const p = bookProgress;
     const hasStarted = !!p?.lastReadChapterId;
     if (hasStarted && p.totalPages > 0) {
       progressEl.hidden = false;
@@ -538,7 +554,7 @@ export async function renderBookDetail() {
 
   let perChapterProgress = null;
   if (isDownloaded) {
-    const p = await computeBookProgress(book);
+    const p = bookProgress;
     perChapterProgress = p?.chapterProgress || new Map();
   }
 
@@ -589,6 +605,9 @@ export async function renderBookDetail() {
 // "≈ 84% known" on each chapter row, worked out from the learner's level and
 // Memory Vault. Filled in after the list renders (it reads every chapter).
 let _knownRun = 0;
+let _vaultRevision = 0;
+const _knownCache = new Map();
+window.addEventListener("vault:changed", () => { _vaultRevision++; _knownCache.clear(); });
 async function fillKnownPills(book) {
   const run = ++_knownRun;
   const settings = await getSettings();
@@ -596,11 +615,18 @@ async function fillKnownPills(book) {
   if (book.language === "zh") await loadLevels();
   const buckets = await vaultBucketMap(book.language);
   for (const ch of book.chapters || []) {
+    if (!book.chapterIndex?.[ch.id]?.pairs) continue;
     if (run !== _knownRun || state.selectedBookId !== book.id) return;   // navigated away / re-rendered
-    const chapter = await getChapter(book.id, ch.id);
+    const cacheKey = `${book.id}/${ch.id}`, signature = `${book.chapterIndex?.[ch.id]?.version}/${level}/${_vaultRevision}`;
+    let k = _knownCache.get(cacheKey)?.signature === signature ? _knownCache.get(cacheKey).value : null;
+    if (!k) {
+      const chapter = await getChapter(book.id, ch.id);
+      if (!chapter) continue;
+      k = chapterKnowledge(chapter, level, buckets);
+      _knownCache.set(cacheKey, { signature, value: k });
+    }
     const pill = document.querySelector(`.chapter-known[data-ch="${CSS.escape(ch.id)}"]`);
-    if (!chapter || !pill) continue;
-    const k = chapterKnowledge(chapter, level, buckets);
+    if (!pill) continue;
     pill.textContent = `≈${k.pct}% known`;
     pill.className = `chapter-known ${k.pct >= 95 ? "easy" : k.pct >= 85 ? "ok" : "hard"}`;
   }
@@ -622,12 +648,9 @@ async function renderBookQuizPrefs(book, isDownloaded) {
       : "Turned off for this book.";
     levels.classList.toggle("off", !on.checked);
   };
-  const save = async (patch) => {
-    const s = await getSettings();
-    const all = { ...(s.bookQuiz || {}) };
-    all[book.id] = { ...bookQuizPrefs(s, book.id), ...patch };
-    await updateSettings({ bookQuiz: all });
-  };
+  const save = patch => updateSettings(s => ({ bookQuiz: {
+    ...(s.bookQuiz || {}), [book.id]: { ...bookQuizPrefs(s, book.id), ...patch }
+  } }));
   on.onchange = () => { hint(); save({ on: on.checked }); };
   levels.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
     levels.querySelectorAll(".chip").forEach((x) => x.classList.toggle("on", x === b));
@@ -656,6 +679,8 @@ export async function refreshCatalog() {
   _cachedSettings = settings;
   $("browse-status").classList.remove("error");
   state.downloadedBooks = await loadDownloadedIndex();
+  state.catalog = await getLibrary() || state.catalog || { books: [] };
+  populateLangSwitchers(); renderBrowse(); renderLibrary(); renderHomeCounts();
 
   if (state.online) {
     $("browse-status").textContent = "Loading catalog…";
