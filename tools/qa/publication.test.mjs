@@ -45,3 +45,14 @@ test('release comparison uses last-live tree, so later docs commits cannot bypas
  await write('app/index.html','<html>Changed renderer</html>');git('add','.');git('commit','-qm','renderer changed');
  await assert.rejects(checkRelease({root,base}),/Stale review: renderer/);
 });
+
+test('book retirement requires content-bound authorization and both phone migration checks', async()=>{
+ const {validateRetirement}=await import('./publication.mjs');
+ const book={id:'old-book',chapters:[{id:'ch-1',url:'books/old-book/ch-1.json'}]};
+ const bytes=Buffer.from('old chapter');const png=Buffer.alloc(128);Buffer.from([137,80,78,71,13,10,26,10]).copy(png);
+ const prior={read:()=>bytes},ctx={renderer:'current',read:p=>p.endsWith('.png')?png:null};
+ const r={schema:1,book_id:book.id,catalog_sha256:sha(JSON.stringify(book)),renderer_sha256:'current',chapter_sha256:{'ch-1':sha(bytes)},reviewer:'Fixture reviewer',reviewed_at:'2026-10-25T10:00:00Z',authorization:'Owner explicitly authorized retiring this specific book.',reason:'Incomplete legacy edition is being removed from the site.',local_data_migration:'Existing downloads remain readable and removable; study data stays intact.',samples:['downloaded_read','remove_download'].map(scenario=>({scenario,width:375,path:'docs/qa-evidence/retirement.png',sha256:sha(png),notes:'Fixture migration evidence only; not a production attestation.'}))};
+ assert.doesNotThrow(()=>validateRetirement(r,book,prior,ctx));
+ for(const change of [x=>x.authorization='',x=>x.renderer_sha256='stale',x=>x.chapter_sha256={},x=>x.samples.pop(),x=>x.samples[0].sha256='stale']){const bad=structuredClone(r);change(bad);assert.throws(()=>validateRetirement(bad,book,prior,ctx));}
+ assert.throws(()=>validateRetirement(r,book,prior,{...ctx,read:p=>p.endsWith('.png')?png:bytes}),/still published/);
+});

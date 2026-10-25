@@ -1,3 +1,4 @@
+import { clozeRange } from "./learning-utils.js";
 // End-of-chapter quizzes.
 //
 // Built from the chapter itself — no AI and no network — so they're ready the
@@ -113,7 +114,7 @@ export function buildChapterQuiz(chapter, level, { bookId = "", size = QUIZ_SIZE
   const cards = picked.map((item, i) => {
     let dir = types[i % types.length];
     // Fill-in needs the word to be findable in its sentence in the shown script.
-    if (dir === "cloze" && !item.context.hanzi.toLowerCase().includes(item.hanzi.toLowerCase())) dir = "t2e";
+    if (dir === "cloze" && !clozeRange(item.context.hanzi, item.hanzi)) dir = "t2e";
     return { item, dir, options: distractorsFor(item, words, rand) };
   });
   return { cards: words.length >= 4 ? cards : [], level, available: words.length };

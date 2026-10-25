@@ -430,6 +430,21 @@ export async function renderBookDetail() {
   if (!book) return;
 
   const isDownloaded = state.downloadedBooks.has(book.id);
+  const remove = $("book-remove-download");
+  remove.hidden = !isDownloaded || isPracticeBook(book.id);
+  remove.onclick = async () => {
+    remove.disabled = true;
+    try {
+      const keys = await getAllChapterKeys();
+      for (const key of keys) if (String(key).startsWith(book.id + "/")) await deleteChapter(book.id, String(key).slice(book.id.length + 1));
+      await deleteBook(book.id);
+      state.downloadedBooks.delete(book.id);
+      renderLibrary(); renderHomeCounts();
+      window.dispatchEvent(new CustomEvent("app:setview", { detail: "library" }));
+    } finally { remove.disabled = false; }
+  };
+  $("book-remove-note").hidden = !isDownloaded;
+  $("book-remove-note").textContent = "Removing this download keeps your reading progress and saved words.";
 
   // Cover
   const coverContainer = $("book-detail-cover");

@@ -96,44 +96,30 @@ function chunkPairs(pairs, perPage) {
  * times in pair.target, we greedily assign each chunk to the earliest
  * unclaimed occurrence (processing chunks in alignment array order).
  */
+// Apostrophes inside a contraction belong to the word; quotation marks do not.
+function englishBoundary(text, start, end) {
+  const word = c => /[\p{L}\p{N}]/u.test(c || "");
+  const internal = i => /['’]/.test(text[i] || "") && word(text[i - 1]) && word(text[i + 1]);
+  return !(word(text[start]) && (word(text[start - 1]) || internal(start - 1))) &&
+    !(word(text[end - 1]) && (word(text[end]) || internal(end)));
+}
+function findFirstUnclaimed(text, needle, claimed = new Set(), boundary = false, insensitive = false, from = 0) {
+  if (!needle) return -1;
+  const hay = insensitive ? text.toLowerCase() : text;
+  const probe = insensitive ? needle.toLowerCase() : needle;
+  for (let i = hay.indexOf(probe, from); i >= 0; i = hay.indexOf(probe, i + 1)) {
+    if (boundary && !englishBoundary(text, i, i + needle.length)) continue;
+    if (Array.from({ length: needle.length }, (_, k) => i + k).some(k => claimed.has(k))) continue;
+    return i;
+  }
+  return -1;
+}
+
 function findChunkPositions(pair) {
   // Track which character positions are already claimed for target and english.
   const claimedTarget = new Set();
   const claimedEnglish = new Set();
 
-  const findFirstUnclaimed = (text, needle, claimed, requireWordBoundary = false, caseInsensitive = false) => {
-    if (!needle) return -1;
-    const isWordChar = (c) => /[a-zA-Z0-9]/.test(c);
-    // Case-insensitive English matching: needle is usually Title/lowercase
-    // but headers in the .docx may be ALL CAPS. Comparing lowercased copies
-    // lets us find the right span without changing the underlying text.
-    const haystack = caseInsensitive ? text.toLowerCase() : text;
-    const probe = caseInsensitive ? needle.toLowerCase() : needle;
-    let from = 0;
-    while (from <= haystack.length - probe.length) {
-      const idx = haystack.indexOf(probe, from);
-      if (idx === -1) return -1;
-      // Check if any position in [idx, idx+len) is already claimed.
-      let collision = false;
-      for (let p = idx; p < idx + needle.length; p++) {
-        if (claimed.has(p)) { collision = true; break; }
-      }
-      if (collision) { from = idx + 1; continue; }
-      // For English: require the match to be on word boundaries so a short
-      // function word like "a" doesn't match INSIDE "seaman" (sub-word).
-      if (requireWordBoundary) {
-        const charBefore = idx > 0 ? text[idx - 1] : "";
-        const charAfter = idx + needle.length < text.length ? text[idx + needle.length] : "";
-        const needleFirst = needle[0];
-        const needleLast = needle[needle.length - 1];
-        const leftBoundary = !charBefore || !isWordChar(charBefore) || !isWordChar(needleFirst);
-        const rightBoundary = !charAfter || !isWordChar(charAfter) || !isWordChar(needleLast);
-        if (!leftBoundary || !rightBoundary) { from = idx + 1; continue; }
-      }
-      return idx;
-    }
-    return -1;
-  };
 
   return pair.alignment.map((chunk) => {
     let tStart = -1, tEnd = -1, eStart = -1, eEnd = -1;
@@ -234,10 +220,9 @@ function buildEnglishCoverage(pair) {
   const coverage = new Array(text.length).fill(null);
   if (!Array.isArray(pair.alignment)) return coverage;
 
-  const textLower = text.toLowerCase();
+  const exactPositions = findChunkPositions(pair);
   const pairToks = wordTokens(text);
   const tokenClaimed = new Array(pairToks.length).fill(false);
-  let scanFrom = 0;   // char cursor for exact matches
   let tokCursor = 0;  // token cursor for fuzzy matches (keeps order monotonic)
 
   // Mark every pair token whose span lies within [start,end) as claimed, and
@@ -257,14 +242,11 @@ function buildEnglishCoverage(pair) {
     if (!span) continue;
 
     // ── Stage 1: exact substring ──
-    const needle = span.toLowerCase();
-    let idx = textLower.indexOf(needle, scanFrom);
-    if (idx === -1) idx = textLower.indexOf(needle);
+    const idx = exactPositions[ci].eStart;
     if (idx !== -1) {
       for (let p = idx; p < idx + span.length; p++) {
         if (coverage[p] === null) coverage[p] = ci;
       }
-      scanFrom = idx + span.length;
       claimTokensInRange(idx, idx + span.length);
       continue;
     }
@@ -284,7 +266,7 @@ function buildEnglishCoverage(pair) {
       if (found !== -1) {
         matched.push(found);
         searchFrom = found + 1;
-        if (!STOPWORDS.has(pairToks[found].lower) && pairToks[found].lower.length >= 3) {
+        if (!STOPWORDS.has(ct) && !STOPWORDS.has(pairToks[found].lower) && ct.length >= 3) {
           anchored = true;
         }
       }
@@ -299,6 +281,18 @@ function buildEnglishCoverage(pair) {
       if (ti + 1 > tokCursor) tokCursor = ti + 1;
     }
   }
+  pair.alignment.forEach((chunk, ci) => {
+    const pos = exactPositions[ci];
+    if (pos.eStart < 0 || !chunk.lookup?.length) return;
+    const inside = text.slice(pos.eStart, pos.eEnd), claimed = new Set();
+    chunk.lookup.forEach((word, wi) => {
+      const at = findFirstUnclaimed(inside, word.english, claimed, true, true);
+      if (at < 0) return;
+      for (let k = at; k < at + word.english.length; k++) {
+        claimed.add(k); coverage[pos.eStart + k] = `${ci}:${wi}`;
+      }
+    });
+  });
   return coverage;
 }
 
@@ -348,7 +342,9 @@ function emitEnglishSlice(pair, coverage, start, end) {
     } else {
       let stop = p;
       while (stop < end && coverage[stop] === claim) stop++;
-      const chunk = pair.alignment[claim];
+      const [ci, wi] = String(claim).split(":").map(Number);
+      const parent = pair.alignment[ci];
+      const chunk = Number.isInteger(wi) ? parent.lookup[wi] : parent;
       // Word key for vault/mastered matching: the target-language headword —
       // hanzi for Chinese, the target text for languages without a separate
       // script (e.g. French).
@@ -465,7 +461,7 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
           const word = chunk.lookup[wi];
           parts.push(escape(chunk.target.slice(wordCursor, word.start)));
           const wordAttrs = [
-            `class="seg chunk"`, `data-uid="${uid}"`, `data-lookup="${wi}"`,
+            `class="seg chunk"`, `data-uid="${uid}"`, `data-line-key="${uid}w${wi}"`, `data-lookup="${wi}"`,
             `data-pinyin="${escape(word.target)}"`, `data-hanzi="${escape(word.target)}"`,
             `data-pair="${pairIdx}"`,
             word.category ? `data-cat="${escape(word.category)}"` : "",
@@ -473,6 +469,8 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
             word.is_idiom ? `data-idiom="true"` : "",
           ].filter(Boolean).join(" ");
           parts.push(`<span ${wordAttrs}>${escape(word.target)}</span>`);
+          chunkMeta.push({ uid: `${uid}w${wi}`, pairIdx, chunkIdx, lookupIdx: wi,
+            claim: `${chunkIdx}:${wi}`, tStart: pos.tStart + word.start, tEnd: pos.tStart + word.end });
           wordCursor = word.end;
         }
         parts.push(escape(chunk.target.slice(wordCursor)));
@@ -480,8 +478,8 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
         parts.push(`<span ${attrs}>${escape(chunk.target)}</span>`);
       }
 
-      chunkMeta.push({
-        uid, pairIdx, chunkIdx,
+      if (!chunk.lookup?.length) chunkMeta.push({
+        uid, pairIdx, chunkIdx, claim: chunkIdx, tStart: pos.tStart, tEnd: pos.tEnd,
         eStart: pos.eStart, eEnd: pos.eEnd,
         isGrammar: chunk.category === "grammar",
       });
@@ -566,6 +564,32 @@ function extractLineHtml(targetEl, lines, lineIdx) {
   return wrap.innerHTML;
 }
 
+// Choose a monotonic word-boundary cut with the fewest characters assigned to
+// the wrong target line. Source share breaks ties when order differs or a gloss
+// is absent. Reserve words for remaining lines whenever the sentence permits it.
+function bestEnglishCut(text, coverage, ownerLines, line, cursor, fraction, remainingLines) {
+  const tokens = wordTokens(text).filter(t => t.end > cursor);
+  const canReserve = tokens.length > remainingLines;
+  const candidates = tokens.map(t => t.end).filter(end => !canReserve ||
+    tokens.filter(t => t.start >= end).length >= remainingLines);
+  if (!canReserve) candidates.push(cursor);
+  if (!candidates.length) return text.length;
+  let best = candidates[0], score = Infinity, distance = Infinity;
+  for (const cut of candidates) {
+    let cost = 0;
+    for (let k = cursor; k < coverage.length; k++) {
+      const owner = ownerLines.get(String(coverage[k]));
+      if (owner == null) continue;
+      if ((owner <= line && k >= cut) || (owner > line && k < cut)) cost++;
+    }
+    const d = Math.abs(cut - fraction * text.length);
+    if (cost < score || (cost === score && d < distance)) { best = cut; score = cost; distance = d; }
+  }
+  // Keep sentence punctuation with its preceding word.
+  while (best < text.length && !/[\p{L}\p{N}]/u.test(text[best])) best++;
+  return best;
+}
+
 /* ───────────────────────── page render (Option 2) ───────────────────────── */
 
 /**
@@ -583,9 +607,9 @@ function extractLineHtml(targetEl, lines, lineIdx) {
  *   4. For each visual line, build a block:
  *       - Pinyin = the spans on that line, in DOM order
  *       - English = for each pair touching this line, the slice of
- *         pair.english between the per-pair cursor and the max englishEnd
- *         of that pair's chunks on this line (extends to pair.english.length
- *         if this is the LAST line containing any chunks of that pair).
+ *         pair.english between the per-pair cursor and a forward word-boundary
+ *         cut that minimises misplaced English; source share breaks ties.
+ *         The last line touched by the pair takes the remainder.
  *   5. Replace pageEl.innerHTML with the final blocks.
  *   6. Verification: after layout, warn if any final target wrapped.
  */
@@ -608,15 +632,22 @@ function renderPageInto(pageEl, pairs, pageStartIdx) {
   // pair index -> Set of visual line indices it touches
   const pairLines = new Map();
 
+  const targetEnds = new Map();
+  const targetCursors = new Map();
   lines.forEach((line, lineIdx) => {
     for (const span of line.segs) {
       const pairIdx = parseInt(span.dataset.pair, 10);
       if (Number.isFinite(pairIdx)) {
         if (!pairLines.has(pairIdx)) pairLines.set(pairIdx, new Set());
         pairLines.get(pairIdx).add(lineIdx);
+        const pair = pairs[pairIdx - pageStartIdx];
+        const text = span.dataset.pinyin || span.textContent;
+        const at = pair.target.indexOf(text, targetCursors.get(pairIdx) || 0);
+        if (at >= 0) { targetCursors.set(pairIdx, at + text.length); targetEnds.set(`${pairIdx}:${lineIdx}`, at + text.length); }
       }
       if (span.dataset.uid) {
-        chunkLine.set(span.dataset.uid, lineIdx);
+        const key = span.dataset.lineKey || span.dataset.uid;
+        if (!chunkLine.has(key)) chunkLine.set(key, lineIdx);
       }
     }
   });
@@ -653,51 +684,27 @@ function renderPageInto(pageEl, pairs, pageStartIdx) {
       const pair = pairByGlobal.get(pairIdx);
       if (!pair) continue;
 
-      if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
-        // No chunks — emit the whole English on the first line we see this pair,
-        // and nothing on subsequent lines. Wrap word runs in .other so the
-        // "Other" toggle still applies even to fully un-aligned pairs.
-        const cursor = englishCursor.get(pairIdx) || 0;
-        if (cursor === 0 && pair.english.length > 0) {
-          englishParts.push(emitOtherRun(pair.english));
-          englishCursor.set(pairIdx, pair.english.length);
-        }
-        continue;
-      }
-
-      // Find chunks of this pair on this line (with locatable english).
-      const chunksHere = chunkMeta.filter(
-        (m) => m.pairIdx === pairIdx && chunkLine.get(m.uid) === lineIdx && m.eEnd > 0
-      );
-      // Find chunks of this pair on subsequent lines.
-      const chunksLater = chunkMeta.filter(
-        (m) => m.pairIdx === pairIdx && (chunkLine.get(m.uid) ?? -1) > lineIdx && m.eEnd > 0
-      );
-
-      // If no content-bearing chunks of this pair are on this line, we may
-      // still need to emit residual english IF this is the last line touched.
       const cursor = englishCursor.get(pairIdx) || 0;
-      let cut;
-      if (chunksHere.length === 0) {
-        // Last line for this pair? Emit remaining english.
-        if (chunksLater.length === 0 && cursor < pair.english.length) {
-          cut = pair.english.length;
-        } else {
-          continue; // No new English to emit on this line.
-        }
-      } else {
-        const maxEnd = Math.max(...chunksHere.map((m) => m.eEnd));
-        // If no later chunks of this pair, extend cut to end of pair.english
-        // so trailing punctuation/articles aren't dropped.
-        cut = chunksLater.length === 0 ? pair.english.length : Math.max(maxEnd, cursor);
-        // Also ensure we don't emit less than maxEnd (in case earlier line
-        // already emitted past it due to reordering).
-        cut = Math.max(cut, maxEnd);
+      const touched = [...pairLines.get(pairIdx)];
+      const lastLine = Math.max(...touched);
+      const coverage = englishCoverages.get(pairIdx) || new Array(pair.english.length).fill(null);
+      const fraction = (targetEnds.get(`${pairIdx}:${lineIdx}`) || 0) / Math.max(1, pair.target.length);
+      const units = chunkMeta.filter(m => m.pairIdx === pairIdx).map(m => ({ ...m, line: chunkLine.get(m.uid) }));
+      // Parent fallback belongs to the first line of a phrase, never its last.
+      const ownerLines = new Map();
+      for (const m of units) {
+        ownerLines.set(String(m.claim), m.line);
+        const parent = String(m.chunkIdx);
+        if (!ownerLines.has(parent) || m.line < ownerLines.get(parent)) ownerLines.set(parent, m.line);
       }
+      const cut = lineIdx === lastLine ? pair.english.length : bestEnglishCut(
+        pair.english, coverage, ownerLines, lineIdx, cursor, fraction,
+        touched.filter(l => l > lineIdx).length
+      );
 
       if (cut > cursor) {
         englishParts.push(
-          emitEnglishSlice(pair, englishCoverages.get(pairIdx), cursor, cut)
+          emitEnglishSlice(pair, coverage, cursor, cut)
         );
         englishCursor.set(pairIdx, cut);
       }
@@ -1013,6 +1020,9 @@ function handleChunkTap(event) {
         pinyin: align.target || null,    // the chunk's pinyin (for the "other script" line)
         pairIdx,
         chunkIdx,
+        targetStart: findChunkPositions(pair)[chunkIdx].tStart + (lookupIdx !== null ? align.start : 0),
+        targetEnd: findChunkPositions(pair)[chunkIdx].tStart + (lookupIdx !== null ? align.end : align.target.length),
+        hanziStart: align.hanzi ? pair.hanzi?.indexOf(align.hanzi) : null,
         script: _state.script === "pinyin" ? "pinyin" : "hanzi",
       },
       _state.chapter

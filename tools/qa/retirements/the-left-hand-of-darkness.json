@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "book_id": "the-left-hand-of-darkness",
+  "catalog_sha256": "680c7bd4e36219518a747a169f96b59b6a8199063fef44cc4ec65793a2c5afa6",
+  "renderer_sha256": "d591170c96df61877fc83a7789f96b8d3143fc0e1750723b1408f622e1f3b138",
+  "chapter_sha256": {
+    "introduction": "cb31fec4b6df22d3791f8987191accd81b8a44a445678460f6d5a8e8588b83b7",
+    "ch-1": "a035b547188a9efd4429a11f861e225b3b5fb9d34a16c4d367bc29af4b9c380a",
+    "ch-2": "7f11b4ca40676a085d43d4eba81b61210714f79baaa82a641ba4435496a60e2c",
+    "ch-3": "105efb418c377662434e22e016f30b4be8f21d176ebf526b7559a05f5de6fd10",
+    "ch-4": "1783a6f0503f656367c36689570fe0cd567fdc4bcb63bcbb734d58293edc5c35",
+    "ch-5": "c14ce681a9136bb54355c6e4a28354c05b8555dbfb169ff79c82e8a68edbee5c",
+    "ch-6": "95a07ce5107c15188de7bbdcb39590dfbb9718021a43712ef552690a2d85b542"
+  },
+  "reviewer": "Codex",
+  "reviewed_at": "2026-10-25T10:30:30.444Z",
+  "authorization": "Owner authorized C1 and C3 in docs/app-qa-2026-10.md on 2026-10-25: remove both books from the current catalogue and site, without rewriting git history.",
+  "reason": "Retire the copyrighted legacy edition and its original English from the public site.",
+  "local_data_migration": "No automatic deletion of device data. At 375px, a previously downloaded chapter opened with the isolated test server stopped; Remove download deleted its book and chapter records while retaining progress and the saved vocabulary item.",
+  "samples": [
+    {
+      "scenario": "downloaded_read",
+      "width": 375,
+      "path": "docs/qa-evidence/2026-10-batch1/left-hand-downloaded-read.png",
+      "sha256": "84a420ae7e2c56dfb99cf59a4abc0f5f4e2d92a2650ae5de15c685c67bf048d5",
+      "notes": "Opened the existing downloaded title page with the test server stopped; no network chapter request was required."
+    },
+    {
+      "scenario": "remove_download",
+      "width": 375,
+      "path": "docs/qa-evidence/2026-10-batch1/left-hand-remove-download.png",
+      "sha256": "0feb12dd49bd4f675fd0f968d5d3a4e1e371f04c72f6a57569b2c18ceb4ccbce",
+      "notes": "Removed this downloaded book while offline and confirmed it disappeared from Library. Progress and saved vocabulary remained."
+    }
+  ]
+}

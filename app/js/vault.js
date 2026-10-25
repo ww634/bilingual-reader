@@ -1,3 +1,4 @@
+import { normalizePinyin, normalizedWords, englishAnswer, clozeRange } from "./learning-utils.js";
 // Memory Vault: save words from the reader and quiz them.
 //
 // Mastery is a rolling accuracy: each word keeps its last WINDOW (20) attempts,
@@ -140,7 +141,7 @@ export async function saveWord(chunk, chapter) {
     category: chunk.category || null,
     frequency_band: chunk.frequency_band || null,
     lang: chapter?.language || getLearningLanguage(),
-    context: pair ? { hanzi: pair.hanzi || pair.target || "", target: pair.target || "", english: pair.english || "" } : null,
+    context: pair ? { hanzi: pair.hanzi || pair.target || "", target: pair.target || "", english: pair.english || "", targetStart: chunk.targetStart ?? null, targetEnd: chunk.targetEnd ?? null, hanziStart: chunk.hanziStart ?? null } : null,
     createdAt: Date.now(),
     attempts: [],
   });
@@ -407,7 +408,7 @@ async function newQuiz(fields) {
   const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
   return {
     mode: "fixed", total: 0, answered: 0, correct: 0, queue: null, pool: null, lastId: null,
-    distractors: all, title: "", chapter: false, missed: [],
+    distractors: all, title: "", chapter: false, missed: [], counted: new Set(),
     answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix",
     script: lang === "zh" ? (s.reviewScript || "both") : "hanzi", lang, current: null,
     ...fields,
@@ -430,7 +431,7 @@ async function beginQuiz() {
   const fields = { lang, pool };
   if (length === "endless") fields.mode = "endless";
   else if (length === "all") { fields.queue = shuffle(pool.slice()).map((item) => ({ item })); fields.total = pool.length; }
-  else fields.total = parseInt(length, 10) || 20;
+  else { fields.total = Math.min(pool.length, parseInt(length, 10) || 20); fields.queue = shuffle(pool.slice()).slice(0, fields.total).map(item => ({ item })); }
   quiz = await newQuiz(fields);
   closeQuizSetup();
   showQuiz();
@@ -499,10 +500,10 @@ function optionHtml(item, dir, script) {
 // ── Fill-in-the-sentence (cloze) ──
 // Blank the word out of the sentence it was saved from. Returns the HTML lines
 // to show for the chosen script, or null if the word can't be found in them.
-function blankOut(sentence, word) {
-  if (!sentence || !word) return null;
-  const i = sentence.toLowerCase().indexOf(word.toLowerCase());
-  if (i < 0) return null;
+function blankOut(sentence, word, offset = null) {
+  const range = clozeRange(sentence, word, offset);
+  if (!range) return null;
+  const i = range.start;
   return `${escape(sentence.slice(0, i))}<span class="cloze-gap">${"＿".repeat(Math.min(Math.max([...word].length, 2), 4))}</span>${escape(sentence.slice(i + word.length))}`;
 }
 function clozeLines(item, script) {
@@ -511,11 +512,11 @@ function clozeLines(item, script) {
   const isZh = (item.lang || "zh") === "zh" && !!item.pinyin;
   const lines = [];
   if (!isZh) {
-    const l = blankOut(c.target || c.hanzi, item.hanzi);
+    const l = blankOut(c.target || c.hanzi, item.hanzi, c.targetStart);
     if (l) lines.push({ html: l, cls: "" });
   } else {
-    if (script !== "pinyin") { const l = blankOut(c.hanzi, item.hanzi); if (l) lines.push({ html: l, cls: "is-hanzi" }); }
-    if (script !== "hanzi") { const l = blankOut(c.target, item.pinyin); if (l) lines.push({ html: l, cls: "is-pinyin" }); }
+    if (script !== "pinyin") { const l = blankOut(c.hanzi, item.hanzi, c.hanziStart); if (l) lines.push({ html: l, cls: "is-hanzi" }); }
+    if (script !== "hanzi") { const l = blankOut(c.target, item.pinyin, c.targetStart); if (l) lines.push({ html: l, cls: "is-pinyin" }); }
   }
   return lines.length ? lines : null;
 }
@@ -614,7 +615,9 @@ function renderChoices(item, dir, area, script, fixedOptions) {
   const wrong = [];
   for (const w of pool) {
     const t = answerText(w, dir, script);
-    if (t && t !== correct && !wrong.some((x) => answerText(x, dir, script) === t)) wrong.push(w);
+    const normOption = value => String(value || "").trim().toLowerCase();
+    const same = x => normOption(x.english) === normOption(w.english) || normOption(x.hanzi || x.id) === normOption(w.hanzi || w.id);
+    if (t && normOption(t) !== normOption(correct) && !same(item) && !wrong.some(same)) wrong.push(w);
     if (wrong.length === 3) break;
   }
   const options = shuffle([{ it: item, ok: true }, ...wrong.map((w) => ({ it: w, ok: false }))]);
@@ -669,17 +672,15 @@ function similarity(a, b) {
   return prev[y.length] / Math.max(x.length, y.length);
 }
 
-function gradeType(input, item, dir) {
+export function gradeType(input, item, dir) {
   const given = norm(input);
   if (!given) return false;
   if (dir === "t2e") {
-    // Lenient: any listed sense counts (senses are semicolon-separated).
-    const senses = String(item.english || "").split(/[;,/]/).map(norm).filter(Boolean);
-    return senses.some((s) => s === given || s.includes(given) || given.includes(s));
+    return englishAnswer(input, item.english);
   }
   const han = norm(item.hanzi);
-  const py = stripTones(norm(item.pinyin));
-  const g = stripTones(given);
+  const py = normalizePinyin(item.pinyin);
+  const g = normalizePinyin(input);
   if (isSentence(item)) {
     // Whole-sentence dictation: close enough counts (a slip or two is fine).
     const vsHan = similarity(given, han);
@@ -688,7 +689,7 @@ function gradeType(input, item, dir) {
   }
   // For languages like French the headword itself is Latin script, so also accept
   // it without accents (eg. "ecole" for "école").
-  return given === han || g === stripTones(han) || (py && (g === py || py.includes(g) || g.includes(py)));
+  return given === han || g === stripTones(han) || (py && g === py);
 }
 
 function renderType(item, dir, area, script) {
@@ -712,6 +713,8 @@ function renderType(item, dir, area, script) {
 }
 
 async function onAnswer(correct) {
+  if (!quiz?.current || quiz.current.answered) return;
+  quiz.current.answered = true;
   const { item, mode } = quiz.current;
   const area = $("review-answer-area");
   if (mode === "choice") {
@@ -731,12 +734,14 @@ async function onAnswer(correct) {
 
   // Count toward mastery: the vault copy of the word (chapter quizzes use their
   // own word objects, so look the saved one up).
-  const saved = quiz.chapter ? await getVaultItem(item.id) : item;
-  if (saved) {
+  const saved = await getVaultItem(item.id);
+  if (saved && !quiz.counted.has(item.id)) {
+    quiz.counted.add(item.id);
     recordAttempt(saved, correct);
     await putVaultItem(saved);
     _masteredDirty = true;
-  } else if (!correct && !quiz.missed.some((m) => m.id === item.id)) {
+  }
+  if (!correct && !quiz.missed.some((m) => m.id === item.id)) {
     quiz.missed.push(item);
   }
   bumpActivity({ answers: 1 }).catch(() => {});
@@ -770,7 +775,7 @@ function renderReveal(item, correct) {
 }
 
 function nextCard() {
-  if (!quiz) return;
+  if (!quiz || !quiz.current?.answered) return;
   if (quiz.mode !== "endless" && quiz.answered >= quiz.total) return endQuiz();
   renderCard();
 }

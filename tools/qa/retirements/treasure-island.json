@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "book_id": "treasure-island",
+  "catalog_sha256": "5b8152a8803796ce1d6388d45a1b35a7c28f2260cf25eab95f12e420bbb36274",
+  "renderer_sha256": "d591170c96df61877fc83a7789f96b8d3143fc0e1750723b1408f622e1f3b138",
+  "chapter_sha256": {
+    "ch-1": "9fd1e7dc514632b498c559af16b54d78f108b3f90ba674ecbd392a8e21eda8b6",
+    "ch-2": "a64beff7cf13bad042e4c194f79880b0f5ee57ab775ceccb7249edd97f618775"
+  },
+  "reviewer": "Codex",
+  "reviewed_at": "2026-10-25T10:30:30.443Z",
+  "authorization": "Owner authorized C1 and C3 in docs/app-qa-2026-10.md on 2026-10-25: remove both books from the current catalogue and site, without rewriting git history.",
+  "reason": "Retire the incomplete legacy edition with missing characters and alignment.",
+  "local_data_migration": "No automatic deletion of device data. At 375px, a previously downloaded chapter opened with the isolated test server stopped; Remove download deleted its book and chapter records while retaining progress and the saved vocabulary item.",
+  "samples": [
+    {
+      "scenario": "downloaded_read",
+      "width": 375,
+      "path": "docs/qa-evidence/2026-10-batch1/treasure-downloaded-read.png",
+      "sha256": "182bcd1729f8db5a42addb881164e366fc30c2e5c8ad3e29f72e177170cf718a",
+      "notes": "Opened the existing downloaded title page with the test server stopped; no network chapter request was required."
+    },
+    {
+      "scenario": "remove_download",
+      "width": 375,
+      "path": "docs/qa-evidence/2026-10-batch1/treasure-remove-download.png",
+      "sha256": "48ef4f4677c4c25a02c3128c1ba08f65fd1d41d124fa0bc10241dd272fb52623",
+      "notes": "Removed this downloaded book while offline and confirmed it disappeared from Library. Progress and saved vocabulary remained."
+    }
+  ]
+}

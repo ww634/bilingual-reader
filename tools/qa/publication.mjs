@@ -99,6 +99,26 @@ function context(ref,root=ROOT) {
   const renderer=sha(Buffer.concat(paths.flatMap(p=>[Buffer.from(p+'\0'),read(p)??Buffer.alloc(0)])));
   return {read,json,renderer};
 }
+export function validateRetirement(review, book, prior, ctx) {
+  fail(review?.schema === 1 && review.book_id === book.id, 'Missing book retirement review');
+  fail(review.catalog_sha256 === sha(JSON.stringify(book)), 'Stale retirement catalog');
+  fail(review.renderer_sha256 === ctx.renderer, 'Stale retirement renderer');
+  fail(typeof review.reviewer === 'string' && review.reviewer.length >= 3 && Number.isFinite(Date.parse(review.reviewed_at)), 'Retirement reviewer/date missing');
+  for (const key of ['authorization', 'reason', 'local_data_migration']) fail(typeof review[key] === 'string' && review[key].trim().length >= 30, `Retirement review missing ${key}`);
+  for (const entry of book.chapters) {
+    const p = `content/${entry.url}`;
+    fail(!ctx.read(p), `Retired chapter still published: ${p}`);
+    fail(review.chapter_sha256?.[entry.id] === sha(prior.read(p)), 'Stale retirement content');
+  }
+  for (const scenario of ['downloaded_read', 'remove_download']) {
+    const sample = review.samples?.find(s => s.scenario === scenario);
+    fail(sample && sample.width >= 240 && sample.width <= 480 && sample.notes?.length >= 20, `Retirement phone preview missing: ${scenario}`);
+    fail(/^docs\/qa-evidence\/[a-zA-Z0-9_./-]+\.png$/.test(sample.path || '') && !sample.path.includes('..'), 'Invalid retirement evidence path');
+    const image = ctx.read(sample.path);
+    fail(image?.length > 100 && image.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])) && sha(image) === sample.sha256, 'Stale retirement preview');
+  }
+}
+
 export async function checkRelease({base,head='HEAD',root=ROOT}) {
   const git=repoGit(root);
   fail(/^[0-9a-f]{40}$/.test(base??''),'--base must be the full last-live commit SHA');
@@ -106,7 +126,15 @@ export async function checkRelease({base,head='HEAD',root=ROOT}) {
   const args=['diff','--name-only',base];if(head!=='WORKTREE')args.push(head);args.push('--','content/books','content/library.json');
   const changed=new Set(git(...args).toString().split('\n').filter(p=>/^content\/books\/[^/]+\/ch-\d+\.json$/.test(p)));
   for(const book of catalog.books)for(const e of book.chapters){const before=old.books.find(b=>b.id===book.id)?.chapters.find(c=>c.id===e.id);if(!isDeepStrictEqual(before,e))changed.add(`content/${e.url}`);}
-  for(const book of old.books)for(const e of book.chapters)fail(catalog.books.find(b=>b.id===book.id)?.chapters.some(c=>c.id===e.id),`Chapter removal needs a separately reviewed migration: ${book.id}/${e.id}`);
+  const retired = new Set();
+  for (const book of old.books) {
+    const current = catalog.books.find(b => b.id === book.id);
+    if (!current) {
+      validateRetirement(ctx.json(`tools/qa/retirements/${book.id}.json`), book, prior, ctx);
+      retired.add(book.id);
+    } else for (const e of book.chapters) fail(current.chapters.some(c => c.id === e.id), `Chapter removal needs a separately reviewed migration: ${book.id}/${e.id}`);
+  }
+  for (const p of changed) if (retired.has(p.split('/')[2])) changed.delete(p);
   let desktop=false;
   for(const p of changed){
     const c=ctx.json(p);fail(p===`content/books/${c.book_id}/${c.id}.json`,'Chapter path/identity mismatch');const book=catalog.books.find(b=>b.id===c.book_id);fail(book,`Missing book ${c.book_id}`);

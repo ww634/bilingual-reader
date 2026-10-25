@@ -108,6 +108,8 @@ let _ctx = null;
 let _currentSource = null;
 const _bufferCache = new Map(); // key -> decoded AudioBuffer (session)
 
+export function decodedAudioCount() { return _bufferCache.size; }
+
 function ensureCtx() {
   try {
     if (!_ctx) {
@@ -178,7 +180,11 @@ const _inflight = new Map();   // key -> Promise<AudioBuffer|null>, so prefetch 
  */
 async function getBuffer(ctx, text, code, variant = "normal") {
   const key = cacheKey(text, code, variant);
-  if (_bufferCache.has(key)) return _bufferCache.get(key);
+  if (_bufferCache.has(key)) {
+    const buffer = _bufferCache.get(key);
+    _bufferCache.delete(key); _bufferCache.set(key, buffer);
+    return buffer;
+  }
   if (_inflight.has(key)) return _inflight.get(key);
   const job = (async () => {
     let bytes = await getCachedBytes(key);
@@ -191,6 +197,7 @@ async function getBuffer(ctx, text, code, variant = "normal") {
     // decodeAudioData detaches the ArrayBuffer, so decode a copy.
     const buffer = await ctx.decodeAudioData(bytes.slice(0));
     _bufferCache.set(key, buffer);
+    while (_bufferCache.size > 24) _bufferCache.delete(_bufferCache.keys().next().value);
     return buffer;
   })();
   _inflight.set(key, job);

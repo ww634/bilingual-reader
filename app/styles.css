@@ -626,6 +626,7 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   overflow-y: auto;
+  scrollbar-gutter: stable;
   padding: 18px 22px calc(var(--safe-bottom) + 60px);
 }
 .reader-page.title-page {
@@ -2232,3 +2233,6 @@ body[data-script="hanzi"] .reader-block.flow > p.target { text-indent: 2em; lett
 .fb-state { grid-column: 2; grid-row: 1 / 3; font-size: 12px; font-weight: 600; }
 .fb-state.sent { color: #5eead4; }
 .fb-state.waiting { color: var(--gold); }
+
+/* Buttons with display styles must still honour their hidden state. */
+#review-next[hidden], #book-remove-download[hidden], #book-remove-note[hidden] { display: none; }

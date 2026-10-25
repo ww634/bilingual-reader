@@ -3,13 +3,17 @@
 
 // Keep this version in sync with APP_VERSION in js/version.js — bump both on
 // each deploy so the version shown in Settings matches the cached shell.
-const SHELL_CACHE = "reader-shell-v51";
+const SHELL_CACHE = "reader-shell-v52";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./styles.css",
   "./manifest.webmanifest",
   "./js/version.js",
+  "./js/learning-utils.js",
+  "./vendor/hanzi-writer.min.js",
+  "./vendor/pinyin-pro.js",
+  "./icons/icon-180.png",
   "./js/languages.js",
   "./js/vault.js",
   "./js/main.js",
@@ -41,16 +45,11 @@ const HANZI_DATA_CACHE = "hanzi-data-v1";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(SHELL_CACHE).then((cache) =>
-      // Best-effort: don't fail install if one asset 404s during dev.
-      Promise.all(
-        SHELL_FILES.map((url) =>
-          cache.add(url).catch((err) => console.warn("SW cache miss:", url, err))
-        )
-      )
-    )
+    caches.open(SHELL_CACHE).then(async cache => {
+      await cache.addAll(SHELL_FILES.map(url => new Request(url, { cache: "reload" })));
+      await self.skipWaiting();
+    })
   );
-  self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
@@ -93,7 +92,7 @@ self.addEventListener("fetch", (event) => {
 
   // Cache-first for app shell.
   event.respondWith(
-    caches.match(req).then((cached) => {
+    caches.open(SHELL_CACHE).then(cache => cache.match(req)).then((cached) => {
       if (cached) return cached;
       return fetch(req).then((res) => {
         // Cache same-origin successful GETs into the shell cache.
@@ -102,7 +101,7 @@ self.addEventListener("fetch", (event) => {
           caches.open(SHELL_CACHE).then((cache) => cache.put(req, copy));
         }
         return res;
-      }).catch(() => cached);
+      }).catch(() => new Response("You’re offline. Reconnect to load this page.", { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } }));
     })
   );
 });
