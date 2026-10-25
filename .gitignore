@@ -30,6 +30,11 @@ books_for_processing/
 **/.env.local
 **/.env.*.local
 
+# Cloudflare local secrets and emulator state.
+**/.dev.vars
+**/.dev.vars.*
+**/.wrangler/
+
 # Ephemeral QA release build output (never commit).
 _site/
 .qa-checked.json

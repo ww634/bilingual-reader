@@ -25,6 +25,14 @@ jobs:
         working-directory: tools/translate
       - name: Test publication guardrails
         run: node --test tests/*.cjs tools/qa/publication.test.mjs tools/translate/sentences.test.js tools/translate/finalize-chapter.test.js
+      - name: Check feedback relay without deploying
+        working-directory: services/feedback-relay
+        env:
+          WRANGLER_SEND_METRICS: 'false'
+        run: |
+          npm ci --ignore-scripts
+          npm run test:runtime
+          npm run check
       - name: Check every change since the last live release
         env:
           RELEASE_NONCE: ${{ github.run_id }}-${{ github.run_attempt }}

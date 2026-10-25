@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "reader-feedback-relay",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-10-25",
+  "workers_dev": true,
+  "vars": {
+    "APP_ORIGIN": "https://ww634.github.io",
+    "TURNSTILE_HOSTNAME": "ww634.github.io",
+    "GITHUB_REPO": "ww634/reader-feedback",
+    "ENABLED": "false"
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "REPORTS", "class_name": "FeedbackLedger" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["FeedbackLedger"] }],
+  "observability": { "enabled": false }
+}
