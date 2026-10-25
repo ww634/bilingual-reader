@@ -27,10 +27,12 @@ function setup() {
     getAllChapterMetadata: async () => [...chapters].map(([key,c]) => ({key,bookId:key.split('/')[0],chapterId:key.split('/')[1],version:c.catalogVersion??c.version??1,pairs:c.pairs?.length||0})),
     deleteChapter: async (b,c) => chapters.delete(`${b}/${c}`),
     chapterKey: (b,c) => `${b}/${c}`,
+    getProgress: async (b,c) => progress.get(`${b}/${c}`),
     getAllProgress: async () => { progressReads++; return [...progress].map(([key,value]) => ({key,value})); },
     getChapter: async (b, c) => { chapterReads++; return chapters.get(`${b}/${c}`); },
     putBook: async b => books.set(b.id, structuredClone(b)),
     putChapter: async (b, c, data) => chapters.set(`${b}/${c}`, structuredClone(data)),
+    putProgressRecord: async (key,value) => progress.set(key,structuredClone(value)),
     fetch: async url => {
       requests.push(url);
       if (context.fail && url.endsWith('ch-2.json')) throw Error('offline');
@@ -110,3 +112,8 @@ test('missing or empty chapters resume and legacy files are stamped with catalog
   await s.downloadBook({...s.catalog,version:2,chapters:[s.catalog.chapters[0]]},s.element());
   assert.equal(s.chapters.has('book/ch-2'),false);assert.equal(s.progress.get('book/ch-2').lastPage,3);
  });
+
+test('sentence-unit updates map the saved pair without changing its read time',async()=>{
+ const s=setup();const catalog={...s.catalog,chapters:[s.catalog.chapters[0]]};s.chapters.set('book/ch-1',{version:2,pairs:[{},{}]});s.progress.set('book/ch-1',{lastPage:2,pair:1,updatedAt:'2026-10-01T00:00:00Z'});
+ s.context.fetch=async()=>({ok:true,json:async()=>({version:3,pairs:[{},{},{},{}],meta:{sentence_unit_repair:{from_version:2,pair_index_map:[0,2]}}})});await s.downloadBook(catalog,s.element());assert.equal(s.progress.get('book/ch-1').pair,2);assert.equal(s.progress.get('book/ch-1').updatedAt,'2026-10-01T00:00:00Z');
+});

@@ -1,3 +1,4 @@
+import { vocabularyKey, vocabularyUnits } from "./learning-utils.js";
 // Learner levels and word difficulty.
 //
 // Six levels, named for the learner but anchored to HSK 2.0 for Chinese
@@ -119,7 +120,7 @@ export function bandForLevel(level) {
 
 // Categories that aren't vocabulary to know or test (names, grammar markers).
 export const NOT_VOCAB = new Set(["proper_noun", "particle", "grammar"]);
-const wordKey = (c) => (c.hanzi || c.target || "").trim();
+const wordKey = (c, lang) => vocabularyKey(c.hanzi || c.target, lang);
 
 /**
  * How much of a chapter the learner already knows, counting every word
@@ -135,9 +136,9 @@ export function chapterKnowledge(chapter, level, vaultBuckets = new Map()) {
   let total = 0, known = 0;
   const unknown = new Map();
   for (const pair of chapter?.pairs || []) {
-    for (const c of pair.alignment || []) {
+    for (const c of (pair.alignment || []).flatMap(vocabularyUnits)) {
       if (c.category === "proper_noun") continue;
-      const key = wordKey(c);
+      const key = wordKey(c, lang);
       if (!key || !/[\p{L}]/u.test(key)) continue;
       total++;
       const bucket = vaultBuckets.get(key);
@@ -155,3 +156,5 @@ export function clampLevel(n) {
   const v = parseInt(n, 10);
   return Number.isFinite(v) ? Math.min(6, Math.max(1, v)) : DEFAULT_LEVEL;
 }
+
+export const learnerLevel = (settings, language = settings?.learningLanguage || "zh") => clampLevel(typeof settings?.myLevel === "object" ? settings.myLevel[language] : settings?.myLevel);

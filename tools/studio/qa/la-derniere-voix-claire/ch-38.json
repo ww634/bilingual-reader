@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "book_id": "la-derniere-voix-claire",
+  "chapter_id": "ch-38",
+  "chapter_sha256": "cd34e0fab4c940bb6eb9474d3bb3550e8bd45f01597144100f24819275c98643",
+  "catalog_sha256": "5c2f19d590308a105e93f9e8efcc65a006907cdb6c158242129e66b249f11238",
+  "renderer_sha256": "50701975478bb3d539c6bc015e30120dde179926875adeb4802f40584cf4a024",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-10-25T15:45:25.871Z",
+  "review": {
+    "editorial": "Structural repair only: French wording, English prose, and flattened alignment/lookup objects match the prior edition by content hash. Restored author paragraph boundaries and separated existing sentence units; no literary rewrite or fresh technical research claimed.",
+    "continuity_or_facts": "Original sentence order and neighbouring chapter endings/openings are retained. Beginning/middle/end reader samples checked sequentially; original context, register, evidence wording and chronology are unchanged. Saved sentence selection retains its complete source and English.",
+    "english_alignment": "Inspected phone previews and word selection; English guides, colour categories and punctuation remain readable. 0 of 108 letter-bearing visual lines lack English (0.00%). No unexplained stretch without English found. Listen and dictation read the repaired sentence pairs; no paid speech was generated."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-38-start.png",
+      "sha256": "0fa77e436ed2f82ff52c1bc3cd6c238ce51d2f0e74cd67a9f9aa44cc6779eb17",
+      "notes": "Opening source and English guides visible; paragraph separation and independently coloured vocabulary remain readable."
+    },
+    {
+      "section": "middle",
+      "pair": 30,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-38-middle.png",
+      "sha256": "4ab1c6338301f246c6d0e0d8de6e3f5fa710cf98846a58b9ecead5fd36d67d49",
+      "notes": "Middle passage checked for English continuity, wrapping, speech marks and readable translation; source wording retained."
+    },
+    {
+      "section": "end",
+      "pair": 58,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-38-end.png",
+      "sha256": "871200a9b24977bec9ed7b8ad9c17ab28d7821f8f440913d117b97548e9c9c07",
+      "notes": "Closing passage and English remain readable; touch selection saved the complete sentence with its original translation."
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "id": "ch-30",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "Une place à l'établi",
     "english": "A Place at the Bench"
@@ -210,7 +210,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait demandé par message s'il pouvait regarder la chaise.",
@@ -702,7 +703,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Le mien a pas envie de prendre le risque. »",
@@ -816,7 +818,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a retourné la chaise sur une couverture.",
@@ -912,7 +915,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a fait bouger le pied, lentement, en regardant l'assemblage plutôt que l'extrémité.",
@@ -1101,8 +1105,8 @@
       ]
     },
     {
-      "target": "« La vis a élargi le trou. En serrant encore, vous serrez du vide. »",
-      "english": "“The screw has widened the hole. If you tighten it again, you're tightening empty space.”",
+      "target": "« La vis a élargi le trou.",
+      "english": "“The screw has widened the hole.",
       "alignment": [
         {
           "english": "The screw",
@@ -1166,7 +1170,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "En serrant encore, vous serrez du vide. »",
+      "english": "If you tighten it again, you're tightening empty space.”",
+      "alignment": [
         {
           "english": "If you tighten it again",
           "target": "En serrant encore",
@@ -1362,7 +1373,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait envie de lui expliquer qu'il savait comment une vis fonctionnait.",
@@ -1794,7 +1806,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a expliqué ce qu'il faisait sans lever les yeux.",
@@ -2337,7 +2350,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur l'emballage, elle comptait six personnes.",
@@ -2436,8 +2450,8 @@
       ]
     },
     {
-      "target": "Ben a pris une deuxième part. Le fabricant ne connaissait pas sa clientèle.",
-      "english": "Ben took a second slice. The manufacturer did not know its customers.",
+      "target": "Ben a pris une deuxième part.",
+      "english": "Ben took a second slice.",
       "alignment": [
         {
           "english": "Ben",
@@ -2510,7 +2524,13 @@
               "end": 17
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Le fabricant ne connaissait pas sa clientèle.",
+      "english": "The manufacturer did not know its customers.",
+      "alignment": [
         {
           "english": "The manufacturer",
           "target": "Le fabricant",
@@ -2604,8 +2624,8 @@
       ]
     },
     {
-      "target": "« J'ai parlé à ma mère. Elle est rentrée cet après-midi. »",
-      "english": "“I've spoken to my mother. She went home this afternoon.”",
+      "target": "« J'ai parlé à ma mère.",
+      "english": "“I've spoken to my mother.",
       "alignment": [
         {
           "english": "I've spoken to my mother",
@@ -2660,7 +2680,14 @@
               "end": 20
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle est rentrée cet après-midi. »",
+      "english": "She went home this afternoon.”",
+      "alignment": [
         {
           "english": "She went home",
           "target": "Elle est rentrée",
@@ -2775,11 +2802,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle a relu sa déclaration avec Malik. Elle l'a signée. Elle m'a dit que ça lui ressemblait. »",
-      "english": "“She's read through her statement with Malik. She's signed it. She told me it sounded like her.”",
+      "target": "« Elle a relu sa déclaration avec Malik.",
+      "english": "“She's read through her statement with Malik.",
       "alignment": [
         {
           "english": "She's read through",
@@ -2861,7 +2889,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle l'a signée.",
+      "english": "She's signed it.",
+      "alignment": [
         {
           "english": "She's signed it",
           "target": "Elle l'a signée",
@@ -2906,7 +2941,13 @@
               "end": 15
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Elle m'a dit que ça lui ressemblait. »",
+      "english": "She told me it sounded like her.”",
+      "alignment": [
         {
           "english": "She told me",
           "target": "Elle m'a dit",
@@ -2991,8 +3032,8 @@
       ]
     },
     {
-      "target": "« Elle a vu Malik et les policiers. Elle sait qui appeler. Je voulais qu'elle reste chez Elsie. »",
-      "english": "“She's seen Malik and the police. She knows who to call. I wanted her to stay at Elsie's.”",
+      "target": "« Elle a vu Malik et les policiers.",
+      "english": "“She's seen Malik and the police.",
       "alignment": [
         {
           "english": "She's seen Malik",
@@ -3065,7 +3106,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle sait qui appeler.",
+      "english": "She knows who to call.",
+      "alignment": [
         {
           "english": "She knows",
           "target": "Elle sait",
@@ -3119,7 +3167,13 @@
               "end": 11
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je voulais qu'elle reste chez Elsie. »",
+      "english": "I wanted her to stay at Elsie's.”",
+      "alignment": [
         {
           "english": "I wanted",
           "target": "Je voulais",
@@ -3234,11 +3288,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle voulait ses affaires. Ses plantes. Elle a dit qu'elle avait assez laissé les autres s'en occuper. »",
-      "english": "“She wanted her things. Her plants. She said she'd left enough other people to deal with them.”",
+      "target": "« Elle voulait ses affaires.",
+      "english": "“She wanted her things.",
       "alignment": [
         {
           "english": "She wanted",
@@ -3293,7 +3348,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ses plantes.",
+      "english": "Her plants.",
+      "alignment": [
         {
           "english": "Her plants",
           "target": "Ses plantes",
@@ -3320,7 +3382,13 @@
               "end": 11
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Elle a dit qu'elle avait assez laissé les autres s'en occuper. »",
+      "english": "She said she'd left enough other people to deal with them.”",
+      "alignment": [
         {
           "english": "She said",
           "target": "Elle a dit",
@@ -3597,11 +3665,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« J'aurais voulu qu'elle ait eu peur tout le temps. Que ça explique tout. »",
-      "english": "“I'd have liked her to have been afraid all the time. For that to explain everything.”",
+      "target": "« J'aurais voulu qu'elle ait eu peur tout le temps.",
+      "english": "“I'd have liked her to have been afraid all the time.",
       "alignment": [
         {
           "english": "I'd have liked",
@@ -3710,7 +3779,14 @@
               "end": 13
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Que ça explique tout. »",
+      "english": "For that to explain everything.”",
+      "alignment": [
         {
           "english": "For that to explain everything",
           "target": "Que ça explique tout",
@@ -3798,11 +3874,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Vous avez fait pareil. Avec votre ami. »",
-      "english": "“You did the same. With your friend.”",
+      "target": "« Vous avez fait pareil.",
+      "english": "“You did the same.",
       "alignment": [
         {
           "english": "You did the same",
@@ -3839,7 +3916,14 @@
               "end": 21
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Avec votre ami. »",
+      "english": "With your friend.”",
+      "alignment": [
         {
           "english": "With your friend",
           "target": "Avec votre ami",
@@ -3879,8 +3963,8 @@
       ]
     },
     {
-      "target": "« Oui. Et avec mon travail. Je préférais une erreur que je pouvais réparer à une décision que j'avais prise. »",
-      "english": "“Yes. And with my work. I preferred a mistake I could repair to a decision I'd made.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -3899,7 +3983,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Et avec mon travail.",
+      "english": "And with my work.",
+      "alignment": [
         {
           "english": "And with my work",
           "target": "Et avec mon travail",
@@ -3944,7 +4035,13 @@
               "end": 19
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je préférais une erreur que je pouvais réparer à une décision que j'avais prise. »",
+      "english": "I preferred a mistake I could repair to a decision I'd made.”",
+      "alignment": [
         {
           "english": "I preferred",
           "target": "Je préférais",
@@ -4203,7 +4300,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Non. »",
@@ -4227,7 +4325,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a tourné l'assiette pour rassembler les miettes.",
@@ -4341,7 +4440,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Puis il a demandé où Daniel gardait le sel.",
@@ -4551,7 +4651,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "C'était Ruth.",
@@ -4839,8 +4940,8 @@
       ]
     },
     {
-      "target": "« Bonsoir, Daniel. Il vous laisse de quoi manger ? »",
-      "english": "“Good evening, Daniel. Is he leaving you anything to eat?”",
+      "target": "« Bonsoir, Daniel.",
+      "english": "“Good evening, Daniel.",
       "alignment": [
         {
           "english": "Good evening",
@@ -4877,7 +4978,14 @@
               "end": 6
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il vous laisse de quoi manger ? »",
+      "english": "Is he leaving you anything to eat?”",
+      "alignment": [
         {
           "english": "Is he leaving you",
           "target": "Il vous laisse",
@@ -5010,7 +5118,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il faut la mettre de côté avant. »",
@@ -5097,11 +5206,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je suis là », a dit Ben. « Je vous entends. »",
-      "english": "“I'm here,” Ben said. “I can hear you.”",
+      "target": "« Je suis là », a dit Ben.",
+      "english": "“I'm here,” Ben said.",
       "alignment": [
         {
           "english": "I'm here",
@@ -5165,7 +5275,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Je vous entends. »",
+      "english": "“I can hear you.”",
+      "alignment": [
         {
           "english": "I can hear you",
           "target": "Je vous entends",
@@ -5298,7 +5415,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Treize heures, après le chantier de Ben.",
@@ -5475,8 +5593,8 @@
       ]
     },
     {
-      "target": "« Ils mettent la salade sous les pommes de terre », a dit Ben. « Elle cuit en attendant. »",
-      "english": "“They put the salad under the potatoes,” Ben said. “It cooks while it waits.”",
+      "target": "« Ils mettent la salade sous les pommes de terre », a dit Ben.",
+      "english": "“They put the salad under the potatoes,” Ben said.",
       "alignment": [
         {
           "english": "They put",
@@ -5594,7 +5712,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Elle cuit en attendant. »",
+      "english": "“It cooks while it waits.”",
+      "alignment": [
         {
           "english": "It cooks",
           "target": "Elle cuit",
@@ -5700,7 +5825,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a accepté, à condition qu'elle réserve près de la fenêtre.",
@@ -5832,7 +5958,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils ont parlé d'un robinet qu'il viendrait regarder.",
@@ -6351,11 +6478,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle vous aime bien. Ça lui passera peut-être avant moi. »",
-      "english": "“She likes you. Perhaps she will get over it before I do.”",
+      "target": "« Elle vous aime bien.",
+      "english": "“She likes you.",
       "alignment": [
         {
           "english": "She likes you",
@@ -6401,7 +6529,14 @@
               "end": 19
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ça lui passera peut-être avant moi. »",
+      "english": "Perhaps she will get over it before I do.”",
+      "alignment": [
         {
           "english": "Perhaps she will get over it",
           "target": "Ça lui passera peut-être",
@@ -6543,7 +6678,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a demandé à Ben s'il voulait l'aider à reprendre la chronologie qu'il pouvait lui montrer.",
@@ -6789,7 +6925,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben désignait le bout de l'établi.",
@@ -6885,7 +7022,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Si ça vous convient. »",
@@ -6936,11 +7074,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Oui. Mais on mange pas sur les preuves. »",
-      "english": "“Yes. But we don't eat on the evidence.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -6959,7 +7098,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Mais on mange pas sur les preuves. »",
+      "english": "But we don't eat on the evidence.”",
+      "alignment": [
         {
           "english": "But we don't eat",
           "target": "Mais on mange pas",
@@ -7209,7 +7355,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils ont déplacé la boîte.",
@@ -7478,6 +7625,76 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        24,
+        25,
+        28,
+        31,
+        32,
+        35,
+        36,
+        38,
+        39,
+        41,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        55,
+        56,
+        57,
+        59,
+        60,
+        61,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        79,
+        80,
+        81,
+        82
+      ]
+    }
   }
 }

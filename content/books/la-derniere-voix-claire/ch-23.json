@@ -2,7 +2,7 @@
   "id": "ch-23",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "Ce qu'il venait demander",
     "english": "What He Had Come to Ask"
@@ -93,11 +93,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je peux passer ? C'est pour demain. »",
-      "english": "“Can I come round? It's about tomorrow.”",
+      "target": "« Je peux passer ?",
+      "english": "“Can I come round?",
       "alignment": [
         {
           "english": "Can I come round",
@@ -134,7 +135,13 @@
               "end": 14
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "C'est pour demain. »",
+      "english": "It's about tomorrow.”",
+      "alignment": [
         {
           "english": "It's about tomorrow",
           "target": "C'est pour demain",
@@ -585,7 +592,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel avait numérisé la photographie de Claire et glissé l'original dans son enveloppe.",
@@ -1095,7 +1103,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a gardé son manteau et refusé le thé.",
@@ -1416,8 +1425,8 @@
       ]
     },
     {
-      "target": "« Ma mère accepte de vous voir », a dit Ben. « Chez Elsie. Demain matin. »",
-      "english": "“My mother is willing to see you,” Ben said. “At Elsie's. Tomorrow morning.”",
+      "target": "« Ma mère accepte de vous voir », a dit Ben.",
+      "english": "“My mother is willing to see you,” Ben said.",
       "alignment": [
         {
           "english": "My mother",
@@ -1517,7 +1526,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Chez Elsie.",
+      "english": "“At Elsie's.",
+      "alignment": [
         {
           "english": "At Elsie's",
           "target": "Chez Elsie",
@@ -1544,7 +1560,13 @@
               "end": 10
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Demain matin. »",
+      "english": "Tomorrow morning.”",
+      "alignment": [
         {
           "english": "Tomorrow morning",
           "target": "Demain matin",
@@ -1632,11 +1654,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Avec son avocate », a ajouté Ben. « Elle lui a déjà parlé. Elle veut que vous répondiez sur la cassette. »",
-      "english": "“With her solicitor,” Ben added. “She's already spoken to her. She wants you to answer about the cassette.”",
+      "target": "« Avec son avocate », a ajouté Ben.",
+      "english": "“With her solicitor,” Ben added.",
       "alignment": [
         {
           "english": "With her solicitor",
@@ -1700,7 +1723,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Elle lui a déjà parlé.",
+      "english": "“She's already spoken to her.",
+      "alignment": [
         {
           "english": "She's already spoken to her",
           "target": "Elle lui a déjà parlé",
@@ -1754,7 +1784,13 @@
               "end": 21
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Elle veut que vous répondiez sur la cassette. »",
+      "english": "She wants you to answer about the cassette.”",
+      "alignment": [
         {
           "english": "She wants",
           "target": "Elle veut",
@@ -1896,11 +1932,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je viens aussi. C'est elle qui l'a demandé. »",
-      "english": "“I'm coming too. She asked me to.”",
+      "target": "« Je viens aussi.",
+      "english": "“I'm coming too.",
       "alignment": [
         {
           "english": "I'm coming too",
@@ -1937,7 +1974,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "C'est elle qui l'a demandé. »",
+      "english": "She asked me to.”",
+      "alignment": [
         {
           "english": "She asked me to",
           "target": "C'est elle qui l'a demandé",
@@ -2097,7 +2141,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Son pouce en suivait le bord fendu.",
@@ -2196,8 +2241,8 @@
       ]
     },
     {
-      "target": "« Je veux pas que vous finissiez ses phrases. Même si vous pensez l'aider. »",
-      "english": "“I don't want you finishing her sentences. Even if you think you're helping her.”",
+      "target": "« Je veux pas que vous finissiez ses phrases.",
+      "english": "“I don't want you finishing her sentences.",
       "alignment": [
         {
           "english": "I don't want",
@@ -2297,7 +2342,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Même si vous pensez l'aider. »",
+      "english": "Even if you think you're helping her.”",
+      "alignment": [
         {
           "english": "Even if",
           "target": "Même si",
@@ -2385,7 +2437,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Et je vous demande pas de lui expliquer pourquoi je suis en colère. »",
@@ -2535,7 +2588,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel avait préparé une réponse à une autre question, celle de savoir s'il avait mérité de revenir.",
@@ -2748,7 +2802,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben ne la posait pas.",
@@ -2895,7 +2950,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'avocate s'appelait Aisha Malik.",
@@ -2973,7 +3029,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a téléphoné un peu plus tard, comme convenu avec Ruth.",
@@ -3522,8 +3579,8 @@
       ]
     },
     {
-      "target": "« Je prendrai des notes », a dit Malik. « Pas d'enregistrement sans en discuter avec tout le monde. »",
-      "english": "“I'll take notes,” Malik said. “No recording without discussing it with everyone.”",
+      "target": "« Je prendrai des notes », a dit Malik.",
+      "english": "“I'll take notes,” Malik said.",
       "alignment": [
         {
           "english": "I'll take notes",
@@ -3596,7 +3653,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Pas d'enregistrement sans en discuter avec tout le monde. »",
+      "english": "“No recording without discussing it with everyone.”",
+      "alignment": [
         {
           "english": "No recording",
           "target": "Pas d'enregistrement",
@@ -3810,7 +3874,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a demandé quels documents apporter, et noté l'heure : dix heures et demie.",
@@ -4056,11 +4121,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je vous prends à neuf heures quarante. J'ai un chantier en fin de journée. On peut pas y passer la nuit. »",
-      "english": "“I'll pick you up at twenty to ten. I've got a job late in the day. We can't spend the night there.”",
+      "target": "« Je vous prends à neuf heures quarante.",
+      "english": "“I'll pick you up at twenty to ten.",
       "alignment": [
         {
           "english": "I'll pick you up",
@@ -4142,7 +4208,14 @@
               "end": 22
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "J'ai un chantier en fin de journée.",
+      "english": "I've got a job late in the day.",
+      "alignment": [
         {
           "english": "I've got a job",
           "target": "J'ai un chantier",
@@ -4232,7 +4305,13 @@
               "end": 17
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "On peut pas y passer la nuit. »",
+      "english": "We can't spend the night there.”",
+      "alignment": [
         {
           "english": "We can't",
           "target": "On peut pas",
@@ -4374,11 +4453,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je sais. On va au même endroit. »",
-      "english": "“I know. We're going to the same place.”",
+      "target": "« Je sais.",
+      "english": "“I know.",
       "alignment": [
         {
           "english": "I know",
@@ -4406,7 +4486,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "On va au même endroit. »",
+      "english": "We're going to the same place.”",
+      "alignment": [
         {
           "english": "We're going to the same place",
           "target": "On va au même endroit",
@@ -4548,7 +4635,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a vérifié l'heure de son chantier avant de partir.",
@@ -4926,7 +5014,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle lui avait demandé de venir tôt ; les costumes revenaient déjà, avec de nouveaux trous.",
@@ -5685,7 +5774,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur le siège passager, une caisse de raccords occupait la place de Daniel.",
@@ -6204,7 +6294,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le téléphone de Ben recommandait de faire demi-tour dans un fossé.",
@@ -6567,8 +6658,8 @@
       ]
     },
     {
-      "target": "« Le panneau jaune », a dit Ben. « Vous pouvez regarder s'il indique Mereford ? »",
-      "english": "“The yellow sign,” Ben said. “Can you check whether it says Mereford?”",
+      "target": "« Le panneau jaune », a dit Ben.",
+      "english": "“The yellow sign,” Ben said.",
       "alignment": [
         {
           "english": "The yellow sign",
@@ -6632,7 +6723,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Vous pouvez regarder s'il indique Mereford ? »",
+      "english": "“Can you check whether it says Mereford?”",
+      "alignment": [
         {
           "english": "Can you check",
           "target": "Vous pouvez regarder",
@@ -6783,11 +6881,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« À gauche. Après le pont. »",
-      "english": "“Left. After the bridge.”",
+      "target": "« À gauche.",
+      "english": "“Left.",
       "alignment": [
         {
           "english": "Left",
@@ -6815,7 +6914,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Après le pont. »",
+      "english": "After the bridge.”",
+      "alignment": [
         {
           "english": "After the bridge",
           "target": "Après le pont",
@@ -6876,7 +6982,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils ont retrouvé la route sans autre conversation.",
@@ -6972,7 +7079,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "En voyant Daniel ouvrir son manteau, Ben a baissé le chauffage du côté passager.",
@@ -7368,7 +7476,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle avait laissé le portail ouvert.",
@@ -7881,8 +7990,8 @@
       ]
     },
     {
-      "target": "« Je vous croyais », a dit Ruth. « Même quand je n'entendais rien. »",
-      "english": "“I believed you,” Ruth said. “Even when I couldn't hear anything.”",
+      "target": "« Je vous croyais », a dit Ruth.",
+      "english": "“I believed you,” Ruth said.",
       "alignment": [
         {
           "english": "I believed you",
@@ -7946,7 +8055,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Même quand je n'entendais rien. »",
+      "english": "“Even when I couldn't hear anything.”",
+      "alignment": [
         {
           "english": "Even when",
           "target": "Même quand",
@@ -8027,6 +8143,76 @@
     "createdAt": "2026-10-15",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        15,
+        16,
+        19,
+        20,
+        22,
+        23,
+        24,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        38,
+        39,
+        40,
+        41,
+        44,
+        45,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        65,
+        66,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ]
+    }
   }
 }

@@ -5,7 +5,7 @@ import { initPopover, closePopover } from "./popover.js";
 import { initReaderOptions } from "./reader-options.js";
 import { initAssistant } from "./assistant.js";
 import { initSelection } from "./selection.js";
-import { initVault, openVault } from "./vault.js";
+import { initVault, openVault, finishActiveQuiz } from "./vault.js";
 import { loadLearningLanguage } from "./languages.js";
 import { initHome } from "./home.js";
 import { initListen } from "./listen.js";
@@ -61,6 +61,7 @@ function setView(name, { push = true } = {}) {
 }
 
 function goBack() {
+  if (currentView === "review" && finishActiveQuiz()) return;
   closePopover();
   if (currentView === "reader") {
     closeReader();

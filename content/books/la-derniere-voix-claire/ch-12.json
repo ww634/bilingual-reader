@@ -2,7 +2,7 @@
   "id": "ch-12",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 5,
+  "version": 6,
   "title": {
     "target": "Déjeuner à l'atelier",
     "english": "Lunch in the Workshop"
@@ -111,11 +111,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« J'arrive dans dix minutes. Vous avez mangé ? »",
-      "english": "“I will be there in ten minutes. Have you eaten?”",
+      "target": "« J'arrive dans dix minutes.",
+      "english": "“I will be there in ten minutes.",
       "alignment": [
         {
           "english": "“I will be there in ten minutes",
@@ -170,7 +171,13 @@
               "end": 27
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Vous avez mangé ? »",
+      "english": "Have you eaten?”",
+      "alignment": [
         {
           "english": "Have you eaten?”",
           "target": "Vous avez mangé ? »",
@@ -429,8 +436,8 @@
       ]
     },
     {
-      "target": "Elle avait surtout servi à empêcher une feuille de glisser. Un fruit avec des responsabilités administratives.",
-      "english": "It had mostly served to keep a sheet from slipping. A piece of fruit with administrative responsibilities.",
+      "target": "Elle avait surtout servi à empêcher une feuille de glisser.",
+      "english": "It had mostly served to keep a sheet from slipping.",
       "alignment": [
         {
           "english": "It had mostly served",
@@ -539,7 +546,13 @@
               "end": 33
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Un fruit avec des responsabilités administratives.",
+      "english": "A piece of fruit with administrative responsibilities.",
+      "alignment": [
         {
           "english": "A piece of fruit",
           "target": "Un fruit",
@@ -873,7 +886,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a regardé la boîte.",
@@ -1011,7 +1025,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je vous ai pas fait les courses. »",
@@ -1176,7 +1191,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je suis content pour vous. »",
@@ -1245,7 +1261,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a posé les sandwichs sur le coin libre de l'établi.",
@@ -1377,7 +1394,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un trombone s'est collé au papier.",
@@ -1656,7 +1674,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a sorti deux tasses et appelé depuis la cuisine :",
@@ -1803,7 +1822,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui », a répondu Ben.",
@@ -1854,7 +1874,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas demandé combien de sucre.",
@@ -1932,7 +1953,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a apporté le pot.",
@@ -2079,7 +2101,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La deuxième chaise était toujours contre le mur, avec un pied légèrement de travers.",
@@ -3045,7 +3068,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Pas d'enregistrement dans l'immédiat.",
@@ -3309,8 +3333,8 @@
       ]
     },
     {
-      "target": "« Vous êtes d'accord avec ça ? » a demandé Ben.",
-      "english": "“Are you all right with that?” Ben asked.",
+      "target": "« Vous êtes d'accord avec ça ?",
+      "english": "“Are you all right with that?”",
       "alignment": [
         {
           "english": "Are you all right",
@@ -3374,7 +3398,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -3471,7 +3502,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est pas ce que j'ai demandé. »",
@@ -3558,7 +3590,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a goûté le sandwich.",
@@ -3627,7 +3660,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'y avait pas de mayonnaise.",
@@ -3792,7 +3826,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a pris cette réponse sans lui demander de l'améliorer.",
@@ -3933,7 +3968,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un câble a accroché le pied de Ben quand il a déplacé le tabouret.",
@@ -4083,7 +4119,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il s'est immobilisé avant de tirer.",
@@ -4164,8 +4201,8 @@
       ]
     },
     {
-      "target": "« Qu'est-ce qui est branché là-dessus ? » a demandé Ben.",
-      "english": "“What is connected to this?” Ben asked.",
+      "target": "« Qu'est-ce qui est branché là-dessus ?",
+      "english": "“What is connected to this?”",
       "alignment": [
         {
           "english": "What is connected",
@@ -4220,7 +4257,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -4281,7 +4325,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "C'était celle de Graham », a répondu Daniel.",
@@ -4518,7 +4563,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je peux le faire passer derrière l'établi ? »",
@@ -4623,7 +4669,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a posé son sandwich.",
@@ -4692,7 +4739,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui. »",
@@ -4716,7 +4764,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a éteint la lampe et l'a débranchée.",
@@ -4821,7 +4870,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a dégagé le câble, puis l'a passé par l'arrière, avec assez de jeu pour déplacer la lampe.",
@@ -5265,8 +5315,8 @@
       ]
     },
     {
-      "target": "« Vous faites ça chez tous les gens ? » a demandé Daniel.",
-      "english": "“Do you do this in everyone's house?” Daniel asked.",
+      "target": "« Vous faites ça chez tous les gens ?",
+      "english": "“Do you do this in everyone's house?”",
       "alignment": [
         {
           "english": "Do you do",
@@ -5348,7 +5398,14 @@
               "end": 21
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -5526,7 +5583,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a rebranché la lampe et vérifié qu'elle fonctionnait.",
@@ -5649,7 +5707,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel est allé chercher deux assiettes.",
@@ -5727,7 +5786,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "En revenant, il a soulevé la porte intérieure pour passer.",
@@ -5934,11 +5994,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle mène à la cuisine. Elle est susceptible », a répondu Daniel.",
-      "english": "“It leads to the kitchen. It is touchy,” Daniel replied.",
+      "target": "« Elle mène à la cuisine.",
+      "english": "“It leads to the kitchen.",
       "alignment": [
         {
           "english": "It leads",
@@ -6002,7 +6063,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle est susceptible », a répondu Daniel.",
+      "english": "It is touchy,” Daniel replied.",
+      "alignment": [
         {
           "english": "It is touchy",
           "target": "Elle est susceptible",
@@ -6135,7 +6203,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je la connais depuis trente ans. »",
@@ -6213,7 +6282,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a regardé la cour par l'autre porte.",
@@ -6327,7 +6397,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un passage longeait la maison jusqu'à un portillon donnant sur la rue.",
@@ -6591,7 +6662,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a repris son sandwich.",
@@ -6651,7 +6723,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La porte a gardé son défaut.",
@@ -6888,7 +6961,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les entretiens seraient mis en ligne, avec l'accord des participants.",
@@ -7260,8 +7334,8 @@
       ]
     },
     {
-      "target": "« C'est encore une histoire de meurtre ? » a demandé Ben.",
-      "english": "“Is this another murder story?” Ben asked.",
+      "target": "« C'est encore une histoire de meurtre ?",
+      "english": "“Is this another murder story?”",
       "alignment": [
         {
           "english": "Is this another",
@@ -7343,7 +7417,14 @@
               "end": 23
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -7467,7 +7548,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je prends. »",
@@ -7500,7 +7582,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur l'écran, Daniel a ouvert le projet de montage.",
@@ -7623,7 +7706,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le fichier transféré restait intact dans son dossier.",
@@ -8424,7 +8508,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Après un bruit de tasse, la femme répondait « Non, surtout pas ».",
@@ -8712,7 +8797,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est la phrase qu'ils ont mise dans le résumé », a répondu Daniel.",
@@ -8871,7 +8957,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a désactivé les limites de lecture et lancé une portion plus longue.",
@@ -9030,7 +9117,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "On a entendu la même question.",
@@ -9099,7 +9187,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Puis une voix, plus loin du microphone, a demandé « Du sucre ? »",
@@ -9720,11 +9809,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« La question sur le sucre, vous l'aviez coupée ? » a demandé Ben.",
-      "english": "“The question about sugar, had you cut it out?” Ben asked.",
+      "target": "« La question sur le sucre, vous l'aviez coupée ?",
+      "english": "“The question about sugar, had you cut it out?”",
       "alignment": [
         {
           "english": "The question about sugar",
@@ -9815,7 +9905,14 @@
               "end": 19
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -9846,8 +9943,8 @@
       ]
     },
     {
-      "target": "« Non. Elle était déjà là.",
-      "english": "“No. It was already there.",
+      "target": "« Non.",
+      "english": "“No.",
       "alignment": [
         {
           "english": "No",
@@ -9866,7 +9963,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle était déjà là.",
+      "english": "It was already there.",
+      "alignment": [
         {
           "english": "It was already there",
           "target": "Elle était déjà là",
@@ -10368,7 +10472,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Le logiciel n'a pas tort », a dit Ben.",
@@ -10455,7 +10560,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Non. »",
@@ -10479,7 +10585,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils ont écouté la suite.",
@@ -10539,7 +10646,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Mabel racontait un contremaître qui se cachait pour fumer derrière un panneau interdisant de fumer.",
@@ -11184,8 +11292,8 @@
       ]
     },
     {
-      "target": "« Vous allez garder l'histoire du panneau ? » a demandé Ben.",
-      "english": "“Are you going to keep the story about the sign?” Ben asked.",
+      "target": "« Vous allez garder l'histoire du panneau ?",
+      "english": "“Are you going to keep the story about the sign?”",
       "alignment": [
         {
           "english": "Are you going to keep",
@@ -11267,7 +11375,14 @@
               "end": 21
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -11373,7 +11488,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Elle est meilleure que votre extrait. »",
@@ -11451,7 +11567,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ce n'était pas mon extrait. »",
@@ -11511,7 +11628,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous l'avez dit. »",
@@ -11553,7 +11671,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a levé les yeux.",
@@ -11613,7 +11732,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben souriait.",
@@ -11811,7 +11931,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Et si je veux entendre seulement l'histoire du panneau ? »",
@@ -11934,7 +12055,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a placé un repère avant le début de l'anecdote.",
@@ -12066,7 +12188,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a fait une première coupe juste après un rire.",
@@ -12441,7 +12564,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a déplacé la limite pour garder la respiration entière.",
@@ -12573,7 +12697,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a laissé un peu de silence de l'entretien après la phrase.",
@@ -12804,8 +12929,8 @@
       ]
     },
     {
-      "target": "« Vous pouvez enlever les hésitations ? » a demandé Ben.",
-      "english": "“Can you remove the hesitations?” Ben asked.",
+      "target": "« Vous pouvez enlever les hésitations ?",
+      "english": "“Can you remove the hesitations?”",
       "alignment": [
         {
           "english": "Can you",
@@ -12869,7 +12994,14 @@
               "end": 23
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -12900,8 +13032,8 @@
       ]
     },
     {
-      "target": "« Certaines. Mais je dois me demander pourquoi.",
-      "english": "“Some. But I have to ask myself why.",
+      "target": "« Certaines.",
+      "english": "“Some.",
       "alignment": [
         {
           "english": "Some",
@@ -12920,7 +13052,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Mais je dois me demander pourquoi.",
+      "english": "But I have to ask myself why.",
+      "alignment": [
         {
           "english": "But I have to ask myself",
           "target": "Mais je dois me demander",
@@ -13347,7 +13486,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a désigné une pointe.",
@@ -13494,7 +13634,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Une tasse très expressive », a répondu Ben.",
@@ -13572,7 +13713,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a relancé les deux secondes pour lui faire entendre la différence.",
@@ -13722,7 +13864,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils ont fini le thé pendant que Daniel notait les nouveaux repères.",
@@ -13872,7 +14015,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben devait passer sur son chantier dans l'après-midi.",
@@ -14280,8 +14424,8 @@
       ]
     },
     {
-      "target": "« Je vous écris. Comme tout à l'heure. »",
-      "english": "“I will text you. Like earlier.”",
+      "target": "« Je vous écris.",
+      "english": "“I will text you.",
       "alignment": [
         {
           "english": "I will text you",
@@ -14318,7 +14462,14 @@
               "end": 13
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Comme tout à l'heure. »",
+      "english": "Like earlier.”",
+      "alignment": [
         {
           "english": "Like earlier",
           "target": "Comme tout à l'heure",
@@ -14505,7 +14656,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le téléphone de Daniel a sonné pendant que Ben cherchait ses clés.",
@@ -14646,7 +14798,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "C'était Judith.",
@@ -15288,7 +15441,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Bien sûr », a répondu Daniel.",
@@ -15339,7 +15493,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Et Daniel… apporte la lampe. »",
@@ -15408,7 +15563,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a regardé le câble que Ben venait de déplacer.",
@@ -15531,11 +15687,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle est réparée ? » a demandé Judith.",
-      "english": "“Is it fixed?” Judith asked.",
+      "target": "« Elle est réparée ?",
+      "english": "“Is it fixed?”",
       "alignment": [
         {
           "english": "Is it fixed",
@@ -15563,7 +15720,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Judith.",
+      "english": "Judith asked.",
+      "alignment": [
         {
           "english": "Judith asked",
           "target": "a demandé Judith",
@@ -15642,11 +15806,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Alors apporte-la. Il me manque une lampe dans le salon. »",
-      "english": "“Then bring it. I need a lamp in the sitting room.”",
+      "target": "« Alors apporte-la.",
+      "english": "“Then bring it.",
       "alignment": [
         {
           "english": "Then bring it",
@@ -15674,7 +15839,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il me manque une lampe dans le salon. »",
+      "english": "I need a lamp in the sitting room.”",
+      "alignment": [
         {
           "english": "I need",
           "target": "Il me manque",
@@ -15852,7 +16024,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Demain, il irait chez Graham avec une lampe et des questions.",
@@ -16011,6 +16184,166 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 5,
+      "pair_index_map": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        104,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        139,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        165,
+        166,
+        168,
+        169
+      ]
+    }
   }
 }

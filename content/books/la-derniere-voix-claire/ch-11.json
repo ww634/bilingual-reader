@@ -2,7 +2,7 @@
   "id": "ch-11",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 5,
+  "version": 6,
   "title": {
     "target": "Une visite plus tôt",
     "english": "An Earlier Visit"
@@ -138,7 +138,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben était parti récupérer du matériel chez un fournisseur.",
@@ -621,8 +622,8 @@
       ]
     },
     {
-      "target": "Il n'avait plus d'excuse pratique. Les autres auraient demandé un peu de franchise.",
-      "english": "He no longer had a practical excuse. The others would have required a little honesty.",
+      "target": "Il n'avait plus d'excuse pratique.",
+      "english": "He no longer had a practical excuse.",
       "alignment": [
         {
           "english": "He no longer had",
@@ -704,7 +705,13 @@
               "end": 17
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Les autres auraient demandé un peu de franchise.",
+      "english": "The others would have required a little honesty.",
+      "alignment": [
         {
           "english": "The others",
           "target": "Les autres",
@@ -882,7 +889,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sa première question portait sur le travail de Daniel en 2001.",
@@ -1497,7 +1505,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Je n'ai pas reçu cet enregistrement.",
@@ -1755,8 +1764,8 @@
       ]
     },
     {
-      "target": "« Vous remettez en cause votre conclusion ? » a demandé Helen.",
-      "english": "“Are you questioning your conclusion?” Helen asked.",
+      "target": "« Vous remettez en cause votre conclusion ?",
+      "english": "“Are you questioning your conclusion?”",
       "alignment": [
         {
           "english": "Are you questioning",
@@ -1829,7 +1838,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Helen.",
+      "english": "Helen asked.",
+      "alignment": [
         {
           "english": "Helen asked",
           "target": "a demandé Helen",
@@ -1989,7 +2005,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je veux revoir sur quoi elle reposait. »",
@@ -2076,7 +2093,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ce n'est pas la même chose. »",
@@ -2145,7 +2163,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Non. »",
@@ -2169,7 +2188,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle lui a expliqué qu'elle n'avait pas défendu Michael au procès.",
@@ -2292,7 +2312,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle avait repris son dossier plus tard, après l'échec d'un appel.",
@@ -2952,7 +2973,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Mais une demande n'est pas un acquittement.",
@@ -3330,7 +3352,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Helen Ward a repris avant qu'il pose la question.",
@@ -3513,7 +3536,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Vous ne pouvez pas être seul à décider s'il était juste », a dit Helen.",
@@ -3876,7 +3900,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'avocate voulait en vérifier la provenance et la comparer aux pièces de l'époque.",
@@ -4485,11 +4510,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Les titres revenaient mieux que les dates. Ils avaient de plus grosses lettres.",
-      "english": "The headlines came back more readily than the dates. They had larger type.",
+      "target": "Les titres revenaient mieux que les dates.",
+      "english": "The headlines came back more readily than the dates.",
       "alignment": [
         {
           "english": "The headlines",
@@ -4580,7 +4606,13 @@
               "end": 19
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Ils avaient de plus grosses lettres.",
+      "english": "They had larger type.",
+      "alignment": [
         {
           "english": "They had",
           "target": "Ils avaient",
@@ -5256,7 +5288,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Au début, oui », a répondu Helen.",
@@ -5334,7 +5367,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ça n'a pas aidé », a répondu Daniel.",
@@ -5403,7 +5437,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le silence a changé dans le téléphone.",
@@ -5490,7 +5525,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a entendu le froissement d'une feuille.",
@@ -5781,7 +5817,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Je vais vous en lire un passage », a dit Helen.",
@@ -5964,7 +6001,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "J'avais honte de lui avoir demandé de l'argent après ce que je lui avais dit.",
@@ -6240,8 +6278,8 @@
       ]
     },
     {
-      "target": "Elle m'a demandé de partir. Je suis parti.",
-      "english": "She asked me to leave. I left.",
+      "target": "Elle m'a demandé de partir.",
+      "english": "She asked me to leave.",
       "alignment": [
         {
           "english": "She asked me",
@@ -6305,7 +6343,13 @@
               "end": 9
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je suis parti.",
+      "english": "I left.",
+      "alignment": [
         {
           "english": "I left",
           "target": "Je suis parti",
@@ -6648,7 +6692,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ce n'était pas la voix de Michael.",
@@ -7431,7 +7476,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La visite expliquait certaines traces de sa présence.",
@@ -8040,8 +8086,8 @@
       ]
     },
     {
-      "target": "« Il dit toujours qu'il n'est pas revenu le soir ? » a demandé Daniel.",
-      "english": "“He still says that he did not return that evening?” Daniel asked.",
+      "target": "« Il dit toujours qu'il n'est pas revenu le soir ?",
+      "english": "“He still says that he did not return that evening?”",
       "alignment": [
         {
           "english": "He still says",
@@ -8150,7 +8196,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -8181,8 +8234,8 @@
       ]
     },
     {
-      "target": "« Oui. Et nous devons éprouver son récit, pas simplement le préférer », a répondu Helen.",
-      "english": "“Yes. And we have to test his account, not simply prefer it,” Helen replied.",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -8201,7 +8254,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Et nous devons éprouver son récit, pas simplement le préférer », a répondu Helen.",
+      "english": "And we have to test his account, not simply prefer it,” Helen replied.",
+      "alignment": [
         {
           "english": "And we have to",
           "target": "Et nous devons",
@@ -8496,11 +8556,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Avait-il quelque chose avec lui lors de la première visite ? » a demandé Daniel.",
-      "english": "“Did he have anything with him on the first visit?” Daniel asked.",
+      "target": "« Avait-il quelque chose avec lui lors de la première visite ?",
+      "english": "“Did he have anything with him on the first visit?”",
       "alignment": [
         {
           "english": "Did he have",
@@ -8618,7 +8679,14 @@
               "end": 26
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -8715,7 +8783,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Son sac de travail, d'après son récit.",
@@ -8811,7 +8880,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un sac souple avec une sangle.",
@@ -9144,7 +9214,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il ne suffisait pas de remplacer un homme par un sac pour résoudre l'affaire.",
@@ -9540,7 +9611,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Helen Ward a précisé que la défense avait eu accès à une copie complète à l'époque.",
@@ -9816,8 +9888,8 @@
       ]
     },
     {
-      "target": "« Vous voulez mon ancien extrait ? » a demandé Daniel.",
-      "english": "“Do you want my old extract?” Daniel asked.",
+      "target": "« Vous voulez mon ancien extrait ?",
+      "english": "“Do you want my old extract?”",
       "alignment": [
         {
           "english": "Do you want",
@@ -9881,7 +9953,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -10023,7 +10102,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Et obtenir une copie appropriée de la source pour un nouvel examen », a répondu Helen.",
@@ -10305,11 +10385,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« J'ai mes notes. Je dois vérifier quelles versions j'ai conservées », a répondu Daniel.",
-      "english": "“I have my notes. I need to check which versions I kept,” Daniel replied.",
+      "target": "« J'ai mes notes.",
+      "english": "“I have my notes.",
       "alignment": [
         {
           "english": "I have my notes",
@@ -10355,7 +10436,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je dois vérifier quelles versions j'ai conservées », a répondu Daniel.",
+      "english": "I need to check which versions I kept,” Daniel replied.",
+      "alignment": [
         {
           "english": "I need to check",
           "target": "Je dois vérifier",
@@ -10485,8 +10573,8 @@
       ]
     },
     {
-      "target": "« Vérifiez. Gardez aussi ce qui ne correspond pas à votre souvenir », a répondu Helen.",
-      "english": "“Check. Also keep anything that does not match your recollection,” Helen replied.",
+      "target": "« Vérifiez.",
+      "english": "“Check.",
       "alignment": [
         {
           "english": "Check",
@@ -10505,7 +10593,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Gardez aussi ce qui ne correspond pas à votre souvenir », a répondu Helen.",
+      "english": "Also keep anything that does not match your recollection,” Helen replied.",
+      "alignment": [
         {
           "english": "Also keep",
           "target": "Gardez aussi",
@@ -10746,7 +10841,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il pouvait déjà imaginer le dossier bien rangé, les impasses effacées, chaque page indiquant poliment la suivante.",
@@ -11091,7 +11187,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un point devenu un point d'interrogation.",
@@ -11727,8 +11824,8 @@
       ]
     },
     {
-      "target": "« Quand vous aurez la copie, vous pourrez me dire ce qu'il a réellement dit ? » a demandé Helen.",
-      "english": "“When you have the copy, will you be able to tell me what he actually said?” Helen asked.",
+      "target": "« Quand vous aurez la copie, vous pourrez me dire ce qu'il a réellement dit ?",
+      "english": "“When you have the copy, will you be able to tell me what he actually said?”",
       "alignment": [
         {
           "english": "When you have",
@@ -11909,7 +12006,14 @@
               "end": 25
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Helen.",
+      "english": "Helen asked.",
+      "alignment": [
         {
           "english": "Helen asked",
           "target": "a demandé Helen",
@@ -12060,7 +12164,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a regardé la pomme sur la feuille.",
@@ -12225,7 +12330,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Je ne peux pas vous promettre une phrase », a dit Daniel.",
@@ -12435,7 +12541,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle n'avait l'air ni satisfaite ni déçue.",
@@ -12549,7 +12656,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'était pas là pour la rassurer.",
@@ -12822,7 +12930,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle organiserait les demandes de pièces et les conditions de leur examen.",
@@ -13524,7 +13633,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Elle vise les personnes qui reviennent sur leur travail. »",
@@ -13716,7 +13826,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je n'ai pas besoin qu'on me dise qu'on est désolé.",
@@ -13848,11 +13959,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Qu'est-ce que vous êtes prêt à mettre par écrit, maintenant ? » a lu Helen.",
-      "english": "What are you prepared to put in writing now?’” Helen read.",
+      "target": "Qu'est-ce que vous êtes prêt à mettre par écrit, maintenant ?",
+      "english": "What are you prepared to put in writing now?’”",
       "alignment": [
         {
           "english": "What are you prepared",
@@ -13961,7 +14073,13 @@
               "end": 10
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "» a lu Helen.",
+      "english": "Helen read.",
+      "alignment": [
         {
           "english": "Helen read",
           "target": "a lu Helen",
@@ -14094,7 +14212,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas demandé à l'avocate de répéter.",
@@ -14208,6 +14327,128 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 5,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        74,
+        76,
+        77,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        91,
+        92,
+        93,
+        94,
+        96,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        127,
+        128
+      ]
+    }
   }
 }

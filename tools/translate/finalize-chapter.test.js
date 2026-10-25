@@ -6,7 +6,7 @@ import path from 'node:path';
 import { finalizeDraft, finalizeChapter } from './finalize-chapter.js';
 import { romanizeWithMap } from './lib/romanize.js';
 
-const draft = () => ({title:{english:'A Test',hanzi:'试音'},pairs:[{english:'I understood.',hanzi:'我了解了。',alignment:[{english:'I',hanzi:'我',category:'function_word',is_idiom:false},{english:'understood',hanzi:'了解',category:'verb',is_idiom:false},{english:'understood',hanzi:'了',category:'particle',is_idiom:false}]}]});
+const draft = () => ({title:{english:'A Test',hanzi:'试音'},pairs:[{english:'I have understood.',hanzi:'我了解了。',alignment:[{english:'I',hanzi:'我',category:'function_word',is_idiom:false},{english:'understood',hanzi:'了解',category:'verb',is_idiom:false},{english:'have',hanzi:'了',category:'particle',is_idiom:false}]}]});
 
 test('repeated character uses its actual contextual occurrence; input stays untouched', () => {
  const d=draft(), before=structuredClone(d), r=finalizeDraft(d), map=romanizeWithMap(d.pairs[0].hanzi);

@@ -97,7 +97,8 @@ export async function importBackup(file) {
 
   if (![1, 2].includes(data.format)) throw new Error("This backup format is not supported by this app version.");
   let added = 0, updated = 0, kept = 0;
-  for (const item of data.vault) {
+  for (const raw of data.vault) {
+    const item = raw?.lang === "fr" && raw.kind !== "sentence" ? { ...raw, id: String(raw.hanzi || raw.id || "").trim().toLocaleLowerCase("fr") } : raw;
     if (!item || !item.id) continue;
     const local = await getVaultItem(item.id);
     if (!local) { await putVaultItem(item); added++; }

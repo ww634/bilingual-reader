@@ -27,6 +27,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { readLibrary, upsertBook, writeLibrary } from "./lib/library.js";
+import { frenchSentenceUnits } from "./lib/french-sentences.js";
 import { renderCover } from "./lib/cover.js";
 import { frenchLookups } from "./lib/french-vocabulary.js";
 
@@ -96,10 +97,63 @@ function parsePair(line, where) {
   return { target, english, alignment: chunks };
 }
 
+// Restore only source paragraph boundaries; preserve all reviewed language data.
+async function repairParagraphs(srcDir, book) {
+  const bookDir = path.dirname(srcDir), names = (await fs.readdir(srcDir)).filter(n => /^ch-\d+\.txt$/.test(n));
+  const changes = [];
+  for (const name of names) {
+    const id = name.replace(/\.txt$/, ''), file = path.join(bookDir, id + '.json');
+    const bytes = await fs.readFile(file, 'utf8'), chapter = JSON.parse(bytes), sourcePairs = [];
+    let paragraph = true;
+    for (const [i, raw] of (await fs.readFile(path.join(srcDir, name), 'utf8')).split(/\r?\n/).entries()) {
+      const line = raw.trim();
+      if (!line) { paragraph = true; continue; }
+      if (line.startsWith('#') || line.startsWith('//')) continue;
+      const pair = parsePair(line, `${name}:${i+1}`);
+      if (pair) { sourcePairs.push({ ...pair, paragraph_start: paragraph }); paragraph = false; }
+    }
+    const encoded = frenchSentenceUnits(chapter.pairs), source = frenchSentenceUnits(sourcePairs).pairs;
+    if (source.length !== encoded.pairs.length || source.some((p,i) => p.target !== encoded.pairs[i].target || p.english !== encoded.pairs[i].english)) throw Error(`${id}: source prose/gloss differs; paragraph-only repair refused`);
+    const split = encoded.pairs.length !== chapter.pairs.length;
+    if (!split && !source.some((p,i) => !!p.paragraph_start !== !!chapter.pairs[i].paragraph_start)) continue;
+    if (split) chapter.meta.sentence_unit_repair = { from_version: chapter.version, pair_index_map: encoded.pairMap };
+    chapter.pairs = encoded.pairs;
+    chapter.pairs.forEach((p,i) => { if (source[i].paragraph_start) p.paragraph_start = true; else delete p.paragraph_start; });
+    changes.push({ id, file, bytes, chapter });
+  }
+  if (problems.length) throw Error('Source validation failed; no chapters were changed');
+  if (!changes.length) { console.log(`${book.id}: paragraph markers already match source`); return; }
+  const lockPath = path.join(path.dirname(CONTENT_DIR), 'content/.author-finalize.lock');
+  const lock = await fs.open(lockPath, 'wx');
+  try {
+    await lock.writeFile(JSON.stringify({ pid: process.pid, operation: 'paragraph-repair', bookId: book.id }));
+    const library = await readLibrary(LIBRARY_PATH), entry = library.books.find(b => b.id === book.id);
+    if (!entry) throw Error('Book not registered');
+    for (const change of changes) {
+      if (await fs.readFile(change.file, 'utf8') !== change.bytes) throw Error(`${change.id}: chapter changed concurrently`);
+      const meta = entry.chapters.find(c => c.id === change.id);
+      if (!meta) throw Error(`${change.id}: chapter not registered`);
+      change.chapter.version = Math.max(change.chapter.version, meta.version) + 1;
+      meta.version = change.chapter.version;
+    }
+    const backup = path.join('/tmp', 'reader-paragraph-repair-' + Date.now(), book.id);
+    await fs.mkdir(backup, { recursive: true });
+    for (const change of changes) {
+      await fs.writeFile(path.join(backup, change.id + '.json'), change.bytes);
+      await fs.writeFile(change.file, JSON.stringify(change.chapter, null, 2) + '\n');
+      console.log(`${change.id}: ${change.chapter.pairs.filter(p => p.paragraph_start).length} source paragraphs restored`);
+    }
+    entry.version = (entry.version || 1) + 1;
+    await writeLibrary(LIBRARY_PATH, library);
+    console.log(`Preserved original chapters at ${backup}`);
+  } finally { await lock.close(); await fs.unlink(lockPath); }
+}
+
 async function main() {
   const srcDir = path.resolve(process.argv[2] || "");
   if (!process.argv[2]) { console.error("usage: build-markup-book.js <_src dir>"); process.exit(1); }
   const book = JSON.parse(await fs.readFile(path.join(srcDir, "book.json"), "utf8"));
+  if (process.argv.includes("--paragraphs-only")) return repairParagraphs(srcDir, book);
   // Optional authored vocabulary keeps word lookups independent of the larger
   // spans needed for a natural sentence translation. Other books are unchanged.
   let vocabulary = null;
@@ -148,7 +202,7 @@ async function main() {
     const chapter = {
       id, book_id: book.id, language: book.language, version: 1,
       title,
-      pairs,
+      pairs: book.language === "fr" ? frenchSentenceUnits(pairs).pairs : pairs,
       meta: {
         source: "markup-authored",
         createdAt: new Date().toISOString().slice(0, 10),

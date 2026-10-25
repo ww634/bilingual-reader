@@ -2,7 +2,7 @@
   "id": "ch-16",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 5,
+  "version": 6,
   "title": {
     "target": "Un seul jeu de comptes",
     "english": "One Set of Books"
@@ -138,11 +138,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "La secrétaire était partie. Il restait une lumière au fond du couloir.",
-      "english": "The secretary had gone. There was a light at the end of the corridor.",
+      "target": "La secrétaire était partie.",
+      "english": "The secretary had gone.",
       "alignment": [
         {
           "english": "The secretary had gone",
@@ -188,7 +189,13 @@
               "end": 26
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Il restait une lumière au fond du couloir.",
+      "english": "There was a light at the end of the corridor.",
+      "alignment": [
         {
           "english": "There was",
           "target": "Il restait",
@@ -282,8 +289,8 @@
       ]
     },
     {
-      "target": "« Vingt minutes », a dit Colin. « J'ai un train. »",
-      "english": "“Twenty minutes,” Colin said. “I've got a train to catch.”",
+      "target": "« Vingt minutes », a dit Colin.",
+      "english": "“Twenty minutes,” Colin said.",
       "alignment": [
         {
           "english": "Twenty minutes",
@@ -338,7 +345,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« J'ai un train. »",
+      "english": "“I've got a train to catch.”",
+      "alignment": [
         {
           "english": "I've got a train to catch",
           "target": "J'ai un train",
@@ -507,7 +521,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Paul m'a dit que vous vérifiiez des dates. »",
@@ -612,7 +627,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Entre autres », a répondu Daniel.",
@@ -672,7 +688,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Jo avait transmis leur demande à Martin la veille.",
@@ -777,7 +794,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ce matin-là, son ancien mari avait accepté de parler à Daniel.",
@@ -1470,11 +1488,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Au mur, une photographie de montagne portait une devise sur la confiance. Daniel se demandait quel sommet on choisissait pour les factures impayées.",
-      "english": "On the wall, a photograph of a mountain carried a motto about trust. Daniel wondered which summit they chose for unpaid invoices.",
+      "target": "Au mur, une photographie de montagne portait une devise sur la confiance.",
+      "english": "On the wall, a photograph of a mountain carried a motto about trust.",
       "alignment": [
         {
           "english": "On the wall",
@@ -1610,7 +1629,13 @@
               "end": 35
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Daniel se demandait quel sommet on choisissait pour les factures impayées.",
+      "english": "Daniel wondered which summit they chose for unpaid invoices.",
+      "alignment": [
         {
           "english": "Daniel wondered",
           "target": "Daniel se demandait",
@@ -1941,8 +1966,8 @@
       ]
     },
     {
-      "target": "« Quatre mille huit cent soixante livres », a lu Daniel. « Travaux de toiture. »",
-      "english": "“Four thousand eight hundred and sixty pounds,” Daniel read. “Roofing work.”",
+      "target": "« Quatre mille huit cent soixante livres », a lu Daniel.",
+      "english": "“Four thousand eight hundred and sixty pounds,” Daniel read.",
       "alignment": [
         {
           "english": "Four thousand eight hundred and sixty pounds",
@@ -2033,7 +2058,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Travaux de toiture. »",
+      "english": "“Roofing work.”",
+      "alignment": [
         {
           "english": "Roofing work",
           "target": "Travaux de toiture",
@@ -2202,7 +2234,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est pour ça qu'on l'a apportée », a dit Ben.",
@@ -2325,7 +2358,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La facture Harris portait la référence HM1847.",
@@ -2412,7 +2446,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La liste de paiements, fournie à l'époque par la société de Paul, reprenait cette référence et ce montant.",
@@ -2859,7 +2894,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a posé une autre relance à côté.",
@@ -2946,7 +2982,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Celle-là datait de deux mois plus tard.",
@@ -3138,11 +3175,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Quel compte ? » a demandé Daniel.",
-      "english": "“Which account?” Daniel asked.",
+      "target": "« Quel compte ?",
+      "english": "“Which account?”",
       "alignment": [
         {
           "english": "Which account",
@@ -3170,7 +3208,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -3201,8 +3246,8 @@
       ]
     },
     {
-      "target": "« Dans les livres. Pas nécessairement à la banque », a répondu Colin.",
-      "english": "“In the books. Not necessarily at the bank,” Colin replied.",
+      "target": "« Dans les livres.",
+      "english": "“In the books.",
       "alignment": [
         {
           "english": "In the books",
@@ -3239,7 +3284,14 @@
               "end": 15
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pas nécessairement à la banque », a répondu Colin.",
+      "english": "Not necessarily at the bank,” Colin replied.",
+      "alignment": [
         {
           "english": "Not necessarily at the bank",
           "target": "Pas nécessairement à la banque",
@@ -3390,11 +3442,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Cette colonne dit qu'on a enregistré un règlement. Elle ne dit pas qui a reçu l'argent. »",
-      "english": "“This column says that a payment was recorded. It doesn't tell you who received the money.”",
+      "target": "« Cette colonne dit qu'on a enregistré un règlement.",
+      "english": "“This column says that a payment was recorded.",
       "alignment": [
         {
           "english": "This column",
@@ -3485,7 +3538,14 @@
               "end": 35
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle ne dit pas qui a reçu l'argent. »",
+      "english": "It doesn't tell you who received the money.”",
+      "alignment": [
         {
           "english": "It doesn't tell you",
           "target": "Elle ne dit pas",
@@ -3654,11 +3714,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Ça, je connais. Le client qui me dit que c'est fait. Ma banque n'est pas au courant », a dit Ben.",
-      "english": "“That, I know. The client who tells me it's been done. My bank hasn't heard about it,” Ben said.",
+      "target": "« Ça, je connais.",
+      "english": "“That, I know.",
       "alignment": [
         {
           "english": "That",
@@ -3704,7 +3765,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Le client qui me dit que c'est fait.",
+      "english": "The client who tells me it's been done.",
+      "alignment": [
         {
           "english": "The client who tells me",
           "target": "Le client qui me dit",
@@ -3794,7 +3862,13 @@
               "end": 14
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Ma banque n'est pas au courant », a dit Ben.",
+      "english": "My bank hasn't heard about it,” Ben said.",
+      "alignment": [
         {
           "english": "My bank hasn't heard about it",
           "target": "Ma banque n'est pas au courant",
@@ -3936,7 +4010,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a sorti le rapport suivant.",
@@ -4245,8 +4320,8 @@
       ]
     },
     {
-      "target": "« Je préparais des tableaux », a dit Colin. « Je ne certifiais pas chaque opération. »",
-      "english": "“I prepared schedules,” Colin said. “I didn't certify every transaction.”",
+      "target": "« Je préparais des tableaux », a dit Colin.",
+      "english": "“I prepared schedules,” Colin said.",
       "alignment": [
         {
           "english": "I prepared schedules",
@@ -4319,7 +4394,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Je ne certifiais pas chaque opération. »",
+      "english": "“I didn't certify every transaction.”",
+      "alignment": [
         {
           "english": "I didn't certify every transaction",
           "target": "Je ne certifiais pas chaque opération",
@@ -4497,11 +4579,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Le total était identique. La réserve avait disparu.",
-      "english": "The total was identical. The qualification had disappeared.",
+      "target": "Le total était identique.",
+      "english": "The total was identical.",
       "alignment": [
         {
           "english": "The total was identical",
@@ -4547,7 +4630,13 @@
               "end": 24
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "La réserve avait disparu.",
+      "english": "The qualification had disappeared.",
+      "alignment": [
         {
           "english": "The qualification had disappeared",
           "target": "La réserve avait disparu",
@@ -4635,7 +4724,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il y a eu plusieurs versions », a dit Colin.",
@@ -4722,11 +4812,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Qu'est-ce qui a changé ? » a demandé Daniel.",
-      "english": "“What changed?” Daniel asked.",
+      "target": "« Qu'est-ce qui a changé ?",
+      "english": "“What changed?”",
       "alignment": [
         {
           "english": "What changed",
@@ -4763,7 +4854,14 @@
               "end": 22
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -4842,7 +4940,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a tourné la feuille vers lui.",
@@ -4929,7 +5028,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est pas une marge plus large », a dit Ben.",
@@ -5034,7 +5134,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Colin a repoussé sa chaise de quelques centimètres.",
@@ -5130,7 +5231,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas regardé la montagne.",
@@ -5286,7 +5388,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a remis la première version du rapport au-dessus de l'autre.",
@@ -5418,11 +5521,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Qui vous a demandé d'enlever la réserve ? » a demandé Daniel.",
-      "english": "“Who asked you to remove the qualification?” Daniel asked.",
+      "target": "« Qui vous a demandé d'enlever la réserve ?",
+      "english": "“Who asked you to remove the qualification?”",
       "alignment": [
         {
           "english": "Who asked you",
@@ -5504,7 +5608,14 @@
               "end": 20
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -5619,7 +5730,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Alors comment elle a disparu ? »",
@@ -5670,7 +5782,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Colin a posé les deux mains à plat sur la table.",
@@ -5802,7 +5915,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« On m'a assuré que les pièces manquantes avaient été retrouvées », a dit Colin.",
@@ -5943,7 +6057,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Par qui ? »",
@@ -5976,7 +6091,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je vérifierai. »",
@@ -6009,7 +6125,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a regardé la photographie au mur.",
@@ -6096,7 +6213,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel lui a laissé le temps de se retourner avant de poursuivre.",
@@ -6240,8 +6358,8 @@
       ]
     },
     {
-      "target": "« Vous les avez vues, ces pièces ? » a demandé Daniel.",
-      "english": "“Did you see them, those records?” Daniel asked.",
+      "target": "« Vous les avez vues, ces pièces ?",
+      "english": "“Did you see them, those records?”",
       "alignment": [
         {
           "english": "Did you see them",
@@ -6314,7 +6432,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -6456,7 +6581,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je ne vais pas inventer un souvenir pour vous satisfaire », a dit Colin.",
@@ -6597,11 +6723,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "La réponse avait la solidité d'une porte fermée à clé. Elle était raisonnable.",
-      "english": "The answer had the solidity of a locked door. It was reasonable.",
+      "target": "La réponse avait la solidité d'une porte fermée à clé.",
+      "english": "The answer had the solidity of a locked door.",
       "alignment": [
         {
           "english": "The answer",
@@ -6728,7 +6855,14 @@
               "end": 24
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle était raisonnable.",
+      "english": "It was reasonable.",
+      "alignment": [
         {
           "english": "It was reasonable",
           "target": "Elle était raisonnable",
@@ -6864,8 +6998,8 @@
       ]
     },
     {
-      "target": "« Vous avez raison. Cherchez votre dossier. Et gardez les deux versions », a dit Daniel.",
-      "english": "“You're right. Find your file. And keep both versions,” Daniel said.",
+      "target": "« Vous avez raison.",
+      "english": "“You're right.",
       "alignment": [
         {
           "english": "You're right",
@@ -6902,7 +7036,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Cherchez votre dossier.",
+      "english": "Find your file.",
+      "alignment": [
         {
           "english": "Find your file",
           "target": "Cherchez votre dossier",
@@ -6938,7 +7079,13 @@
               "end": 22
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Et gardez les deux versions », a dit Daniel.",
+      "english": "And keep both versions,” Daniel said.",
+      "alignment": [
         {
           "english": "And keep both versions",
           "target": "Et gardez les deux versions",
@@ -7080,7 +7227,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a retiré sa main des feuilles.",
@@ -7167,7 +7315,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a demandé si Anna avait vu ces chiffres.",
@@ -7263,7 +7412,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Colin a répondu plus vite.",
@@ -7335,8 +7485,8 @@
       ]
     },
     {
-      "target": "« Elle posait des questions. C'était son travail. »",
-      "english": "“She asked questions. It was her job.”",
+      "target": "« Elle posait des questions.",
+      "english": "“She asked questions.",
       "alignment": [
         {
           "english": "She asked questions",
@@ -7382,7 +7532,14 @@
               "end": 25
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "C'était son travail. »",
+      "english": "It was her job.”",
+      "alignment": [
         {
           "english": "It was her job",
           "target": "C'était son travail",
@@ -7431,8 +7588,8 @@
       ]
     },
     {
-      "target": "« À vous ? » a demandé Ben.",
-      "english": "“Of you?” Ben asked.",
+      "target": "« À vous ?",
+      "english": "“Of you?”",
       "alignment": [
         {
           "english": "Of you",
@@ -7460,7 +7617,14 @@
               "end": 6
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -7539,7 +7703,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a regardé la facture de toiture.",
@@ -7617,11 +7782,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle voulait toujours la pièce d'avant. La facture, puis le bon de commande. »",
-      "english": "“She always wanted the preceding document. The invoice, then the purchase order.”",
+      "target": "« Elle voulait toujours la pièce d'avant.",
+      "english": "“She always wanted the preceding document.",
       "alignment": [
         {
           "english": "She always wanted",
@@ -7703,7 +7869,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "La facture, puis le bon de commande. »",
+      "english": "The invoice, then the purchase order.”",
+      "alignment": [
         {
           "english": "The invoice",
           "target": "La facture",
@@ -7854,7 +8027,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Colin a tendu le cou pour voir ce qu'il écrivait.",
@@ -8055,7 +8229,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il s'est levé pour chercher de l'eau.",
@@ -8142,7 +8317,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Dans le couloir, son téléphone a sonné.",
@@ -8526,7 +8702,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a accepté.",
@@ -8568,7 +8745,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait informé Colin qu'il réexaminait aussi son travail sonore sur l'affaire.",
@@ -8844,8 +9022,8 @@
       ]
     },
     {
-      "target": "« Martin garde tout », a dit Paul. « Vous avez les originaux ? »",
-      "english": "“Martin keeps everything,” Paul said. “Have you got the originals?”",
+      "target": "« Martin garde tout », a dit Paul.",
+      "english": "“Martin keeps everything,” Paul said.",
       "alignment": [
         {
           "english": "Martin keeps everything",
@@ -8909,7 +9087,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Vous avez les originaux ? »",
+      "english": "“Have you got the originals?”",
+      "alignment": [
         {
           "english": "Have you got the originals",
           "target": "Vous avez les originaux",
@@ -9015,11 +9200,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Il faudra vérifier quelles copies circulaient. On avait un seul jeu de comptes. Les tableaux provisoires, c'est autre chose. »",
-      "english": "“You'll need to check which copies were in circulation. We had one set of books. The provisional schedules, that's something else.”",
+      "target": "« Il faudra vérifier quelles copies circulaient.",
+      "english": "“You'll need to check which copies were in circulation.",
       "alignment": [
         {
           "english": "You'll need to check",
@@ -9092,7 +9278,14 @@
               "end": 26
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "On avait un seul jeu de comptes.",
+      "english": "We had one set of books.",
+      "alignment": [
         {
           "english": "We had one set of books",
           "target": "On avait un seul jeu de comptes",
@@ -9164,7 +9357,13 @@
               "end": 31
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Les tableaux provisoires, c'est autre chose. »",
+      "english": "The provisional schedules, that's something else.”",
+      "alignment": [
         {
           "english": "The provisional schedules",
           "target": "Les tableaux provisoires",
@@ -9360,7 +9559,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul a promis de chercher.",
@@ -9594,11 +9794,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Pouvez-vous certifier la génération de la copie examinée ? » a demandé Paul.",
-      "english": "“Can you certify the generation of the copy examined?” Paul asked.",
+      "target": "« Pouvez-vous certifier la génération de la copie examinée ?",
+      "english": "“Can you certify the generation of the copy examined?”",
       "alignment": [
         {
           "english": "Can you certify",
@@ -9689,7 +9890,14 @@
               "end": 34
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Paul.",
+      "english": "Paul asked.",
+      "alignment": [
         {
           "english": "Paul asked",
           "target": "a demandé Paul",
@@ -9720,8 +9928,8 @@
       ]
     },
     {
-      "target": "« Quelle génération vous inquiète ? » a demandé Daniel.",
-      "english": "“Which generation concerns you?” Daniel asked.",
+      "target": "« Quelle génération vous inquiète ?",
+      "english": "“Which generation concerns you?”",
       "alignment": [
         {
           "english": "Which generation concerns you",
@@ -9767,7 +9975,14 @@
               "end": 31
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -9798,8 +10013,8 @@
       ]
     },
     {
-      "target": "« Je ne sais pas. C'est la question qu'on m'a transférée. »",
-      "english": "“I don't know. That's the question that was forwarded to me.”",
+      "target": "« Je ne sais pas.",
+      "english": "“I don't know.",
       "alignment": [
         {
           "english": "I don't know",
@@ -9827,7 +10042,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "C'est la question qu'on m'a transférée. »",
+      "english": "That's the question that was forwarded to me.”",
+      "alignment": [
         {
           "english": "That's the question that was forwarded to me",
           "target": "C'est la question qu'on m'a transférée",
@@ -9996,11 +10218,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Ça désigne les copies successives. Une copie d'une copie, par exemple », a dit Daniel.",
-      "english": "“It refers to successive copies. A copy of a copy, for example,” Daniel said.",
+      "target": "« Ça désigne les copies successives.",
+      "english": "“It refers to successive copies.",
       "alignment": [
         {
           "english": "It refers to",
@@ -10064,7 +10287,14 @@
               "end": 22
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Une copie d'une copie, par exemple », a dit Daniel.",
+      "english": "A copy of a copy, for example,” Daniel said.",
+      "alignment": [
         {
           "english": "A copy of a copy",
           "target": "Une copie d'une copie",
@@ -10215,11 +10445,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Ça dépend du support et de son historique. Je dois voir les documents. Le souffle ne compte pas les générations à notre place. »",
-      "english": "“It depends on the carrier and its history. I need to see the records. Hiss doesn't count the generations for us.”",
+      "target": "« Ça dépend du support et de son historique.",
+      "english": "“It depends on the carrier and its history.",
       "alignment": [
         {
           "english": "It depends on the carrier",
@@ -10310,7 +10541,14 @@
               "end": 20
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je dois voir les documents.",
+      "english": "I need to see the records.",
+      "alignment": [
         {
           "english": "I need to see the records",
           "target": "Je dois voir les documents",
@@ -10364,7 +10602,13 @@
               "end": 26
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Le souffle ne compte pas les générations à notre place. »",
+      "english": "Hiss doesn't count the generations for us.”",
+      "alignment": [
         {
           "english": "Hiss doesn't count",
           "target": "Le souffle ne compte pas",
@@ -10641,7 +10885,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Après l'appel, Colin a regardé sa montre.",
@@ -10737,7 +10982,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a gardé une dernière page sur la table.",
@@ -11232,8 +11478,8 @@
       ]
     },
     {
-      "target": "« Un intermédiaire de paiement », a dit Colin. « C'est possible. »",
-      "english": "“A payment intermediary,” Colin said. “It's possible.”",
+      "target": "« Un intermédiaire de paiement », a dit Colin.",
+      "english": "“A payment intermediary,” Colin said.",
       "alignment": [
         {
           "english": "A payment intermediary",
@@ -11306,7 +11552,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« C'est possible. »",
+      "english": "“It's possible.”",
+      "alignment": [
         {
           "english": "It's possible",
           "target": "C'est possible",
@@ -11457,7 +11710,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul y signait comme dirigeant de Mill Lane Services.",
@@ -11556,8 +11810,8 @@
       ]
     },
     {
-      "target": "« Possible », a dit Daniel. « Il nous manque ce qui autorisait cet intermédiaire à recevoir l'argent. »",
-      "english": "“Possible,” Daniel said. “We are missing what authorised that intermediary to receive the money.”",
+      "target": "« Possible », a dit Daniel.",
+      "english": "“Possible,” Daniel said.",
       "alignment": [
         {
           "english": "Possible",
@@ -11603,7 +11857,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Il nous manque ce qui autorisait cet intermédiaire à recevoir l'argent. »",
+      "english": "“We are missing what authorised that intermediary to receive the money.”",
+      "alignment": [
         {
           "english": "We are missing",
           "target": "Il nous manque",
@@ -11826,7 +12087,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Cette fois, il a écrit lui-même leurs références.",
@@ -12018,7 +12280,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le vent a soulevé le coin de la première.",
@@ -12333,7 +12596,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui », a répondu Daniel.",
@@ -12384,7 +12648,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Colin a signé le tableau. »",
@@ -12435,7 +12700,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui. »",
@@ -12459,7 +12725,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a fermé la pochette.",
@@ -12519,7 +12786,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Et l'argent devait aller à une société dirigée par Paul. »",
@@ -12651,7 +12919,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel n'a pas corrigé le verbe.",
@@ -12729,7 +12998,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Pour une fois, c'était exactement celui qu'il aurait choisi.",
@@ -12861,6 +13131,133 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 5,
+      "pair_index_map": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        35,
+        36,
+        38,
+        39,
+        42,
+        43,
+        44,
+        45,
+        46,
+        48,
+        49,
+        51,
+        52,
+        53,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        74,
+        75,
+        76,
+        78,
+        79,
+        82,
+        83,
+        84,
+        85,
+        86,
+        88,
+        90,
+        91,
+        92,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        107,
+        108,
+        111,
+        112,
+        113,
+        114,
+        115,
+        117,
+        119,
+        121,
+        122,
+        124,
+        125,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        136,
+        137,
+        138,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152
+      ]
+    }
   }
 }

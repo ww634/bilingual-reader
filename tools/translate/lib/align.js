@@ -46,7 +46,7 @@ BAD (too coarse — DO NOT): one chunk { english:"my father kept the Admiral Ben
 
 Hard rules:
 1. Each chunk has a non-empty "english" span and a non-empty "target" (Chinese characters) span.
-2. PAIR BOUNDARIES ARE HARD. chunk.english MUST be a contiguous substring of THIS pair's english (case-insensitive). chunk.target MUST be a contiguous substring of THIS pair's Chinese. NEVER borrow words from neighbouring pairs. If a Chinese word seems to map to an English word that lives in a different pair, attach the closest in-pair English or leave it; never invent.
+2. PAIR BOUNDARIES ARE HARD. chunk.english MUST claim a distinct exact word-boundary substring of THIS pair's english (case-insensitive). Never reuse an English occurrence for two chunks, including particles. chunk.target MUST be a contiguous substring of THIS pair's Chinese. NEVER borrow words from neighbouring pairs. If a Chinese word seems to map to an English word that lives in a different pair, attach the closest in-pair English or leave it; never invent.
 3. Chunks appear in the order of the TARGET (Chinese) clause, left to right.
 4. Prefer ONE Chinese word per chunk. Never split a single word across chunks.
 5. Cover every English content word; attach function words/articles to the Chinese word they bind to.

@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "book_id": "la-derniere-voix-claire",
+  "chapter_id": "ch-10",
+  "chapter_sha256": "8c155ee5c493b198680f243efc7f6d175f88d3018ac84b5d433a8d38ccea81fc",
+  "catalog_sha256": "04ea6474a3f3f4eeb797545c57a5dfeb6fd46a845eeff2c68c82b63577004879",
+  "renderer_sha256": "50701975478bb3d539c6bc015e30120dde179926875adeb4802f40584cf4a024",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-10-25T15:45:19.962Z",
+  "review": {
+    "editorial": "Structural repair only: French wording, English prose, and flattened alignment/lookup objects match the prior edition by content hash. Restored author paragraph boundaries and separated existing sentence units; no literary rewrite or fresh technical research claimed.",
+    "continuity_or_facts": "Original sentence order and neighbouring chapter endings/openings are retained. Beginning/middle/end reader samples checked sequentially; original context, register, evidence wording and chronology are unchanged. Saved sentence selection retains its complete source and English.",
+    "english_alignment": "Inspected phone previews and word selection; English guides, colour categories and punctuation remain readable. 0 of 240 letter-bearing visual lines lack English (0.00%). No unexplained stretch without English found. Listen and dictation read the repaired sentence pairs; no paid speech was generated."
+  },
+  "warning_resolutions": {
+    "pair-30-chunk-2-coarse": "Retain the 8-word sentence-alignment parent: its 7 independently tappable lookup units have at most 2 words. Ordered offsets and original contextual glosses are unchanged; phone guide wrapping and selection sampled for this chapter. The parent is not the learner's word lookup.",
+    "pair-139-chunk-2-coarse": "Retain the 7-word sentence-alignment parent: its 6 independently tappable lookup units have at most 2 words. Ordered offsets and original contextual glosses are unchanged; phone guide wrapping and selection sampled for this chapter. The parent is not the learner's word lookup.",
+    "pair-139-chunk-4-coarse": "Retain the 7-word sentence-alignment parent: its 3 independently tappable lookup units have at most 1 words. Ordered offsets and original contextual glosses are unchanged; phone guide wrapping and selection sampled for this chapter. The parent is not the learner's word lookup."
+  },
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-10-start.png",
+      "sha256": "6c38afea9554ebdeb4b991d65440a1e71ad5214df6815fff4f90fcb3bd7cad09",
+      "notes": "Opening source and English guides visible; paragraph separation and independently coloured vocabulary remain readable."
+    },
+    {
+      "section": "middle",
+      "pair": 70,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-10-middle.png",
+      "sha256": "aa6f061a676284a8487a9d4669be0e81a158a6376bd9fc287354e7947bba59e5",
+      "notes": "Middle passage checked for English continuity, wrapping, speech marks and readable translation; source wording retained."
+    },
+    {
+      "section": "end",
+      "pair": 139,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-10-end.png",
+      "sha256": "72d733c50efbfdf2d3d9d5e991fa556daca33d6a2f94a3fc2a4270fd321ff0e3",
+      "notes": "Closing passage and English remain readable; touch selection saved the complete sentence with its original translation."
+    }
+  ]
+}

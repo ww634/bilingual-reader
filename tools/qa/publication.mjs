@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { sentenceSegments } from '../translate/lib/french-sentences.js';
+import { assertEnglishSpans } from "../translate/lib/english-spans.js";
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -14,10 +16,7 @@ const bands = new Set([null,'very_common','common','uncommon','rare']);
 const meaningful = /[\p{L}\p{N}]/u;
 export function sentenceCount(text, language) {
   if (language === 'zh') { try { assertSentenceUnit(text); return 1; } catch { return 2; } }
-  // Protect common French titles; the full stop is an abbreviation, not a
-  // sentence boundary. Intl handles decimals, ellipses and closing quotations.
-  const protectedText = text.replace(/\b(M|Mme|Mlle|Dr|Pr|St|Ste)\./gu,'$1');
-  return [...new Intl.Segmenter(language,{granularity:'sentence'}).segment(protectedText)].filter(s=>meaningful.test(s.segment)).length;
+  return sentenceSegments(text, language).length;
 }
 export async function inspectChapter(c, entry, book) {
   fail(c && /^ch-[1-9]\d*$/.test(c.id ?? ''), 'Invalid chapter id');
@@ -58,6 +57,7 @@ export async function inspectChapter(c, entry, book) {
     fail(!meaningful.test(source.slice(cursor)),`${label}: uncovered trailing words`);
   });
   if(c.language==='zh') {
+    c.pairs.forEach((p,i)=>assertEnglishSpans(p,`pair ${i+1}`));
     const {finalizeDraft}=await import('../translate/finalize-chapter.js');
     const raw={title:{hanzi:c.title.hanzi,english:c.title.english},pairs:c.pairs.map(p=>({hanzi:p.hanzi,english:p.english,alignment:p.alignment.map(w=>({hanzi:w.hanzi,english:w.english,category:w.category,is_idiom:w.is_idiom}))}))};
     const expected=finalizeDraft(raw);

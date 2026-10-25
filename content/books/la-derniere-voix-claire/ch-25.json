@@ -2,7 +2,7 @@
   "id": "ch-25",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "La visite oubliée",
     "english": "The Forgotten Visit"
@@ -75,7 +75,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a pris deux sandwichs dans une station-service et demandé deux tickets séparés.",
@@ -690,7 +691,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a attendu.",
@@ -723,11 +725,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Pour que je sache. Et elle est partie avant que je sache. »",
-      "english": "“So I'd know. And she left before I knew.”",
+      "target": "« Pour que je sache.",
+      "english": "“So I'd know.",
       "alignment": [
         {
           "english": "So I'd know",
@@ -764,7 +767,14 @@
               "end": 17
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Et elle est partie avant que je sache. »",
+      "english": "And she left before I knew.”",
+      "alignment": [
         {
           "english": "And she left",
           "target": "Et elle est partie",
@@ -951,7 +961,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je sais plus quelle partie je suis censé croire. »",
@@ -1065,7 +1076,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous n'êtes pas obligé de choisir aujourd'hui », a dit Daniel.",
@@ -1188,7 +1200,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ça vous convient, les choses qui attendent. »",
@@ -1275,7 +1288,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a baissé les yeux.",
@@ -1326,7 +1340,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La mayonnaise dépassait des deux côtés.",
@@ -1650,7 +1665,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a dit qu'il appellerait sa mère après son chantier.",
@@ -2208,7 +2224,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a transmis séparément ses propres notes.",
@@ -2748,7 +2765,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Trois semaines depuis un appel, des mois sans se voir.",
@@ -3363,7 +3381,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle voulait reprendre les mots de Paul, pas l'impression qu'il leur avait faite.",
@@ -3717,7 +3736,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a lu sa note.",
@@ -3777,11 +3797,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« De ne pas l'avoir vu. Depuis des mois. Ben était là. »",
-      "english": "“About not having seen him. For months. Ben was there.”",
+      "target": "« De ne pas l'avoir vu.",
+      "english": "“About not having seen him.",
       "alignment": [
         {
           "english": "About not having seen him",
@@ -3845,7 +3866,14 @@
               "end": 20
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Depuis des mois.",
+      "english": "For months.",
+      "alignment": [
         {
           "english": "For months",
           "target": "Depuis des mois",
@@ -3881,7 +3909,13 @@
               "end": 15
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Ben était là. »",
+      "english": "Ben was there.”",
+      "alignment": [
         {
           "english": "Ben was there",
           "target": "Ben était là",
@@ -3987,7 +4021,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a retourné la copie de l'agenda.",
@@ -4074,7 +4109,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous avez retrouvé le livreur dont vous m'aviez parlé ? »",
@@ -4179,11 +4215,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Oui. Une caméra de son véhicule a enregistré une partie de la rue. La voiture de Sayer y apparaît ce soir-là. »",
-      "english": "“Yes. A camera on his vehicle recorded part of the street. Sayer's car appears in it that evening.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -4202,7 +4239,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Une caméra de son véhicule a enregistré une partie de la rue.",
+      "english": "A camera on his vehicle recorded part of the street.",
+      "alignment": [
         {
           "english": "A camera on his vehicle",
           "target": "Une caméra de son véhicule",
@@ -4328,7 +4372,13 @@
               "end": 20
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "La voiture de Sayer y apparaît ce soir-là. »",
+      "english": "Sayer's car appears in it that evening.”",
+      "alignment": [
         {
           "english": "Sayer's car",
           "target": "La voiture de Sayer",
@@ -4551,7 +4601,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« À quelle heure ? »",
@@ -4593,11 +4644,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Nous vérifions les horaires. L'heure affichée n'est pas une garantie. Et la voiture n'établit pas qui se trouvait dans la maison. »",
-      "english": "“We're checking the timings. The displayed time is not a guarantee. And the car does not establish who was in the house.”",
+      "target": "« Nous vérifions les horaires.",
+      "english": "“We're checking the timings.",
       "alignment": [
         {
           "english": "We're checking",
@@ -4652,7 +4704,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "L'heure affichée n'est pas une garantie.",
+      "english": "The displayed time is not a guarantee.",
+      "alignment": [
         {
           "english": "The displayed time",
           "target": "L'heure affichée",
@@ -4724,7 +4783,13 @@
               "end": 22
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Et la voiture n'établit pas qui se trouvait dans la maison. »",
+      "english": "And the car does not establish who was in the house.”",
+      "alignment": [
         {
           "english": "And the car",
           "target": "Et la voiture",
@@ -5019,7 +5084,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a rangé les feuilles sans appeler Paul.",
@@ -5202,7 +5268,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait reçu une demande de pièces du cabinet de Malik.",
@@ -5433,8 +5500,8 @@
       ]
     },
     {
-      "target": "« Oui. Je ne vous donnerai pas le contenu de la conversation. »",
-      "english": "“Yes. I won't give you the contents of the conversation.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -5453,7 +5520,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je ne vous donnerai pas le contenu de la conversation. »",
+      "english": "I won't give you the contents of the conversation.”",
+      "alignment": [
         {
           "english": "I won't give you",
           "target": "Je ne vous donnerai pas",
@@ -5565,8 +5639,8 @@
       ]
     },
     {
-      "target": "« Je lui ai conseillé de se faire aider. C'est bien qu'elle le fasse. »",
-      "english": "“I advised her to get help. It's good that she's doing it.”",
+      "target": "« Je lui ai conseillé de se faire aider.",
+      "english": "“I advised her to get help.",
       "alignment": [
         {
           "english": "I advised her",
@@ -5648,7 +5722,14 @@
               "end": 17
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "C'est bien qu'elle le fasse. »",
+      "english": "It's good that she's doing it.”",
+      "alignment": [
         {
           "english": "It's good",
           "target": "C'est bien",
@@ -5835,7 +5916,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a pris une feuille vierge et noté l'heure.",
@@ -5952,8 +6034,8 @@
       ]
     },
     {
-      "target": "« Il y a autre chose », a dit Paul. « La police m'a posé des questions sur ma voiture. »",
-      "english": "“There's something else,” Paul said. “The police asked me questions about my car.”",
+      "target": "« Il y a autre chose », a dit Paul.",
+      "english": "“There's something else,” Paul said.",
       "alignment": [
         {
           "english": "There's something else",
@@ -6017,7 +6099,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« La police m'a posé des questions sur ma voiture. »",
+      "english": "“The police asked me questions about my car.”",
+      "alignment": [
         {
           "english": "The police",
           "target": "La police",
@@ -6186,11 +6275,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je suis passé chez Graham. Il avait insisté. J'aurais dû vous le dire. »",
-      "english": "“I went round to Graham's. He'd insisted. I should have told you.”",
+      "target": "« Je suis passé chez Graham.",
+      "english": "“I went round to Graham's.",
       "alignment": [
         {
           "english": "I went round",
@@ -6245,7 +6335,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il avait insisté.",
+      "english": "He'd insisted.",
+      "alignment": [
         {
           "english": "He'd insisted",
           "target": "Il avait insisté",
@@ -6272,7 +6369,13 @@
               "end": 16
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "J'aurais dû vous le dire. »",
+      "english": "I should have told you.”",
+      "alignment": [
         {
           "english": "I should have",
           "target": "J'aurais dû",
@@ -6495,11 +6598,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je voulais dire pour parler du livre. Cette fois, c'était les comptes. »",
-      "english": "“I meant to talk about the book. This time, it was the accounts.”",
+      "target": "« Je voulais dire pour parler du livre.",
+      "english": "“I meant to talk about the book.",
       "alignment": [
         {
           "english": "I meant",
@@ -6581,7 +6685,14 @@
               "end": 20
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Cette fois, c'était les comptes. »",
+      "english": "This time, it was the accounts.”",
+      "alignment": [
         {
           "english": "This time",
           "target": "Cette fois",
@@ -6768,7 +6879,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul venait de construire une cloison dans une phrase qui n'en avait pas.",
@@ -6987,11 +7099,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Le soir avant qu'on le retrouve. Vers six heures. Je suis resté un quart d'heure. Vingt minutes, au maximum. »",
-      "english": "“The evening before he was found dead. Around six. I stayed a quarter of an hour. Twenty minutes, at most.”",
+      "target": "« Le soir avant qu'on le retrouve.",
+      "english": "“The evening before he was found dead.",
       "alignment": [
         {
           "english": "The evening before he was found dead",
@@ -7064,7 +7177,14 @@
               "end": 31
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Vers six heures.",
+      "english": "Around six.",
+      "alignment": [
         {
           "english": "Around six",
           "target": "Vers six heures",
@@ -7100,7 +7220,13 @@
               "end": 15
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je suis resté un quart d'heure.",
+      "english": "I stayed a quarter of an hour.",
+      "alignment": [
         {
           "english": "I stayed",
           "target": "Je suis resté",
@@ -7172,7 +7298,13 @@
               "end": 16
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Vingt minutes, au maximum. »",
+      "english": "Twenty minutes, at most.”",
+      "alignment": [
         {
           "english": "Twenty minutes",
           "target": "Vingt minutes",
@@ -7296,11 +7428,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Non. Il en avait. Il m'a montré des références. Je lui ai dit que je vérifierais. »",
-      "english": "“No. He had some. He showed me references. I told him I'd check.”",
+      "target": "« Non.",
+      "english": "“No.",
       "alignment": [
         {
           "english": "No",
@@ -7319,7 +7452,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il en avait.",
+      "english": "He had some.",
+      "alignment": [
         {
           "english": "He had some",
           "target": "Il en avait",
@@ -7355,7 +7495,13 @@
               "end": 11
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Il m'a montré des références.",
+      "english": "He showed me references.",
+      "alignment": [
         {
           "english": "He showed me",
           "target": "Il m'a montré",
@@ -7418,7 +7564,13 @@
               "end": 14
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je lui ai dit que je vérifierais. »",
+      "english": "I told him I'd check.”",
+      "alignment": [
         {
           "english": "I told him",
           "target": "Je lui ai dit",
@@ -7551,7 +7703,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul a soufflé.",
@@ -7584,11 +7737,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle était dans ces dossiers, Daniel. Vous le savez. »",
-      "english": "“She was in those files, Daniel. You know that.”",
+      "target": "« Elle était dans ces dossiers, Daniel.",
+      "english": "“She was in those files, Daniel.",
       "alignment": [
         {
           "english": "She was",
@@ -7670,7 +7824,14 @@
               "end": 6
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Vous le savez. »",
+      "english": "You know that.”",
+      "alignment": [
         {
           "english": "You know that",
           "target": "Vous le savez",
@@ -7785,11 +7946,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Quand je suis parti, il m'a raccompagné. Graham était vivant. »",
-      "english": "“When I left, he saw me out. Graham was alive.”",
+      "target": "« Quand je suis parti, il m'a raccompagné.",
+      "english": "“When I left, he saw me out.",
       "alignment": [
         {
           "english": "When I left",
@@ -7862,7 +8024,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Graham était vivant. »",
+      "english": "Graham was alive.”",
+      "alignment": [
         {
           "english": "Graham was alive",
           "target": "Graham était vivant",
@@ -8157,7 +8326,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur la copie de l'agenda, le mot « confirmer » restait au même endroit.",
@@ -8465,6 +8635,77 @@
     "createdAt": "2026-10-15",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        34,
+        35,
+        36,
+        37,
+        40,
+        41,
+        42,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        52,
+        54,
+        55,
+        56,
+        58,
+        59,
+        62,
+        63,
+        65,
+        66,
+        67,
+        68,
+        72,
+        73,
+        77,
+        78,
+        79,
+        81,
+        82,
+        84,
+        85,
+        86
+      ]
+    }
   }
 }

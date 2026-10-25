@@ -2,7 +2,7 @@
   "id": "ch-28",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "La réserve effacée",
     "english": "The Missing Qualification"
@@ -138,7 +138,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La montagne était restée dans l'autre salle, avec la confiance.",
@@ -645,7 +646,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a présenté son avocate, puis indiqué un dossier muni d'intercalaires.",
@@ -798,8 +800,8 @@
       ]
     },
     {
-      "target": "« Vous pouvez prendre des notes », a précisé l'avocate. « Les copies passeront par les cabinets. »",
-      "english": "“You may take notes,” the solicitor clarified. “The copies will go through the firms.”",
+      "target": "« Vous pouvez prendre des notes », a précisé l'avocate.",
+      "english": "“You may take notes,” the solicitor clarified.",
       "alignment": [
         {
           "english": "You may take",
@@ -899,7 +901,14 @@
               "end": 19
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Les copies passeront par les cabinets. »",
+      "english": "“The copies will go through the firms.”",
+      "alignment": [
         {
           "english": "The copies",
           "target": "Les copies",
@@ -1032,7 +1041,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Qu'est-ce que vous corrigez ? »",
@@ -1083,7 +1093,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Colin a posé les deux versions de son tableau.",
@@ -1197,11 +1208,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« J'ai retiré la réserve. Moi. Paul n'a pas modifié un rapport derrière mon dos. »",
-      "english": "“I removed the qualification. Me. Paul didn't alter a report behind my back.”",
+      "target": "« J'ai retiré la réserve.",
+      "english": "“I removed the qualification.",
       "alignment": [
         {
           "english": "I removed",
@@ -1256,7 +1268,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Moi.",
+      "english": "Me.",
+      "alignment": [
         {
           "english": "Me",
           "target": "Moi",
@@ -1274,7 +1293,13 @@
               "end": 3
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Paul n'a pas modifié un rapport derrière mon dos. »",
+      "english": "Paul didn't alter a report behind my back.”",
+      "alignment": [
         {
           "english": "Paul",
           "target": "Paul",
@@ -1479,7 +1504,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul y assurait que les règlements litigieux avaient été vérifiés.",
@@ -1869,8 +1895,8 @@
       ]
     },
     {
-      "target": "« Les justificatifs ? » a demandé Daniel.",
-      "english": "“The supporting documents?” Daniel asked.",
+      "target": "« Les justificatifs ?",
+      "english": "“The supporting documents?”",
       "alignment": [
         {
           "english": "The supporting documents",
@@ -1898,7 +1924,14 @@
               "end": 17
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -1929,8 +1962,8 @@
       ]
     },
     {
-      "target": "« Je les ai réclamés. Vous avez la demande sur la page suivante. »",
-      "english": "“I asked for them. You have the request on the next page.”",
+      "target": "« Je les ai réclamés.",
+      "english": "“I asked for them.",
       "alignment": [
         {
           "english": "I asked for them",
@@ -1967,7 +2000,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Vous avez la demande sur la page suivante. »",
+      "english": "You have the request on the next page.”",
+      "alignment": [
         {
           "english": "You have",
           "target": "Vous avez",
@@ -2109,11 +2149,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Pas dans le dossier. Je ne peux pas vous affirmer que je n'ai jamais reçu autre chose. Mais je n'ai pas de trace d'un contrôle. J'ai quand même signé. »",
-      "english": "“Not in the file. I can't assure you that I never received anything else. But I have no record of a check. I signed anyway.”",
+      "target": "« Pas dans le dossier.",
+      "english": "“Not in the file.",
       "alignment": [
         {
           "english": "Not in the file",
@@ -2159,7 +2200,14 @@
               "end": 19
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je ne peux pas vous affirmer que je n'ai jamais reçu autre chose.",
+      "english": "I can't assure you that I never received anything else.",
+      "alignment": [
         {
           "english": "I can't",
           "target": "Je ne peux pas",
@@ -2303,7 +2351,13 @@
               "end": 16
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Mais je n'ai pas de trace d'un contrôle.",
+      "english": "But I have no record of a check.",
+      "alignment": [
         {
           "english": "But I have no",
           "target": "Mais je n'ai pas",
@@ -2402,7 +2456,13 @@
               "end": 13
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "J'ai quand même signé. »",
+      "english": "I signed anyway.”",
+      "alignment": [
         {
           "english": "I signed anyway",
           "target": "J'ai quand même signé",
@@ -2517,7 +2577,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Dans la seconde version, elles n'étaient pas plus petites.",
@@ -2646,11 +2707,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Parce que j'avais déjà approuvé le tableau précédent. Celui qui présentait les paiements comme vérifiés. »",
-      "english": "“Because I'd already approved the previous schedule. The one that presented the payments as checked.”",
+      "target": "« Parce que j'avais déjà approuvé le tableau précédent.",
+      "english": "“Because I'd already approved the previous schedule.",
       "alignment": [
         {
           "english": "Because",
@@ -2750,7 +2812,14 @@
               "end": 20
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Celui qui présentait les paiements comme vérifiés. »",
+      "english": "The one that presented the payments as checked.”",
+      "alignment": [
         {
           "english": "The one that presented",
           "target": "Celui qui présentait",
@@ -2928,7 +2997,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Maintenir la réserve, c'était expliquer ce que je n'avais pas fait la première fois. »",
@@ -3096,7 +3166,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a noté la réponse.",
@@ -3156,7 +3227,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il ne lui a pas dit qu'il comprenait.",
@@ -3498,7 +3570,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Colin a sorti la garantie que Martin conservait aussi.",
@@ -3684,8 +3757,8 @@
       ]
     },
     {
-      "target": "« Un bénéficiaire désigné », a dit Daniel. « On en était là. »",
-      "english": "“A named recipient,” Daniel said. “That's where we'd got to.”",
+      "target": "« Un bénéficiaire désigné », a dit Daniel.",
+      "english": "“A named recipient,” Daniel said.",
       "alignment": [
         {
           "english": "A named recipient",
@@ -3749,7 +3822,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« On en était là. »",
+      "english": "“That's where we'd got to.”",
+      "alignment": [
         {
           "english": "That's where we'd got to",
           "target": "On en était là",
@@ -3789,8 +3869,8 @@
       ]
     },
     {
-      "target": "« Voici le relevé produit pendant le litige. Avec le courrier qui l'accompagnait. »",
-      "english": "“Here is the statement produced during the dispute. With the letter that accompanied it.”",
+      "target": "« Voici le relevé produit pendant le litige.",
+      "english": "“Here is the statement produced during the dispute.",
       "alignment": [
         {
           "english": "Here is",
@@ -3881,7 +3961,14 @@
               "end": 25
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Avec le courrier qui l'accompagnait. »",
+      "english": "With the letter that accompanied it.”",
+      "alignment": [
         {
           "english": "With the letter",
           "target": "Avec le courrier",
@@ -4059,7 +4146,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une entrée de quatre mille huit cent soixante livres reprenait la référence HM1847.",
@@ -4551,7 +4639,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Colin a ouvert un autre intercalaire.",
@@ -4620,7 +4709,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les relances étaient là, puis l'accord qui avait mis fin au litige.",
@@ -4773,8 +4863,8 @@
       ]
     },
     {
-      "target": "« Ils ont fini par être payés », a dit Colin. « Après. Ça n'explique pas où l'argent est resté entre les deux. »",
-      "english": "“They eventually got paid,” Colin said. “Afterwards. That doesn't explain where the money stayed in between.”",
+      "target": "« Ils ont fini par être payés », a dit Colin.",
+      "english": "“They eventually got paid,” Colin said.",
       "alignment": [
         {
           "english": "They eventually",
@@ -4865,7 +4955,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Après.",
+      "english": "“Afterwards.",
+      "alignment": [
         {
           "english": "Afterwards",
           "target": "Après",
@@ -4883,7 +4980,13 @@
               "end": 5
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Ça n'explique pas où l'argent est resté entre les deux. »",
+      "english": "That doesn't explain where the money stayed in between.”",
+      "alignment": [
         {
           "english": "That doesn't explain",
           "target": "Ça n'explique pas",
@@ -5061,7 +5164,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a indiqué une écriture de sortie, plus bas.",
@@ -5166,7 +5270,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le relevé donnait une référence, pas le nom d'une personne.",
@@ -5685,11 +5790,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« C'est ce que les pièces indiquent. Il présentait ça comme un remboursement normal. L'autorisation de Harris pour ce circuit, je ne l'ai pas. »",
-      "english": "“That's what the documents indicate. He presented it as a normal repayment. Harris's authorisation for that arrangement, I don't have.”",
+      "target": "« C'est ce que les pièces indiquent.",
+      "english": "“That's what the documents indicate.",
       "alignment": [
         {
           "english": "That's what",
@@ -5771,7 +5877,14 @@
               "end": 20
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il présentait ça comme un remboursement normal.",
+      "english": "He presented it as a normal repayment.",
+      "alignment": [
         {
           "english": "He presented it",
           "target": "Il présentait ça",
@@ -5852,7 +5965,13 @@
               "end": 29
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "L'autorisation de Harris pour ce circuit, je ne l'ai pas. »",
+      "english": "Harris's authorisation for that arrangement, I don't have.”",
+      "alignment": [
         {
           "english": "Harris's authorisation",
           "target": "L'autorisation de Harris",
@@ -6129,7 +6248,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les pièces seraient transmises avec leur contexte, pas en photographies isolées.",
@@ -6264,8 +6384,8 @@
       ]
     },
     {
-      "target": "« Pourquoi maintenant ? » a demandé Daniel.",
-      "english": "“Why now?” Daniel asked.",
+      "target": "« Pourquoi maintenant ?",
+      "english": "“Why now?”",
       "alignment": [
         {
           "english": "Why now",
@@ -6293,7 +6413,14 @@
               "end": 19
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -6399,11 +6526,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Vous alliez comparer les papiers de Ruth. Avec ça. Je préférais vous le dire avant. »",
-      "english": "“You were going to compare Ruth's papers. With this. I'd rather tell you first.”",
+      "target": "« Vous alliez comparer les papiers de Ruth.",
+      "english": "“You were going to compare Ruth's papers.",
       "alignment": [
         {
           "english": "You were going to compare",
@@ -6485,7 +6613,14 @@
               "end": 19
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Avec ça.",
+      "english": "With this.",
+      "alignment": [
         {
           "english": "With this",
           "target": "Avec ça",
@@ -6512,7 +6647,13 @@
               "end": 7
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je préférais vous le dire avant. »",
+      "english": "I'd rather tell you first.”",
+      "alignment": [
         {
           "english": "I'd rather",
           "target": "Je préférais",
@@ -6708,7 +6849,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a refermé son carnet.",
@@ -6846,7 +6988,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Son avocate confirmerait à Malik quelles pièces pouvaient être communiquées.",
@@ -7131,8 +7274,8 @@
       ]
     },
     {
-      "target": "« Il m'a demandé ce que vous aviez. Je lui ai dit que je cherchais mon propre dossier. Hier, je lui ai dit de passer par mon avocate. »",
-      "english": "“He asked me what you had. I told him I was looking for my own file. Yesterday, I told him to go through my solicitor.”",
+      "target": "« Il m'a demandé ce que vous aviez.",
+      "english": "“He asked me what you had.",
       "alignment": [
         {
           "english": "He asked me",
@@ -7214,7 +7357,14 @@
               "end": 17
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je lui ai dit que je cherchais mon propre dossier.",
+      "english": "I told him I was looking for my own file.",
+      "alignment": [
         {
           "english": "I told him",
           "target": "Je lui ai dit",
@@ -7322,7 +7472,13 @@
               "end": 18
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Hier, je lui ai dit de passer par mon avocate. »",
+      "english": "Yesterday, I told him to go through my solicitor.”",
+      "alignment": [
         {
           "english": "Yesterday",
           "target": "Hier",
@@ -7500,7 +7656,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Dehors, il a appelé Helen pour lui donner les références.",
@@ -7626,8 +7783,8 @@
       ]
     },
     {
-      "target": "Puis il a écrit à Ben : « Il a reconnu avoir retiré la réserve. Je vous appelle quand vous êtes disponible. »",
-      "english": "Then he wrote to Ben: “He's admitted removing the qualification. I'll call you when you're free.”",
+      "target": "Puis il a écrit à Ben : « Il a reconnu avoir retiré la réserve.",
+      "english": "Then he wrote to Ben: “He's admitted removing the qualification.",
       "alignment": [
         {
           "english": "Then he wrote",
@@ -7763,7 +7920,13 @@
               "end": 23
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je vous appelle quand vous êtes disponible. »",
+      "english": "I'll call you when you're free.”",
+      "alignment": [
         {
           "english": "I'll call you",
           "target": "Je vous appelle",
@@ -7853,6 +8016,74 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 3,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        23,
+        24,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        43,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        64,
+        65,
+        66,
+        68,
+        69,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        80,
+        81,
+        82
+      ]
+    }
   }
 }

@@ -2,7 +2,7 @@
   "id": "ch-24",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "Ce qu'elle avait gardé",
     "english": "What She Had Kept"
@@ -147,7 +147,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel s'est assis près de la fenêtre.",
@@ -771,7 +772,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ruth a posé sur la table la copie de sa lettre du 22 octobre.",
@@ -933,8 +935,8 @@
       ]
     },
     {
-      "target": "« Je la lui ai donnée », a-t-elle dit. « À Graham. Avant votre visite. Je n'ai pas de reçu. »",
-      "english": "“I gave it to him,” she said. “To Graham. Before your visit. I don't have a receipt.”",
+      "target": "« Je la lui ai donnée », a-t-elle dit.",
+      "english": "“I gave it to him,” she said.",
       "alignment": [
         {
           "english": "I gave it to him",
@@ -1007,7 +1009,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« À Graham.",
+      "english": "“To Graham.",
+      "alignment": [
         {
           "english": "To Graham",
           "target": "À Graham",
@@ -1034,7 +1043,13 @@
               "end": 8
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Avant votre visite.",
+      "english": "Before your visit.",
+      "alignment": [
         {
           "english": "Before your visit",
           "target": "Avant votre visite",
@@ -1070,7 +1085,13 @@
               "end": 18
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je n'ai pas de reçu. »",
+      "english": "I don't have a receipt.”",
+      "alignment": [
         {
           "english": "I don't have a receipt",
           "target": "Je n'ai pas de reçu",
@@ -1275,11 +1296,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Pourquoi enregistrer la visite ? » a demandé Ben.",
-      "english": "“Why record the visit?” Ben asked.",
+      "target": "« Pourquoi enregistrer la visite ?",
+      "english": "“Why record the visit?”",
       "alignment": [
         {
           "english": "Why record",
@@ -1334,7 +1356,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -1365,8 +1394,8 @@
       ]
     },
     {
-      "target": "« Après les questions, je savais plus ce que j'avais dit. Je voulais pouvoir réécouter. »",
-      "english": "“After the questions, I no longer knew what I'd said. I wanted to be able to listen again.”",
+      "target": "« Après les questions, je savais plus ce que j'avais dit.",
+      "english": "“After the questions, I no longer knew what I'd said.",
       "alignment": [
         {
           "english": "After the questions",
@@ -1484,7 +1513,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je voulais pouvoir réécouter. »",
+      "english": "I wanted to be able to listen again.”",
+      "alignment": [
         {
           "english": "I wanted",
           "target": "Je voulais",
@@ -1653,11 +1689,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« J'ai mis l'appareil sur la desserte. Vous m'avez demandé de rapprocher une chaise. Je me souviens de ça. »",
-      "english": "“I put the machine on the trolley. You asked me to bring a chair closer. I remember that.”",
+      "target": "« J'ai mis l'appareil sur la desserte.",
+      "english": "“I put the machine on the trolley.",
       "alignment": [
         {
           "english": "I put the machine",
@@ -1739,7 +1776,14 @@
               "end": 15
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Vous m'avez demandé de rapprocher une chaise.",
+      "english": "You asked me to bring a chair closer.",
+      "alignment": [
         {
           "english": "You asked me",
           "target": "Vous m'avez demandé",
@@ -1820,7 +1864,13 @@
               "end": 24
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je me souviens de ça. »",
+      "english": "I remember that.”",
+      "alignment": [
         {
           "english": "I remember that",
           "target": "Je me souviens de ça",
@@ -1962,7 +2012,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Chacun avait gardé un morceau de la pièce.",
@@ -2061,8 +2112,8 @@
       ]
     },
     {
-      "target": "« Et après ? » a demandé Ben.",
-      "english": "“And afterwards?” Ben asked.",
+      "target": "« Et après ?",
+      "english": "“And afterwards?”",
       "alignment": [
         {
           "english": "And afterwards",
@@ -2090,7 +2141,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -2121,8 +2179,8 @@
       ]
     },
     {
-      "target": "« J'ai signé. J'entendais le prénom quand ils le disaient. Je pensais que ça devait vouloir dire quelque chose. »",
-      "english": "“I signed. I could hear the name when they said it. I thought that must mean something.”",
+      "target": "« J'ai signé.",
+      "english": "“I signed.",
       "alignment": [
         {
           "english": "I signed",
@@ -2150,7 +2208,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "J'entendais le prénom quand ils le disaient.",
+      "english": "I could hear the name when they said it.",
+      "alignment": [
         {
           "english": "I could hear",
           "target": "J'entendais",
@@ -2249,7 +2314,13 @@
               "end": 21
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je pensais que ça devait vouloir dire quelque chose. »",
+      "english": "I thought that must mean something.”",
+      "alignment": [
         {
           "english": "I thought",
           "target": "Je pensais",
@@ -2418,7 +2489,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Est-ce que la cassette montre que je mentais ? »",
@@ -2514,11 +2586,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle conserve ce que nous vous avons dit. Elle ne mesure pas ce que vous croyiez. »",
-      "english": "“It preserves what we said to you. It doesn't measure what you believed.”",
+      "target": "« Elle conserve ce que nous vous avons dit.",
+      "english": "“It preserves what we said to you.",
       "alignment": [
         {
           "english": "It preserves",
@@ -2600,7 +2673,14 @@
               "end": 26
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle ne mesure pas ce que vous croyiez. »",
+      "english": "It doesn't measure what you believed.”",
+      "alignment": [
         {
           "english": "It doesn't measure",
           "target": "Elle ne mesure pas",
@@ -2787,7 +2867,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ça m'arrangeait », a-t-elle dit.",
@@ -2856,7 +2937,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La pointe du stylo de Malik est restée sur le papier.",
@@ -2988,11 +3070,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Qu'est-ce qui t'arrangeait ? » a demandé Ben.",
-      "english": "“What suited you?” Ben asked.",
+      "target": "« Qu'est-ce qui t'arrangeait ?",
+      "english": "“What suited you?”",
       "alignment": [
         {
           "english": "What suited you",
@@ -3038,7 +3121,14 @@
               "end": 26
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -3135,7 +3225,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ruth a tiré une enveloppe de son sac.",
@@ -3231,7 +3322,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle l'a posée devant son avocate.",
@@ -3312,8 +3404,8 @@
       ]
     },
     {
-      "target": "« Je saisissais les changements de paiement. Paul me donnait les instructions. Au début, je demandais la pièce correspondante. »",
-      "english": "“I entered the payment changes. Paul gave me the instructions. At first, I asked for the supporting document.”",
+      "target": "« Je saisissais les changements de paiement.",
+      "english": "“I entered the payment changes.",
       "alignment": [
         {
           "english": "I entered",
@@ -3386,7 +3478,14 @@
               "end": 27
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Paul me donnait les instructions.",
+      "english": "Paul gave me the instructions.",
+      "alignment": [
         {
           "english": "Paul",
           "target": "Paul",
@@ -3458,7 +3557,13 @@
               "end": 16
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Au début, je demandais la pièce correspondante. »",
+      "english": "At first, I asked for the supporting document.”",
+      "alignment": [
         {
           "english": "At first",
           "target": "Au début",
@@ -3582,11 +3687,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Il disait qu'elle arriverait. Je laissais un espace dans le dossier. »",
-      "english": "“He said it would arrive. I left a space in the file.”",
+      "target": "« Il disait qu'elle arriverait.",
+      "english": "“He said it would arrive.",
       "alignment": [
         {
           "english": "He said",
@@ -3650,7 +3756,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je laissais un espace dans le dossier. »",
+      "english": "I left a space in the file.”",
+      "alignment": [
         {
           "english": "I left",
           "target": "Je laissais",
@@ -3837,7 +3950,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Après, j'ai arrêté de laisser l'espace. »",
@@ -3933,7 +4047,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a déplacé sa chaise, qui n'avait pas besoin de l'être.",
@@ -4065,7 +4180,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il te menaçait ? »",
@@ -4107,7 +4223,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ruth a regardé Malik.",
@@ -4149,7 +4266,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'avocate lui a demandé si elle souhaitait une pause.",
@@ -4326,8 +4444,8 @@
       ]
     },
     {
-      "target": "« Il disait que les écritures étaient à mon nom. Que Colin avait les chiffres. Et que je devais me souvenir de qui m'avait donné du travail. »",
-      "english": "“He said the entries were in my name. That Colin had the figures. And that I ought to remember who had given me work.”",
+      "target": "« Il disait que les écritures étaient à mon nom.",
+      "english": "“He said the entries were in my name.",
       "alignment": [
         {
           "english": "He said",
@@ -4436,7 +4554,14 @@
               "end": 17
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Que Colin avait les chiffres.",
+      "english": "That Colin had the figures.",
+      "alignment": [
         {
           "english": "That Colin",
           "target": "Que Colin",
@@ -4499,7 +4624,13 @@
               "end": 18
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Et que je devais me souvenir de qui m'avait donné du travail. »",
+      "english": "And that I ought to remember who had given me work.”",
+      "alignment": [
         {
           "english": "And that I ought to",
           "target": "Et que je devais",
@@ -4686,11 +4817,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Oui. Mais j'ai continué quand il ne disait rien. »",
-      "english": "“Yes. But I went on when he wasn't saying anything.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -4709,7 +4841,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Mais j'ai continué quand il ne disait rien. »",
+      "english": "But I went on when he wasn't saying anything.”",
+      "alignment": [
         {
           "english": "But I went on",
           "target": "Mais j'ai continué",
@@ -4869,7 +5008,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il connaissait ce moment où quelqu'un vous tendait une explication acceptable.",
@@ -5301,7 +5441,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ruth lui avait montré le tableau, pas les relances.",
@@ -5478,8 +5619,8 @@
       ]
     },
     {
-      "target": "« Je me disais qu'elle allait trouver le problème. C'était son travail. »",
-      "english": "“I told myself she would find the problem. That was her job.”",
+      "target": "« Je me disais qu'elle allait trouver le problème.",
+      "english": "“I told myself she would find the problem.",
       "alignment": [
         {
           "english": "I told myself",
@@ -5588,7 +5729,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "C'était son travail. »",
+      "english": "That was her job.”",
+      "alignment": [
         {
           "english": "That was her job",
           "target": "C'était son travail",
@@ -5637,8 +5785,8 @@
       ]
     },
     {
-      "target": "« Avec les papiers que tu lui cachais ? » a demandé Ben.",
-      "english": "“With the papers you were hiding from her?” Ben asked.",
+      "target": "« Avec les papiers que tu lui cachais ?",
+      "english": "“With the papers you were hiding from her?”",
       "alignment": [
         {
           "english": "With the papers",
@@ -5720,7 +5868,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -5844,7 +5999,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui. »",
@@ -5868,7 +6024,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Malik a proposé d'ouvrir la fenêtre.",
@@ -5946,7 +6103,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Cette fois, Ruth a accepté.",
@@ -6375,7 +6533,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les pages de Graham lui prêtaient une assurance qu'elle n'avait jamais eue.",
@@ -7017,7 +7176,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel lui a dit qu'il avait appelé Graham après le message.",
@@ -7140,7 +7300,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a fermé les yeux un instant.",
@@ -7314,7 +7475,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il s'est arrêté.",
@@ -7347,7 +7509,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ruth a rouvert les yeux.",
@@ -7401,8 +7564,8 @@
       ]
     },
     {
-      "target": "« Moi aussi. À l'époque. »",
-      "english": "“So did I. Back then.”",
+      "target": "« Moi aussi.",
+      "english": "“So did I.",
       "alignment": [
         {
           "english": "So did I",
@@ -7430,7 +7593,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "À l'époque. »",
+      "english": "Back then.”",
+      "alignment": [
         {
           "english": "Back then",
           "target": "À l'époque",
@@ -7635,7 +7805,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Après l'appel, elle s'était assise sous l'abri.",
@@ -7848,8 +8019,8 @@
       ]
     },
     {
-      "target": "« Le car était là. J'ai pris un billet. Je savais qu'il te restait du temps pour arriver. »",
-      "english": "“The coach was there. I bought a ticket. I knew you still had time to get there.”",
+      "target": "« Le car était là.",
+      "english": "“The coach was there.",
       "alignment": [
         {
           "english": "The coach",
@@ -7895,7 +8066,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "J'ai pris un billet.",
+      "english": "I bought a ticket.",
+      "alignment": [
         {
           "english": "I bought a ticket",
           "target": "J'ai pris un billet",
@@ -7940,7 +8118,13 @@
               "end": 19
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je savais qu'il te restait du temps pour arriver. »",
+      "english": "I knew you still had time to get there.”",
+      "alignment": [
         {
           "english": "I knew",
           "target": "Je savais",
@@ -8136,7 +8320,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Et les trois nuits ? »",
@@ -8187,11 +8372,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« La première, je me suis dit que je te parlerais le matin. Après, il fallait aussi expliquer la première. »",
-      "english": "“The first, I told myself I would speak to you in the morning. After that, I also had to explain the first.”",
+      "target": "« La première, je me suis dit que je te parlerais le matin.",
+      "english": "“The first, I told myself I would speak to you in the morning.",
       "alignment": [
         {
           "english": "The first",
@@ -8327,7 +8513,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Après, il fallait aussi expliquer la première. »",
+      "english": "After that, I also had to explain the first.”",
+      "alignment": [
         {
           "english": "After that",
           "target": "Après",
@@ -8496,7 +8689,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui. »",
@@ -8520,7 +8714,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ruth a demandé un verre d'eau.",
@@ -8607,7 +8802,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben le lui a passé.",
@@ -8766,8 +8962,8 @@
       ]
     },
     {
-      "target": "« Michael a passé vingt-cinq ans à attendre autre chose », a dit Ben. « Tu l'as gardée, cette cassette. »",
-      "english": "“Michael has spent twenty-five years waiting for something else,” Ben said. “You kept it, that cassette.”",
+      "target": "« Michael a passé vingt-cinq ans à attendre autre chose », a dit Ben.",
+      "english": "“Michael has spent twenty-five years waiting for something else,” Ben said.",
       "alignment": [
         {
           "english": "Michael",
@@ -8903,7 +9099,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Tu l'as gardée, cette cassette. »",
+      "english": "“You kept it, that cassette.”",
+      "alignment": [
         {
           "english": "You kept it",
           "target": "Tu l'as gardée",
@@ -8970,8 +9173,8 @@
       ]
     },
     {
-      "target": "« Je gardais aussi ces papiers. Pour qu'on ne puisse pas dire que j'avais tout fait. »",
-      "english": "“I also kept these papers. So they couldn't say I'd done everything.”",
+      "target": "« Je gardais aussi ces papiers.",
+      "english": "“I also kept these papers.",
       "alignment": [
         {
           "english": "I also kept",
@@ -9035,7 +9238,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pour qu'on ne puisse pas dire que j'avais tout fait. »",
+      "english": "So they couldn't say I'd done everything.”",
+      "alignment": [
         {
           "english": "So they couldn't",
           "target": "Pour qu'on ne puisse pas",
@@ -9249,7 +9459,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je les ai gardés pour moi. »",
@@ -9318,7 +9529,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben n'a pas répondu.",
@@ -9360,7 +9572,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Malik a demandé à Ruth si elle confirmait la transmission dont elles avaient parlé.",
@@ -9915,7 +10128,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Graham lui avait téléphoné deux jours avant qu'on le retrouve.",
@@ -10302,7 +10516,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a senti la question suivante se former.",
@@ -10398,7 +10613,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Malik a demandé les mots dont Ruth se souvenait.",
@@ -10557,8 +10773,8 @@
       ]
     },
     {
-      "target": "« Il avait dit : “J'ai demandé à Paul de venir. On va reprendre les paiements.” C'est ce dont je me souviens. »",
-      "english": "“He had said: ‘I've asked Paul to come round. We'll go over the payments.’ That's what I remember.”",
+      "target": "« Il avait dit : “J'ai demandé à Paul de venir.",
+      "english": "“He had said: ‘I've asked Paul to come round.",
       "alignment": [
         {
           "english": "He had said",
@@ -10658,7 +10874,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "On va reprendre les paiements.”",
+      "english": "We'll go over the payments.’",
+      "alignment": [
         {
           "english": "We'll go over the payments",
           "target": "On va reprendre les paiements",
@@ -10712,7 +10935,13 @@
               "end": 29
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "C'est ce dont je me souviens. »",
+      "english": "That's what I remember.”",
+      "alignment": [
         {
           "english": "That's what I remember",
           "target": "C'est ce dont je me souviens",
@@ -10788,8 +11017,8 @@
       ]
     },
     {
-      "target": "« Et vous ? » a demandé Malik.",
-      "english": "“And you?” Malik asked.",
+      "target": "« Et vous ?",
+      "english": "“And you?”",
       "alignment": [
         {
           "english": "And you",
@@ -10817,7 +11046,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Malik.",
+      "english": "Malik asked.",
+      "alignment": [
         {
           "english": "Malik asked",
           "target": "a demandé Malik",
@@ -10959,7 +11195,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je lui ai demandé de ne pas parler de moi. »",
@@ -11064,7 +11301,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     }
   ],
   "meta": {
@@ -11072,6 +11310,108 @@
     "createdAt": "2026-10-15",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 3,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12,
+        14,
+        16,
+        17,
+        20,
+        21,
+        22,
+        24,
+        27,
+        28,
+        29,
+        31,
+        32,
+        33,
+        34,
+        36,
+        37,
+        38,
+        39,
+        42,
+        43,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        55,
+        56,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        66,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        87,
+        88,
+        89,
+        90,
+        93,
+        94,
+        95,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        104,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        122,
+        124,
+        125
+      ]
+    }
   }
 }

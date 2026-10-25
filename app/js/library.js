@@ -11,12 +11,13 @@ import {
   getAllChapterKeys,
   getAllChapterMetadata,
   getAllProgress,
+  putProgressRecord,
   getProgress,
   chapterKey,
   updateSettings,
 } from "./db.js";
 import { getLearningLanguage, setLearningLanguage, availableLanguages, languageName } from "./languages.js";
-import { LEVELS, levelHint, loadLevels, chapterKnowledge, clampLevel } from "./levels.js";
+import { learnerLevel, LEVELS, levelHint, loadLevels, chapterKnowledge, clampLevel } from "./levels.js";
 import { bookQuizPrefs } from "./chapterquiz.js";
 import { vaultBucketMap } from "./vault.js";
 import { isPracticeBook, deletePracticeStory } from "./stories.js";
@@ -320,6 +321,13 @@ export async function downloadBook(catalogEntry, btn) {
       // Older content files may have their own unrelated version number.
       chJson.catalogVersion = ch.version ?? 1;
       await putChapter(catalogEntry.id, ch.id, chJson);
+      const repair = chJson.meta?.sentence_unit_repair;
+      if (existing && repair?.from_version === (existing.catalogVersion ?? existing.version)) {
+        const progress = await getProgress(catalogEntry.id, ch.id);
+        if (Number.isInteger(progress?.pair) && progress.pair >= 0 && Number.isInteger(repair.pair_index_map?.[progress.pair])) {
+          await putProgressRecord(chapterKey(catalogEntry.id, ch.id), { ...progress, pair: repair.pair_index_map[progress.pair] });
+        }
+      }
       downloadedCount++;
     }
 
@@ -609,9 +617,10 @@ let _vaultRevision = 0;
 const _knownCache = new Map();
 window.addEventListener("vault:changed", () => { _vaultRevision++; _knownCache.clear(); });
 async function fillKnownPills(book) {
+  if (book.language === "fr") return;
   const run = ++_knownRun;
   const settings = await getSettings();
-  const level = clampLevel(settings.myLevel);
+  const level = learnerLevel(settings, book.language);
   if (book.language === "zh") await loadLevels();
   const buckets = await vaultBucketMap(book.language);
   for (const ch of book.chapters || []) {
@@ -636,7 +645,7 @@ async function renderBookQuizPrefs(book, isDownloaded) {
   const box = $("book-quiz");
   if (!isDownloaded) { box.hidden = true; return; }
   box.hidden = false;
-  const prefs = bookQuizPrefs(await getSettings(), book.id);
+  const prefs = bookQuizPrefs(await getSettings(), book.id, book.language);
   const on = $("book-quiz-on");
   on.checked = prefs.on;
   const levels = $("book-quiz-levels");
@@ -649,7 +658,7 @@ async function renderBookQuizPrefs(book, isDownloaded) {
     levels.classList.toggle("off", !on.checked);
   };
   const save = patch => updateSettings(s => ({ bookQuiz: {
-    ...(s.bookQuiz || {}), [book.id]: { ...bookQuizPrefs(s, book.id), ...patch }
+    ...(s.bookQuiz || {}), [book.id]: { ...bookQuizPrefs(s, book.id, book.language), ...patch }
   } }));
   on.onchange = () => { hint(); save({ on: on.checked }); };
   levels.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {

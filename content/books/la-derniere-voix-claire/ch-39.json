@@ -2,7 +2,7 @@
   "id": "ch-39",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "Ce qui ne se rend pas",
     "english": "What Cannot Be Given Back"
@@ -102,7 +102,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a regardé son poignet, puis demandé où il mettait les tasses.",
@@ -447,8 +448,8 @@
       ]
     },
     {
-      "target": "« J'ai demandé qu'on suspende la préparation du livre », a dit Judith. « Pour le moment. »",
-      "english": "“I've asked them to suspend work on the book,” Judith said. “For now.”",
+      "target": "« J'ai demandé qu'on suspende la préparation du livre », a dit Judith.",
+      "english": "“I've asked them to suspend work on the book,” Judith said.",
       "alignment": [
         {
           "english": "I've asked",
@@ -584,7 +585,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Pour le moment. »",
+      "english": "“For now.”",
+      "alignment": [
         {
           "english": "For now",
           "target": "Pour le moment",
@@ -744,11 +752,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je ne sais pas quoi faire des autres pages. Celles où il parle des vacances. De notre première voiture. »",
-      "english": "“I don't know what to do with the other pages. The ones where he talks about the holidays. About our first car.”",
+      "target": "« Je ne sais pas quoi faire des autres pages.",
+      "english": "“I don't know what to do with the other pages.",
       "alignment": [
         {
           "english": "I don't know",
@@ -839,7 +848,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Celles où il parle des vacances.",
+      "english": "The ones where he talks about the holidays.",
+      "alignment": [
         {
           "english": "The ones where",
           "target": "Celles où",
@@ -920,7 +936,13 @@
               "end": 12
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "De notre première voiture. »",
+      "english": "About our first car.”",
+      "alignment": [
         {
           "english": "About our first car",
           "target": "De notre première voiture",
@@ -1062,7 +1084,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Judith a aligné les anses sur le plateau.",
@@ -1167,7 +1190,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Tu as écrit ce qu'il a dit chez Ruth ? »",
@@ -1272,11 +1296,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Ce qu'on entend. Et ce que j'ai fait. »",
-      "english": "“What we can hear. And what I did.”",
+      "target": "« Ce qu'on entend.",
+      "english": "“What we can hear.",
       "alignment": [
         {
           "english": "What we can hear",
@@ -1322,7 +1347,14 @@
               "end": 15
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Et ce que j'ai fait. »",
+      "english": "And what I did.”",
+      "alignment": [
         {
           "english": "And what I did",
           "target": "Et ce que j'ai fait",
@@ -1437,7 +1469,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Judith avait eu des nouvelles de l'enquête.",
@@ -1542,7 +1575,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Selon Shah, les constatations médicales et celles de l'escalier appuyaient l'hypothèse d'une agression.",
@@ -2037,7 +2071,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il aurait voulu lui raconter une des histoires où Graham l'avait fait rire.",
@@ -2520,7 +2555,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle avait confirmé la réception des deux rapports.",
@@ -3165,8 +3201,8 @@
       ]
     },
     {
-      "target": "« L'arrestation de Paul ne change pas automatiquement la décision contre Michael », avait dit Helen. « Je vais le voir avec les rapports et la photographie. »",
-      "english": "“Paul's arrest doesn't automatically change the decision against Michael,” Helen had said. “I'm going to see him with the reports and the photograph.”",
+      "target": "« L'arrestation de Paul ne change pas automatiquement la décision contre Michael », avait dit Helen.",
+      "english": "“Paul's arrest doesn't automatically change the decision against Michael,” Helen had said.",
       "alignment": [
         {
           "english": "Paul's arrest",
@@ -3338,7 +3374,14 @@
               "end": 15
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Je vais le voir avec les rapports et la photographie. »",
+      "english": "“I'm going to see him with the reports and the photograph.”",
+      "alignment": [
         {
           "english": "I'm going to see him",
           "target": "Je vais le voir",
@@ -3570,11 +3613,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Préservez les documents. Répondez aux questions. Même celles qui ne concernent pas Paul. »",
-      "english": "“Preserve the documents. Answer the questions. Even the ones that aren't about Paul.”",
+      "target": "« Préservez les documents.",
+      "english": "“Preserve the documents.",
       "alignment": [
         {
           "english": "Preserve",
@@ -3620,7 +3664,14 @@
               "end": 13
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Répondez aux questions.",
+      "english": "Answer the questions.",
+      "alignment": [
         {
           "english": "Answer",
           "target": "Répondez",
@@ -3665,7 +3716,13 @@
               "end": 13
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Même celles qui ne concernent pas Paul. »",
+      "english": "Even the ones that aren't about Paul.”",
+      "alignment": [
         {
           "english": "Even the ones",
           "target": "Même celles",
@@ -3888,7 +3945,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Aucune date de sortie ne suivait.",
@@ -4062,7 +4120,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Judith lui a dit qu'elle était désolée.",
@@ -4446,7 +4505,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un véhicule s'est arrêté dans la rue.",
@@ -5061,11 +5121,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Quand il faudra, tu me le diras. Pas tous les soirs. »",
-      "english": "“When it's necessary, you'll tell me. Not every evening.”",
+      "target": "« Quand il faudra, tu me le diras.",
+      "english": "“When it's necessary, you'll tell me.",
       "alignment": [
         {
           "english": "When it's necessary",
@@ -5147,7 +5208,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pas tous les soirs. »",
+      "english": "Not every evening.”",
+      "alignment": [
         {
           "english": "Not every evening",
           "target": "Pas tous les soirs",
@@ -5235,7 +5303,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Dans l'entrée, elle l'a embrassé sur la joue sans toucher son bras.",
@@ -5499,11 +5568,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elsie veut que je vienne chez elle. Pour parler des affaires de ma mère. »",
-      "english": "“Elsie wants me to come to her house. To talk about my mother's things.”",
+      "target": "« Elsie veut que je vienne chez elle.",
+      "english": "“Elsie wants me to come to her house.",
       "alignment": [
         {
           "english": "Elsie wants",
@@ -5594,7 +5664,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pour parler des affaires de ma mère. »",
+      "english": "To talk about my mother's things.”",
+      "alignment": [
         {
           "english": "To talk",
           "target": "Pour parler",
@@ -5718,11 +5795,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je sais pas ce que je veux garder. Je sais même pas si je veux y penser. »",
-      "english": "“I don't know what I want to keep. I don't even know whether I want to think about it.”",
+      "target": "« Je sais pas ce que je veux garder.",
+      "english": "“I don't know what I want to keep.",
       "alignment": [
         {
           "english": "I don't know",
@@ -5813,7 +5891,14 @@
               "end": 21
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je sais même pas si je veux y penser. »",
+      "english": "I don't even know whether I want to think about it.”",
+      "alignment": [
         {
           "english": "I don't even know",
           "target": "Je sais même pas",
@@ -6027,7 +6112,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a regardé son téléphone.",
@@ -6096,7 +6182,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il allait lui écrire lui-même.",
@@ -6920,6 +7007,67 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 3,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        31,
+        32,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52,
+        54,
+        55,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65
+      ]
+    }
   }
 }

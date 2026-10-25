@@ -2236,3 +2236,5 @@ body[data-script="hanzi"] .reader-block.flow > p.target { text-indent: 2em; lett
 
 /* Buttons with display styles must still honour their hidden state. */
 #review-next[hidden], #book-remove-download[hidden], #book-remove-note[hidden] { display: none; }
+
+.reader-block.paragraph-start:not(:first-child) { margin-top: 14px; }

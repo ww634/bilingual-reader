@@ -1,4 +1,4 @@
-import { normalizePinyin, normalizedWords, englishAnswer, clozeRange } from "./learning-utils.js";
+import { normalizePinyin, normalizedWords, englishAnswer, clozeRange, vocabularyKey, vocabularyUnits, distinctOptions, sentenceAnswer } from "./learning-utils.js";
 // Memory Vault: save words from the reader and quiz them.
 //
 // Mastery is a rolling accuracy: each word keeps its last WINDOW (20) attempts,
@@ -12,7 +12,7 @@ import { normalizePinyin, normalizedWords, englishAnswer, clozeRange } from "./l
 // draw that favours low-mastery and recently-wrong words, so it adapts. All
 // local; review audio + meaning lookups reuse the existing helpers.
 
-import { getSettings, updateSettings, bumpActivity, putVaultItem, getVaultItem, getAllVaultItems, deleteVaultItem } from "./db.js";
+import { getSettings, updateSettings, bumpActivity, putVaultItem, updateVaultItem, getVaultItem, getAllVaultItems, deleteVaultItem } from "./db.js";
 import { speakWord, unlockAudio } from "./speech.js";
 import { getLearningLanguage, languageName } from "./languages.js";
 import { openWriter } from "./write.js";
@@ -74,9 +74,9 @@ function isDue(item, now = Date.now()) {
 /** Counts for the home screen: { total, due, new, learning, mastered }. */
 export async function vaultStats(lang = getLearningLanguage()) {
   const items = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
-  const out = { total: items.length, due: 0, new: 0, learning: 0, mastered: 0 };
+  const out = { total: items.length, due: 0, dueWords: 0, dueSentences: 0, new: 0, learning: 0, mastered: 0 };
   const now = Date.now();
-  for (const it of items) { out[bucketOf(it)]++; if (isDue(it, now)) out.due++; }
+  for (const it of items) { out[bucketOf(it)]++; if (isDue(it, now)) { out.due++; out[isSentence(it) ? "dueSentences" : "dueWords"]++; } }
   return out;
 }
 
@@ -84,7 +84,7 @@ export async function vaultStats(lang = getLearningLanguage()) {
 export async function vaultBucketMap(lang = getLearningLanguage()) {
   const map = new Map();
   for (const it of await getAllVaultItems()) {
-    if ((it.lang || "zh") === lang && !isSentence(it)) map.set(it.id, bucketOf(it));
+    if ((it.lang || "zh") === lang && !isSentence(it)) map.set(vocabularyKey(it.id, lang), bucketOf(it));
   }
   return map;
 }
@@ -94,13 +94,13 @@ export async function chapterWatchWords(chapter) {
   const lang = chapter?.language || "zh";
   const keys = new Set();
   for (const p of chapter?.pairs || []) {
-    for (const c of p.alignment || []) {
-      const k = (c.hanzi || c.target || "").trim();
+    for (const c of (p.alignment || []).flatMap(c => [c, ...(c.lookup || [])])) {
+      const k = vocabularyKey(c.hanzi || c.target, lang);
       if (k) keys.add(k);
     }
   }
   const items = (await getAllVaultItems())
-    .filter((it) => (it.lang || "zh") === lang && keys.has(it.id) && !isMastered(it));
+    .filter((it) => (it.lang || "zh") === lang && keys.has(vocabularyKey(it.id, lang)) && !isMastered(it));
   return items
     .map((item) => ({ item, bucket: bucketOf(item) }))
     .sort((a, b) => masteryPct(b.item) - masteryPct(a.item));
@@ -125,7 +125,8 @@ export async function saveWord(chunk, chapter) {
   // text for languages without a separate script (e.g. French).
   const word = (chunk?.hanzi || chunk?.target || "").trim();
   if (!word || chunk.chunkIdx == null) return { ok: false, reason: "not-a-word" };
-  const id = word;
+  const lang = chapter?.language || getLearningLanguage();
+  const id = vocabularyKey(word, lang);
   if (await getVaultItem(id)) return { ok: true, already: true };
   const pair = chapter?.pairs?.[chunk.pairIdx];
   const storyGloss = (chunk.english || "").trim();
@@ -147,18 +148,19 @@ export async function saveWord(chunk, chapter) {
   });
   _masteredDirty = true;
   refineMeaning(id);   // background — fetch the true dictionary meaning
+  window.dispatchEvent(new CustomEvent("vault:changed"));
   return { ok: true };
 }
 
 export async function removeWord(hanzi) {
   if (!hanzi) return;
-  await deleteVaultItem(hanzi.trim());
+  await deleteVaultItem(vocabularyKey(hanzi, getLearningLanguage()));
   _masteredDirty = true;
 }
 
 export async function isWordSaved(hanzi) {
   if (!hanzi) return false;
-  return !!(await getVaultItem(hanzi.trim()));
+  return !!(await getVaultItem(vocabularyKey(hanzi, getLearningLanguage())));
 }
 
 // Books store sentences as clauses ("她蹲下来，" / "从轨道里…。"). Widen a clause
@@ -207,13 +209,14 @@ export async function saveSentence(pairs, chapter) {
 export async function saveItems(items) {
   let added = 0;
   for (const it of items) {
-    if (!it?.id || (await getVaultItem(it.id))) continue;
+    const id = isSentence(it) ? it?.id : vocabularyKey(it?.hanzi || it?.id, it?.lang || getLearningLanguage());
+    if (!id || (await getVaultItem(id))) continue;
     await putVaultItem({
-      id: it.id, hanzi: it.hanzi, pinyin: it.pinyin || "", english: it.english, storyGloss: it.english,
+      id, hanzi: it.hanzi, pinyin: it.pinyin || "", english: it.english, storyGloss: it.english,
       meaningRefined: false, category: it.category || null, frequency_band: it.frequency_band || null,
       lang: it.lang || getLearningLanguage(), context: it.context || null, createdAt: Date.now(), attempts: [],
     });
-    refineMeaning(it.id);
+    refineMeaning(id);
     added++;
   }
   _masteredDirty = true;
@@ -249,11 +252,7 @@ async function refineMeaning(id) {
     if (!settings.openaiKey || !navigator.onLine) return;
     const meaning = await fetchMeaning(item, settings.openaiKey);
     if (!meaning) return;
-    const fresh = await getVaultItem(id);
-    if (!fresh) return;
-    fresh.english = meaning;
-    fresh.meaningRefined = true;
-    await putVaultItem(fresh);
+    await updateVaultItem(id, { english: meaning, meaningRefined: true });
   } catch { /* keep the story gloss */ }
 }
 
@@ -302,7 +301,7 @@ export async function openVault() {
         <div class="vault-english">${escape(it.english)}</div>
       </div>
       <div class="vault-side">
-        <span class="vault-status vault-status-${b}">${BUCKET_LABEL[b]} · ${masteryPct(it)}%</span>
+        <span class="vault-status vault-status-${b}">${b === "mastered" ? "Mastered" : `${BUCKET_LABEL[b]} · ${attemptsOf(it).filter(Boolean).length}/20 correct reviews`}</span>
         <div class="vault-tools">
           <button class="vault-tool vault-hear" aria-label="Hear it">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
@@ -408,7 +407,7 @@ async function newQuiz(fields) {
   const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
   return {
     mode: "fixed", total: 0, answered: 0, correct: 0, queue: null, pool: null, lastId: null,
-    distractors: all, title: "", chapter: false, missed: [], counted: new Set(),
+    distractors: all, title: "", chapter: false, missed: [], counted: new Set(), finished: false,
     answerMode: s.reviewAnswerMode || "mix", direction: s.reviewDirection || "mix",
     script: lang === "zh" ? (s.reviewScript || "both") : "hanzi", lang, current: null,
     ...fields,
@@ -425,7 +424,7 @@ async function beginQuiz() {
   const lang = getLearningLanguage();
   const all = (await getAllVaultItems()).filter((it) => (it.lang || "zh") === lang);
   const pool = all.filter((it) => buckets.includes(bucketOf(it)) && kinds.includes(isSentence(it) ? "sentence" : "word"));
-  if (!pool.length) { $("quiz-setup-note").textContent = "Nothing saved in the selected groups yet."; return; }
+  if (!pool.length) { $("quiz-setup-note").textContent = all.some(isMastered) ? "These words are mastered. Include Mastered to review them, or save some new words." : "Nothing saved in the selected groups yet."; return; }
 
   const length = s.reviewLength || "20";
   const fields = { lang, pool };
@@ -557,15 +556,18 @@ function renderCard() {
   }
   if (dir === "cloze" && !cloze) dir = sentence ? "dictation" : "e2t";   // no usable sentence
 
-  // Answer mode.
+  // Deduplicate before deciding whether a choice question is viable.
   let mode = spec.options ? "choice" : quiz.answerMode;
   if (mode === "mix") mode = Math.random() < 0.5 ? "choice" : "type";
-  if (mode === "choice" && !spec.options && peersOf(item).length < 3) mode = "type";   // need distractors
+  const wantedChoices = mode === "choice";
+  const options = distinctOptions(item, spec.options || shuffle(peersOf(item)), dir).slice(0, 3);
+  if (mode === "choice" && options.length < 3) mode = "type";
   if (sentence && mode === "type" && dir !== "dictation") mode = "self";
-  quiz.current = { item, dir, mode, script, options: spec.options || null };
+  $("review-mode-note").textContent = wantedChoices && mode !== "choice" ? "Not enough distinct choices for this item. " + (mode === "self" ? "Reveal the answer and check yourself." : "Type your answer instead.") : "";
+  quiz.current = { item, dir, mode, script, options };
 
   $("review-progress-text").textContent = quiz.mode === "endless" ? `${quiz.answered} answered` : `${quiz.answered + 1} / ${quiz.total}`;
-  $("review-finish").hidden = quiz.mode !== "endless";
+  $("review-finish").hidden = false;
   $("review-prompt-label").textContent =
     dir === "t2e" ? "What does this mean?"
     : dir === "cloze" ? "Fill in the missing word"
@@ -604,7 +606,7 @@ function renderCard() {
   $("review-reveal").hidden = true; $("review-reveal").innerHTML = "";
   $("review-next").hidden = true;
 
-  if (mode === "choice") renderChoices(item, dir, area, script, spec.options);
+  if (mode === "choice") renderChoices(item, dir, area, script, options);
   else if (mode === "self") renderSelf(item, dir, area);
   else renderType(item, dir, area, script);
 }
@@ -673,6 +675,7 @@ function similarity(a, b) {
 }
 
 export function gradeType(input, item, dir) {
+  if (isSentence(item) && item.lang === "fr" && dir !== "t2e") return sentenceAnswer(input, item.hanzi);
   const given = norm(input);
   if (!given) return false;
   if (dir === "t2e") {
@@ -713,7 +716,8 @@ function renderType(item, dir, area, script) {
 }
 
 async function onAnswer(correct) {
-  if (!quiz?.current || quiz.current.answered) return;
+  if (!quiz?.current || quiz.finished || quiz.current.answered) return;
+  const session = quiz;
   quiz.current.answered = true;
   const { item, mode } = quiz.current;
   const area = $("review-answer-area");
@@ -734,13 +738,14 @@ async function onAnswer(correct) {
 
   // Count toward mastery: the vault copy of the word (chapter quizzes use their
   // own word objects, so look the saved one up).
-  const saved = await getVaultItem(item.id);
-  if (saved && !quiz.counted.has(item.id)) {
-    quiz.counted.add(item.id);
-    recordAttempt(saved, correct);
-    await putVaultItem(saved);
-    _masteredDirty = true;
+  if (!session.counted.has(item.id)) {
+    const saved = await updateVaultItem(item.id, fresh => {
+      const updated = recordAttempt(fresh, correct);
+      return { attempts: updated.attempts, lastSeen: updated.lastSeen };
+    });
+    if (saved) { session.counted.add(item.id); _masteredDirty = true; }
   }
+  if (quiz !== session || session.finished) return;
   if (!correct && !quiz.missed.some((m) => m.id === item.id)) {
     quiz.missed.push(item);
   }
@@ -780,7 +785,9 @@ function nextCard() {
   renderCard();
 }
 
+export function finishActiveQuiz() { if (!quiz || quiz.finished) return false; endQuiz(); return true; }
 function endQuiz() {
+  if (quiz) quiz.finished = true;
   const done = $("review-done");
   $("review-card").hidden = true;
   done.hidden = false;
@@ -809,7 +816,21 @@ function endQuiz() {
   quiz = null;
 }
 
+async function migrateFrenchWordKeys() {
+  for (const old of await getAllVaultItems()) {
+    if (old.lang !== "fr" || isSentence(old)) continue;
+    const id = vocabularyKey(old.hanzi || old.id, "fr");
+    if (id === old.id) continue;
+    const current = await getVaultItem(id);
+    const preferred = current && (current.meaningRefined || (current.lastSeen || 0) >= (old.lastSeen || 0)) ? current : old;
+    const attempts = attemptsOf(current).length > attemptsOf(old).length ? attemptsOf(current) : attemptsOf(old);
+    await putVaultItem({ ...old, ...preferred, id, attempts: attempts.slice(-WINDOW), lastSeen: Math.max(old.lastSeen || 0, current?.lastSeen || 0) });
+    await deleteVaultItem(old.id);
+  }
+}
+
 export async function initVault() {
+  await migrateFrenchWordKeys();
   await ensureMastered();
   window.addEventListener("vault:changed", () => { _masteredDirty = true; });
   // Re-render the vault for the newly chosen language (if it's the open view).

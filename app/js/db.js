@@ -202,6 +202,19 @@ export async function putVaultItem(item) {
   const store = await tx(STORE_VAULT, "readwrite");
   return asPromise(store.put(item));
 }
+export async function updateVaultItem(id, patch) {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const t = db.transaction(STORE_VAULT, "readwrite"), store = t.objectStore(STORE_VAULT);
+    let next = null; const request = store.get(id);
+    request.onsuccess = () => {
+      if (!request.result) return;
+      next = { ...request.result, ...(typeof patch === "function" ? patch(request.result) : patch) };
+      store.put(next);
+    };
+    t.oncomplete = () => resolve(next); t.onerror = () => reject(t.error);
+  });
+}
 export async function getVaultItem(id) {
   const store = await tx(STORE_VAULT);
   return asPromise(store.get(id));
@@ -256,7 +269,7 @@ const DEFAULT_SETTINGS = {
   showEnglish: true,                 // false = target language only, flowing like a book
   feedbackRepo: "ww634/reader-feedback", // private GitHub repo that receives feedback as issues
   feedbackToken: "",                 // fine-grained token: Issues read/write on that repo only
-  myLevel: 2,                        // learner level 1–6 (Newbie … Advanced), see levels.js
+  myLevel: { zh: 2, fr: 2 },                        // learner level 1–6 (Newbie … Advanced), see levels.js
   // Per-category visibility for English translations in the reader. Toggled
   // via the reader-options sheet. When a category is false, the English part
   // of those chunks is rendered with visibility:hidden so the page layout
@@ -275,14 +288,20 @@ const DEFAULT_SETTINGS = {
   },
 };
 
+function normalizeSettings(stored = {}) {
+  const levels = stored.myLevel;
+  const legacy = typeof levels === "number" ? { [stored.learningLanguage || "zh"]: levels } : levels;
+  return { ...DEFAULT_SETTINGS, ...stored, myLevel: { zh: 2, fr: 2, ...(legacy || {}) } };
+}
+
 export async function getSettings() {
   const store = await tx(STORE_SETTINGS);
   const stored = await asPromise(store.get("current"));
-  return { ...DEFAULT_SETTINGS, ...(stored || {}) };
+  return normalizeSettings(stored || {});
 }
 export async function putSettings(settings) {
   const store = await tx(STORE_SETTINGS, "readwrite");
-  return asPromise(store.put(settings, "current"));
+  return asPromise(store.put(normalizeSettings(settings), "current"));
 }
 
 /**
@@ -298,7 +317,7 @@ export async function updateSettings(patch) {
     let next = null;
     const req = store.get("current");
     req.onsuccess = () => {
-      const current = { ...DEFAULT_SETTINGS, ...(req.result || {}) };
+      const current = normalizeSettings(req.result || {});
       next = { ...current, ...(typeof patch === "function" ? patch(current) : patch) };
       store.put(next, "current");
     };

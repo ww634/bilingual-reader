@@ -2,15 +2,15 @@
   "id": "ch-33",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "Le rapport complet",
     "english": "The Full Report"
   },
   "pairs": [
     {
-      "target": "« Je peux rester ici ? » a demandé Ben.",
-      "english": "“Can I stay here?” Ben asked.",
+      "target": "« Je peux rester ici ?",
+      "english": "“Can I stay here?”",
       "alignment": [
         {
           "english": "Can I stay here",
@@ -56,7 +56,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -180,7 +187,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les policiers étaient encore là.",
@@ -252,8 +260,8 @@
       ]
     },
     {
-      "target": "« Bien sûr. Le canapé est assez long. »",
-      "english": "“Of course. The sofa is long enough.”",
+      "target": "« Bien sûr.",
+      "english": "“Of course.",
       "alignment": [
         {
           "english": "Of course",
@@ -272,7 +280,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Le canapé est assez long. »",
+      "english": "The sofa is long enough.”",
+      "alignment": [
         {
           "english": "The sofa",
           "target": "Le canapé",
@@ -441,7 +456,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a trouvé une housse qu'il ne reconnaissait pas, puis celle dont il avait besoin.",
@@ -828,7 +844,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben lui a parlé depuis la cuisine.",
@@ -1638,7 +1655,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben n'avait pas touché au verre d'eau.",
@@ -1887,8 +1905,8 @@
       ]
     },
     {
-      "target": "« Mon chantier. Je dois les prévenir. »",
-      "english": "“My job. I need to let them know.”",
+      "target": "« Mon chantier.",
+      "english": "“My job.",
       "alignment": [
         {
           "english": "My job",
@@ -1916,7 +1934,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je dois les prévenir. »",
+      "english": "I need to let them know.”",
+      "alignment": [
         {
           "english": "I need to let them know",
           "target": "Je dois les prévenir",
@@ -2031,7 +2056,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous voulez que je reste pendant que vous écrivez ? »",
@@ -2145,7 +2171,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a dit oui.",
@@ -2196,7 +2223,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a tapé une ligne, l'a effacée, puis envoyé un message que Daniel n'a pas lu.",
@@ -2766,7 +2794,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Helen l'avait prévenue de la mort de Ruth.",
@@ -2979,8 +3008,8 @@
       ]
     },
     {
-      "target": "« Je peux. Relisez-moi encore plus sévèrement. »",
-      "english": "“I can. Read my work even more critically.”",
+      "target": "« Je peux.",
+      "english": "“I can.",
       "alignment": [
         {
           "english": "I can",
@@ -3008,7 +3037,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Relisez-moi encore plus sévèrement. »",
+      "english": "Read my work even more critically.”",
+      "alignment": [
         {
           "english": "Read my work",
           "target": "Relisez-moi",
@@ -3141,7 +3177,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a fermé la porte intérieure avant de se connecter.",
@@ -3624,7 +3661,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ses premiers courriers y étaient joints, sans être remplacés.",
@@ -4593,11 +4631,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Vous écrivez que l'échange confirme une rencontre sur les paiements. L'enregistrement ne dit pas ça. »",
-      "english": "“You write that the exchange confirms a meeting about payments. The recording doesn't say that.”",
+      "target": "« Vous écrivez que l'échange confirme une rencontre sur les paiements.",
+      "english": "“You write that the exchange confirms a meeting about payments.",
       "alignment": [
         {
           "english": "You write",
@@ -4733,7 +4772,14 @@
               "end": 17
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "L'enregistrement ne dit pas ça. »",
+      "english": "The recording doesn't say that.”",
+      "alignment": [
         {
           "english": "The recording",
           "target": "L'enregistrement",
@@ -4875,7 +4921,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les mots étaient prudents jusqu'au verbe.",
@@ -5085,11 +5132,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Alors mettez-les dans la phrase. Avec leur source. »",
-      "english": "“Then put them in the sentence. With their source.”",
+      "target": "« Alors mettez-les dans la phrase.",
+      "english": "“Then put them in the sentence.",
       "alignment": [
         {
           "english": "Then put them",
@@ -5153,7 +5201,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Avec leur source. »",
+      "english": "With their source.”",
+      "alignment": [
         {
           "english": "With their source",
           "target": "Avec leur source",
@@ -5223,7 +5278,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Dans la section suivante, il avait décrit son propre rôle : le prénom proposé, les écoutes répétées, l'accord de Ruth traité comme une confirmation indépendante.",
@@ -5718,7 +5774,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Chaque extrait portait des repères dans le fichier complet.",
@@ -6375,8 +6432,8 @@
       ]
     },
     {
-      "target": "« Cette référence renvoie à votre copie de travail », a dit Nisha. « Ajoutez le nom du fichier reçu. Celui qu'un autre lecteur pourra obtenir. »",
-      "english": "“This reference points to your working copy,” Nisha said. “Add the name of the received file. The one another reader will be able to obtain.”",
+      "target": "« Cette référence renvoie à votre copie de travail », a dit Nisha.",
+      "english": "“This reference points to your working copy,” Nisha said.",
       "alignment": [
         {
           "english": "This reference",
@@ -6503,7 +6560,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Ajoutez le nom du fichier reçu.",
+      "english": "“Add the name of the received file.",
+      "alignment": [
         {
           "english": "Add the name",
           "target": "Ajoutez le nom",
@@ -6575,7 +6639,13 @@
               "end": 15
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Celui qu'un autre lecteur pourra obtenir. »",
+      "english": "The one another reader will be able to obtain.”",
+      "alignment": [
         {
           "english": "The one another reader",
           "target": "Celui qu'un autre lecteur",
@@ -6753,7 +6823,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il connaissait ces noms de fichiers comme le trajet de sa cuisine à l'atelier.",
@@ -7365,7 +7436,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Nisha adressait séparément son avis indépendant à Helen.",
@@ -7626,7 +7698,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils cherchaient Paul.",
@@ -7875,8 +7948,8 @@
       ]
     },
     {
-      "target": "« Non. Il a dit qu'une phrase de moi suffirait. Je l'ai noté juste après l'appel. »",
-      "english": "“No. He said one sentence from me would be enough. I wrote it down straight after the call.”",
+      "target": "« Non.",
+      "english": "“No.",
       "alignment": [
         {
           "english": "No",
@@ -7895,7 +7968,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il a dit qu'une phrase de moi suffirait.",
+      "english": "He said one sentence from me would be enough.",
+      "alignment": [
         {
           "english": "He said",
           "target": "Il a dit",
@@ -7994,7 +8074,13 @@
               "end": 9
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je l'ai noté juste après l'appel. »",
+      "english": "I wrote it down straight after the call.”",
+      "alignment": [
         {
           "english": "I wrote it down",
           "target": "Je l'ai noté",
@@ -8235,7 +8321,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a lu ce qui était écrit.",
@@ -8312,6 +8399,77 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        46,
+        47,
+        48,
+        49,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        74,
+        75
+      ]
+    }
   }
 }

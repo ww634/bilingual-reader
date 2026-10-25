@@ -1,130 +1,54 @@
-import { clozeRange } from "./learning-utils.js";
-// End-of-chapter quizzes.
-//
-// Built from the chapter itself — no AI and no network — so they're ready the
-// moment a chapter is read, for every book (including practice stories). Each
-// level tests the chapter's words AT that level: a Newbie quiz asks about the
-// HSK 1 words that appeared, Elementary about the HSK 3 ones, and so on, topped
-// up from neighbouring levels when a chapter has too few.
-//
-// A quiz is seeded by book + chapter + level, so "the Elementary quiz for
-// chapter 3" is always the same set of questions, like a stored quiz.
-//
-// Question types rotate through: meaning (word → English), say it
-// (English → word), fill in the sentence (from the chapter), and dictation
-// (hear the word, pick it). All multiple choice, with distractors drawn from the
-// same chapter, preferring the same part of speech.
-
-import { chunkLevel, NOT_VOCAB, DEFAULT_LEVEL } from "./levels.js";
-
+// Chapter quizzes use local vocabulary, occurrence counts and the last two
+// word sets for this chapter/level. Starting a quiz records a new round;
+// previewing the level picker never consumes one.
+import { clozeRange, vocabularyKey, vocabularyUnits, distinctOptions } from './learning-utils.js';
+import { chunkLevel, NOT_VOCAB, learnerLevel } from './levels.js';
+import { getSettings, updateSettings } from './db.js';
 export const QUIZ_SIZE = 8;
-const TYPES = ["t2e", "cloze", "dictation", "e2t"];
-
-// Small deterministic PRNG (mulberry32) + string hash, for stable quizzes.
-function hash(str) {
-  let h = 2166136261;
-  for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
-  return h >>> 0;
+const TYPES = ['t2e','cloze','dictation','e2t'];
+function hash(s) { let h=2166136261; for (const c of s) {h^=c.charCodeAt(0);h=Math.imul(h,16777619)} return h>>>0; }
+function rng(seed) {let a=seed;return()=>{a+=0x6d2b79f5;let t=Math.imul(a^(a>>>15),a|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296}}
+function shuffled(values, random) {return values.map(value=>({value,tie:random()})).sort((a,b)=>a.tie-b.tie).map(x=>x.value)}
+function inEnglish(sentence, gloss) {
+ const text=sentence.toLowerCase(),needle=gloss.toLowerCase();
+ for(let at=text.indexOf(needle);at>=0;at=text.indexOf(needle,at+1)) {
+  if(!/[\p{L}\p{N}'’]/u.test(text[at-1]||'')&&!/[\p{L}\p{N}'’]/u.test(text[at+needle.length]||''))return at;
+ }
+ return -1;
 }
-function rng(seed) {
-  let a = seed >>> 0;
-  return () => {
-    a = (a + 0x6d2b79f5) >>> 0;
-    let t = a;
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-function shuffled(arr, rand) {
-  const a = arr.slice();
-  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
-  return a;
-}
-
-/**
- * The chapter's distinct quiz-worthy words, as vault-style items:
- * { id, hanzi, pinyin, english, lang, category, level, context }.
- */
 export function chapterWords(chapter) {
-  const lang = chapter?.language || "zh";
-  const seen = new Map();
-  (chapter?.pairs || []).forEach((pair) => {
-    for (const c of pair.alignment || []) {
-      const key = (c.hanzi || c.target || "").trim();
-      const english = (c.english || "").trim();
-      if (!key || seen.has(key) || NOT_VOCAB.has(c.category)) continue;
-      if (!english || english.length > 40 || /^[(\[]/.test(english)) continue;   // no gloss / "(grammar)"
-      if (!/[\p{L}]/u.test(key)) continue;
-      seen.set(key, {
-        id: key,
-        hanzi: key,
-        pinyin: lang === "zh" && c.hanzi ? (c.target || "") : "",
-        english,
-        lang,
-        category: c.category || null,
-        frequency_band: c.frequency_band || null,
-        level: chunkLevel(c, lang),
-        context: { hanzi: pair.hanzi || pair.target || "", target: pair.target || "", english: pair.english || "" },
-      });
-    }
-  });
-  return [...seen.values()];
-}
-
-/** How many words a chapter has at each level (for the level picker). */
-export function wordsPerLevel(chapter) {
-  const counts = {};
-  for (const w of chapterWords(chapter)) {
-    const l = Math.min(w.level, 6);
-    counts[l] = (counts[l] || 0) + 1;
+ const lang=chapter?.language||'zh',seen=new Map();
+ for(const pair of chapter?.pairs||[]) {
+  let parentCursor=0;
+  for(const parent of pair.alignment||[]) {
+   const at=pair.target.indexOf(parent.target,parentCursor);if(at>=0)parentCursor=at+parent.target.length;
+   for(const c of vocabularyUnits(parent)) {
+    const key=vocabularyKey(c.hanzi||c.target,lang),gloss=(c.english||'').trim(),eAt=inEnglish(pair.english||'',gloss);
+    if(!key||NOT_VOCAB.has(c.category)||!/[\p{L}]/u.test(key)||/^\p{N}/u.test(key))continue;
+    if(gloss.length<3||gloss.length>40||/^[([\]]/.test(gloss)||eAt<0)continue;
+    if(eAt>0&&/^[A-Z]/.test(gloss)&&/\s/.test(gloss))continue;
+    if(seen.has(key)){seen.get(key).count++;continue}
+    const start=at<0?null:at+(c===parent?0:c.start);
+    seen.set(key,{id:key,hanzi:c.hanzi||c.target,pinyin:lang==='zh'&&c.hanzi?c.target:'',english:gloss[0].toLowerCase()+gloss.slice(1),lang,category:c.category||null,frequency_band:c.frequency_band||null,level:chunkLevel(c,lang),count:1,context:{hanzi:pair.hanzi||pair.target,target:pair.target,english:pair.english,targetStart:start,hanziStart:c.hanzi?pair.hanzi?.indexOf(c.hanzi):null}});
+   }
   }
-  return counts;
+ }
+ return [...seen.values()];
 }
-
-// Words at `level` first, then the nearest levels (easier before harder).
-function pickWords(words, level, size, rand) {
-  const atLevel = (l) => shuffled(words.filter((w) => Math.min(w.level, 6) === l), rand);
-  let picked = atLevel(level);
-  for (let d = 1; picked.length < size && d <= 5; d++) {
-    for (const l of [level - d, level + d]) {
-      if (l >= 1 && l <= 6 && picked.length < size) picked = picked.concat(atLevel(l).slice(0, size - picked.length));
-    }
-  }
-  return picked.slice(0, size);
+export function wordsPerLevel(chapter) {const result={};for(const word of chapterWords(chapter)){const l=Math.min(word.level,6);result[l]=(result[l]||0)+1}return result}
+export function buildChapterQuiz(chapter,level,{bookId='',size=QUIZ_SIZE,history=[]}={}) {
+ const words=chapterWords(chapter),random=rng(hash(`${bookId}/${chapter?.id}/${level}/${JSON.stringify(history)}`));
+ const recent=new Set(history.slice(-2).flat()),ranked=shuffled(words,random).sort((a,b)=>Math.abs(Math.min(a.level,6)-level)-Math.abs(Math.min(b.level,6)-level)||a.level-b.level||b.count-a.count);
+ const picked=ranked.filter(w=>!recent.has(w.id)).slice(0,size);
+ if(picked.length<size){const repeat=ranked.find(w=>recent.has(w.id));if(repeat)picked.push(repeat)}
+ const types=shuffled(TYPES,random);
+ const cards=picked.map((item,i)=>{let dir=types[i%types.length];if(dir==='cloze'&&!clozeRange(item.context.hanzi,item.hanzi,item.lang==='zh'?item.context.hanziStart:item.context.targetStart))dir='t2e';const options=distinctOptions(item,shuffled(words,random).sort((a,b)=>(a.category===item.category?-1:0)-(b.category===item.category?-1:0)),dir).slice(0,3);return {item,dir,options}});
+ return {cards:words.length>=4?cards:[],level,available:words.length};
 }
-
-function distractorsFor(item, words, rand) {
-  const others = words.filter((w) => w.id !== item.id && w.english.toLowerCase() !== item.english.toLowerCase());
-  const same = shuffled(others.filter((w) => w.category === item.category), rand);
-  const rest = shuffled(others.filter((w) => w.category !== item.category), rand);
-  return same.concat(rest).slice(0, 3);
+export async function nextChapterQuiz(chapter,level,options={}) {
+ const key=`${options.bookId||chapter.book_id}/${chapter.id}/${level}`,settings=await getSettings();
+ const quiz=buildChapterQuiz(chapter,level,{...options,history:settings.chapterQuizHistory?.[key]||[]});
+ if(quiz.cards.length)await updateSettings(s=>({chapterQuizHistory:{...s.chapterQuizHistory,[key]:[...(s.chapterQuizHistory?.[key]||[]),quiz.cards.map(c=>c.item.id)].slice(-2)}}));
+ return quiz;
 }
-
-/**
- * Build the quiz for one chapter at one level.
- * Returns { cards: [{ item, dir, options }], level, available } where `options`
- * are distractor items (the quiz engine renders them in the learner's script).
- */
-export function buildChapterQuiz(chapter, level, { bookId = "", size = QUIZ_SIZE } = {}) {
-  const words = chapterWords(chapter);
-  const rand = rng(hash(`${bookId}/${chapter?.id}/${level}`));
-  const picked = pickWords(words, level, size, rand);
-  const types = shuffled(TYPES, rand);
-  const cards = picked.map((item, i) => {
-    let dir = types[i % types.length];
-    // Fill-in needs the word to be findable in its sentence in the shown script.
-    if (dir === "cloze" && !clozeRange(item.context.hanzi, item.hanzi)) dir = "t2e";
-    return { item, dir, options: distractorsFor(item, words, rand) };
-  });
-  return { cards: words.length >= 4 ? cards : [], level, available: words.length };
-}
-
-// ── Per-book quiz preferences (book page toggle + level) ──
-// Stored in settings.bookQuiz[bookId] = { on, level }. Default: on, at the
-// learner's own level.
-export function bookQuizPrefs(settings, bookId) {
-  const p = settings?.bookQuiz?.[bookId] || {};
-  const myLevel = Math.min(6, Math.max(1, parseInt(settings?.myLevel, 10) || DEFAULT_LEVEL));
-  return { on: p.on !== false, level: Math.min(6, Math.max(1, parseInt(p.level, 10) || myLevel)) };
-}
+export function bookQuizPrefs(settings,bookId,lang=settings?.learningLanguage||'zh') {const p=settings?.bookQuiz?.[bookId]||{};return {on:p.on!==false,level:Math.min(6,Math.max(1,parseInt(p.level,10)||learnerLevel(settings,lang)))}}

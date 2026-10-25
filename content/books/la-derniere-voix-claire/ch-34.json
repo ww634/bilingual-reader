@@ -2,7 +2,7 @@
   "id": "ch-34",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "L'homme des deux histoires",
     "english": "The Man in Both Stories"
@@ -84,7 +84,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait remis ses chaussures sans refaire les lacets.",
@@ -714,7 +715,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle avait conservé le sien.",
@@ -1197,8 +1199,8 @@
       ]
     },
     {
-      "target": "Leurs fautes avaient protégé Paul. Elles ne changeaient pas le nom du bénéficiaire.",
-      "english": "Their failings had protected Paul. They did not change the recipient's name.",
+      "target": "Leurs fautes avaient protégé Paul.",
+      "english": "Their failings had protected Paul.",
       "alignment": [
         {
           "english": "Their failings",
@@ -1262,7 +1264,13 @@
               "end": 4
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Elles ne changeaient pas le nom du bénéficiaire.",
+      "english": "They did not change the recipient's name.",
+      "alignment": [
         {
           "english": "They did not change",
           "target": "Elles ne changeaient pas",
@@ -1494,7 +1502,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle en gardait une pour elle.",
@@ -2517,7 +2526,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Vingt-cinq ans plus tard, Graham avait repris les mêmes paiements.",
@@ -3273,7 +3283,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "C'était la même question posée deux fois, à la même personne.",
@@ -3513,8 +3524,8 @@
       ]
     },
     {
-      "target": "« C'est Paul ? » a demandé Ben.",
-      "english": "“It's Paul?” Ben asked.",
+      "target": "« C'est Paul ?",
+      "english": "“It's Paul?”",
       "alignment": [
         {
           "english": "It's Paul",
@@ -3551,7 +3562,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -3639,11 +3657,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je pense qu'il a tué Anna. Et Graham quand il a voulu rouvrir cette question. »",
-      "english": "“I think he killed Anna. And Graham when he wanted to reopen that question.”",
+      "target": "« Je pense qu'il a tué Anna.",
+      "english": "“I think he killed Anna.",
       "alignment": [
         {
           "english": "I think",
@@ -3716,7 +3735,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Et Graham quand il a voulu rouvrir cette question. »",
+      "english": "And Graham when he wanted to reopen that question.”",
+      "alignment": [
         {
           "english": "And Graham",
           "target": "Et Graham",
@@ -3858,7 +3884,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a regardé la place de Ruth sur leur feuille.",
@@ -3981,7 +4008,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sa déclaration venait d'ouvrir le même passage.",
@@ -4227,8 +4255,8 @@
       ]
     },
     {
-      "target": "« Je ne sais pas encore ce qui s'est passé chez elle. Je vais dire à Shah comment ces faits se rejoignent. »",
-      "english": "“I don't yet know what happened at her flat. I'm going to tell Shah how these facts fit together.”",
+      "target": "« Je ne sais pas encore ce qui s'est passé chez elle.",
+      "english": "“I don't yet know what happened at her flat.",
       "alignment": [
         {
           "english": "I don't yet know",
@@ -4337,7 +4365,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je vais dire à Shah comment ces faits se rejoignent. »",
+      "english": "I'm going to tell Shah how these facts fit together.”",
+      "alignment": [
         {
           "english": "I'm going to tell",
           "target": "Je vais dire",
@@ -4641,7 +4676,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il savait qu'elle avait parlé. »",
@@ -4710,11 +4746,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Il savait qu'elle avait donné un compte rendu. Ça fait partie de ce que je vais transmettre. »",
-      "english": "“He knew she'd given an account. That's part of what I'm going to send.”",
+      "target": "« Il savait qu'elle avait donné un compte rendu.",
+      "english": "“He knew she'd given an account.",
       "alignment": [
         {
           "english": "He knew",
@@ -4805,7 +4842,14 @@
               "end": 15
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ça fait partie de ce que je vais transmettre. »",
+      "english": "That's part of what I'm going to send.”",
+      "alignment": [
         {
           "english": "That's part",
           "target": "Ça fait partie",
@@ -5010,7 +5054,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas récité chaque page.",
@@ -5853,11 +5898,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je vais chercher des affaires. Un chargeur. Je reviens. »",
-      "english": "“I'll go and get some things. A charger. I'll be back.”",
+      "target": "« Je vais chercher des affaires.",
+      "english": "“I'll go and get some things.",
       "alignment": [
         {
           "english": "I'll go and get",
@@ -5921,7 +5967,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Un chargeur.",
+      "english": "A charger.",
+      "alignment": [
         {
           "english": "A charger",
           "target": "Un chargeur",
@@ -5948,7 +6001,13 @@
               "end": 11
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je reviens. »",
+      "english": "I'll be back.”",
+      "alignment": [
         {
           "english": "I'll be back",
           "target": "Je reviens",
@@ -6162,7 +6221,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il prendrait un sac et reviendrait directement.",
@@ -6348,8 +6408,8 @@
       ]
     },
     {
-      "target": "« Je veux juste prendre une douche. Chez moi. Une demi-heure. »",
-      "english": "“I just want to have a shower. At home. Half an hour.”",
+      "target": "« Je veux juste prendre une douche.",
+      "english": "“I just want to have a shower.",
       "alignment": [
         {
           "english": "I just want",
@@ -6422,7 +6482,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Chez moi.",
+      "english": "At home.",
+      "alignment": [
         {
           "english": "At home",
           "target": "Chez moi",
@@ -6449,7 +6516,13 @@
               "end": 8
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Une demi-heure. »",
+      "english": "Half an hour.”",
+      "alignment": [
         {
           "english": "Half an hour",
           "target": "Une demi-heure",
@@ -6636,7 +6709,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La porte intérieure était restée fermée après leur appel.",
@@ -7263,7 +7337,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Deux coups rapides.",
@@ -7592,6 +7667,74 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        42,
+        43,
+        44,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        57,
+        58,
+        59,
+        60,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ]
+    }
   }
 }

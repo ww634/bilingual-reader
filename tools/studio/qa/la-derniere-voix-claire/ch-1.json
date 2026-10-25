@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "book_id": "la-derniere-voix-claire",
+  "chapter_id": "ch-1",
+  "chapter_sha256": "0ec9a5e71669d64ac15cfff1b6b71e9fb0c7a3a4b4678d62927a2376c57f4b8d",
+  "catalog_sha256": "b3103f355f8443ef7e57f499a7dba75f7e4c105ec293a0292a1889d8b550ad13",
+  "renderer_sha256": "50701975478bb3d539c6bc015e30120dde179926875adeb4802f40584cf4a024",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-10-25T15:45:17.961Z",
+  "review": {
+    "editorial": "Structural repair only: French wording, English prose, and flattened alignment/lookup objects match the prior edition by content hash. Restored author paragraph boundaries and separated existing sentence units; no literary rewrite or fresh technical research claimed.",
+    "continuity_or_facts": "Original sentence order and neighbouring chapter endings/openings are retained. Beginning/middle/end reader samples checked sequentially; original context, register, evidence wording and chronology are unchanged. Saved sentence selection retains its complete source and English.",
+    "english_alignment": "Inspected phone previews and word selection; English guides, colour categories and punctuation remain readable. 0 of 314 letter-bearing visual lines lack English (0.00%). No unexplained stretch without English found. Listen and dictation read the repaired sentence pairs; no paid speech was generated."
+  },
+  "warning_resolutions": {
+    "pair-41-chunk-2-coarse": "Retain the 7-word sentence-alignment parent: its 7 independently tappable lookup units have at most 1 words. Ordered offsets and original contextual glosses are unchanged; phone guide wrapping and selection sampled for this chapter. The parent is not the learner's word lookup.",
+    "pair-111-chunk-1-coarse": "Retain the 10-word sentence-alignment parent: its 9 independently tappable lookup units have at most 3 words. Ordered offsets and original contextual glosses are unchanged; phone guide wrapping and selection sampled for this chapter. The parent is not the learner's word lookup."
+  },
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-1-start.png",
+      "sha256": "f7dc668e0fba09d10140151f7ff5e9868773143127513397311fbce104e9c061",
+      "notes": "Opening source and English guides visible; paragraph separation and independently coloured vocabulary remain readable."
+    },
+    {
+      "section": "middle",
+      "pair": 105,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-1-middle.png",
+      "sha256": "d9e83f97c721f011ee5121670aa50c91b3d116098f8de0c21ff1af20493ddf65",
+      "notes": "Middle passage checked for English continuity, wrapping, speech marks and readable translation; source wording retained."
+    },
+    {
+      "section": "end",
+      "pair": 208,
+      "mode": "target",
+      "width": 375,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-1-end.png",
+      "sha256": "902cdd50d4f619d38299174d99cca87e1769de434d7f1570ce510a20eaf06ae9",
+      "notes": "Closing passage and English remain readable; touch selection saved the complete sentence with its original translation."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "target",
+      "width": 1280,
+      "path": "tools/studio/qa/evidence/la-derniere-voix-claire/ch-1-desktop.png",
+      "sha256": "ee4602d958506fa998150df1efeabffe4696efc3a581298b36f23be14169e266",
+      "notes": "Verified actual 1280px viewport: centred reader, paragraph separation and English guides remain readable with no clipped target words."
+    }
+  ]
+}

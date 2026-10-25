@@ -2,7 +2,7 @@
   "id": "ch-2",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 6,
+  "version": 7,
   "title": {
     "target": "Le nom dans le message",
     "english": "The Name in the Message"
@@ -57,7 +57,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "À la cinquième sonnerie, Daniel s'est préparé à raccrocher.",
@@ -885,8 +886,8 @@
       ]
     },
     {
-      "target": "« C'est moi. Ruth Bennett vient de m'appeler.",
-      "english": "“It's me. Ruth Bennett has just called me.",
+      "target": "« C'est moi.",
+      "english": "“It's me.",
       "alignment": [
         {
           "english": "It's me",
@@ -923,7 +924,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ruth Bennett vient de m'appeler.",
+      "english": "Ruth Bennett has just called me.",
+      "alignment": [
         {
           "english": "Ruth Bennett",
           "target": "Ruth Bennett",
@@ -1122,8 +1130,8 @@
       ]
     },
     {
-      "target": "Tu sais de quoi il s'agit ? » a demandé Daniel.",
-      "english": "Do you know what this is about?” Daniel asked.",
+      "target": "Tu sais de quoi il s'agit ?",
+      "english": "Do you know what this is about?”",
       "alignment": [
         {
           "english": "Do you know",
@@ -1205,7 +1213,13 @@
               "end": 17
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -1302,7 +1316,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Rappelle-moi avant deux heures, si possible. »",
@@ -1389,7 +1404,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas répété la demande de Ruth",
@@ -1476,7 +1492,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "de ne pas en parler à Graham.",
@@ -2052,7 +2069,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il était midi vingt.",
@@ -2697,7 +2715,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il y avait trois Bennett, aucun prénommé Ruth.",
@@ -3642,7 +3661,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'avait pas besoin de les lire.",
@@ -3894,7 +3914,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Anna portait une veste claire.",
@@ -4515,7 +4536,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "d'une dispute et d'un enregistrement décisif.",
@@ -4623,8 +4645,8 @@
       ]
     },
     {
-      "target": "Daniel n'avait jamais aimé ce dernier adjectif. Il fermait le dossier avant même qu'on l'ouvre.",
-      "english": "Daniel had never liked that last adjective. It closed the case before anyone opened it.",
+      "target": "Daniel n'avait jamais aimé ce dernier adjectif.",
+      "english": "Daniel had never liked that last adjective.",
       "alignment": [
         {
           "english": "Daniel had never liked",
@@ -4715,7 +4737,13 @@
               "end": 19
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Il fermait le dossier avant même qu'on l'ouvre.",
+      "english": "It closed the case before anyone opened it.",
+      "alignment": [
         {
           "english": "It closed the case",
           "target": "Il fermait le dossier",
@@ -5319,7 +5347,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "comme si quelqu'un l'avait interrogé.",
@@ -5676,7 +5705,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Graham lui avait envoyé quelque chose en septembre.",
@@ -6252,7 +6282,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un éditeur local s'intéressait aux affaires",
@@ -7101,7 +7132,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils avaient mangé dans un pub près du canal.",
@@ -7608,7 +7640,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est une théorie intéressante », a répondu Daniel.",
@@ -7704,7 +7737,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je compte la faire publier. »",
@@ -7773,7 +7807,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "C'était ainsi que le livre était entré dans la conversation.",
@@ -7914,7 +7949,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel lui avait demandé",
@@ -8244,7 +8280,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Je leur ferai lire ce qui les concerne », a dit Graham.",
@@ -8436,7 +8473,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait peut-être son explication.",
@@ -8889,7 +8927,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a écouté encore la dernière phrase.",
@@ -9459,7 +9498,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a déposé une seconde tasse près de la bouilloire.",
@@ -10008,7 +10048,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "et a placé un carnet neuf sur la table.",
@@ -10800,7 +10841,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il en était sûr.",
@@ -11460,7 +11502,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a vérifié que la sonnette fonctionnait.",
@@ -12216,7 +12259,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "pour qu'il ne bloque pas le passage.",
@@ -12687,7 +12731,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Mais Graham s'occupait peut-être du jardin.",
@@ -13449,7 +13494,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle avait bien dit deux heures.",
@@ -14103,7 +14149,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a baissé le volume au lieu de l'augmenter.",
@@ -14760,7 +14807,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Dans la première, il a noté l'heure,",
@@ -15423,7 +15471,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle n'a pas répondu.",
@@ -15936,7 +15985,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une association locale lui avait confié des entretiens",
@@ -16572,7 +16622,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un homme s'appelait Peter Lane dans le fichier,",
@@ -17148,7 +17199,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le nom de Judith est apparu sur l'écran.",
@@ -17427,7 +17479,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle n'a pas répondu tout de suite.",
@@ -17487,7 +17540,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a entendu une porte se fermer,",
@@ -17874,8 +17928,8 @@
       ]
     },
     {
-      "target": "« Daniel. Je viens de voir ton message », a dit Judith.",
-      "english": "“Daniel. I've just seen your message,” Judith said.",
+      "target": "« Daniel.",
+      "english": "“Daniel.",
       "alignment": [
         {
           "english": "Daniel",
@@ -17894,7 +17948,14 @@
               "end": 6
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je viens de voir ton message », a dit Judith.",
+      "english": "I've just seen your message,” Judith said.",
+      "alignment": [
         {
           "english": "I've just seen",
           "target": "Je viens de voir",
@@ -17997,8 +18058,8 @@
       ]
     },
     {
-      "target": "« Ce n'est rien. Je cherchais Graham. »",
-      "english": "“It's nothing. I was trying to reach Graham.”",
+      "target": "« Ce n'est rien.",
+      "english": "“It's nothing.",
       "alignment": [
         {
           "english": "It's nothing",
@@ -18044,7 +18105,14 @@
               "end": 13
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je cherchais Graham. »",
+      "english": "I was trying to reach Graham.”",
+      "alignment": [
         {
           "english": "I was trying to reach",
           "target": "Je cherchais",
@@ -18114,7 +18182,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a prononcé son prénom une seconde fois.",
@@ -18210,7 +18279,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a posé la main sur le dossier de sa chaise.",
@@ -18384,7 +18454,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a regardé le petit sachet posé près du répondeur.",
@@ -18507,7 +18578,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il y avait quatre vis dedans.",
@@ -18858,8 +18930,8 @@
       ]
     },
     {
-      "target": "« Daniel ? » a demandé Judith.",
-      "english": "“Daniel?” Judith asked.",
+      "target": "« Daniel ?",
+      "english": "“Daniel?”",
       "alignment": [
         {
           "english": "Daniel",
@@ -18878,7 +18950,14 @@
               "end": 6
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Judith.",
+      "english": "Judith asked.",
+      "alignment": [
         {
           "english": "Judith asked",
           "target": "a demandé Judith",
@@ -18948,7 +19027,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Judith lui a dit qu'elle avait passé la nuit chez sa sœur.",
@@ -19098,7 +19178,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Qu'elle était rentrée ce matin.",
@@ -19629,11 +19710,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Tu l'as eu ? » a demandé Judith.",
-      "english": "Did you speak to him?” Judith asked.",
+      "target": "Tu l'as eu ?",
+      "english": "Did you speak to him?”",
       "alignment": [
         {
           "english": "Did you speak to him",
@@ -19670,7 +19752,13 @@
               "end": 10
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "» a demandé Judith.",
+      "english": "Judith asked.",
+      "alignment": [
         {
           "english": "Judith asked",
           "target": "a demandé Judith",
@@ -19701,8 +19789,8 @@
       ]
     },
     {
-      "target": "« Non. Pas hier. »",
-      "english": "“No. Not yesterday.”",
+      "target": "« Non.",
+      "english": "“No.",
       "alignment": [
         {
           "english": "No",
@@ -19721,7 +19809,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pas hier. »",
+      "english": "Not yesterday.”",
+      "alignment": [
         {
           "english": "Not yesterday",
           "target": "Pas hier",
@@ -19836,7 +19931,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Bien sûr. »",
@@ -19860,7 +19956,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il voulait lui proposer de venir.",
@@ -19947,7 +20044,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il voulait lui demander si elle avait mangé.",
@@ -20340,7 +20438,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Puis il est revenu à son premier appel dans le journal du téléphone.",
@@ -20883,7 +20982,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel ne l'a pas relancé.",
@@ -21285,7 +21385,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "En dessous, il a écrit « N'est pas venue ».",
@@ -21618,6 +21719,235 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 6,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        188,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        211,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        231
+      ]
+    }
   }
 }

@@ -2,7 +2,7 @@
   "id": "ch-20",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 5,
+  "version": 6,
   "title": {
     "target": "Sa propre voix",
     "english": "His Own Voice"
@@ -120,7 +120,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a fermé la porte de la cour et laissé ses clés dans sa main.",
@@ -351,8 +352,8 @@
       ]
     },
     {
-      "target": "« Je peux écouter comme ça ? » a demandé Ben, en montrant les enceintes.",
-      "english": "“Can I listen like that?” Ben asked, pointing to the speakers.",
+      "target": "« Je peux écouter comme ça ?",
+      "english": "“Can I listen like that?”",
       "alignment": [
         {
           "english": "Can I listen like that",
@@ -407,7 +408,14 @@
               "end": 24
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben, en montrant les enceintes.",
+      "english": "Ben asked, pointing to the speakers.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -483,8 +491,8 @@
       ]
     },
     {
-      "target": "« Oui. Et reprendre au casque si vous préférez. »",
-      "english": "“Yes. And listen again on headphones if you prefer.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -503,7 +511,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Et reprendre au casque si vous préférez. »",
+      "english": "And listen again on headphones if you prefer.”",
+      "alignment": [
         {
           "english": "And listen again on headphones",
           "target": "Et reprendre au casque",
@@ -672,7 +687,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Avant de lancer la lecture, Daniel a expliqué les filtres et montré où il les désactivait.",
@@ -858,7 +874,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait gardé le fichier entier, les silences, les passages encore incompréhensibles.",
@@ -1104,7 +1121,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Commencez. »",
@@ -1128,7 +1146,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ruth les a invités dans le salon.",
@@ -1224,7 +1243,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Graham a refusé le lait.",
@@ -1689,8 +1709,8 @@
       ]
     },
     {
-      "target": "« Le prénom, c'est Michael. Écoutez encore. »",
-      "english": "“The first name, it's Michael. Listen again.”",
+      "target": "« Le prénom, c'est Michael.",
+      "english": "“The first name, it's Michael.",
       "alignment": [
         {
           "english": "The first name",
@@ -1754,7 +1774,14 @@
               "end": 13
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Écoutez encore. »",
+      "english": "Listen again.”",
+      "alignment": [
         {
           "english": "Listen again",
           "target": "Écoutez encore",
@@ -2064,8 +2091,8 @@
       ]
     },
     {
-      "target": "Le prénom répété. Le oui.",
-      "english": "The repeated name. The yes.",
+      "target": "Le prénom répété.",
+      "english": "The repeated name.",
       "alignment": [
         {
           "english": "The repeated name",
@@ -2102,7 +2129,13 @@
               "end": 16
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Le oui.",
+      "english": "The yes.",
+      "alignment": [
         {
           "english": "The yes",
           "target": "Le oui",
@@ -2418,7 +2451,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Graham l'a rassurée.",
@@ -2898,7 +2932,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ruth devait aller chercher son fils.",
@@ -3510,7 +3545,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait obtenu l'accord d'Helen pour lui montrer les passages pertinents.",
@@ -3939,7 +3975,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui. »",
@@ -3963,7 +4000,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les clés ont heurté le bord de l'établi.",
@@ -4059,7 +4097,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben les a posées avec précaution.",
@@ -4278,7 +4317,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je vous ai dit que nous étions allés chez elle », a répondu Daniel.",
@@ -4401,11 +4441,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Oui. Vous avez dit que vous lui aviez fait écouter des passages. »",
-      "english": "“Yes. You said you'd played her some passages.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -4424,7 +4465,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Vous avez dit que vous lui aviez fait écouter des passages. »",
+      "english": "You said you'd played her some passages.”",
+      "alignment": [
         {
           "english": "You said",
           "target": "Vous avez dit",
@@ -4638,11 +4686,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Pas un mot de faux. Et assez d'espace entre les mots pour s'y cacher.",
-      "english": "Not a word was false. And enough space between the words to hide in.",
+      "target": "Pas un mot de faux.",
+      "english": "Not a word was false.",
       "alignment": [
         {
           "english": "Not a word",
@@ -4706,7 +4755,13 @@
               "end": 7
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Et assez d'espace entre les mots pour s'y cacher.",
+      "english": "And enough space between the words to hide in.",
+      "alignment": [
         {
           "english": "And enough space",
           "target": "Et assez d'espace",
@@ -4956,7 +5011,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Mais vous vous rappeliez que vous aviez une phrase à lui proposer », a répondu Ben.",
@@ -5115,7 +5171,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui. »",
@@ -5139,7 +5196,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Et qu'elle hésitait. »",
@@ -5190,7 +5248,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a posé la feuille.",
@@ -5259,7 +5318,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui. »",
@@ -5283,7 +5343,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a essayé de lui expliquer la pièce.",
@@ -5370,11 +5431,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "La fatigue de Ruth. Graham qui voulait avancer.",
-      "english": "Ruth's exhaustion. Graham wanting to move forward.",
+      "target": "La fatigue de Ruth.",
+      "english": "Ruth's exhaustion.",
       "alignment": [
         {
           "english": "Ruth's exhaustion",
@@ -5420,7 +5482,13 @@
               "end": 18
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Graham qui voulait avancer.",
+      "english": "Graham wanting to move forward.",
+      "alignment": [
         {
           "english": "Graham wanting to move forward",
           "target": "Graham qui voulait avancer",
@@ -6000,7 +6068,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a cherché dans son visage un signe qu'il pouvait continuer.",
@@ -6141,7 +6210,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est votre explication ? »",
@@ -6192,7 +6262,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'en avait pas de meilleure.",
@@ -6279,7 +6350,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il en avait une plus exacte.",
@@ -6453,7 +6525,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a reculé sur le tabouret.",
@@ -6531,7 +6604,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il s'est repris avec le pied avant de perdre l'équilibre.",
@@ -6843,7 +6917,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils sont restés à cette distance.",
@@ -6912,7 +6987,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Donc elle n'avait pas reconnu cet homme », a dit Ben.",
@@ -7008,7 +7084,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je ne peux pas conclure ça », a répondu Daniel.",
@@ -7086,7 +7163,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Bien sûr. »",
@@ -7110,7 +7188,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a senti la colère dans ces deux mots.",
@@ -7215,11 +7294,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« La bande montre ce que nous lui avons dit. Elle ne me permet pas de savoir tout ce qu'elle avait vu », a dit Daniel.",
-      "english": "“The tape shows what we told her. It doesn't allow me to know everything she had seen,” Daniel said.",
+      "target": "« La bande montre ce que nous lui avons dit.",
+      "english": "“The tape shows what we told her.",
       "alignment": [
         {
           "english": "The tape shows",
@@ -7310,7 +7390,14 @@
               "end": 25
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle ne me permet pas de savoir tout ce qu'elle avait vu », a dit Daniel.",
+      "english": "It doesn't allow me to know everything she had seen,” Daniel said.",
+      "alignment": [
         {
           "english": "It doesn't allow me",
           "target": "Elle ne me permet pas",
@@ -7533,7 +7620,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Les limites, vous les trouvez toujours quand ça concerne quelqu'un d'autre. »",
@@ -7674,7 +7762,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a ouvert la bouche, puis attendu.",
@@ -7770,7 +7859,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il pouvait expliquer que cette limite était réelle.",
@@ -8130,7 +8220,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Oui. »",
@@ -8154,11 +8245,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Il a attendu une autre phrase. Il n'y en a pas eu.",
-      "english": "He waited for another sentence. None came.",
+      "target": "Il a attendu une autre phrase.",
+      "english": "He waited for another sentence.",
       "alignment": [
         {
           "english": "He waited",
@@ -8222,7 +8314,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il n'y en a pas eu.",
+      "english": "None came.",
+      "alignment": [
         {
           "english": "None came",
           "target": "Il n'y en a pas eu",
@@ -8427,11 +8526,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle l'a gardée. Pendant tout ce temps. »",
-      "english": "“She kept it. All that time.”",
+      "target": "« Elle l'a gardée.",
+      "english": "“She kept it.",
       "alignment": [
         {
           "english": "She kept it",
@@ -8468,7 +8568,14 @@
               "end": 15
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pendant tout ce temps. »",
+      "english": "All that time.”",
+      "alignment": [
         {
           "english": "All that time",
           "target": "Pendant tout ce temps",
@@ -8574,7 +8681,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Elle pouvait la ressortir. »",
@@ -8625,7 +8733,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas proposé une raison pour laquelle elle ne l'avait pas fait.",
@@ -8766,7 +8875,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben s'est frotté le front avec la main qui ne tenait pas les clés.",
@@ -9039,7 +9149,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a regardé Daniel.",
@@ -9081,11 +9192,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Vous et Graham. Ça m'arrangerait. »",
-      "english": "“You and Graham. That would suit me.”",
+      "target": "« Vous et Graham.",
+      "english": "“You and Graham.",
       "alignment": [
         {
           "english": "You and Graham",
@@ -9122,7 +9234,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ça m'arrangerait. »",
+      "english": "That would suit me.”",
+      "alignment": [
         {
           "english": "That would suit me",
           "target": "Ça m'arrangerait",
@@ -9237,7 +9356,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Rappeler que Ruth avait signé, qu'elle avait choisi de se taire.",
@@ -9693,11 +9813,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je sais. Ce soir, je vous pose les miennes. »",
-      "english": "“I know. Tonight, I'm asking you mine.”",
+      "target": "« Je sais.",
+      "english": "“I know.",
       "alignment": [
         {
           "english": "I know",
@@ -9725,7 +9846,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ce soir, je vous pose les miennes. »",
+      "english": "Tonight, I'm asking you mine.”",
+      "alignment": [
         {
           "english": "Tonight",
           "target": "Ce soir",
@@ -9858,11 +9986,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Hier, quand vous m'avez parlé du prénom, vous aviez déjà entendu ça ? » a demandé Ben.",
-      "english": "“Yesterday, when you talked to me about the name, had you already heard this?” Ben asked.",
+      "target": "« Hier, quand vous m'avez parlé du prénom, vous aviez déjà entendu ça ?",
+      "english": "“Yesterday, when you talked to me about the name, had you already heard this?”",
       "alignment": [
         {
           "english": "Yesterday",
@@ -9998,7 +10127,14 @@
               "end": 26
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Ben.",
+      "english": "Ben asked.",
+      "alignment": [
         {
           "english": "Ben asked",
           "target": "a demandé Ben",
@@ -10029,8 +10165,8 @@
       ]
     },
     {
-      "target": "« Non. J'ai compris ces phrases cet après-midi. Je vous ai appelé ensuite », a répondu Daniel.",
-      "english": "“No. I understood these sentences this afternoon. I called you afterwards,” Daniel replied.",
+      "target": "« Non.",
+      "english": "“No.",
       "alignment": [
         {
           "english": "No",
@@ -10049,7 +10185,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "J'ai compris ces phrases cet après-midi.",
+      "english": "I understood these sentences this afternoon.",
+      "alignment": [
         {
           "english": "I understood these sentences this afternoon",
           "target": "J'ai compris ces phrases cet après-midi",
@@ -10112,7 +10255,13 @@
               "end": 39
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je vous ai appelé ensuite », a répondu Daniel.",
+      "english": "I called you afterwards,” Daniel replied.",
+      "alignment": [
         {
           "english": "I called you afterwards",
           "target": "Je vous ai appelé ensuite",
@@ -10254,7 +10403,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Près de la porte, Ben s'est arrêté.",
@@ -10332,7 +10482,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ne l'appelez pas ce soir. »",
@@ -10401,7 +10552,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Elle ne souhaite toujours pas me parler. »",
@@ -10479,7 +10631,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Alors respectez ça. »",
@@ -10521,7 +10674,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il est sorti par la cour.",
@@ -10590,7 +10744,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a entendu le portillon, puis les pas dans la rue.",
@@ -10941,7 +11096,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il aurait suffi d'un clic pour faire revenir sa voix.",
@@ -11451,6 +11607,126 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 5,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        50,
+        51,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        93,
+        94,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        111,
+        112,
+        114,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129
+      ]
+    }
   }
 }

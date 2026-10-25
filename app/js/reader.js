@@ -1,8 +1,8 @@
 import { getChapter, getProgress, putProgress, getSettings, getBook, bumpActivity, updateSettings } from "./db.js";
 import { openPopover } from "./popover.js";
 import { ensureMastered, getMasteredHanziSync, chapterWatchWords, startQuizWithItems, startCardQuiz, vaultBucketMap } from "./vault.js";
-import { LEVELS, levelName, loadLevels, chapterKnowledge, clampLevel } from "./levels.js";
-import { buildChapterQuiz, bookQuizPrefs } from "./chapterquiz.js";
+import { learnerLevel, LEVELS, levelName, loadLevels, chapterKnowledge, clampLevel } from "./levels.js";
+import { buildChapterQuiz, nextChapterQuiz, bookQuizPrefs } from "./chapterquiz.js";
 import { isTargetOnly } from "./reader-options.js";
 
 const pagesEl = () => document.getElementById("reader-pages");
@@ -18,7 +18,7 @@ export function applyMasteredHiding() {
   // fades in the characters-with-pinyin mode).
   const spans = document.querySelectorAll("#reader-pages .english .chunk[data-hanzi], #reader-pages .target .chunk[data-hanzi]");
   spans.forEach((el) => {
-    el.classList.toggle("mastered", set.has(el.getAttribute("data-hanzi")));
+    el.classList.toggle("mastered", set.has(_state.chapter?.language === "fr" ? el.getAttribute("data-hanzi").toLocaleLowerCase("fr") : el.getAttribute("data-hanzi")));
   });
 }
 
@@ -410,6 +410,7 @@ function buildPinyinHtml(pairs, pageStartIdx = 0) {
   for (let localIdx = 0; localIdx < pairs.length; localIdx++) {
     const pairIdx = pageStartIdx + localIdx; // chapter-global pair index
     const pair = pairs[localIdx];
+    if (localIdx > 0 && pair.paragraph_start) parts.push("<br>");
 
     if (!Array.isArray(pair.alignment) || pair.alignment.length === 0) {
       parts.push(`<span class="seg uncov" data-pair="${pairIdx}">${scriptSpan(pair.target, pair.hanzi)}</span>`);
@@ -546,22 +547,35 @@ function groupSegsByLine(targetEl) {
  * first chunk and includes any uncovered text following until the next
  * line's first chunk. Last line ends at target end.
  */
+// Opening quotation marks belong to the first word on the next visual line.
+// They are plain text, so starting a Range at the word alone would leave the
+// opening mark under the previous sentence even when the browser kept it with
+// this word during measurement.
+function lineStartBoundary(seg) {
+  const text = seg.previousSibling;
+  const opening = text?.nodeType === 3 && text.data.match(/[«“]\s*$/u);
+  return opening ? { node: text, offset: opening.index }
+    : { node: seg.parentNode, offset: [...seg.parentNode.childNodes].indexOf(seg) };
+}
+
 function extractLineHtml(targetEl, lines, lineIdx) {
   const line = lines[lineIdx];
   const range = document.createRange();
   if (lineIdx === 0) {
     range.setStart(targetEl, 0);
   } else {
-    range.setStartBefore(line.firstSeg);
+    const start = lineStartBoundary(line.firstSeg);
+    range.setStart(start.node, start.offset);
   }
   if (lineIdx === lines.length - 1) {
     range.setEnd(targetEl, targetEl.childNodes.length);
   } else {
-    range.setEndBefore(lines[lineIdx + 1].firstSeg);
+    const end = lineStartBoundary(lines[lineIdx + 1].firstSeg);
+    range.setEnd(end.node, end.offset);
   }
   const wrap = document.createElement("div");
   wrap.appendChild(range.cloneContents());
-  return wrap.innerHTML;
+  return wrap.innerHTML.replace(/<br\s*\/?>/gi, "");
 }
 
 // Choose a monotonic word-boundary cut with the fewest characters assigned to
@@ -620,6 +634,14 @@ function renderPageInto(pageEl, pairs, pageStartIdx) {
   // Step 2: mount measurement-only structure on the page.
   pageEl.innerHTML = `<p class="target measure-target">${pinyinHtml}</p>`;
   const measureTarget = pageEl.querySelector(".measure-target");
+
+  // French quote spacing must stay attached to its word when measuring.
+  // Keep the source JSON untouched; NBSP is a display-only typographic space.
+  if (pairs.some(p => !p.hanzi)) {
+    const walker = document.createTreeWalker(measureTarget, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) walker.currentNode.data = walker.currentNode.data
+      .replace(/([«“]) +/gu, "$1\u00a0").replace(/ +(?=»)/gu, "\u00a0");
+  }
 
   // Force layout to be current before measuring.
   void measureTarget.offsetHeight;
@@ -711,6 +733,7 @@ function renderPageInto(pageEl, pairs, pageStartIdx) {
     }
 
     blocks.push({
+      paragraphStart: pairsOnLine.some(g => pairByGlobal.get(g)?.paragraph_start && Math.min(...pairLines.get(g)) === lineIdx),
       pinyinHtml: pinyinLineHtml,
       englishHtml: englishParts.join(" "),
     });
@@ -720,7 +743,7 @@ function renderPageInto(pageEl, pairs, pageStartIdx) {
   pageEl.innerHTML = blocks
     .map(
       (b) => `
-        <div class="reader-block">
+        <div class="reader-block${b.paragraphStart ? " paragraph-start" : ""}">
           <p class="target">${b.pinyinHtml}</p>
           <p class="english">${b.englishHtml}</p>
         </div>
@@ -1162,8 +1185,9 @@ async function renderKnownLine() {
   const chapter = _state.chapter;
   if (!el || !chapter) return;
   const lang = chapter.language || "zh";
+  if (lang === "fr") { el.hidden = true; return; }
   if (lang === "zh") await loadLevels();
-  const level = clampLevel((await getSettings()).myLevel);
+  const level = learnerLevel(await getSettings(), lang);
   const k = chapterKnowledge(chapter, level, await vaultBucketMap(lang));
   if (_state.chapter !== chapter || !k.total) return;
   const n = k.newWords.length;
@@ -1179,14 +1203,16 @@ async function renderEndQuiz() {
   const chapter = _state.chapter, bookId = _state.bookId;
   if (!slot || !chapter) return;
   const settings = await getSettings();
-  const prefs = bookQuizPrefs(settings, bookId);
+  const prefs = bookQuizPrefs(settings, bookId, chapter.language);
   if (!prefs.on) { slot.hidden = true; return; }
   const lang = chapter.language || "zh";
   if (lang === "zh") await loadLevels();
   if (_state.chapter !== chapter) return;
 
-  const draw = (level) => {
-    const quiz = buildChapterQuiz(chapter, level, { bookId });
+  const draw = async (level) => {
+    const latest = await getSettings();
+    if (_state.chapter !== chapter) return;
+    const quiz = buildChapterQuiz(chapter, level, { bookId, history: latest.chapterQuizHistory?.[`${bookId}/${chapter.id}/${level}`] || [] });
     if (!quiz.cards.length) { slot.hidden = true; return; }
     slot.innerHTML = `
       <div class="end-quiz-head">
@@ -1201,8 +1227,9 @@ async function renderEndQuiz() {
       <button class="end-quiz-start">Start quiz</button>
       <p class="end-quiz-note">Optional. Turn it off or set the default level on the book's page.</p>`;
     slot.hidden = false;
-    slot.querySelector(".end-quiz-start").addEventListener("click", () => {
-      startCardQuiz(quiz.cards, { title: `${levelName(level)} chapter quiz`, lang });
+    slot.querySelector(".end-quiz-start").addEventListener("click", async () => {
+      const next = await nextChapterQuiz(chapter, level, { bookId });
+      startCardQuiz(next.cards, { title: `${levelName(level)} chapter quiz`, lang });
     });
     slot.querySelector(".end-quiz-level").addEventListener("change", async (e) => {
       const lvl = clampLevel(e.target.value);
@@ -1263,3 +1290,9 @@ window.addEventListener("reader:script", (event) => {
   if (_state.targetOnly) relayout();   // re-paginate: characters take less room than pinyin
 });
 window.addEventListener("reader:layout", () => relayout());
+
+window.addEventListener("view:changed", e => {
+  if (e.detail !== "reader" || !_state.chapter) return;
+  const chapter = _state.chapter;
+  ensureMastered().then(() => { if (_state.chapter !== chapter) return; applyMasteredHiding(); renderChapterWatch(); renderKnownLine(); renderEndQuiz(); });
+});

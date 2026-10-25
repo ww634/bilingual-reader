@@ -2,7 +2,7 @@
   "id": "ch-35",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "La phrase à signer",
     "english": "The Sentence to Sign"
@@ -75,7 +75,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul a passé le bras par la vitre brisée.",
@@ -558,7 +559,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a donné l'adresse dès qu'il a pu.",
@@ -663,7 +665,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un homme venait d'entrer de force dans son atelier.",
@@ -954,8 +957,8 @@
       ]
     },
     {
-      "target": "« Posez ça », a dit Paul. « Je veux juste une signature. »",
-      "english": "“Put that down,” Paul said. “I just want a signature.”",
+      "target": "« Posez ça », a dit Paul.",
+      "english": "“Put that down,” Paul said.",
       "alignment": [
         {
           "english": "Put that down",
@@ -1010,7 +1013,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Je veux juste une signature. »",
+      "english": "“I just want a signature.”",
+      "alignment": [
         {
           "english": "I just want",
           "target": "Je veux juste",
@@ -1152,7 +1162,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sa manche portait une déchirure.",
@@ -1347,8 +1358,8 @@
       ]
     },
     {
-      "target": "« La porte de la cour », a précisé Daniel dans le téléphone. « Par le passage à côté de la maison. »",
-      "english": "“The courtyard door,” Daniel added into the telephone. “Through the passage beside the house.”",
+      "target": "« La porte de la cour », a précisé Daniel dans le téléphone.",
+      "english": "“The courtyard door,” Daniel added into the telephone.",
       "alignment": [
         {
           "english": "The courtyard door",
@@ -1466,7 +1477,14 @@
               "end": 17
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Par le passage à côté de la maison. »",
+      "english": "“Through the passage beside the house.”",
+      "alignment": [
         {
           "english": "Through the passage",
           "target": "Par le passage",
@@ -1644,7 +1662,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a posé le téléphone sans raccrocher, derrière l'écran.",
@@ -1953,8 +1972,8 @@
       ]
     },
     {
-      "target": "« Reculez. Sortez de chez moi. »",
-      "english": "“Step back. Get out of my house.”",
+      "target": "« Reculez.",
+      "english": "“Step back.",
       "alignment": [
         {
           "english": "Step back",
@@ -1973,7 +1992,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Sortez de chez moi. »",
+      "english": "Get out of my house.”",
+      "alignment": [
         {
           "english": "Get out of my house",
           "target": "Sortez de chez moi",
@@ -2124,7 +2150,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une ligne était prévue pour la signature.",
@@ -2427,8 +2454,8 @@
       ]
     },
     {
-      "target": "« C'est votre réponse », a dit Paul. « Je vous demande pas de mentir. »",
-      "english": "“That's your answer,” Paul said. “I'm not asking you to lie.”",
+      "target": "« C'est votre réponse », a dit Paul.",
+      "english": "“That's your answer,” Paul said.",
       "alignment": [
         {
           "english": "That's your answer",
@@ -2501,7 +2528,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Je vous demande pas de mentir. »",
+      "english": "“I'm not asking you to lie.”",
+      "alignment": [
         {
           "english": "I'm not asking you",
           "target": "Je vous demande pas",
@@ -2697,7 +2731,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul s'est déplacé avec lui.",
@@ -2892,8 +2927,8 @@
       ]
     },
     {
-      "target": "« Mon rapport est parti. Avec les documents qui donnent le contexte. »",
-      "english": "“My report has been sent. With the documents that provide the context.”",
+      "target": "« Mon rapport est parti.",
+      "english": "“My report has been sent.",
       "alignment": [
         {
           "english": "My report",
@@ -2939,7 +2974,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Avec les documents qui donnent le contexte. »",
+      "english": "With the documents that provide the context.”",
+      "alignment": [
         {
           "english": "With the documents",
           "target": "Avec les documents",
@@ -3090,7 +3132,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous pouvez envoyer un complément. »",
@@ -3159,7 +3202,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ce mot lui venait sans effort.",
@@ -3246,7 +3290,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a tapé sur la feuille.",
@@ -3318,8 +3363,8 @@
       ]
     },
     {
-      "target": "« C'est limité. Ça suffit. Je règle l'argent. Vous réglez ça. »",
-      "english": "“It's limited. That's enough. I'll settle the money. You settle this.”",
+      "target": "« C'est limité.",
+      "english": "“It's limited.",
       "alignment": [
         {
           "english": "It's limited",
@@ -3356,7 +3401,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ça suffit.",
+      "english": "That's enough.",
+      "alignment": [
         {
           "english": "That's enough",
           "target": "Ça suffit",
@@ -3383,7 +3435,13 @@
               "end": 9
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je règle l'argent.",
+      "english": "I'll settle the money.",
+      "alignment": [
         {
           "english": "I'll settle the money",
           "target": "Je règle l'argent",
@@ -3428,7 +3486,13 @@
               "end": 17
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Vous réglez ça. »",
+      "english": "You settle this.”",
+      "alignment": [
         {
           "english": "You settle this",
           "target": "Vous réglez ça",
@@ -3552,7 +3616,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a tendu la main vers le téléphone.",
@@ -3648,7 +3713,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul a saisi son poignet gauche et l'a tiré contre le bord de l'établi.",
@@ -4119,7 +4185,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     }
   ],
   "meta": {
@@ -4127,6 +4194,50 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 3,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29,
+        30,
+        32,
+        33,
+        34,
+        35,
+        36,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    }
   }
 }

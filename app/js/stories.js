@@ -1,3 +1,4 @@
+import { requestAI, friendlyError } from "./ai-request.js";
 // Practice stories: short stories written on demand by OpenAI for the learner's
 // topic, words and level, then turned into a normal chapter so every reader
 // feature works on them (tap-to-learn, Listen, highlights, quizzes…).
@@ -12,14 +13,14 @@
 //   4. The chapter is stored in IndexedDB as part of a local "My practice
 //      stories" book (one per language), shown in the Library like any book.
 //
-// Stories live only on this device (they're included in nothing else). The key
+// Stories live on this device and are included in backups. The key
 // is the same OpenAI key as the rest of the app.
 
 import {
   getSettings, getBook, putBook, deleteBook, putChapter, deleteChapter, getAllVaultItems,
 } from "./db.js";
 import { getLearningLanguage, languageName } from "./languages.js";
-import { LEVELS, levelName, loadLevels, chunkLevel, bandForLevel, clampLevel, segmentZh } from "./levels.js";
+import { learnerLevel, LEVELS, levelName, loadLevels, chunkLevel, bandForLevel, clampLevel, segmentZh } from "./levels.js";
 import { bucketOf, isSentence } from "./vault.js";
 import { refreshCatalog } from "./library.js";
 
@@ -50,7 +51,7 @@ const CATEGORIES = ["noun", "verb", "adjective", "adverb", "idiom", "proper_noun
 const MAX_CHARS = { 1: 12, 2: 15, 3: 18, 4: 24, 5: 30, 6: 34 };
 
 // ── Sheet state ──
-const S = { words: "none", length: "short", style: "everyday", level: 2, busy: false };
+const S = { words: "none", length: "short", style: "everyday", level: 2, busy: false, controller: null };
 
 function setStatus(text, cls = "") {
   const el = $("story-status");
@@ -70,7 +71,7 @@ function renderChips(container, options, current, onPick) {
 async function openSheet(preset = {}) {
   const s = await getSettings();
   const lang = getLearningLanguage();
-  S.level = clampLevel(s.myLevel);
+  S.level = learnerLevel(s, lang);
   if (preset.words) S.words = preset.words;
   $("story-title").textContent = `New ${languageName(lang)} practice story`;
   $("story-key-note").hidden = !!s.openaiKey;
@@ -85,7 +86,7 @@ async function openSheet(preset = {}) {
   const learning = items.filter((it) => bucketOf(it) !== "mastered").length;
   renderChips($("story-words"), [
     ["none", "None"],
-    ["learning", `My learning words${learning ? ` (${Math.min(learning, 12)})` : ""}`],
+    ["learning", `My learning words${learning ? ` (${learning})` : ""}`],
     ["custom", "Type my own"],
   ], S.words, (v) => { S.words = v; $("story-custom-wrap").hidden = v !== "custom"; });
   $("story-custom-wrap").hidden = S.words !== "custom";
@@ -93,9 +94,10 @@ async function openSheet(preset = {}) {
   const sel = $("story-level");
   sel.innerHTML = LEVELS.map((l) => `<option value="${l.n}">${l.name}</option>`).join("");
   sel.value = String(S.level);
-  renderChips($("story-length"), [["short", "Short"], ["medium", "Medium"], ["long", "Long"]], S.length, (v) => { S.length = v; });
+  renderChips($("story-length"), [["short", "Short"], ["medium", "Medium"], ["long", "Long"]], S.length, (v) => { S.length = v; updateWordHint(); });
   renderChips($("story-style"), [["everyday", "Everyday"], ["funny", "Funny"], ["mystery", "Mystery"], ["adventure", "Adventure"], ["dialogue", "Dialogue"]], S.style, (v) => { S.style = v; });
 
+  updateWordHint();
   setStatus("");
   $("story-generate").disabled = false;
   $("story-backdrop").hidden = false;
@@ -106,7 +108,7 @@ async function openSheet(preset = {}) {
 }
 
 function closeSheet() {
-  if (S.busy) return;   // don't lose a story mid-generation
+  if (S.busy) S.controller?.abort();
   const sheet = $("story-sheet");
   sheet.classList.remove("open");
   setTimeout(() => { sheet.hidden = true; $("story-backdrop").hidden = true; }, 240);
@@ -187,20 +189,15 @@ export function buildStoryRequest({ lang, topic = "", words = [], level = 2, len
   };
 }
 
-async function callModel(body, key) {
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
-    const msg = await res.text().catch(() => "");
-    throw new Error(res.status === 401 ? "The OpenAI key was rejected. Check it in Settings." : `OpenAI error ${res.status}: ${msg.slice(0, 140)}`);
-  }
-  const data = await res.json();
+async function callModel(body, key, signal) {
+  const data = await requestAI("https://api.openai.com/v1/chat/completions", {
+    method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` }, body: JSON.stringify(body),
+  }, { signal, timeoutMs: 60000 });
+  if (data.choices?.[0]?.finish_reason === "length") throw new Error("The story was cut short. Try a shorter story or fewer practice words.");
   const content = data.choices?.[0]?.message?.content;
-  if (!content) throw new Error(data.choices?.[0]?.message?.refusal || "The model returned no story.");
-  return JSON.parse(content);
+  if (!content) throw new Error("No story was returned. Please try a different topic.");
+  try { return JSON.parse(content); }
+  catch { throw new Error("The story came back in a format we couldn’t read. Please try again."); }
 }
 
 // ── Story → chapter ──
@@ -231,7 +228,7 @@ function sentenceSyllables(text) {
 // Pinyin for a run of characters: one word's syllables joined ("yánsè"); names
 // keep a space after the surname ("lǐ míng").
 function wordPinyin(chars, sylls, isName) {
-  const s = sylls.filter(Boolean);
+  const s = chars.map((c, i) => HAN.test(c) ? (sylls[i] || c) : nonHanText(c));
   if (isName && s.length >= 2) return `${s[0]} ${s.slice(1).join("")}`;
   return s.join("");
 }
@@ -399,15 +396,18 @@ export async function deletePracticeStory(bookId, chapterId) {
 }
 
 // ── Generate ──
+export const practiceWordLimit = (level, length) => level === 1 || length === "short" ? 4 : length === "medium" ? 8 : 12;
+function updateWordHint() { $("story-word-note").textContent = `This length and level use up to ${practiceWordLimit(+$("story-level").value || S.level, S.length)} practice words so each has room in the story. Extra typed words are left for another story.`; }
 async function practiceWords(lang) {
+  const limit = practiceWordLimit(+$("story-level").value || S.level, S.length);
   if (S.words === "custom") {
-    return $("story-custom").value.split(/[,，、;；\n]+/).map((w) => w.trim()).filter(Boolean).slice(0, 15);
+    return $("story-custom").value.split(/[,，、;；\n]+/).map((w) => w.trim()).filter(Boolean).slice(0, limit);
   }
   if (S.words !== "learning") return [];
   const items = (await getAllVaultItems())
     .filter((it) => (it.lang || "zh") === lang && !isSentence(it) && bucketOf(it) !== "mastered")
     .sort((a, b) => (a.lastSeen || 0) - (b.lastSeen || 0));
-  return items.slice(0, 12).map((it) => it.hanzi);
+  return items.slice(0, limit).map((it) => it.hanzi);
 }
 
 async function generate() {
@@ -422,6 +422,8 @@ async function generate() {
   if (S.words === "custom" && !words.length) { setStatus("Type at least one word to practise.", "error"); return; }
 
   S.busy = true;
+  S.controller = new AbortController();
+  $("story-cancel").hidden = false;
   $("story-generate").disabled = true;
   const started = Date.now();
   const tick = setInterval(() => {
@@ -430,7 +432,7 @@ async function generate() {
   setStatus("Writing your story…", "busy");
   try {
     const [story] = await Promise.all([
-      callModel(buildStoryRequest({ lang, topic, words, level, length: S.length, style: S.style }), s.openaiKey),
+      callModel(buildStoryRequest({ lang, topic, words, level, length: S.length, style: S.style }), s.openaiKey, S.controller.signal),
       lang === "zh" ? loadPinyin() : Promise.resolve(),
       loadLevels(),
     ]);
@@ -449,10 +451,11 @@ async function generate() {
   } catch (err) {
     console.warn("Story generation failed:", err);
     clearInterval(tick);
-    setStatus(err.message || "Something went wrong. Please try again.", "error");
+    setStatus(friendlyError(err), err.code === "cancelled" ? "" : "error");
   } finally {
     clearInterval(tick);
-    S.busy = false;
+    S.busy = false; S.controller = null;
+    $("story-cancel").hidden = true;
     $("story-generate").disabled = false;
   }
 }
@@ -463,5 +466,7 @@ export function initStories() {
   $("story-close")?.addEventListener("click", closeSheet);
   $("story-backdrop")?.addEventListener("click", closeSheet);
   $("story-generate")?.addEventListener("click", generate);
+  $("story-cancel")?.addEventListener("click", () => S.controller?.abort());
+  $("story-level")?.addEventListener("change", updateWordHint);
   window.addEventListener("stories:new", (e) => openSheet(e.detail || {}));
 }

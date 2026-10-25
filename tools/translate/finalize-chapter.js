@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { assertEnglishSpans } from "./lib/english-spans.js";
 // Mechanical authoring only. No model/API calls. Run in tools/translate/.
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -37,6 +38,7 @@ export function finalizeDraft(draft) {
     nonempty(pair.hanzi, `${label}.hanzi`);
     assertSentenceUnit(pair.hanzi, label);
     requireThat(Array.isArray(pair.alignment) && pair.alignment.length, `${label}: alignment required`);
+    assertEnglishSpans(pair, label);
     const map = romanizeWithMap(pair.hanzi);
     let cursor = 0;
     const alignment = pair.alignment.map((chunk, j) => {

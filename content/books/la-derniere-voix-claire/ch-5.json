@@ -2,7 +2,7 @@
   "id": "ch-5",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 5,
+  "version": 6,
   "title": {
     "target": "La mauvaise gare",
     "english": "The Wrong Station"
@@ -111,7 +111,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il s'en est aperçu sur le pont du canal, quand il a cherché ses gants.",
@@ -804,7 +805,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un homme tirait une valise dont une roue frappait chaque joint du carrelage.",
@@ -1464,7 +1466,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un train était annoncé pour Mereford.",
@@ -2058,7 +2061,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le bruit restait loin derrière elles.",
@@ -2619,7 +2623,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Là, il entendait les moteurs, mais presque plus les annonces.",
@@ -3495,11 +3500,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Vous attendez quelqu'un ? » a demandé l'agent.",
-      "english": "“Are you waiting for someone?” the member of staff asked.",
+      "target": "« Vous attendez quelqu'un ?",
+      "english": "“Are you waiting for someone?”",
       "alignment": [
         {
           "english": "Are you waiting for",
@@ -3545,7 +3551,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé l'agent.",
+      "english": "the member of staff asked.",
+      "alignment": [
         {
           "english": "the member of staff asked",
           "target": "a demandé l'agent",
@@ -3651,7 +3664,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Depuis la veille, il ne faisait que ça.",
@@ -3906,7 +3920,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La police est au courant », a dit Daniel.",
@@ -4116,7 +4131,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'en avait pas.",
@@ -4695,7 +4711,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il lui a donné un contact à transmettre aux enquêteurs.",
@@ -4809,7 +4826,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel l'a noté sans demander qu'on fasse une exception.",
@@ -5319,7 +5337,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Trois colonnes, cette fois : entendu, supposé, à vérifier.",
@@ -5601,8 +5620,8 @@
       ]
     },
     {
-      "target": "Sur le papier, le mot se laissait déplacer. Dans sa tête, il avait déjà des fondations.",
-      "english": "On paper, the word was easy to move. In his head, it had already laid foundations.",
+      "target": "Sur le papier, le mot se laissait déplacer.",
+      "english": "On paper, the word was easy to move.",
       "alignment": [
         {
           "english": "On paper",
@@ -5702,7 +5721,13 @@
               "end": 20
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Dans sa tête, il avait déjà des fondations.",
+      "english": "In his head, it had already laid foundations.",
+      "alignment": [
         {
           "english": "In his head",
           "target": "Dans sa tête",
@@ -6006,7 +6031,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a attendu son tour.",
@@ -6411,7 +6437,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Une annonce pour Mereford, avec du trafic juste à côté », a répondu Daniel.",
@@ -6552,7 +6579,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous cherchez un train ou un bus ? »",
@@ -6648,7 +6676,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est une bonne question. »",
@@ -6717,7 +6746,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle l'a regardé avec une patience qu'il avait méritée.",
@@ -6840,7 +6870,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les cars qui s'arrêtaient devant la gare partaient sans annonce extérieure, a-t-elle expliqué.",
@@ -7026,7 +7057,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "À l'ancienne gare routière, en revanche, le petit bureau utilisait encore un haut-parleur pour les changements de quai.",
@@ -7485,8 +7517,8 @@
       ]
     },
     {
-      "target": "« L'ancienne gare routière est encore ouverte ? » a demandé Daniel.",
-      "english": "“The old bus station is still open?” Daniel asked.",
+      "target": "« L'ancienne gare routière est encore ouverte ?",
+      "english": "“The old bus station is still open?”",
       "alignment": [
         {
           "english": "The old bus station",
@@ -7559,7 +7591,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -7710,7 +7749,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a retourné un plan et lui a montré le trajet.",
@@ -7833,7 +7873,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Douze minutes en descendant vers le canal, puis à droite, avant le pont.",
@@ -8340,7 +8381,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le hall ne correspondait pas bien.",
@@ -8979,11 +9021,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Un salon de coiffure, un réparateur de téléphones, un local vide qui promettait encore une ouverture prochaine. Le mot « prochainement » avait jauni au soleil.",
-      "english": "A hairdresser's, a phone repair shop, an empty shop still promising to open soon. The word “soon” had yellowed in the sun.",
+      "target": "Un salon de coiffure, un réparateur de téléphones, un local vide qui promettait encore une ouverture prochaine.",
+      "english": "A hairdresser's, a phone repair shop, an empty shop still promising to open soon.",
       "alignment": [
         {
           "english": "A hairdresser's",
@@ -9182,7 +9225,13 @@
               "end": 23
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Le mot « prochainement » avait jauni au soleil.",
+      "english": "The word “soon” had yellowed in the sun.",
+      "alignment": [
         {
           "english": "The word",
           "target": "Le mot",
@@ -9795,7 +9844,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Trois quais, un abri bas, un bureau vitré.",
@@ -10269,7 +10319,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le prochain départ pour Mereford se ferait du quai trois.",
@@ -10776,7 +10827,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ce n'était pas le même son.",
@@ -11193,8 +11245,8 @@
       ]
     },
     {
-      "target": "Une annonce. Un véhicule proche.",
-      "english": "An announcement. A nearby vehicle.",
+      "target": "Une annonce.",
+      "english": "An announcement.",
       "alignment": [
         {
           "english": "An announcement",
@@ -11222,7 +11274,13 @@
               "end": 11
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Un véhicule proche.",
+      "english": "A nearby vehicle.",
+      "alignment": [
         {
           "english": "A nearby vehicle",
           "target": "Un véhicule proche",
@@ -11514,7 +11572,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle n'était pas rouge.",
@@ -12021,7 +12080,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Si Ruth avait appelé d'ici, il valait mieux laisser la police décider quoi examiner.",
@@ -12771,7 +12831,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une voix l'a arrêté.",
@@ -12981,7 +13042,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "À travers la porte ouverte, il a vu un jeune homme en pantalon de travail, le téléphone tendu.",
@@ -13176,7 +13238,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur l'écran, une femme riait devant un gâteau.",
@@ -13500,7 +13563,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le commerçant a regardé par-dessus l'épaule du jeune homme.",
@@ -13614,7 +13678,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel était resté sur le seuil.",
@@ -13701,6 +13766,126 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 5,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    }
   }
 }

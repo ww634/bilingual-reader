@@ -2,7 +2,7 @@
   "id": "ch-37",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "Après le bruit",
     "english": "After the Noise"
@@ -138,7 +138,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a essayé avec la main droite.",
@@ -720,7 +721,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a vérifié qu'il n'avait pas heurté la tête.",
@@ -1140,7 +1142,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il l'a laissée faire.",
@@ -1200,7 +1203,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben attendait un peu plus loin.",
@@ -1287,7 +1291,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "On avait recueilli leurs premiers récits séparément.",
@@ -1920,7 +1925,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Son poignet restait gonflé et douloureux.",
@@ -2457,7 +2463,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle était ouverte.",
@@ -2580,8 +2587,8 @@
       ]
     },
     {
-      "target": "« J'ai vu le verre quand je suis revenu », a-t-il dit. « J'ai entendu une voix. Pas les mots. J'ai appelé depuis le portillon. »",
-      "english": "“I saw the glass when I came back,” he said. “I heard a voice. Not the words. I called from the gate.”",
+      "target": "« J'ai vu le verre quand je suis revenu », a-t-il dit.",
+      "english": "“I saw the glass when I came back,” he said.",
       "alignment": [
         {
           "english": "I saw",
@@ -2699,7 +2706,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« J'ai entendu une voix.",
+      "english": "“I heard a voice.",
+      "alignment": [
         {
           "english": "I heard",
           "target": "J'ai entendu",
@@ -2762,7 +2776,13 @@
               "end": 8
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Pas les mots.",
+      "english": "Not the words.",
+      "alignment": [
         {
           "english": "Not the words",
           "target": "Pas les mots",
@@ -2798,7 +2818,13 @@
               "end": 12
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "J'ai appelé depuis le portillon. »",
+      "english": "I called from the gate.”",
+      "alignment": [
         {
           "english": "I called",
           "target": "J'ai appelé",
@@ -2958,11 +2984,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« J'avais laissé mon sac. Je voulais vous voir. Savoir où vous étiez. »",
-      "english": "“I'd left my bag. I wanted to see you. To know where you were.”",
+      "target": "« J'avais laissé mon sac.",
+      "english": "“I'd left my bag.",
       "alignment": [
         {
           "english": "I'd left",
@@ -3017,7 +3044,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je voulais vous voir.",
+      "english": "I wanted to see you.",
+      "alignment": [
         {
           "english": "I wanted",
           "target": "Je voulais",
@@ -3071,7 +3105,13 @@
               "end": 9
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Savoir où vous étiez. »",
+      "english": "To know where you were.”",
+      "alignment": [
         {
           "english": "To know",
           "target": "Savoir",
@@ -3150,7 +3190,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a regardé le bandage.",
@@ -3219,11 +3260,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Je l'ai vu. Pendant une seconde, j'ai voulu lui demander pourquoi. »",
-      "english": "“I saw him. For a second, I wanted to ask him why.”",
+      "target": "« Je l'ai vu.",
+      "english": "“I saw him.",
       "alignment": [
         {
           "english": "I saw him",
@@ -3260,7 +3302,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pendant une seconde, j'ai voulu lui demander pourquoi. »",
+      "english": "For a second, I wanted to ask him why.”",
+      "alignment": [
         {
           "english": "For a second",
           "target": "Pendant une seconde",
@@ -3456,7 +3505,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il ne savait pas ce que Ben avait vu dans cette seconde.",
@@ -3639,7 +3689,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a vissé le bouchon jusqu'au bout.",
@@ -3744,7 +3795,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une femme a appelé le nom d'un autre patient.",
@@ -3867,7 +3919,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a sursauté, puis reposé la bouteille entre ses pieds.",
@@ -4086,7 +4139,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a gardé le silence.",
@@ -4146,11 +4200,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Hier soir. J'avais pas fini. »",
-      "english": "“Last night. I hadn't finished.”",
+      "target": "« Hier soir.",
+      "english": "“Last night.",
       "alignment": [
         {
           "english": "Last night",
@@ -4178,7 +4233,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "J'avais pas fini. »",
+      "english": "I hadn't finished.”",
+      "alignment": [
         {
           "english": "I hadn't finished",
           "target": "J'avais pas fini",
@@ -4338,7 +4400,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a pensé aux dernières conversations qu'on corrigeait après coup, jusqu'à leur faire dire ce qu'on aurait voulu.",
@@ -4656,7 +4719,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a frotté ses paumes sur son pantalon.",
@@ -4761,7 +4825,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a rassemblé les papiers de Daniel pour les porter lui-même.",
@@ -5007,7 +5072,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La police avait confirmé qu'ils pouvaient accéder à la maison par la porte de devant.",
@@ -5562,7 +5628,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait besoin d'enlever son gilet.",
@@ -5727,7 +5794,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a posé son sac.",
@@ -5787,7 +5855,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a dégagé le tissu sans tirer sur le poignet.",
@@ -6102,7 +6171,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a dit oui.",
@@ -6381,7 +6451,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a posé la deuxième assiette.",
@@ -6459,7 +6530,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils n'avaient pas besoin de décider pour demain.",
@@ -6581,6 +6653,69 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 3,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        26,
+        27,
+        30,
+        31,
+        32,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64
+      ]
+    }
   }
 }

@@ -2,7 +2,7 @@
   "id": "ch-4",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "Derrière sa voix",
     "english": "Behind Her Voice"
@@ -165,7 +165,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel l'a contournée deux fois avant de la ranger.",
@@ -699,7 +700,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'appareil n'offrait pas de sortie audio qu'il puisse utiliser directement.",
@@ -1575,7 +1577,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a photographié l'afficheur et la position du microphone.",
@@ -2163,7 +2166,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur l'écran, Daniel surveillait les crêtes, ces pointes qui montaient avec la voix.",
@@ -2913,7 +2917,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a gardé le début, la respiration, le message entier et l'annonce de l'heure.",
@@ -3486,7 +3491,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il l'a sauvegardé sans traitement, puis en a fait une copie de travail.",
@@ -3996,7 +4002,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ensuite, il a écrit en haut d'une nouvelle page :",
@@ -4431,7 +4438,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "C'était un effet de l'écoute, pas un renseignement sur elle.",
@@ -4977,7 +4985,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La fin pouvait être « Mereford ».",
@@ -5565,7 +5574,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur la forme d'onde, ça faisait une bosse.",
@@ -6207,7 +6217,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le grondement est devenu moins envahissant.",
@@ -6744,8 +6755,8 @@
       ]
     },
     {
-      "target": "Moins de bruit. Pas plus de mots.",
-      "english": "Less noise. No more words.",
+      "target": "Moins de bruit.",
+      "english": "Less noise.",
       "alignment": [
         {
           "english": "Less noise",
@@ -6782,7 +6793,13 @@
               "end": 14
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Pas plus de mots.",
+      "english": "No more words.",
+      "alignment": [
         {
           "english": "No more words",
           "target": "Pas plus de mots",
@@ -6987,7 +7004,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les sons graves se trouvaient en bas, les aigus en haut.",
@@ -7860,7 +7878,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La sélection gardait un peu de contexte de chaque côté.",
@@ -8583,7 +8602,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a noté le réglage utilisé et ce qu'il changeait.",
@@ -9378,7 +9398,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il en possédait assez pour y passer la nuit.",
@@ -9915,7 +9936,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un véhicule qui passait était une explication possible.",
@@ -10521,7 +10543,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le policier venu chercher le répondeur a vérifié avec lui quel message conserver.",
@@ -11199,7 +11222,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a commencé un message à Judith.",
@@ -12129,7 +12153,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un bruit bref revenait à la fin.",
@@ -12867,7 +12892,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il l'avait entendu dès la première fois, avant de sortir le microphone.",
@@ -13350,7 +13376,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Mereford était au nord.",
@@ -13947,7 +13974,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel connaissait son hall, ses annonces, l'abri des taxis.",
@@ -14376,11 +14404,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Annonce de transport possible. Destination incertaine : Mereford.",
-      "english": "Possible transport announcement. Uncertain destination: Mereford.",
+      "target": "Annonce de transport possible.",
+      "english": "Possible transport announcement.",
       "alignment": [
         {
           "english": "Possible transport announcement",
@@ -14426,7 +14455,13 @@
               "end": 29
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Destination incertaine : Mereford.",
+      "english": "Uncertain destination: Mereford.",
+      "alignment": [
         {
           "english": "Uncertain destination",
           "target": "Destination incertaine",
@@ -14475,8 +14510,8 @@
       ]
     },
     {
-      "target": "Bruit compatible avec un véhicule proche. Gare à vérifier.",
-      "english": "Noise consistent with a nearby vehicle. Station to check.",
+      "target": "Bruit compatible avec un véhicule proche.",
+      "english": "Noise consistent with a nearby vehicle.",
       "alignment": [
         {
           "english": "Noise consistent with a nearby vehicle",
@@ -14540,7 +14575,13 @@
               "end": 40
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Gare à vérifier.",
+      "english": "Station to check.",
+      "alignment": [
         {
           "english": "Station to check",
           "target": "Gare à vérifier",
@@ -14841,7 +14882,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait tracé le point d'interrogation beaucoup plus petit.",
@@ -14988,6 +15030,132 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        118,
+        120,
+        121,
+        122,
+        123
+      ]
+    }
   }
 }

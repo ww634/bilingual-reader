@@ -2,7 +2,7 @@
   "id": "ch-29",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "Les lignes communes",
     "english": "The Matching Entries"
@@ -120,7 +120,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle avait obtenu de Malik les pièces inventoriées avec Ruth, et de Martin le dossier complet qu'il avait conservé.",
@@ -765,7 +766,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Malik était avec Helen.",
@@ -1212,7 +1214,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Qui avait fourni quoi, et quand.",
@@ -1617,7 +1620,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Celle du litige n'avait pas cette note manuscrite.",
@@ -2547,7 +2551,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Helen a ouvert la réponse de Martin.",
@@ -2634,7 +2639,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'avait pas donné cette autorisation et avait contesté le circuit à l'époque.",
@@ -3393,11 +3399,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Ce changement figure dans des pièces conservées ailleurs », a précisé Malik. « Ça ne valide pas tout ce qu'elle raconte. »",
-      "english": "“That change appears in documents kept elsewhere,” Malik clarified. “That doesn't validate everything she says.”",
+      "target": "« Ce changement figure dans des pièces conservées ailleurs », a précisé Malik.",
+      "english": "“That change appears in documents kept elsewhere,” Malik clarified.",
       "alignment": [
         {
           "english": "That change",
@@ -3533,7 +3540,14 @@
               "end": 15
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Ça ne valide pas tout ce qu'elle raconte. »",
+      "english": "“That doesn't validate everything she says.”",
+      "alignment": [
         {
           "english": "That doesn't validate",
           "target": "Ça ne valide pas",
@@ -3855,7 +3869,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La garantie signée reliait aussi Paul à la société destinataire.",
@@ -4374,7 +4389,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Helen l'a affichée avec la fiche de remise conservée au dossier.",
@@ -5256,7 +5272,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle lui a demandé si Paul avait parlé d'un second passage.",
@@ -5391,8 +5408,8 @@
       ]
     },
     {
-      "target": "« Non. Vers dix-huit heures. Vingt minutes au maximum. »",
-      "english": "“No. Around six. Twenty minutes at most.”",
+      "target": "« Non.",
+      "english": "“No.",
       "alignment": [
         {
           "english": "No",
@@ -5411,7 +5428,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Vers dix-huit heures.",
+      "english": "Around six.",
+      "alignment": [
         {
           "english": "Around six",
           "target": "Vers dix-huit heures",
@@ -5447,7 +5471,13 @@
               "end": 20
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Vingt minutes au maximum. »",
+      "english": "Twenty minutes at most.”",
+      "alignment": [
         {
           "english": "Twenty minutes at most",
           "target": "Vingt minutes au maximum",
@@ -5496,8 +5526,8 @@
       ]
     },
     {
-      "target": "« Nous avons un passage de sa voiture en direction de la maison vers dix-huit heures vingt-cinq. Et elle est encore là vers dix-neuf heures trois, sur l'enregistrement du livreur. »",
-      "english": "“We have his car passing towards the house at around twenty-five past six. And it's still there at around three minutes past seven, on the recording from the delivery driver.”",
+      "target": "« Nous avons un passage de sa voiture en direction de la maison vers dix-huit heures vingt-cinq.",
+      "english": "“We have his car passing towards the house at around twenty-five past six.",
       "alignment": [
         {
           "english": "We have",
@@ -5678,7 +5708,14 @@
               "end": 31
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Et elle est encore là vers dix-neuf heures trois, sur l'enregistrement du livreur. »",
+      "english": "And it's still there at around three minutes past seven, on the recording from the delivery driver.”",
+      "alignment": [
         {
           "english": "And it's still there",
           "target": "Et elle est encore là",
@@ -5937,11 +5974,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Les deux horaires ont été recoupés », a ajouté Shah. « Avec une marge d'environ deux minutes. L'écart ne disparaît pas avec le réglage d'une horloge. »",
-      "english": "“Both times have been cross-checked,” Shah added. “With a margin of about two minutes. The discrepancy doesn't disappear with a clock adjustment.”",
+      "target": "« Les deux horaires ont été recoupés », a ajouté Shah.",
+      "english": "“Both times have been cross-checked,” Shah added.",
       "alignment": [
         {
           "english": "Both times",
@@ -6032,7 +6070,14 @@
               "end": 13
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Avec une marge d'environ deux minutes.",
+      "english": "“With a margin of about two minutes.",
+      "alignment": [
         {
           "english": "With a margin",
           "target": "Avec une marge",
@@ -6113,7 +6158,13 @@
               "end": 22
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "L'écart ne disparaît pas avec le réglage d'une horloge. »",
+      "english": "The discrepancy doesn't disappear with a clock adjustment.”",
+      "alignment": [
         {
           "english": "The discrepancy",
           "target": "L'écart",
@@ -6282,11 +6333,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Oui. Son déplacement hors de Calderwick ce soir-là est corroboré par des images et des témoins. Je ne vais pas vous transmettre son emploi du temps complet. »",
-      "english": "“Yes. His journey away from Calderwick that evening is corroborated by footage and witnesses. I'm not going to give you his complete itinerary.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -6305,7 +6357,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Son déplacement hors de Calderwick ce soir-là est corroboré par des images et des témoins.",
+      "english": "His journey away from Calderwick that evening is corroborated by footage and witnesses.",
+      "alignment": [
         {
           "english": "His journey",
           "target": "Son déplacement",
@@ -6485,7 +6544,13 @@
               "end": 14
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je ne vais pas vous transmettre son emploi du temps complet. »",
+      "english": "I'm not going to give you his complete itinerary.”",
+      "alignment": [
         {
           "english": "I'm not going to",
           "target": "Je ne vais pas",
@@ -6753,7 +6818,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle lui a demandé de signaler tout nouveau contact, et de ne pas chercher une confrontation.",
@@ -7035,7 +7101,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il lui a expliqué les comparaisons qu'il était autorisé à résumer.",
@@ -7272,7 +7339,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a revu le café, le plan, la carte de Jo.",
@@ -7413,7 +7481,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'aide de Paul avait souvent consisté à se mettre entre eux et la personne qu'ils voulaient voir.",
@@ -7874,6 +7943,64 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        43,
+        45,
+        46,
+        49,
+        50,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    }
   }
 }

@@ -46,3 +46,22 @@ export function clozeRange(sentence, word, offset = null) {
   if (offset != null && Number.isInteger(offset) && offset !== at) return null;
   return { start: at, end: at + word.length };
 }
+
+export const vocabularyKey = (word, lang = 'zh') => lang === 'fr' ? String(word || '').trim().toLocaleLowerCase('fr') : String(word || '').trim();
+export const vocabularyUnits = chunk => chunk.lookup?.length ? chunk.lookup : [chunk];
+export function distinctOptions(item, candidates, direction) {
+  const norm = value => String(value || '').trim().toLowerCase();
+  const english = new Set([norm(item.english)]), words = new Set([norm(item.hanzi || item.id)]), out = [];
+  for (const candidate of candidates) {
+    const e = norm(candidate.english), w = norm(candidate.hanzi || candidate.id);
+    if (!e || !w || english.has(e) || words.has(w)) continue;
+    if (direction === 'dictation' && item.pinyin && candidate.pinyin && normalizePinyin(item.pinyin) === normalizePinyin(candidate.pinyin)) continue;
+    english.add(e); words.add(w); out.push(candidate);
+  }
+  return out;
+}
+export function sentenceAnswer(input, expected) {
+  const words = text => String(text || '').toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/\p{P}/gu, '').trim().split(/\s+/).filter(Boolean);
+  const given = words(input), answer = words(expected);
+  return given.length === answer.length && given.length > 0 && answer.every((word, i) => oneEdit(word, given[i]));
+}

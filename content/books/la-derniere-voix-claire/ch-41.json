@@ -2,7 +2,7 @@
   "id": "ch-41",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "Épilogue — Les mots qui sont là",
     "english": "Epilogue — The Words That Are There"
@@ -174,7 +174,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Son père essayait d'y expliquer une recette.",
@@ -600,8 +601,8 @@
       ]
     },
     {
-      "target": "« Il voulait faire la démonstration à ma sœur », a dit Mme Holt. « Elle habitait loin. On lui envoyait des cassettes. »",
-      "english": "“He wanted to show my sister how it was done,” Mrs Holt said. “She lived a long way away. We used to send her cassettes.”",
+      "target": "« Il voulait faire la démonstration à ma sœur », a dit Mme Holt.",
+      "english": "“He wanted to show my sister how it was done,” Mrs Holt said.",
       "alignment": [
         {
           "english": "He wanted",
@@ -719,7 +720,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Elle habitait loin.",
+      "english": "“She lived a long way away.",
+      "alignment": [
         {
           "english": "She lived",
           "target": "Elle habitait",
@@ -764,7 +772,13 @@
               "end": 4
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "On lui envoyait des cassettes. »",
+      "english": "We used to send her cassettes.”",
+      "alignment": [
         {
           "english": "We used to send her",
           "target": "On lui envoyait",
@@ -879,7 +893,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel avait gardé les deux canaux dans le fichier de conservation.",
@@ -1428,8 +1443,8 @@
       ]
     },
     {
-      "target": "« Là », a dit Mme Holt. « C'est presque ça. »",
-      "english": "“There,” Mrs Holt said. “That's almost it.”",
+      "target": "« Là », a dit Mme Holt.",
+      "english": "“There,” Mrs Holt said.",
       "alignment": [
         {
           "english": "There",
@@ -1475,7 +1490,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« C'est presque ça. »",
+      "english": "“That's almost it.”",
+      "alignment": [
         {
           "english": "That's almost it",
           "target": "C'est presque ça",
@@ -1599,7 +1621,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il distinguait le début d'un nombre, puis le frottement d'un récipient sur la table.",
@@ -2043,8 +2066,8 @@
       ]
     },
     {
-      "target": "« Je peux choisir ce canal pour la copie d'écoute. Le fichier complet restera intact. Pour le nombre, je vais laisser une indication d'incertitude dans le texte. »",
-      "english": "“I can choose this channel for the listening copy. The complete file will remain intact. As for the number, I'm going to leave an uncertainty marker in the text.”",
+      "target": "« Je peux choisir ce canal pour la copie d'écoute.",
+      "english": "“I can choose this channel for the listening copy.",
       "alignment": [
         {
           "english": "I can choose",
@@ -2162,7 +2185,14 @@
               "end": 22
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Le fichier complet restera intact.",
+      "english": "The complete file will remain intact.",
+      "alignment": [
         {
           "english": "The complete file",
           "target": "Le fichier complet",
@@ -2225,7 +2255,13 @@
               "end": 14
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Pour le nombre, je vais laisser une indication d'incertitude dans le texte. »",
+      "english": "As for the number, I'm going to leave an uncertainty marker in the text.”",
+      "alignment": [
         {
           "english": "As for the number",
           "target": "Pour le nombre",
@@ -2448,7 +2484,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ça fait une drôle de recette. »",
@@ -2526,7 +2563,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il manque aussi la température du four. »",
@@ -2613,7 +2651,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a ri.",
@@ -2646,7 +2685,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a laissé la lecture continuer.",
@@ -3306,7 +3346,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La porte intérieure s'est ouverte sans qu'il la soulève.",
@@ -4011,7 +4052,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Au début, Daniel avait entendu chaque passage dans l'allée.",
@@ -4539,7 +4581,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les pièces arrivaient par les voies convenues, avec des absences qu'il fallait identifier.",
@@ -5139,7 +5182,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel avait témoigné sur son travail ancien, sur sa révision et sur l'atelier.",
@@ -5925,7 +5969,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les débats avaient replacé la visite de Paul à Mill Lane dans le contexte du travail d'Anna sur les paiements.",
@@ -6981,7 +7026,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Après le renvoi par la CCRC, la Cour d'appel avait annulé sa condamnation sans ordonner un nouveau procès.",
@@ -7815,7 +7861,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait fait remercier Claire.",
@@ -8271,7 +8318,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "D'autres jours, il était allé travailler.",
@@ -9093,7 +9141,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel attendait là où Ben le lui demandait.",
@@ -10083,7 +10132,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait dû déplacer une étagère pour atteindre un boîtier.",
@@ -10368,8 +10418,8 @@
       ]
     },
     {
-      "target": "« Il m'a dit de faire attention », a dit Ben. « Après. »",
-      "english": "“He told me to be careful,” Ben said. “Afterwards.”",
+      "target": "« Il m'a dit de faire attention », a dit Ben.",
+      "english": "“He told me to be careful,” Ben said.",
       "alignment": [
         {
           "english": "He told me",
@@ -10460,7 +10510,14 @@
               "end": 9
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Après. »",
+      "english": "“Afterwards.”",
+      "alignment": [
         {
           "english": "Afterwards",
           "target": "Après",
@@ -10548,7 +10605,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il a choisi une couleur qui vous va. »",
@@ -10644,7 +10702,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'était la bonne nouvelle que j'attendais. »",
@@ -10749,7 +10808,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a posé le pain et regardé l'horloge.",
@@ -10872,7 +10932,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous avez mangé ? »",
@@ -10905,7 +10966,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je vous attendais. »",
@@ -10947,7 +11009,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ils ont sorti les assiettes.",
@@ -11007,7 +11070,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben savait où elles étaient ; il demandait encore avant de déplacer les appareils.",
@@ -11901,7 +11965,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle descendait un arrêt avant le bon, pour passer devant une vitrine.",
@@ -12630,7 +12695,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel espérait qu'il resterait des pommes de terre pour lui.",
@@ -12930,7 +12996,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une enquêtrice l'attendait avec Nisha.",
@@ -13593,7 +13660,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait été examiné pendant l'enquête.",
@@ -14361,7 +14429,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'identité de l'expéditeur n'était pas établie.",
@@ -14508,7 +14577,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les mots étaient compréhensibles sans nettoyage.",
@@ -14685,8 +14755,8 @@
       ]
     },
     {
-      "target": "« Arrêtez de vous justifier auprès de Mercer. La formule, c'est “un avis limité aux éléments soumis”. Il cherchera une limite qu'il puisse défendre. Faites-la écrire. Pas de contexte dans l'attestation. Nous pouvons encore vous protéger. Mais il nous faut sa signature. »",
-      "english": "“Stop justifying yourself to Mercer. The wording is ‘an opinion limited to the material submitted’. He'll look for a limitation he can defend. Get him to write it down. No context in the statement. We can still protect you. But we need his signature.”",
+      "target": "« Arrêtez de vous justifier auprès de Mercer.",
+      "english": "“Stop justifying yourself to Mercer.",
       "alignment": [
         {
           "english": "Stop justifying yourself",
@@ -14768,7 +14838,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "La formule, c'est “un avis limité aux éléments soumis”.",
+      "english": "The wording is ‘an opinion limited to the material submitted’.",
+      "alignment": [
         {
           "english": "The wording",
           "target": "La formule",
@@ -14885,7 +14962,13 @@
               "end": 34
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Il cherchera une limite qu'il puisse défendre.",
+      "english": "He'll look for a limitation he can defend.",
+      "alignment": [
         {
           "english": "He'll look for",
           "target": "Il cherchera",
@@ -14984,7 +15067,13 @@
               "end": 21
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Faites-la écrire.",
+      "english": "Get him to write it down.",
+      "alignment": [
         {
           "english": "Get him to write it down",
           "target": "Faites-la écrire",
@@ -15011,7 +15100,13 @@
               "end": 16
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Pas de contexte dans l'attestation.",
+      "english": "No context in the statement.",
+      "alignment": [
         {
           "english": "No context",
           "target": "Pas de contexte",
@@ -15083,7 +15178,13 @@
               "end": 18
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Nous pouvons encore vous protéger.",
+      "english": "We can still protect you.",
+      "alignment": [
         {
           "english": "We can",
           "target": "Nous pouvons",
@@ -15146,7 +15247,13 @@
               "end": 20
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Mais il nous faut sa signature. »",
+      "english": "But we need his signature.”",
+      "alignment": [
         {
           "english": "But we need",
           "target": "Mais il nous faut",
@@ -15324,7 +15431,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas reconnu la voix.",
@@ -15711,7 +15819,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La formule était déjà là avant son rapport.",
@@ -16086,8 +16195,8 @@
       ]
     },
     {
-      "target": "« Vous pensez que cette personne était déjà là en 2001 ? » a demandé l'enquêtrice.",
-      "english": "“Do you think this person was already involved in 2001?” the investigator asked.",
+      "target": "« Vous pensez que cette personne était déjà là en 2001 ?",
+      "english": "“Do you think this person was already involved in 2001?”",
       "alignment": [
         {
           "english": "Do you think",
@@ -16214,7 +16323,14 @@
               "end": 7
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé l'enquêtrice.",
+      "english": "the investigator asked.",
+      "alignment": [
         {
           "english": "the investigator asked",
           "target": "a demandé l'enquêtrice",
@@ -16254,8 +16370,8 @@
       ]
     },
     {
-      "target": "« Je ne sais pas. La formule a pu circuler. Il faut retrouver qui l'a fournie et à qui. »",
-      "english": "“I don't know. The wording could have circulated. We need to trace who supplied it, and to whom.”",
+      "target": "« Je ne sais pas.",
+      "english": "“I don't know.",
       "alignment": [
         {
           "english": "I don't know",
@@ -16283,7 +16399,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "La formule a pu circuler.",
+      "english": "The wording could have circulated.",
+      "alignment": [
         {
           "english": "The wording",
           "target": "La formule",
@@ -16337,7 +16460,13 @@
               "end": 13
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Il faut retrouver qui l'a fournie et à qui. »",
+      "english": "We need to trace who supplied it, and to whom.”",
+      "alignment": [
         {
           "english": "We need to trace",
           "target": "Il faut retrouver",
@@ -16686,7 +16815,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le mot « nous » était dans le message.",
@@ -17316,7 +17446,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le fichier restait dans le cadre de l'enquête.",
@@ -17535,7 +17666,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a demandé s'il pouvait aider.",
@@ -17625,8 +17757,8 @@
       ]
     },
     {
-      "target": "« À reprendre les références, oui. Pour les pièces, je vais demander à qui m'adresser. »",
-      "english": "“To go over the references, yes. As for the documents, I'm going to ask whom to approach.”",
+      "target": "« À reprendre les références, oui.",
+      "english": "“To go over the references, yes.",
       "alignment": [
         {
           "english": "To go over",
@@ -17699,7 +17831,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pour les pièces, je vais demander à qui m'adresser. »",
+      "english": "As for the documents, I'm going to ask whom to approach.”",
+      "alignment": [
         {
           "english": "As for the documents",
           "target": "Pour les pièces",
@@ -17895,7 +18034,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a ouvert son carnet à une page neuve.",
@@ -18255,7 +18395,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     }
   ],
   "meta": {
@@ -18263,6 +18404,141 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        130,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        142,
+        143,
+        144,
+        145
+      ]
+    }
   }
 }

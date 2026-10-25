@@ -2,7 +2,7 @@
   "id": "ch-1",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 6,
+  "version": 7,
   "title": {
     "target": "Ce qui reste",
     "english": "What Remains"
@@ -84,7 +84,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel Mercer avait retrouvé vingt-trois minutes de son père,",
@@ -417,7 +418,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a ramené le curseur au début du passage.",
@@ -1260,7 +1262,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Une partie, oui », a répondu Daniel.",
@@ -1338,7 +1341,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Alors on entendrait la fin. »",
@@ -1416,7 +1420,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a regardé la cassette dans sa boîte.",
@@ -1521,7 +1526,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une étiquette portait la mention « Été 94 ».",
@@ -2187,7 +2193,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Si j'en retire trop,",
@@ -2373,8 +2380,8 @@
       ]
     },
     {
-      "target": "« Vous dites que ce sera pire ? » a demandé Mme Holt.",
-      "english": "“You're saying that it will be worse?” Mrs Holt asked.",
+      "target": "« Vous dites que ce sera pire ?",
+      "english": "“You're saying that it will be worse?”",
       "alignment": [
         {
           "english": "You're saying",
@@ -2456,7 +2463,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Mme Holt.",
+      "english": "Mrs Holt asked.",
+      "alignment": [
         {
           "english": "Mrs Holt asked",
           "target": "a demandé Mme Holt",
@@ -2571,7 +2585,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a attendu.",
@@ -2613,7 +2628,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il connaissait ce silence-là.",
@@ -2946,7 +2962,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le transfert original restait dans un autre dossier,",
@@ -3612,7 +3629,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Même là, il y avait un froissement,",
@@ -3969,7 +3987,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il essaie ensuite d'en réduire la présence. »",
@@ -4068,8 +4087,8 @@
       ]
     },
     {
-      "target": "« Et il sait ce qui est une voix ? » a demandé Mme Holt.",
-      "english": "“And it can tell what's a voice?” Mrs Holt asked.",
+      "target": "« Et il sait ce qui est une voix ?",
+      "english": "“And it can tell what's a voice?”",
       "alignment": [
         {
           "english": "And",
@@ -4160,7 +4179,14 @@
               "end": 27
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Mme Holt.",
+      "english": "Mrs Holt asked.",
+      "alignment": [
         {
           "english": "Mrs Holt asked",
           "target": "a demandé Mme Holt",
@@ -4257,7 +4283,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le matin même, avant de lancer le moindre filtre,",
@@ -4371,7 +4398,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "il avait passé vingt minutes à examiner la cassette.",
@@ -5463,7 +5491,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur la seconde, après plusieurs minutes sans conversation,",
@@ -6312,7 +6341,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le moment qui comptait n'était pas toujours",
@@ -6591,7 +6621,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le souffle a reculé.",
@@ -7239,7 +7270,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est pas tout à fait lui. »",
@@ -7317,7 +7349,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a rétabli le réglage précédent.",
@@ -7395,7 +7428,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a ajusté le volume pour comparer les deux versions,",
@@ -8016,7 +8050,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il riait avant, pour être sûr », a dit Mme Holt.",
@@ -8208,7 +8243,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a souri, puis a regardé de nouveau l'écran.",
@@ -8331,7 +8367,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ma sœur pense qu'il dit mon prénom. »",
@@ -8445,7 +8482,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il aurait préféré ne pas le savoir.",
@@ -8523,7 +8561,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Maintenant, au prochain passage,",
@@ -8889,7 +8928,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Même si vous y passez un peu plus de temps ? »",
@@ -9021,7 +9061,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je pourrais y passer tout le week-end.",
@@ -9117,7 +9158,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ça ne rendrait pas la réponse plus honnête. »",
@@ -9291,7 +9333,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "À soixante-sept ans, sa courtoisie arrivait encore par le train suivant.",
@@ -10008,7 +10051,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« C'est moi », a dit Mme Holt.",
@@ -10077,7 +10121,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a laissé la bande continuer.",
@@ -10164,7 +10209,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Cette fois, elle ne lui a pas demandé de revenir en arrière.",
@@ -10473,7 +10519,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La version traitée et le transfert sans traitement avaient des noms différents.",
@@ -10893,7 +10940,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Surtout quand les gens écrivent la bonne date sur les boîtes. »",
@@ -11052,7 +11100,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle ne savait pas s'il plaisantait.",
@@ -11148,7 +11197,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Lui non plus n'en était pas tout à fait sûr.",
@@ -11322,7 +11372,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il faut que je garde la cassette aussi ? »",
@@ -11427,11 +11478,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Oui. Au sec, loin d'un radiateur. »",
-      "english": "“Yes. Somewhere dry, away from a radiator.”",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -11450,7 +11502,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Au sec, loin d'un radiateur. »",
+      "english": "Somewhere dry, away from a radiator.”",
+      "alignment": [
         {
           "english": "Somewhere dry",
           "target": "Au sec",
@@ -11637,7 +11696,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Ce que j'ai transféré, oui. »",
@@ -11706,7 +11766,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a retourné la petite boîte dans sa main.",
@@ -11811,7 +11872,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je n'ai plus de lecteur. »",
@@ -11871,7 +11933,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous n'avez pas à l'écouter pour la garder. »",
@@ -11994,7 +12057,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a rangé la cassette dans une poche séparée,",
@@ -12090,7 +12154,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "où ses clés ne risqueraient pas de la rayer.",
@@ -12678,7 +12743,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "derrière une petite maison de briques.",
@@ -13386,7 +13452,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Marianne la remplissait toujours jusqu'en haut.",
@@ -14259,7 +14326,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "en regardant une vis posée près de l'évier.",
@@ -15027,7 +15095,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La quincaillerie fermait à midi et demi.",
@@ -15261,7 +15330,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "mais les arbres continuaient à goutter.",
@@ -16284,7 +16354,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "avec trois autres dont il n'avait aucun usage.",
@@ -16818,7 +16889,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'appareil servait uniquement à la ligne professionnelle.",
@@ -17211,7 +17283,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Puis une femme a inspiré, très près du téléphone.",
@@ -17337,8 +17410,8 @@
       ]
     },
     {
-      "target": "« Daniel. C'est Ruth Bennett. »",
-      "english": "“Daniel. It's Ruth Bennett.”",
+      "target": "« Daniel.",
+      "english": "“Daniel.",
       "alignment": [
         {
           "english": "Daniel",
@@ -17357,7 +17430,14 @@
               "end": 6
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "C'est Ruth Bennett. »",
+      "english": "It's Ruth Bennett.”",
+      "alignment": [
         {
           "english": "It's",
           "target": "C'est",
@@ -17535,11 +17615,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« L'affaire Anna Vale. Vous avez travaillé sur l'enregistrement.",
-      "english": "“The Anna Vale case. You worked on the recording.",
+      "target": "« L'affaire Anna Vale.",
+      "english": "“The Anna Vale case.",
       "alignment": [
         {
           "english": "The Anna Vale case",
@@ -17576,7 +17657,14 @@
               "end": 19
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Vous avez travaillé sur l'enregistrement.",
+      "english": "You worked on the recording.",
+      "alignment": [
         {
           "english": "You worked",
           "target": "Vous avez travaillé",
@@ -17832,7 +17920,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a cru entendre « Mereford »,",
@@ -18144,7 +18233,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "si vous êtes toujours dans la même maison.",
@@ -18543,7 +18633,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a entendu encore sa respiration.",
@@ -18708,7 +18799,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "La ligne s'est coupée.",
@@ -18768,7 +18860,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'appareil a annoncé l'heure du message.",
@@ -18930,7 +19023,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il se rappelait une table recouverte d'une nappe en plastique,",
@@ -19587,7 +19681,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "sans toucher au volume.",
@@ -20076,7 +20171,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il est allé le chercher.",
@@ -20223,6 +20319,214 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 6,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        175,
+        176,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207
+      ]
+    }
   }
 }

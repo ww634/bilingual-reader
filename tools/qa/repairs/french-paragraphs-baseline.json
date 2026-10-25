@@ -1,0 +1,417 @@
+{
+  "schema": 1,
+  "book_id": "la-derniere-voix-claire",
+  "operation": "Restore source paragraph boundaries and split existing parallel sentences without changing wording or lookup data.",
+  "chapters": [
+    {
+      "id": "ch-1",
+      "from_version": 6,
+      "repair_version": 7,
+      "pairs": 203,
+      "chapter_sha256": "abf2756ee3916efd7ae462fa4c4e98d39fa9f8b19d76f9f8035c3e8bf0e99b6c",
+      "french_sha256": "fc8d81d7da51b906a9b37ab5b0d38481244b5e0acb2e0769ce597b4a17043332",
+      "english_sha256": "9ad997ffb204f7add5b587be2da5f7f359013fceecc48e230c9226815f8a551e",
+      "alignment_sha256": "9c3839a9c06a6549a8a9e687e95d6b3f1a66213e7b268cac151a50f3cece4893"
+    },
+    {
+      "id": "ch-2",
+      "from_version": 6,
+      "repair_version": 7,
+      "pairs": 224,
+      "chapter_sha256": "9cfd6887e856ea69c3328f9aeb70562d249cc04f1f2193604ee8791f1cd50781",
+      "french_sha256": "152cba6b137cf47fee2d682d50aeafeb0d213cfefe89e53744624df9b2f27392",
+      "english_sha256": "6fd4ddccdacbcbc8359d5fdce5092b9a6a3af1c6c92f7f14aadfd321d2ebfe81",
+      "alignment_sha256": "9a15f8785aa075e9dcc31dcc3591dcfa5d8a7e45531335e6aca1f2f50b210cfa"
+    },
+    {
+      "id": "ch-3",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 130,
+      "chapter_sha256": "324586ff38f220e3abe49bc19bce10132b9cb534d237bb9209a6ddcf8d594582",
+      "french_sha256": "a2953b84b488519b3b24b4736af5fb144de9f39055406c91b5daac85679544bc",
+      "english_sha256": "29dfc920fa04ec86895cb27d515a7c77699ec5909ce10ce583add75fc6ea96c3",
+      "alignment_sha256": "a3ced7d40749d81b4c3031d9c1b33043ced595182533b0f490d5ede68e0b4045"
+    },
+    {
+      "id": "ch-4",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 121,
+      "chapter_sha256": "2ab3fa3991356cad6c7598684b4bc2d9091dd203fad10ec6ffe0defac6938afb",
+      "french_sha256": "1707fb669199c90d70e20d2ea12a994478569528a353b55c8d2d1f7fb0094e10",
+      "english_sha256": "f8aaa68016a4b34382cfbdaf2d8575e9993334befa56a432ad7b98a0b77432de",
+      "alignment_sha256": "0120c6af0b085c71ed4cf32c531b4ebf83a40b74768fff6324f47f3002431308"
+    },
+    {
+      "id": "ch-5",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 115,
+      "chapter_sha256": "8a68ecc79f9bbd32ce538949818108bb75231848e586b51ec65e3c655d8f2044",
+      "french_sha256": "504a6b6aa28ceef6e23cb51f4fb9b566565feee5196d5355c6b050e2be971b34",
+      "english_sha256": "0f43c23c6fc495bc7edd613422ee9406af3f218cc9f23a8c6134474047292677",
+      "alignment_sha256": "db978596f3bc6c143dcd8be0813196597d7a6802f585ffd2e2f58afd804de3aa"
+    },
+    {
+      "id": "ch-6",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 157,
+      "chapter_sha256": "9a6a6d9aef3eb6730b57953eaef5a6051a9e74a0df15fa1d64a6fbae455be6ee",
+      "french_sha256": "57d637bd61c9504af6134967879b0078e2ccc7eb272be3fe50394b81b8a22e3f",
+      "english_sha256": "2e03567bd11c9b1f2d7d306df0d19b4e6bdf9faa77eb574b62394493789adcd9",
+      "alignment_sha256": "82886238bfff6f2655219f71e69ef3788552eea06940ce0df9d90ce31b0e5ee1"
+    },
+    {
+      "id": "ch-7",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 175,
+      "chapter_sha256": "74090050071650ba45cdc2cff01823098e9608c7413fea122835ede87b48a407",
+      "french_sha256": "acee845595ce9e6e0b2e5a8e9ee6f87f7116079dfa1da9037d4d0c1fc4c6ada3",
+      "english_sha256": "32890650bfeedf1dbf7b81ae92d24cc9c399ca658285b9fed34fdfa3afb0df74",
+      "alignment_sha256": "c06aac01f13ce537e7807418639734f232b112c6c7a8be26b137381ce9606e1f"
+    },
+    {
+      "id": "ch-8",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 119,
+      "chapter_sha256": "01e6e1a1a96ae7fc3827d20a6d1088f5afee517584b175daa1ea55801a54b993",
+      "french_sha256": "395d607064d13964fdee43d75303c5a058e8b81b79ede0271993cd2dadcac830",
+      "english_sha256": "43587213282eaca4aaf3e7e8e4738ce087b170f00dcc265e8335e4509d02109a",
+      "alignment_sha256": "92186ea9db2358f094ad0b61e0e852bb03ee48e1ad28ac77538838b8bb77c167"
+    },
+    {
+      "id": "ch-9",
+      "from_version": 6,
+      "repair_version": 7,
+      "pairs": 136,
+      "chapter_sha256": "b1e12758dc108222d4a4c6a44c71f9f3b6036cdbe09019c09dc582237807138a",
+      "french_sha256": "ac6f2974a8bd11410b141be1061ca4ad42077c44eb36ba9d0c6bc0dc9abf893e",
+      "english_sha256": "2f34bedb0824d1994d375c2f133184bf93201e0beab7192ad57a149e3346ab75",
+      "alignment_sha256": "090b205eb37415b3d9cfbfb82180c7022d4a2eae80df9c9371831a1d5d3c757e"
+    },
+    {
+      "id": "ch-10",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 126,
+      "chapter_sha256": "51a2fcb27645a5aafa6d5d2cc9c3239d958fb679483f513e407379ef7de5573a",
+      "french_sha256": "5ae9869d9dd161dce2a979e226b3366324377e042444e51dd97920ae24c98a9c",
+      "english_sha256": "7a006e616e263a120984cbb53abb7f03f91d58bd432453505a02e6315febb20c",
+      "alignment_sha256": "969347001e1aeaf8b09f73bb0eca18de1eccafc256a95ecfd7b028395e1c9cbd"
+    },
+    {
+      "id": "ch-11",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 117,
+      "chapter_sha256": "04af26bcde2f464b6d89ca20e811b88da399942fcb7b799eed414a3b1f7eba5c",
+      "french_sha256": "6c0916114dbc841414dc9d814f30822048c438c231a5bf0a0b2d439038a75e38",
+      "english_sha256": "9412216b83450eacb058244827e6ff488f3c6ad75d48def39fdf14ddc3134da1",
+      "alignment_sha256": "be7eb72e3184fae54cbaa03b7f809f3cf8043cc9f191f7f1208bef6e7c1a3089"
+    },
+    {
+      "id": "ch-12",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 155,
+      "chapter_sha256": "9b59a5177646b26db0df607b819828c2eb3e77c53dd7f501a3667bc67e9846a8",
+      "french_sha256": "610ed140a654ad0be3a3e0b26bdee68d9f9f9ced4377cb0ca02427ab2881c6ab",
+      "english_sha256": "7e838d31fbcf1a37f84b2e947abaabb1d5cd13c38c8e309a2580d321cd153a06",
+      "alignment_sha256": "5bbc6d6d39a0d0385ab966f186f89204732d551a5be4e86b0868591776a096e3"
+    },
+    {
+      "id": "ch-13",
+      "from_version": 6,
+      "repair_version": 7,
+      "pairs": 101,
+      "chapter_sha256": "7958d0c9c19e47702ff8e8ebb42e1794dd6352ca8bc77e2cc7e0884aa0d45b30",
+      "french_sha256": "f09c91e913ee8148230955b276a0f7851475c50ba28d4499bf3284471f885687",
+      "english_sha256": "4616836e109ee565c39a605b26e3e9fea45f03ce5b1d602e700f5db8887f2733",
+      "alignment_sha256": "adc3399d574accd29eaed8b80abdb37f6d8755e4341685df07ace2a6cbbbbca1"
+    },
+    {
+      "id": "ch-14",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 118,
+      "chapter_sha256": "b059550e202841e48f3d4e88f0a4599613599cfa9539c26cab79994aca494e5a",
+      "french_sha256": "9fe7af83f03a48cc719780a4819325b5193c0912a9ce845198b46ae368f0f557",
+      "english_sha256": "8e31bad1eabcc0c29ef9bc3c9959e8686032991b6a23dd1608f86da45f4a77bf",
+      "alignment_sha256": "2c6f0ddd1c121060888de27fb8e409dad2419870b8731bed1da65b8b2dac394e"
+    },
+    {
+      "id": "ch-15",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 112,
+      "chapter_sha256": "68b67017b28a086015e2ad55d4bc5762fad705209059564138eb38c28b666c26",
+      "french_sha256": "4360301da957030088df66cee2139231251b2b7ee3e2fbd094f31f1d4b90cd17",
+      "english_sha256": "54f5a2617ba80a1b3827ccebb6a05947b36cb8f9a521b77b02ec9087ba19c35a",
+      "alignment_sha256": "f430b2c5f848f060b46b452a44a77e9cbcefe72a58ce1f4f887ec8507b0238b2"
+    },
+    {
+      "id": "ch-16",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 122,
+      "chapter_sha256": "489a947e10b29a46406c81388e518df5a836fe61ce3890d6f3cc7b7738913403",
+      "french_sha256": "9189bd0a70f0becd4ae8d590d95f3e4537df10965dd58a58b02a58693010db20",
+      "english_sha256": "e94335f76c8ee28b0b5b903c072e78ff0862be8dd6e6fbd49ec9c55e700f13a3",
+      "alignment_sha256": "2832ce6b4588d38602e83ecf1c8012d853b3b8a83b0cf7a3e334301f45ca8380"
+    },
+    {
+      "id": "ch-17",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 139,
+      "chapter_sha256": "0565d1e9426420ab0a5bb51afc9bbb0cc24d2f4cf902808c19a7e54ee5cf4131",
+      "french_sha256": "5586777f0a1965144d34e8d71ea08d0b00aaeb4b9532f20062a05f8062b4d80a",
+      "english_sha256": "b93a26d1448374d4ea124da237a413b2769a2f82dced5928a7cf3cf41183845e",
+      "alignment_sha256": "fdf7d44adfaa212449fdbef33dd2253013a127482752abaedbc866f02a20c647"
+    },
+    {
+      "id": "ch-18",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 98,
+      "chapter_sha256": "8494a3b64cfb3b10aec26923f302014820a4498da60d9c7f3d7c4c40c740afb5",
+      "french_sha256": "1723ec5872d2a55d3c9673f6a91d516337e2ece27f2d61faef96bcf2aaeb6d13",
+      "english_sha256": "59be79dfb212804799000e33c2d138422d18824957312ebab02158d90a20a391",
+      "alignment_sha256": "2f811d70826ddcdf4d1cb50c1cb9d2962eeb3cddedaa488aeffa564066b6d082"
+    },
+    {
+      "id": "ch-19",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 100,
+      "chapter_sha256": "e2e4cd2165d50f17bb8a1e5595ddd1ef7152f1ef507d0d3f0389d427ed977a1c",
+      "french_sha256": "ea7f321601cef8f9cd7c788595bb005f8399866f25e4cd5f640b1a3f16efbf62",
+      "english_sha256": "19eebe62bd616af103db0a36a10423959af77c1222fe0d5777b5f718fa705370",
+      "alignment_sha256": "d294c112c75323947a55f5466f226d4b32adb72da70881d698fa6b454e222499"
+    },
+    {
+      "id": "ch-20",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 115,
+      "chapter_sha256": "fc67a66ee947ac7a2796eac46ebfb9bbc31addaccb8f56c60e0b3f8771e3f682",
+      "french_sha256": "8c39b414f9d1edda6c34e5b50505877bb3a028fbf07c7bed4066b1b7fe57da61",
+      "english_sha256": "34554bb798f1b26ecf3027a222d08d9d5e99236bb9dd1b7ec0cc723bd7ccf89c",
+      "alignment_sha256": "7d20eaa331d71f734b9b476e304b9ea8f77f50c82a970f18598f16548c99b0e1"
+    },
+    {
+      "id": "ch-21",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 93,
+      "chapter_sha256": "ad3128177497e9d5d69ac6ed0c5dd24cb47aafd90c44a9b936f97bc3c9d9e87f",
+      "french_sha256": "8e5fe8bc12162ed5009f2961fba7964c5fe8521d696a8ba90947079ef1ced24e",
+      "english_sha256": "a9746d0e86df6aa249aa1e89af1eae9bfccaf4dfaf2eb99ae4843f94ac6ba0fe",
+      "alignment_sha256": "816be4315bd0285ebb387f930a8cbc7e8a79501b1a7a55ad374444c6d766300b"
+    },
+    {
+      "id": "ch-22",
+      "from_version": 5,
+      "repair_version": 6,
+      "pairs": 103,
+      "chapter_sha256": "d9f1e2ce21e560a761402ce332953bc88b2ae0631d0372e6f6d607abd9905912",
+      "french_sha256": "449bb8839fd91015ef2914a98328af3006a48d53f33b8fa6f3bf4e1da44117b7",
+      "english_sha256": "9730c55fba31f96f67f3819ddbc3dc83199c69650844b8ad884e70ee5ba63ae9",
+      "alignment_sha256": "76d04cf80ea41ceb01b395f2e614a3ea45fbff9bde1135f15221c971e16273a3"
+    },
+    {
+      "id": "ch-23",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 65,
+      "chapter_sha256": "9c9fab013c3cc27cf393cb7a77b6d5ebeb692b128487edc88b3122f10640619f",
+      "french_sha256": "60264fb254ac3d2dfb903b80f9a6665238c0765b90cdb79a9bd12dd24a51892b",
+      "english_sha256": "41aba45b88bb1bc149a83ecd04e7a1ff3534ac3efcb61148a046441c98ea4822",
+      "alignment_sha256": "906e54c974b11b4804ef6423699c357fffde610d600ea37fcc10844cd3f38367"
+    },
+    {
+      "id": "ch-24",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 97,
+      "chapter_sha256": "71cb318de9b50cadf5da09c6197aced9c514db38e3fd4fe3b50e25a9c3f7fc0b",
+      "french_sha256": "c35d779bdcd1665e8c1a1f51f12aa8843be1d51e8cb48eac72f956a273768845",
+      "english_sha256": "78e9228d704da40a50b2a783da6f4a77e16f61a5c2a5fd41e0c3e6f882240b93",
+      "alignment_sha256": "7f3b3088211384054dfcfbc279ea60467366a0d4f2f96d2ad8c8c59520e0e65b"
+    },
+    {
+      "id": "ch-25",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 66,
+      "chapter_sha256": "71a1e395df4d0b6ca5fa4f4816d1dbc18109ba8dede9b580d3da02f00878bd7c",
+      "french_sha256": "fb282ce4abc007401a19e7ea913dfae08b682b83400ff83f3bb5b188d2fa84d8",
+      "english_sha256": "04c4e8cab284758cc6d15d74328ca13a2055f2650c37f9f194c63fe1c605011f",
+      "alignment_sha256": "e0579fbdca837edf9302d08d2dda9de61d519b8f8a0e6833058b95fb24b5ea8b"
+    },
+    {
+      "id": "ch-26",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 78,
+      "chapter_sha256": "4f5940c662a677ed865bb3818d4f1209cc8a02facc5103a7648078925126640c",
+      "french_sha256": "3b7b14fd772d3cd8d64aee34d80377d60002bcfb76caf18dfd31280da4bd55dd",
+      "english_sha256": "cb007fdccc2b66d70fcd9d23d49320ab51ff672b6903587a3aba3c5d569b4562",
+      "alignment_sha256": "bf0c3bd9e4f57a753aaebcb2ac95d25ca8a81692213fa2147acc4ec19b7b211a"
+    },
+    {
+      "id": "ch-27",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 73,
+      "chapter_sha256": "c3d0d572bfecb1e52a92ec53e2a10265bd0063cd26424d568446663435a8b16e",
+      "french_sha256": "31f38794cb977fb29eef593168eaa2dddd10015a115ac24142f1fb07043ee2c1",
+      "english_sha256": "98015e3434f5181cb39fe04333724fe444d20e2cb03c579f9435ad25e13517ed",
+      "alignment_sha256": "a6584f0e57eabbb57c18e04d59e69e6e189d0fd22404728a93559594d706b095"
+    },
+    {
+      "id": "ch-28",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 63,
+      "chapter_sha256": "aee22aa690eabcdea9998cb25362d9b692e4d5c00dd2d0d240a317d20cb6a504",
+      "french_sha256": "22eedaaa28cd9dfcfb9c991ab1b5b99b7b1c4674bf605b9e5250959468055e53",
+      "english_sha256": "57d22f1e6567bb46cce4a2b75450fd91c43e2eac940e22c6d78d86a26d908ae4",
+      "alignment_sha256": "ee6bb460e4f909b245489a10dc841b6a00db36e20cb03b0d9124125d51ee6c6f"
+    },
+    {
+      "id": "ch-29",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 53,
+      "chapter_sha256": "f231516d48ce83b22ae6a88923e1a21922485b5e6695b8c03936652f6c978822",
+      "french_sha256": "e7960add01ef13e1c93212f90e5b2a5d2e74e6cf781fae44727cc9a886abf489",
+      "english_sha256": "568f82402d76190ee22e588769d5252b86612ba33123c770b8e108603fda8868",
+      "alignment_sha256": "ad33f9f6aa72ed8dc49581af318c07f6f3ac1e14439f9d4782d2dafa637ab8a5"
+    },
+    {
+      "id": "ch-30",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 65,
+      "chapter_sha256": "b38d0a7f51d24500e6bfb4baa33f62e96dfe7aa4105c6e6a5077f5ad721095b0",
+      "french_sha256": "a8ca393a4c0616a9a0b215856e19662b47a79bbbcfcdae2b4bf58fba51036c0f",
+      "english_sha256": "50b483ba903ef55f4479e83c1985214414e4f6393f20783e4c0c556e2d9858a9",
+      "alignment_sha256": "782c3c66c9fa43833ed4062297d1ac7a82c92b83cd70fe41dceffdfb2e7340e4"
+    },
+    {
+      "id": "ch-31",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 61,
+      "chapter_sha256": "093fd62023748f7e04b0dea8c362057a6f73414e8caccc1574eb174610ee5ebb",
+      "french_sha256": "d00beb3307030e975e925befb619e069be91d06410fa2b08c5407b045f79e00f",
+      "english_sha256": "da7dd94b89bb505591dc892424c2bc2ef9013c0209f8ed9d69c71d7ab0e94dda",
+      "alignment_sha256": "51731122e7d9b620ef37acda62d0efac385ee5e63932ca20ba5a0f397c5b12da"
+    },
+    {
+      "id": "ch-32",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 93,
+      "chapter_sha256": "34e05945543107f33e685aa194a8be7359173d3d5d708bdb882d82d00690c252",
+      "french_sha256": "a97c6887c63d13688bb1a4a18a3928152c6f80b67d1eb2b28e2b8ca0c2c767c6",
+      "english_sha256": "76784b7795e9c38865e44de369120d1ce59d4b7b27d9076d9d5aaf935290be76",
+      "alignment_sha256": "d6fd23cd7c16b35bd3a40e3c8f385dc57080d199df488aa448780e2fe2e964ef"
+    },
+    {
+      "id": "ch-33",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 66,
+      "chapter_sha256": "4694ea560fb709eb142ebaf6dc62c6364627f6a351695164cc868468a41c5053",
+      "french_sha256": "cb2db181e279151e0e6502ff564add116961d970b3695e7cf867d97402fc8065",
+      "english_sha256": "7ed3db21c19dad3bc1ee25db54d6ff0b80ceebbb56d76ad77e24ca71e3f9fe36",
+      "alignment_sha256": "fb1213bc594389bc44227081dd76c1b53aa88181c0e499a217fa0cc421de9d76"
+    },
+    {
+      "id": "ch-34",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 63,
+      "chapter_sha256": "490abcc8ac34ee3f09e6362bb1ec28dedcd8a258bd31dc2cdb27bfa0d72ef718",
+      "french_sha256": "6339e032dfc2fd28f7c07311ee6faec65ee78b427a1e1017aa209153f0edd18f",
+      "english_sha256": "ac4ee7a964e611fbc9391df04b46934b4abdc6f67bb87f663ab4b1cbc7960f80",
+      "alignment_sha256": "cf33b3d279ec22212b40243fde4b3febe8ba32841c813402d6b69b4bdbc562cf"
+    },
+    {
+      "id": "ch-35",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 39,
+      "chapter_sha256": "0b94e351a1946224b41854d04db8084791aa5a317ebfddfb8d1b351b009e8742",
+      "french_sha256": "5f7036c24092b0e56912c3827d89e9dfd7cf76ac887ced2f84f236a56c0a9af2",
+      "english_sha256": "e236642a9985c2104030bd2c03fdfd901bc5bf5a1e41a7e832338c3867d21920",
+      "alignment_sha256": "1c1e26a8d71cf33191479744fd7ed6eebf47a85dd2e4c4473892d71b1b1d5709"
+    },
+    {
+      "id": "ch-36",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 50,
+      "chapter_sha256": "813309e0e3eb27bfc528a58d8d1bc64fa445ee06ee3bf84b2bbd33a511050df3",
+      "french_sha256": "c2443903f5be4fc8f5fed6b16c0ff5537b7c27f3d86fddb9453a777a766aa175",
+      "english_sha256": "08ee091710e84808a4d7dd5a7b817fbc8ef38ccc62783918f0689e3b68094a15",
+      "alignment_sha256": "5b23c60b1a9560eb4e4348626719a165e56b6092c888eb4605c6a362933fd3e1"
+    },
+    {
+      "id": "ch-37",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 58,
+      "chapter_sha256": "216b658b474ec097ab2f3cd4de20d54bf4cabfc0af7fa907d2d0379bb9cea85a",
+      "french_sha256": "af830cbd0aa348731ae863bee979d95d0a31838a8c2f32e24b6a83b2042475f1",
+      "english_sha256": "503b7b3764bf26b273daeba592b6cf957c4b51973fea679348dc03f1d16cd67c",
+      "alignment_sha256": "f5d8bb882b51bafdaff18cf584d9a84ee7dbaeaf685f135a671ca05947fad007"
+    },
+    {
+      "id": "ch-38",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 51,
+      "chapter_sha256": "069ca5fec74a7ce3485ff9f91bba5604552d27382b557139fd7ffeb401242540",
+      "french_sha256": "e349ce10c516537c389d7ed2f1b41aae150ec79dc351612a7eec0160d169ea52",
+      "english_sha256": "ee8915ab029013f4a0ccb50f337484188384e682a574325b5fb79a779c984cc0",
+      "alignment_sha256": "b42f2a1a70492a323dcabe1ebf636da36d75c25691f185845fe89e4a02265838"
+    },
+    {
+      "id": "ch-39",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 56,
+      "chapter_sha256": "6b0a1b657a5f5ec072a0ad776299dd77e76909a7ae1023ef3f2c89d166c19e3f",
+      "french_sha256": "254ea6e75c9fbee189abd0a54af288235540785abe988f7c52a41db8c6be1c7b",
+      "english_sha256": "52b60862cf8f577de7ee6775473048a04d7a708f7fbc790156f0051243af3ca2",
+      "alignment_sha256": "5f105b3b749c6955c7db7021eafa60b550704569f44ede6edf9720391e75295c"
+    },
+    {
+      "id": "ch-40",
+      "from_version": 3,
+      "repair_version": 4,
+      "pairs": 51,
+      "chapter_sha256": "fedadcc9a7ff899ed0ed82d3bcf3e235eeb48fcc1bbd884796f57842475355a8",
+      "french_sha256": "a63ad6198776c3f37353b79e70cc4220f18e7c66fd802d4b86d4ab161cecbd72",
+      "english_sha256": "ee594513df71f197d2eeaf80c943faae793d954da6c66b3db7f20e64fd601349",
+      "alignment_sha256": "6ebb94b2a9abeb3d330a0f1d2c2dfb64963273b1e59d7fce75108a15f72bd1ee"
+    },
+    {
+      "id": "ch-41",
+      "from_version": 4,
+      "repair_version": 5,
+      "pairs": 130,
+      "chapter_sha256": "b9f0fe64fc8d122150494e65b2971523a891caa8d4f151cb891f4093f7df1ca3",
+      "french_sha256": "ce9f0a5404105ad1856455d6b6deef2ed037fd145c86781d79863dd9c3784971",
+      "english_sha256": "e71bd00e46da779b5ac6bc027b347a1e0c8b671962c0fc1f6c59bceb36c30d65",
+      "alignment_sha256": "18482201c2cbc7b19adb19d03a8180f4f941cd8741e3ea26b689629d97752fa5"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import { audioCacheInfo, clearAudioCache } from "./speech.js";
 import { getSettings, updateSettings, clearAll, getAllVaultItems } from "./db.js";
 import { APP_VERSION } from "./version.js";
 import { exportBackup, prepareBackup, importBackup, isPersisted } from "./backup.js";
-import { LEVELS, levelHint, clampLevel } from "./levels.js";
+import { learnerLevel, LEVELS, levelHint, clampLevel } from "./levels.js";
 import { getLearningLanguage } from "./languages.js";
 import { flushFeedback, feedbackSummary, KINDS } from "./feedback.js";
 
@@ -41,7 +41,7 @@ export async function loadSettingsIntoUI() {
   if (els.openaiKey()) els.openaiKey().value = s.openaiKey || "";
   const lvl = $("my-level");
   lvl.innerHTML = LEVELS.map((l) => `<option value="${l.n}">${l.name}</option>`).join("");
-  lvl.value = String(clampLevel(s.myLevel));
+  lvl.value = String(learnerLevel(s, getLearningLanguage()));
   showLevelHint(lvl.value);
   applyFontSize(s.fontSize);
   updateOnlineStatus();
@@ -80,8 +80,8 @@ async function refreshFeedbackStatus() {
 
 function showLevelHint(n) {
   const lang = getLearningLanguage();
-  const what = lang === "zh" ? levelHint(clampLevel(n), "zh") : `roughly: you know ${levelHint(clampLevel(n), lang)}`;
-  $("my-level-hint").textContent = `${what}. Used for “% known” on chapters, the default chapter-quiz level, and practice stories.`;
+  const what = lang === "zh" ? levelHint(clampLevel(n), "zh") : `Practice level: ${levelHint(clampLevel(n), lang)}`;
+  $("my-level-hint").textContent = `${what}. Used for quizzes and practice stories.${lang === "fr" ? " Reading-percentage estimates are not shown for French yet." : " Also used for chapter reading estimates."}`;
 }
 
 function timeAgo(iso) {
@@ -172,7 +172,8 @@ export function initSettings() {
 
   $("my-level").addEventListener("change", async (e) => {
     showLevelHint(e.target.value);
-    await save({ myLevel: clampLevel(e.target.value) });
+    await updateSettings(s => ({ myLevel: { ...s.myLevel, [getLearningLanguage()]: clampLevel(e.target.value) } }));
+    refreshPreparedBackup();
   });
 
   $("backup-export").addEventListener("click", async (e) => {

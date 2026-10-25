@@ -2,7 +2,7 @@
   "id": "ch-31",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 3,
+  "version": 4,
   "title": {
     "target": "Ce que Graham préparait",
     "english": "What Graham Was Preparing"
@@ -75,7 +75,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel est arrivé cinq minutes avant et a attendu dans sa voiture.",
@@ -555,11 +556,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Ceux-là, il les aimait pas. Entre. »",
-      "english": "“Those, he didn't like. Come in.”",
+      "target": "« Ceux-là, il les aimait pas.",
+      "english": "“Those, he didn't like.",
       "alignment": [
         {
           "english": "Those",
@@ -623,7 +625,14 @@
               "end": 17
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Entre. »",
+      "english": "Come in.”",
+      "alignment": [
         {
           "english": "Come in",
           "target": "Entre",
@@ -774,7 +783,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Le fauteuil était vide.",
@@ -1161,7 +1171,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Judith les avait remis à Shah.",
@@ -1797,7 +1808,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il voulait savoir comment transmettre des éléments susceptibles de modifier la présentation d'un témoignage.",
@@ -2307,7 +2319,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il allait le faire. »",
@@ -2358,11 +2371,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Il demandait comment le faire », a dit Judith. « Il n'avait encore rien envoyé à Michael. »",
-      "english": "“He was asking how to do it,” Judith said. “He hadn't sent anything yet to Michael.”",
+      "target": "« Il demandait comment le faire », a dit Judith.",
+      "english": "“He was asking how to do it,” Judith said.",
       "alignment": [
         {
           "english": "He was asking",
@@ -2453,7 +2467,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Il n'avait encore rien envoyé à Michael. »",
+      "english": "“He hadn't sent anything yet to Michael.”",
+      "alignment": [
         {
           "english": "He hadn't sent anything yet",
           "target": "Il n'avait encore rien envoyé",
@@ -2667,7 +2688,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il citait la référence HM1847, demandait les justificatifs et proposait de reprendre la question de Ruth avant de contacter les avocats de Michael.",
@@ -3174,8 +3196,8 @@
       ]
     },
     {
-      "target": "« Le dossier de travail n'est toujours pas là », a dit Judith. « Il imprimait tout. Il voulait des pages pour le rendez-vous. »",
-      "english": "“The working file is still missing,” Judith said. “He printed everything. He wanted pages for the meeting.”",
+      "target": "« Le dossier de travail n'est toujours pas là », a dit Judith.",
+      "english": "“The working file is still missing,” Judith said.",
       "alignment": [
         {
           "english": "The working file",
@@ -3302,7 +3324,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Il imprimait tout.",
+      "english": "“He printed everything.",
+      "alignment": [
         {
           "english": "He printed everything",
           "target": "Il imprimait tout",
@@ -3338,7 +3367,13 @@
               "end": 17
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Il voulait des pages pour le rendez-vous. »",
+      "english": "He wanted pages for the meeting.”",
+      "alignment": [
         {
           "english": "He wanted",
           "target": "Il voulait",
@@ -3498,11 +3533,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Le matin. Sur la petite table. Je l'ai dit à l'inspectrice. »",
-      "english": "“In the morning. On the little table. I've told the inspector.”",
+      "target": "« Le matin.",
+      "english": "“In the morning.",
       "alignment": [
         {
           "english": "In the morning",
@@ -3530,7 +3566,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Sur la petite table.",
+      "english": "On the little table.",
+      "alignment": [
         {
           "english": "On the little table",
           "target": "Sur la petite table",
@@ -3575,7 +3618,13 @@
               "end": 19
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je l'ai dit à l'inspectrice. »",
+      "english": "I've told the inspector.”",
+      "alignment": [
         {
           "english": "I've told",
           "target": "Je l'ai dit",
@@ -3708,11 +3757,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Judith l'avait essuyée. Les papiers n'avaient laissé aucune trace.",
-      "english": "Judith had wiped it. The papers had left no trace.",
+      "target": "Judith l'avait essuyée.",
+      "english": "Judith had wiped it.",
       "alignment": [
         {
           "english": "Judith",
@@ -3758,7 +3808,13 @@
               "end": 15
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Les papiers n'avaient laissé aucune trace.",
+      "english": "The papers had left no trace.",
+      "alignment": [
         {
           "english": "The papers",
           "target": "Les papiers",
@@ -3981,7 +4037,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Après l'appel sur les biscuits, elle avait précisé dans quel placard ils se trouvaient.",
@@ -4266,8 +4323,8 @@
       ]
     },
     {
-      "target": "« Trouvé. Paul est là. À tout à l'heure. »",
-      "english": "“Found them. Paul's here. See you later.”",
+      "target": "« Trouvé.",
+      "english": "“Found them.",
       "alignment": [
         {
           "english": "Found them",
@@ -4286,7 +4343,14 @@
               "end": 6
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Paul est là.",
+      "english": "Paul's here.",
+      "alignment": [
         {
           "english": "Paul's here",
           "target": "Paul est là",
@@ -4322,7 +4386,13 @@
               "end": 11
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "À tout à l'heure. »",
+      "english": "See you later.”",
+      "alignment": [
         {
           "english": "See you later",
           "target": "À tout à l'heure",
@@ -4455,7 +4525,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Shah lui avait donné les passages de la voiture.",
@@ -4962,7 +5033,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Judith a acquiescé.",
@@ -5004,7 +5076,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a repris la capture avant de lui tendre deux copies anciennes.",
@@ -5259,7 +5332,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Son propre rapport portait la date du 25.",
@@ -5868,8 +5942,8 @@
       ]
     },
     {
-      "target": "« Tu avais reçu le texte proposé avant d'écouter ? » a demandé Judith.",
-      "english": "“Had you received the proposed wording before listening?” Judith asked.",
+      "target": "« Tu avais reçu le texte proposé avant d'écouter ?",
+      "english": "“Had you received the proposed wording before listening?”",
       "alignment": [
         {
           "english": "Had you received",
@@ -5969,7 +6043,14 @@
               "end": 15
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Judith.",
+      "english": "Judith asked.",
+      "alignment": [
         {
           "english": "Judith asked",
           "target": "a demandé Judith",
@@ -6021,7 +6102,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Et lui ? »",
@@ -6054,7 +6136,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle désignait le nom de Graham dans l'en-tête.",
@@ -6168,11 +6251,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Il était déjà convaincu. Je lui ai donné une raison de plus de le rester. »",
-      "english": "“He was already convinced. I gave him one more reason to stay that way.”",
+      "target": "« Il était déjà convaincu.",
+      "english": "“He was already convinced.",
       "alignment": [
         {
           "english": "He was already convinced",
@@ -6218,7 +6302,14 @@
               "end": 23
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je lui ai donné une raison de plus de le rester. »",
+      "english": "I gave him one more reason to stay that way.”",
+      "alignment": [
         {
           "english": "I gave him",
           "target": "Je lui ai donné",
@@ -6450,11 +6541,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Il me manque. Et j'aurais voulu qu'il ait envoyé ce courrier avant d'inviter Paul. »",
-      "english": "“I miss him. And I wish he'd sent that letter before inviting Paul.”",
+      "target": "« Il me manque.",
+      "english": "“I miss him.",
       "alignment": [
         {
           "english": "I miss him",
@@ -6491,7 +6583,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Et j'aurais voulu qu'il ait envoyé ce courrier avant d'inviter Paul. »",
+      "english": "And I wish he'd sent that letter before inviting Paul.”",
+      "alignment": [
         {
           "english": "And I wish",
           "target": "Et j'aurais voulu",
@@ -6750,7 +6849,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas dit que Graham avait voulu bien faire.",
@@ -7146,7 +7246,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle avait aussi l'accord de Claire pour donner la photographie à Michael.",
@@ -7499,6 +7600,72 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 3,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        30,
+        31,
+        34,
+        35,
+        37,
+        38,
+        39,
+        40,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        59,
+        60,
+        61,
+        62,
+        64,
+        65,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    }
   }
 }

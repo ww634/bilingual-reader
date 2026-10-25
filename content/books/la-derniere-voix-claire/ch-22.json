@@ -2,7 +2,7 @@
   "id": "ch-22",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 5,
+  "version": 6,
   "title": {
     "target": "Ce qu'Anna voulait",
     "english": "What Anna Wanted"
@@ -129,7 +129,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle l'a retirée avant de dire bonjour.",
@@ -219,8 +220,8 @@
       ]
     },
     {
-      "target": "« Entrez. Faites attention au pantalon. »",
-      "english": "“Come in. Mind the trousers.”",
+      "target": "« Entrez.",
+      "english": "“Come in.",
       "alignment": [
         {
           "english": "Come in",
@@ -239,7 +240,14 @@
               "end": 6
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Faites attention au pantalon. »",
+      "english": "Mind the trousers.”",
+      "alignment": [
         {
           "english": "Mind the trousers",
           "target": "Faites attention au pantalon",
@@ -462,7 +470,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il reste du travail », a précisé Claire.",
@@ -549,11 +558,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "Daniel n'avait rien dit. Il se demandait si le rôle exigeait une jambe plus courte ; le théâtre avait ses contraintes.",
-      "english": "Daniel had said nothing. He wondered whether the part called for a shorter leg; the theatre had its constraints.",
+      "target": "Daniel n'avait rien dit.",
+      "english": "Daniel had said nothing.",
       "alignment": [
         {
           "english": "Daniel had said nothing",
@@ -608,7 +618,14 @@
               "end": 23
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il se demandait si le rôle exigeait une jambe plus courte ; le théâtre avait ses contraintes.",
+      "english": "He wondered whether the part called for a shorter leg; the theatre had its constraints.",
+      "alignment": [
         {
           "english": "He wondered",
           "target": "Il se demandait",
@@ -894,7 +911,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Claire devait livrer les costumes avant six heures.",
@@ -1515,7 +1533,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel lui a expliqué son rôle ancien et pourquoi il le réexaminait.",
@@ -1656,7 +1675,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il ne lui a pas fait écouter les enregistrements.",
@@ -1851,8 +1871,8 @@
       ]
     },
     {
-      "target": "« Comment elle travaillait. Ce qu'elle préparait », a dit Daniel.",
-      "english": "“How she worked. What she was planning,” Daniel said.",
+      "target": "« Comment elle travaillait.",
+      "english": "“How she worked.",
       "alignment": [
         {
           "english": "How she worked",
@@ -1889,7 +1909,14 @@
               "end": 24
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ce qu'elle préparait », a dit Daniel.",
+      "english": "What she was planning,” Daniel said.",
+      "alignment": [
         {
           "english": "What she was planning",
           "target": "Ce qu'elle préparait",
@@ -2031,7 +2058,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Vous êtes le premier depuis longtemps à ne pas commencer par son mari. »",
@@ -2181,7 +2209,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'en a tiré aucun mérite.",
@@ -2259,7 +2288,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elles s'étaient connues dans un cours du soir.",
@@ -2355,7 +2385,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Claire préparait un changement de poste.",
@@ -2532,8 +2563,8 @@
       ]
     },
     {
-      "target": "« Elle n'aimait pas qu'on dise qu'elle aidait. Elle travaillait. Elle envoyait des factures », a dit Claire.",
-      "english": "“She didn't like people saying she helped out. She worked. She sent invoices,” Claire said.",
+      "target": "« Elle n'aimait pas qu'on dise qu'elle aidait.",
+      "english": "“She didn't like people saying she helped out.",
       "alignment": [
         {
           "english": "She didn't like",
@@ -2642,7 +2673,14 @@
               "end": 25
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle travaillait.",
+      "english": "She worked.",
+      "alignment": [
         {
           "english": "She worked",
           "target": "Elle travaillait",
@@ -2669,7 +2707,13 @@
               "end": 16
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Elle envoyait des factures », a dit Claire.",
+      "english": "She sent invoices,” Claire said.",
+      "alignment": [
         {
           "english": "She sent invoices",
           "target": "Elle envoyait des factures",
@@ -2892,11 +2936,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle oubliait toujours de me facturer. Elle disait toujours qu'on réglerait ça avec un déjeuner. »",
-      "english": "“She always forgot to invoice me. She always said we'd settle it over lunch.”",
+      "target": "« Elle oubliait toujours de me facturer.",
+      "english": "“She always forgot to invoice me.",
       "alignment": [
         {
           "english": "She always forgot",
@@ -2969,7 +3014,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle disait toujours qu'on réglerait ça avec un déjeuner. »",
+      "english": "She always said we'd settle it over lunch.”",
+      "alignment": [
         {
           "english": "She always said",
           "target": "Elle disait toujours",
@@ -3081,8 +3133,8 @@
       ]
     },
     {
-      "target": "« Vous les régliez ? » a demandé Daniel.",
-      "english": "“Did you settle them?” Daniel asked.",
+      "target": "« Vous les régliez ?",
+      "english": "“Did you settle them?”",
       "alignment": [
         {
           "english": "Did you settle them",
@@ -3119,7 +3171,14 @@
               "end": 16
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -3225,7 +3284,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle a sorti une photographie d'une enveloppe en carton.",
@@ -3339,7 +3399,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Anna était debout devant une table de jardin, une assiette dans chaque main.",
@@ -3666,8 +3727,8 @@
       ]
     },
     {
-      "target": "« Elle attendait que je l'aide. Moi, je voulais une photo. »",
-      "english": "“She was waiting for me to help her. I wanted a photograph.”",
+      "target": "« Elle attendait que je l'aide.",
+      "english": "“She was waiting for me to help her.",
       "alignment": [
         {
           "english": "She was waiting",
@@ -3740,7 +3801,14 @@
               "end": 13
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Moi, je voulais une photo. »",
+      "english": "I wanted a photograph.”",
+      "alignment": [
         {
           "english": "I",
           "target": "Moi",
@@ -3882,7 +3950,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sur celle de gauche, un morceau de gâteau glissait vers le bord.",
@@ -4137,7 +4206,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il y avait une carte de restaurant avec deux additions au dos.",
@@ -4263,8 +4333,8 @@
       ]
     },
     {
-      "target": "« Notre déjeuner », a dit Claire. « Elle refusait qu'on partage en deux. »",
-      "english": "“Our lunch,” Claire said. “She refused to split the bill in half.”",
+      "target": "« Notre déjeuner », a dit Claire.",
+      "english": "“Our lunch,” Claire said.",
       "alignment": [
         {
           "english": "Our lunch",
@@ -4319,7 +4389,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Elle refusait qu'on partage en deux. »",
+      "english": "“She refused to split the bill in half.”",
+      "alignment": [
         {
           "english": "She refused",
           "target": "Elle refusait",
@@ -4404,8 +4481,8 @@
       ]
     },
     {
-      "target": "« Pourquoi ? » a demandé Daniel.",
-      "english": "“Why?” Daniel asked.",
+      "target": "« Pourquoi ?",
+      "english": "“Why?”",
       "alignment": [
         {
           "english": "Why",
@@ -4424,7 +4501,14 @@
               "end": 8
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -4455,8 +4539,8 @@
       ]
     },
     {
-      "target": "« J'avais pris du vin. Elle prenait toujours un dessert. Selon elle, on ne pouvait pas savoir qui payait pour l'autre sans faire le calcul. »",
-      "english": "“I'd had wine. She always had dessert. According to her, we couldn't know who was paying for whom without doing the calculation.”",
+      "target": "« J'avais pris du vin.",
+      "english": "“I'd had wine.",
       "alignment": [
         {
           "english": "I'd had wine",
@@ -4502,7 +4586,14 @@
               "end": 19
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Elle prenait toujours un dessert.",
+      "english": "She always had dessert.",
+      "alignment": [
         {
           "english": "She always had dessert",
           "target": "Elle prenait toujours un dessert",
@@ -4556,7 +4647,13 @@
               "end": 32
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Selon elle, on ne pouvait pas savoir qui payait pour l'autre sans faire le calcul. »",
+      "english": "According to her, we couldn't know who was paying for whom without doing the calculation.”",
+      "alignment": [
         {
           "english": "According to her",
           "target": "Selon elle",
@@ -4788,7 +4885,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Les deux résultats étaient identiques.",
@@ -4860,8 +4958,8 @@
       ]
     },
     {
-      "target": "« Elle était satisfaite ? » a demandé Daniel.",
-      "english": "“Was she pleased?” Daniel asked.",
+      "target": "« Elle était satisfaite ?",
+      "english": "“Was she pleased?”",
       "alignment": [
         {
           "english": "Was she pleased",
@@ -4898,7 +4996,14 @@
               "end": 21
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -4929,8 +5034,8 @@
       ]
     },
     {
-      "target": "« Très vexée. J'ai gardé la carte pour le lui rappeler. »",
-      "english": "“Very annoyed. I kept the card to remind her.”",
+      "target": "« Très vexée.",
+      "english": "“Very annoyed.",
       "alignment": [
         {
           "english": "Very annoyed",
@@ -4958,7 +5063,14 @@
               "end": 10
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "J'ai gardé la carte pour le lui rappeler. »",
+      "english": "I kept the card to remind her.”",
+      "alignment": [
         {
           "english": "I kept the card",
           "target": "J'ai gardé la carte",
@@ -5127,7 +5239,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle n'a pas proposé de la donner à Daniel.",
@@ -5433,7 +5546,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle lui a raconté qu'Anna coupait les gâteaux trop tôt, avant qu'ils refroidissent.",
@@ -6117,11 +6231,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Elle voulait aussi un appartement avec une bonne lumière. Pas seulement une sortie de secours. »",
-      "english": "“She also wanted a flat with good light. Not just an emergency exit.”",
+      "target": "« Elle voulait aussi un appartement avec une bonne lumière.",
+      "english": "“She also wanted a flat with good light.",
       "alignment": [
         {
           "english": "She also wanted",
@@ -6221,7 +6336,14 @@
               "end": 37
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pas seulement une sortie de secours. »",
+      "english": "Not just an emergency exit.”",
+      "alignment": [
         {
           "english": "Not just an emergency exit",
           "target": "Pas seulement une sortie de secours",
@@ -6417,7 +6539,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Claire l'a vu et continué.",
@@ -6903,8 +7026,8 @@
       ]
     },
     {
-      "target": "« Je ne sais plus quel jour elle m'a dit quoi. Je me souviens surtout de ce qu'on répétait », a dit Claire.",
-      "english": "“I no longer know which day she told me what. What I mostly remember is what we repeated,” Claire said.",
+      "target": "« Je ne sais plus quel jour elle m'a dit quoi.",
+      "english": "“I no longer know which day she told me what.",
       "alignment": [
         {
           "english": "I no longer know",
@@ -7013,7 +7136,14 @@
               "end": 27
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Je me souviens surtout de ce qu'on répétait », a dit Claire.",
+      "english": "What I mostly remember is what we repeated,” Claire said.",
+      "alignment": [
         {
           "english": "What I mostly remember",
           "target": "Je me souviens surtout",
@@ -7200,7 +7330,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Anna y dictait des références, des questions, parfois la liste des courses.",
@@ -7563,7 +7694,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Claire a reposé ses ciseaux.",
@@ -7632,11 +7764,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Quand quelqu'un lui expliquait des chiffres, elle voulait pouvoir reprendre ce qu'il avait dit. Surtout si l'explication changeait. »",
-      "english": "“When someone explained figures to her, she wanted to be able to go back over what they had said. Especially if the explanation changed.”",
+      "target": "« Quand quelqu'un lui expliquait des chiffres, elle voulait pouvoir reprendre ce qu'il avait dit.",
+      "english": "“When someone explained figures to her, she wanted to be able to go back over what they had said.",
       "alignment": [
         {
           "english": "When someone explained figures to her",
@@ -7790,7 +7923,14 @@
               "end": 18
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Surtout si l'explication changeait. »",
+      "english": "Especially if the explanation changed.”",
+      "alignment": [
         {
           "english": "Especially if the explanation changed",
           "target": "Surtout si l'explication changeait",
@@ -7941,7 +8081,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel l'a noté.",
@@ -8160,7 +8301,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle écrivait ses questions sur le sien.",
@@ -8250,8 +8392,8 @@
       ]
     },
     {
-      "target": "« Comme ça », a dit Claire, « elle savait si elle avait mal lu. Ou si quelqu'un revenait avec une autre feuille. »",
-      "english": "“That way,” Claire said, “she knew whether she'd misread something. Or whether someone came back with a different sheet.”",
+      "target": "« Comme ça », a dit Claire, « elle savait si elle avait mal lu.",
+      "english": "“That way,” Claire said, “she knew whether she'd misread something.",
       "alignment": [
         {
           "english": "That way",
@@ -8378,7 +8520,14 @@
               "end": 32
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Ou si quelqu'un revenait avec une autre feuille. »",
+      "english": "Or whether someone came back with a different sheet.”",
+      "alignment": [
         {
           "english": "Or whether someone came back",
           "target": "Ou si quelqu'un revenait",
@@ -8574,7 +8723,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une habitude racontée ne suffisait pas à prouver ce qu'Anna avait copié ce soir-là.",
@@ -8838,7 +8988,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Une feuille pliée était glissée près des desserts.",
@@ -9003,7 +9154,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "En haut, Anna avait écrit « mercredi ».",
@@ -9090,7 +9242,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Pas de date complète.",
@@ -9492,7 +9645,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Je garde le mien, je veux mettre les deux côte à côte.",
@@ -9924,8 +10078,8 @@
       ]
     },
     {
-      "target": "« Vous l'aviez montrée à la police ? » a demandé Daniel.",
-      "english": "“Had you shown it to the police?” Daniel asked.",
+      "target": "« Vous l'aviez montrée à la police ?",
+      "english": "“Had you shown it to the police?”",
       "alignment": [
         {
           "english": "Had you shown it",
@@ -9998,7 +10152,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "» a demandé Daniel.",
+      "english": "Daniel asked.",
+      "alignment": [
         {
           "english": "Daniel asked",
           "target": "a demandé Daniel",
@@ -10029,8 +10190,8 @@
       ]
     },
     {
-      "target": "« Oui. Une femme en avait fait une copie. Je ne me rappelle pas son nom », a répondu Claire.",
-      "english": "“Yes. A woman had made a copy of it. I don't remember her name,” Claire replied.",
+      "target": "« Oui.",
+      "english": "“Yes.",
       "alignment": [
         {
           "english": "Yes",
@@ -10049,7 +10210,14 @@
               "end": 3
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Une femme en avait fait une copie.",
+      "english": "A woman had made a copy of it.",
+      "alignment": [
         {
           "english": "A woman had made a copy of it",
           "target": "Une femme en avait fait une copie",
@@ -10112,7 +10280,13 @@
               "end": 33
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je ne me rappelle pas son nom », a répondu Claire.",
+      "english": "I don't remember her name,” Claire replied.",
+      "alignment": [
         {
           "english": "I don't remember her name",
           "target": "Je ne me rappelle pas son nom",
@@ -10353,7 +10527,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a distingué ce souvenir de ce que le papier établissait seul.",
@@ -10764,7 +10939,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a demandé s'il pouvait avoir aussi une copie de la photographie.",
@@ -11007,7 +11183,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a cherché une raison professionnelle, puis renoncé.",
@@ -11103,7 +11280,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Je ne connaissais que l'autre », a dit Daniel.",
@@ -11208,7 +11386,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle lui a donné la photographie à numériser, à condition de la rapporter.",
@@ -11349,7 +11528,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a promis de le faire.",
@@ -11577,7 +11757,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il n'a pas écrit qu'il avait identifié l'homme sur la bande.",
@@ -12081,6 +12262,114 @@
     "synopsis": null,
     "has_alignment": true,
     "alignment_complete": true,
-    "updatedAt": "2026-10-14"
+    "updatedAt": "2026-10-14",
+    "sentence_unit_repair": {
+      "from_version": 5,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        29,
+        30,
+        32,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43,
+        44,
+        45,
+        47,
+        49,
+        52,
+        53,
+        54,
+        56,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        77,
+        78,
+        79,
+        80,
+        81,
+        83,
+        84,
+        85,
+        86,
+        87,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        105,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123
+      ]
+    }
   }
 }

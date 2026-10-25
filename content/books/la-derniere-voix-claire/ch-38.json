@@ -2,7 +2,7 @@
   "id": "ch-38",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "Ce que les autres ont gardé",
     "english": "What Others Kept"
@@ -174,7 +174,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben avait choisi de la recevoir dans la cuisine.",
@@ -948,7 +949,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il les avait écrites sur une enveloppe.",
@@ -1146,7 +1148,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle lui a dit que les premières conclusions de l'autopsie indiquaient une mort par strangulation.",
@@ -1332,7 +1335,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle n'a pas ajouté de description qu'il n'avait pas demandée.",
@@ -1698,7 +1702,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Des images montraient Paul près de l'entrée lorsqu'elle était revenue d'une course.",
@@ -2295,11 +2300,12 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
-      "target": "« Ce que nous savons ne va pas dans ce sens. Il l'a rejointe à l'entrée. Nous vérifions la suite avec les constatations dans l'appartement. »",
-      "english": "“What we know doesn't point that way. He approached her at the entrance. We're checking what followed against the findings in the flat.”",
+      "target": "« Ce que nous savons ne va pas dans ce sens.",
+      "english": "“What we know doesn't point that way.",
       "alignment": [
         {
           "english": "What we know",
@@ -2417,7 +2423,14 @@
               "end": 12
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il l'a rejointe à l'entrée.",
+      "english": "He approached her at the entrance.",
+      "alignment": [
         {
           "english": "He approached her",
           "target": "Il l'a rejointe",
@@ -2498,7 +2511,13 @@
               "end": 10
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Nous vérifions la suite avec les constatations dans l'appartement. »",
+      "english": "We're checking what followed against the findings in the flat.”",
+      "alignment": [
         {
           "english": "We're checking",
           "target": "Nous vérifions",
@@ -2694,7 +2713,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Elle m'avait dit qu'elle lui répondrait pas. »",
@@ -2790,7 +2810,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a gardé les mains sur ses genoux.",
@@ -2895,7 +2916,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il avait voulu que les précautions aient la solidité d'un objet.",
@@ -3300,7 +3322,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "L'accès à l'appartement n'était pas encore possible.",
@@ -3789,7 +3812,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a demandé si les papiers allaient encore servir.",
@@ -4047,8 +4071,8 @@
       ]
     },
     {
-      "target": "« Les pièces dont elle avait autorisé la transmission ont été reçues », a dit Malik. « Sa déclaration signée est conservée. »",
-      "english": "“The documents she had authorised for release have been received,” Malik said. “Her signed statement is preserved.”",
+      "target": "« Les pièces dont elle avait autorisé la transmission ont été reçues », a dit Malik.",
+      "english": "“The documents she had authorised for release have been received,” Malik said.",
       "alignment": [
         {
           "english": "The documents",
@@ -4184,7 +4208,14 @@
               "end": 11
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "« Sa déclaration signée est conservée. »",
+      "english": "“Her signed statement is preserved.”",
+      "alignment": [
         {
           "english": "Her signed statement",
           "target": "Sa déclaration signée",
@@ -4242,8 +4273,8 @@
       ]
     },
     {
-      "target": "« Mais elle sera pas là. Pour répondre. »",
-      "english": "“But she won't be there. To answer.”",
+      "target": "« Mais elle sera pas là.",
+      "english": "“But she won't be there.",
       "alignment": [
         {
           "english": "But she won't be there",
@@ -4298,7 +4329,14 @@
               "end": 21
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Pour répondre. »",
+      "english": "To answer.”",
+      "alignment": [
         {
           "english": "To answer",
           "target": "Pour répondre",
@@ -4329,8 +4367,8 @@
       ]
     },
     {
-      "target": "« Il existe des règles pour les déclarations de personnes décédées. Le tribunal devra examiner leur utilisation. Je ne vais pas vous promettre sa décision. Mais sa mort ne détruit pas ce qu'elle a remis. »",
-      "english": "“There are rules for statements from people who have died. The court will have to examine their use. I'm not going to promise you its decision. But her death doesn't destroy what she handed over.”",
+      "target": "« Il existe des règles pour les déclarations de personnes décédées.",
+      "english": "“There are rules for statements from people who have died.",
       "alignment": [
         {
           "english": "There are",
@@ -4457,7 +4495,14 @@
               "end": 21
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Le tribunal devra examiner leur utilisation.",
+      "english": "The court will have to examine their use.",
+      "alignment": [
         {
           "english": "The court",
           "target": "Le tribunal",
@@ -4538,7 +4583,13 @@
               "end": 16
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Je ne vais pas vous promettre sa décision.",
+      "english": "I'm not going to promise you its decision.",
+      "alignment": [
         {
           "english": "I'm not going to",
           "target": "Je ne vais pas",
@@ -4637,7 +4688,13 @@
               "end": 11
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "Mais sa mort ne détruit pas ce qu'elle a remis. »",
+      "english": "But her death doesn't destroy what she handed over.”",
+      "alignment": [
         {
           "english": "But her death",
           "target": "Mais sa mort",
@@ -4887,7 +4944,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Malik lui a proposé d'expliquer les prochaines démarches et de lui dire qui contacter.",
@@ -5196,7 +5254,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il voulait donner un numéro de contact, pas décider du logement.",
@@ -5652,7 +5711,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Son nom suffit. »",
@@ -5703,7 +5763,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a écrit Ruth Bennett sur la ligne suivante.",
@@ -5808,7 +5869,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a gardé la première.",
@@ -6027,7 +6089,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Elle voulait la liste de ses anciens dossiers, les instructions reçues, les transcriptions proposées avant analyse.",
@@ -6503,6 +6566,62 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        38,
+        40,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    }
   }
 }

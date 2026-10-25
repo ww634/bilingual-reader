@@ -2,7 +2,7 @@
   "id": "ch-36",
   "book_id": "la-derniere-voix-claire",
   "language": "fr",
-  "version": 4,
+  "version": 5,
   "title": {
     "target": "La porte ouverte",
     "english": "The Open Door"
@@ -111,7 +111,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Chaque mouvement faisait serrer la main de Paul un peu plus.",
@@ -426,7 +427,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Paul a ramené la feuille avec sa main libre.",
@@ -540,7 +542,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il cherchait un stylo.",
@@ -741,7 +744,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il l'a poussé jusqu'au bord, puis dans le vide.",
@@ -1125,7 +1129,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Sa prise s'est relâchée.",
@@ -1560,7 +1565,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben était dans l'ouverture, le téléphone contre l'oreille.",
@@ -1692,7 +1698,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il a poussé la porte plus loin, sans entrer.",
@@ -1809,8 +1816,8 @@
       ]
     },
     {
-      "target": "« Venez. Par ici. »",
-      "english": "“Come on. This way.”",
+      "target": "« Venez.",
+      "english": "“Come on.",
       "alignment": [
         {
           "english": "Come on",
@@ -1829,7 +1836,14 @@
               "end": 5
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Par ici. »",
+      "english": "This way.”",
+      "alignment": [
         {
           "english": "This way",
           "target": "Par ici",
@@ -1926,7 +1940,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Quelque chose a tiré sur sa manche.",
@@ -2556,7 +2571,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben parlait dans le téléphone.",
@@ -2637,8 +2653,8 @@
       ]
     },
     {
-      "target": "« On est dehors. Il est toujours là. À l'arrière de la maison. »",
-      "english": "“We're outside. He's still there. At the back of the house.”",
+      "target": "« On est dehors.",
+      "english": "“We're outside.",
       "alignment": [
         {
           "english": "We're outside",
@@ -2675,7 +2691,14 @@
               "end": 13
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Il est toujours là.",
+      "english": "He's still there.",
+      "alignment": [
         {
           "english": "He's still there",
           "target": "Il est toujours là",
@@ -2720,7 +2743,13 @@
               "end": 18
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "target": "À l'arrière de la maison. »",
+      "english": "At the back of the house.”",
+      "alignment": [
         {
           "english": "At the back of the house",
           "target": "À l'arrière de la maison",
@@ -2889,7 +2918,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Daniel a entendu une voix venir du passage.",
@@ -2997,8 +3027,8 @@
       ]
     },
     {
-      "target": "« Ne bougez plus. Montrez vos mains. »",
-      "english": "“Don't move. Show your hands.”",
+      "target": "« Ne bougez plus.",
+      "english": "“Don't move.",
       "alignment": [
         {
           "english": "Don't move",
@@ -3035,7 +3065,14 @@
               "end": 14
             }
           ]
-        },
+        }
+      ],
+      "paragraph_start": true
+    },
+    {
+      "target": "Montrez vos mains. »",
+      "english": "Show your hands.”",
+      "alignment": [
         {
           "english": "Show your hands",
           "target": "Montrez vos mains",
@@ -3186,7 +3223,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Un autre a fait reculer Daniel et Ben vers le portillon.",
@@ -3633,7 +3671,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Son sac était par terre, contre le mur.",
@@ -3966,7 +4005,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "On lui a demandé de s'asseoir.",
@@ -4404,7 +4444,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Personne ne devait retourner dans l'atelier.",
@@ -4551,7 +4592,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Il vous a parlé de ma mère ? »",
@@ -4629,7 +4671,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "« Non. »",
@@ -4653,7 +4696,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Ben a baissé les yeux.",
@@ -4713,7 +4757,8 @@
             }
           ]
         }
-      ]
+      ],
+      "paragraph_start": true
     },
     {
       "target": "Il tenait encore le téléphone contre son oreille.",
@@ -5039,6 +5084,61 @@
     "createdAt": "2026-10-17",
     "synopsis": null,
     "has_alignment": true,
-    "alignment_complete": true
+    "alignment_complete": true,
+    "sentence_unit_repair": {
+      "from_version": 4,
+      "pair_index_map": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ]
+    }
   }
 }

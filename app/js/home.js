@@ -101,14 +101,15 @@ async function renderReview(lang) {
   if (stats.due) {
     const n = Math.min(stats.due, 20);
     btn.disabled = false;
-    btn.textContent = `Review ${n} word${n === 1 ? "" : "s"}`;
+    const kind = stats.dueSentences ? (stats.dueWords ? "item" : "sentence") : "word";
+    btn.textContent = `Review ${n} ${kind}${n === 1 ? "" : "s"}`;
     sub.textContent = stats.due > 20
-      ? `${stats.due} words are due, so today's set is the 20 that need it most.`
-      : `${stats.due} of your ${stats.total} saved words ${stats.due === 1 ? "is" : "are"} due.`;
+      ? `${stats.due} saved items are due, so today's set is the 20 that need it most.`
+      : `${stats.due} of your ${stats.total} saved items ${stats.due === 1 ? "is" : "are"} due.`;
   } else {
     btn.disabled = true;
     btn.textContent = "All caught up";
-    sub.textContent = `Nothing due right now. ${stats.mastered} of ${stats.total} words mastered.`;
+    sub.textContent = `Nothing due right now. ${stats.mastered} of ${stats.total} saved items mastered.`;
   }
 }
 
