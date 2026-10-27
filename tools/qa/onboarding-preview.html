@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><title>Reload onboarding preview</title>
+<p>Refreshing this local test origin’s app code. Downloaded books and study data are preserved.</p>
+<script type="module">
+// Test-only entry point: refresh the local worker/module cache after edits.
+// Not included in the published app/content artifact.
+if (!['127.0.0.1', 'localhost'].includes(location.hostname)) throw Error('Local QA only');
+for (const registration of await navigator.serviceWorker.getRegistrations()) await registration.unregister();
+for (const key of await caches.keys()) if (key.startsWith('reader-shell-')) await caches.delete(key);
+location.replace('/app/index.html');
+</script>

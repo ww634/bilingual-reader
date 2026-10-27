@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8"><title>Onboarding state checks</title>
+<h1>Local onboarding checks</h1><button id="seed">Seed a French resume position</button>
+<button id="inspect">Check saved state</button><p><a href="/app/index.html">Open app</a></p><pre id="result"></pre>
+<script type="module">
+import { getAllChapterMetadata, getSettings, updateSettings, putProgress, getProgress, getAllVaultItems } from '/app/js/db.js';
+if (!['127.0.0.1', 'localhost'].includes(location.hostname)) throw Error('Local QA only');
+const result = document.querySelector('#result');
+const bookId = 'la-derniere-voix-claire', chapterId = 'ch-1', key = 'bilingual-reader.qa-tour-before';
+async function inspect() {
+  const progress = await getProgress(bookId, chapterId), before = JSON.parse(localStorage.getItem(key) || 'null');
+  result.textContent = JSON.stringify({ downloadedChapters: (await getAllChapterMetadata()).length, savedItems: (await getAllVaultItems()).length, readerHintsSeen: (await getSettings()).readerHintsSeen, progress, resumeUnchanged: before ? JSON.stringify(before) === JSON.stringify(progress) : null }, null, 2);
+}
+document.querySelector('#seed').onclick = async () => {
+  await updateSettings({ learningLanguage: 'fr', readerHintsSeen: true });
+  await putProgress(bookId, chapterId, 3, 8);
+  localStorage.setItem(key, JSON.stringify(await getProgress(bookId, chapterId)));
+  await inspect();
+};
+document.querySelector('#inspect').onclick = inspect;
+await inspect();
+</script>

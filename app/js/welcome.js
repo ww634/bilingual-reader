@@ -30,10 +30,10 @@ export async function showWelcome({ force = false } = {}) {
       next.onclick=async()=>{if(select.value){next.disabled=true;skip.disabled=true;next.textContent='Downloading…';try{const book=catalogue.books.find(b=>b.id===select.value);await downloadChapter(book.id,book.chapters[0].id);starter={bookId:book.id,chapterId:book.chapters[0].id}}catch(error){text.textContent=error.message;next.disabled=false;skip.disabled=false;next.textContent='Retry download';return}}step++;draw()};
       const skip=document.createElement('button');skip.textContent='Skip for now';skip.onclick=()=>{step++;draw()};panel.append(skip);
     } else {
-      title.textContent='Make the page your own';text.textContent='Tap a word for its meaning. Long-press and drag to select text, then use Save. Tap › for Copy and Feedback. Listen reads the chapter aloud. Swipe sideways to turn pages.';
+      title.textContent='Let’s show you around';text.textContent=starter?'A short tour will point out each reading tool on the page, one at a time. You can skip it whenever you like.':'Open a downloaded chapter for a short tour that points out the reading tools, one at a time.';
       const note=document.createElement('p');note.className='hint';note.textContent='AI explanations, voices and practice stories are optional. Add your own OpenAI key in Settings; ordinary reading and saved words do not need one.';
       const ai=document.createElement('button');ai.textContent='Set up AI (optional)';ai.onclick=async()=>{await finish();window.dispatchEvent(new CustomEvent('app:settings',{detail:'ai'}))};panel.append(note,ai);
-      next.textContent=starter?'Start reading':'Browse books';next.onclick=async()=>{await finish();window.dispatchEvent(new CustomEvent(starter?'nav:reader':'app:setview',{detail:starter||'browse'}))};
+      next.textContent=starter?'Take the reading tour':'Browse books';next.onclick=async()=>{await finish();window.dispatchEvent(new CustomEvent(starter?'nav:reader':'app:setview',{detail:starter?{...starter,tour:true}:'browse'}))};
     }
     panel.append(next);title.tabIndex=-1;title.focus();
   }

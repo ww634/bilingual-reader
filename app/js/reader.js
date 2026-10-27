@@ -4,6 +4,7 @@ import { ensureMastered, getMasteredHanziSync, chapterWatchWords, startQuizWithI
 import { learnerLevel, LEVELS, levelName, loadLevels, chapterKnowledge, clampLevel } from "./levels.js";
 import { buildChapterQuiz, nextChapterQuiz, bookQuizPrefs } from "./chapterquiz.js";
 import { isTargetOnly } from "./reader-options.js";
+import { showReadingTour, closeReadingTour, isReadingTourActive } from "./reading-tour.js";
 
 const pagesEl = () => document.getElementById("reader-pages");
 const indicatorEl = () => document.getElementById("page-indicator");
@@ -994,6 +995,7 @@ function handleScroll() {
   if (page === _state.currentPage) return;
   _state.currentPage = page;
   updateIndicator();
+  if (isReadingTourActive()) return;
   bumpActivity({ pages: 1 }).catch(() => {});
   window.dispatchEvent(new CustomEvent("reader:page", { detail: { page } }));
   clearTimeout(_state.saveTimer);
@@ -1088,6 +1090,7 @@ function handleChunkTap(event) {
 }
 
 export async function openReader(bookId, chapterId) {
+  closeReadingTour();
   const chapter = await getChapter(bookId, chapterId);
   if (!chapter) {
     console.error("Chapter not downloaded:", bookId, chapterId);
@@ -1143,7 +1146,6 @@ export async function openReader(bookId, chapterId) {
   renderEndQuiz();
 
   document.getElementById("title").textContent = chapter.title.english;
-  if (!settings.readerHintsSeen) showReaderTip();
 
   const container = pagesEl();
   // Prefer the saved sentence: page numbers differ between layouts. Position now
@@ -1164,6 +1166,10 @@ export async function openReader(bookId, chapterId) {
   container.addEventListener("click", handleChunkTap);
   container.removeEventListener("click", handleNextChapterTap);
   container.addEventListener("click", handleNextChapterTap);
+
+  if (!settings.readerHintsSeen) requestAnimationFrame(() => {
+    if (_state.chapter === chapter && document.body.dataset.view === 'reader') startReadingTour();
+  });
 
   return true;
 }
@@ -1283,6 +1289,7 @@ export function goToPage(page) {
 }
 
 export function closeReader() {
+  closeReadingTour();
   const container = pagesEl();
   container.removeEventListener("scroll", handleScroll);
   container.removeEventListener("click", handleChunkTap);
@@ -1319,10 +1326,23 @@ window.addEventListener("resize", () => {
   resizeTimer = setTimeout(() => { if (document.body.dataset.view === "reader") relayout(); }, 180);
 });
 
-function showReaderTip() {
-  if(document.getElementById('reader-tip'))return;
-  const tip=document.createElement('aside');tip.id='reader-tip';tip.className='reader-tip';tip.setAttribute('aria-label','Reading tip');
-  const text=document.createElement('p');text.textContent='Tap a word for its meaning. Long-press and drag to select text; tap › for Copy and Feedback. Use Listen to hear the chapter. Swipe sideways to turn pages.';
-  const button=document.createElement('button');button.textContent='Got it';button.onclick=async()=>{await updateSettings({readerHintsSeen:true});tip.remove()};tip.append(text,button);document.body.append(tip);
+export function startReadingTour() {
+  if (!_state.chapter || document.body.dataset.view !== 'reader') return;
+  closeReadingTour();
+  clearTimeout(_state.saveTimer);
+  const originalPage = _state.currentPage, originalPair = anchorPair(originalPage);
+  showReadingTour({
+    previewWord(element) { if (element) handleChunkTap({ target: element }); },
+    preparePage() {
+      if (!pagesEl().children[_state.currentPage]?.querySelector('.chunk')) {
+        const firstText = [...pagesEl().children].findIndex(page => !page.classList.contains('title-page') && !!page.querySelector('.target .chunk'));
+        if (firstText >= 0) { _state.currentPage = firstText; scrollToPage(pagesEl(), firstText); updateIndicator(); }
+      }
+    },
+    restorePage() {
+      clearTimeout(_state.saveTimer);
+      _state.currentPage = originalPage === 0 ? 0 : pageForAnchor(originalPair, originalPage);
+      scrollToPage(pagesEl(), _state.currentPage); updateIndicator();
+    },
+  });
 }
-window.addEventListener('view:changed', e=>{if(e.detail!=='reader')document.getElementById('reader-tip')?.remove()});

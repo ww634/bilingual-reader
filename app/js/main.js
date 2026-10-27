@@ -1,14 +1,15 @@
 import { showWelcome } from "./welcome.js";
+import { isReadingTourActive } from './reading-tour.js';
 import { confirmAction } from "./ui.js";
 import { initCatalog, refreshCatalog, openBookDetail, renderBookDetail, downloadChapter } from "./library.js";
-import { openReader, closeReader, getReaderContext } from "./reader.js";
+import { openReader, closeReader, getReaderContext, startReadingTour } from "./reader.js";
 import { initSettings, loadSettingsIntoUI } from "./settings.js";
 import { initPopover, closePopover } from "./popover.js";
 import { initReaderOptions } from "./reader-options.js";
 import { initAssistant } from "./assistant.js";
 import { initSelection } from "./selection.js";
 import { initVault, openVault, finishActiveQuiz } from "./vault.js";
-import { loadLearningLanguage } from "./languages.js";
+import { loadLearningLanguage, getLearningLanguage } from "./languages.js";
 import { initHome } from "./home.js";
 import { initListen } from "./listen.js";
 import { requestPersistence } from "./backup.js";
@@ -112,6 +113,7 @@ window.addEventListener("nav:reader", async (e) => {
   // openReader's IndexedDB reads to complete before populating it.
   setView("reader");
   const ok = await openReader(bookId, chapterId);
+  if (ok && e.detail.tour) requestAnimationFrame(() => { if (!isReadingTourActive()) startReadingTour(); });
   if (!ok) {
     // Chapter not downloaded — return to wherever we came from.
     if (previousView === "reader") {
@@ -172,5 +174,15 @@ if ("serviceWorker" in navigator && location.protocol !== "file:") {
 })();
 
 document.getElementById("show-welcome").addEventListener("click", () => showWelcome({force:true}));
+document.getElementById("show-reading-tour").addEventListener("click", async () => {
+  const { getAllChapterMetadata, getAllBooks } = await import('./db.js');
+  const context = getReaderContext();
+  const [downloaded, books] = await Promise.all([getAllChapterMetadata(), getAllBooks()]);
+  const languageBooks = new Set(books.filter(book => book.language === getLearningLanguage()).map(book => book.id));
+  const chapter = downloaded.find(ch => languageBooks.has(ch.bookId) && ch.bookId === context?.bookId && ch.chapterId === context?.chapterId)
+    || downloaded.find(ch => languageBooks.has(ch.bookId)) || downloaded[0];
+  if (chapter) window.dispatchEvent(new CustomEvent('nav:reader', { detail: { bookId: chapter.bookId, chapterId: chapter.chapterId, tour: true } }));
+  else showWelcome({ force: true });
+});
 
 window.addEventListener("welcome:complete", () => { if(getReaderContext())closeReader();navStack.length=0;setView("home",{push:false}); });
