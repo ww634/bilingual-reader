@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "book_id": "lingering-echoes",
+  "chapter_id": "ch-2",
+  "chapter_sha256": "95686644097a8f83df0954b812f0560f67711cbb358233c7010d1a9f3015dcef",
+  "catalog_sha256": "18e2c29b015ec84a60e9a516d2b05c33765c84e5113b297b89e469cb135ff243",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-01T23:52:17.745Z",
+  "review": {
+    "editorial": "Separate reread after Chinese drafting; revised one awkward description and clarified party-count wording. Checked scene transitions, character voices, rhythm and the adjacent chapter ending/opening before encoding.",
+    "continuity_or_facts": "Checked current canon and prior checkpoint: practical knowledge, limited magical familiarity, equipment custody, load sharing and outside logistics role remain consistent. Recorded actual events and unchanged ability stages privately.",
+    "english_alignment": "Reviewed the full English translation and all 106 units/984 chunks before finalization. Chinese source matches retained prose exactly. Distinct gloss spans, word coverage and deterministic fields validate without warnings. Saved sentence and Listen units inspected without speech generation."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-2-beginning-characters.png",
+      "sha256": "741786ac984ef80ff78c6b4d3f5651c527e19264e66900f0d985a28222f34429",
+      "notes": "390px Chinese-only beginning: authored paragraphs and speech turns intact, clean wrapping and indentation; transition explicitly follows previous chapter in time."
+    },
+    {
+      "section": "middle",
+      "pair": 53,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-2-middle-characters.png",
+      "sha256": "7c79c2334d86539e1b2dc66cc0b1202684581983c1de7b1f23a6b5e14889d8d4",
+      "notes": "390px Chinese-only middle: dialogue and narration stay in their authored paragraphs; punctuation preserved and no clipped target lines."
+    },
+    {
+      "section": "end",
+      "pair": 106,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-2-end-characters.png",
+      "sha256": "bc979f9a140bf2233d0bac9a329c0dd183c9f2b57aebd9a56aee7368ee6d57ff",
+      "notes": "390px Chinese-only ending: final three paragraphs distinct, closing punctuation present, unobstructed text and normal bottom whitespace."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-2-beginning-pinyin.png",
+      "sha256": "5ead478687bc56ae96f7181e216e23834e15ef859127784714a8517f27dbe745",
+      "notes": "390px English-on pinyin: translated guides follow target portions with readable wrapping, no overlap or unexplained long untranslated stretch."
+    },
+    {
+      "section": "extra",
+      "pair": 53,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-2-desktop-english.png",
+      "sha256": "fa0946458145ae270885c54078113f789f1390a0c50765c5f3685c595dc6919b",
+      "notes": "1100px desktop characters plus English: centered reading column and readable guides; source and guide text fit without overlap."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-2-phone-flow.png",
+      "sha256": "741786ac984ef80ff78c6b4d3f5651c527e19264e66900f0d985a28222f34429",
+      "notes": "390px Chinese-only view restored after script/English toggles; paragraph grouping remains stable. Word menu and saved full sentence checked."
+    }
+  ]
+}
