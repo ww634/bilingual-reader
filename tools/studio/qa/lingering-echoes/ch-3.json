@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "book_id": "lingering-echoes",
+  "chapter_id": "ch-3",
+  "chapter_sha256": "1d9a25357e2b443d86a148e93bd63aca2e63351c288775015e1f7fd2ef945f35",
+  "catalog_sha256": "c6f39b8b44a852c24bde7a79334e81e6512e6a653ccca5c16056d623c50d865c",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-02T09:04:44.669Z",
+  "review": {
+    "editorial": "Separate editorial reread checked viewpoint, action geography, causal transitions, dialogue and the previous ending. Clarified an ordinary ignition action, a movement path and a brief exchange before encoding; reread affected passages.",
+    "continuity_or_facts": "Verified current canon, unchanged ranks, existing ability limits, equipment custody, route knowledge and possessions. Observed effects stay within the viewpoint character’s understanding. Actual events and remaining equipment handoffs recorded privately.",
+    "english_alignment": "Reviewed all 103 English units and 887 word chunks; corrected dialogue punctuation and awkward phrasing before finalization. Chinese concatenation exactly matches retained prose; distinct spans and deterministic fields validate without warnings. Saved sentence and Listen units inspected without generating speech."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-3-beginning-characters.png",
+      "sha256": "9e6cfe213db5669a93789e8880b42458df8415b58d12c34405e254ef21119cbb",
+      "notes": "390px Chinese-only beginning: natural paragraph and dialogue grouping, full punctuation, clean indentation and no clipped target lines. Continues previous ending directly."
+    },
+    {
+      "section": "middle",
+      "pair": 52,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-3-middle-characters.png",
+      "sha256": "ce9391562c4efa4d33312484ec8f800bdc62ec3eed2f3317f8c3772bb1a54956",
+      "notes": "390px Chinese-only middle: multi-sentence paragraphs stay together, speaker turns remain distinct, source wraps legibly without accidental line-start punctuation."
+    },
+    {
+      "section": "end",
+      "pair": 103,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-3-end-characters.png",
+      "sha256": "f3e26272efcb6f4dafef164ef8ff7fa560953fbbe36aa33d3fe7f38de022b49e",
+      "notes": "390px Chinese-only ending: final dialogue and narration paragraphs preserved with comfortable bottom whitespace and visible pagination."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-3-beginning-pinyin.png",
+      "sha256": "2e720879f3e75fea2f4f6434781d150ea2df1cba8592e3573d1cdc91eac3cb97",
+      "notes": "390px pinyin with English: guide text follows the visible source portions and wraps without overlap or unexplained untranslated stretches."
+    },
+    {
+      "section": "extra",
+      "pair": 52,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-3-desktop-english.png",
+      "sha256": "aaec236ef1b0ccc2f7ec650a7676385e36eda230e9c8a9dfe42c1085726eddb1",
+      "notes": "1100px desktop characters with English: centered reading column, readable line guides and intact punctuation; no overlapping text or clipped lines."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-3-phone-flow.png",
+      "sha256": "9e6cfe213db5669a93789e8880b42458df8415b58d12c34405e254ef21119cbb",
+      "notes": "Chinese-only layout restored at 390px after script/English toggles. Word menu saved the complete opening sentence with matching gloss. Prior chapter end page links to this chapter."
+    }
+  ]
+}
