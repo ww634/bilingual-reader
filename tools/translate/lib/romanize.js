@@ -20,6 +20,10 @@ import { pinyin } from "pinyin-pro";
 
 const jieba = Jieba.withDict(dict);
 
+// The upstream lexicon misses the return verb 递还. Reuse the unambiguous
+// reading from 归还 rather than hand-authoring syllables in chapter data.
+const returnSyllable = pinyin("归还", { type: "array", toneType: "symbol" })[1];
+
 const HAN_CHAR = /[㐀-䶿一-鿿]/;
 
 // Convert full-width Chinese punctuation to ASCII; drop bracket-style quotes.
@@ -62,6 +66,10 @@ export function romanizeWithMap(text) {
       let firstWord = true;
       for (const w of words) {
         const wlen = [...w].length;
+        // Respect the segment boundary: 传递还需… contains 传递 + 还, not 递还.
+        if (w === "递还" || (w === "递" && srcChars[i + ci + 1] === "还")) {
+          syllables[ci + 1] = returnSyllable;
+        }
         if (!firstWord) sep();           // space between words
         else { sep(); }                  // and space before the run if needed
         firstWord = false;
