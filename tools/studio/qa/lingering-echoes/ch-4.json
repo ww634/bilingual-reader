@@ -2,15 +2,15 @@
   "schema": 1,
   "book_id": "lingering-echoes",
   "chapter_id": "ch-4",
-  "chapter_sha256": "2eb89bec4b8d2825fce53072495ea4daa26cc3eb837b0f602dc6fc63cbe28f9d",
-  "catalog_sha256": "7d7316a69dc23297fc7645ff104ae065476acf0d5949f4c4d08d4668e0afad57",
+  "chapter_sha256": "ee9e0a652218ef905a21001ac20b00fde787cae1f450fc0d175554cbb1757db7",
+  "catalog_sha256": "877274593d28b249601cf732e152bead2dcdf2f0ce10e1ecbe070045ebe2f062",
   "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
   "reviewer": "Codex",
-  "reviewed_at": "2026-11-02T11:10:16.151Z",
+  "reviewed_at": "2026-11-02T13:59:27.683318+00:00",
   "review": {
-    "editorial": "Separate post-draft reread checked pacing, voices, viewpoint and previous-ending transition. Revised awkward phrasing and clarified physical geography before encoding; reread changed passages. No post-finalization story edits.",
-    "continuity_or_facts": "Checked canon, route, equipment handoffs, unchanged ability stages and possessions. Distinct geographical features and limits of observed knowledge preserved. Recorded actual camp state, remaining questions and unresolved proposals privately.",
-    "english_alignment": "Reviewed all 98 glosses and 862 chunks for fidelity and contextual meaning; corrected English dialogue punctuation and awkward phrases before finalization. Source concatenation exact; deterministic fields, distinct spans and coverage validate without warnings. Sentence saving and Listen units inspected without speech."
+    "editorial": "Separate editorial pass after the authorized scene expansion checked perspective, dialogue voices, pacing and concrete gestures. Revised small continuity ambiguities, then reread the changed passage. Surrounding source prose is byte-identical to v1.",
+    "continuity_or_facts": "Checked revised scene against established character direction, current checkpoint, document custody, camp equipment and unchanged ending. No rank, ability, timing or route changes introduced. Prior chapter transition remains correct; checkpoint remains at chapter four.",
+    "english_alignment": "Reread each replacement gloss against fixed Chinese, smoothed awkward English and reviewed contextual alignment. All 150 units pass coverage, distinct-span and deterministic-field validation without warnings. Actual sentence saving and Listen units inspected without speech generation."
   },
   "warning_resolutions": {},
   "samples": [
@@ -19,54 +19,72 @@
       "pair": 1,
       "mode": "characters",
       "width": 390,
-      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-beginning-characters.png",
-      "sha256": "feefc83af03ad79777e016710af638b0afd8d56b7710a9a0551d67ba2a6825af",
-      "notes": "390px Chinese-only opening: paragraphs and speaker turns intact, source wrapping and punctuation legible; direct continuation from preceding chapter."
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-v2-beginning-characters.png",
+      "sha256": "35a509e20606eb94e965972ee5459f10ee5d5cffdeb995d7cbdf5286d46d880d",
+      "notes": "390px Chinese-only opening viewed: natural paragraph indents and speaker turns; source punctuation and wrapping clear, continuation intact."
     },
     {
       "section": "middle",
-      "pair": 49,
+      "pair": 75,
       "mode": "characters",
       "width": 390,
-      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-middle-characters.png",
-      "sha256": "da2227e5ad017df7a0f8fb947bddb2f59059b31cecae08396fd8732746036b05",
-      "notes": "390px Chinese-only middle: multi-sentence paragraphs flow normally, dialogue gets its own paragraph and lines are not clipped."
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-v2-middle-characters.png",
+      "sha256": "2f6320e2e7c5aaf7268be014c3c06015dbae1ecb1b1014cbcc3f563a5124e9f3",
+      "notes": "390px Chinese-only middle viewed: new dialogue turns distinct, narration and speech share paragraphs appropriately; no clipped text."
     },
     {
       "section": "end",
-      "pair": 98,
+      "pair": 150,
       "mode": "characters",
       "width": 390,
-      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-end-characters.png",
-      "sha256": "75036bcddf744b734d71a8e9583f34695394baecb9ad247e38f1881ddbb09ffa",
-      "notes": "390px Chinese-only ending: paragraph spacing, quoted character and final punctuation intact, with comfortable bottom whitespace."
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-v2-end-characters.png",
+      "sha256": "e7d2d3140d5513c8a56f662d937c153c4f7aaed3ab456e6b2187d2fffe66bd95",
+      "notes": "390px Chinese-only ending viewed: final sentence and punctuation intact. Short last page is expected pagination, with ample whitespace and no lost text."
     },
     {
       "section": "extra",
       "pair": 1,
       "mode": "pinyin",
       "width": 390,
-      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-beginning-pinyin.png",
-      "sha256": "f0a01b9add34e53bdb1f31952dba37fd9199ce11ef0e7c14c82a30a77c96bb3f",
-      "notes": "390px pinyin with English guides: text wraps cleanly, guides remain meaningful beneath source portions, no overlap or unexplained untranslated stretch."
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-v2-beginning-pinyin.png",
+      "sha256": "64218a185d582e055b92a05648ad50f686975612dd18bd56af554ef684dac79b",
+      "notes": "390px pinyin plus English viewed: source portions and meaningful English guides wrap without overlap or missing translation."
     },
     {
       "section": "extra",
-      "pair": 49,
+      "pair": 75,
       "mode": "characters",
       "width": 1100,
-      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-desktop-english.png",
-      "sha256": "58d3e5fce85e2ed3569bf9c57deb182d6f4f02ac3d1da4c6a7e39c1596b570cf",
-      "notes": "1100px characters plus English: centered reading column, source and guides legible without overlap, intact punctuation and wrapping."
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-v2-desktop-english.png",
+      "sha256": "339d2cf4625926e549177e37a509da5479182172dc7d08dda2b46d54006cb9fa",
+      "notes": "1100px characters plus English viewed: centered reading column, source and guides readable with intact punctuation and no clipping."
+    },
+    {
+      "section": "extra",
+      "pair": 123,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-v2-reform-characters.png",
+      "sha256": "d4cb5c3c659622a0f3619ab01fc4433ea467f744b7242559aa6fde93fe9fb254",
+      "notes": "390px Chinese-only expanded passage viewed: multi-sentence speech paragraphs remain coherent book prose with clear speaker spacing."
+    },
+    {
+      "section": "extra",
+      "pair": 123,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-v2-reform-english.png",
+      "sha256": "252d20b8cfe796d8b373dc9fd5f69535b555eed5c8f2fe86a4414592ed723f46",
+      "notes": "390px expanded passage with English viewed: long source sentences have meaningful guides throughout; wrapping and line spacing remain legible."
     },
     {
       "section": "extra",
       "pair": 1,
       "mode": "characters",
       "width": 390,
-      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-phone-flow.png",
-      "sha256": "feefc83af03ad79777e016710af638b0afd8d56b7710a9a0551d67ba2a6825af",
-      "notes": "390px Chinese-only view restored after English/script changes. Opening full sentence saved with matching gloss. Preceding chapter end correctly links to this chapter."
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-4-v2-phone-flow.png",
+      "sha256": "35a509e20606eb94e965972ee5459f10ee5d5cffdeb995d7cbdf5286d46d880d",
+      "notes": "390px Chinese-only restored after script/layout toggles. Actual saved sentence matches source and gloss; chapter-three end links correctly to chapter four."
     }
   ]
 }
