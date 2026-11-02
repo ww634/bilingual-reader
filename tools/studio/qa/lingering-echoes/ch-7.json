@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "book_id": "lingering-echoes",
+  "chapter_id": "ch-7",
+  "chapter_sha256": "4135307e60ddb61d787d9b4b8088ed09426950e2aac169ec2199b0e7960718d2",
+  "catalog_sha256": "36852560802dae5c75d10078a33f92b8bfec09e57c16659a02cdec85d1aa63e1",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-02T17:38:06.083964+00:00",
+  "review": {
+    "editorial": "Separate post-draft reread checked viewpoint, causal transitions, physical gestures and dialogue. Clarified sightline changes, spatial wording and action intent, then reread complete revised Chinese before English encoding.",
+    "continuity_or_facts": "Compared prior ending, checkpoint and established character limits. Checked positions, equipment custody, material use, chronology and consequences; current state and unresolved work recorded privately. No unexplained progression or off-page outcomes. Previous chapter transition correct.",
+    "english_alignment": "Reviewed 104 glosses and 808 chunks against fixed prose for naturalness and contextual fidelity. Source concatenation, sentence boundaries, distinct spans and deterministic fields validate without warnings. Generated pronunciation checked with focused helper assertions. Actual saved sentence and Listen units inspected without speech."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-7-beginning-characters.png",
+      "sha256": "0588329c9dfeb64dce0bfa42507cbdb8c3ac53d48e6290a487a05859941ac622",
+      "notes": "390px Chinese-only beginning viewed: dialogue turns and connected narrative paragraphs read continuously; indents, punctuation and wrapping intact."
+    },
+    {
+      "section": "middle",
+      "pair": 52,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-7-middle-characters.png",
+      "sha256": "abcf2e2d2a00658f8a026015f69a59b730a6278a0e04b39b28ddb316eea6a983",
+      "notes": "390px Chinese-only middle viewed: physical description and short speech remain in normal paragraphs; no clipped source text or forced sentence breaks."
+    },
+    {
+      "section": "end",
+      "pair": 104,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-7-end-characters.png",
+      "sha256": "2fae9d7ef020e72590eb5fe5dadcf9a2e76cf32a32a8dbc3d47c2eaa2f09599b",
+      "notes": "390px Chinese-only ending viewed: three paragraphs complete, final punctuation visible, ample whitespace without lost text."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-7-beginning-pinyin.png",
+      "sha256": "d0ed15909d9fdfe3cf3712b26a4df4cb7d6b438bc961a3c78a33bc884ba7e180",
+      "notes": "390px pinyin with English viewed: source portions and meaningful guides wrap without overlap; opening dialogue and following narrative legible."
+    },
+    {
+      "section": "extra",
+      "pair": 52,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-7-desktop-english.png",
+      "sha256": "e79f1f0728312438d00feb846d2dcb72dfdc95bc623931d72739b3676ccd1cea",
+      "notes": "1100px characters with English viewed: centered column and clear source/guide spacing; meaningful English throughout the inspected action."
+    },
+    {
+      "section": "extra",
+      "pair": 23,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-7-tying-pinyin.png",
+      "sha256": "34fadcb2e48340857a07a274fcf0b7c5e11e2cc94849e7a39771bced2fdde873",
+      "notes": "390px additional pinyin sample viewed: tying-sense pronunciation correct in both inspected contexts, English remains readable under source portions."
+    },
+    {
+      "section": "extra",
+      "pair": 80,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-7-action-english.png",
+      "sha256": "6c8f636a8f1f353fd39d759c4a1e119849e318d6cb8476ddb477af96b7ac9337",
+      "notes": "390px additional action English view inspected: source and guides preserve causal sequence through long clauses; no unexplained untranslated stretch."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-7-phone-flow.png",
+      "sha256": "0588329c9dfeb64dce0bfa42507cbdb8c3ac53d48e6290a487a05859941ac622",
+      "notes": "390px Chinese-only restored after toggles; actual saved opening sentence matches source/gloss. Chapter-six end correctly offers chapter seven."
+    }
+  ]
+}

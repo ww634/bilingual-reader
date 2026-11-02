@@ -23,6 +23,12 @@ const jieba = Jieba.withDict(dict);
 // The upstream lexicon misses the return verb 递还. Reuse the unambiguous
 // reading from 归还 rather than hand-authoring syllables in chapter data.
 const returnSyllable = pinyin("归还", { type: "array", toneType: "symbol" })[1];
+// 系 also defaults to the relationship/system sense in explicit tying phrases.
+// Select its other dictionary reading; never store authored pinyin in chapters.
+const relationSyllable = pinyin("关系", { type: "array", toneType: "symbol" })[1];
+const tieSyllable = pinyin("系", { type: "array", toneType: "symbol", multiple: true })
+  .find(syllable => syllable !== relationSyllable);
+const tyingWords = new Set(["系鞋带", "系扣子", "系紧", "系牢"]);
 
 const HAN_CHAR = /[㐀-䶿一-鿿]/;
 
@@ -69,6 +75,9 @@ export function romanizeWithMap(text) {
         // Respect the segment boundary: 传递还需… contains 传递 + 还, not 递还.
         if (w === "递还" || (w === "递" && srcChars[i + ci + 1] === "还")) {
           syllables[ci + 1] = returnSyllable;
+        }
+        if (tyingWords.has(w) || (w === "系" && /^(腰|鞋|扣|绳|紧|牢|好|上|住|在|着)/.test(run.slice(ci + 1)))) {
+          syllables[ci] = tieSyllable;
         }
         if (!firstWord) sep();           // space between words
         else { sep(); }                  // and space before the run if needed
