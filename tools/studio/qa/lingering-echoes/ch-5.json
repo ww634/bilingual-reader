@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "book_id": "lingering-echoes",
+  "chapter_id": "ch-5",
+  "chapter_sha256": "bd68264027a307ea403520f315680950e11bf9a7b592f2059c991c630de8b8c9",
+  "catalog_sha256": "bf6f7e7d67417cd32b7d04570eac0efe35ec741a7f859928fa60700ee473f4ea",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-02T15:01:26.256112+00:00",
+  "review": {
+    "editorial": "Separate Chinese editorial pass checked previous-ending transition, viewpoint, scene rhythm, dialogue and physical gestures. Clarified morning bridge, light custody, distances and accessible rope end, then reread revised prose before finalization.",
+    "continuity_or_facts": "Compared established canon, checkpoint and preceding chapter. Checked night/morning chronology, supplies, document custody, positions, terrain and existing power limits. No unsupported advancement or off-page outcomes added. Chapter-four transition links correctly.",
+    "english_alignment": "Reread all 97 English units against Chinese, with contextual word alignment and established terminology. Exact source reproduction, sentence granularity, distinct English spans and deterministic fields validate without warnings. Actual sentence saving and Listen units inspected without speech generation."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-5-beginning-characters.png",
+      "sha256": "8f7fd92d8dbabe356610b6b11d1781b14e003644fb5730c2467d7ae0dd85b375",
+      "notes": "390px Chinese-only beginning viewed: coherent novel paragraphs and dialogue turns, indents and fullwidth punctuation intact; no clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 49,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-5-middle-characters.png",
+      "sha256": "8bf95221e5a3d42c91bacc9987b0190034c80033fa9236c80f0934adfc001dd8",
+      "notes": "390px Chinese-only middle viewed: multi-sentence paragraphs remain continuous, dialogue separated appropriately, source text and line spacing legible."
+    },
+    {
+      "section": "end",
+      "pair": 97,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-5-end-characters.png",
+      "sha256": "4cb81d5439dbe8d47a3dc76572b9a9ff7cace93f2fe748ff395fce02f71bddbb",
+      "notes": "390px Chinese-only end viewed: entire final sentence and punctuation intact. Short final page is expected pagination, no missing text."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-5-beginning-pinyin.png",
+      "sha256": "88fc35be1ab2127a91f8be6c17bb1d8fd94d9e45e2feee7e727311b44e134827",
+      "notes": "390px pinyin with English viewed: source and meaningful guides wrap without overlap or unexplained untranslated passages."
+    },
+    {
+      "section": "extra",
+      "pair": 49,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-5-desktop-english.png",
+      "sha256": "269ea8d97205faaf0cb0089e8ee93934cba3f914c5c1446dfc03baa02ca921cb",
+      "notes": "1100px characters with English viewed: centered column, guides remain meaningful below source portions, no clipping or overlap."
+    },
+    {
+      "section": "extra",
+      "pair": 74,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-5-core-english.png",
+      "sha256": "ec662b65afefe78a019e0def57f168a26d638e73a20f05510793510ffcf0c205",
+      "notes": "390px additional English-on passage viewed: source portions have faithful meaningful guides throughout longer descriptive sentences."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-5-phone-flow.png",
+      "sha256": "8f7fd92d8dbabe356610b6b11d1781b14e003644fb5730c2467d7ae0dd85b375",
+      "notes": "390px Chinese-only restored after toggles; actual saved opening sentence matches source and gloss. Previous chapter end correctly offers chapter five."
+    }
+  ]
+}
