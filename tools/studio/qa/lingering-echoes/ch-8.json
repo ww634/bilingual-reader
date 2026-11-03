@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "book_id": "lingering-echoes",
+  "chapter_id": "ch-8",
+  "chapter_sha256": "5a6d1bb9ee88e5d8dbe76a6ff3c1a8d1ab1de019c2468d80d664c007b42125e4",
+  "catalog_sha256": "508ff7e67e1f847148e07c73509d639e0f8d96bdb0de33d957d415be4058315e",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-03T10:16:27.791315+00:00",
+  "review": {
+    "editorial": "Separate post-draft review checked close viewpoint, transitions, pacing and dialogue; revised ambiguous action and equipment handling, then reread complete fixed Chinese.",
+    "continuity_or_facts": "Compared previous chapter ending, checkpoint and character limits; tracked positions, wounds, equipment custody and knowledge. Previous reader ending correctly offers this chapter. Updated private continuity records.",
+    "english_alignment": "Reread all 103 English units and 827 chunks against fixed Chinese. Exact source, distinct spans, sentence boundaries and deterministic output validate without warnings. Contextual pronunciation checks passed. Saved sentence and source units inspected without speech."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-8-beginning-characters.png",
+      "sha256": "a63ea23342d7877e2258f9b119711145cae36b903559cbd3c7593a25152d4351",
+      "notes": "Phone Chinese beginning: connected prose and speech retain natural paragraphs, clear punctuation and wrapping without clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 52,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-8-middle-characters.png",
+      "sha256": "9b81dbdcd362347fc70e9d5924af13267d89509d6c35342f756415c0b5c045be",
+      "notes": "Phone Chinese middle: dialogue turns and narrative flow clearly, with consistent indents and complete visible text."
+    },
+    {
+      "section": "end",
+      "pair": 103,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-8-end-characters.png",
+      "sha256": "aa45c73aaa88063a53721da9cf70c7df7a3199e522cc56712c767f880db707eb",
+      "notes": "Phone Chinese ending: final paragraphs and punctuation visible; no lost content despite short last page."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-8-beginning-pinyin.png",
+      "sha256": "709a5b590944f6d32a45ac2ae49504756e7b8350407661186b74941c9d550f8f",
+      "notes": "Phone pinyin with English: tone marks and guides legible with no overlap or unexplained untranslated lines."
+    },
+    {
+      "section": "extra",
+      "pair": 52,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-8-desktop-english.png",
+      "sha256": "ead66829fd04efd060d073e1324c0e26b28b902ed44d87292ec541940021992a",
+      "notes": "Desktop Chinese with English: centered column and guides readable; all inspected source lines have meaningful English."
+    },
+    {
+      "section": "extra",
+      "pair": 38,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-8-treatment-pinyin.png",
+      "sha256": "34545c3ad7b1b85056b7d2e12caee59dbd435e819b36ca1a7b965e826db65e9c",
+      "notes": "Additional phone pinyin treatment passage: source and guides remain legible and aligned across page wrapping."
+    },
+    {
+      "section": "extra",
+      "pair": 85,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-8-action-english.png",
+      "sha256": "51f0c694ba725ae86a7c44120820c7851b14196260d73ac631b1fe31c387bd89",
+      "notes": "Additional phone English scene: shorter clause guides follow the complex visual description without loss of source flow."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-8-phone-flow.png",
+      "sha256": "a63ea23342d7877e2258f9b119711145cae36b903559cbd3c7593a25152d4351",
+      "notes": "Restored Chinese phone layout intact after toggles. Actual sentence-save text/gloss match source; prior chapter offers this chapter."
+    }
+  ]
+}

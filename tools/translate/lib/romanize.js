@@ -29,6 +29,10 @@ const relationSyllable = pinyin("关系", { type: "array", toneType: "symbol" })
 const tieSyllable = pinyin("系", { type: "array", toneType: "symbol", multiple: true })
   .find(syllable => syllable !== relationSyllable);
 const tyingWords = new Set(["系鞋带", "系扣子", "系紧", "系牢"]);
+// Anatomical bending and the back of the hand can be misread across a
+// segmentation boundary (手 + 背包). Derive the readings from clear words.
+const bendSyllable = pinyin("弯曲", { type: "array", toneType: "symbol" })[1];
+const backSyllable = pinyin("背面", { type: "array", toneType: "symbol" })[0];
 
 const HAN_CHAR = /[㐀-䶿一-鿿]/;
 
@@ -67,11 +71,13 @@ export function romanizeWithMap(text) {
       while (j < srcChars.length && HAN_CHAR.test(srcChars[j])) j++;
       const run = srcChars.slice(i, j).join("");
       const syllables = pinyin(run, { toneType: "symbol", type: "array", nonZh: "consecutive" });
+      for (const match of run.matchAll(/手背/g)) syllables[match.index + 1] = backSyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;
       for (const w of words) {
         const wlen = [...w].length;
+        if (w === "曲" && run[ci + 1] === "指") syllables[ci] = bendSyllable;
         // Respect the segment boundary: 传递还需… contains 传递 + 还, not 递还.
         if (w === "递还" || (w === "递" && srcChars[i + ci + 1] === "还")) {
           syllables[ci + 1] = returnSyllable;
