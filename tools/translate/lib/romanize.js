@@ -40,6 +40,9 @@ const stickSyllable = pinyin("粘", { type: "array", toneType: "symbol", multipl
 const extortSyllable = pinyin("勒索", { type: "array", toneType: "symbol" })[0];
 const cinchSyllable = pinyin("勒", { type: "array", toneType: "symbol", multiple: true })
   .find(syllable => syllable !== extortSyllable);
+const nailSyllable = pinyin("钉子", { type: "array", toneType: "symbol" })[0];
+const fastenSyllable = pinyin("钉", { type: "array", toneType: "symbol", multiple: true })
+  .find(syllable => syllable !== nailSyllable);
 
 const HAN_CHAR = /[㐀-䶿一-鿿]/;
 
@@ -87,6 +90,8 @@ export function romanizeWithMap(text) {
         if (w === "曲" && run[ci + 1] === "指") syllables[ci] = bendSyllable;
         if (w === "重" && run[ci + 1] === "捆") syllables[ci] = againSyllable;
         if (w === "粘住") syllables[ci] = stickSyllable;
+        // A verb before 回, not the nail noun in 铁钉回收/钉子回收.
+        if (w === "钉" && run[ci + 1] === "回") syllables[ci] = fastenSyllable;
         // Explicit tightening contexts, without changing 勒索/勒马 readings.
         if ((w === "勒" && run[ci - 1] === "再") ||
             (w === "勒住" && /[线绳带]/.test(run[ci - 1] || ""))) {
