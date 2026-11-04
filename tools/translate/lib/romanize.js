@@ -37,6 +37,9 @@ const againSyllable = pinyin("重新", { type: "array", toneType: "symbol" })[0]
 const viscousSyllable = pinyin("粘度", { type: "array", toneType: "symbol" })[0];
 const stickSyllable = pinyin("粘", { type: "array", toneType: "symbol", multiple: true })
   .find(syllable => syllable !== viscousSyllable);
+const extortSyllable = pinyin("勒索", { type: "array", toneType: "symbol" })[0];
+const cinchSyllable = pinyin("勒", { type: "array", toneType: "symbol", multiple: true })
+  .find(syllable => syllable !== extortSyllable);
 
 const HAN_CHAR = /[㐀-䶿一-鿿]/;
 
@@ -84,6 +87,11 @@ export function romanizeWithMap(text) {
         if (w === "曲" && run[ci + 1] === "指") syllables[ci] = bendSyllable;
         if (w === "重" && run[ci + 1] === "捆") syllables[ci] = againSyllable;
         if (w === "粘住") syllables[ci] = stickSyllable;
+        // Explicit tightening contexts, without changing 勒索/勒马 readings.
+        if ((w === "勒" && run[ci - 1] === "再") ||
+            (w === "勒住" && /[线绳带]/.test(run[ci - 1] || ""))) {
+          syllables[ci] = cinchSyllable;
+        }
         // Respect the segment boundary: 传递还需… contains 传递 + 还, not 递还.
         if (w === "递还" || (w === "递" && srcChars[i + ci + 1] === "还")) {
           syllables[ci + 1] = returnSyllable;
