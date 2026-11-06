@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "book_id": "lingering-echoes",
+  "chapter_id": "ch-14",
+  "chapter_sha256": "01cbf7307eb9c3d95841293d3f35e1629e29484ff91e080eae22d54e7509aaa1",
+  "catalog_sha256": "b1654b13989c1fbf46d1dd4e6745daa5c5ed26afdd94811ace45241d63104051",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-06T00:25:43.331910+00:00",
+  "review": {
+    "editorial": "Separate full Chinese pass checked scene geography, physical action, viewpoint, voices and pacing; revised one inconsistent action verb and reread fixed scene. Complete companion English reread and dialogue punctuation refined before final reader review.",
+    "continuity_or_facts": "Compared preceding actual ending and checkpoint; tracked body, supplies, information available to each speaker and elapsed journey. Ordinary help and limited inference remain consistent, with no unexplained recovery. Prior chapter transition checked in reader.",
+    "english_alignment": "Reviewed 91 sentence/clause units and 728 chunks for faithful natural English and distinct spans. Exact source and deterministic output validate without warnings. Contextual readings checked with counterexamples. Actual saved sentence and Listen source units inspected without speech generation."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-14-beginning-characters.png",
+      "sha256": "6599101acf73b0562f64f24cbd34b726905df72944fa998fbb24dbcf65f615c8",
+      "notes": "Phone Chinese beginning viewed: connected novel paragraphs, dialogue punctuation and wrapping clear, no clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 47,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-14-middle-characters.png",
+      "sha256": "9785e916961b62fdb20dbb6ba6a11d3d541b9847e73799417021b9880826d69b",
+      "notes": "Phone Chinese middle viewed: speaker turns, internal recollection and physical action readable in continuous paragraphs."
+    },
+    {
+      "section": "end",
+      "pair": 91,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-14-end-characters.png",
+      "sha256": "7a5e3706a803a01b0b0f89d196f64b4954d78d8e27225e7a92d858c9d89f5da9",
+      "notes": "Phone Chinese ending viewed: complete two final paragraphs, punctuation/spacing clear; no orphaned guide or clipped text."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-14-beginning-pinyin.png",
+      "sha256": "769bb2e31a9329b99b0bc0618d8b092f5715a6764af250263f0850679aca0182",
+      "notes": "Phone pinyin with English viewed: tone marks, meaningful guides and source order clear without overlap."
+    },
+    {
+      "section": "extra",
+      "pair": 47,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-14-desktop-english.png",
+      "sha256": "cdbac9cd96d711073c597cd77077ec13ac3b1a50f5cb849dc9eea01d4c672b0b",
+      "notes": "Desktop Chinese with English viewed: centered readable column and meaningful guide wrapping, no unexplained missing English."
+    },
+    {
+      "section": "extra",
+      "pair": 77,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-14-rest-pinyin.png",
+      "sha256": "2f04e5939b28c3ebeffc162b7358e11d3349f89c4c96c661d6e1da9e796fa56f",
+      "notes": "Focused phone pinyin passage viewed: contextual verb reading and English guides correct; no layout overlap."
+    },
+    {
+      "section": "extra",
+      "pair": 44,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-14-action-english.png",
+      "sha256": "169ac77603cf90a4d16a80948ad89802688e9a7709f3b1237d772eb8e3625ed9",
+      "notes": "Focused phone English dialogue viewed after correction: attribution punctuation joins naturally across units, short guide clauses remain meaningful."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-14-phone-flow.png",
+      "sha256": "6599101acf73b0562f64f24cbd34b726905df72944fa998fbb24dbcf65f615c8",
+      "notes": "Restored Chinese phone mode viewed after toggles; saved opening sentence/gloss exactly match. Previous chapter offers correct next title."
+    }
+  ]
+}

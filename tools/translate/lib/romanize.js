@@ -43,6 +43,9 @@ const cinchSyllable = pinyin("勒", { type: "array", toneType: "symbol", multipl
 const nailSyllable = pinyin("钉子", { type: "array", toneType: "symbol" })[0];
 const fastenSyllable = pinyin("钉", { type: "array", toneType: "symbol", multiple: true })
   .find(syllable => syllable !== nailSyllable);
+const transmitSyllable = pinyin("传达", { type: "array", toneType: "symbol" })[0];
+const onlySyllable = pinyin("只有", { type: "array", toneType: "symbol" })[0];
+const bandageSyllable = pinyin("包扎", { type: "array", toneType: "symbol" })[1];
 const claspSyllable = pinyin("夹杂", { type: "array", toneType: "symbol" })[0];
 
 const HAN_CHAR = /[㐀-䶿一-鿿]/;
@@ -83,6 +86,12 @@ export function romanizeWithMap(text) {
       const run = srcChars.slice(i, j).join("");
       const syllables = pinyin(run, { toneType: "symbol", type: "array", nonZh: "consecutive" });
       for (const match of run.matchAll(/手背/g)) syllables[match.index + 1] = backSyllable;
+      // Elliptical self-tying question; exclude explicit needle/stabbing objects.
+      for (const match of run.matchAll(/自己扎的$/g)) syllables[match.index + 2] = bandageSyllable;
+      // Avoid a cross-word 外传 reading when the verb is 传来.
+      for (const match of run.matchAll(/传来/g)) syllables[match.index] = transmitSyllable;
+      // Explicit adverbial contexts, preserving the animal classifier.
+      for (const match of run.matchAll(/只(?=擦出|摇头|让|记得)/g)) syllables[match.index] = onlySyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;
