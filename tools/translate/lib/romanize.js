@@ -44,6 +44,7 @@ const nailSyllable = pinyin("钉子", { type: "array", toneType: "symbol" })[0];
 const fastenSyllable = pinyin("钉", { type: "array", toneType: "symbol", multiple: true })
   .find(syllable => syllable !== nailSyllable);
 const transmitSyllable = pinyin("传达", { type: "array", toneType: "symbol" })[0];
+const negativeHaveSyllable = pinyin("没有", { type: "array", toneType: "symbol" })[0];
 const onlySyllable = pinyin("只有", { type: "array", toneType: "symbol" })[0];
 const bandageSyllable = pinyin("包扎", { type: "array", toneType: "symbol" })[1];
 const claspSyllable = pinyin("夹杂", { type: "array", toneType: "symbol" })[0];
@@ -91,7 +92,9 @@ export function romanizeWithMap(text) {
       // Avoid a cross-word 外传 reading when the verb is 传来.
       for (const match of run.matchAll(/传来/g)) syllables[match.index] = transmitSyllable;
       // Explicit adverbial contexts, preserving the animal classifier.
-      for (const match of run.matchAll(/只(?=擦出|摇头|让|记得)/g)) syllables[match.index] = onlySyllable;
+      for (const match of run.matchAll(/只(?=擦出|摇头|让|记得|松松地|搁|看见|说|将|捏住)/g)) syllables[match.index] = onlySyllable;
+      // Negative 收回去 is not the confiscation verb 没收.
+      for (const match of run.matchAll(/没(?=收回去)/g)) syllables[match.index] = negativeHaveSyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;
