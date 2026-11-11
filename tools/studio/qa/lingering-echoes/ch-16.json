@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "book_id": "lingering-echoes",
+  "chapter_id": "ch-16",
+  "chapter_sha256": "6b80b3bfb41c570f0dad76161c8b29cd421c1f99c914811fdbe2230a8876f948",
+  "catalog_sha256": "40401a777b3d9fe92c0dcc698af83eee972961174653d066ddfd44bb84fead87",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-11T21:11:58.728146+00:00",
+  "review": {
+    "editorial": "Separate reread refined object handling, timing and concrete action before encoding. Revised Chinese was reread for physical continuity and close viewpoint, then companion English reviewed for natural dialogue.",
+    "continuity_or_facts": "Checked prior actual ending, elapsed days, mobility, belongings, and what each speaker knows. Verified the previous chapter offers the correct next title in the reader.",
+    "english_alignment": "Checked 74 units and 549 chunks against retained Chinese, exact English spans and natural clause boundaries. Corrected contextual pronunciation before release, with counterexamples and a fresh validation. Saved sentence and Listen source units inspected without speech."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-16-beginning-characters.png",
+      "notes": "Phone Chinese beginning shows complete source paragraphs, readable wrapping and clear speaker changes.",
+      "sha256": "e247c9c0057da9c38c25edcb5c2a1f250b6244f6a4ab045c53856c85c98975a5"
+    },
+    {
+      "section": "middle",
+      "pair": 38,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-16-middle-characters.png",
+      "notes": "Phone Chinese middle preserves paragraph order, character legibility and full-width punctuation.",
+      "sha256": "d84e9db7a7fbca7f85846fb0690cd5954dfd44ae611de4103b0be452a8a51c00"
+    },
+    {
+      "section": "end",
+      "pair": 74,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-16-end-characters.png",
+      "notes": "Phone Chinese ending shows the closing sentences and complete punctuation without clipping.",
+      "sha256": "6e817a04338c194976d4c768b021888a2dbefb72a4f2d27699563c279033f79b"
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-16-beginning-pinyin.png",
+      "notes": "Phone pinyin opening shows readable tone marks and meaningful English guide wraps.",
+      "sha256": "b68c0db60410c0032e57bc3211627db8162fb55cbffb89d6eeeb49ca55e673a4"
+    },
+    {
+      "section": "extra",
+      "pair": 38,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-16-desktop-english.png",
+      "notes": "Desktop bilingual view keeps guides legible below the source and supports clear reading order.",
+      "sha256": "ac00bb43664ff54fe1999b4a5758921e7b863d020c250481863b1176b8583cad"
+    },
+    {
+      "section": "extra",
+      "pair": 74,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-16-ending-english.png",
+      "notes": "Phone English ending context shows a continuous, readable sequence through the closing action.",
+      "sha256": "ba6b5323edc4fac82c8afa9cf2ffee94e8a8cb908ecbd6a6bf30c89827e0d2d2"
+    },
+    {
+      "section": "extra",
+      "pair": 14,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-16-care-pinyin.png",
+      "notes": "Phone pinyin care passage shows corrected contextual readings in source flow and guides without overlap.",
+      "sha256": "773b76b24df72acf4a95998289481ddbf603bfa334618757fc0c2cd2d94b9ca4"
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/lingering-echoes/ch-16-phone-flow.png",
+      "notes": "Restored Chinese-only view retains paragraph flow. Saved sentence matches source and companion English.",
+      "sha256": "e247c9c0057da9c38c25edcb5c2a1f250b6244f6a4ab045c53856c85c98975a5"
+    }
+  ]
+}
