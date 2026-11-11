@@ -45,6 +45,7 @@ const fastenSyllable = pinyin("钉", { type: "array", toneType: "symbol", multip
   .find(syllable => syllable !== nailSyllable);
 const transmitSyllable = pinyin("传达", { type: "array", toneType: "symbol" })[0];
 const negativeHaveSyllable = pinyin("没有", { type: "array", toneType: "symbol" })[0];
+const carrySyllable = pinyin("担任", { type: "array", toneType: "symbol" })[0];
 const swellSyllable = pinyin("胀", { type: "array", toneType: "symbol" })[0];
 const fallSyllable = pinyin("跌倒", { type: "array", toneType: "symbol" })[1];
 const pourSyllable = pinyin("倒", { type: "array", toneType: "symbol", multiple: true })
@@ -98,14 +99,16 @@ export function romanizeWithMap(text) {
       // Avoid a cross-word 外传 reading when the verb is 传来.
       for (const match of run.matchAll(/传来/g)) syllables[match.index] = transmitSyllable;
       // Explicit adverbial contexts, preserving the animal classifier.
-      for (const match of run.matchAll(/只(?=擦出|摇头|让|记得|松松地|搁|看见|说|将|捏住|剩|想|把)/g)) syllables[match.index] = onlySyllable;
+      for (const match of run.matchAll(/只(?=擦出|摇头|让|记得|松松地|搁|看见|说|将|捏住|剩|想|把|等)/g)) syllables[match.index] = onlySyllable;
       // Negative 收回去 is not the confiscation verb 没收.
       for (const match of run.matchAll(/没(?=收回去)/g)) syllables[match.index] = negativeHaveSyllable;
       // Disambiguate body swelling, pouring beans, and the beans that spilled.
       for (const match of run.matchAll(/涨(?=得难受)/g)) syllables[match.index] = swellSyllable;
-      for (const match of run.matchAll(/倒(?=豆子)/g)) syllables[match.index] = pourSyllable;
+      for (const match of run.matchAll(/倒(?=豆子|沙)/g)) syllables[match.index] = pourSyllable;
       for (const match of run.matchAll(/撒(?=的豆子)/g)) syllables[match.index] = scatterSyllable;
       for (const match of run.matchAll(/(?:扶|顺)着/g)) syllables[match.index + 1] = aspectSyllable;
+      // With an aspect marker and quantity, 担 is the verb for carrying.
+      for (const match of run.matchAll(/担(?=了(?:满|一|两))/g)) syllables[match.index] = carrySyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;
