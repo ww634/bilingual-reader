@@ -45,6 +45,9 @@ const fastenSyllable = pinyin("钉", { type: "array", toneType: "symbol", multip
   .find(syllable => syllable !== nailSyllable);
 const transmitSyllable = pinyin("传达", { type: "array", toneType: "symbol" })[0];
 const negativeHaveSyllable = pinyin("没有", { type: "array", toneType: "symbol" })[0];
+const countSyllable = pinyin("倒数", { type: "array", toneType: "symbol" })[1];
+const tradeSyllable = pinyin("行业", { type: "array", toneType: "symbol" })[0];
+const giveSyllable = pinyin("给你", { type: "array", toneType: "symbol" })[0];
 const carrySyllable = pinyin("担任", { type: "array", toneType: "symbol" })[0];
 const swellSyllable = pinyin("胀", { type: "array", toneType: "symbol" })[0];
 const fallSyllable = pinyin("跌倒", { type: "array", toneType: "symbol" })[1];
@@ -99,7 +102,7 @@ export function romanizeWithMap(text) {
       // Avoid a cross-word 外传 reading when the verb is 传来.
       for (const match of run.matchAll(/传来/g)) syllables[match.index] = transmitSyllable;
       // Explicit adverbial contexts, preserving the animal classifier.
-      for (const match of run.matchAll(/只(?=擦出|摇头|让|记得|松松地|搁|看见|说|将|捏住|剩|想|把|等|听见)/g)) syllables[match.index] = onlySyllable;
+      for (const match of run.matchAll(/只(?=擦出|摇头|让|记得|松松地|搁|看见|说|将|捏住|剩|想|把|等|听见|知道)/g)) syllables[match.index] = onlySyllable;
       // Negative 收回去 is not the confiscation verb 没收.
       for (const match of run.matchAll(/没(?=收回去)/g)) syllables[match.index] = negativeHaveSyllable;
       // Disambiguate body swelling, pouring beans, and the beans that spilled.
@@ -110,6 +113,9 @@ export function romanizeWithMap(text) {
       // With an aspect marker and quantity, 担 is the verb for carrying.
       for (const match of run.matchAll(/担(?=了(?:满|一|两))/g)) syllables[match.index] = carrySyllable;
       for (const match of run.matchAll(/布(?:还|仍)?扎着/g)) syllables[match.index + match[0].length - 2] = bandageSyllable;
+      for (const match of run.matchAll(/数(?=货|的也是|一遍|起)/g)) syllables[match.index] = countSyllable;
+      if (run.endsWith("做过这行")) syllables[run.length - 1] = tradeSyllable;
+      for (const match of run.matchAll(/给(?=水洇)/g)) syllables[match.index] = giveSyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;
