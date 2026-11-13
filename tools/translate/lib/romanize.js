@@ -48,6 +48,7 @@ const negativeHaveSyllable = pinyin("没有", { type: "array", toneType: "symbol
 const countSyllable = pinyin("倒数", { type: "array", toneType: "symbol" })[1];
 const tradeSyllable = pinyin("行业", { type: "array", toneType: "symbol" })[0];
 const giveSyllable = pinyin("给你", { type: "array", toneType: "symbol" })[0];
+const heavySyllable = pinyin("沉重", { type: "array", toneType: "symbol" })[1];
 const carrySyllable = pinyin("担任", { type: "array", toneType: "symbol" })[0];
 const swellSyllable = pinyin("胀", { type: "array", toneType: "symbol" })[0];
 const fallSyllable = pinyin("跌倒", { type: "array", toneType: "symbol" })[1];
@@ -116,6 +117,10 @@ export function romanizeWithMap(text) {
       for (const match of run.matchAll(/数(?=货|的也是|一遍|起)/g)) syllables[match.index] = countSyllable;
       if (run.endsWith("做过这行")) syllables[run.length - 1] = tradeSyllable;
       for (const match of run.matchAll(/给(?=水洇)/g)) syllables[match.index] = giveSyllable;
+      for (const match of run.matchAll(/没(?=入单)/g)) syllables[match.index] = negativeHaveSyllable;
+      for (const match of run.matchAll(/闭着眼/g)) syllables[match.index + 1] = aspectSyllable;
+      for (const match of run.matchAll(/一轻一重/g)) syllables[match.index + 3] = heavySyllable;
+      for (const match of run.matchAll(/(?<=把席子)还(?=给他)/g)) syllables[match.index] = returnSyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;
