@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-302",
+  "chapter_sha256": "06986a85e8a6c85b55135d24ffbb17810741166ee7fa5f40d77b0ff3e054f45e",
+  "catalog_sha256": "61b4ab7137e975f001e1352dd683dc4ee0be9827ec5a10f6e5762a075b4a4ec2",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-13T17:20:47.367827+00:00",
+  "review": {
+    "editorial": "Reviewed the meal scene separately, replacing an unnecessary return errand and correcting the final exchange so the response follows the action.",
+    "continuity_or_facts": "Checked the agreed meal date, the earlier workshop observation and that this commission is distinct from the earlier completed fieldwork.",
+    "english_alignment": "Validated 83 units and 531 distinct gloss spans. In the reader, saved the opening sentence and inspected the shorter source units without playing audio."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-302-beginning.png",
+      "notes": "Pinyin tone marks and guide colors are readable; English follows the opening across the line wraps.",
+      "sha256": "e7a8b6dce23a7237a9cd6b406a8078b33fa3276c252505fef03eaaff31807622"
+    },
+    {
+      "section": "middle",
+      "pair": 42,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-302-middle.png",
+      "notes": "The characters view retains the route discussion with meaningful English under the visible lines.",
+      "sha256": "eadf4355f2501670b2bccf523f76c59981a0c63573191f6ee6d6d3ec34efda7f"
+    },
+    {
+      "section": "end",
+      "pair": 83,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-302-end.png",
+      "notes": "The closing Chinese and English both reach their final punctuation on the last reading page.",
+      "sha256": "a665ca44ac8d81a28893b4c4442ba8446aaaca794fa9a511c754f9584e1de889"
+    },
+    {
+      "section": "extra",
+      "pair": 42,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-302-desktop.png",
+      "notes": "The desktop reader column wraps the pinyin and corresponding English without clipping either.",
+      "sha256": "bf293f5508dfc68659ece856ef83bdc34760bfb96ba0aab091e213e856edf429"
+    }
+  ]
+}
