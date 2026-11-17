@@ -114,13 +114,13 @@ export function romanizeWithMap(text) {
       // With an aspect marker and quantity, 担 is the verb for carrying.
       for (const match of run.matchAll(/担(?=了(?:满|一|两))/g)) syllables[match.index] = carrySyllable;
       for (const match of run.matchAll(/布(?:还|仍)?扎着/g)) syllables[match.index + match[0].length - 2] = bandageSyllable;
-      for (const match of run.matchAll(/数(?=货|的也是|一遍|起)/g)) syllables[match.index] = countSyllable;
+      for (const match of run.matchAll(/数(?=货|的也是|一遍|了一遍|起)/g)) syllables[match.index] = countSyllable;
       if (run.endsWith("做过这行")) syllables[run.length - 1] = tradeSyllable;
       for (const match of run.matchAll(/给(?=水洇)/g)) syllables[match.index] = giveSyllable;
       for (const match of run.matchAll(/没(?=入单)/g)) syllables[match.index] = negativeHaveSyllable;
       for (const match of run.matchAll(/闭着眼/g)) syllables[match.index + 1] = aspectSyllable;
       for (const match of run.matchAll(/一轻一重/g)) syllables[match.index + 3] = heavySyllable;
-      for (const match of run.matchAll(/(?<=把席子)还(?=给他)/g)) syllables[match.index] = returnSyllable;
+      for (const match of run.matchAll(/(?<=把席子|把表)还(?=给他)/g)) syllables[match.index] = returnSyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;

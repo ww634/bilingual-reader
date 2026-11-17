@@ -75,3 +75,14 @@ test('publication preserves catalog, enforces checkpoint, refuses overwrite, and
  await assert.rejects(finalizeChapter({...args,chapter:3}),{code:'EEXIST'});
  assert.equal(await fs.readFile(lock,'utf8'),'active');
 });
+
+test('context distinguishes returning, counting, and the common alternate readings', () => {
+ const syllables = (text, char) => {
+  const { pinyin, srcChars, spans } = romanizeWithMap(text);
+  return srcChars.flatMap((c, i) => c === char ? [pinyin.slice(...spans[i])] : []);
+ };
+ assert.deepEqual(syllables('简老师把表还给他', '还'), ['huán']);
+ assert.deepEqual(syllables('她还给他添了饭', '还'), ['hái']);
+ assert.deepEqual(syllables('伸手替他数了一遍', '数'), ['shǔ']);
+ assert.deepEqual(syllables('这个数不对', '数'), ['shù']);
+});

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-309",
+  "chapter_sha256": "1a139d7fc08020e28ebf55bb3deb700b3b4f98f1f73ac900b1bf775a4a82af42",
+  "catalog_sha256": "426bb55fe2e0e85f946369507df11913f262088c6a6a36c707c240ffa749d74e",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-17T15:53:40.254252+00:00",
+  "review": {
+    "editorial": "Reread the scene and clarified the shape of the prop before the attempt to lift it.",
+    "continuity_or_facts": "Checked the earlier prop, the rope introduced at the previous ending, and the new agreement for tomorrow.",
+    "english_alignment": "Validated 52 units and 260 distinct gloss spans. In the reader, saved the opening sentence and inspected the shorter source units without playing audio."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-309-beginning.png",
+      "notes": "Pinyin tone marks and guide colors are readable; English follows the opening across the line wraps.",
+      "sha256": "4956f825c7729a404bdd60ff687ab5bf34775f8f23bd5d125e9572122a68f3dc"
+    },
+    {
+      "section": "middle",
+      "pair": 26,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-309-middle.png",
+      "notes": "The characters view retains the dialogue and surrounding narrative with meaningful English under the visible lines.",
+      "sha256": "cc3ff272b60737e28bed6f258f84780e5ebc2474cdcfb444201db7b68b793676"
+    },
+    {
+      "section": "end",
+      "pair": 51,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-309-end.png",
+      "notes": "The closing Chinese and English both reach their final punctuation on the last reading page.",
+      "sha256": "dd7368a76e169eb29062aa8d07189d6181a97815ceb5f23a8a4d8759ddd3a88c"
+    },
+    {
+      "section": "extra",
+      "pair": 26,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-309-desktop.png",
+      "notes": "The desktop reader column wraps the pinyin and corresponding English without clipping either.",
+      "sha256": "e78fc6270c51cf66f2d765f08e4aaac2c7f4761ab62a32565e26501ddf402eec"
+    }
+  ]
+}
