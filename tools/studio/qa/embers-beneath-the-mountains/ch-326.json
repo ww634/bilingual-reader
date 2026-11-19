@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-326",
+  "chapter_sha256": "2d9f2b398e9c955cb797909fd7a71277f746cb480f06a736b1de89ff088d3447",
+  "catalog_sha256": "4edb39eb474b014defae97915ed3097f3f904757d763bfd9a406b4f9d8a958dd",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-19T09:33:02.735403+00:00",
+  "review": {
+    "editorial": "Reviewed object handling, speaker attribution and the transition between observation and comparison; preserved distinct records instead of erasing uncertainty.",
+    "continuity_or_facts": "Checked custody and support of the removed component and the limited scope of the work; no unearned ruling or student authority.",
+    "english_alignment": "Corrected a contextual reading after regression testing, then repeated reader previews and captured an additional pronunciation sample."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-326-beginning.png",
+      "sha256": "179c4fbc9ca29c110bd80cb3a0ab98ff190970453dabb295dd1f9c9b21323e0a",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "middle",
+      "pair": 22,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-326-middle.png",
+      "sha256": "6c52a4b2409de36411de2b21e4c34f9d79bc5ee30313437bc9d81823cb46e686",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "end",
+      "pair": 42,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-326-end.png",
+      "sha256": "2d5ddb3b8256822c0aef833355ccdd6ec046e319fc710b4bfc9845e99a13591b",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "extra",
+      "pair": 22,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-326-desktop.png",
+      "sha256": "b90d65b296bd31ec535783bfb4d93c9290518aa86fb49f6b730aad91e7edd2a3",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "extra",
+      "pair": 6,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-326-pronunciation.png",
+      "sha256": "346cd2ab8911eec8b0c7a50c8724fb25bac3ce9a0de18b7ccee7ec3d5ec7a859",
+      "notes": "Viewed corrected contextual verb reading and neutral complement directly in the reader; English guide remains visible."
+    }
+  ]
+}

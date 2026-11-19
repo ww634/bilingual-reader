@@ -123,3 +123,27 @@ test('workshop and route contexts distinguish modal, particle and tool readings'
  assert.deepEqual(readings('他得空来坐坐', '得'), ['dé']);
  assert.deepEqual(readings('取得成绩', '得'), ['dé']);
 });
+
+
+test('canal records and classroom readings keep lexical context', () => {
+ const r = (text, char) => { const m=romanizeWithMap(text); return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]); };
+ for (const text of ['种得太迟','笑得手一歪','搁得像垃圾','走得比来时慢','骂得很响','挂得太低','咬得比谁都快','酸得眼角一缩','画得几乎一样','画得太小','绷得发酸','动得多些']) assert.deepEqual(r(text,'得'),['de'],text);
+ for (const text of ['得请渠务所来','得等渠务所','得看去哪儿','得看撑船的人','得算他的活','得先知道','得画大一点']) assert.deepEqual(r(text,'得'),['děi'],text);
+ assert.deepEqual(r('芥菜种得太迟','种'),['zhòng']);
+ assert.deepEqual(r('这包菜种','种'),['zhǒng']);
+ assert.deepEqual(r('她把纸还给他','还'),['huán']);
+ assert.deepEqual(r('没还的书','还'),['huán']);
+ assert.deepEqual(r('书还在这里','还'),['hái']);
+ assert.deepEqual(r('冲孩子吵','冲'),['chòng']);
+ assert.deepEqual(r('冲洗菜叶','冲'),['chōng']);
+ for (const text of ['倒像她不讲理','倒不是黑','倒没人再睡','倒把塔维看愣']) assert.deepEqual(r(text,'倒'),['dào'],text);
+ assert.deepEqual(r('跌倒','倒'),['dǎo']);
+ assert.deepEqual(r('轻咳一声','咳'),['ké']);
+ assert.deepEqual(r('夹固','夹'),['jiā']);
+ assert.deepEqual(r('夹进纸缝','夹'),['jiā']);
+ assert.deepEqual(r('守着力','着'),['zhe']);
+ for (const text of ['册子','匣子','果子']) assert.deepEqual(r(text,'子'),['zi'],text);
+ for (const text of ['只换板子','只咬一口','只看一眼','只看了几眼','只叫他看看']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ assert.deepEqual(r('轻载下','载'),['zài']);
+ assert.deepEqual(r('记载','载'),['zǎi']);
+});
