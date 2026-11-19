@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-332",
+  "chapter_sha256": "040d07adaab93c22fc9f9c22d375e3db3429fc73756a1a4cfac8b8e51c4edd72",
+  "catalog_sha256": "89bfe1fe743cd93aebb58ea6e275671b5e2aa082d75ab7f048b440d2732842cc",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-19T16:00:34.527065+00:00",
+  "review": {
+    "editorial": "Reread the scene separately, distinguishing reported information, personal inference and unanswered questions; kept the dialogue and transition readable without a summary dump.",
+    "continuity_or_facts": "Verified source attribution, document custody and provisional versus completed events against the prior chapters; did not turn a report into an institutional decision.",
+    "english_alignment": "Repaired a contextual pinyin indexing error without changing Chinese prose. Fresh previews cover version 2, including the corrected modal reading in pair 32; regression tests preserve both neighbouring characters."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-332-beginning.png",
+      "sha256": "513dea942c16b30b44dcf6ef06e4960848684665030ffb6827fd7db3eb45087b",
+      "notes": "Phone pinyin opening reviewed again after the versioned pronunciation repair; English is legible below each source line."
+    },
+    {
+      "section": "middle",
+      "pair": 19,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-332-middle.png",
+      "sha256": "fd52f09496cb6ca65bc192d9877fbb57f25d9c7c5f875cb1a15cd28f8ff272e0",
+      "notes": "Phone characters middle: guide placement and punctuation remain readable, with no unexplained English-free passage."
+    },
+    {
+      "section": "end",
+      "pair": 36,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-332-end.png",
+      "sha256": "1bf2ffa93d35781c288737a42f96c865197fcc56df5651eeb136128c449999ec",
+      "notes": "Phone character ending: the final source fragment and corresponding English are visible without clipping."
+    },
+    {
+      "section": "extra",
+      "pair": 19,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-332-desktop.png",
+      "sha256": "1fbdb488cabc974528e2eadb5895435eaeac8b42e05a937f1aa657f9c4d80878",
+      "notes": "Desktop pinyin middle reviewed after repair; pronunciation has an additional dedicated pair-32 sample."
+    },
+    {
+      "section": "extra",
+      "pair": 32,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-332-pronunciation.png",
+      "sha256": "bec23baf8f9fcb15134ff22f87540adca5eb9a0e4e69dd931e0243f4e029a938",
+      "notes": "Viewed corrected modal reading in the actual reader: initial zhè and following děi are both visible and correct; English remains sentence-local and legible."
+    }
+  ]
+}

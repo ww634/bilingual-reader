@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-334",
+  "chapter_sha256": "5278523676f388c7142796bce02d9235a0c846abe6e6542c78aed8cf591ee88f",
+  "catalog_sha256": "971242525d29b10135cd67bf84c0d7ca522aab6e53938e97c7456fe97dc534ac",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-19T16:00:34.532767+00:00",
+  "review": {
+    "editorial": "Reviewed the scene separately and revised an unexplained reference mark and ambiguous rehearsal wording; checked that actions, reactions and the peer’s own task have room to develop.",
+    "continuity_or_facts": "Verified the known materials, supervision, order of restoration and unloading, and modest scope of progress against the previous practice; no wider permission or unearned mastery is implied.",
+    "english_alignment": "Revised a sparse guide spotted in the actual reader and refreshed all previews for version 2. Inspected the flagged negative verb phrase separately; phone and desktop samples now have meaningful English beneath the source lines."
+  },
+  "warning_resolutions": {
+    "pair-27-chunk-4-coarse": "Retained the seven-character negated hand-withdrawal phrase as one grammatical action with a faithful continuous English span. It does not cross a sentence boundary. Inspected its actual pinyin rendering separately: the complete English phrase wraps legibly across two guide lines."
+  },
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-334-beginning.png",
+      "sha256": "913b2c455df708a133509a91f3d3fcc120e210137c85608343f30c50ddc17b20",
+      "notes": "Phone pinyin opening: narration and English wrap legibly with differentiated colours."
+    },
+    {
+      "section": "middle",
+      "pair": 22,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-334-middle.png",
+      "sha256": "24b4b32b30d8e10d974046f7e2a303d21e88a4731252b07aaf110ed0736916e7",
+      "notes": "Phone characters: the revised hand-description line now has a meaningful guide rather than an isolated article."
+    },
+    {
+      "section": "end",
+      "pair": 42,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-334-end.png",
+      "sha256": "9e3c1e218f80cd4d533a6898dd67869f27f4e46aca1aa004f43659bd84323600",
+      "notes": "Phone character ending: the closing sentence and English are fully readable above the footer."
+    },
+    {
+      "section": "extra",
+      "pair": 22,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-334-desktop.png",
+      "sha256": "5bc23fd4e22ef39addfe218c5a8bf27a73ee1a2e10766102fd8741b63a592526",
+      "notes": "Desktop pinyin middle: checked the revised guide and neighbouring lines; no isolated article remains."
+    },
+    {
+      "section": "extra",
+      "pair": 27,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-334-alignment.png",
+      "sha256": "7dc786ff7aee50fd2f42006cee5bcf569dd20e97c354dba3eb35b395b4da40b5",
+      "notes": "Viewed the flagged action phrase in the actual desktop reader; the negation, timing and action are legible in a continuous two-line English guide, with the surrounding source and punctuation visible."
+    }
+  ]
+}

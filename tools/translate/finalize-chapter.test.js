@@ -147,3 +147,33 @@ test('canal records and classroom readings keep lexical context', () => {
  assert.deepEqual(r('轻载下','载'),['zài']);
  assert.deepEqual(r('记载','载'),['zǎi']);
 });
+
+
+test('letters and shared-room contexts preserve grammatical readings', () => {
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['吹得乱响','拆得出来','答得干脆','听得出来','笑得刚按住','响得不肯讲道理','说得很平','小得出奇','写得太宽','压得很平','写得很重','说得不大妥当','干得很慢']) assert.deepEqual(r(text,'得'),['de'],text);
+ for(const text of ['还得自己开口','这得问她','还得站着等']) assert.deepEqual(r(text,'得'),['děi'],text);
+ assert.deepEqual(r('怔了一下','怔'),['zhèng']);
+ assert.deepEqual(r('出了事','了'),['le']);
+ assert.deepEqual(r('上次数错了','数'),['shǔ']);
+ assert.deepEqual(r('次数很多','数'),['shù']);
+ assert.deepEqual(r('他没收到信','没'),['méi']);
+ assert.deepEqual(r('没收财物','没'),['mò']);
+ assert.deepEqual(r('碟子和豆子镊子肚子脑子','子'),['zi','zi','zi','zi','zi']);
+ for(const text of ['只差最后一点','只写另行通知','只问一次','只问洛衡','只写还没有']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ for(const text of ['倒让他不知','倒记得很清楚','倒一点不嫌累']) assert.deepEqual(r(text,'倒'),['dào'],text);
+});
+
+
+test('courtyard songs distinguish melody, counting and returning a bowl', () => {
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['熏得闭了一只眼','饿得去吃纸']) assert.deepEqual(r(text,'得'),['de'],text);
+ assert.deepEqual(r('得坐下来谈','得'),['děi']);
+ for(const text of ['只托伊文带话','只会后半段','只从回来的人嘴里']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ assert.deepEqual(r('那条岔出去的调','调'),['diào']);
+ assert.deepEqual(r('调节水流','调'),['tiáo']);
+ assert.deepEqual(r('数了两颗','数'),['shǔ']);
+ assert.deepEqual(r('倒没有谁','倒'),['dào']);
+ assert.deepEqual(r('把碗还给他','还'),['huán']);
+ assert.deepEqual(r('碗还在桌上','还'),['hái']);
+});

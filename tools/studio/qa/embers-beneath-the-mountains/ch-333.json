@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-333",
+  "chapter_sha256": "421efa5199b57aedc4e2bf2b4ebcc2093919e0f5037fb5bf62314bb6ded1509c",
+  "catalog_sha256": "3e4b3f1bf3a1da71fb43cbe6a15a4b531b6e15f2800491264633329583e06458",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-19T16:00:34.530242+00:00",
+  "review": {
+    "editorial": "Reviewed the complete letter-and-conversation scene for distinct voices, emotional pauses and the transition into the following day; retained ordinary humour and the quieter ending.",
+    "continuity_or_facts": "Checked message travel, who has actually received information, and the difference between an invitation and another person’s agreement. Compared the scene with the actual preceding chapter.",
+    "english_alignment": "Reviewed sentence-local glosses, pronouns and negation. Phone character samples and pinyin opening/desktop samples retain readable English guides and punctuation."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-333-beginning.png",
+      "sha256": "bcc199e7dc81a7115240fe59e42308b6ef9a7f67a450773698c8e6a7f723af9e",
+      "notes": "Phone pinyin opening: legible text and aligned English, including the transition into the letter."
+    },
+    {
+      "section": "middle",
+      "pair": 18,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-333-middle.png",
+      "sha256": "72a3dc1f33d9db7601e3e3fb1620ab8b5c231b9e41ffeb045b61541c03c70f30",
+      "notes": "Phone character middle: meaningful guide text persists through narration and quoted writing."
+    },
+    {
+      "section": "end",
+      "pair": 34,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-333-end.png",
+      "sha256": "63476e7ad967a4086e7f2304f0fa0e258e30a9ef9f347dad071c8878504010b8",
+      "notes": "Phone character ending: the final sentence continues naturally above the page footer."
+    },
+    {
+      "section": "extra",
+      "pair": 18,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-333-desktop.png",
+      "sha256": "11f2080354f2c17685786a8aa8b761ce8c90fab7073d2a42b7aef6dc7a878f92",
+      "notes": "Desktop pinyin: readable source spacing, English wrapping and punctuation in the middle sample."
+    }
+  ]
+}
