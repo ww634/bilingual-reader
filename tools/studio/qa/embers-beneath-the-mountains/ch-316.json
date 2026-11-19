@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-316",
+  "chapter_sha256": "2863ea50d7c642e224dd20ad12098cc22d77ed1f2b39810e0ef40165ec1bba0d",
+  "catalog_sha256": "f7d496d1e5a7d279f6269b30b0588c600b853594deb2e7287e771a995633289f",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-19T01:01:53.513180+00:00",
+  "review": {
+    "editorial": "Reviewed the chapter as a new-day opening, with the reason for each action established before the next transition.",
+    "continuity_or_facts": "Checked the timing and scope of the agreed activity against the preceding ending; no skipped obligation introduced.",
+    "english_alignment": "Checked clause-level guides in both scripts and phone/desktop wrapping; no structural warnings."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-316-beginning.png",
+      "sha256": "55c90497b764f6ac7c015d8e3af7816a328d59475bed856d8310df39c3a08751",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "middle",
+      "pair": 9,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-316-middle.png",
+      "sha256": "45a5ab1e16c9d9ca357a07093438419b26cebe0c7cd4cc15d9197aaad0b3797f",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "end",
+      "pair": 17,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-316-end.png",
+      "sha256": "9db947ed5866c31fb3b73d2150627c1f3772e72733ec93090c8b274ce84a3306",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "extra",
+      "pair": 9,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-316-desktop.png",
+      "sha256": "500a9216e713625ac8dfc4f6296b5c093b4fba29ce29e09fd27af14798c113ce",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    }
+  ]
+}

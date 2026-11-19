@@ -23,6 +23,11 @@ const jieba = Jieba.withDict(dict);
 // The upstream lexicon misses the return verb 递还. Reuse the unambiguous
 // reading from 归还 rather than hand-authoring syllables in chapter data.
 const returnSyllable = pinyin("归还", { type: "array", toneType: "symbol" })[1];
+const rolledSyllable = pinyin("卷起", { type: "array", toneType: "symbol" })[0];
+const obligationSyllable = pinyin("非得", { type: "array", toneType: "symbol" })[1];
+const complementSyllable = pinyin("得", { type: "array", toneType: "none" })[0];
+const grippingSyllable = pinyin("夹子", { type: "array", toneType: "symbol" })[0];
+const emptySyllable = pinyin("空船", { type: "array", toneType: "symbol" })[0];
 // 系 also defaults to the relationship/system sense in explicit tying phrases.
 // Select its other dictionary reading; never store authored pinyin in chapters.
 const relationSyllable = pinyin("关系", { type: "array", toneType: "symbol" })[1];
@@ -121,6 +126,16 @@ export function romanizeWithMap(text) {
       for (const match of run.matchAll(/闭着眼/g)) syllables[match.index + 1] = aspectSyllable;
       for (const match of run.matchAll(/一轻一重/g)) syllables[match.index + 3] = heavySyllable;
       for (const match of run.matchAll(/(?<=把席子|把表)还(?=给他)/g)) syllables[match.index] = returnSyllable;
+      // Explicit return obligation and rolled-map classifier; preserve 还有 and book volumes.
+      for (const m of run.matchAll(/都得一道还/g)) { syllables[m.index + 1] = obligationSyllable; syllables[m.index + 4] = returnSyllable; }
+      for (const m of run.matchAll(/一卷图/g)) syllables[m.index + 1] = rolledSyllable;
+      for (const m of run.matchAll(/纸卷/g)) syllables[m.index + 1] = rolledSyllable;
+      for (const m of run.matchAll(/得空着船/g)) { syllables[m.index] = obligationSyllable; syllables[m.index + 1] = emptySyllable; }
+      for (const m of run.matchAll(/又得听/g)) syllables[m.index + 1] = obligationSyllable;
+      for (const m of run.matchAll(/得有你真能做的事/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/说得很干脆|问得烦|抱得那么紧/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/拿着长夹/g)) syllables[m.index + 3] = grippingSyllable;
+      for (const m of run.matchAll(/只付了/g)) syllables[m.index] = onlySyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;

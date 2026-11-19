@@ -86,3 +86,24 @@ test('context distinguishes returning, counting, and the common alternate readin
  assert.deepEqual(syllables('伸手替他数了一遍', '数'), ['shǔ']);
  assert.deepEqual(syllables('这个数不对', '数'), ['shù']);
 });
+
+test('return obligation and a rolled map retain contextual readings', () => {
+ const readings = (text, char) => { const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]); };
+ assert.deepEqual(readings('完没完都得一道还', '得'), ['děi']);
+ assert.deepEqual(readings('完没完都得一道还', '还'), ['huán']);
+ assert.deepEqual(readings('将一卷图往前推', '卷'), ['juǎn']);
+ assert.deepEqual(readings('纸上还有记号', '还'), ['hái']);
+ assert.deepEqual(readings('读完一卷书', '卷'), ['juàn']);
+ assert.deepEqual(readings('得空着船撑回来', '得'), ['děi']);
+ assert.deepEqual(readings('得空着船撑回来', '空'), ['kōng']);
+ assert.deepEqual(readings('我又得听他说', '得'), ['děi']);
+ assert.deepEqual(readings('你只付了单程的钱', '只'), ['zhǐ']);
+ assert.deepEqual(readings('把纸卷装稳', '卷'), ['juǎn']);
+ assert.deepEqual(readings('他得空来坐坐', '得'), ['dé']);
+ assert.deepEqual(readings('她说得很干脆', '得'), ['de']);
+ assert.deepEqual(readings('嫌她问得烦', '得'), ['de']);
+ assert.deepEqual(readings('抱得那么紧', '得'), ['de']);
+ assert.deepEqual(readings('得有你真能做的事', '得'), ['děi']);
+ assert.deepEqual(readings('妇人拿着长夹', '夹'), ['jiā']);
+ assert.deepEqual(readings('取得成绩', '得'), ['dé']);
+});
