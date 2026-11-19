@@ -177,3 +177,62 @@ test('courtyard songs distinguish melody, counting and returning a bowl', () => 
  assert.deepEqual(r('把碗还给他','还'),['huán']);
  assert.deepEqual(r('碗还在桌上','还'),['hái']);
 });
+
+
+test('map lending and modal contexts retain their contextual readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('卷好的纸','卷'),['juǎn']);
+ assert.deepEqual(r('不过要还','还'),['huán']);
+ for(const text of ['这张我得留着','还得从脚下重新看']) assert.deepEqual(r(text,'得'),['děi'],text);
+ assert.deepEqual(r('吹得轻轻碰墙','得'),['de']);
+ assert.deepEqual(r('只肯给我看好看的','只'),['zhǐ']);
+ assert.deepEqual(r('要还有问题就问','还'),['hái']);
+});
+
+
+test('meeting records keep line, return and left-behind readings distinct',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('那行住处保留','行'),['háng']);
+ assert.deepEqual(r('把候车棚草图还给他','还'),['huán']);
+ assert.deepEqual(r('只问纸够不够','只'),['zhǐ']);
+ assert.deepEqual(r('笑得把信封也抖了一下','得'),['de']);
+ assert.deepEqual(r('谁把杯子落在那里了','落'),['là']);
+ assert.deepEqual(r('落在地上','落'),['luò']);
+});
+
+
+test('packing and woodwork contexts keep action and particle readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['描得深了些','笑得写不下字','说得有些快','切得歪','卷得比家信整齐','按得太用力']) assert.deepEqual(r(text,'得'),['de'],text);
+ assert.deepEqual(r('那得看他肯不肯','得'),['děi']);
+ for(const text of ['别只给一张','只在结尾','只数着日子']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ for(const text of ['卷着细细的亮屑','卷得比家信整齐']) assert.deepEqual(r(text,'卷'),['juǎn'],text);
+ for(const text of ['夹在旧书里','纸夹','夹住萝卜皮']) assert.deepEqual(r(text,'夹'),['jiā'],text);
+ assert.deepEqual(r('数着日子','数'),['shǔ']);
+});
+
+
+test('road departure contexts preserve strap, return and grammatical readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['醒得比钟早','淡得几乎分不清','小得认不出脸','走得远']) assert.deepEqual(r(text,'得'),['de'],text);
+ assert.deepEqual(r('还得回去占脸盆','得'),['děi']);
+ for(const text of ['只睡了半个脑袋','只叫他自己试试']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ assert.deepEqual(r('他数过','数'),['shǔ']);
+ assert.deepEqual(r('代数过程','数'),['shù']);
+ assert.deepEqual(r('惦记着还','还'),['huán']);
+ assert.deepEqual(r('肩带勒不勒','勒'),['lēi','lēi']);
+ assert.deepEqual(r('重新扎筐','扎'),['zā']);
+ assert.deepEqual(r('拿针扎筐底','扎'),['zhā']);
+ assert.deepEqual(r('倒是他们','倒'),['dào']);
+});
+
+
+test('wayside conversations preserve growth and grammatical readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['磨得发白','改得好听']) assert.deepEqual(r(text,'得'),['de'],text);
+ for(const text of ['还得自己带灯','这个得等回去']) assert.deepEqual(r(text,'得'),['děi'],text);
+ for(const text of ['只肯修山门往上的','只问他昨日','只认到山门']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ assert.deepEqual(r('只要里头长的','长'),['zhǎng']);
+ assert.deepEqual(r('长短不同','长'),['cháng']);
+ assert.deepEqual(r('里头长的那一根','长'),['cháng']);
+});

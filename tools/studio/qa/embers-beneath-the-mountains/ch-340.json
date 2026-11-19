@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-340",
+  "chapter_sha256": "97d9ac131f6b9af09dc6546b63ad1d026285ab840faade95296dba86375bed1c",
+  "catalog_sha256": "5bd4ca2d0fc433a107acc35a2124b126d01ac3f56362fc75189571b6c15fd403",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-19T18:08:29.874960+00:00",
+  "review": {
+    "editorial": "Reviewed the station scene and its change of atmosphere; established the wet footwear, corrected the elapsed-day callback and fixed a seating action that lacked a physical setup.",
+    "continuity_or_facts": "Added a witnessed introduction before a new character uses the student’s background. Checked the day’s locations, departure of an independent traveller, personal expense and attributed competing accounts; no pending decision is presented as completed.",
+    "english_alignment": "Reviewed contextual growth, modal and particle readings and every local gloss. Phone pinyin opening, character middle/ending and desktop pinyin show meaningful English and unclipped punctuation."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-340-beginning.png",
+      "sha256": "6bab9e74c9f7341f060c2f5799a8ee7114106dd466e38ccf73825bad3b7cde6e",
+      "notes": "Phone pinyin opening: source and English remain legible through the first sentence and transition, with readable colours and punctuation."
+    },
+    {
+      "section": "middle",
+      "pair": 19,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-340-middle.png",
+      "sha256": "6a04f408d68d8f4b6e415a2f69ee5429f76e968ffd670c913d1ddf40dc3a6564",
+      "notes": "Phone character middle: dialogue/narration wrap with meaningful English beneath the source lines, without visible clipping."
+    },
+    {
+      "section": "end",
+      "pair": 37,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-340-end.png",
+      "sha256": "46754ce5360df9f3371f38af2b10da18a4051247666ddc6ff22c31ce69d3556e",
+      "notes": "Phone character ending: the closing source fragment and corresponding English are visible above the footer; no English-free paragraph unit."
+    },
+    {
+      "section": "extra",
+      "pair": 19,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-340-desktop.png",
+      "sha256": "ed4ce8e65cb554ba012b1793bbd896dfdaee02bcd2e3c8bb117448ac5133af78",
+      "notes": "Desktop pinyin middle: inspected word spacing, punctuation and English wrapping in the actual reader; guides remain readable."
+    }
+  ]
+}

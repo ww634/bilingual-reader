@@ -26,6 +26,8 @@ const returnSyllable = pinyin("归还", { type: "array", toneType: "symbol" })[1
 const rolledSyllable = pinyin("卷起", { type: "array", toneType: "symbol" })[0];
 const obligationSyllable = pinyin("非得", { type: "array", toneType: "symbol" })[1];
 const complementSyllable = pinyin("得", { type: "array", toneType: "none" })[0];
+const leftBehindSyllable = pinyin("丢三落四", { type: "array", toneType: "symbol" })[2];
+const growingSyllable = pinyin("生长", { type: "array", toneType: "symbol" })[1];
 const completedSyllable = pinyin("看了", { type: "array", toneType: "symbol" })[1];
 const startledSyllable = pinyin("怔", { type: "array", multiple: true, toneType: "symbol" })[1];
 const loadSyllable = pinyin("负载", { type: "array", toneType: "symbol" })[1];
@@ -135,15 +137,27 @@ export function romanizeWithMap(text) {
       for (const match of run.matchAll(/没(?=入单)/g)) syllables[match.index] = negativeHaveSyllable;
       for (const match of run.matchAll(/闭着眼/g)) syllables[match.index + 1] = aspectSyllable;
       for (const match of run.matchAll(/一轻一重/g)) syllables[match.index + 3] = heavySyllable;
-      for (const match of run.matchAll(/(?<=把席子|把表|把图|把碗)还(?=给他)/g)) syllables[match.index] = returnSyllable;
+      for (const match of run.matchAll(/(?<=把席子|把表|把图|把碗|草图)还(?=给他)/g)) syllables[match.index] = returnSyllable;
       // Explicit return obligation and rolled-map classifier; preserve 还有 and book volumes.
       for (const m of run.matchAll(/都得一道还/g)) { syllables[m.index + 1] = obligationSyllable; syllables[m.index + 4] = returnSyllable; }
       for (const m of run.matchAll(/一卷图/g)) syllables[m.index + 1] = rolledSyllable;
+      for (const m of run.matchAll(/卷好的纸/g)) syllables[m.index] = rolledSyllable;
+      for (const m of run.matchAll(/卷着细细|卷得比/g)) syllables[m.index] = rolledSyllable;
+      for (const m of run.matchAll(/夹在旧书|夹住萝卜皮/g)) syllables[m.index] = grippingSyllable;
+      for (const m of run.matchAll(/纸夹/g)) syllables[m.index + 1] = grippingSyllable;
+      for (const m of run.matchAll(/数着日子/g)) syllables[m.index] = countSyllable;
+      for (const m of run.matchAll(/(?<=他)数过/g)) syllables[m.index] = countSyllable;
+      for (const m of run.matchAll(/惦记着还$/g)) syllables[m.index + 3] = returnSyllable;
+      for (const m of run.matchAll(/勒不勒/g)) { syllables[m.index] = cinchSyllable; syllables[m.index + 2] = cinchSyllable; }
+      for (const m of run.matchAll(/重新扎筐/g)) syllables[m.index + 2] = bandageSyllable;
+      for (const m of run.matchAll(/倒是他们/g)) syllables[m.index] = pourSyllable;
+      for (const m of run.matchAll(/只要里头长的/g)) syllables[m.index + 4] = growingSyllable;
+      for (const m of run.matchAll(/要还$/g)) syllables[m.index + 1] = returnSyllable;
       for (const m of run.matchAll(/纸卷/g)) syllables[m.index + 1] = rolledSyllable;
       for (const m of run.matchAll(/得空着船/g)) { syllables[m.index] = obligationSyllable; syllables[m.index + 1] = emptySyllable; }
       for (const m of run.matchAll(/又得听/g)) syllables[m.index + 1] = obligationSyllable;
-      for (const m of run.matchAll(/得有你真能做的事|得翻|得分神|得有人|得请渠务所|得等渠务所|得看去哪儿|得看撑船|得算他的活|得先知道|得画大一点|得自己开口|得问她|得站着|得坐下来谈/g)) syllables[m.index] = obligationSyllable;
-      for (const m of run.matchAll(/说得很干脆|说得慢些|说得很随意|问得烦|问得直接|跑得肚子疼|裂得很长|浸得发黑|磨得发亮|暗得像|装得不对|洗得比|辣得他|笑得往后仰|压得很平|写得很重|说得不大妥当|干得很慢|说得很平|小得出奇|写得太宽|吹得乱响|拆得出来|答得干脆|听得出来|笑得刚|熏得闭了|饿得去吃|响得不肯|动得多些|画得几乎|画得太小|绷得发酸|走得比|骂得很响|挂得太低|咬得比|酸得眼角|种得太迟|笑得手|搁得像|抱得那么紧/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/得有你真能做的事|得翻|得分神|得有人|得请渠务所|得等渠务所|得看去哪儿|得看撑船|得算他的活|得先知道|得画大一点|得自己开口|得问她|得站着|得坐下来谈|得留着|得从脚下|得看他肯不肯|得回去占|得自己带灯|得等回去/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/说得很干脆|说得慢些|说得很随意|问得烦|问得直接|跑得肚子疼|裂得很长|浸得发黑|磨得发亮|暗得像|装得不对|洗得比|辣得他|笑得往后仰|压得很平|写得很重|说得不大妥当|干得很慢|说得很平|小得出奇|写得太宽|吹得乱响|拆得出来|答得干脆|听得出来|笑得刚|笑得把信封|熏得闭了|饿得去吃|响得不肯|吹得轻轻|描得深了些|笑得写不下字|说得有些快|切得歪|卷得比|按得太用力|淡得几乎|小得认不出脸|走得远|醒得比钟|磨得发白|改得好听|动得多些|画得几乎|画得太小|绷得发酸|走得比|骂得很响|挂得太低|咬得比|酸得眼角|种得太迟|笑得手|搁得像|抱得那么紧/g)) syllables[m.index + 1] = complementSyllable;
       for (const m of run.matchAll(/拿着长夹/g)) syllables[m.index + 3] = grippingSyllable;
       for (const m of run.matchAll(/剪子|凳子|板子|步子|册子|匣子|果子|碟子|豆子|镊子|肚子|脑子/g)) syllables[m.index + 1] = neutralZiSyllable;
       for (const m of run.matchAll(/铺着|铺好/g)) syllables[m.index] = spreadSyllable;
@@ -157,7 +171,9 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/数了两颗/g)) syllables[m.index] = countSyllable;
       for (const m of run.matchAll(/岔出去的调/g)) syllables[m.index + 4] = pinyin("调子", { type: "array", toneType: "symbol" })[0];
       for (const m of run.matchAll(/没收到/g)) syllables[m.index] = negativeHaveSyllable;
-      for (const m of run.matchAll(/只写另行通知|只问一次|只问洛衡|只托伊文|只会后半段|只从回来的人|只写还没有/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/杯子落在那里了/g)) syllables[m.index + 2] = leftBehindSyllable;
+      for (const m of run.matchAll(/那行住处/g)) syllables[m.index + 1] = tradeSyllable;
+      for (const m of run.matchAll(/只写另行通知|只问一次|只问洛衡|只问纸|只问他昨日|只认到山门|只给一张|只在结尾|只数着日子|只托伊文|只睡了半个|只叫他自己|只肯|只会后半段|只从回来的人|只写还没有/g)) syllables[m.index] = onlySyllable;
       for (const m of run.matchAll(/怔了一下/g)) syllables[m.index] = startledSyllable;
       for (const m of run.matchAll(/轻载/g)) syllables[m.index + 1] = loadSyllable;
       for (const m of run.matchAll(/只看了几眼|只叫他看看/g)) syllables[m.index] = onlySyllable;
