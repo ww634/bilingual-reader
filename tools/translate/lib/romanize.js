@@ -26,6 +26,10 @@ const returnSyllable = pinyin("归还", { type: "array", toneType: "symbol" })[1
 const rolledSyllable = pinyin("卷起", { type: "array", toneType: "symbol" })[0];
 const obligationSyllable = pinyin("非得", { type: "array", toneType: "symbol" })[1];
 const complementSyllable = pinyin("得", { type: "array", toneType: "none" })[0];
+const tightenSyllable = pinyin("旋", { type: "array", multiple: true, toneType: "symbol" })[1];
+const peelingSyllable = pinyin("剥削", { type: "array", toneType: "symbol" })[0];
+const spreadSyllable = pinyin("铺开", { type: "array", toneType: "symbol" })[0];
+const neutralZiSyllable = pinyin("子", { type: "array", toneType: "none" })[0];
 const grippingSyllable = pinyin("夹子", { type: "array", toneType: "symbol" })[0];
 const emptySyllable = pinyin("空船", { type: "array", toneType: "symbol" })[0];
 // 系 also defaults to the relationship/system sense in explicit tying phrases.
@@ -125,17 +129,24 @@ export function romanizeWithMap(text) {
       for (const match of run.matchAll(/没(?=入单)/g)) syllables[match.index] = negativeHaveSyllable;
       for (const match of run.matchAll(/闭着眼/g)) syllables[match.index + 1] = aspectSyllable;
       for (const match of run.matchAll(/一轻一重/g)) syllables[match.index + 3] = heavySyllable;
-      for (const match of run.matchAll(/(?<=把席子|把表)还(?=给他)/g)) syllables[match.index] = returnSyllable;
+      for (const match of run.matchAll(/(?<=把席子|把表|把图)还(?=给他)/g)) syllables[match.index] = returnSyllable;
       // Explicit return obligation and rolled-map classifier; preserve 还有 and book volumes.
       for (const m of run.matchAll(/都得一道还/g)) { syllables[m.index + 1] = obligationSyllable; syllables[m.index + 4] = returnSyllable; }
       for (const m of run.matchAll(/一卷图/g)) syllables[m.index + 1] = rolledSyllable;
       for (const m of run.matchAll(/纸卷/g)) syllables[m.index + 1] = rolledSyllable;
       for (const m of run.matchAll(/得空着船/g)) { syllables[m.index] = obligationSyllable; syllables[m.index + 1] = emptySyllable; }
       for (const m of run.matchAll(/又得听/g)) syllables[m.index + 1] = obligationSyllable;
-      for (const m of run.matchAll(/得有你真能做的事/g)) syllables[m.index] = obligationSyllable;
-      for (const m of run.matchAll(/说得很干脆|问得烦|抱得那么紧/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/得有你真能做的事|得翻|得分神|得有人/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/说得很干脆|说得慢些|说得很随意|问得烦|问得直接|跑得肚子疼|裂得很长|浸得发黑|磨得发亮|暗得像|装得不对|洗得比|辣得他|笑得往后仰|抱得那么紧/g)) syllables[m.index + 1] = complementSyllable;
       for (const m of run.matchAll(/拿着长夹/g)) syllables[m.index + 3] = grippingSyllable;
-      for (const m of run.matchAll(/只付了/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/剪子|凳子|板子|步子/g)) syllables[m.index + 1] = neutralZiSyllable;
+      for (const m of run.matchAll(/铺着|铺好/g)) syllables[m.index] = spreadSyllable;
+      for (const m of run.matchAll(/铁夹/g)) syllables[m.index + 1] = grippingSyllable;
+      for (const m of run.matchAll(/夹口/g)) syllables[m.index] = grippingSyllable;
+      for (const m of run.matchAll(/旋紧/g)) syllables[m.index] = tightenSyllable;
+      for (const m of run.matchAll(/剥落/g)) syllables[m.index] = peelingSyllable;
+      for (const m of run.matchAll(/路仍夹在/g)) syllables[m.index + 2] = grippingSyllable;
+      for (const m of run.matchAll(/只付了|只换这块板/g)) syllables[m.index] = onlySyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;

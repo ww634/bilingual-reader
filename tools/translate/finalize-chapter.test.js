@@ -107,3 +107,19 @@ test('return obligation and a rolled map retain contextual readings', () => {
  assert.deepEqual(readings('妇人拿着长夹', '夹'), ['jiā']);
  assert.deepEqual(readings('取得成绩', '得'), ['dé']);
 });
+
+
+test('workshop and route contexts distinguish modal, particle and tool readings', () => {
+ const readings = (text, char) => {const m = romanizeWithMap(text); return m.srcChars.flatMap((c,i) => c === char ? [m.pinyin.slice(...m.spans[i])] : []);};
+ for (const text of ['说得慢些', '说得很随意', '问得直接', '装得不对', '洗得比从前黑', '辣得他吸气', '笑得往后仰', '跑得肚子疼', '裂得很长', '浸得发黑', '磨得发亮', '暗得像旧血']) assert.deepEqual(readings(text, '得'), ['de'], text);
+ for (const text of ['得翻', '她得分神听', '又得有人来问']) assert.deepEqual(readings(text, '得'), ['děi'], text);
+ for (const text of ['剪子', '凳子', '板子', '步子']) assert.deepEqual(readings(text, '子'), ['zi'], text);
+ for (const text of ['铁夹', '夹口', '路仍夹在两墙之间']) assert.deepEqual(readings(text, '夹'), ['jiā'], text);
+ assert.deepEqual(readings('旋紧螺杆', '旋'), ['xuàn']);
+ assert.deepEqual(readings('红漆剥落', '剥'), ['bō']);
+ assert.deepEqual(readings('她把图还给他', '还'), ['huán']);
+ assert.deepEqual(readings('把纸铺好', '铺'), ['pū']);
+ assert.deepEqual(readings('石板还铺着', '铺'), ['pū']);
+ assert.deepEqual(readings('他得空来坐坐', '得'), ['dé']);
+ assert.deepEqual(readings('取得成绩', '得'), ['dé']);
+});
