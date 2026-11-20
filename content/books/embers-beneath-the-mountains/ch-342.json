@@ -1,0 +1,4448 @@
+{
+  "id": "ch-342",
+  "book_id": "embers-beneath-the-mountains",
+  "language": "zh",
+  "version": 1,
+  "title": {
+    "target": "dìèrgēn duǎn shǐ",
+    "english": "The Second Bolt",
+    "hanzi": "第二根短矢"
+  },
+  "pairs": [
+    {
+      "target": "tǎ wéi de xīgài zhuàng dào dìshàng , xiān juéde téng , suíhòu cái tīngjiàn zìjǐ de hūxī .",
+      "english": "Tavi’s knees struck the ground; he felt pain first and only then heard his own breathing.",
+      "hanzi": "塔维的膝盖撞到地上，先觉得疼，随后才听见自己的呼吸。\n",
+      "alignment": [
+        {
+          "english": "Tavi’s",
+          "target": "tǎ wéi de",
+          "hanzi": "塔维的",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "knees",
+          "target": "xīgài",
+          "hanzi": "膝盖",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "struck",
+          "target": "zhuàng dào",
+          "hanzi": "撞到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the ground",
+          "target": "dìshàng",
+          "hanzi": "地上",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "first",
+          "target": "xiān",
+          "hanzi": "先",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "felt",
+          "target": "juéde",
+          "hanzi": "觉得",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pain",
+          "target": "téng",
+          "hanzi": "疼",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "only then",
+          "target": "suíhòu cái",
+          "hanzi": "随后才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "heard",
+          "target": "tīngjiàn",
+          "hanzi": "听见",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "his own",
+          "target": "zìjǐ de",
+          "hanzi": "自己的",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "breathing",
+          "target": "hūxī",
+          "hanzi": "呼吸",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "qiángjiǎo yǒu kuài tūchūlái de yán jǐ , zhēzhù le xiǎochē nàbiān , tā suō jìnqù , bànbiān liǎn tiēzhe shī shí , ěrduo lǐ hái liú zhe nà yíxià xiǎng .",
+      "english": "At the wall corner there was a protruding rock rib screening off the cart; he curled behind it, half his face against wet stone, that sound still lingering in his ears.",
+      "hanzi": "墙角有块凸出来的岩脊，遮住了小车那边，他缩进去，半边脸贴着湿石，耳朵里还留着那一下响。\n",
+      "alignment": [
+        {
+          "english": "At the wall corner",
+          "target": "qiángjiǎo",
+          "hanzi": "墙角",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "there was a",
+          "target": "yǒu kuài",
+          "hanzi": "有块",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "protruding",
+          "target": "tūchūlái de",
+          "hanzi": "凸出来的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "rock rib",
+          "target": "yán jǐ",
+          "hanzi": "岩脊",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "screening off",
+          "target": "zhēzhù le",
+          "hanzi": "遮住了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the cart",
+          "target": "xiǎochē nàbiān",
+          "hanzi": "小车那边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "curled behind it",
+          "target": "suō jìnqù",
+          "hanzi": "缩进去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "half",
+          "target": "bànbiān",
+          "hanzi": "半边",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "his face",
+          "target": "liǎn",
+          "hanzi": "脸",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "against",
+          "target": "tiēzhe",
+          "hanzi": "贴着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "wet stone",
+          "target": "shī shí",
+          "hanzi": "湿石",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "in his ears",
+          "target": "ěrduo lǐ",
+          "hanzi": "耳朵里",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "still",
+          "target": "hái",
+          "hanzi": "还",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "lingering",
+          "target": "liú zhe",
+          "hanzi": "留着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that sound",
+          "target": "nà yíxià xiǎng",
+          "hanzi": "那一下响",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "nài lěi méiyǒu bǎ tā dāng bāofú wǎng shēnhòu yì rēng , shǒu réng ànzhe tā jiān , dīshēng jiào tā yán qiáng nuó , bié qǐshēn .",
+      "english": "Nerai did not toss him behind her like baggage; her hand still pressed his shoulder as she quietly told him to edge along the wall and stay down.",
+      "hanzi": "奈蕾没有把他当包袱往身后一扔，手仍按着他肩，低声叫他沿墙挪，别起身。\n",
+      "alignment": [
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "did not",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "him",
+          "target": "bǎ tā",
+          "hanzi": "把他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "like baggage",
+          "target": "dāng bāofú",
+          "hanzi": "当包袱",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "behind her",
+          "target": "wǎng shēnhòu",
+          "hanzi": "往身后",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "toss",
+          "target": "yì rēng",
+          "hanzi": "一扔",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "her hand",
+          "target": "shǒu",
+          "hanzi": "手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "still",
+          "target": "réng",
+          "hanzi": "仍",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pressed",
+          "target": "ànzhe",
+          "hanzi": "按着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "his shoulder",
+          "target": "tā jiān",
+          "hanzi": "他肩",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "quietly",
+          "target": "dīshēng",
+          "hanzi": "低声",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "told him",
+          "target": "jiào tā",
+          "hanzi": "叫他",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "along the wall",
+          "target": "yán qiáng",
+          "hanzi": "沿墙",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "to edge",
+          "target": "nuó",
+          "hanzi": "挪",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "stay down",
+          "target": "bié qǐshēn",
+          "hanzi": "别起身",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "qiántou duān nǔ de rén wān xiàyāo , jiǎo cǎizhù nǔ tóu , zhèngzài lā nàgēn jǐn de fāliàng de xián .",
+      "english": "The crossbowman ahead bent down with his foot pinning the bow head and was pulling the string so taut it shone.",
+      "hanzi": "前头端弩的人弯下腰，脚踩住弩头，正在拉那根紧得发亮的弦。\n",
+      "alignment": [
+        {
+          "english": "ahead",
+          "target": "qiántou",
+          "hanzi": "前头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "The crossbowman",
+          "target": "duān nǔ de rén",
+          "hanzi": "端弩的人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "bent down",
+          "target": "wān xiàyāo",
+          "hanzi": "弯下腰",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "his foot",
+          "target": "jiǎo",
+          "hanzi": "脚",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pinning",
+          "target": "cǎizhù",
+          "hanzi": "踩住",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the bow head",
+          "target": "nǔ tóu",
+          "hanzi": "弩头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "was",
+          "target": "zhèngzài",
+          "hanzi": "正在",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "pulling",
+          "target": "lā",
+          "hanzi": "拉",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the",
+          "target": "nàgēn",
+          "hanzi": "那根",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "so taut",
+          "target": "jǐn de",
+          "hanzi": "紧得",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "it shone",
+          "target": "fāliàng de",
+          "hanzi": "发亮的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "string",
+          "target": "xián",
+          "hanzi": "弦",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi cóng nài lěi yī biān kànjiàn tā de shǒu , hūrán míngbái gāngcái nàgēn dōngxī búshì xiàrén de kōng xiǎng , xià yìgēn yě huì yǒu gè qùchù .",
+      "english": "Through the gap beside Nerai’s coat Tavi saw his hands and suddenly understood the earlier bolt had not been a hollow noise to frighten them: the next one would land somewhere too.",
+      "hanzi": "塔维从奈蕾衣边看见他的手，忽然明白刚才那根东西不是吓人的空响，下一根也会有个去处。\n",
+      "alignment": [
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "Through the gap beside",
+          "target": "cóng",
+          "hanzi": "从",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Nerai’s",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "coat",
+          "target": "yī biān",
+          "hanzi": "衣边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "saw",
+          "target": "kànjiàn",
+          "hanzi": "看见",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "tā de",
+          "hanzi": "他的",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "hands",
+          "target": "shǒu",
+          "hanzi": "手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "suddenly",
+          "target": "hūrán",
+          "hanzi": "忽然",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "understood",
+          "target": "míngbái",
+          "hanzi": "明白",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "earlier",
+          "target": "gāngcái",
+          "hanzi": "刚才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "bolt",
+          "target": "nàgēn dōngxī",
+          "hanzi": "那根东西",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "had not been",
+          "target": "búshì",
+          "hanzi": "不是",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "to frighten them",
+          "target": "xiàrén de",
+          "hanzi": "吓人的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "a hollow noise",
+          "target": "kōng xiǎng",
+          "hanzi": "空响",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the next one",
+          "target": "xià yìgēn",
+          "hanzi": "下一根",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "too",
+          "target": "yě",
+          "hanzi": "也",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "would",
+          "target": "huì",
+          "hanzi": "会",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "land somewhere",
+          "target": "yǒu gè qùchù",
+          "hanzi": "有个去处",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "\" dàizǐ . \"",
+      "english": "“The bags.”",
+      "hanzi": "“袋子。”\n",
+      "alignment": [
+        {
+          "english": "The bags",
+          "target": "dàizǐ",
+          "hanzi": "袋子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        }
+      ]
+    },
+    {
+      "target": "huī guà nánrén yòu shuō le yíbiàn , duǎndāo yǐjīng chū le qiào , dāojiān cháozhe dì , què méiyǒu shōuhuí qù .",
+      "english": "The man in the grey jacket repeated it once; his short knife was already drawn, with the point at the ground, but he did not put it away.",
+      "hanzi": "灰褂男人又说了一遍，短刀已经出了鞘，刀尖朝着地，却没有收回去。\n",
+      "alignment": [
+        {
+          "english": "in the grey jacket",
+          "target": "huī guà",
+          "hanzi": "灰褂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "The man",
+          "target": "nánrén",
+          "hanzi": "男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "repeated it",
+          "target": "yòu shuō le",
+          "hanzi": "又说了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "once",
+          "target": "yíbiàn",
+          "hanzi": "一遍",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "his short knife",
+          "target": "duǎndāo",
+          "hanzi": "短刀",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "already",
+          "target": "yǐjīng",
+          "hanzi": "已经",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "drawn",
+          "target": "chū le qiào",
+          "hanzi": "出了鞘",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the point",
+          "target": "dāojiān",
+          "hanzi": "刀尖",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "at",
+          "target": "cháozhe",
+          "hanzi": "朝着",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the ground",
+          "target": "dì",
+          "hanzi": "地",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "but",
+          "target": "què",
+          "hanzi": "却",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "did not",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "put it away",
+          "target": "shōuhuí qù",
+          "hanzi": "收回去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "hòutou nàgēn gùnzi táiqǐ láishí , nài lěi sōng le tǎ wéi de jiān , bǎ pídài wǎng tā jiǎo biān yì tuī .",
+      "english": "When the cudgel rose behind them, Nerai released Tavi’s shoulder and pushed the leather bag to his feet.",
+      "hanzi": "后头那根棍子抬起来时，奈蕾松了塔维的肩，把皮袋往他脚边一推。\n",
+      "alignment": [
+        {
+          "english": "behind them",
+          "target": "hòutou",
+          "hanzi": "后头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the",
+          "target": "nàgēn",
+          "hanzi": "那根",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "cudgel",
+          "target": "gùnzi",
+          "hanzi": "棍子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "rose",
+          "target": "táiqǐ lái",
+          "hanzi": "抬起来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "When",
+          "target": "shí",
+          "hanzi": "时",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "released",
+          "target": "sōng le",
+          "hanzi": "松了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Tavi’s",
+          "target": "tǎ wéi de",
+          "hanzi": "塔维的",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "shoulder",
+          "target": "jiān",
+          "hanzi": "肩",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the leather bag",
+          "target": "bǎ pídài",
+          "hanzi": "把皮袋",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "to his feet",
+          "target": "wǎng tā jiǎo biān",
+          "hanzi": "往他脚边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pushed",
+          "target": "yì tuī",
+          "hanzi": "一推",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "tā cèshēn tiējìn yán jǐ páng , gùn tóu zá zài gāngcái tóu suǒzài de dìfāng , shítou shàng xiǎng le yìshēng mēn de .",
+      "english": "She turned sideways against the rock rib; the cudgel struck the place where her head had been just before, and gave a dull thud against stone.",
+      "hanzi": "她侧身贴进岩脊旁，棍头砸在刚才头所在的地方，石头上响了一声闷的。\n",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "turned sideways",
+          "target": "cèshēn",
+          "hanzi": "侧身",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "against",
+          "target": "tiējìn",
+          "hanzi": "贴进",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the rock rib",
+          "target": "yán jǐ páng",
+          "hanzi": "岩脊旁",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the cudgel",
+          "target": "gùn tóu",
+          "hanzi": "棍头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "struck",
+          "target": "zá zài",
+          "hanzi": "砸在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "just before",
+          "target": "gāngcái",
+          "hanzi": "刚才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "where her head had been",
+          "target": "tóu suǒzài de",
+          "hanzi": "头所在的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the place",
+          "target": "dìfāng",
+          "hanzi": "地方",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "against stone",
+          "target": "shítou shàng",
+          "hanzi": "石头上",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "gave",
+          "target": "xiǎng le",
+          "hanzi": "响了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "a",
+          "target": "yìshēng",
+          "hanzi": "一声",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "dull thud",
+          "target": "mēn de",
+          "hanzi": "闷的",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "kuānjiān nánrén gēbo yí zhì , tā yǐ báchū yāojiān de duǎndāo , wǎng tā shēnchū lái de tuǐ shàng yí sòng , suíjí tuìhuí tǎ wéi pángbiān .",
+      "english": "The broad-shouldered man’s arm faltered; she had already drawn the knife from her belt, thrust it into his extended leg, and then retreated beside Tavi.",
+      "hanzi": "宽肩男人胳膊一滞，她已拔出腰间的短刀，往他伸出来的腿上一送，随即退回塔维旁边。\n",
+      "alignment": [
+        {
+          "english": "broad-shouldered",
+          "target": "kuānjiān",
+          "hanzi": "宽肩",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "man’s",
+          "target": "nánrén",
+          "hanzi": "男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "arm",
+          "target": "gēbo",
+          "hanzi": "胳膊",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "faltered",
+          "target": "yí zhì",
+          "hanzi": "一滞",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "she",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "already",
+          "target": "yǐ",
+          "hanzi": "已",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "drawn",
+          "target": "báchū",
+          "hanzi": "拔出",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "from her belt",
+          "target": "yāojiān de",
+          "hanzi": "腰间的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the knife",
+          "target": "duǎndāo",
+          "hanzi": "短刀",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "into",
+          "target": "wǎng",
+          "hanzi": "往",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "extended",
+          "target": "shēnchū lái de",
+          "hanzi": "伸出来的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "leg",
+          "target": "tuǐ shàng",
+          "hanzi": "腿上",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "thrust it",
+          "target": "yí sòng",
+          "hanzi": "一送",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "then",
+          "target": "suíjí",
+          "hanzi": "随即",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "retreated",
+          "target": "tuìhuí",
+          "hanzi": "退回",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "beside",
+          "target": "pángbiān",
+          "hanzi": "旁边",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi méi kànqīng dāo zěnme jìnqù , zhǐ kànjiàn nà rén xīgài hūrán ruǎn le , shǒulǐ de gùn diào dào shí shàng , shēngyīn bǐ gāngcái hái jìn .",
+      "english": "Tavi did not see how the blade went in; he only saw the man’s knee suddenly buckle and the cudgel in his hand drop onto the stone, sounding closer still than before.",
+      "hanzi": "塔维没看清刀怎么进去，只看见那人膝盖忽然软了，手里的棍掉到石上，声音比刚才还近。\n",
+      "alignment": [
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "did not see",
+          "target": "méi kànqīng",
+          "hanzi": "没看清",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the blade",
+          "target": "dāo",
+          "hanzi": "刀",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "how",
+          "target": "zěnme",
+          "hanzi": "怎么",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "went in",
+          "target": "jìnqù",
+          "hanzi": "进去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "only",
+          "target": "zhǐ",
+          "hanzi": "只",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "saw",
+          "target": "kànjiàn",
+          "hanzi": "看见",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the man’s",
+          "target": "nà rén",
+          "hanzi": "那人",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "knee",
+          "target": "xīgài",
+          "hanzi": "膝盖",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "suddenly",
+          "target": "hūrán",
+          "hanzi": "忽然",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "buckle",
+          "target": "ruǎn le",
+          "hanzi": "软了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "in his hand",
+          "target": "shǒulǐ de",
+          "hanzi": "手里的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the cudgel",
+          "target": "gùn",
+          "hanzi": "棍",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "drop onto",
+          "target": "diào dào",
+          "hanzi": "掉到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the stone",
+          "target": "shí shàng",
+          "hanzi": "石上",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sounding",
+          "target": "shēngyīn",
+          "hanzi": "声音",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "than before",
+          "target": "bǐ gāngcái",
+          "hanzi": "比刚才",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "closer still",
+          "target": "hái jìn",
+          "hanzi": "还近",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "yíkuài shēnsè cóng kùtuǐ wǎng xià yīn , nà rén shēnshǒu qù wǔ , zuǐlǐ jiào chū yìshēng bú xiàng màrén de yīn .",
+      "english": "A dark patch spread down the trouser leg; he reached to cover it and let out a sound unlike a curse.",
+      "hanzi": "一块深色从裤腿往下洇，那人伸手去捂，嘴里叫出一声不像骂人的音。\n",
+      "alignment": [
+        {
+          "english": "A",
+          "target": "yíkuài",
+          "hanzi": "一块",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "dark patch",
+          "target": "shēnsè",
+          "hanzi": "深色",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the trouser leg",
+          "target": "cóng kùtuǐ",
+          "hanzi": "从裤腿",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "down",
+          "target": "wǎng xià",
+          "hanzi": "往下",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "spread",
+          "target": "yīn",
+          "hanzi": "洇",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "he",
+          "target": "nà rén",
+          "hanzi": "那人",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "reached",
+          "target": "shēnshǒu",
+          "hanzi": "伸手",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "to cover it",
+          "target": "qù wǔ",
+          "hanzi": "去捂",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "let out",
+          "target": "zuǐlǐ jiào chū",
+          "hanzi": "嘴里叫出",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "a",
+          "target": "yìshēng",
+          "hanzi": "一声",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "unlike",
+          "target": "bú xiàng",
+          "hanzi": "不像",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "a curse",
+          "target": "màrén de",
+          "hanzi": "骂人的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "sound",
+          "target": "yīn",
+          "hanzi": "音",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "nài lěi méi zài cì , tuō zhe tǎ wéi wǎng hòutuì , kě yán jǐ hòu zài méiyǒu néng zhē rén de dìfāng , tā biàn jiāng tā yādī , hǎn qiántou de rén bǎ nǔ fàngxià .",
+      "english": "Nerai did not stab again; she dragged Tavi backward, but beyond the rock rib there was no place to hide, so she pressed him low and shouted at the man ahead to lower the crossbow.",
+      "hanzi": "奈蕾没再刺，拖着塔维往后退，可岩脊后再没有能遮人的地方，她便将他压低，喊前头的人把弩放下。\n",
+      "alignment": [
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "did not",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stab again",
+          "target": "zài cì",
+          "hanzi": "再刺",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "she dragged",
+          "target": "tuō zhe",
+          "hanzi": "拖着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "backward",
+          "target": "wǎng hòutuì",
+          "hanzi": "往后退",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "but",
+          "target": "kě",
+          "hanzi": "可",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "beyond the rock rib",
+          "target": "yán jǐ hòu",
+          "hanzi": "岩脊后",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "there was no",
+          "target": "zài méiyǒu",
+          "hanzi": "再没有",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "to hide",
+          "target": "néng zhē rén de",
+          "hanzi": "能遮人的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "place",
+          "target": "dìfāng",
+          "hanzi": "地方",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "she",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "so",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "him",
+          "target": "jiāng tā",
+          "hanzi": "将他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pressed",
+          "target": "yādī",
+          "hanzi": "压低",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "shouted at",
+          "target": "hǎn",
+          "hanzi": "喊",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "ahead",
+          "target": "qiántou de",
+          "hanzi": "前头的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the man",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the crossbow",
+          "target": "bǎ nǔ",
+          "hanzi": "把弩",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "to lower",
+          "target": "fàngxià",
+          "hanzi": "放下",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "tuī xiǎochē de nánrén zhèshí cái gǎn wǎng qiángbiān suō , chēbǎ zhuàng zài zìjǐ yāo shàng , tā téng de wān le yíxià , réng sǐsǐ zuàn zhe bú fàng .",
+      "english": "The cart-pusher only now dared to shrink toward the wall; the handle struck his waist and he doubled over in pain, but still gripped it fiercely without letting go.",
+      "hanzi": "推小车的男人这时才敢往墙边缩，车把撞在自己腰上，他疼得弯了一下，仍死死攥着不放。\n",
+      "alignment": [
+        {
+          "english": "The cart-pusher",
+          "target": "tuī xiǎochē de nánrén",
+          "hanzi": "推小车的男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "only now",
+          "target": "zhèshí cái",
+          "hanzi": "这时才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "dared",
+          "target": "gǎn",
+          "hanzi": "敢",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "toward the wall",
+          "target": "wǎng qiángbiān",
+          "hanzi": "往墙边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "to shrink",
+          "target": "suō",
+          "hanzi": "缩",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the handle",
+          "target": "chēbǎ",
+          "hanzi": "车把",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "struck",
+          "target": "zhuàng zài",
+          "hanzi": "撞在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "his",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "waist",
+          "target": "yāo shàng",
+          "hanzi": "腰上",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "in pain",
+          "target": "téng de",
+          "hanzi": "疼得",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "doubled over",
+          "target": "wān le yíxià",
+          "hanzi": "弯了一下",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "still",
+          "target": "réng",
+          "hanzi": "仍",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "fiercely",
+          "target": "sǐsǐ",
+          "hanzi": "死死",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "gripped it",
+          "target": "zuàn zhe",
+          "hanzi": "攥着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "without letting go",
+          "target": "bú fàng",
+          "hanzi": "不放",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "huò chéng bǎ fǔ rèn shàng de bù chěkāi , méi cháo rén huī , zhǐ dǎng zài xiōngqián , jiào huī guà nánrén bǎ dāo shōu le .",
+      "english": "Huo Cheng pulled the cloth off his axe blade, did not swing at anyone, only held it before his chest and told the grey-jacketed man to stow the knife.",
+      "hanzi": "霍成把斧刃上的布扯开，没朝人挥，只挡在胸前，叫灰褂男人把刀收了。\n",
+      "alignment": [
+        {
+          "english": "Huo Cheng",
+          "target": "huò chéng",
+          "hanzi": "霍成",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "the",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "off his axe blade",
+          "target": "fǔ rèn shàng de",
+          "hanzi": "斧刃上的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "cloth",
+          "target": "bù",
+          "hanzi": "布",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "pulled",
+          "target": "chěkāi",
+          "hanzi": "扯开",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "did not",
+          "target": "méi",
+          "hanzi": "没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "at anyone",
+          "target": "cháo rén",
+          "hanzi": "朝人",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "swing",
+          "target": "huī",
+          "hanzi": "挥",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "only",
+          "target": "zhǐ",
+          "hanzi": "只",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "held it",
+          "target": "dǎng zài",
+          "hanzi": "挡在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "before his chest",
+          "target": "xiōngqián",
+          "hanzi": "胸前",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "told",
+          "target": "jiào",
+          "hanzi": "叫",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the grey-jacketed",
+          "target": "huī guà",
+          "hanzi": "灰褂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "man",
+          "target": "nánrén",
+          "hanzi": "男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the knife",
+          "target": "bǎ dāo",
+          "hanzi": "把刀",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "to stow",
+          "target": "shōu le",
+          "hanzi": "收了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "duān nǔ de rén táiqǐ tóu , xián yǐjīng kòuzhù , nài lěi lìkè jiāng zhǐtǒng wǎng lù zhōngyāng yì rēng , zìjǐ yāhuí yán jǐ hòu .",
+      "english": "The crossbowman looked up, the string was already cocked; Nerai immediately threw the paper tube into the road and ducked herself behind the rock rib.",
+      "hanzi": "端弩的人抬起头，弦已经扣住，奈蕾立刻将纸筒往路中央一扔，自己压回岩脊后。\n",
+      "alignment": [
+        {
+          "english": "The crossbowman",
+          "target": "duān nǔ de rén",
+          "hanzi": "端弩的人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "looked up",
+          "target": "táiqǐ tóu",
+          "hanzi": "抬起头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the string",
+          "target": "xián",
+          "hanzi": "弦",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "already",
+          "target": "yǐjīng",
+          "hanzi": "已经",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "cocked",
+          "target": "kòuzhù",
+          "hanzi": "扣住",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "immediately",
+          "target": "lìkè",
+          "hanzi": "立刻",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the paper tube",
+          "target": "jiāng zhǐtǒng",
+          "hanzi": "将纸筒",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "into the road",
+          "target": "wǎng lù zhōngyāng",
+          "hanzi": "往路中央",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "threw",
+          "target": "yì rēng",
+          "hanzi": "一扔",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "herself",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "ducked",
+          "target": "yāhuí",
+          "hanzi": "压回",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "behind the rock rib",
+          "target": "yán jǐ hòu",
+          "hanzi": "岩脊后",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "dìèrgēn duǎn shǐ cā guò tā de xiùzǐ , dìngjìn shēnhòu fèi wū de ménbǎn , mùtou lièkāi de shēngyīn qīngqīngchǔchǔ .",
+      "english": "The second bolt brushed her sleeve and embedded in the abandoned hut’s door behind her; the crack of splitting wood sounded perfectly clear.",
+      "hanzi": "第二根短矢擦过她的袖子，钉进身后废屋的门板，木头裂开的声音清清楚楚。\n",
+      "alignment": [
+        {
+          "english": "The second",
+          "target": "dìèrgēn",
+          "hanzi": "第二根",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "bolt",
+          "target": "duǎn shǐ",
+          "hanzi": "短矢",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "brushed",
+          "target": "cā guò",
+          "hanzi": "擦过",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "her",
+          "target": "tā de",
+          "hanzi": "她的",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sleeve",
+          "target": "xiùzǐ",
+          "hanzi": "袖子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "embedded in",
+          "target": "dìngjìn",
+          "hanzi": "钉进",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "behind her",
+          "target": "shēnhòu",
+          "hanzi": "身后",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the abandoned hut’s",
+          "target": "fèi wū de",
+          "hanzi": "废屋的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "door",
+          "target": "ménbǎn",
+          "hanzi": "门板",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "wood",
+          "target": "mùtou",
+          "hanzi": "木头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "splitting",
+          "target": "lièkāi de",
+          "hanzi": "裂开的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the crack of",
+          "target": "shēngyīn",
+          "hanzi": "声音",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sounded perfectly clear",
+          "target": "qīngqīngchǔchǔ",
+          "hanzi": "清清楚楚",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "zhǐtǒng gǔn dào héng lù de shéng biān , huī guà nánrén dītóu yí kàn , huò chéng biàn qù lā nà tuīchē de rén , jiào tā chèn zhèhuìer wǎnghuí zǒu .",
+      "english": "The tube rolled beside the rope; as the man in the grey jacket glanced down, Huo Cheng grabbed the cart-pusher and urged him to go back while he could.",
+      "hanzi": "纸筒滚到横路的绳边，灰褂男人低头一看，霍成便去拉那推车的人，叫他趁这会儿往回走。\n",
+      "alignment": [
+        {
+          "english": "The tube",
+          "target": "zhǐtǒng",
+          "hanzi": "纸筒",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "rolled",
+          "target": "gǔn dào",
+          "hanzi": "滚到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "beside",
+          "target": "héng lù de",
+          "hanzi": "横路的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the rope",
+          "target": "shéng biān",
+          "hanzi": "绳边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "in the grey jacket",
+          "target": "huī guà",
+          "hanzi": "灰褂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the man",
+          "target": "nánrén",
+          "hanzi": "男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "down",
+          "target": "dītóu",
+          "hanzi": "低头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "glanced",
+          "target": "yí kàn",
+          "hanzi": "一看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Huo Cheng",
+          "target": "huò chéng",
+          "hanzi": "霍成",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "as",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "grabbed",
+          "target": "qù lā",
+          "hanzi": "去拉",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the cart-pusher",
+          "target": "nà tuīchē de rén",
+          "hanzi": "那推车的人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "urged him",
+          "target": "jiào tā",
+          "hanzi": "叫他",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "while he could",
+          "target": "chèn zhèhuìer",
+          "hanzi": "趁这会儿",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "to go back",
+          "target": "wǎnghuí zǒu",
+          "hanzi": "往回走",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "tā lā de shì rén , búshì chē , kě nà rén zuàn zhù de chēbǎ méiyǒu sōng , xiǎochē gēnzhe héng guòlái , wàilún yā shàng le biàn dào biānyán .",
+      "english": "He pulled the man, not the cart, but the man’s grip on the handle did not loosen; the cart swung across and its outer wheel pressed onto the footway’s edge.",
+      "hanzi": "他拉的是人，不是车，可那人攥住的车把没有松，小车跟着横过来，外轮压上了便道边沿。\n",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "pulled",
+          "target": "lā de",
+          "hanzi": "拉的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the",
+          "target": "shì",
+          "hanzi": "是",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "man",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "not",
+          "target": "búshì",
+          "hanzi": "不是",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the cart",
+          "target": "chē",
+          "hanzi": "车",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "but",
+          "target": "kě",
+          "hanzi": "可",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the man’s",
+          "target": "nà rén",
+          "hanzi": "那人",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "grip on",
+          "target": "zuàn zhù de",
+          "hanzi": "攥住的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the handle",
+          "target": "chēbǎ",
+          "hanzi": "车把",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "did not",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "loosen",
+          "target": "sōng",
+          "hanzi": "松",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the cart",
+          "target": "xiǎochē",
+          "hanzi": "小车",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "and",
+          "target": "gēnzhe",
+          "hanzi": "跟着",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "swung across",
+          "target": "héng guòlái",
+          "hanzi": "横过来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "its outer wheel",
+          "target": "wàilún",
+          "hanzi": "外轮",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "pressed onto",
+          "target": "yā shàng le",
+          "hanzi": "压上了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the footway’s",
+          "target": "biàn dào",
+          "hanzi": "便道",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "edge",
+          "target": "biānyán",
+          "hanzi": "边沿",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "shī mùbǎn wǎng xià yì chén , huò chéng yìjiǎo yǐjīng cǎi shàngqù , xiǎng tì tā bǎ nà tóu tái huílù lǐ .",
+      "english": "The wet plank sank; Huo Cheng had already stepped on it with one foot, trying to lift that end back onto the road for him.",
+      "hanzi": "湿木板往下一沉，霍成一脚已经踩上去，想替他把那头抬回路里。\n",
+      "alignment": [
+        {
+          "english": "The wet",
+          "target": "shī",
+          "hanzi": "湿",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "plank",
+          "target": "mùbǎn",
+          "hanzi": "木板",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "sank",
+          "target": "wǎng xià yì chén",
+          "hanzi": "往下一沉",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Huo Cheng",
+          "target": "huò chéng",
+          "hanzi": "霍成",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "with one foot",
+          "target": "yìjiǎo",
+          "hanzi": "一脚",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "already",
+          "target": "yǐjīng",
+          "hanzi": "已经",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stepped on it",
+          "target": "cǎi shàngqù",
+          "hanzi": "踩上去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "trying to",
+          "target": "xiǎng",
+          "hanzi": "想",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "for him",
+          "target": "tì tā",
+          "hanzi": "替他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "that",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "end",
+          "target": "nà tóu",
+          "hanzi": "那头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "lift",
+          "target": "tái huí",
+          "hanzi": "抬回",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the road",
+          "target": "lù lǐ",
+          "hanzi": "路里",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "huī guà nánrén měngdì tuīguòlái , dāobǐng zhuàng zhe huò chéng de jiān , zuǐlǐ mà tā xiǎng bái zǒu , lìngyìzhī shǒubǎ chēbǎ cháowài xiān .",
+      "english": "The man in the grey jacket suddenly shoved forward, striking Huo Cheng’s shoulder with the knife hilt and swearing he wanted a free passage, while his other hand heaved the handle outward.",
+      "hanzi": "灰褂男人猛地推过来，刀柄撞着霍成的肩，嘴里骂他想白走，另一只手把车把朝外掀。\n",
+      "alignment": [
+        {
+          "english": "in the grey jacket",
+          "target": "huī guà",
+          "hanzi": "灰褂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "The man",
+          "target": "nánrén",
+          "hanzi": "男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "suddenly",
+          "target": "měngdì",
+          "hanzi": "猛地",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "shoved forward",
+          "target": "tuīguòlái",
+          "hanzi": "推过来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the knife hilt",
+          "target": "dāobǐng",
+          "hanzi": "刀柄",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "striking",
+          "target": "zhuàng zhe",
+          "hanzi": "撞着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Huo Cheng’s",
+          "target": "huò chéng de",
+          "hanzi": "霍成的",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "shoulder",
+          "target": "jiān",
+          "hanzi": "肩",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "swearing",
+          "target": "zuǐlǐ mà",
+          "hanzi": "嘴里骂",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "he",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "wanted",
+          "target": "xiǎng",
+          "hanzi": "想",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "a free passage",
+          "target": "bái zǒu",
+          "hanzi": "白走",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his other",
+          "target": "lìngyìzhī",
+          "hanzi": "另一只",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "hand",
+          "target": "shǒu",
+          "hanzi": "手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the handle",
+          "target": "bǎ chēbǎ",
+          "hanzi": "把车把",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "outward",
+          "target": "cháowài",
+          "hanzi": "朝外",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "heaved",
+          "target": "xiān",
+          "hanzi": "掀",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi tīngjiàn yìgēn mùtou cóng dǐxià duànkāi , huò chéng de fàn bāo hūrán bújiàn le , rén gēnzhe cóng bǎnbiān huáxiàqù .",
+      "english": "Tavi heard a piece of timber snap underneath; Huo Cheng’s meal bundle suddenly vanished and the man slid after it off the planks.",
+      "hanzi": "塔维听见一根木头从底下断开，霍成的饭包忽然不见了，人跟着从板边滑下去。\n",
+      "alignment": [
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "heard",
+          "target": "tīngjiàn",
+          "hanzi": "听见",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "a piece of",
+          "target": "yìgēn",
+          "hanzi": "一根",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "timber",
+          "target": "mùtou",
+          "hanzi": "木头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "underneath",
+          "target": "cóng dǐxià",
+          "hanzi": "从底下",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "snap",
+          "target": "duànkāi",
+          "hanzi": "断开",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "Huo Cheng’s",
+          "target": "huò chéng de",
+          "hanzi": "霍成的",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "meal bundle",
+          "target": "fàn bāo",
+          "hanzi": "饭包",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "suddenly",
+          "target": "hūrán",
+          "hanzi": "忽然",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "vanished",
+          "target": "bújiàn le",
+          "hanzi": "不见了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the man",
+          "target": "rén",
+          "hanzi": "人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "after it",
+          "target": "gēnzhe",
+          "hanzi": "跟着",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "off the planks",
+          "target": "cóng bǎnbiān",
+          "hanzi": "从板边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "slid",
+          "target": "huáxiàqù",
+          "hanzi": "滑下去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        }
+      ]
+    },
+    {
+      "target": "fǔzǐ kē zài héngliáng shàng , diào dào gèng yuǎnchù , huò chéng liǎngshǒu luàn zhuā , zhǐjiān zhī kōu xià yìbǎ shī ní .",
+      "english": "The axe struck a crossbeam and fell farther away; Huo Cheng clawed wildly with both hands, his fingertips scraping away only a handful of wet mud.",
+      "hanzi": "斧子磕在横梁上，掉到更远处，霍成两手乱抓，指尖只抠下一把湿泥。\n",
+      "alignment": [
+        {
+          "english": "The axe",
+          "target": "fǔzǐ",
+          "hanzi": "斧子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "struck",
+          "target": "kē zài",
+          "hanzi": "磕在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "a crossbeam",
+          "target": "héngliáng shàng",
+          "hanzi": "横梁上",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "fell",
+          "target": "diào dào",
+          "hanzi": "掉到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "farther away",
+          "target": "gèng yuǎnchù",
+          "hanzi": "更远处",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Huo Cheng",
+          "target": "huò chéng",
+          "hanzi": "霍成",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "with both hands",
+          "target": "liǎngshǒu",
+          "hanzi": "两手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "clawed wildly",
+          "target": "luàn zhuā",
+          "hanzi": "乱抓",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his fingertips",
+          "target": "zhǐjiān",
+          "hanzi": "指尖",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "only",
+          "target": "zhī",
+          "hanzi": "只",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "scraping away",
+          "target": "kōu xià",
+          "hanzi": "抠下",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "a handful of",
+          "target": "yìbǎ",
+          "hanzi": "一把",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "wet mud",
+          "target": "shī ní",
+          "hanzi": "湿泥",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "nài lěi pū dào lùbiān , zuǒshǒu gāng lā zhù tā yīlǐng , huī guà nánrén de dāo biàn cóng pángbiān huī guòlái .",
+      "english": "Nerai lunged to the edge and caught his collar with her left hand just as the grey-jacketed man’s blade swung in from the side.",
+      "hanzi": "奈蕾扑到路边，左手刚拉住他衣领，灰褂男人的刀便从旁边挥过来。\n",
+      "alignment": [
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "lunged to",
+          "target": "pū dào",
+          "hanzi": "扑到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the edge",
+          "target": "lùbiān",
+          "hanzi": "路边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "with her left hand",
+          "target": "zuǒshǒu",
+          "hanzi": "左手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "just as",
+          "target": "gāng",
+          "hanzi": "刚",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "caught",
+          "target": "lā zhù",
+          "hanzi": "拉住",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his collar",
+          "target": "tā yīlǐng",
+          "hanzi": "他衣领",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the grey-jacketed",
+          "target": "huī guà",
+          "hanzi": "灰褂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "man’s",
+          "target": "nánrén de",
+          "hanzi": "男人的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "blade",
+          "target": "dāo",
+          "hanzi": "刀",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "and",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "from the side",
+          "target": "cóng pángbiān",
+          "hanzi": "从旁边",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "swung in",
+          "target": "huī guòlái",
+          "hanzi": "挥过来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "tā sōngkāi yīlǐng bì le yíxià , dāokǒu réng cóng zuǒ qiánbì huáguòqù , xiùzǐ yíxià lièkāi , lǐmiàn lùchū yìtiáo xiānhóng .",
+      "english": "She released his collar and dodged, but the edge still slashed across her left forearm; her sleeve suddenly split, revealing a line of fresh red.",
+      "hanzi": "她松开衣领避了一下，刀口仍从左前臂划过去，袖子一下裂开，里面露出一条鲜红。\n",
+      "alignment": [
+        {
+          "english": "She",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "released",
+          "target": "sōngkāi",
+          "hanzi": "松开",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "his collar",
+          "target": "yīlǐng",
+          "hanzi": "衣领",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "dodged",
+          "target": "bì le yíxià",
+          "hanzi": "避了一下",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the edge",
+          "target": "dāokǒu",
+          "hanzi": "刀口",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "still",
+          "target": "réng",
+          "hanzi": "仍",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "across",
+          "target": "cóng",
+          "hanzi": "从",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "her left forearm",
+          "target": "zuǒ qiánbì",
+          "hanzi": "左前臂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "slashed",
+          "target": "huáguòqù",
+          "hanzi": "划过去",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "her sleeve",
+          "target": "xiùzǐ",
+          "hanzi": "袖子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "suddenly",
+          "target": "yíxià",
+          "hanzi": "一下",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "split",
+          "target": "lièkāi",
+          "hanzi": "裂开",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "revealing",
+          "target": "lǐmiàn lùchū",
+          "hanzi": "里面露出",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "a line of",
+          "target": "yìtiáo",
+          "hanzi": "一条",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "fresh red",
+          "target": "xiānhóng",
+          "hanzi": "鲜红",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "huò chéng yòu wǎng xià yí zhuì , luò zài xiàmiàn yìcéng zhǎi shí shàng , hǎnshēng lìkè biàn le , yòutuǐ zhé zài yígè bùgāi yǒu de jiǎodù .",
+      "english": "Huo Cheng dropped down again and landed on a narrow rock ledge below; his cry immediately changed, his right leg bent at an angle it should never have made.",
+      "hanzi": "霍成又往下一坠，落在下面一层窄石上，喊声立刻变了，右腿折在一个不该有的角度。\n",
+      "alignment": [
+        {
+          "english": "Huo Cheng",
+          "target": "huò chéng",
+          "hanzi": "霍成",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "again",
+          "target": "yòu",
+          "hanzi": "又",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "down",
+          "target": "wǎng xià",
+          "hanzi": "往下",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "dropped",
+          "target": "yí zhuì",
+          "hanzi": "一坠",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "landed on",
+          "target": "luò zài",
+          "hanzi": "落在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "below",
+          "target": "xiàmiàn",
+          "hanzi": "下面",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "a",
+          "target": "yìcéng",
+          "hanzi": "一层",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "narrow rock ledge",
+          "target": "zhǎi shí shàng",
+          "hanzi": "窄石上",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "his cry",
+          "target": "hǎnshēng",
+          "hanzi": "喊声",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "immediately",
+          "target": "lìkè",
+          "hanzi": "立刻",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "changed",
+          "target": "biàn le",
+          "hanzi": "变了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his right leg",
+          "target": "yòutuǐ",
+          "hanzi": "右腿",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "bent at",
+          "target": "zhé zài",
+          "hanzi": "折在",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "an",
+          "target": "yígè",
+          "hanzi": "一个",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "it should never have made",
+          "target": "bùgāi yǒu de",
+          "hanzi": "不该有的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "angle",
+          "target": "jiǎodù",
+          "hanzi": "角度",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi yǐjīng líkāi yán jǐ bànbù , nài lěi huítóu hē zhù tā , jiào tā bié cǎi nà kuàibǎn , bǎ pídài tuō guòlái .",
+      "english": "Tavi had already stepped half a pace from cover; Nerai sharply called him back and told him not to step on that plank but to drag over the leather bag.",
+      "hanzi": "塔维已经离开岩脊半步，奈蕾回头喝住他，叫他别踩那块板，把皮袋拖过来。\n",
+      "alignment": [
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "already",
+          "target": "yǐjīng",
+          "hanzi": "已经",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stepped",
+          "target": "líkāi",
+          "hanzi": "离开",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "from cover",
+          "target": "yán jǐ",
+          "hanzi": "岩脊",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "half a pace",
+          "target": "bànbù",
+          "hanzi": "半步",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "back",
+          "target": "huítóu",
+          "hanzi": "回头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "sharply called him",
+          "target": "hē zhù tā",
+          "hanzi": "喝住他",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "told him",
+          "target": "jiào tā",
+          "hanzi": "叫他",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "not to step on",
+          "target": "bié cǎi",
+          "hanzi": "别踩",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "that",
+          "target": "nà kuài",
+          "hanzi": "那块",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "plank",
+          "target": "bǎn",
+          "hanzi": "板",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the leather bag",
+          "target": "bǎ pídài",
+          "hanzi": "把皮袋",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "to drag over",
+          "target": "tuō guòlái",
+          "hanzi": "拖过来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "tā shēn yòushǒu qù zhuā dài dài , zhǎngxīn cā guò shí miàn , huǒlàlà de yíxià , què hái méi gù shàng kàn .",
+      "english": "He reached with his right hand to grab the bag strap; his palm scraped the stone with a fiery sting, but he had no time to look.",
+      "hanzi": "他伸右手去抓袋带，掌心擦过石面，火辣辣的一下，却还没顾上看。\n",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "reached with his right hand",
+          "target": "shēn yòushǒu",
+          "hanzi": "伸右手",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "to grab",
+          "target": "qù zhuā",
+          "hanzi": "去抓",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the bag strap",
+          "target": "dài dài",
+          "hanzi": "袋带",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "his palm",
+          "target": "zhǎngxīn",
+          "hanzi": "掌心",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "scraped",
+          "target": "cā guò",
+          "hanzi": "擦过",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the stone",
+          "target": "shí miàn",
+          "hanzi": "石面",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "a fiery sting",
+          "target": "huǒlàlà de yíxià",
+          "hanzi": "火辣辣的一下",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "but",
+          "target": "què",
+          "hanzi": "却",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he had no time",
+          "target": "hái méi",
+          "hanzi": "还没",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "to",
+          "target": "gù shàng",
+          "hanzi": "顾上",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "look",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "huī guà nánrén ná qǐ zhǐtǒng , duān nǔ de cóng xiǎochē hòu pǎo chūlái , jiào tā zǒu , shēngyīn yě bù wěn le .",
+      "english": "The man in the grey jacket snatched the tube; the crossbowman ran out from behind the cart and told him to go, his voice unsteady too.",
+      "hanzi": "灰褂男人拿起纸筒，端弩的从小车后跑出来，叫他走，声音也不稳了。\n",
+      "alignment": [
+        {
+          "english": "in the grey jacket",
+          "target": "huī guà",
+          "hanzi": "灰褂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "The man",
+          "target": "nánrén",
+          "hanzi": "男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "snatched",
+          "target": "ná qǐ",
+          "hanzi": "拿起",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the tube",
+          "target": "zhǐtǒng",
+          "hanzi": "纸筒",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the crossbowman",
+          "target": "duān nǔ de",
+          "hanzi": "端弩的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "from behind the cart",
+          "target": "cóng xiǎochē hòu",
+          "hanzi": "从小车后",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "ran out",
+          "target": "pǎo chūlái",
+          "hanzi": "跑出来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "told him",
+          "target": "jiào tā",
+          "hanzi": "叫他",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "to go",
+          "target": "zǒu",
+          "hanzi": "走",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his voice",
+          "target": "shēngyīn",
+          "hanzi": "声音",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "too",
+          "target": "yě",
+          "hanzi": "也",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "unsteady",
+          "target": "bù wěn le",
+          "hanzi": "不稳了",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "tuīchē de nánrén zhōngyú sā kāichē bǎ , cháo hòutou hǎn yǒurén fàng nǔ , shānlù guǎiwān nàbiān yǐjīng yǒurén yìngshēng .",
+      "english": "The cart-pusher finally let go of the cart handle and shouted back that someone was firing a crossbow; people were already answering from the road beyond the bend.",
+      "hanzi": "推车的男人终于撒开车把，朝后头喊有人放弩，山路拐弯那边已经有人应声。\n",
+      "alignment": [
+        {
+          "english": "The cart-pusher",
+          "target": "tuīchē de nánrén",
+          "hanzi": "推车的男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "finally",
+          "target": "zhōngyú",
+          "hanzi": "终于",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "let go of",
+          "target": "sā kāi",
+          "hanzi": "撒开",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the cart handle",
+          "target": "chē bǎ",
+          "hanzi": "车把",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "back",
+          "target": "cháo hòutou",
+          "hanzi": "朝后头",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "shouted",
+          "target": "hǎn",
+          "hanzi": "喊",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "someone",
+          "target": "yǒurén",
+          "hanzi": "有人",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "was firing a crossbow",
+          "target": "fàng nǔ",
+          "hanzi": "放弩",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "from the road",
+          "target": "shānlù",
+          "hanzi": "山路",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "beyond the bend",
+          "target": "guǎiwān nàbiān",
+          "hanzi": "拐弯那边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "already",
+          "target": "yǐjīng",
+          "hanzi": "已经",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "people",
+          "target": "yǒurén",
+          "hanzi": "有人",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "answering",
+          "target": "yìngshēng",
+          "hanzi": "应声",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    },
+    {
+      "target": "liǎnggè rén yuèguò héng lù de shéng , yán qiántou zhǎilù pǎo le , huī guà nánrén hái huí le yícì tóu , méiyǒu huílái tuō nàge dǎodì de tónghuǒ .",
+      "english": "The two crossed the rope across the road and ran down the narrow path ahead; the man in the grey jacket also looked back once, but did not return to drag the fallen accomplice away.",
+      "hanzi": "两个人越过横路的绳，沿前头窄路跑了，灰褂男人还回了一次头，没有回来拖那个倒地的同伙。\n",
+      "alignment": [
+        {
+          "english": "The two",
+          "target": "liǎnggè rén",
+          "hanzi": "两个人",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "crossed",
+          "target": "yuèguò",
+          "hanzi": "越过",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "across the road",
+          "target": "héng lù de",
+          "hanzi": "横路的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the rope",
+          "target": "shéng",
+          "hanzi": "绳",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "ahead",
+          "target": "yán qiántou",
+          "hanzi": "沿前头",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the narrow path",
+          "target": "zhǎilù",
+          "hanzi": "窄路",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "ran down",
+          "target": "pǎo le",
+          "hanzi": "跑了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "in the grey jacket",
+          "target": "huī guà",
+          "hanzi": "灰褂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the man",
+          "target": "nánrén",
+          "hanzi": "男人",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "also",
+          "target": "hái",
+          "hanzi": "还",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "looked back once",
+          "target": "huí le yícì tóu",
+          "hanzi": "回了一次头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "did not",
+          "target": "méiyǒu",
+          "hanzi": "没有",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "return to drag",
+          "target": "huílái tuō",
+          "hanzi": "回来拖",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the",
+          "target": "nàge",
+          "hanzi": "那个",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "fallen",
+          "target": "dǎodì de",
+          "hanzi": "倒地的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "accomplice",
+          "target": "tónghuǒ",
+          "hanzi": "同伙",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        }
+      ]
+    },
+    {
+      "target": "nài lěi méi qù zhuī , yòushǒu wǔzhe zuǒbì , dūnxià kàn xiàmiàn de huò chéng , liǎnsè bái de tǎ wéi bùgǎn xiān jiào tā míngzì .",
+      "english": "Nerai did not pursue; pressing her right hand over her left arm, she crouched to look at Huo Cheng below; her face was so pale Tavi feared calling her name before anything else.",
+      "hanzi": "奈蕾没去追，右手捂着左臂，蹲下看下面的霍成，脸色白得塔维不敢先叫她名字。\n",
+      "alignment": [
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "did not pursue",
+          "target": "méi qù zhuī",
+          "hanzi": "没去追",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "her right hand",
+          "target": "yòushǒu",
+          "hanzi": "右手",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "pressing",
+          "target": "wǔzhe",
+          "hanzi": "捂着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "over her left arm",
+          "target": "zuǒbì",
+          "hanzi": "左臂",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "she crouched",
+          "target": "dūnxià",
+          "hanzi": "蹲下",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "to look at",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "below",
+          "target": "xiàmiàn de",
+          "hanzi": "下面的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "Huo Cheng",
+          "target": "huò chéng",
+          "hanzi": "霍成",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "her face",
+          "target": "liǎnsè",
+          "hanzi": "脸色",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "was so pale",
+          "target": "bái de",
+          "hanzi": "白得",
+          "category": "adjective",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "feared",
+          "target": "bùgǎn",
+          "hanzi": "不敢",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "before anything else",
+          "target": "xiān",
+          "hanzi": "先",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "calling her name",
+          "target": "jiào tā míngzì",
+          "hanzi": "叫她名字",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "huò chéng méi zài wǎng xiàhuá , kě nà kuài shítou zhǐ gòu bàn zuò , suì ní hái zài wǎng tā bèihòu lòu , jiǎoxià jiùshì dǒupō .",
+      "english": "Huo Cheng had stopped sliding, but the ledge barely held him half-seated; loose earth still trickled behind his back, and under his feet was the steep slope.",
+      "hanzi": "霍成没再往下滑，可那块石头只够半坐，碎泥还在往他背后漏，脚下就是陡坡。\n",
+      "alignment": [
+        {
+          "english": "Huo Cheng",
+          "target": "huò chéng",
+          "hanzi": "霍成",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "had stopped",
+          "target": "méi zài",
+          "hanzi": "没再",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "sliding",
+          "target": "wǎng xiàhuá",
+          "hanzi": "往下滑",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "but",
+          "target": "kě",
+          "hanzi": "可",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the",
+          "target": "nà kuài",
+          "hanzi": "那块",
+          "category": "measure_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "ledge",
+          "target": "shítou",
+          "hanzi": "石头",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "barely held him",
+          "target": "zhǐ gòu",
+          "hanzi": "只够",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "half-seated",
+          "target": "bàn zuò",
+          "hanzi": "半坐",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "loose earth",
+          "target": "suì ní",
+          "hanzi": "碎泥",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "still",
+          "target": "hái zài",
+          "hanzi": "还在",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "behind his back",
+          "target": "wǎng tā bèihòu",
+          "hanzi": "往他背后",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "trickled",
+          "target": "lòu",
+          "hanzi": "漏",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "under his feet",
+          "target": "jiǎoxià",
+          "hanzi": "脚下",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "was",
+          "target": "jiùshì",
+          "hanzi": "就是",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the steep slope",
+          "target": "dǒupō",
+          "hanzi": "陡坡",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        }
+      ]
+    },
+    {
+      "target": "tā xiǎng bǎ yòutuǐ shōuhuí lái , gāng dòng yíxià biàn tíng le , táitóu kàn nài lěi , wèn néng bunéng xiān bié ràng tā diào .",
+      "english": "He tried to draw back his right leg, stopped at the first movement, then looked up at Nerai and asked whether she could keep him from falling first.",
+      "hanzi": "他想把右腿收回来，刚动一下便停了，抬头看奈蕾，问能不能先别让他掉。\n",
+      "alignment": [
+        {
+          "english": "He",
+          "target": "tā",
+          "hanzi": "他",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "tried",
+          "target": "xiǎng",
+          "hanzi": "想",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "his",
+          "target": "bǎ",
+          "hanzi": "把",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "right leg",
+          "target": "yòutuǐ",
+          "hanzi": "右腿",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "to draw back",
+          "target": "shōuhuí lái",
+          "hanzi": "收回来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "at the first movement",
+          "target": "gāng dòng yíxià",
+          "hanzi": "刚动一下",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "then",
+          "target": "biàn",
+          "hanzi": "便",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "stopped",
+          "target": "tíng le",
+          "hanzi": "停了",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "looked up",
+          "target": "táitóu",
+          "hanzi": "抬头",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "at",
+          "target": "kàn",
+          "hanzi": "看",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "asked",
+          "target": "wèn",
+          "hanzi": "问",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "whether she could",
+          "target": "néng bunéng",
+          "hanzi": "能不能",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "first",
+          "target": "xiān",
+          "hanzi": "先",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "keep him from falling",
+          "target": "bié ràng tā diào",
+          "hanzi": "别让他掉",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        }
+      ]
+    },
+    {
+      "target": "tǎ wéi bǎ pídài tuō dào tā jiǎo biān , cái kànjiàn wàimiàn de dà tiěgōu shàng , hái guà zhe zìjǐ zǎochén shōu hǎo de shéngquān .",
+      "english": "Tavi dragged the bag to her feet; only then he saw that the rope he had coiled that morning still hung on the large hook outside it.",
+      "hanzi": "塔维把皮袋拖到她脚边，才看见外面的大铁钩上，还挂着自己早晨收好的绳圈。\n",
+      "alignment": [
+        {
+          "english": "Tavi",
+          "target": "tǎ wéi",
+          "hanzi": "塔维",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "the bag",
+          "target": "bǎ pídài",
+          "hanzi": "把皮袋",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "dragged",
+          "target": "tuō dào",
+          "hanzi": "拖到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "to her feet",
+          "target": "tā jiǎo biān",
+          "hanzi": "她脚边",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "only then",
+          "target": "cái",
+          "hanzi": "才",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "saw",
+          "target": "kànjiàn",
+          "hanzi": "看见",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "outside it",
+          "target": "wàimiàn de",
+          "hanzi": "外面的",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the large hook",
+          "target": "dà tiěgōu",
+          "hanzi": "大铁钩",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "on",
+          "target": "shàng",
+          "hanzi": "上",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "still",
+          "target": "hái",
+          "hanzi": "还",
+          "category": "adverb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "hung",
+          "target": "guà zhe",
+          "hanzi": "挂着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "he",
+          "target": "zìjǐ",
+          "hanzi": "自己",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "that morning",
+          "target": "zǎochén",
+          "hanzi": "早晨",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "had coiled",
+          "target": "shōu hǎo de",
+          "hanzi": "收好的",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "the rope",
+          "target": "shéngquān",
+          "hanzi": "绳圈",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        }
+      ]
+    },
+    {
+      "target": "nài lěi bǎ nà juàn shéng zhuā guòlái , jiào tā tiēzhe shānbì zhànwěn , xiān biépèng duàn bǎn .",
+      "english": "Nerai pulled that coil of rope close and told him to stand firm against the cliff and not to touch the broken planks yet.",
+      "hanzi": "奈蕾把那卷绳抓过来，叫他贴着山壁站稳，先别碰断板。\n",
+      "alignment": [
+        {
+          "english": "Nerai",
+          "target": "nài lěi",
+          "hanzi": "奈蕾",
+          "category": "proper_noun",
+          "is_idiom": false,
+          "frequency_band": null
+        },
+        {
+          "english": "that coil of",
+          "target": "bǎ nà juàn",
+          "hanzi": "把那卷",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "rope",
+          "target": "shéng",
+          "hanzi": "绳",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "pulled",
+          "target": "zhuā guòlái",
+          "hanzi": "抓过来",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "told him",
+          "target": "jiào tā",
+          "hanzi": "叫他",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "against",
+          "target": "tiēzhe",
+          "hanzi": "贴着",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "the cliff",
+          "target": "shānbì",
+          "hanzi": "山壁",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "to stand firm",
+          "target": "zhànwěn",
+          "hanzi": "站稳",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "not to touch",
+          "target": "xiān biépèng",
+          "hanzi": "先别碰",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "rare"
+        },
+        {
+          "english": "the broken planks",
+          "target": "duàn bǎn",
+          "hanzi": "断板",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "common"
+        }
+      ]
+    },
+    {
+      "target": "xuè shùnzhe tā de zuǒ wàn dī dào shéng shàng , tā kàn le yìyǎn , zhǐ shuō : \" dǎkāi xiázi . \"",
+      "english": "Blood dripped down her left wrist onto the rope; she glanced at it and said only, “Open the case.”",
+      "hanzi": "血顺着她的左腕滴到绳上，她看了一眼，只说：“打开匣子。”\n",
+      "alignment": [
+        {
+          "english": "Blood",
+          "target": "xuè",
+          "hanzi": "血",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "down",
+          "target": "shùnzhe",
+          "hanzi": "顺着",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "her",
+          "target": "tā de",
+          "hanzi": "她的",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "left wrist",
+          "target": "zuǒ wàn",
+          "hanzi": "左腕",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "dripped",
+          "target": "dī dào",
+          "hanzi": "滴到",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "onto the rope",
+          "target": "shéng shàng",
+          "hanzi": "绳上",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        },
+        {
+          "english": "she",
+          "target": "tā",
+          "hanzi": "她",
+          "category": "function_word",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "glanced at it",
+          "target": "kàn le yìyǎn",
+          "hanzi": "看了一眼",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "said only",
+          "target": "zhǐ shuō",
+          "hanzi": "只说",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "very_common"
+        },
+        {
+          "english": "Open",
+          "target": "dǎkāi",
+          "hanzi": "打开",
+          "category": "verb",
+          "is_idiom": false,
+          "frequency_band": "common"
+        },
+        {
+          "english": "the case",
+          "target": "xiázi",
+          "hanzi": "匣子",
+          "category": "noun",
+          "is_idiom": false,
+          "frequency_band": "uncommon"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "source": "author-agent",
+    "createdAt": "2026-11-20",
+    "model": "Codex (GPT-6)",
+    "synopsis": null,
+    "has_alignment": true,
+    "alignment_complete": true
+  }
+}

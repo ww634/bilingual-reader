@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-345",
+  "chapter_sha256": "85917f33fc04531d7bc80ce2f12470dbabb881dcdac5b5383bc5fc71ca716465",
+  "catalog_sha256": "18828c2cc32aab7494b055e5bf8525caebaffe7d5673306dc23621280c9c5a0f",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-20T10:05:49.099039+00:00",
+  "review": {
+    "editorial": "Reread the full chapter and adjacent transition, revised ambiguous physical actions and removed duplicated staging. Preserved emotional space and continuing consequences beyond the batch ending.",
+    "continuity_or_facts": "Checked next-day chronology, scope of stated knowledge, transport sequence and established ability constraints; intentions and reports are distinguished from completed outcomes.",
+    "english_alignment": "Split dialogue from following narration at its sentence stop and reviewed the guide sentence by sentence. Smoothed one repetitive English construction, then refreshed the reader evidence and receipt."
+  },
+  "warning_resolutions": {
+    "pair-5-chunk-12-coarse": "Retained this short embedded question as one grammatical clause with its own faithful English span. Inspected its phone rendering separately: the clause and guide fit one source row with meaningful English; it is not a paragraph-sized sentence."
+  },
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-345-beginning.png",
+      "sha256": "597a87cfea435d7c2e80980654263eab62cc79de48cfe2b47404f6028a6f7869",
+      "notes": "Viewed phone pinyin opening: tone marks and coloured chunks remain legible, with meaningful local English guides."
+    },
+    {
+      "section": "middle",
+      "pair": 19,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-345-middle.png",
+      "sha256": "c938d437a3bf4dba880f356c1251258d492877cf23dbbd348ac2ae3177212e95",
+      "notes": "Viewed phone character midpoint: source wraps clearly and the guide follows the local sentence without unexplained English gaps."
+    },
+    {
+      "section": "end",
+      "pair": 37,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-345-end.png",
+      "sha256": "8680629023d2a923fa21560526832c51dfb242507dff398c1bd6dced83aa7f1d",
+      "notes": "Viewed phone character ending: final punctuation and closing guide remain readable above the page indicator."
+    },
+    {
+      "section": "extra",
+      "pair": 19,
+      "mode": "pinyin",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-345-desktop.png",
+      "sha256": "4d9c5fb54dca7348b62ccb4d3d397313d9cafb6fa7e6cee8cf97bcf90a474b24",
+      "notes": "Viewed the actual app at desktop width: centred reading column, source and English remain legible with no horizontal clipping."
+    },
+    {
+      "section": "extra",
+      "pair": 5,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-345-phrase.png",
+      "sha256": "ee843c6afd2d74a0ac5c7a96f73e7278c2166ab2c71b33554a7ccacf048dad97",
+      "notes": "Viewed the flagged embedded question in the actual phone reader: full source clause and its meaningful English fit legibly without clipping."
+    }
+  ]
+}

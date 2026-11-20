@@ -236,3 +236,46 @@ test('wayside conversations preserve growth and grammatical readings',()=>{
  assert.deepEqual(r('长短不同','长'),['cháng']);
  assert.deepEqual(r('里头长的那一根','长'),['cháng']);
 });
+
+
+test('travelling tools and a lodged bolt keep contextual readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['让得开些','短得塔维刚张嘴','笑得饭包晃']) assert.deepEqual(r(text,'得'),['de'],text);
+ assert.deepEqual(r('只背着饭包','只'),['zhǐ']);
+ assert.deepEqual(r('勒紧包带','勒'),['lēi']);
+ assert.deepEqual(r('短矢钉在石缝里','钉'),['dìng']);
+ assert.deepEqual(r('铁钉在桌上','钉'),['dīng']);
+ assert.deepEqual(r('两片夹簧','夹'),['jiā']);
+ assert.deepEqual(r('只背着饭包','背'),['bēi']);
+ assert.deepEqual(r('饭包在背上','背'),['bèi']);
+});
+
+
+test('road violence retains grammatical and embedded-bolt readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['紧得发亮','疼得弯了一下','脸色白得塔维不敢叫']) assert.deepEqual(r(text,'得'),['de'],text);
+ for(const text of ['只挡在胸前','只够半坐']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ assert.deepEqual(r('钉进身后废屋的门板','钉'),['dìng']);
+});
+
+
+test('rescue and recovery contexts preserve particles and physical actions',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['抖得厉害','牵得她脸上一紧','弯得更少','疼得一张脸灰了','叫得像不是自己的声音','动得很慢','疼得连话都骂不完整','系得太紧','伤得重','举得很高','挡不挡得住']) assert.deepEqual(r(text,'得'),['de'],text);
+ for(const text of ['只扶木槽','只在匣底垫了一点','只抬到半截','只撑一会儿']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ assert.deepEqual(r('把布扎住','扎'),['zā']);
+ assert.deepEqual(r('会勒住他喉咙','勒'),['lēi']);
+ assert.deepEqual(r('右掌的布勒着','勒'),['lēi']);
+ assert.deepEqual(r('移过了断口','了'),['le']);
+ assert.deepEqual(r('也得剪开','得'),['děi']);
+ assert.deepEqual(r('得送进城里','得'),['děi']);
+ assert.deepEqual(r('背着她的皮袋','背'),['bēi']);
+ assert.deepEqual(r('他的背上','背'),['bèi']);
+ assert.deepEqual(r('坏板子铺回去了','铺'),['pū']);
+ assert.deepEqual(r('是他自己系的','系'),['jì']);
+ assert.deepEqual(r('系得太紧','系'),['jì']);
+ assert.deepEqual(r('关系不变','系'),['xì']);
+ assert.deepEqual(r('还没找着','着'),['zháo']);
+ assert.deepEqual(r('没有数它','数'),['shǔ']);
+ assert.deepEqual(r('数学题','数'),['shù']);
+});
