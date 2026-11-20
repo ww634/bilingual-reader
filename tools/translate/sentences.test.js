@@ -46,3 +46,27 @@ test('explicit repair preserves prose/checkpoint and other books, versions both 
  assert.deepEqual(await fs.readFile(path.join(dir,'_drafts/sentence-repairs',backups[0])),bytes);
  await assert.rejects(repairSentences({root,plan,apply:true}),/source changed/);
 });
+
+test('title romanization repair requires opt-in and cannot change authored title text', async t=>{
+ const root=await fs.mkdtemp(path.join(os.tmpdir(),'title-repair-test-'));
+ t.after(()=>fs.rm(root,{recursive:true,force:true}));
+ const dir=path.join(root,'content/books/example');await fs.mkdir(dir,{recursive:true});
+ const input=draft([pair('雨。','Rain.')]);const result=finalizeDraft(input);
+ const old={id:'ch-1',book_id:'example',language:'zh',version:1,...result,title:{...result.title,target:'stale'},meta:{source:'author-agent'}};
+ const bytes=Buffer.from(JSON.stringify(old));const output=path.join(dir,'ch-1.json');await fs.writeFile(output,bytes);
+ const libraryPath=path.join(root,'content/library.json');await fs.writeFile(libraryPath,JSON.stringify({version:2,books:[{id:'example',version:4,chapters:[{id:'ch-1',version:1,title:old.title,url:'books/example/ch-1.json'}]}]}));
+ const statePath=path.join(dir,'_state.json');await fs.writeFile(statePath,'{"chapters_written":1}');
+ const plan={book_id:'example',chapters:[{chapter:1,source_sha256:createHash('sha256').update(bytes).digest('hex'),draft:input}]};
+ await assert.rejects(repairSentences({root,plan,apply:true}),/changed title/);
+ plan.chapters[0].refresh_title_pinyin=true;
+ for(const [key,value]of[['english','Another title'],['hanzi','雪']]){
+  const changed=structuredClone(plan);changed.chapters[0].draft.title[key]=value;
+  await assert.rejects(repairSentences({root,plan:changed,apply:true}),/changed title/);
+ }
+ assert.deepEqual(await fs.readFile(output),bytes);
+ await repairSentences({root,plan,apply:true});
+ const fixed=JSON.parse(await fs.readFile(output));assert.deepEqual(fixed.title,result.title);assert.equal(fixed.version,2);assert.deepEqual(fixed.pairs,old.pairs);
+ const lib=JSON.parse(await fs.readFile(libraryPath));assert.deepEqual(lib.books[0].chapters[0].title,result.title);assert.equal(lib.books[0].chapters[0].version,2);
+ assert.equal(await fs.readFile(statePath,'utf8'),'{"chapters_written":1}');
+ const backup=path.join(dir,'_drafts/sentence-repairs',`1-${plan.chapters[0].source_sha256}.json`);assert.deepEqual(await fs.readFile(backup),bytes);
+});

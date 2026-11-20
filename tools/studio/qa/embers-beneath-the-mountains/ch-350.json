@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-350",
+  "chapter_sha256": "f228a315580c385f2b61c93b7ae944a535e23afd347a2c0307d9829c049556e6",
+  "catalog_sha256": "d9a60bea70c47cb94186fdec794d398264047c680537c78e9f7f52550f864f7c",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-20T20:14:25.290363+00:00",
+  "review": {
+    "editorial": "Reviewed the full scene and closing transition for independent character choices, emotional room and consequences that persist beyond the batch.",
+    "continuity_or_facts": "Checked family information, travel dates, actual letter handoff, ongoing injuries and the scope of future learning. Intentions and uncertain outcomes remain explicitly distinct.",
+    "english_alignment": "Reviewed local guides and ordered coverage; retained natural sentence units without paragraph gloss repetition. Verified contextual modal, teaching and rolling readings and inspected both scripts in the reader."
+  },
+  "warning_resolutions": {
+    "pair-4-chunk-9-coarse": "Retained the short relative modifier with its explicit subject and location as one English relative clause; the head noun is aligned separately.",
+    "pair-13-chunk-10-coarse": "Retained the nominalized expression phrase as one descriptive English noun phrase; the surrounding memory and action remain individually aligned.",
+    "pair-20-chunk-3-coarse": "Retained the embedded yes/no question as one short grammatical clause with its own English span. No paragraph or repeated gloss was introduced."
+  },
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-350-beginning.png",
+      "sha256": "5202f938a37e7566a51b370505476601bcee6e33de534ad5ff5803c6dff2c33f",
+      "notes": "Viewed phone pinyin opening: readable tone marks, coloured source and meaningful local English, with no visible horizontal clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 17,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-350-middle.png",
+      "sha256": "8187607821d4bc89b78c7e82abcc9d49b624a138a03044a062a3993562689116",
+      "notes": "Viewed phone character midpoint: checked wrapping, punctuation and the English guide against the visible source."
+    },
+    {
+      "section": "end",
+      "pair": 33,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-350-end.png",
+      "sha256": "7f2ab7a17aacbb4ddfce3dd0b45b189673440682260927264e079460499e0e2f",
+      "notes": "Viewed phone character ending: closing source and local English remain readable above the page indicator."
+    }
+  ]
+}

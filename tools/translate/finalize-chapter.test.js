@@ -279,3 +279,21 @@ test('rescue and recovery contexts preserve particles and physical actions',()=>
  assert.deepEqual(r('没有数它','数'),['shǔ']);
  assert.deepEqual(r('数学题','数'),['shù']);
 });
+
+
+test('return and martial contexts preserve polyphones without changing homographs',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ for(const text of ['坐得越来越直','包得比原先厚','亮得很寻常','咬得太急','说得乱','睡得怎样','练得好','看得了','沉得不像','退得深','熟得不能再熟','放得太重','跑得勤些','看得见']) assert.deepEqual(r(text,'得'),['de'],text);
+ for(const text of ['还得接着看','更得认清','自己得把每个字说准','都得他们自己问清','也得给家里写信','就得答应']) assert.deepEqual(r(text,'得'),['děi'],text);
+ for(const text of ['不只半句','只跟她学','只留下其中半句','只问还有没有','只教他站着']) assert.deepEqual(r(text,'只'),['zhǐ'],text);
+ for(const text of ['卷好的旧毡','袖子卷过肘']) assert.deepEqual(r(text,'卷'),['juǎn'],text);
+ assert.deepEqual(r('数着前车的人头','数'),['shǔ']);
+ for(const text of ['能认真教这件事','她不教吗','她说也教','只教他站着']) assert.deepEqual(r(text,'教'),['jiāo'],text);
+ assert.deepEqual(r('教堂','教'),['jiào']);
+ assert.deepEqual(r('互不相让地交手','地'),['de']);
+ assert.deepEqual(r('猛地变成','地'),['de']);
+ assert.deepEqual(r('护着手','着'),['zhe']);
+ assert.deepEqual(r('挨打','挨'),['ái']);
+ assert.deepEqual(r('挨近','挨'),['āi']);
+ assert.deepEqual(r('得到了消息','得'),['dé']);
+});

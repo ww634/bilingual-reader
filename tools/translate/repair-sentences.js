@@ -40,11 +40,16 @@ export async function repairSentences({ plan, root = ROOT, apply = false }) {
       const result = finalizeDraft(entry.draft);
       requireThat(result.pairs.map(p => p.hanzi).join('') === old.pairs.map(p => p.hanzi).join(''), `ch-${n}: repair changed Chinese prose`);
       requireThat(JSON.stringify(words(result)) === JSON.stringify(words(old)), `ch-${n}: repair changed word order/categories`);
-      requireThat(JSON.stringify(result.title) === JSON.stringify(old.title), `ch-${n}: repair changed title`);
+      // Explicit opt-in may refresh only finalizer-generated romanization.
+      // Authored Chinese/English title text remains immutable under repair.
+      const sameTitle = JSON.stringify(result.title) === JSON.stringify(old.title);
+      const titlePinyinOnly = entry.refresh_title_pinyin === true &&
+        result.title.hanzi === old.title.hanzi && result.title.english === old.title.english;
+      requireThat(sameTitle || titlePinyinOnly, `ch-${n}: repair changed title`);
       const catalog = book.chapters.find(c => c.id === old.id);
       requireThat(catalog && catalog.version === old.version, `ch-${n}: chapter/catalog version mismatch`);
       const repaired = { ...old, ...result, version: old.version + 1 };
-      upsertBook(library, { ...book, chapters: [{ ...catalog, version: repaired.version }] });
+      upsertBook(library, { ...book, chapters: [{ ...catalog, title: result.title, version: repaired.version }] });
       requireThat(book.chapters.find(c => c.id === old.id).version === repaired.version, 'Version did not advance');
       prepared.push({ n, output, bytes, repaired, source: entry.source_sha256 });
     }

@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-348",
+  "chapter_sha256": "8e88f4ee1fef6a20b295cd74aefb29c68d1e0f91ffd55e5e2597e072939ef362",
+  "catalog_sha256": "68e4f86e01837af65d9bb5949a54d632f85e8da08a4d9b9c5e2aa73073f6a85f",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-20T20:14:25.286866+00:00",
+  "review": {
+    "editorial": "Reviewed the complete scene for clear introductions and balanced disagreement; revised a misleading time reference and an unnatural expression before encoding.",
+    "continuity_or_facts": "Checked continuing treatment, information sources, limited authority and the distinction between proposed and completed arrangements; equipment remains within established material rules.",
+    "english_alignment": "Reviewed the sentence-local English for faithful action and pronoun references; corrected result, grammatical-particle and title pronunciations deterministically before final evidence capture."
+  },
+  "warning_resolutions": {
+    "pair-4-chunk-8-coarse": "Retained a compact comparative modifier as one English comparison; the following noun has its own alignment, so this is not a paragraph-sized object."
+  },
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-348-beginning.png",
+      "sha256": "4f68e07f232f715a39a2bb40656d4b9f0c6d93612b84fe44549847fa370d1156",
+      "notes": "Viewed phone pinyin opening: readable tone marks, coloured source and meaningful local English, with no visible horizontal clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 17,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-348-middle.png",
+      "sha256": "56f8462cd590f06dac2e96bce4b58b60aca0a539b19f9edd2b297ac2099c773e",
+      "notes": "Viewed phone character midpoint: checked wrapping, punctuation and the English guide against the visible source."
+    },
+    {
+      "section": "end",
+      "pair": 33,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-348-end.png",
+      "sha256": "b2f07ec19f141e777ecc558d10e270594096b3c8209b07123c00e8133733c46f",
+      "notes": "Viewed phone character ending: closing source and local English remain readable above the page indicator."
+    },
+    {
+      "section": "extra",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-348-title.png",
+      "sha256": "cc664c5ff1a151fc0a148d27b2ec0a45c906ad145e555dbdbcceccc22f5509f6",
+      "notes": "Viewed the intro page after the deterministic title correction and verified its contextual pronunciation and English title."
+    }
+  ]
+}

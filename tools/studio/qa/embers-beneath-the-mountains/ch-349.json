@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-349",
+  "chapter_sha256": "6c64951f5f415246f8042050574152d2e883446cbbe757a2edc247978a9f64b2",
+  "catalog_sha256": "b2ff0434f0f0f997abce59913d14a8475131b30605db7535e63621686ce5a55d",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-20T20:14:25.288303+00:00",
+  "review": {
+    "editorial": "Reread each action in sequence for spatial clarity, timing and intelligible counterplay. Corrected exchange numbering and a chronological reference before finalizing.",
+    "continuity_or_facts": "Verified bounded material samples, complementary changes, contact, cancellation, mechanical limits and continuing injuries. Demonstrated skill does not grant the observer new qualifications.",
+    "english_alignment": "Checked every sentence and local span. Reader preview prompted two English revisions to keep action and object phrases informative on their source rows; refreshed the chapter evidence afterward."
+  },
+  "warning_resolutions": {
+    "pair-8-chunk-3-coarse": "Retained the negative time-to-complete predicate as a grammatical unit with a faithful English predicate; the sentence remains one discrete study unit.",
+    "pair-31-chunk-4-coarse": "Retained a short embedded negative question as one clause-local English span to preserve its scope. It is a subordinate question within a single sentence, not multiple sentences.",
+    "pair-31-chunk-6-coarse": "Retained the compact relative clause as one grammatical modifier with faithful local English; its head noun and neighbouring predicates remain separate."
+  },
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-349-beginning.png",
+      "sha256": "ab148c9e34ec60ec12d7e2dc714a06bcc032bb7bf563a42703f2cb36859e1742",
+      "notes": "Viewed phone pinyin opening: readable tone marks, coloured source and meaningful local English, with no visible horizontal clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 17,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-349-middle.png",
+      "sha256": "fa46cc7924e391487a697f92970c7e2c8b1b356871a1c6a727908177fa4d053d",
+      "notes": "Viewed phone character midpoint: checked wrapping, punctuation and the English guide against the visible source."
+    },
+    {
+      "section": "end",
+      "pair": 33,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-349-end.png",
+      "sha256": "2883e61701a3751a52d17576c39ff630855777e5508a2736f2e95adb8ff50f55",
+      "notes": "Viewed phone character ending: closing source and local English remain readable above the page indicator."
+    }
+  ]
+}

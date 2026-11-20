@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-347",
+  "chapter_sha256": "93c6f2b6a872af1ef711db84e2b6dbfc83a34796704506a238873fb6db6956f9",
+  "catalog_sha256": "d9eb99867b0dc15ce6c4b12c5827fc319051bda3d7997befdac65dfe8637dc11",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-20T20:14:25.285120+00:00",
+  "review": {
+    "editorial": "Reread the reunion separately for distinct voices, reciprocal conversation and space between difficult recollections and ordinary humour.",
+    "continuity_or_facts": "Checked independent peer work and dates against earlier plans; continuing injuries constrain actions without granting new abilities or immediate recovery.",
+    "english_alignment": "Split quotation from following narration, corrected local exact spans, and moved one English condition to follow source order after preview showed a weak guide row. Refreshed previews after pronunciation corrections."
+  },
+  "warning_resolutions": {
+    "pair-2-chunk-7-coarse": "Retained a short participial modifier as one adjective-like unit with its faithful local English span; it modifies a single noun rather than encoding a paragraph.",
+    "pair-3-chunk-3-coarse": "Retained the compact purpose/quantity modifier as one grammatical unit; its English expresses the same use and number without invented particle glosses.",
+    "pair-17-chunk-12-coarse": "Retained a nominalized question phrase as one object with a concise English noun phrase. Reviewed its scope within the single sentence and the adjacent reader guide.",
+    "pair-21-chunk-2-coarse": "Retained the possessive location phrase as one prepositional English span; content and location remain explicit, with surrounding action vocabulary separate."
+  },
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-347-beginning.png",
+      "sha256": "a8dee888f4e5660fd1ad2dcb550a7418d708b6449ef0b1e55c35328994e41697",
+      "notes": "Viewed phone pinyin opening: readable tone marks, coloured source and meaningful local English, with no visible horizontal clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 17,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-347-middle.png",
+      "sha256": "dc5be8c49f4585fb5c453f45393f0c080d06377ae99dec5facc84ff3ea09549d",
+      "notes": "Viewed phone character midpoint: checked wrapping, punctuation and the English guide against the visible source."
+    },
+    {
+      "section": "end",
+      "pair": 33,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-347-end.png",
+      "sha256": "fc73a05fee12fd2e990aa2f3975dd829670e198d0c6e3cf039fe61b346474381",
+      "notes": "Viewed phone character ending: closing source and local English remain readable above the page indicator."
+    }
+  ]
+}
