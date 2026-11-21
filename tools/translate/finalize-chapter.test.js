@@ -297,3 +297,32 @@ test('return and martial contexts preserve polyphones without changing homograph
  assert.deepEqual(r('挨近','挨'),['āi']);
  assert.deepEqual(r('得到了消息','得'),['dé']);
 });
+
+
+test('early martial practice keeps grammatical readings distinct from lexical ones',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('他喝得太快，说得漂亮。','得'),['de','de']);
+ assert.deepEqual(r('问他练得怎样，摔得也更快。','得'),['de','de']);
+ assert.deepEqual(r('这里安全得很，还撑得住。','得'),['de','de']);
+ assert.deepEqual(r('鞋底擦得发白，手仍牵得紧。','得'),['de','de']);
+ assert.deepEqual(r('还得再去问，他也得开口去问。','得'),['děi','děi']);
+ assert.deepEqual(r('明天又得扫，谁说都得停。','得'),['děi','děi']);
+ assert.deepEqual(r('三只碗，不是只往前。','只'),['zhī','zhǐ']);
+ assert.deepEqual(r('只走步子，只沿绳边转身。','只'),['zhǐ','zhǐ']);
+ assert.deepEqual(r('他只来得及说一句。','只'),['zhǐ']);
+ assert.deepEqual(r('一沓纸放在杯底。','沓'),['dá']);
+ assert.deepEqual(r('她扎短辫，袋口扎紧。','扎'),['zā','zā']);
+ assert.deepEqual(r('他本能地张手，不由自主地退。','地'),['de','de']);
+ assert.deepEqual(r('骡车还了没有，他说还了。','还'),['huán','huán']);
+ assert.deepEqual(r('还在这里，还有一只。','还'),['hái','hái']);
+ assert.deepEqual(r('卷好的图带来了。','卷'),['juǎn']);
+ assert.deepEqual(r('握久了仍会疼。','了'),['le']);
+ assert.deepEqual(r('空着手，感觉还清楚。','着'),['zhe']);
+ assert.deepEqual(r('空着手，感觉还清楚。','还'),['hái']);
+ assert.deepEqual(r('她倒问他还记不记得。','倒'),['dào']);
+ assert.deepEqual(r('他摔倒了。','倒'),['dǎo']);
+ assert.deepEqual(r('数过的日子写下来了。','数'),['shǔ']);
+ assert.deepEqual(r('先重做普通站姿。','重'),['chóng']);
+ assert.deepEqual(r('负重做工很累。','重'),['zhòng']);
+ assert.deepEqual(r('她说话有点冲。','冲'),['chòng']);
+});

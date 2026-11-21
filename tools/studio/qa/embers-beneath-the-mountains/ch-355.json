@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-355",
+  "chapter_sha256": "c06c977b4917705a80f04ea389ae0946318262c2fc79dd55ace310fc0a2ac9e7",
+  "catalog_sha256": "6abf158976b97b0a423b37cc81498fd4a2bf049ca6b5b68e83383dfcd49ab2a1",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-21T09:18:58.927913+00:00",
+  "review": {
+    "editorial": "Separate scene review checked preparation, an inconclusive attempt, rest and a narrowly bounded result; reread the quieter closing transition without turning it into a mastery announcement.",
+    "continuity_or_facts": "Verified chronology, injury recovery, original equipment, cancellation sequence and earlier correspondence; historical training reference checked against actual early chapters.",
+    "english_alignment": "Reviewed every source sentence and gloss, including technical distinctions and negative clauses. Both-script phone samples show meaningful English guides and legible punctuation; sentence units remain individual sentences."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-355-beginning.png",
+      "sha256": "6b66cc4129f0fd5a503cfe35b41c04da60f55c31426e9c0ab7b246e8f00c7a12",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "middle",
+      "pair": 16,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-355-middle.png",
+      "sha256": "b33abe93989c6f506bf4fd99b96ce9c687d3ef74706141d87d1d6b12ad4f872d",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    },
+    {
+      "section": "end",
+      "pair": 31,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-355-end.png",
+      "sha256": "cd46ba1547a1e1b3f94615302a1f76152876452b51579fcd5450183d4464d9e5",
+      "notes": "Viewed the actual reader screenshot: legible source, punctuation and English guides, with no visible clipping in this sample."
+    }
+  ]
+}

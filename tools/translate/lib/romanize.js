@@ -164,6 +164,23 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/右掌的布勒着/g)) syllables[m.index + 4] = cinchSyllable;
       for (const m of run.matchAll(/还没找着/g)) syllables[m.index + 3] = pinyin("着火", { type: "array", toneType: "symbol" })[0];
       for (const m of run.matchAll(/挡不挡得住/g)) syllables[m.index + 3] = complementSyllable;
+      for (const m of run.matchAll(/空着手/g)) syllables[m.index + 1] = aspectSyllable;
+      for (const m of run.matchAll(/感觉还清楚/g)) syllables[m.index + 2] = pinyin("还有", { type: "array", toneType: "symbol" })[0];
+      for (const m of run.matchAll(/倒问他还记不记得/g)) syllables[m.index] = pourSyllable;
+      for (const m of run.matchAll(/数过的日子/g)) syllables[m.index] = countSyllable;
+      for (const m of run.matchAll(/先重做普通站姿/g)) syllables[m.index + 1] = againSyllable;
+      for (const m of run.matchAll(/不由自主地/g)) syllables[m.index + 4] = pinyin("地", { type: "array", toneType: "symbol", multiple: true })[1];
+      for (const m of run.matchAll(/握久了/g)) syllables[m.index + 2] = completedSyllable;
+      for (const m of run.matchAll(/骡车还了没有/g)) syllables[m.index + 2] = returnSyllable;
+      for (const m of run.matchAll(/说还了/g)) syllables[m.index + 1] = returnSyllable;
+      for (const m of run.matchAll(/卷好的图/g)) syllables[m.index] = rolledSyllable;
+      for (const m of run.matchAll(/被翻得发软/g)) syllables[m.index + 2] = complementSyllable;
+      for (const m of run.matchAll(/一沓纸/g)) syllables[m.index + 1] = pinyin("沓", { type: "array", toneType: "symbol", multiple: true })[1];
+      for (const m of run.matchAll(/扎短辫|扎紧/g)) syllables[m.index] = bandageSyllable;
+      for (const m of run.matchAll(/本能地/g)) syllables[m.index + 2] = pinyin("地", { type: "array", toneType: "symbol", multiple: true })[1];
+      for (const m of run.matchAll(/安全得很/g)) syllables[m.index + 2] = complementSyllable;
+      for (const m of run.matchAll(/有点冲/g)) syllables[m.index + 2] = towardSyllable;
+      for (const m of run.matchAll(/把一把洗好的葱/g)) syllables[m.index + 1] = pinyin("一碗", { type: "array", toneType: "symbol" })[0];
       for (const m of run.matchAll(/不只半句/g)) syllables[m.index + 1] = onlySyllable;
       for (const m of run.matchAll(/护着手/g)) syllables[m.index + 1] = aspectSyllable;
       for (const m of run.matchAll(/猛地变成/g)) syllables[m.index + 1] = complementSyllable;
@@ -181,8 +198,8 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/纸卷/g)) syllables[m.index + 1] = rolledSyllable;
       for (const m of run.matchAll(/得空着船/g)) { syllables[m.index] = obligationSyllable; syllables[m.index + 1] = emptySyllable; }
       for (const m of run.matchAll(/又得听/g)) syllables[m.index + 1] = obligationSyllable;
-      for (const m of run.matchAll(/得把每个字|得他们自己|得给家里写信|得答应|得认清|得接着看|得送进城里|得有你真能做的事|得翻|得分神|得有人|得请渠务所|得等渠务所|得看去哪儿|得看撑船|得算他的活|得先知道|得画大一点|得自己开口|得问她|得站着|得坐下来谈|得留着|得从脚下|得看他肯不肯|得回去占|得自己带灯|得等回去/g)) syllables[m.index] = obligationSyllable;
-      for (const m of run.matchAll(/说得很干脆|说得慢些|说得很随意|问得烦|问得直接|跑得肚子疼|裂得很长|浸得发黑|磨得发亮|暗得像|装得不对|洗得比|辣得他|笑得往后仰|压得很平|写得很重|说得不大妥当|干得很慢|说得很平|小得出奇|写得太宽|吹得乱响|拆得出来|答得干脆|听得出来|笑得刚|笑得把信封|熏得闭了|饿得去吃|响得不肯|吹得轻轻|描得深了些|笑得写不下字|说得有些快|切得歪|卷得比|按得太用力|淡得几乎|小得认不出脸|走得远|醒得比钟|磨得发白|改得好听|让得开些|短得塔维|笑得饭包|紧得发亮|疼得弯了|白得塔维|抖得厉害|牵得她|弯得更少|疼得一张脸|叫得像|伤得重|看得见|放得太重|跑得勤些|沉得不像|退得深|熟得不能再熟|练得好|看得了|咬得太急|说得乱|睡得怎样|坐得越来越直|包得比原先厚|亮得很寻常|举得很高|动得很慢|疼得连话|系得太紧|动得多些|画得几乎|画得太小|绷得发酸|走得比|骂得很响|挂得太低|咬得比|酸得眼角|种得太迟|笑得手|搁得像|抱得那么紧/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/得停|得找别的|得扫|得再去问|得先空掉|得开口去问|得把每个字|得他们自己|得给家里写信|得答应|得认清|得接着看|得送进城里|得有你真能做的事|得翻|得分神|得有人|得请渠务所|得等渠务所|得看去哪儿|得看撑船|得算他的活|得先知道|得画大一点|得自己开口|得问她|得站着|得坐下来谈|得留着|得从脚下|得看他肯不肯|得回去占|得自己带灯|得等回去/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/说得很干脆|说得慢些|说得很随意|问得烦|问得直接|跑得肚子疼|裂得很长|浸得发黑|磨得发亮|暗得像|装得不对|洗得比|辣得他|笑得往后仰|压得很平|写得很重|说得不大妥当|干得很慢|说得很平|小得出奇|写得太宽|吹得乱响|拆得出来|答得干脆|听得出来|笑得刚|笑得把信封|熏得闭了|饿得去吃|响得不肯|吹得轻轻|描得深了些|笑得写不下字|说得有些快|切得歪|卷得比|按得太用力|淡得几乎|小得认不出脸|走得远|醒得比钟|磨得发白|改得好听|让得开些|短得塔维|笑得饭包|紧得发亮|疼得弯了|白得塔维|抖得厉害|牵得她|弯得更少|疼得一张脸|叫得像|伤得重|撑得住|喊得像|晃得真像|牵得紧|擦得发白|练得怎样|练得更快|摔得也更快|练得发软|喝得太快|慢得像怕|写得像三个人|说得漂亮|看得见|放得太重|跑得勤些|沉得不像|退得深|熟得不能再熟|练得好|看得了|咬得太急|说得乱|睡得怎样|坐得越来越直|包得比原先厚|亮得很寻常|举得很高|动得很慢|疼得连话|系得太紧|动得多些|画得几乎|画得太小|绷得发酸|走得比|骂得很响|挂得太低|咬得比|酸得眼角|种得太迟|笑得手|搁得像|抱得那么紧/g)) syllables[m.index + 1] = complementSyllable;
       for (const m of run.matchAll(/拿着长夹/g)) syllables[m.index + 3] = grippingSyllable;
       for (const m of run.matchAll(/剪子|凳子|板子|步子|册子|匣子|果子|碟子|豆子|镊子|肚子|脑子/g)) syllables[m.index + 1] = neutralZiSyllable;
       for (const m of run.matchAll(/铺着|铺好|铺回去/g)) syllables[m.index] = spreadSyllable;
@@ -198,7 +215,7 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/没收到/g)) syllables[m.index] = negativeHaveSyllable;
       for (const m of run.matchAll(/杯子落在那里了/g)) syllables[m.index + 2] = leftBehindSyllable;
       for (const m of run.matchAll(/那行住处/g)) syllables[m.index + 1] = tradeSyllable;
-      for (const m of run.matchAll(/只写另行通知|只问一次|只问洛衡|只问纸|只问他昨日|只认到山门|只给一张|只在结尾|只数着日子|只托伊文|只睡了半个|只叫他自己|只肯|只问还有没有|只教他站着|只留下其中|只跟她学|只撑一会儿|只扶木槽|只在匣底|只抬到半截|只背着饭包|只挡在胸前|只够半坐|只会后半段|只从回来的人|只写还没有/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/只写另行通知|只问一次|只问洛衡|只问纸|只问他昨日|只认到山门|只给一张|只在结尾|只数着日子|只托伊文|只睡了半个|只叫他自己|只肯|只用脚尖|只看两边|只来得及|只在地上|只往前|只点头|只沿绳边|只叫林珂|只从林珂|只会那一边|只这一处|只记一处|只到山门|只问修栏|只问信里|只问|只走步子|只侧了|只问下一回|只往前踏|只认三处|只叫两人|只凭字丑|只给他添|只站着看|只问还有没有|只教他站着|只留下其中|只跟她学|只撑一会儿|只扶木槽|只在匣底|只抬到半截|只背着饭包|只挡在胸前|只够半坐|只会后半段|只从回来的人|只写还没有/g)) syllables[m.index] = onlySyllable;
       for (const m of run.matchAll(/怔了一下/g)) syllables[m.index] = startledSyllable;
       for (const m of run.matchAll(/轻载/g)) syllables[m.index + 1] = loadSyllable;
       for (const m of run.matchAll(/只看了几眼|只叫他看看/g)) syllables[m.index] = onlySyllable;
