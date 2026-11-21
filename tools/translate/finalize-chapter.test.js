@@ -326,3 +326,21 @@ test('early martial practice keeps grammatical readings distinct from lexical on
  assert.deepEqual(r('负重做工很累。','重'),['zhòng']);
  assert.deepEqual(r('她说话有点冲。','冲'),['chòng']);
 });
+
+test('recovery and early shield contexts preserve grammatical and lexical contrasts',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('妻子推着轮子，罐子还在。','子'),['zi','zi','zi']);
+ assert.deepEqual(r('坐着干的活，旁边是干布。','干'),['gàn','gān']);
+ assert.deepEqual(r('说得很快，硬得要慢慢嚼。','得'),['de','de']);
+ assert.deepEqual(r('都得叫得应。','得'),['děi','de']);
+ assert.deepEqual(r('得先问，得先停，得重查。','得'),['děi','děi','děi']);
+ assert.deepEqual(r('她倒愿意听，没有摔倒。','倒'),['dào','dǎo']);
+ assert.deepEqual(r('钻出篷子，看见钻头。','钻'),['zuān','zuàn']);
+ assert.deepEqual(r('日头下同行，同业的同行。','行'),['xíng','háng']);
+ assert.deepEqual(r('教这一件，回到教室。','教'),['jiāo','jiào']);
+ assert.deepEqual(r('先重查，不增加负重。','重'),['chóng','zhòng']);
+ assert.deepEqual(r('整片夹在里头。','夹'),['jiā']);
+ assert.deepEqual(r('只去码头，三只船。','只'),['zhǐ','zhī']);
+ assert.deepEqual(r('长得很大，绳子很长。','长'),['zhǎng','cháng']);
+ assert.deepEqual(r('答得太早，挡得最好。','得'),['de','de']);
+});

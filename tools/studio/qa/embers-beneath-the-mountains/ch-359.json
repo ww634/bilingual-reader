@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-359",
+  "chapter_sha256": "f35f1a73f1d7f1cc386309483975770677680c45b9c4332312b6e2d4d432a13b",
+  "catalog_sha256": "a05fd93302c2954a86679b807aeefb2e920f5ec2b70f1df1dd5b54ab20b9dcc7",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-21T12:52:22.469356+00:00",
+  "review": {
+    "editorial": "Separate reread checked task rules before action, frustration, pauses and the final transition; clarified chronology and a memory reference without changing perspective.",
+    "continuity_or_facts": "Checked known equipment, paired effects, fatigue and cancellation sequence; an inconclusive attempt is not credited as a new capability. Existing bookings and later proposals stay distinct from completed events.",
+    "english_alignment": "Reviewed all glosses and local chunks; a focused regression caught one contextual teaching reading. Audited deterministic repair preserved prose and word order; beginning, middle, ending and the corrected reading were freshly previewed."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-359-beginning.png",
+      "sha256": "1a48d0551093798ad726dd6d03ab16ec1e8cbefc91028c74536d27bed0f403ed",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "middle",
+      "pair": 14,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-359-middle.png",
+      "sha256": "81d467d49bacee1c6b604d74b61c05b73ddccb8def5e8293edb59f0af1bac645",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "end",
+      "pair": 27,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-359-end.png",
+      "sha256": "4c534a25fe4c7d4aa42d09d0cde85dd6b5ecbc902794727266b555aa2dd1cbd4",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "extra",
+      "pair": 17,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-359-reading.png",
+      "sha256": "c8b29fe23f12fafc2516e07120f9362ad4fc4d5109c7e106df9ffe7fc59766b9",
+      "notes": "Freshly viewed the repaired contextual teaching reading in pinyin with its English guide; correct tone visible and wrapping legible."
+    }
+  ]
+}

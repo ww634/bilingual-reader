@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-356",
+  "chapter_sha256": "4ac9e03ff0187095823526759499722983e74eee0e7e0fb5b4cfa23a271e8205",
+  "catalog_sha256": "86522e4c6a52cb50fd7e4b86b7e6b08aee1d974f0e7bad5b2777d414e6346ef3",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-21T12:52:22.461450+00:00",
+  "review": {
+    "editorial": "Separate reread checked the whole visit, a developed conversation and its quiet exit; clarified a work description and a small physical referent.",
+    "continuity_or_facts": "Verified visit time, ongoing mobility limits and who can decide household arrangements; a noticed possibility is kept distinct from an agreement or completed solution.",
+    "english_alignment": "Reviewed all sentence glosses and ordered word spans; checked negation, bodily actions and reported speech. Both-script phone samples and a desktop sample show readable guides and punctuation."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-356-beginning.png",
+      "sha256": "0d7a970f6cf3518b65d11cb2af812ac13fd569ae342ce03180554ab12a36c664",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "middle",
+      "pair": 16,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-356-middle.png",
+      "sha256": "d739201f5290da79432d894392ff083ab10f2930ad2c557d02785c260992886f",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "end",
+      "pair": 30,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-356-end.png",
+      "sha256": "d97f674df3ff741edf789745b4aab1a9a9c9b8f8da7771fa2982b68492d6fb7c",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "extra",
+      "pair": 16,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-356-desktop.png",
+      "sha256": "619a41a177e30f2b9a362e19a5ec6c36f5d57ae80aced8ded9d228d6edc135f2",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    }
+  ]
+}

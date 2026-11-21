@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-360",
+  "chapter_sha256": "b9e98953f6374ad2cd0bc7c981db971e030a0236b60257389e8519ccf807355f",
+  "catalog_sha256": "5978334095fb5b0ce8acdcaf7d284968150d7e00d1f2df7a283f88bd9a28ebbe",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-21T12:52:22.472867+00:00",
+  "review": {
+    "editorial": "Reviewed the whole scene for physical referents and causal sequencing; clarified the moving object and stated the mechanical stop range explicitly, then reread the changes.",
+    "continuity_or_facts": "Checked known whole samples, changed supports, ordinary baselines and short paired response; the demonstrated result remains limited to the actual supported setup and permission shown.",
+    "english_alignment": "Checked each English sentence and technical contrast against Chinese, including cancellation and negation. Both-script phone previews passed; a word tap displayed a complete sentence with its own guide and saving showed Saved."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-360-beginning.png",
+      "sha256": "5dedcb50ffe0c481f0ee27b624e5eeb44fb5d9f3a5356d46259f32c86e332ece",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "middle",
+      "pair": 13,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-360-middle.png",
+      "sha256": "50f725d384bd46decb5045759b44c50d07d83c02d23fb6af007e03ffedc226dd",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "end",
+      "pair": 25,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-360-end.png",
+      "sha256": "9d59f18f85e5f3e570109363460c07ad0caf6b4d88c1a586002649dcd611ea82",
+      "notes": "Viewed actual reader: source and English guides readable, category colours retained and no clipping in the stable sample; sentence continuation checked across page boundaries."
+    },
+    {
+      "section": "extra",
+      "pair": 13,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-360-sentence.png",
+      "sha256": "03e584f38649697009cff2c0b5a4da2f945cf2bb224b7889a4ecfae6ddae083f",
+      "notes": "Viewed one complete Chinese sentence with its complete English guide in the word popover; clicked Save sentence and observed Saved. No speech generation requested."
+    }
+  ]
+}
