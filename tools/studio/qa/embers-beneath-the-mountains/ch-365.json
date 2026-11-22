@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-365",
+  "chapter_sha256": "b95d217644e051c5d31acccc32b7813e10b1b2d4a1a3ebeae7031aa89a0866d4",
+  "catalog_sha256": "b4e53ebd15144fbffd94eabe077f8604297d799499a6ef565ef95b7b6a0e17b5",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-22T18:33:29.415253+00:00",
+  "review": {
+    "editorial": "Separate reread clarified the time transition, speaker attribution and a metaphor; reviewed the full scene and its quieter close after revision.",
+    "continuity_or_facts": "Checked preparatory practice, paired effects, support conditions, stopping sequence and continuing injury limits; the result is restricted to what is actually demonstrated.",
+    "english_alignment": "Reviewed every gloss and word span; actual preview found an awkward closing guide break. Audited English-only realignment preserved Chinese and word categories, then fresh beginning/middle/end previews passed. A complete sentence with its own guide saved successfully."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-365-beginning.png",
+      "sha256": "1ae3c28aa95d57b0be304813263f7355d9e6b3b674897dd4a50977af5cf80e34",
+      "notes": "Viewed actual reader: source and English guides legible, category colours retained, punctuation and wrapping checked; final sentence continuation inspected across the page boundary."
+    },
+    {
+      "section": "middle",
+      "pair": 14,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-365-middle.png",
+      "sha256": "edb399058447d18a451b055e1c44f4c3e30fe341715b92372875ad690bb2a451",
+      "notes": "Viewed actual reader: source and English guides legible, category colours retained, punctuation and wrapping checked; final sentence continuation inspected across the page boundary."
+    },
+    {
+      "section": "end",
+      "pair": 26,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-365-end.png",
+      "sha256": "b1ec466f9c6c1e3512d12935feda9131124e8519a0be929c5ac0987457fe1857",
+      "notes": "Freshly viewed the repaired closing guide: purpose and speech now follow source order across readable English lines, without clipping."
+    },
+    {
+      "section": "extra",
+      "pair": 14,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-365-sentence.png",
+      "sha256": "61a7a1dc81db69d36020d88693e8c7d2f46b961f2779fd142d99a1195cb41054",
+      "notes": "Tapped a source word, viewed one complete Chinese sentence and its own full English guide, clicked Save sentence and observed Saved. No speech generation requested."
+    }
+  ]
+}

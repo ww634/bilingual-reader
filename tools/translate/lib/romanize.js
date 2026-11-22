@@ -194,6 +194,32 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/得先停/g)) syllables[m.index] = obligationSyllable;
       for (const m of run.matchAll(/整片夹在里头/g)) syllables[m.index + 2] = grippingSyllable;
       for (const m of run.matchAll(/一着急/g)) syllables[m.index] = pinyin("一天", { type: "array", toneType: "symbol" })[0];
+      for (const m of run.matchAll(/货行/g)) syllables[m.index + 1] = tradeSyllable;
+      for (const m of run.matchAll(/只保一段|只带走/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/得跟着/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/带子|垫子/g)) syllables[m.index + 1] = neutralZiSyllable;
+      for (const m of run.matchAll(/闷得很/g)) { syllables[m.index] = pinyin("沉闷", { type: "array", toneType: "symbol" })[1]; syllables[m.index + 1] = complementSyllable; }
+      for (const m of run.matchAll(/得走开/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/踏得太长|拦得没错|学得很像|拿得动/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/够得着/g)) { syllables[m.index + 1] = complementSyllable; syllables[m.index + 2] = pinyin("着火", { type: "array", toneType: "symbol" })[0]; }
+      for (const m of run.matchAll(/倒像因为|倒问他看见|倒有得/g)) syllables[m.index] = pourSyllable;
+      for (const m of run.matchAll(/只看那块|只记下/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/说不出没有/g)) syllables[m.index + 3] = negativeHaveSyllable;
+      for (const m of run.matchAll(/袖子/g)) syllables[m.index + 1] = neutralZiSyllable;
+      for (const m of run.matchAll(/推得太深|做得好|说得不大合时/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/拆时得/g)) syllables[m.index + 2] = obligationSyllable;
+      for (const m of run.matchAll(/只多退|只占了/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/木刨/g)) syllables[m.index + 1] = pinyin("刨", { type: "array", toneType: "symbol", multiple: true }).find(s => s !== pinyin("刨土", { type: "array", toneType: "symbol" })[0]);
+      for (const m of run.matchAll(/往里夹/g)) syllables[m.index + 2] = grippingSyllable;
+      for (const m of run.matchAll(/将相碰|将门边/g)) syllables[m.index] = pinyin("将要", { type: "array", toneType: "symbol" })[0];
+      for (const m of run.matchAll(/刨木/g)) syllables[m.index] = pinyin("刨", { type: "array", toneType: "symbol", multiple: true }).find(s => s !== pinyin("刨土", { type: "array", toneType: "symbol" })[0]);
+      for (const m of run.matchAll(/系了短绳/g)) syllables[m.index] = tieSyllable;
+      for (const m of run.matchAll(/法子/g)) syllables[m.index + 1] = neutralZiSyllable;
+      for (const m of run.matchAll(/分量/g)) syllables[m.index + 1] = pinyin("量", { type: "array", toneType: "none" })[0];
+      for (const m of run.matchAll(/一卷画好的路图/g)) { syllables[m.index] = pinyin("一天", { type: "array", toneType: "symbol" })[0]; syllables[m.index + 1] = rolledSyllable; }
+      for (const m of run.matchAll(/卷边/g)) syllables[m.index] = rolledSyllable;
+      for (const m of run.matchAll(/只练普通/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/举得像盾|短得宋远|小得挤到/g)) syllables[m.index + 1] = complementSyllable;
       for (const m of run.matchAll(/空着手/g)) syllables[m.index + 1] = aspectSyllable;
       for (const m of run.matchAll(/感觉还清楚/g)) syllables[m.index + 2] = pinyin("还有", { type: "array", toneType: "symbol" })[0];
       for (const m of run.matchAll(/倒问他还记不记得/g)) syllables[m.index] = pourSyllable;

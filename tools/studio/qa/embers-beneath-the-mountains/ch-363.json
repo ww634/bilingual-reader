@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-363",
+  "chapter_sha256": "e585fea8bfa78c8e01be615e2a9b147f4f0fadeeedf72354cf0c6abf622b09b9",
+  "catalog_sha256": "3ae680f743530ef93c417da5fac9a8c251a5679a1e33fc5bd8ef6249c45545f2",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-22T18:33:29.407231+00:00",
+  "review": {
+    "editorial": "Separate reread checked the shared task and later disagreement; clarified the load removal, hand-position wording and an ambiguous cloth referent.",
+    "continuity_or_facts": "Compared the prototype with its earlier actual description; a limited test is not a finished component or general qualification, and a possible outing remains unassigned.",
+    "english_alignment": "Reviewed all sentence glosses and ordered local chunks. Direct speech and postposed narration are separate sentence units with exact source whitespace preserved; actual phone previews cover both scripts."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-363-beginning.png",
+      "sha256": "f9aea536f0e67980eeed703fd85aca0301aaff7a9e7d66cd36ff5bc4f1b95e79",
+      "notes": "Viewed actual reader: source and English guides legible, category colours retained, punctuation and wrapping checked; final sentence continuation inspected across the page boundary."
+    },
+    {
+      "section": "middle",
+      "pair": 16,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-363-middle.png",
+      "sha256": "c24bfac179f893e17169ebb2df466975288c1c57f138f744b922c298bf9b241e",
+      "notes": "Viewed actual reader: source and English guides legible, category colours retained, punctuation and wrapping checked; final sentence continuation inspected across the page boundary."
+    },
+    {
+      "section": "end",
+      "pair": 31,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-363-end.png",
+      "sha256": "0790e67f2ffff8f9f83ddfc61f6aa2d88d2a4238ad43d8d1ca52654c618741e1",
+      "notes": "Viewed actual reader: source and English guides legible, category colours retained, punctuation and wrapping checked; final sentence continuation inspected across the page boundary."
+    }
+  ]
+}

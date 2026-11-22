@@ -344,3 +344,19 @@ test('recovery and early shield contexts preserve grammatical and lexical contra
  assert.deepEqual(r('长得很大，绳子很长。','长'),['zhǎng','cháng']);
  assert.deepEqual(r('答得太早，挡得最好。','得'),['de','de']);
 });
+
+test('map and hand-borne practice contexts retain the intended readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('货行答应，明日行走。','行'),['háng','xíng']);
+ assert.deepEqual(r('得跟着，也得走开。','得'),['děi','děi']);
+ assert.deepEqual(r('闷得很，够得着，也拿得动。','得'),['de','de','de']);
+ assert.deepEqual(r('她说不出没有。','没'),['méi']);
+ assert.deepEqual(r('带子、垫子、袖子和法子。','子'),['zi','zi','zi','zi']);
+ assert.deepEqual(r('只保一段，只记下，三只碗。','只'),['zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('木刨、刨木和刨土。','刨'),['bào','bào','páo']);
+ assert.deepEqual(r('往里夹，夹袄另算。','夹'),['jiā','jiá']);
+ assert.deepEqual(r('将相碰的挪开，将门边的拿走。','将'),['jiāng','jiāng']);
+ assert.deepEqual(r('系了短绳，关系不变。','系'),['jì','xì']);
+ assert.deepEqual(r('一卷画好的路图，卷边压平。','卷'),['juǎn','juǎn']);
+ assert.deepEqual(r('举得像盾，短得宋远没开口，小得挤到前行。','得'),['de','de','de']);
+});
