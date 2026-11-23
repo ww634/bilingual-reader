@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-366",
+  "chapter_sha256": "c89311856106548b30b628c910926562505349079b801ab7996ef7726d0e7064",
+  "catalog_sha256": "3a026c4776d6df028a5d1921521fae5eb5bc4384b34defff8b1e8da595e9863c",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-23T11:41:41.081311+00:00",
+  "review": {
+    "editorial": "Separate reread clarified arrival blocking, speaker actions and a handoff; removed an unsupported prior commitment, then reread the changed scene.",
+    "continuity_or_facts": "Checked elapsed days, injury sides, ownership, carried objects, address knowledge and unchanged funds; future possibilities stay prospective.",
+    "english_alignment": "Reviewed every sentence gloss and local word span against the fixed Chinese. Actual phone previews in both scripts show readable English guides, punctuation and category colours; sentence units follow sentence endings. Contextual romanization was refreshed by the audited finalizer path, with fresh reader previews afterward."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-366-beginning.png",
+      "sha256": "2ff6bf0ce80a4d8107ca53b82794b53342d3f34499dc2729d9cd6d691db4ea81",
+      "notes": "Viewed opening in pinyin: English guides remain readable beneath source lines, colours retained and no clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 14,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-366-middle.png",
+      "sha256": "3eb48872c02895926fac79c3d0ff7885f9d77bfd370222809179961590783ce3",
+      "notes": "Viewed middle in characters: source-to-guide wrapping and punctuation checked, with meaningful English throughout the sample."
+    },
+    {
+      "section": "end",
+      "pair": 27,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-366-end.png",
+      "sha256": "77ca94fbd709854d224b7fe517d9163ecd89d7d419c7d6c1280e2570302b8dae",
+      "notes": "Viewed closing sentence and its page continuation where needed: English guide remains legible through the final punctuation."
+    },
+    {
+      "section": "extra",
+      "pair": 14,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-366-desktop.png",
+      "sha256": "6d09f5619060081d8800ebf383d97dabebed61467afa2929e19ccafdf3a22d8b",
+      "notes": "Viewed the same middle passage at desktop width: centred reading column, readable guides and preserved word colours."
+    },
+    {
+      "section": "extra",
+      "pair": 14,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-366-saved.png",
+      "sha256": "5ed6a919fa79ca8ce34fda57bac4a623d725eb369601d8c0ca768215fc670d85",
+      "notes": "Opened a word in the actual reader and verified a single complete Chinese sentence with its own full English guide. Saving showed Saved; after the pinyin-only refresh it correctly reported Already saved, preserving the existing card."
+    }
+  ]
+}

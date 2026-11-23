@@ -360,3 +360,38 @@ test('map and hand-borne practice contexts retain the intended readings',()=>{
  assert.deepEqual(r('一卷画好的路图，卷边压平。','卷'),['juǎn','juǎn']);
  assert.deepEqual(r('举得像盾，短得宋远没开口，小得挤到前行。','得'),['de','de','de']);
 });
+
+ test('practice phrases distinguish vacated space, suffering hits and restrictive only',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('那一块已经空出来了。','空'),r('有空缺。','空'));
+ assert.deepEqual(r('天上的天空。','空'),['kōng']);
+ assert.deepEqual(r('他没挨上。','挨'),r('他挨打了。','挨'));
+ assert.deepEqual(r('挨近墙边。','挨'),['āi']);
+ assert.deepEqual(r('只准走，只扫到这里，一只碗。','只'),['zhǐ','zhǐ','zhī']);
+ });
+
+test('blank space and after-meal nap retain their contextual readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('那块空处仍空着。','空'),['kòng','kòng']);
+ assert.deepEqual(r('他空着手，看天空。','空'),['kōng','kōng']);
+ assert.deepEqual(r('饭后的觉。','觉'),['jiào']);
+ assert.deepEqual(r('他觉得不好。','觉'),['jué']);
+ assert.deepEqual(r('只解释，只会当，只到河岔，一只轮。','只'),['zhǐ','zhǐ','zhǐ','zhī']);
+});
+
+test('carrier exercises retain structural de and restrictive only',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('分开得很小，册子合得很慢。','得'),['de','de']);
+ assert.deepEqual(r('只做这一件，只拿木头，一只手。','只'),['zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('他得停。','得'),['děi']);
+});
+
+test('held breath, pouring and complement particles are contextual',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('他屏住气。','屏'),['bǐng']);
+ assert.deepEqual(r('门前的屏风。','屏'),['píng']);
+ assert.deepEqual(r('不由得贴得紧，轻得算不上，水倒得快，烫得吸气。','得'),['de','de','de','de','de']);
+ assert.deepEqual(r('水倒得很快。','倒'),['dào']);
+ assert.deepEqual(r('他跌倒了。','倒'),['dǎo']);
+ assert.deepEqual(r('夹走一片菜。','夹'),['jiā']);
+});

@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-368",
+  "chapter_sha256": "885651f95eb3f34a9440cc78455812163d65b2eb612a552b520ef52e1a79e7fe",
+  "catalog_sha256": "c270fa6dfdc203619bc6686563bb84fe16a8bdfb971c92e167d2255d25b927e3",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-23T11:41:41.086916+00:00",
+  "review": {
+    "editorial": "Separate review clarified what an answer confirms and added a developed interruption that makes the conversation feel inhabited; reread the visit as one continuous scene.",
+    "continuity_or_facts": "Checked delivered versus proposed documents, consented information, limits of remembered observations, payment status and each participant's authority.",
+    "english_alignment": "Reviewed every sentence gloss and local word span against the fixed Chinese. Actual phone previews in both scripts show readable English guides, punctuation and category colours; sentence units follow sentence endings."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-368-beginning.png",
+      "sha256": "df3deba16229e1f30dde140ca5fc46ead1368bf628aebb70c58597195ce8fc01",
+      "notes": "Viewed opening in pinyin: English guides remain readable beneath source lines, colours retained and no clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 16,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-368-middle.png",
+      "sha256": "74431d6d78b9fb5c789839bb54cbd7456f59ba307a40817b94ca9858eb193fa0",
+      "notes": "Viewed middle in characters: source-to-guide wrapping and punctuation checked, with meaningful English throughout the sample."
+    },
+    {
+      "section": "end",
+      "pair": 30,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-368-end.png",
+      "sha256": "901bd9895956efc8621d2d2dcb600b4a3bebea04aff03e1dc71d071f43a22c56",
+      "notes": "Viewed closing sentence and its page continuation where needed: English guide remains legible through the final punctuation."
+    }
+  ]
+}

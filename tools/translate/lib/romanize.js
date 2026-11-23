@@ -40,6 +40,11 @@ const peelingSyllable = pinyin("剥削", { type: "array", toneType: "symbol" })[
 const spreadSyllable = pinyin("铺开", { type: "array", toneType: "symbol" })[0];
 const neutralZiSyllable = pinyin("子", { type: "array", toneType: "none" })[0];
 const grippingSyllable = pinyin("夹子", { type: "array", toneType: "symbol" })[0];
+const suppressSyllable = pinyin("屏息", { type: "array", toneType: "symbol" })[0];
+const napSyllable = pinyin("睡觉", { type: "array", toneType: "symbol" })[1];
+const vacateSyllable = pinyin("空缺", { type: "array", toneType: "symbol" })[0];
+const nearSyllable = pinyin("挨近", { type: "array", toneType: "symbol" })[0];
+const sufferSyllable = pinyin("挨", { type: "array", toneType: "symbol", multiple: true }).find(s => s !== nearSyllable);
 const emptySyllable = pinyin("空船", { type: "array", toneType: "symbol" })[0];
 // 系 also defaults to the relationship/system sense in explicit tying phrases.
 // Select its other dictionary reading; never store authored pinyin in chapters.
@@ -276,6 +281,17 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/轻载/g)) syllables[m.index + 1] = loadSyllable;
       for (const m of run.matchAll(/只看了几眼|只叫他看看/g)) syllables[m.index] = onlySyllable;
       for (const m of run.matchAll(/轻咳/g)) syllables[m.index + 1] = coughSyllable;
+      for (const m of run.matchAll(/分开得|册子合得/g)) syllables[m.index + (m[0].startsWith("分") ? 2 : 3)] = complementSyllable;
+      for (const m of run.matchAll(/屏住气/g)) syllables[m.index] = suppressSyllable;
+      for (const m of run.matchAll(/贴得|轻得|倒得|烫得/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/不由得/g)) syllables[m.index + 2] = complementSyllable;
+      for (const m of run.matchAll(/水倒得/g)) syllables[m.index + 1] = pourSyllable;
+      for (const m of run.matchAll(/夹走一片菜/g)) syllables[m.index] = grippingSyllable;
+      for (const m of run.matchAll(/饭后的觉/g)) syllables[m.index + 3] = napSyllable;
+      // These result phrases mean vacating space / taking a hit, not sky or proximity.
+      for (const m of run.matchAll(/空出来|空处|(?<=好好地|人手仍|空处仍)空着/g)) syllables[m.index] = vacateSyllable;
+      for (const m of run.matchAll(/没挨上/g)) syllables[m.index + 1] = sufferSyllable;
+      for (const m of run.matchAll(/只准走|只扫到|只解释|只会当|只到河岔|只做这一件|只拿木头/g)) syllables[m.index] = onlySyllable;
       for (const m of run.matchAll(/只看一眼/g)) syllables[m.index] = onlySyllable;
       for (const m of run.matchAll(/冲孩子吵/g)) syllables[m.index] = towardSyllable;
       for (const m of run.matchAll(/倒像她不讲理|倒像只是|倒把塔维|倒让他不知|倒记得很清楚|倒一点不嫌累|倒没有谁/g)) syllables[m.index] = pourSyllable;
