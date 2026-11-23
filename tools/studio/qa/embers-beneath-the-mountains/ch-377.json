@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-377",
+  "chapter_sha256": "84f2d73fde9df71662b61e055c8e31e902eb36bd92db14097c57d500f66905e9",
+  "catalog_sha256": "6f459f08e89ed1fe0cf634d562a1a4b4d58a24c5afdbe9c33995db408331ad5c",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-23T19:44:54.616098+00:00",
+  "review": {
+    "editorial": "Separate action review followed ordinary movement, both controlled demonstrations and the intervening rest; clarified preparation, reset order and counterplay without adding capabilities.",
+    "continuity_or_facts": "Checked elapsed time, both participants’ positions, complementary material responses, residual duration and ordinary actions; no demonstration is treated as a journey guarantee.",
+    "english_alignment": "Compared every English sentence and local word span with the fixed Chinese; exact source reproduction and deterministic fields checked. Actual phone samples in both scripts show readable English guides, wrapping, punctuation and retained colours. An English-only realignment after preview preserved Chinese and word categories; fresh beginning, middle and ending previews confirm the corrected guide placement."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-377-beginning.png",
+      "sha256": "c634bf0b781b8ce800d9ea0ff7ff8dd0d1788cdd38bdae85a9a6ac8445e1fd91",
+      "notes": "Read the pinyin opening at phone width: meaningful English follows source lines, punctuation and colours remain legible, with no clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 16,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-377-middle.png",
+      "sha256": "72e5518ee3f67e5b66d93064d1efcc1e4eb04d86f690f953bf217a8e51235f40",
+      "notes": "Read character-mode middle at phone width: checked the local English guide, source wrapping and word colours; neighbouring clause continuations remain understandable."
+    },
+    {
+      "section": "end",
+      "pair": 31,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-377-end.png",
+      "sha256": "c84a5be163d5d9528255336e8435ee27076de6bbeeb0a43020172801edc7672b",
+      "notes": "Read the final sentence through its page continuation where needed; source and English guide finish legibly with punctuation intact."
+    }
+  ]
+}

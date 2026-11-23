@@ -316,6 +316,27 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/只在货行/g)) syllables[m.index] = onlySyllable;
       for (const m of run.matchAll(/米拉还的/g)) syllables[m.index + 2] = returnSyllable;
       for (const m of run.matchAll(/水杯倒过来/g)) syllables[m.index + 2] = pourSyllable;
+      for (const m of run.matchAll(/只看(?=$)|只帮手|只吃了/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/空出(?=一条)/g)) syllables[m.index] = vacateSyllable;
+      for (const m of run.matchAll(/只在(?=杜嵘)|只接起/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/(?<=叫他)看护手/g)) syllables[m.index] = pinyin("看见", { type: "array", toneType: "symbol" })[0];
+      for (const m of run.matchAll(/打得|留得久/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/得将|(?<=她说)得看/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/得让另一个知道/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/(?<=当时)只记住|(?<=早课)只拿空|(?<=他)只拿稳|只叫他喝|只照刚才|(?<=仍)只离|(?<=就)只练/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/空着(?=的地方)/g)) syllables[m.index] = vacateSyllable;
+      for (const m of run.matchAll(/只练有人|只作边|只觉到|只画了凳子/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/推得重/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/就得拆下来/g)) syllables[m.index + 1] = obligationSyllable;
+      for (const m of run.matchAll(/将门拉开/g)) syllables[m.index] = pinyin("将来", { type: "array", toneType: "symbol" })[0];
+      for (const m of run.matchAll(/(?<=别替她)空着/g)) syllables[m.index] = vacateSyllable;
+      // Board-game narration: result complements and score/carrying senses.
+      for (const m of run.matchAll(/立得|差得|画得太|多得像|皱得/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/得意地/g)) syllables[m.index + 2] = complementSyllable;
+      for (const m of run.matchAll(/只数了近路|只画了半边/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/找着另一张/g)) syllables[m.index + 1] = pinyin("着火", { type: "array", toneType: "symbol" })[0];
+      for (const m of run.matchAll(/背着驮架/g)) syllables[m.index] = carryingBackSyllable;
+      for (const m of run.matchAll(/换成分数/g)) syllables[m.index + 2] = pinyin("得分", { type: "array", toneType: "symbol" })[1];
       for (const m of run.matchAll(/饭后的觉/g)) syllables[m.index + 3] = napSyllable;
       // These result phrases mean vacating space / taking a hit, not sky or proximity.
       for (const m of run.matchAll(/空出来|空处|(?<=好好地|人手仍|空处仍)空着/g)) syllables[m.index] = vacateSyllable;

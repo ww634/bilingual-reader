@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-376",
+  "chapter_sha256": "0bd22a1d81c450bc4b1944e96122fc15b468a6a4f684d2c50e968a7b356808b8",
+  "catalog_sha256": "05fcba403bdf94dbac206a46c1b55d75e56348f28faae138ccb04d5535a313dd",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-23T19:44:54.613166+00:00",
+  "review": {
+    "editorial": "Separate reread established the working space, explicit demonstration boundaries and distinct adult voices; checked the opening against the preceding conditional invitation.",
+    "continuity_or_facts": "Verified injury limits, observer versus employee roles, equipment ownership, route scope and arrangements still awaiting agreement.",
+    "english_alignment": "Compared every English sentence and local word span with the fixed Chinese; exact source reproduction and deterministic fields checked. Actual phone samples in both scripts show readable English guides, wrapping, punctuation and retained colours."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-376-beginning.png",
+      "sha256": "0b9a5b2b9cc19838312da98e287f52a99dcfe2840318bbad416848b5dd8d3a9a",
+      "notes": "Read the pinyin opening at phone width: meaningful English follows source lines, punctuation and colours remain legible, with no clipping."
+    },
+    {
+      "section": "middle",
+      "pair": 14,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-376-middle.png",
+      "sha256": "41c1845f333689904dc89df6adfe84dfb07064e75e4d78719f7d85b14a12b73d",
+      "notes": "Read character-mode middle at phone width: checked the local English guide, source wrapping and word colours; neighbouring clause continuations remain understandable."
+    },
+    {
+      "section": "end",
+      "pair": 26,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-376-end.png",
+      "sha256": "b199a6fe808c26c66a84f7ac7a7f44961df787ae23aada5de2b7033d68335dc1",
+      "notes": "Read the final sentence through its page continuation where needed; source and English guide finish legibly with punctuation intact."
+    },
+    {
+      "section": "extra",
+      "pair": 14,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-376-desktop.png",
+      "sha256": "189bfaa59a2b74fa2463de36c72417fc6f6cdb2415df78b72ab3cd04d5492c8b",
+      "notes": "Read the midpoint at desktop width: centred reading column and English guide remain readable, category colours retained without clipping."
+    },
+    {
+      "section": "extra",
+      "pair": 14,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-376-saved.png",
+      "sha256": "ac405ca922b2bbacb4064a72e959bdc6a8131ef68cf89a233b0a765ccb61df5a",
+      "notes": "Selected a word and verified one complete sentence with its own full English meaning; Save sentence changed to Saved. Sentence-sized pairs also remain the Listen and dictation units; no speech generation requested."
+    }
+  ]
+}

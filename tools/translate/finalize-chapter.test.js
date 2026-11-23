@@ -442,3 +442,41 @@ test('return to practice preserves vacancy and obligation contexts',()=>{
  assert.deepEqual(r('米拉还的，还在桌上。','还'),['huán','hái']);
  assert.deepEqual(r('水杯倒过来，人跌倒。','倒'),['dào','dǎo']);
 });
+
+test('guard meeting distinguishes restrictive only and clearing a path',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('学生只看，木头只帮手，只吃了一碗，一只看门的狗。','只'),['zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('先空出一条路，望见天空。','空'),['kòng','kōng']);
+});
+
+test('professional demonstration preserves looking, complements and obligation',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('只在杜嵘身前，只接起一点，一只手。','只'),['zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('叫他看护手，看护病人。','看'),['kàn','kān']);
+ assert.deepEqual(r('打得更重，留得久，得将两掌贴上，她说得看。','得'),['de','de','děi','děi']);
+});
+
+test('right-side practice preserves restrictive adverbs and vacant space',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('得让另一个知道。','得'),['děi']);
+ assert.deepEqual(r('当时只记住，早课只拿空，他只拿稳，只叫他喝，只照刚才，仍只离，就只练，一只拿着碗的猴子。','只'),['zhǐ','zhǐ','zhǐ','zhǐ','zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('空着的地方，空着手。','空'),['kòng','kōng']);
+});
+
+test('board game narration preserves score, carrying and grammatical senses',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('立得稳，差得远，画得太像，多得像线，皱得紧。','得'),['de','de','de','de','de']);
+ assert.deepEqual(r('只数了近路，只画了半边，一只羊。','只'),['zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('背着驮架，背着别人说坏话。','背'),['bēi','bèi']);
+ assert.deepEqual(r('换成分数，安分守己。','分'),['fēn','fèn']);
+ assert.deepEqual(r('找着另一张，拿着另一张。','着'),['zháo','zhe']);
+ assert.deepEqual(r('得意地走到田地。','地'),['de','dì']);
+});
+
+test('shared route practice distinguishes structural and reserving senses',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('只练有人走，只作边，只觉到一点，只画了凳子，一只手。','只'),['zhǐ','zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('推得重，就得拆下来。','得'),['de','děi']);
+ assert.deepEqual(r('将门拉开，守门的大将。','将'),['jiāng','jiàng']);
+ assert.deepEqual(r('别替她空着，她空着手。','空'),['kòng','kōng']);
+});
