@@ -395,3 +395,50 @@ test('held breath, pouring and complement particles are contextual',()=>{
  assert.deepEqual(r('他跌倒了。','倒'),['dǎo']);
  assert.deepEqual(r('夹走一片菜。','夹'),['jiā']);
 });
+
+test('rental visit contexts preserve grammatical and lexical readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('将门再推开，守门的大将。','将'),['jiāng','jiàng']);
+ assert.deepEqual(r('屋里弄的，住在里弄。','弄'),['nòng','lòng']);
+ assert.deepEqual(r('只叫人，只预备，只叫他留，只叫他把，一只手。','只'),['zhǐ','zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('扣得住，住得好，收得慢，也得重新找。','得'),['de','de','de','děi']);
+});
+
+test('ordinary guard practice distinguishes ties, complements and pouring',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('系垫，系松，关系，关系松弛。','系'),['jì','jì','xì','xì']);
+ assert.deepEqual(r('带得走，守得住，拿得比他高，还得用。','得'),['de','de','de','děi']);
+ assert.deepEqual(r('只须，只走，只叫换人，只在布前，一只手，一只走失的猫。','只'),['zhǐ','zhǐ','zhǐ','zhǐ','zhī','zhī']);
+ assert.deepEqual(r('倒水，跌倒。','倒'),['dào','dǎo']);
+});
+
+test('freight yard contexts distinguish loaded carts and aspect particles',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('重画，重量。','重'),['chóng','zhòng']);
+ assert.deepEqual(r('载着布包，记载事情。','载'),['zài','zǎi']);
+ assert.deepEqual(r('挪到了门边。','了'),['le']);
+ assert.deepEqual(r('抱着手臂，湿得很深，只挪到门内。','着'),['zhe']);
+ assert.deepEqual(r('湿得很深。','得'),['de']);
+ assert.deepEqual(r('只挪到门内，一只轮。','只'),['zhǐ','zhī']);
+});
+
+test('aftermath contexts preserve return, sewing, classifiers and particles',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('只留下一只，别只记学生，只看车。','只'),['zhǐ','zhī','zhǐ','zhǐ']);
+ assert.deepEqual(r('留了一只好的。','只'),['zhī']);
+ assert.deepEqual(r('抖得厉害，画得好。','得'),['de','de']);
+ assert.deepEqual(r('去还维老师，还在这里。','还'),['huán','hái']);
+ assert.deepEqual(r('缝好，裂缝。','缝'),['féng','fèng']);
+ assert.deepEqual(r('试着落稳。','着'),['zhe']);
+ assert.deepEqual(r('她空出的地方，天空。','空'),['kòng','kōng']);
+});
+
+test('return to practice preserves vacancy and obligation contexts',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('另一行还空着，右边空着，一行仍空着，右边空着手。','空'),['kòng','kòng','kòng','kōng']);
+ assert.deepEqual(r('弯得深，想得比手快。','得'),['de','de']);
+ assert.deepEqual(r('还得先，得先说，还得同。','得'),['děi','děi','děi']);
+ assert.deepEqual(r('只在货行，一只手。','只'),['zhǐ','zhī']);
+ assert.deepEqual(r('米拉还的，还在桌上。','还'),['huán','hái']);
+ assert.deepEqual(r('水杯倒过来，人跌倒。','倒'),['dào','dǎo']);
+});
