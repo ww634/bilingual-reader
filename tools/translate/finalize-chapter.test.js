@@ -480,3 +480,50 @@ test('shared route practice distinguishes structural and reserving senses',()=>{
  assert.deepEqual(r('将门拉开，守门的大将。','将'),['jiāng','jiàng']);
  assert.deepEqual(r('别替她空着，她空着手。','空'),['kòng','kōng']);
 });
+
+test('escort discussion retains restrictive, grammatical and grip readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('只在写价钱，只到这里，一只手。','只'),['zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('说得不响，签得慢，说得太快，得先看看。','得'),['de','de','de','děi']);
+ assert.deepEqual(r('空着问路面，空着手。','空'),['kòng','kōng']);
+ assert.deepEqual(r('册子夹在腋下，夹袄另算。','夹'),['jiā','jiá']);
+ assert.deepEqual(r('他一怔。','怔'),r('怔了一下。','怔'));
+});
+
+test('contact practice retains returning, rolling, loading and connective readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('还进柜，还来的护具，还在这里。','还'),['huán','huán','hái']);
+ assert.deepEqual(r('卷好，一卷书。','卷'),['juǎn','juàn']);
+ assert.deepEqual(r('画得大，收得好。','得'),['de','de']);
+ assert.deepEqual(r('倒挤在纸边，倒先有墨，人跌倒。','倒'),['dào','dào','dǎo']);
+ assert.deepEqual(r('只拿空托，只轻贴着，只觉得眼里，一只手。','只'),['zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('跟着手，手着火了。','着'),['zhe','zháo']);
+ assert.deepEqual(r('重新上载，记载事情。','载'),['zài','zǎi']);
+});
+
+test('household rope work preserves counting and negative receipt contexts',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('数钱，数到第五，数出第七，数学。','数'),['shǔ','shǔ','shǔ','shù']);
+ assert.deepEqual(r('将门支住，守门的大将。','将'),['jiāng','jiàng']);
+ assert.deepEqual(r('只送干的，一只手。','只'),['zhǐ','zhī']);
+ assert.deepEqual(r('没收另外五枚，没收赃物。','没'),['méi','mò']);
+ assert.deepEqual(r('两只手忽然长好，绳子很长。','长'),['zhǎng','cháng']);
+ assert.deepEqual(r('说得明白，画得不好，得跟上。','得'),['de','de','děi']);
+ assert.deepEqual(r('手倒没钝，人跌倒。','倒'),['dào','dǎo']);
+});
+
+test('sound cue practice distinguishes obligation, return and low loading',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('塔维说得看，说不说得清。','得'),['děi','de']);
+ assert.deepEqual(r('只慢慢贴来，只叫他将，只在页角，一只手。','只'),['zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('不再上载，记载事情。','载'),['zài','zǎi']);
+ assert.deepEqual(r('还要还够一声，还在这里。','还'),['hái','huán','hái']);
+});
+
+test('returning escort account retains restriction and physical scoring readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('只停了一辆，只赶得及，只抬手指，只找回一件，只看湿不湿，一只手。','只'),['zhǐ','zhǐ','zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('倒不用先猜，人跌倒。','倒'),['dào','dǎo']);
+ assert.deepEqual(r('骂得好，近得多。','得'),['de','de']);
+ assert.deepEqual(r('划痕，计划。','划'),['huá','huà']);
+});
