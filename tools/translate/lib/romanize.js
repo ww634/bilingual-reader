@@ -360,6 +360,20 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/倒不用先猜/g)) syllables[m.index] = pourSyllable;
       for (const m of run.matchAll(/骂得好|近得多/g)) syllables[m.index + 1] = complementSyllable;
       for (const m of run.matchAll(/划痕/g)) syllables[m.index] = pinyin("划船", { type: "array", toneType: "symbol" })[0];
+      for (const m of run.matchAll(/装得太靠里|说得有些硬/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/习惯性地/g)) syllables[m.index + 3] = complementSyllable;
+      for (const m of run.matchAll(/只换木头/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/得留一回/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/拆了重装/g)) syllables[m.index + 2] = againSyllable;
+      for (const m of run.matchAll(/散线/g)) syllables[m.index] = pinyin("零散", { type: "array", toneType: "symbol" })[1];
+      for (const m of run.matchAll(/那点留空/g)) syllables[m.index + 3] = vacateSyllable;
+      for (const m of run.matchAll(/倒低头|倒轮到/g)) syllables[m.index] = pourSyllable;
+      for (const m of run.matchAll(/没落稳/g)) syllables[m.index] = negativeHaveSyllable;
+      for (const m of run.matchAll(/看得清清楚楚|走得很神气/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/只查回手|只试这一件|只记这一回/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/得在/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/松量/g)) syllables[m.index + 1] = pinyin("数量", { type: "array", toneType: "symbol" })[1];
+      for (const m of run.matchAll(/头一刻/g)) syllables[m.index] = pinyin("头部", { type: "array", toneType: "symbol" })[0];
       // Board-game narration: result complements and score/carrying senses.
       for (const m of run.matchAll(/立得|差得|画得太|多得像|皱得/g)) syllables[m.index + 1] = complementSyllable;
       for (const m of run.matchAll(/得意地/g)) syllables[m.index + 2] = complementSyllable;
@@ -381,6 +395,19 @@ export function romanizeWithMap(text) {
       for (const m of run.matchAll(/剥落/g)) syllables[m.index] = peelingSyllable;
       for (const m of run.matchAll(/路仍夹在/g)) syllables[m.index + 2] = grippingSyllable;
       for (const m of run.matchAll(/只付了|只换这块板|只换板子|只差最后|只咬/g)) syllables[m.index] = onlySyllable;
+      // Spoken grammar in workshop plans, kept separate from lexical 得/教 readings.
+      for (const m of run.matchAll(/只叫他指|只传了/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/去教别人/g)) syllables[m.index + 1] = pinyin("教", { type: "array", toneType: "symbol", multiple: true })[1];
+      for (const m of run.matchAll(/看不看得懂/g)) syllables[m.index + 3] = complementSyllable;
+      for (const m of run.matchAll(/看得怎样|笑得筷子/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/还得再听/g)) syllables[m.index + 1] = obligationSyllable;
+      for (const m of run.matchAll(/替他数/g)) syllables[m.index + 2] = countSyllable;
+      for (const m of run.matchAll(/只先碰到|只升到|只写下|只走给/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/抬得太慢/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/握得太紧/g)) syllables[m.index + 1] = complementSyllable;
+      for (const m of run.matchAll(/得算你/g)) syllables[m.index] = obligationSyllable;
+      for (const m of run.matchAll(/只替凳子/g)) syllables[m.index] = onlySyllable;
+      for (const m of run.matchAll(/冲着宋远/g)) syllables[m.index] = towardSyllable;
       const words = jieba.cut(run);
       let ci = 0;          // char index within the run
       let firstWord = true;

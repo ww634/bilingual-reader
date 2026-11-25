@@ -527,3 +527,44 @@ test('returning escort account retains restriction and physical scoring readings
  assert.deepEqual(r('骂得好，近得多。','得'),['de','de']);
  assert.deepEqual(r('划痕，计划。','划'),['huá','huà']);
 });
+
+test('damaged shield inspection distinguishes refitting and unfilled space',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('装得太靠里，说得有些硬，得留一回。','得'),['de','de','děi']);
+ assert.deepEqual(r('习惯性地走到田地。','地'),['de','dì']);
+ assert.deepEqual(r('只换木头，一只手。','只'),['zhǐ','zhī']);
+ assert.deepEqual(r('拆了重装，重量不变。','重'),['chóng','zhòng']);
+ assert.deepEqual(r('收起散线，出门散步。','散'),['sǎn','sàn']);
+ assert.deepEqual(r('那点留空，看着天空。','空'),['kòng','kōng']);
+});
+
+test('ordinary return routes retain negative, amount and timing readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('倒低头，倒轮到，人跌倒。','倒'),['dào','dào','dǎo']);
+ assert.deepEqual(r('没落稳，没落的家族。','没'),['méi','mò']);
+ assert.deepEqual(r('看得清清楚楚，走得很神气，得在这里。','得'),['de','de','děi']);
+ assert.deepEqual(r('只查回手，只试这一件，只记这一回，一只手。','只'),['zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('留着松量，量一量。','量'),['liàng','liáng','liáng']);
+ assert.deepEqual(r('只看头一刻。','头'),['tóu']);
+});
+
+test('workshop conversation preserves teaching and complement readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('只叫他指，只传了，一只手。','只'),['zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('去教别人，信奉宗教。','教'),['jiāo','jiào']);
+ assert.deepEqual(r('看不看得懂，看得怎样，笑得筷子停了，还得再听，得到回答。','得'),['de','de','de','děi','dé']);
+});
+
+test('release trial retains counting and restrictive contexts',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('替他数，数学。','数'),['shǔ','shù']);
+ assert.deepEqual(r('只先碰到，只升到，只写下，只走给，一只手。','只'),['zhǐ','zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('抬得太慢，得到回答。','得'),['de','dé']);
+});
+
+test('adult sparring preserves complement and targeting readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('握得太紧，得算你，得到回答。','得'),['de','děi','dé']);
+ assert.deepEqual(r('只替凳子，一只手。','只'),['zhǐ','zhī']);
+ assert.deepEqual(r('冲着宋远，冲进门。','冲'),['chòng','chōng']);
+});
