@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-395",
+  "chapter_sha256": "32e8f7e7b33d8137e2f5e2a296f6f28cbdb9b063134332b3c9f036ed7bc65387",
+  "catalog_sha256": "fd1ab0769c369280676824d537bf5e185d103363760ec17909728e3b63dd0737",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-28T14:04:35.873725+00:00",
+  "review": {
+    "editorial": "Separate reread checked packing, ownership and an actual departure as one developed scene; removed an unshared private reference, clarified a physical obstruction, and reread the changed interactions and closing observation.",
+    "continuity_or_facts": "Verified the promised departure date and limited responsibilities, unfinished versus already fitted parts, independent adult roles, a newly confirmed appointment versus an outcome, friendship continuity and injury limits.",
+    "english_alignment": "Reviewed every sentence and local word span against fixed Chinese. Reader QA found a sparse late guide; an audited English-only revision retained Chinese and categories, and fresh phone samples in both scripts confirm meaningful guides and complete page continuations."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-395-beginning.png",
+      "sha256": "c283d7b692d9992d93395958cd97cbaffd3f398e732e48d23694831085b2e6fa",
+      "notes": "Read the pinyin opening at phone width: English guides remain meaningful and visible, punctuation, word colours and wrapping are legible."
+    },
+    {
+      "section": "middle",
+      "pair": 13,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-395-middle.png",
+      "sha256": "a328440a251e4af3768e92e6fd9faff990dbdd7be418a9c15a032e5b80eb6169",
+      "notes": "Read the midpoint sentence in characters at phone width: source and English clause continuations remain readable, with punctuation and category colours retained."
+    },
+    {
+      "section": "end",
+      "pair": 25,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-395-end.png",
+      "sha256": "7e85302b3bea179c5fe73718d436892d8f2a0ccaf0068197015e07fb3a8f7916",
+      "notes": "Read the ending through the final sentence and any page continuation: complete English guide and source punctuation remain visible without clipping."
+    },
+    {
+      "section": "extra",
+      "pair": 24,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-395-ending-context.png",
+      "sha256": "67b838f77186443fd775055ee1fbaf435088a56486dbb8038a431eb060ac562b",
+      "notes": "Read the repaired penultimate-sentence guide in the phone reader: each line now has meaningful English rather than an isolated article, with Chinese and word categories preserved."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "book_id": "embers-beneath-the-mountains",
+  "chapter_id": "ch-391",
+  "chapter_sha256": "4c81faa9f446ab02f6862dc61fdf7c0e0729a63642aeed6418980ee9c7f9e52b",
+  "catalog_sha256": "8bbfcbd445ada51ed93619f8b6c56e56bc0a8af30cb58798935ae4a5ec30a9da",
+  "renderer_sha256": "ef460d064e2d0eb4ee1e604c40595e5cb753b4ffe3147f67cf8d3ceceb2ec814",
+  "reviewer": "Codex",
+  "reviewed_at": "2026-11-28T13:21:27.048675+00:00",
+  "review": {
+    "editorial": "Separate full-scene review added a competing explanation and a concrete closing action; reread dialogue, physical references and the transition from prior practice to a friend’s independent work.",
+    "continuity_or_facts": "Checked the reported meeting date, a corrected account versus a separate unresolved page, observed entries versus inferred motives, unfinished clothing repair and continued injury accommodations.",
+    "english_alignment": "Reviewed every sentence and local English span against fixed Chinese, split an oversized clause chunk, corrected contextual pinyin through tested helpers, and inspected actual pinyin/character phone and desktop samples plus a saved sentence."
+  },
+  "warning_resolutions": {},
+  "samples": [
+    {
+      "section": "beginning",
+      "pair": 1,
+      "mode": "pinyin",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-391-beginning.png",
+      "sha256": "0ac11d1442429fac83dfcdf26d9eeb33fe37c28b0b3cc7e2e49aaad408fead8f",
+      "notes": "Read the pinyin opening at phone width: English guides remain meaningful and visible, punctuation, word colours and wrapping are legible."
+    },
+    {
+      "section": "middle",
+      "pair": 16,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-391-middle.png",
+      "sha256": "c363e5668221f049ecbf332ffc4a331d00bc5c4814cdbb9939fd258f1fe41b11",
+      "notes": "Read the midpoint sentence in characters at phone width: source and English clause continuations remain readable, with punctuation and category colours retained."
+    },
+    {
+      "section": "end",
+      "pair": 31,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-391-end.png",
+      "sha256": "6b0d172df107ef9122c1d0e24b4ce5bc16d0449fc2d3c799e652f390ddd38a00",
+      "notes": "Read the ending through the final sentence and any page continuation: complete English guide and source punctuation remain visible without clipping."
+    },
+    {
+      "section": "extra",
+      "pair": 16,
+      "mode": "characters",
+      "width": 1100,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-391-desktop.png",
+      "sha256": "e320de35fd237324dd8ddf0856471c97c3f755b10a344d578abcf5b38d354eda",
+      "notes": "Read the midpoint at desktop width: centred column, meaningful English guides, wrapping and colours remain legible."
+    },
+    {
+      "section": "extra",
+      "pair": 16,
+      "mode": "characters",
+      "width": 390,
+      "path": "tools/studio/qa/evidence/embers-beneath-the-mountains/ch-391-saved.png",
+      "sha256": "ee2a6826b3a91bd2a4449b2f35b095722af9d54f1698f28dba7636403833f8da",
+      "notes": "Opened pair 16 context and saved it: complete single Chinese sentence and faithful English displayed, with Save sentence changing to Saved; Listen and dictation sentence units inspected without paid speech."
+    }
+  ]
+}

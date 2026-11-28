@@ -568,3 +568,51 @@ test('adult sparring preserves complement and targeting readings',()=>{
  assert.deepEqual(r('只替凳子，一只手。','只'),['zhǐ','zhī']);
  assert.deepEqual(r('冲着宋远，冲进门。','冲'),['chòng','chōng']);
 });
+
+test('ledger and sewing keep repetition, watching and stitching distinct',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('重抄，重收，重量。','重'),['chóng','chóng','zhòng']);
+ assert.deepEqual(r('看缆，看书。','看'),['kān','kàn']);
+ assert.deepEqual(r('缝死，缝到，门缝。','缝'),['féng','féng','fèng']);
+ assert.deepEqual(r('写得很窄，说得快了些，查得这样细，凑得很近，细得像，也得领钱，还得能。','得'),['de','de','de','de','de','děi','děi']);
+ assert.deepEqual(r('倒将自己，倒叫他安静，人跌倒。','倒'),['dào','dào','dǎo']);
+ assert.deepEqual(r('只给自己，一只手。','只'),['zhǐ','zhī']);
+});
+
+test('near-surface release keeps result complements and bodily growth distinct',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('留得够，听得见，得从腕侧。','得'),['de','de','děi']);
+ assert.deepEqual(r('长一只脖子，绳子很长。','长'),['zhǎng','cháng']);
+ assert.deepEqual(r('只垫在，只在掌心，只留这么，只离开，只留在半空，一只手。','只'),['zhǐ','zhǐ','zhǐ','zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('压卷角，一卷书。','卷'),['juǎn','juàn']);
+});
+
+test('returning traveller keeps tune, return and carrying readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('只贴住，只走到那处，一只手。','只'),['zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('倒把那截，人跌倒。','倒'),['dào','dǎo']);
+ assert.deepEqual(r('勒得发白，说得很短，吹得难听，得到回答。','得'),['de','de','de','dé']);
+ assert.deepEqual(r('同样一调烦，调节。','调'),['diào','tiáo']);
+ assert.deepEqual(r('还回去，还在。','还'),['huán','hái']);
+ assert.deepEqual(r('夹到右臂，夹袄。','夹'),['jiā','jiá']);
+});
+
+test('announced practice keeps cloth ties, gripping and ordinary turn readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('系一条红布，关系。','系'),['jì','xì']);
+ assert.deepEqual(r('还得等他，转得顺，得到回答。','得'),['děi','de','dé']);
+ assert.deepEqual(r('只用空木托，只转了一点，一只手。','只'),['zhǐ','zhǐ','zhī']);
+ assert.deepEqual(r('夹住木条，被他夹住，夹袄。','夹'),['jiā','jiā','jiá']);
+ assert.deepEqual(r('反倒歪，人跌倒。','倒'),['dào','dǎo']);
+});
+
+test('departure packing retains ties, rolling and sewn repair readings',()=>{
+ const r=(text,char)=>{const m=romanizeWithMap(text);return m.srcChars.flatMap((c,i)=>c===char?[m.pinyin.slice(...m.spans[i])]:[]);};
+ assert.deepEqual(r('那倒省得，人跌倒。','倒'),['dào','dǎo']);
+ assert.deepEqual(r('还得拿，也得照纸，得到回答。','得'),['děi','děi','dé']);
+ assert.deepEqual(r('夹在同一块，夹袄。','夹'),['jiā','jiá']);
+ assert.deepEqual(r('看过才系，没系的，关系。','系'),['jì','jì','xì']);
+ assert.deepEqual(r('卷在袋旁，一卷书。','卷'),['juǎn','juàn']);
+ assert.deepEqual(r('新缝过，门缝。','缝'),['féng','fèng']);
+ assert.deepEqual(r('拾起散绳，出门散步。','散'),['sǎn','sàn']);
+});
